@@ -12,3 +12,4 @@ permalink: /about/
 The [Neotoma Paleoecological Database](http://neotomadb.org) is a critical resource for paleoecological information from the last 23 million years.  It includes records of pollen, diatoms, mammal fossils and many other proxies.
 
 Neotoma represents contributions from a number of researchers, and from a number of constituent databases.  Neotoma is a database of databases, and this structure is reflected in the [Neotoma Governance structure](https://www.neotomadb.org/about/category/governance).
+
