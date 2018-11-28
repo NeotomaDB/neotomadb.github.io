@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>elementtaxagroups - neotomadev Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>neotomadev</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>elementtaxagroups</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="elementtaxagroupid">elementtaxagroupid</span></td>
+				 <td>serial</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;ndb.seq_elementtaxagroups_elementtaxagroupid&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="elementtaxagroupmaturities.elementtaxagroupid references elementtaxagroups.elementtaxagroupid via elementtaxagroupmaturities_elementtaxagroupid_fkey">
+						<a href='elementtaxagroupmaturities.html'>elementtaxagroupmaturities</a><span class='relatedKey'>.elementtaxagroupid</span>
+					</td>
+					<td class="constraint detail">
+						elementtaxagroupmaturities_elementtaxagroupid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="elementtaxagroupportions.elementtaxagroupid references elementtaxagroups.elementtaxagroupid via elementtaxagroupportions_elementtaxagroupid_fkey">
+						<a href='elementtaxagroupportions.html'>elementtaxagroupportions</a><span class='relatedKey'>.elementtaxagroupid</span>
+					</td>
+					<td class="constraint detail">
+						elementtaxagroupportions_elementtaxagroupid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="elementtaxagroupsymmetries.elementtaxagroupid references elementtaxagroups.elementtaxagroupid via elementtaxagroupsymmetries_elementtaxagroupid_fkey">
+						<a href='elementtaxagroupsymmetries.html'>elementtaxagroupsymmetries</a><span class='relatedKey'>.elementtaxagroupid</span>
+					</td>
+					<td class="constraint detail">
+						elementtaxagroupsymmetries_elementtaxagroupid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="taxagroupid">taxagroupid</span></td>
+				 <td>varchar</td>
+				 <td>3</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="elementtaxagroups.taxagroupid references taxagrouptypes.taxagroupid via elementtaxagroups_taxagroupid_fkey">
+						<a href='taxagrouptypes.html'>taxagrouptypes</a><span class='relatedKey'>.taxagroupid</span>
+					</td>
+					<td class="constraint detail">
+						elementtaxagroups_taxagroupid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="elementtypeid">elementtypeid</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="elementtaxagroups.elementtypeid references elementtypes.elementtypeid via elementtaxagroups_elementtypeid_fkey">
+						<a href='elementtypes.html'>elementtypes</a><span class='relatedKey'>.elementtypeid</span>
+					</td>
+					<td class="constraint detail">
+						elementtaxagroups_elementtypeid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="recdatecreated">recdatecreated</span></td>
+				 <td>timestamp</td>
+				 <td>22</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>timezone(&#39;UTC&#39;::text, now())</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="recdatemodified">recdatemodified</span></td>
+				 <td>timestamp</td>
+				 <td>22</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='5 columns'>Table contained <span id="recordNumber">671</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> elementtaxagroups_pkey</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>elementtaxagroupid</td>
+				 </tr>				 
+				 <tr>
+				  <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> ix_elementtaxagrouptypes</td>
+				  <td>Must be unique</td>
+				  <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+				  <td>taxagroupid + elementtypeid</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="elementtaxagroupmaturities.html" title="elementtaxagroupmaturities" alt="" coords="633,5,941,152">
+<area shape="rect" id="node2" href="elementtaxagroups.html" title="elementtaxagroups" alt="" coords="247,167,583,383">
+<area shape="rect" id="node4" href="elementtypes.html" title="elementtypes" alt="" coords="5,280,203,427">
+<area shape="rect" id="node5" href="taxagrouptypes.html" title="taxagrouptypes" alt="" coords="5,145,203,263">
+<area shape="rect" id="node3" href="elementtaxagroupportions.html" title="elementtaxagroupportions" alt="" coords="642,169,933,316">
+<area shape="rect" id="node6" href="elementtaxagroupsymmetries.html" title="elementtaxagroupsymmetries" alt="" coords="627,333,948,480">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/elementtaxagroups.1degree.svg' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="datasettaxagrouptypes.html" title="datasettaxagrouptypes" alt="" coords="294,5,535,93">
+<area shape="rect" id="node2" href="taxagrouptypes.html" title="taxagrouptypes" alt="" coords="5,73,203,191">
+<area shape="rect" id="node3" href="elementtaxagroupmaturities.html" title="elementtaxagroupmaturities" alt="" coords="633,107,941,253">
+<area shape="rect" id="node4" href="elementtaxagroups.html" title="elementtaxagroups" alt="" coords="247,111,583,327">
+<area shape="rect" id="node5" href="elementmaturities.html" title="elementmaturities" alt="" coords="312,344,517,432">
+<area shape="rect" id="node8" href="elementtypes.html" title="elementtypes" alt="" coords="5,533,203,680">
+<area shape="rect" id="node6" href="elementtaxagroupportions.html" title="elementtaxagroupportions" alt="" coords="642,271,933,417">
+<area shape="rect" id="node7" href="elementportions.html" title="elementportions" alt="" coords="317,555,512,643">
+<area shape="rect" id="node9" href="elementtaxagroupsymmetries.html" title="elementtaxagroupsymmetries" alt="" coords="627,435,948,581">
+<area shape="rect" id="node10" href="elementsymmetries.html" title="elementsymmetries" alt="" coords="306,696,523,784">
+<area shape="rect" id="node11" href="isostratdata.html" title="isostratdata" alt="" coords="333,449,497,537">
+<area shape="rect" id="node12" href="specimens.html" title="specimens" alt="" coords="709,599,865,687">
+<area shape="rect" id="node13" href="variableelements.html" title="variableelements" alt="" coords="688,704,887,792">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/elementtaxagroups.2degrees.svg' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="elementtaxagroupmaturities.html" title="elementtaxagroupmaturities" alt="" coords="633,5,941,152">
+<area shape="rect" id="node2" href="elementtaxagroups.html" title="elementtaxagroups" alt="" coords="247,167,583,383">
+<area shape="rect" id="node4" href="elementtypes.html" title="elementtypes" alt="" coords="5,280,203,427">
+<area shape="rect" id="node5" href="taxagrouptypes.html" title="taxagrouptypes" alt="" coords="5,145,203,263">
+<area shape="rect" id="node3" href="elementtaxagroupportions.html" title="elementtaxagroupportions" alt="" coords="642,169,933,316">
+<area shape="rect" id="node6" href="elementtaxagroupsymmetries.html" title="elementtaxagroupsymmetries" alt="" coords="627,333,948,480">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/elementtaxagroups.implied1degrees.svg' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="datasettaxagrouptypes.html" title="datasettaxagrouptypes" alt="" coords="314,5,555,93">
+<area shape="rect" id="node2" href="taxagrouptypes.html" title="taxagrouptypes" alt="" coords="15,108,213,225">
+<area shape="rect" id="node3" href="elementtaxagroupmaturities.html" title="elementtaxagroupmaturities" alt="" coords="653,332,961,479">
+<area shape="rect" id="node4" href="elementtaxagroups.html" title="elementtaxagroups" alt="" coords="267,288,603,504">
+<area shape="rect" id="node5" href="elementmaturities.html" title="elementmaturities" alt="" coords="11,556,217,644">
+<area shape="rect" id="node8" href="elementtypes.html" title="elementtypes" alt="" coords="15,349,213,496">
+<area shape="rect" id="node6" href="elementtaxagroupportions.html" title="elementtaxagroupportions" alt="" coords="662,517,953,664">
+<area shape="rect" id="node7" href="elementportions.html" title="elementportions" alt="" coords="17,661,211,749">
+<area shape="rect" id="node9" href="elementtaxagroupsymmetries.html" title="elementtaxagroupsymmetries" alt="" coords="647,724,968,871">
+<area shape="rect" id="node10" href="elementsymmetries.html" title="elementsymmetries" alt="" coords="5,767,223,855">
+<area shape="rect" id="node11" href="isostratdata.html" title="isostratdata" alt="" coords="725,111,889,199">
+<area shape="rect" id="node12" href="taxa.html" title="taxa" alt="" coords="347,111,523,199">
+<area shape="rect" id="node13" href="specimendates.html" title="specimendates" alt="" coords="715,216,900,304">
+<area shape="rect" id="node14" href="specimens.html" title="specimens" alt="" coords="357,521,513,609">
+<area shape="rect" id="node15" href="variableelements.html" title="variableelements" alt="" coords="335,663,534,751">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/elementtaxagroups.implied2degrees.svg' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

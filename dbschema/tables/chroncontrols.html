@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>chroncontrols - neotomadev Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>neotomadev</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>chroncontrols</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="chroncontrolid">chroncontrolid</span></td>
+				 <td>serial</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;ndb.seq_chroncontrols_chroncontrolid&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="chroncontrolranks.chroncontrolid references chroncontrols.chroncontrolid via chroncontrolranks_chroncontrolid_fkey">
+						<a href='chroncontrolranks.html'>chroncontrolranks</a><span class='relatedKey'>.chroncontrolid</span>
+					</td>
+					<td class="constraint detail">
+						chroncontrolranks_chroncontrolid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="chroncontrolscal14c.chroncontrolid references chroncontrols.chroncontrolid via chroncontrolscal14c_chroncontrolid_fkey">
+						<a href='chroncontrolscal14c.html'>chroncontrolscal14c</a><span class='relatedKey'>.chroncontrolid</span>
+					</td>
+					<td class="constraint detail">
+						chroncontrolscal14c_chroncontrolid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="geochroncontrols.chroncontrolid references chroncontrols.chroncontrolid via geochroncontrols_chroncontrolid_fkey">
+						<a href='geochroncontrols.html'>geochroncontrols</a><span class='relatedKey'>.chroncontrolid</span>
+					</td>
+					<td class="constraint detail">
+						geochroncontrols_chroncontrolid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="chronologyid">chronologyid</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="chroncontrols.chronologyid references chronologies.chronologyid via chroncontrols_chronologyid_fkey">
+						<a href='chronologies.html'>chronologies</a><span class='relatedKey'>.chronologyid</span>
+					</td>
+					<td class="constraint detail">
+						chroncontrols_chronologyid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="chroncontroltypeid">chroncontroltypeid</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="chroncontrols.chroncontroltypeid references chroncontroltypes.chroncontroltypeid via chroncontrols_chroncontroltypeid_fkey">
+						<a href='chroncontroltypes.html'>chroncontroltypes</a><span class='relatedKey'>.chroncontroltypeid</span>
+					</td>
+					<td class="constraint detail">
+						chroncontrols_chroncontroltypeid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="depth">depth</span></td>
+				 <td>float8</td>
+				 <td>17,17</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="thickness">thickness</span></td>
+				 <td>float8</td>
+				 <td>17,17</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="age">age</span></td>
+				 <td>float8</td>
+				 <td>17,17</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="agelimityounger">agelimityounger</span></td>
+				 <td>float8</td>
+				 <td>17,17</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="agelimitolder">agelimitolder</span></td>
+				 <td>float8</td>
+				 <td>17,17</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="notes">notes</span></td>
+				 <td>text</td>
+				 <td>2147483647</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="recdatecreated">recdatecreated</span></td>
+				 <td>timestamp</td>
+				 <td>22</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>timezone(&#39;UTC&#39;::text, now())</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="recdatemodified">recdatemodified</span></td>
+				 <td>timestamp</td>
+				 <td>22</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="analysisunitid">analysisunitid</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="chroncontrols.analysisunitid references analysisunits.analysisunitid via chroncontrols_analysisunitid_fkey">
+						<a href='analysisunits.html'>analysisunits</a><span class='relatedKey'>.analysisunitid</span>
+					</td>
+					<td class="constraint detail">
+						chroncontrols_analysisunitid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="agetypeid">agetypeid</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="chroncontrols.agetypeid references agetypes.agetypeid via chroncontrols_agetypeid_fkey">
+						<a href='agetypes.html'>agetypes</a><span class='relatedKey'>.agetypeid</span>
+					</td>
+					<td class="constraint detail">
+						chroncontrols_agetypeid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='13 columns'>Table contained <span id="recordNumber">63324</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> chroncontrols_pkey</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>chroncontrolid</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
+			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="chroncontrolranks.html" title="chroncontrolranks" alt="" coords="961,5,1212,269">
+<area shape="rect" id="node2" href="chroncontrols.html" title="chroncontrols" alt="" coords="571,284,917,735">
+<area shape="rect" id="node3" href="agetypes.html" title="agetypes" alt="" coords="5,475,203,592">
+<area shape="rect" id="node4" href="analysisunits.html" title="analysisunits" alt="" coords="283,547,491,723">
+<area shape="rect" id="node5" href="chroncontroltypes.html" title="chroncontroltypes" alt="" coords="247,412,527,529">
+<area shape="rect" id="node6" href="chronologies.html" title="chronologies" alt="" coords="280,189,493,395">
+<area shape="rect" id="node7" href="chroncontrolscal14c.html" title="chroncontrolscal14c" alt="" coords="967,287,1207,463">
+<area shape="rect" id="node8" href="geochroncontrols.html" title="geochroncontrols" alt="" coords="983,480,1190,627">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/chroncontrols.1degree.svg' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="878,1380,1087,1468">
+<area shape="rect" id="node2" href="analysisunits.html" title="analysisunits" alt="" coords="233,1252,441,1428">
+<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="519,785,732,991">
+<area shape="rect" id="node8" href="collectionunits.html" title="collectionunits" alt="" coords="5,1013,189,1101">
+<area shape="rect" id="node9" href="faciestypes.html" title="faciestypes" alt="" coords="17,1313,177,1401">
+<area shape="rect" id="node5" href="agetypes.html" title="agetypes" alt="" coords="239,692,436,809">
+<area shape="rect" id="node20" href="contacts.html" title="contacts" alt="" coords="253,891,421,979">
+<area shape="rect" id="node4" href="aggregatechronologies.html" title="aggregatechronologies" alt="" coords="504,608,747,696">
+<area shape="rect" id="node6" href="analysisunitaltdepths.html" title="analysisunitaltdepths" alt="" coords="511,1607,740,1695">
+<area shape="rect" id="node7" href="analysisunitlithostrat.html" title="analysisunitlithostrat" alt="" coords="511,1044,739,1132">
+<area shape="rect" id="node10" href="chroncontrolranks.html" title="chroncontrolranks" alt="" coords="1200,96,1451,360">
+<area shape="rect" id="node11" href="chroncontrolaccuracydirections.html" title="chroncontrolaccuracydirections" alt="" coords="830,111,1135,199">
+<area shape="rect" id="node12" href="chroncontrolaccuracydistributions.html" title="chroncontrolaccuracydistributions" alt="" coords="821,216,1145,304">
+<area shape="rect" id="node13" href="chroncontrolaccuracyranks.html" title="chroncontrolaccuracyranks" alt="" coords="846,5,1119,93">
+<area shape="rect" id="node14" href="chroncontrols.html" title="chroncontrols" alt="" coords="809,427,1156,877">
+<area shape="rect" id="node15" href="chroncontrolprecisionranks.html" title="chroncontrolprecisionranks" alt="" coords="845,321,1121,409">
+<area shape="rect" id="node16" href="chroncontroltypes.html" title="chroncontroltypes" alt="" coords="485,473,765,591">
+<area shape="rect" id="node17" href="chroncontrolscal14c.html" title="chroncontrolscal14c" alt="" coords="1205,968,1445,1144">
+<area shape="rect" id="node18" href="calibrationcurves.html" title="calibrationcurves" alt="" coords="882,1000,1083,1088">
+<area shape="rect" id="node19" href="calibrationprograms.html" title="calibrationprograms" alt="" coords="871,1105,1094,1193">
+<area shape="rect" id="node21" href="depagents.html" title="depagents" alt="" coords="549,1149,702,1237">
+<area shape="rect" id="node22" href="geochroncontrols.html" title="geochroncontrols" alt="" coords="1222,616,1429,763">
+<area shape="rect" id="node23" href="geochronology.html" title="geochronology" alt="" coords="889,895,1076,983">
+<area shape="rect" id="node24" href="samples.html" title="samples" alt="" coords="537,1255,713,1343">
+<area shape="rect" id="node25" href="relativechronology.html" title="relativechronology" alt="" coords="519,1360,731,1448">
+<area shape="rect" id="node26" href="sampleages.html" title="sampleages" alt="" coords="895,1225,1071,1313">
+<area shape="rect" id="node27" href="tephras.html" title="tephras" alt="" coords="559,1501,692,1589">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/chroncontrols.2degrees.svg' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="chroncontrolranks.html" title="chroncontrolranks" alt="" coords="961,5,1212,269">
+<area shape="rect" id="node2" href="chroncontrols.html" title="chroncontrols" alt="" coords="571,284,917,735">
+<area shape="rect" id="node3" href="agetypes.html" title="agetypes" alt="" coords="5,475,203,592">
+<area shape="rect" id="node4" href="analysisunits.html" title="analysisunits" alt="" coords="283,547,491,723">
+<area shape="rect" id="node5" href="chroncontroltypes.html" title="chroncontroltypes" alt="" coords="247,412,527,529">
+<area shape="rect" id="node6" href="chronologies.html" title="chronologies" alt="" coords="280,189,493,395">
+<area shape="rect" id="node7" href="chroncontrolscal14c.html" title="chroncontrolscal14c" alt="" coords="967,287,1207,463">
+<area shape="rect" id="node8" href="geochroncontrols.html" title="geochroncontrols" alt="" coords="983,480,1190,627">
+</map>
+
+					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/chroncontrols.implied1degrees.svg' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="878,1421,1087,1509">
+<area shape="rect" id="node2" href="analysisunits.html" title="analysisunits" alt="" coords="233,1208,441,1384">
+<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="519,673,732,879">
+<area shape="rect" id="node8" href="collectionunits.html" title="collectionunits" alt="" coords="5,935,189,1023">
+<area shape="rect" id="node9" href="faciestypes.html" title="faciestypes" alt="" coords="17,1269,177,1357">
+<area shape="rect" id="node5" href="agetypes.html" title="agetypes" alt="" coords="239,516,436,633">
+<area shape="rect" id="node20" href="contacts.html" title="contacts" alt="" coords="253,779,421,867">
+<area shape="rect" id="node4" href="aggregatechronologies.html" title="aggregatechronologies" alt="" coords="504,415,747,503">
+<area shape="rect" id="node6" href="analysisunitaltdepths.html" title="analysisunitaltdepths" alt="" coords="511,1107,740,1195">
+<area shape="rect" id="node7" href="analysisunitlithostrat.html" title="analysisunitlithostrat" alt="" coords="511,1248,739,1336">
+<area shape="rect" id="node10" href="chroncontrolranks.html" title="chroncontrolranks" alt="" coords="1200,201,1451,465">
+<area shape="rect" id="node11" href="chroncontrolaccuracydirections.html" title="chroncontrolaccuracydirections" alt="" coords="830,216,1135,304">
+<area shape="rect" id="node12" href="chroncontrolaccuracydistributions.html" title="chroncontrolaccuracydistributions" alt="" coords="821,321,1145,409">
+<area shape="rect" id="node13" href="chroncontrolaccuracyranks.html" title="chroncontrolaccuracyranks" alt="" coords="846,5,1119,93">
+<area shape="rect" id="node14" href="chroncontrols.html" title="chroncontrols" alt="" coords="809,532,1156,983">
+<area shape="rect" id="node15" href="chroncontrolprecisionranks.html" title="chroncontrolprecisionranks" alt="" coords="845,427,1121,515">
+<area shape="rect" id="node16" href="chroncontroltypes.html" title="chroncontroltypes" alt="" coords="485,193,765,311">
+<area shape="rect" id="node17" href="chroncontrolscal14c.html" title="chroncontrolscal14c" alt="" coords="1205,1073,1445,1249">
+<area shape="rect" id="node18" href="calibrationcurves.html" title="calibrationcurves" alt="" coords="882,1105,1083,1193">
+<area shape="rect" id="node19" href="calibrationprograms.html" title="calibrationprograms" alt="" coords="871,1211,1094,1299">
+<area shape="rect" id="node21" href="depagents.html" title="depagents" alt="" coords="549,1600,702,1688">
+<area shape="rect" id="node22" href="dsageranges.html" title="dsageranges" alt="" coords="541,592,709,656">
+<area shape="rect" id="node23" href="eventchronology.html" title="eventchronology" alt="" coords="526,896,725,984">
+<area shape="rect" id="node24" href="eventtypes.html" title="eventtypes" alt="" coords="904,111,1061,199">
+<area shape="rect" id="node25" href="geochroncontrols.html" title="geochroncontrols" alt="" coords="1222,721,1429,868">
+<area shape="rect" id="node26" href="geochronology.html" title="geochronology" alt="" coords="889,1000,1076,1088">
+<area shape="rect" id="node27" href="samples.html" title="samples" alt="" coords="537,1353,713,1441">
+<area shape="rect" id="node28" href="relativechronology.html" title="relativechronology" alt="" coords="519,1001,731,1089">
+<area shape="rect" id="node29" href="sampleages.html" title="sampleages" alt="" coords="895,1316,1071,1404">
+<area shape="rect" id="node30" href="tephras.html" title="tephras" alt="" coords="559,1495,692,1583">
+</map>
+
+					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/chroncontrols.implied2degrees.svg' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>
