@@ -15,6 +15,10 @@ url: "https://neotomadb.org"
 twitter_username: neotomadb
 github_username:  neotomadb
 
+project_button: Github
+
+cookie_accept_message: Thanks!
+
 # Build settings
 markdown: kramdown
 

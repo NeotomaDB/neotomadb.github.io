@@ -1,0 +1,37 @@
+I"Ÿ<h1 id="workbooks">Workbooks</h1>
+
+<p><span style="text-align:full;">
+A collection of instructional or informational resources for working with the Neotoma Paleoecological Database. All of these documents are licensed under an MIT license and are free to use.  You may also consider contributing through the <a href="https://github.com/neotomadb/Workbooks">GitHub repository</a> for this site.  Itâ€™s also worth noting that many of these linked documents also have their own GitHub repositories, indicated within the document and you are always welcome to contribute there too.</span></p>
+<p><br />
+<h2>Pages</h2>
+<hr style="color:gray;margin-bottom:25px" />
+    
+
+
+
+  <div class="col-lg-3 col-md-6 text-center">
+    <div class="resource-box">
+	  <span style="font-variant:small-caps;font-size:110%;font-weight:500;"><big>Age Model Construction Using Bchron</big></span> [<a href="/workbooks/AgeModels.html">Link</a>]<br />
+      <span style="display:inline-block;width:80%;color:gray;">Building Bayesian age models for Neotoma records using the Bchron R Package</span><span style="float:right;color:green;"><small>R</small></span>
+      <br /><p></p>
+	</div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 text-center">
+    <div class="resource-box">
+	  <span style="font-variant:small-caps;font-size:110%;font-weight:500;"><big>An Introduction to Neotoma - SVP 2016 Workshop</big></span> [<a href="/workbooks/Workshop_SVP2016_v0.1.html">Link</a>]<br />
+      <span style="display:inline-block;width:80%;color:gray;">Learning to use the Neotoma Database and R package to undertake paleoecological analysis.</span><span style="float:right;color:green;"><small>R</small></span>
+      <br /><p></p>
+	</div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 text-center">
+    <div class="resource-box">
+	  <span style="font-variant:small-caps;font-size:110%;font-weight:500;"><big>Pollen-Based Climate Reconstruction</big></span> [<a href="/workbooks/clim_notebook.html">Link</a>]<br />
+      <span style="display:inline-block;width:80%;color:gray;">Using Neotoma to reconstruct paleoclimate from pollen data.</span><span style="float:right;color:green;"><small>R</small></span>
+      <br /><p></p>
+	</div>
+  </div>
+
+</p>
+:ET

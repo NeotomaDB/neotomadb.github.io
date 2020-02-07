@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Database
-permalink: /schema/
+permalink: /onlineresources/
 ---
 
-## Resources
+## Online Resources
 
 There are a number of methods that can be used to access data from the Neotoma Paleoecology Database.  Users who wish to access data can use one of the following:
 
@@ -18,6 +18,8 @@ There are a number of methods that can be used to access data from the Neotoma P
 ## Manual
 
 The Neotoma Database is described in [online documentation hosted on Read The Docs](https://neotoma-manual.readthedocs.io/en/latest/).
+
+**Note**: We are looking for folks to help us update the Neotoma Manual.  Please contact Simon Goring ([goring@wisc.edu](mailto:goring@wisc.edu)) for more information.
 
 ## Structure
 
