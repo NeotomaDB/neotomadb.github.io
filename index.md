@@ -12,10 +12,11 @@ weight: 1
 
 These are resources for individuals working with paleoecological data.  This site includes links to:
 
-  * [Database Documentation](http://open.neotomadb.org/dbschema)
-  * [RMarkdown](http://rmarkdown.rstudio.com/) and [Jupyter](http://jupyter.org/) notebooks
-  * [Neotoma API Documentation](http://api-dev.neotomadb.org)
-  * [Neotoma Project Wishlist]()
+*   [Database Documentation](/dbschema)
+*   [RMarkdown](http://rmarkdown.rstudio.com/) and [Jupyter](http://jupyter.org/) notebooks
+*   [Neotoma API Documentation](https://api.neotomadb.org)
+*   [Neotoma Dataset Landing Pages](https://data.neotomadb.org)
+
 
 These tools are intended to help people work with paleoecological data, and an effort to communicate best-practices in the paleogeosciences.  The repository includes fully realized workflows and more focused "cookbook" type elements.
 
