@@ -1,369 +1,351 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>dsdatasample - neotomadev Database</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-  <!-- Code Mirror -->
-  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
-  <!-- Fonts -->
-  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
-  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>dsdatasample - neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
-  <!-- Salvattore -->
-  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
-  <!-- SchemaSpy -->
-  <link rel="stylesheet" href="../schemaSpy.css">
-  
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="../bower/html5shiv/html5shiv.min.js"></script>
-  <script src="../bower/respond/respond.min.js"></script>
-  <![endif]-->
-</head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
-  <header class="main-header">
-    <nav class="navbar navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../index.html" class="navbar-brand"><b>neotomadev</b> Database</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>dsdatasample</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="datasetid">datasetid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="dsdatasample.datasetid&#39;s name implies that it&#39;s a child of datasets.datasetid, but it doesn&#39;t reference that column."><a href='datasets.html'>datasets</a><span class='relatedKey'>.datasetid</span></td>
+                                                <td class="constraint detail">Implied Constraint<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sampleid">sampleid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="dsdatasample.sampleid&#39;s name implies that it&#39;s a child of samples.sampleid, but it doesn&#39;t reference that column."><a href='samples.html'>samples</a><span class='relatedKey'>.sampleid</span></td>
+                                                <td class="constraint detail">Implied Constraint<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="dataid">dataid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="variableid">variableid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="dsdatasample.variableid&#39;s name implies that it&#39;s a child of variables.variableid, but it doesn&#39;t reference that column."><a href='variables.html'>variables</a><span class='relatedKey'>.variableid</span></td>
+                                                <td class="constraint detail">Implied Constraint<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="5,5,252,168">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/dsdatasample.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="516,6,763,169">
+<area shape="rect" id="node2" href="datasets.html" target="_top" title="datasets" alt="" coords="5,30,204,236">
+<area shape="rect" id="node3" href="samples.html" target="_top" title="samples" alt="" coords="248,38,472,244">
+<area shape="rect" id="node4" href="variables.html" target="_top" title="variables" alt="" coords="254,261,466,496">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/dsdatasample.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="858,193,1101,281">
+<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="557,296,781,501">
+<area shape="rect" id="node3" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="277,328,476,416">
+<area shape="rect" id="node8" href="datasets.html" target="_top" title="datasets" alt="" coords="277,1283,476,1488">
+<area shape="rect" id="node17" href="taxa.html" target="_top" title="taxa" alt="" coords="277,519,476,607">
+<area shape="rect" id="node4" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,328,216,416">
+<area shape="rect" id="node5" href="data.html" target="_top" title="data" alt="" coords="873,615,1085,703">
+<area shape="rect" id="node6" href="variables.html" target="_top" title="variables" alt="" coords="563,624,775,859">
+<area shape="rect" id="node34" href="variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="263,835,491,923">
+<area shape="rect" id="node35" href="variableelements.html" target="_top" title="variableelements" alt="" coords="260,624,493,712">
+<area shape="rect" id="node36" href="variableunits.html" target="_top" title="variableunits" alt="" coords="277,729,476,817">
+<area shape="rect" id="node7" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="560,1285,777,1373">
+<area shape="rect" id="node13" href="datasettypes.html" target="_top" title="datasettypes" alt="" coords="11,1305,210,1393">
+<area shape="rect" id="node14" href="embargo.html" target="_top" title="embargo" alt="" coords="29,1411,192,1499">
+<area shape="rect" id="node9" href="datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="549,1391,788,1479">
+<area shape="rect" id="node10" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="579,1496,758,1584">
+<area shape="rect" id="node11" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="580,1601,757,1689">
+<area shape="rect" id="node12" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="542,1707,795,1795">
+<area shape="rect" id="node15" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="541,1812,796,1900">
+<area shape="rect" id="node16" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="546,876,791,964">
+<area shape="rect" id="node18" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="865,1487,1094,1575">
+<area shape="rect" id="node19" href="dsageranges.html" target="_top" title="dsageranges" alt="" coords="573,1017,765,1081">
+<area shape="rect" id="node20" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="856,720,1103,883">
+<area shape="rect" id="node21" href="dslinks.html" target="_top" title="dslinks" alt="" coords="596,215,741,279">
+<area shape="rect" id="node22" href="dssampdata.html" target="_top" title="dssampdata" alt="" coords="575,1099,763,1163">
+<area shape="rect" id="node23" href="geochronology.html" target="_top" title="geochronology" alt="" coords="874,299,1085,387">
+<area shape="rect" id="node24" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="856,1947,1103,2035">
+<area shape="rect" id="node25" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="875,1048,1084,1136">
+<area shape="rect" id="node26" href="isostandards.html" target="_top" title="isostandards" alt="" coords="881,1759,1077,1847">
+<area shape="rect" id="node27" href="isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="844,900,1115,988">
+<area shape="rect" id="node28" href="repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="537,1180,800,1268">
+<area shape="rect" id="node29" href="sampleages.html" target="_top" title="sampleages" alt="" coords="880,404,1079,492">
+<area shape="rect" id="node30" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="870,509,1089,597">
+<area shape="rect" id="node31" href="samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="865,52,1093,140">
+<area shape="rect" id="node32" href="specimendates.html" target="_top" title="specimendates" alt="" coords="1159,120,1373,208">
+<area shape="rect" id="node33" href="synonymy.html" target="_top" title="synonymy" alt="" coords="581,519,756,607">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/dsdatasample.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-code-o"></i>
+                            <h3 id="ViewDefinition" class="box-title">View Definition</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">SELECT ds.datasetid,&#10;    sm.sampleid,&#10;    dt.dataid,&#10;    vr.variableid&#10;   FROM (((ndb.datasets ds&#10;     JOIN ndb.samples sm ON ((ds.datasetid = sm.datasetid)))&#10;     JOIN ndb.data dt ON ((sm.sampleid = dt.sampleid)))&#10;     JOIN ndb.variables vr ON ((dt.variableid = vr.variableid)));</textarea>
+                            <div style="padding-top: 5px;"><hr></div>
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                    <i class="fa fa-puzzle-piece"></i>
+                                    <h3 class="box-title">Possibly Referenced Tables/Views</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <ul class="list-unstyled">
+                                        <li><a href="datasets.html">datasets</a></li>
+                                        <li><a href="samples.html">samples</a></li>
+                                        <li><a href="data.html">data</a></li>
+                                        <li><a href="variables.html">variables</a></li>
+                                    </ul>
+                                </div><!-- /.box-body -->
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
         </div>
+        <!-- ./wrapper -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
-			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
-			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
-			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
-			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
-			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
-			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-        <!-- Navbar Right Menu -->
-
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  </header>
-  <!-- Main content -->
-  <!-- Full Width Column -->
-  <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>dsdatasample</h1></br>
-		      </section>
-      <!-- Main content -->
-      <section class="content">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-              <h3 id="Columns" class="box-title">Columns</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-            <div class="box-body">
-				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead align='left'>
-				<tr>
-				  <th>Column</th>
-				  <th>Type</th>
-				  <th>Size</th>
-				  <th title='Are nulls allowed?'>Nulls</th>
-				  <th title='Is column automatically updated?'>Auto</th>
-				  <th title='Default value'>Default</th>
-				  <th title='Columns in tables that reference this column'>Children</th>
-				  <th title='Columns in tables that are referenced by this column'>Parents</th>
-				  <th title='Comments' class="toggle"><span>Comments</span></th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="datasetid">datasetid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="dsdatasample.datasetid&#39;s name implies that it&#39;s a child of datasets.datasetid, but it doesn&#39;t reference that column.">
-						<a href='datasets.html'>datasets</a><span class='relatedKey'>.datasetid</span>
-					</td>
-					<td class="constraint detail">
-						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sampleid">sampleid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="dsdatasample.sampleid&#39;s name implies that it&#39;s a child of samples.sampleid, but it doesn&#39;t reference that column.">
-						<a href='samples.html'>samples</a><span class='relatedKey'>.sampleid</span>
-					</td>
-					<td class="constraint detail">
-						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="dataid">dataid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="variableid">variableid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="dsdatasample.variableid&#39;s name implies that it&#39;s a child of variables.variableid, but it doesn&#39;t reference that column.">
-						<a href='variables.html'>variables</a><span class='relatedKey'>.variableid</span>
-					</td>
-					<td class="constraint detail">
-						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-								</tbody>
-				</table>
-				<p title='4 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
-			</div>
-		</div>
-				<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-code-fork"></i>
-
-              <h3 id="Relationships" class="box-title">Relationships</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">	
-			<div class="nav-tabs-custom" style="cursor: move;">
-            <!-- Tabs within a box -->
-			<h5>Close relationships within degrees of separation</h5>
-            <ul class="nav nav-tabs pull-left ui-sortable-handle">
-			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
-			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
-			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
-            </ul>
-            <div class="tab-content no-padding">            
-				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="dsdatasample.html" title="dsdatasample" alt="" coords="5,5,241,168">
-</map>
-
-					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/dsdatasample.1degree.svg' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="dsdatasample.html" title="dsdatasample" alt="" coords="515,6,751,168">
-<area shape="rect" id="node2" href="datasets.html" title="datasets" alt="" coords="5,30,203,235">
-<area shape="rect" id="node3" href="samples.html" title="samples" alt="" coords="247,38,471,243">
-<area shape="rect" id="node4" href="variables.html" title="variables" alt="" coords="253,260,465,495">
-</map>
-
-					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/dsdatasample.implied1degrees.svg' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="aggregatesamples.html" title="aggregatesamples" alt="" coords="761,321,971,409">
-<area shape="rect" id="node2" href="samples.html" title="samples" alt="" coords="478,319,702,524">
-<area shape="rect" id="node3" href="analysisunits.html" title="analysisunits" alt="" coords="245,351,421,439">
-<area shape="rect" id="node8" href="datasets.html" title="datasets" alt="" coords="234,1351,431,1556">
-<area shape="rect" id="node17" href="taxa.html" title="taxa" alt="" coords="245,541,421,629">
-<area shape="rect" id="node4" href="collectionunits.html" title="collectionunits" alt="" coords="5,351,189,439">
-<area shape="rect" id="node5" href="data.html" title="data" alt="" coords="772,637,960,725">
-<area shape="rect" id="node6" href="variables.html" title="variables" alt="" coords="484,647,696,881">
-<area shape="rect" id="node33" href="variablecontexts.html" title="variablecontexts" alt="" coords="235,857,431,945">
-<area shape="rect" id="node34" href="variableelements.html" title="variableelements" alt="" coords="233,647,432,735">
-<area shape="rect" id="node35" href="variableunits.html" title="variableunits" alt="" coords="247,752,418,840">
-<area shape="rect" id="node7" href="dataprocessors.html" title="dataprocessors" alt="" coords="495,1004,685,1092">
-<area shape="rect" id="node13" href="datasettypes.html" title="datasettypes" alt="" coords="13,1373,182,1461">
-<area shape="rect" id="node14" href="embargo.html" title="embargo" alt="" coords="26,1479,169,1567">
-<area shape="rect" id="node9" href="datasetdatabases.html" title="datasetdatabases" alt="" coords="489,1109,691,1197">
-<area shape="rect" id="node10" href="datasetdoi.html" title="datasetdoi" alt="" coords="513,1215,667,1303">
-<area shape="rect" id="node11" href="datasetpis.html" title="datasetpis" alt="" coords="512,1320,668,1408">
-<area shape="rect" id="node12" href="datasetpublications.html" title="datasetpublications" alt="" coords="481,1461,699,1549">
-<area shape="rect" id="node15" href="datasetsubmissions.html" title="datasetsubmissions" alt="" coords="479,1567,701,1655">
-<area shape="rect" id="node16" href="datasettaxonnotes.html" title="datasettaxonnotes" alt="" coords="485,899,695,987">
-<area shape="rect" id="node18" href="datasetvariables.html" title="datasetvariables" alt="" coords="769,1629,963,1717">
-<area shape="rect" id="node19" href="dsageranges.html" title="dsageranges" alt="" coords="506,1672,674,1736">
-<area shape="rect" id="node20" href="dsdatasample.html" title="dsdatasample" alt="" coords="748,848,984,1011">
-<area shape="rect" id="node21" href="dslinks.html" title="dslinks" alt="" coords="526,237,654,301">
-<area shape="rect" id="node22" href="geochronology.html" title="geochronology" alt="" coords="773,427,959,515">
-<area shape="rect" id="node23" href="isoinstrumentation.html" title="isoinstrumentation" alt="" coords="759,1795,973,1883">
-<area shape="rect" id="node24" href="isosrmetadata.html" title="isosrmetadata" alt="" coords="776,1404,956,1492">
-<area shape="rect" id="node25" href="isostandards.html" title="isostandards" alt="" coords="780,1059,952,1147">
-<area shape="rect" id="node26" href="isovariablescaletypes.html" title="isovariablescaletypes" alt="" coords="751,743,981,831">
-<area shape="rect" id="node27" href="repositoryspecimens.html" title="repositoryspecimens" alt="" coords="476,1897,704,1985">
-<area shape="rect" id="node28" href="sampleages.html" title="sampleages" alt="" coords="778,532,954,620">
-<area shape="rect" id="node29" href="sampleanalysts.html" title="sampleanalysts" alt="" coords="771,111,961,199">
-<area shape="rect" id="node30" href="samplekeywords.html" title="samplekeywords" alt="" coords="767,216,965,304">
-<area shape="rect" id="node31" href="specimendates.html" title="specimendates" alt="" coords="773,5,959,93">
-<area shape="rect" id="node32" href="synonymy.html" title="synonymy" alt="" coords="512,541,668,629">
-</map>
-
-					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/dsdatasample.implied2degrees.svg' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-			  			</div>
-			</div>
-		  </div><!-- /.box-body -->
-		</div>
-		<div class="box box-primary">		
-			<div class="box-header with-border">
-			  <i class="fa fa-file-code-o"></i>
-
-			  <h3 id="ViewDefinition" class="box-title">View Definition</h3>
-
-			  <div class="box-tools pull-right">
-				<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-				</button>
-				<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-			  </div>
-			</div>	
-			<div class="box-body">
-				<textarea id="code" name="code" rows="" style="display: none;">SELECT ds.datasetid,&#10;    sm.sampleid,&#10;    dt.dataid,&#10;    vr.variableid&#10;   FROM (((ndb.datasets ds&#10;     JOIN ndb.samples sm ON ((ds.datasetid = sm.datasetid)))&#10;     JOIN ndb.data dt ON ((sm.sampleid = dt.sampleid)))&#10;     JOIN ndb.variables vr ON ((dt.variableid = vr.variableid)));</textarea>
-				<div style="padding-top: 5px;"><hr></div>
-				<div class="box box-solid">
-					<div class="box-header with-border">
-					  <i class="fa fa-puzzle-piece"></i>
-					  <h3 class="box-title">Possibly Referenced Tables/Views</h3>
-					</div>
-					<!-- /.box-header -->
-					<div class="box-body">
-					  <ul class="list-unstyled">
-						<li><a href="datasets.html">datasets</a></li>
-						<li><a href="data.html">data</a></li>
-						<li><a href="variables.html">variables</a></li>
-						<li><a href="samples.html">samples</a></li>
-					  </ul>
-					</div>
-					<!-- /.box-body -->
-				 </div>					
-			</div><!-- /.box-body -->			
-		</div>		
-	      </section>
-    
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div>
-      <div class="pull-right hidden-xs">
-        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
-        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
-      </div>
-      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
-    </div>
-    <!-- /.container -->
-  </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 2.2.3 -->
-<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
-<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
-<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
-
-<!-- SlimScroll -->
-<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
-<!-- Salvattore -->
-<script src="../bower/salvattore/salvattore.min.js"></script>
-<!-- AnchorJS -->
-<script src="../bower/anchor-js/anchor.min.js"></script>
-<!-- CodeMirror -->
-<script src="../bower/codemirror/codemirror.js"></script>
-<script src="../bower/codemirror/sql.js"></script>
-<!-- AdminLTE App -->
-<script src="../bower/admin-lte/dist/js/app.min.js"></script>
-<script src="table.js"></script>
-<script src="../schemaSpy.js"></script>
-</body>
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
 </html>

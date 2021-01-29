@@ -1,769 +1,742 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>collectionunits - neotomadev Database</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-  <!-- Code Mirror -->
-  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
-  <!-- Fonts -->
-  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
-  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>collectionunits - neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
-  <!-- Salvattore -->
-  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
-  <!-- SchemaSpy -->
-  <link rel="stylesheet" href="../schemaSpy.css">
-  
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="../bower/html5shiv/html5shiv.min.js"></script>
-  <script src="../bower/respond/respond.min.js"></script>
-  <![endif]-->
-</head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
-  <header class="main-header">
-    <nav class="navbar navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../index.html" class="navbar-brand"><b>neotomadev</b> Database</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>collectionunits</h1><p><span id="recordNumber">26668</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="collectionunitid">collectionunitid</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;ndb.seq_collectionunits_collectionunitid&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="analysisunits.collectionunitid references collectionunits.collectionunitid via fk_analysisunits_collectionunits"><a href='analysisunits.html'>analysisunits</a><span class='relatedKey'>.collectionunitid</span></td>
+                                                <td class="constraint detail">fk_analysisunits_collectionunits<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="chronologies.collectionunitid references collectionunits.collectionunitid via fk_chronologies_collectionunits"><a href='chronologies.html'>chronologies</a><span class='relatedKey'>.collectionunitid</span></td>
+                                                <td class="constraint detail">fk_chronologies_collectionunits<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="collectors.collectionunitid references collectionunits.collectionunitid via fk_collectors_collectionunits"><a href='collectors.html'>collectors</a><span class='relatedKey'>.collectionunitid</span></td>
+                                                <td class="constraint detail">fk_collectors_collectionunits<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="datasets.collectionunitid references collectionunits.collectionunitid via fk_datasets_collectionunits"><a href='datasets.html'>datasets</a><span class='relatedKey'>.collectionunitid</span></td>
+                                                <td class="constraint detail">fk_datasets_collectionunits<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="dslinks.collectionunitid&#39;s name implies that it&#39;s a child of collectionunits.collectionunitid, but it doesn&#39;t reference that column."><a href='dslinks.html'>dslinks</a><span class='relatedKey'>.collectionunitid</span></td>
+                                                <td class="constraint detail">Implied Constraint<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="lithology.collectionunitid references collectionunits.collectionunitid via fk_lithology_collectionunits"><a href='lithology.html'>lithology</a><span class='relatedKey'>.collectionunitid</span></td>
+                                                <td class="constraint detail">fk_lithology_collectionunits<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>An arbitrary Collection Unit identification number.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="handle">handle</span></td>
+                                    <td>varchar</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Code name for the Collection Unit. This code may be up to 10 characters, but an effort is made to keep these to 8 characters or less. Data are frequently distributed by Collection Unit, and the Handle is used for file names.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="siteid">siteid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="collectionunits.siteid references sites.siteid via fk_collectionunits_sites"><a href='sites.html'>sites</a><span class='relatedKey'>.siteid</span></td>
+                                                <td class="constraint detail">fk_collectionunits_sites<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Site where CollectionUnit was located. Field links to Sites table.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="colltypeid">colltypeid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="collectionunits.colltypeid references collectiontypes.colltypeid via fk_collectionunits_collectiontypes"><a href='collectiontypes.html'>collectiontypes</a><span class='relatedKey'>.colltypeid</span></td>
+                                                <td class="constraint detail">fk_collectionunits_collectiontypes<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Type of Collection Unit. Field links to the CollectionTypes table.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="depenvtid">depenvtid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="collectionunits.depenvtid references depenvttypes.depenvtid via fk_collectionunits_depenvttypes"><a href='depenvttypes.html'>depenvttypes</a><span class='relatedKey'>.depenvtid</span></td>
+                                                <td class="constraint detail">fk_collectionunits_depenvttypes<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Depositional environment of the CollectionUnit. Normally, this key refers to the modern environment. For example, the site may be located on a colluvial slope, in which case the Depositional Environment may be Colluvium or Colluvial Fan. However, an excavation may extend into alluvial sediments, which represent a different depositional environment. These are accounted for by the Facies of the AnalysisUnit. Field links to the DepEnvtTypes table.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="collunitname">collunitname</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Name of the Collection Unit. Examples: Core BPT82A, Structure 9, P4A Test 57. If faunal data are reported from a site or locality without explicit Collection Units, then data are assigned to a single Collection Unit with the name «Locality».</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="colldate">colldate</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Date Collection Unit was collected.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="colldevice">colldevice</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Device used for obtain Collection Unit. This field applies primarily to cores, for example «Wright square-rod piston corer (5 cm)».</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="gpslatitude">gpslatitude</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Precise latitude of the Collection Unit, typically taken with a GPS, although may be precisely measured from a map.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="gpslongitude">gpslongitude</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Precise longitude of the Collection Unit, typically taken with a GPS, although may be precisely measured from a map.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="gpsaltitude">gpsaltitude</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Precise altitude of the Collection Unit, typically taken with a GPS or precisely obtained from a map.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="gpserror">gpserror</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Error in the horizontal GPS coordinates, if known.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="waterdepth">waterdepth</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Depth of water at the Collection Unit location. This field applies mainly to Collection Units from lakes.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="substrateid">substrateid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="collectionunits.substrateid references rocktypes.rocktypeid via fk_collectionunits_rocktypes"><a href='rocktypes.html'>rocktypes</a><span class='relatedKey'>.rocktypeid</span></td>
+                                                <td class="constraint detail">fk_collectionunits_rocktypes<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Substrate or rock type on which the Collection Unit lies. Field links to the RockTypes table. This field is especially used for rodent middens.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="slopeaspect">slopeaspect</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>For Collection Units on slopes, the horizontal direction to which a slope faces measured in degrees clockwise from north. This field is especially used for rodent middens.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="slopeangle">slopeangle</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>For Collection Units on slopes, the angle of slope from horizontal. field is especially used for rodent middens.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="location">location</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>description of the location of the Collection Unit within the site.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="notes">notes</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Free form notes or comments about the Collection Unit.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatecreated">recdatecreated</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>timezone(&#39;UTC&#39;::text, now())</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatemodified">recdatemodified</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> collectionunits_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>collectionunitid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>ix_collectionunitid_collectionunits</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>collectionunitid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>ix_depenvtid_collectionunits</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>depenvtid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>ix_siteid_collectionunits</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>siteid</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="656,5,864,181">
+<area shape="rect" id="node2" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="265,507,609,1163">
+<area shape="rect" id="node4" href="collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,595,221,712">
+<area shape="rect" id="node5" href="depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="12,729,215,876">
+<area shape="rect" id="node6" href="sites.html" target="_top" title="sites" alt="" coords="15,401,212,577">
+<area shape="rect" id="node7" href="rocktypes.html" target="_top" title="rocktypes" alt="" coords="11,893,215,1040">
+<area shape="rect" id="node3" href="chronologies.html" target="_top" title="chronologies" alt="" coords="653,199,867,463">
+<area shape="rect" id="node8" href="collectors.html" target="_top" title="collectors" alt="" coords="661,480,859,656">
+<area shape="rect" id="node9" href="datasets.html" target="_top" title="datasets" alt="" coords="661,673,859,879">
+<area shape="rect" id="node10" href="lithology.html" target="_top" title="lithology" alt="" coords="661,896,859,1043">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/collectionunits.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="923,604,1166,692">
+<area shape="rect" id="node2" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="656,355,864,531">
+<area shape="rect" id="node3" href="chronologies.html" target="_top" title="chronologies" alt="" coords="653,649,867,913">
+<area shape="rect" id="node6" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="265,816,609,1472">
+<area shape="rect" id="node7" href="faciestypes.html" target="_top" title="faciestypes" alt="" coords="345,395,530,483">
+<area shape="rect" id="node9" href="agetypes.html" target="_top" title="agetypes" alt="" coords="354,711,521,799">
+<area shape="rect" id="node10" href="contacts.html" target="_top" title="contacts" alt="" coords="338,1849,537,1937">
+<area shape="rect" id="node4" href="analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="911,111,1179,199">
+<area shape="rect" id="node5" href="analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="911,252,1178,340">
+<area shape="rect" id="node11" href="collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,875,221,992">
+<area shape="rect" id="node12" href="depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="12,1009,215,1156">
+<area shape="rect" id="node13" href="sites.html" target="_top" title="sites" alt="" coords="15,629,212,805">
+<area shape="rect" id="node14" href="rocktypes.html" target="_top" title="rocktypes" alt="" coords="11,1200,215,1347">
+<area shape="rect" id="node8" href="chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="943,499,1146,587">
+<area shape="rect" id="node15" href="collectors.html" target="_top" title="collectors" alt="" coords="661,1571,859,1747">
+<area shape="rect" id="node16" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="936,1693,1153,1781">
+<area shape="rect" id="node17" href="datasets.html" target="_top" title="datasets" alt="" coords="661,1348,859,1553">
+<area shape="rect" id="node22" href="datasettypes.html" target="_top" title="datasettypes" alt="" coords="338,1489,537,1577">
+<area shape="rect" id="node23" href="embargo.html" target="_top" title="embargo" alt="" coords="356,1595,519,1683">
+<area shape="rect" id="node18" href="datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="925,1377,1164,1465">
+<area shape="rect" id="node19" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="955,1483,1134,1571">
+<area shape="rect" id="node20" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="956,1904,1133,1992">
+<area shape="rect" id="node21" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="918,1588,1171,1676">
+<area shape="rect" id="node24" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="917,2009,1172,2097">
+<area shape="rect" id="node25" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="922,2115,1167,2203">
+<area shape="rect" id="node26" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="930,851,1159,939">
+<area shape="rect" id="node27" href="depagents.html" target="_top" title="depagents" alt="" coords="957,357,1133,445">
+<area shape="rect" id="node28" href="eventchronology.html" target="_top" title="eventchronology" alt="" coords="1231,463,1459,551">
+<area shape="rect" id="node29" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="921,956,1168,1044">
+<area shape="rect" id="node30" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="940,1061,1149,1149">
+<area shape="rect" id="node31" href="isostandards.html" target="_top" title="isostandards" alt="" coords="947,1167,1143,1255">
+<area shape="rect" id="node32" href="lakeparameters.html" target="_top" title="lakeparameters" alt="" coords="328,500,547,588">
+<area shape="rect" id="node33" href="lithology.html" target="_top" title="lithology" alt="" coords="661,931,859,1077">
+<area shape="rect" id="node34" href="relativechronology.html" target="_top" title="relativechronology" alt="" coords="1223,268,1468,356">
+<area shape="rect" id="node35" href="repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="913,1272,1176,1360">
+<area shape="rect" id="node36" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1246,743,1445,831">
+<area shape="rect" id="node37" href="samples.html" target="_top" title="samples" alt="" coords="945,709,1144,797">
+<area shape="rect" id="node38" href="sitegeopolitical.html" target="_top" title="sitegeopolitical" alt="" coords="329,605,546,693">
+<area shape="rect" id="node39" href="siteimages.html" target="_top" title="siteimages" alt="" coords="670,1764,850,1852">
+<area shape="rect" id="node40" href="synonymy.html" target="_top" title="synonymy" alt="" coords="957,1799,1132,1887">
+<area shape="rect" id="node41" href="tephras.html" target="_top" title="tephras" alt="" coords="968,5,1121,93">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/collectionunits.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="656,5,864,181">
+<area shape="rect" id="node2" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="265,604,609,1260">
+<area shape="rect" id="node4" href="collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,692,221,809">
+<area shape="rect" id="node5" href="depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="12,827,215,973">
+<area shape="rect" id="node6" href="sites.html" target="_top" title="sites" alt="" coords="15,499,212,675">
+<area shape="rect" id="node7" href="rocktypes.html" target="_top" title="rocktypes" alt="" coords="11,991,215,1137">
+<area shape="rect" id="node3" href="chronologies.html" target="_top" title="chronologies" alt="" coords="653,199,867,463">
+<area shape="rect" id="node8" href="collectors.html" target="_top" title="collectors" alt="" coords="661,480,859,656">
+<area shape="rect" id="node9" href="datasets.html" target="_top" title="datasets" alt="" coords="661,673,859,879">
+<area shape="rect" id="node10" href="dslinks.html" target="_top" title="dslinks" alt="" coords="911,751,1100,873">
+<area shape="rect" id="node11" href="lithology.html" target="_top" title="lithology" alt="" coords="661,932,859,1079">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/collectionunits.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="923,633,1166,721">
+<area shape="rect" id="node2" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="656,387,864,563">
+<area shape="rect" id="node3" href="chronologies.html" target="_top" title="chronologies" alt="" coords="653,641,867,905">
+<area shape="rect" id="node6" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="265,987,609,1643">
+<area shape="rect" id="node7" href="faciestypes.html" target="_top" title="faciestypes" alt="" coords="345,449,530,537">
+<area shape="rect" id="node9" href="agetypes.html" target="_top" title="agetypes" alt="" coords="354,882,521,970">
+<area shape="rect" id="node10" href="contacts.html" target="_top" title="contacts" alt="" coords="338,2146,537,2234">
+<area shape="rect" id="node4" href="analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="911,175,1179,263">
+<area shape="rect" id="node5" href="analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="911,281,1178,369">
+<area shape="rect" id="node11" href="collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,1046,221,1163">
+<area shape="rect" id="node12" href="depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="12,1181,215,1327">
+<area shape="rect" id="node13" href="sites.html" target="_top" title="sites" alt="" coords="15,801,212,977">
+<area shape="rect" id="node14" href="rocktypes.html" target="_top" title="rocktypes" alt="" coords="11,1371,215,1518">
+<area shape="rect" id="node8" href="chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="943,527,1146,615">
+<area shape="rect" id="node15" href="collectors.html" target="_top" title="collectors" alt="" coords="661,1863,859,2039">
+<area shape="rect" id="node16" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="936,2377,1153,2465">
+<area shape="rect" id="node17" href="datasets.html" target="_top" title="datasets" alt="" coords="661,1599,859,1805">
+<area shape="rect" id="node22" href="datasettypes.html" target="_top" title="datasettypes" alt="" coords="338,1661,537,1749">
+<area shape="rect" id="node23" href="embargo.html" target="_top" title="embargo" alt="" coords="356,1766,519,1854">
+<area shape="rect" id="node18" href="datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="925,1499,1164,1587">
+<area shape="rect" id="node19" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="955,1605,1134,1693">
+<area shape="rect" id="node20" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="956,2482,1133,2570">
+<area shape="rect" id="node21" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="918,1710,1171,1798">
+<area shape="rect" id="node24" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="917,2061,1172,2149">
+<area shape="rect" id="node25" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="922,2166,1167,2254">
+<area shape="rect" id="node26" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="930,1815,1159,1903">
+<area shape="rect" id="node27" href="depagents.html" target="_top" title="depagents" alt="" coords="957,386,1133,474">
+<area shape="rect" id="node28" href="dsageranges.html" target="_top" title="dsageranges" alt="" coords="949,879,1141,943">
+<area shape="rect" id="node29" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1244,865,1447,929">
+<area shape="rect" id="node30" href="samples.html" target="_top" title="samples" alt="" coords="945,774,1144,862">
+<area shape="rect" id="node31" href="dslinks.html" target="_top" title="dslinks" alt="" coords="950,1921,1139,2043">
+<area shape="rect" id="node32" href="dssampdata.html" target="_top" title="dssampdata" alt="" coords="951,997,1139,1061">
+<area shape="rect" id="node33" href="eventchronology.html" target="_top" title="eventchronology" alt="" coords="1231,191,1459,279">
+<area shape="rect" id="node34" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="921,1078,1168,1166">
+<area shape="rect" id="node35" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="940,1183,1149,1271">
+<area shape="rect" id="node36" href="isostandards.html" target="_top" title="isostandards" alt="" coords="947,1289,1143,1377">
+<area shape="rect" id="node37" href="lakeparameters.html" target="_top" title="lakeparameters" alt="" coords="328,671,547,759">
+<area shape="rect" id="node38" href="lithology.html" target="_top" title="lithology" alt="" coords="661,961,859,1107">
+<area shape="rect" id="node39" href="relativechronology.html" target="_top" title="relativechronology" alt="" coords="1223,491,1468,579">
+<area shape="rect" id="node40" href="repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="913,1394,1176,1482">
+<area shape="rect" id="node41" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1246,730,1445,818">
+<area shape="rect" id="node42" href="sitegeopolitical.html" target="_top" title="sitegeopolitical" alt="" coords="329,777,546,865">
+<area shape="rect" id="node43" href="siteimages.html" target="_top" title="siteimages" alt="" coords="670,2058,850,2146">
+<area shape="rect" id="node44" href="synonymy.html" target="_top" title="synonymy" alt="" coords="957,2271,1132,2359">
+<area shape="rect" id="node45" href="tephras.html" target="_top" title="tephras" alt="" coords="968,70,1121,158">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/collectionunits.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
         </div>
+        <!-- ./wrapper -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
-			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
-			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
-			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
-			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
-			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
-			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-        <!-- Navbar Right Menu -->
-
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  </header>
-  <!-- Main content -->
-  <!-- Full Width Column -->
-  <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>collectionunits</h1></br>
-		      </section>
-      <!-- Main content -->
-      <section class="content">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-              <h3 id="Columns" class="box-title">Columns</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-            <div class="box-body">
-				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead align='left'>
-				<tr>
-				  <th>Column</th>
-				  <th>Type</th>
-				  <th>Size</th>
-				  <th title='Are nulls allowed?'>Nulls</th>
-				  <th title='Is column automatically updated?'>Auto</th>
-				  <th title='Default value'>Default</th>
-				  <th title='Columns in tables that reference this column'>Children</th>
-				  <th title='Columns in tables that are referenced by this column'>Parents</th>
-				  <th title='Comments' class="toggle"><span>Comments</span></th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="collectionunitid">collectionunitid</span></td>
-				 <td>serial</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title='Automatically updated by the database'>√</td>
-				 <td>nextval(&#39;ndb.seq_collectionunits_collectionunitid&#39;::regclass)</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="analysisunits.collectionunitid references collectionunits.collectionunitid via analysisunits_collectionunitid_fkey">
-						<a href='analysisunits.html'>analysisunits</a><span class='relatedKey'>.collectionunitid</span>
-					</td>
-					<td class="constraint detail">
-						analysisunits_collectionunitid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="chronologies.collectionunitid references collectionunits.collectionunitid via chronologies_collectionunitid_fkey">
-						<a href='chronologies.html'>chronologies</a><span class='relatedKey'>.collectionunitid</span>
-					</td>
-					<td class="constraint detail">
-						chronologies_collectionunitid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="collectors.collectionunitid references collectionunits.collectionunitid via collectors_collectionunitid_fkey">
-						<a href='collectors.html'>collectors</a><span class='relatedKey'>.collectionunitid</span>
-					</td>
-					<td class="constraint detail">
-						collectors_collectionunitid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="datasets.collectionunitid references collectionunits.collectionunitid via datasets_collectionunitid_fkey">
-						<a href='datasets.html'>datasets</a><span class='relatedKey'>.collectionunitid</span>
-					</td>
-					<td class="constraint detail">
-						datasets_collectionunitid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="dslinks.collectionunitid&#39;s name implies that it&#39;s a child of collectionunits.collectionunitid, but it doesn&#39;t reference that column.">
-						<a href='dslinks.html'>dslinks</a><span class='relatedKey'>.collectionunitid</span>
-					</td>
-					<td class="constraint detail">
-						Implied Constraint <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="lithology.collectionunitid references collectionunits.collectionunitid via lithology_collectionunitid_fkey">
-						<a href='lithology.html'>lithology</a><span class='relatedKey'>.collectionunitid</span>
-					</td>
-					<td class="constraint detail">
-						lithology_collectionunitid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>An arbitrary Collection Unit identification number.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="handle">handle</span></td>
-				 <td>varchar</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Code name for the Collection Unit. This code may be up to 10 characters, but an effort is made to keep these to 8 characters or less. Data are frequently distributed by Collection Unit, and the Handle is used for file names.</p></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="siteid">siteid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="collectionunits.siteid references sites.siteid via collectionunits_siteid_fkey">
-						<a href='sites.html'>sites</a><span class='relatedKey'>.siteid</span>
-					</td>
-					<td class="constraint detail">
-						collectionunits_siteid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td><p>Site where CollectionUnit was located. Field links to Sites table.</p></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="colltypeid">colltypeid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="collectionunits.colltypeid references collectiontypes.colltypeid via collectionunits_colltypeid_fkey1">
-						<a href='collectiontypes.html'>collectiontypes</a><span class='relatedKey'>.colltypeid</span>
-					</td>
-					<td class="constraint detail">
-						collectionunits_colltypeid_fkey1 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td><p>Type of Collection Unit. Field links to the CollectionTypes table.</p></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="depenvtid">depenvtid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="collectionunits.depenvtid references depenvttypes.depenvtid via collectionunits_depenvtid_fkey1">
-						<a href='depenvttypes.html'>depenvttypes</a><span class='relatedKey'>.depenvtid</span>
-					</td>
-					<td class="constraint detail">
-						collectionunits_depenvtid_fkey1 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td><p>Depositional environment of the CollectionUnit. Normally, this key refers to the modern environment. For example, the site may be located on a colluvial slope, in which case the Depositional Environment may be Colluvium or Colluvial Fan. However, an excavation may extend into alluvial sediments, which represent a different depositional environment. These are accounted for by the Facies of the AnalysisUnit. Field links to the DepEnvtTypes table.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="collunitname">collunitname</span></td>
-				 <td>varchar</td>
-				 <td>255</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Name of the Collection Unit. Examples: Core BPT82A, Structure 9, P4A Test 57. If faunal data are reported from a site or locality without explicit Collection Units, then data are assigned to a single Collection Unit with the name «Locality».</p></td>
-				</tr>
-				<tr>
-				 <td><span id="colldate">colldate</span></td>
-				 <td>date</td>
-				 <td>13</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Date Collection Unit was collected.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="colldevice">colldevice</span></td>
-				 <td>varchar</td>
-				 <td>255</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Device used for obtain Collection Unit. This field applies primarily to cores, for example «Wright square-rod piston corer (5 cm)».</p></td>
-				</tr>
-				<tr>
-				 <td><span id="gpslatitude">gpslatitude</span></td>
-				 <td>float8</td>
-				 <td>17,17</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Precise latitude of the Collection Unit, typically taken with a GPS, although may be precisely measured from a map.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="gpslongitude">gpslongitude</span></td>
-				 <td>float8</td>
-				 <td>17,17</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Precise longitude of the Collection Unit, typically taken with a GPS, although may be precisely measured from a map.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="gpsaltitude">gpsaltitude</span></td>
-				 <td>float8</td>
-				 <td>17,17</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Precise altitude of the Collection Unit, typically taken with a GPS or precisely obtained from a map.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="gpserror">gpserror</span></td>
-				 <td>float8</td>
-				 <td>17,17</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Error in the horizontal GPS coordinates, if known.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="waterdepth">waterdepth</span></td>
-				 <td>float8</td>
-				 <td>17,17</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Depth of water at the Collection Unit location. This field applies mainly to Collection Units from lakes.</p></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="substrateid">substrateid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="collectionunits.substrateid references rocktypes.rocktypeid via collectionunits_substrateid_fkey1">
-						<a href='rocktypes.html'>rocktypes</a><span class='relatedKey'>.rocktypeid</span>
-					</td>
-					<td class="constraint detail">
-						collectionunits_substrateid_fkey1 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td><p>Substrate or rock type on which the Collection Unit lies. Field links to the RockTypes table. This field is especially used for rodent middens.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="slopeaspect">slopeaspect</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>For Collection Units on slopes, the horizontal direction to which a slope faces measured in degrees clockwise from north. This field is especially used for rodent middens.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="slopeangle">slopeangle</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>For Collection Units on slopes, the angle of slope from horizontal. field is especially used for rodent middens.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="location">location</span></td>
-				 <td>varchar</td>
-				 <td>255</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>description of the location of the Collection Unit within the site.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="notes">notes</span></td>
-				 <td>text</td>
-				 <td>2147483647</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td><p>Free form notes or comments about the Collection Unit.</p></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatecreated">recdatecreated</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>timezone(&#39;UTC&#39;::text, now())</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatemodified">recdatemodified</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-								</tbody>
-				</table>
-				<p title='20 columns'>Table contained <span id="recordNumber">20568</span> rows<p/>
-			</div>
-		</div>
-		<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-sitemap"></i>
-
-              <h3 id="Indexes" class="box-title">Indexes</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">
-				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead>
-				 <tr>
-				  <th>Constraint Name</th>
-				  <th>Type</th>
-				  <th>Sort</th>
-				  <th>Column(s)</th>
-				 </tr>
-				</thead>
-				<tbody>
-				 <tr>
-				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> collectionunits_pkey</td>
-				  <td>Primary key</td>
-				  <td><span title='Ascending'>Asc</span></td>
-				  <td>collectionunitid</td>
-				 </tr>				 
-				</tbody>
-				</table>   			  
-			</div><!-- /.box-body -->
-		</div>
-				<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-code-fork"></i>
-
-              <h3 id="Relationships" class="box-title">Relationships</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">	
-			<div class="nav-tabs-custom" style="cursor: move;">
-            <!-- Tabs within a box -->
-			<h5>Close relationships within degrees of separation</h5>
-            <ul class="nav nav-tabs pull-left ui-sortable-handle">
-			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
-			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
-			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
-			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
-            </ul>
-            <div class="tab-content no-padding">            
-				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="analysisunits.html" title="analysisunits" alt="" coords="623,5,831,181">
-<area shape="rect" id="node2" href="collectionunits.html" title="collectionunits" alt="" coords="253,448,576,1104">
-<area shape="rect" id="node4" href="collectiontypes.html" title="collectiontypes" alt="" coords="9,539,206,656">
-<area shape="rect" id="node5" href="depenvttypes.html" title="depenvttypes" alt="" coords="8,673,207,791">
-<area shape="rect" id="node6" href="sites.html" title="sites" alt="" coords="9,404,206,521">
-<area shape="rect" id="node7" href="rocktypes.html" title="rocktypes" alt="" coords="5,832,209,949">
-<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="620,199,833,404">
-<area shape="rect" id="node8" href="collectors.html" title="collectors" alt="" coords="628,421,825,597">
-<area shape="rect" id="node9" href="datasets.html" title="datasets" alt="" coords="628,615,825,820">
-<area shape="rect" id="node10" href="lithology.html" title="lithology" alt="" coords="628,837,825,984">
-</map>
-
-					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/collectionunits.1degree.svg' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="1145,268,1355,356">
-<area shape="rect" id="node2" href="analysisunits.html" title="analysisunits" alt="" coords="620,355,828,531">
-<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="880,640,1093,845">
-<area shape="rect" id="node6" href="collectionunits.html" title="collectionunits" alt="" coords="253,1039,576,1695">
-<area shape="rect" id="node7" href="faciestypes.html" title="faciestypes" alt="" coords="335,416,495,504">
-<area shape="rect" id="node9" href="agetypes.html" title="agetypes" alt="" coords="652,635,796,723">
-<area shape="rect" id="node10" href="contacts.html" title="contacts" alt="" coords="640,1267,808,1355">
-<area shape="rect" id="node4" href="analysisunitaltdepths.html" title="analysisunitaltdepths" alt="" coords="872,147,1101,235">
-<area shape="rect" id="node5" href="analysisunitlithostrat.html" title="analysisunitlithostrat" alt="" coords="873,252,1101,340">
-<area shape="rect" id="node11" href="collectiontypes.html" title="collectiontypes" alt="" coords="9,1077,206,1195">
-<area shape="rect" id="node12" href="depenvttypes.html" title="depenvttypes" alt="" coords="8,1212,207,1329">
-<area shape="rect" id="node13" href="sites.html" title="sites" alt="" coords="9,848,206,965">
-<area shape="rect" id="node14" href="rocktypes.html" title="rocktypes" alt="" coords="5,1423,209,1540">
-<area shape="rect" id="node8" href="chroncontrols.html" title="chroncontrols" alt="" coords="1160,567,1340,655">
-<area shape="rect" id="node15" href="collectors.html" title="collectors" alt="" coords="888,1073,1085,1249">
-<area shape="rect" id="node16" href="dataprocessors.html" title="dataprocessors" alt="" coords="892,1267,1081,1355">
-<area shape="rect" id="node17" href="datasets.html" title="datasets" alt="" coords="625,1791,823,1996">
-<area shape="rect" id="node22" href="datasettypes.html" title="datasettypes" alt="" coords="330,1815,499,1903">
-<area shape="rect" id="node23" href="embargo.html" title="embargo" alt="" coords="343,1920,486,2008">
-<area shape="rect" id="node18" href="datasetdatabases.html" title="datasetdatabases" alt="" coords="885,1899,1088,1987">
-<area shape="rect" id="node19" href="datasetdoi.html" title="datasetdoi" alt="" coords="910,2004,1063,2092">
-<area shape="rect" id="node20" href="datasetpis.html" title="datasetpis" alt="" coords="909,1372,1065,1460">
-<area shape="rect" id="node21" href="datasetpublications.html" title="datasetpublications" alt="" coords="878,2109,1095,2197">
-<area shape="rect" id="node24" href="datasetsubmissions.html" title="datasetsubmissions" alt="" coords="876,1477,1097,1565">
-<area shape="rect" id="node25" href="datasettaxonnotes.html" title="datasettaxonnotes" alt="" coords="882,1583,1091,1671">
-<area shape="rect" id="node26" href="datasetvariables.html" title="datasetvariables" alt="" coords="889,2215,1084,2303">
-<area shape="rect" id="node27" href="depagents.html" title="depagents" alt="" coords="910,357,1063,445">
-<area shape="rect" id="node28" href="isoinstrumentation.html" title="isoinstrumentation" alt="" coords="880,2320,1093,2408">
-<area shape="rect" id="node29" href="isosrmetadata.html" title="isosrmetadata" alt="" coords="897,2425,1077,2513">
-<area shape="rect" id="node30" href="isostandards.html" title="isostandards" alt="" coords="901,2531,1073,2619">
-<area shape="rect" id="node31" href="lakeparameters.html" title="lakeparameters" alt="" coords="321,711,509,799">
-<area shape="rect" id="node32" href="lithology.html" title="lithology" alt="" coords="625,1372,823,1519">
-<area shape="rect" id="node33" href="relativechronology.html" title="relativechronology" alt="" coords="881,463,1093,551">
-<area shape="rect" id="node34" href="repositoryspecimens.html" title="repositoryspecimens" alt="" coords="873,1793,1101,1881">
-<area shape="rect" id="node35" href="sampleages.html" title="sampleages" alt="" coords="1162,820,1338,908">
-<area shape="rect" id="node36" href="samples.html" title="samples" alt="" coords="899,968,1075,1056">
-<area shape="rect" id="node37" href="sitegeopolitical.html" title="sitegeopolitical" alt="" coords="321,816,508,904">
-<area shape="rect" id="node38" href="siteimages.html" title="siteimages" alt="" coords="909,863,1065,951">
-<area shape="rect" id="node39" href="synonymy.html" title="synonymy" alt="" coords="909,1688,1065,1776">
-<area shape="rect" id="node40" href="tephras.html" title="tephras" alt="" coords="920,5,1053,93">
-</map>
-
-					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/collectionunits.2degrees.svg' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="analysisunits.html" title="analysisunits" alt="" coords="623,5,831,181">
-<area shape="rect" id="node2" href="collectionunits.html" title="collectionunits" alt="" coords="253,545,576,1201">
-<area shape="rect" id="node4" href="collectiontypes.html" title="collectiontypes" alt="" coords="9,636,206,753">
-<area shape="rect" id="node5" href="depenvttypes.html" title="depenvttypes" alt="" coords="8,771,207,888">
-<area shape="rect" id="node6" href="sites.html" title="sites" alt="" coords="9,501,206,619">
-<area shape="rect" id="node7" href="rocktypes.html" title="rocktypes" alt="" coords="5,929,209,1047">
-<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="620,199,833,404">
-<area shape="rect" id="node8" href="collectors.html" title="collectors" alt="" coords="628,421,825,597">
-<area shape="rect" id="node9" href="datasets.html" title="datasets" alt="" coords="628,615,825,820">
-<area shape="rect" id="node10" href="dslinks.html" title="dslinks" alt="" coords="877,692,1067,815">
-<area shape="rect" id="node11" href="lithology.html" title="lithology" alt="" coords="628,873,825,1020">
-</map>
-
-					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/collectionunits.implied1degrees.svg' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="1145,2160,1355,2248">
-<area shape="rect" id="node2" href="analysisunits.html" title="analysisunits" alt="" coords="620,408,828,584">
-<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="880,2477,1093,2683">
-<area shape="rect" id="node6" href="collectionunits.html" title="collectionunits" alt="" coords="253,2047,576,2703">
-<area shape="rect" id="node7" href="faciestypes.html" title="faciestypes" alt="" coords="335,469,495,557">
-<area shape="rect" id="node9" href="agetypes.html" title="agetypes" alt="" coords="652,1983,796,2071">
-<area shape="rect" id="node10" href="contacts.html" title="contacts" alt="" coords="640,2267,808,2355">
-<area shape="rect" id="node4" href="analysisunitaltdepths.html" title="analysisunitaltdepths" alt="" coords="872,111,1101,199">
-<area shape="rect" id="node5" href="analysisunitlithostrat.html" title="analysisunitlithostrat" alt="" coords="873,216,1101,304">
-<area shape="rect" id="node11" href="collectiontypes.html" title="collectiontypes" alt="" coords="9,2085,206,2203">
-<area shape="rect" id="node12" href="depenvttypes.html" title="depenvttypes" alt="" coords="8,2220,207,2337">
-<area shape="rect" id="node13" href="sites.html" title="sites" alt="" coords="9,2769,206,2887">
-<area shape="rect" id="node14" href="rocktypes.html" title="rocktypes" alt="" coords="5,2431,209,2548">
-<area shape="rect" id="node8" href="chroncontrols.html" title="chroncontrols" alt="" coords="1160,1983,1340,2071">
-<area shape="rect" id="node15" href="collectors.html" title="collectors" alt="" coords="888,2700,1085,2876">
-<area shape="rect" id="node16" href="dataprocessors.html" title="dataprocessors" alt="" coords="892,2372,1081,2460">
-<area shape="rect" id="node17" href="datasets.html" title="datasets" alt="" coords="625,1533,823,1739">
-<area shape="rect" id="node22" href="datasettypes.html" title="datasettypes" alt="" coords="330,1556,499,1644">
-<area shape="rect" id="node23" href="embargo.html" title="embargo" alt="" coords="343,1661,486,1749">
-<area shape="rect" id="node18" href="datasetdatabases.html" title="datasetdatabases" alt="" coords="885,1272,1088,1360">
-<area shape="rect" id="node19" href="datasetdoi.html" title="datasetdoi" alt="" coords="910,1377,1063,1465">
-<area shape="rect" id="node20" href="datasetpis.html" title="datasetpis" alt="" coords="909,1915,1065,2003">
-<area shape="rect" id="node21" href="datasetpublications.html" title="datasetpublications" alt="" coords="878,1483,1095,1571">
-<area shape="rect" id="node24" href="datasetsubmissions.html" title="datasetsubmissions" alt="" coords="876,2056,1097,2144">
-<area shape="rect" id="node25" href="datasettaxonnotes.html" title="datasettaxonnotes" alt="" coords="882,2161,1091,2249">
-<area shape="rect" id="node26" href="datasetvariables.html" title="datasetvariables" alt="" coords="889,1588,1084,1676">
-<area shape="rect" id="node27" href="depagents.html" title="depagents" alt="" coords="910,357,1063,445">
-<area shape="rect" id="node28" href="dsageranges.html" title="dsageranges" alt="" coords="903,1833,1071,1897">
-<area shape="rect" id="node29" href="dsdatasample.html" title="dsdatasample" alt="" coords="1163,709,1337,773">
-<area shape="rect" id="node30" href="samples.html" title="samples" alt="" coords="899,745,1075,833">
-<area shape="rect" id="node31" href="dslinks.html" title="dslinks" alt="" coords="892,1693,1081,1816">
-<area shape="rect" id="node32" href="eventchronology.html" title="eventchronology" alt="" coords="887,463,1086,551">
-<area shape="rect" id="node33" href="isoinstrumentation.html" title="isoinstrumentation" alt="" coords="880,851,1093,939">
-<area shape="rect" id="node34" href="isosrmetadata.html" title="isosrmetadata" alt="" coords="897,956,1077,1044">
-<area shape="rect" id="node35" href="isostandards.html" title="isostandards" alt="" coords="901,1061,1073,1149">
-<area shape="rect" id="node36" href="lakeparameters.html" title="lakeparameters" alt="" coords="321,2720,509,2808">
-<area shape="rect" id="node37" href="lithology.html" title="lithology" alt="" coords="625,2408,823,2555">
-<area shape="rect" id="node38" href="relativechronology.html" title="relativechronology" alt="" coords="881,568,1093,656">
-<area shape="rect" id="node39" href="repositoryspecimens.html" title="repositoryspecimens" alt="" coords="873,1167,1101,1255">
-<area shape="rect" id="node40" href="sampleages.html" title="sampleages" alt="" coords="1162,2408,1338,2496">
-<area shape="rect" id="node41" href="sitegeopolitical.html" title="sitegeopolitical" alt="" coords="321,2825,508,2913">
-<area shape="rect" id="node42" href="siteimages.html" title="siteimages" alt="" coords="909,2893,1065,2981">
-<area shape="rect" id="node43" href="synonymy.html" title="synonymy" alt="" coords="909,2267,1065,2355">
-<area shape="rect" id="node44" href="tephras.html" title="tephras" alt="" coords="920,5,1053,93">
-</map>
-
-					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/collectionunits.implied2degrees.svg' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-			  			</div>
-			</div>
-		  </div><!-- /.box-body -->
-		</div>
-	      </section>
-    
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div>
-      <div class="pull-right hidden-xs">
-        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
-        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
-      </div>
-      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
-    </div>
-    <!-- /.container -->
-  </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 2.2.3 -->
-<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
-<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
-<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
-
-<!-- SlimScroll -->
-<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
-<!-- Salvattore -->
-<script src="../bower/salvattore/salvattore.min.js"></script>
-<!-- AnchorJS -->
-<script src="../bower/anchor-js/anchor.min.js"></script>
-<!-- CodeMirror -->
-<script src="../bower/codemirror/codemirror.js"></script>
-<script src="../bower/codemirror/sql.js"></script>
-<!-- AdminLTE App -->
-<script src="../bower/admin-lte/dist/js/app.min.js"></script>
-<script src="table.js"></script>
-<script src="../schemaSpy.js"></script>
-</body>
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
 </html>

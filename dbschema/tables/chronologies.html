@@ -1,601 +1,604 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>chronologies - neotomadev Database</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-  <!-- Code Mirror -->
-  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
-  <!-- Fonts -->
-  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
-  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>chronologies - neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
-  <!-- Salvattore -->
-  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
-  <!-- SchemaSpy -->
-  <link rel="stylesheet" href="../schemaSpy.css">
-  
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="../bower/html5shiv/html5shiv.min.js"></script>
-  <script src="../bower/respond/respond.min.js"></script>
-  <![endif]-->
-</head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
-  <header class="main-header">
-    <nav class="navbar navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../index.html" class="navbar-brand"><b>neotomadev</b> Database</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>chronologies</h1><p><span id="recordNumber">25218</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="chronologyid">chronologyid</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;ndb.seq_chronologies_chronologyid&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="accumulationrates.chronologyid references chronologies.chronologyid via fk_accumulationrates_chronologies"><a href='accumulationrates.html'>accumulationrates</a><span class='relatedKey'>.chronologyid</span></td>
+                                                <td class="constraint detail">fk_accumulationrates_chronologies<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="chroncontrols.chronologyid references chronologies.chronologyid via fk_chroncontrols_chronologies"><a href='chroncontrols.html'>chroncontrols</a><span class='relatedKey'>.chronologyid</span></td>
+                                                <td class="constraint detail">fk_chroncontrols_chronologies<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sampleages.chronologyid references chronologies.chronologyid via fk_sampleages_chronologies"><a href='sampleages.html'>sampleages</a><span class='relatedKey'>.chronologyid</span></td>
+                                                <td class="constraint detail">fk_sampleages_chronologies<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="collectionunitid">collectionunitid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="chronologies.collectionunitid references collectionunits.collectionunitid via fk_chronologies_collectionunits"><a href='collectionunits.html'>collectionunits</a><span class='relatedKey'>.collectionunitid</span></td>
+                                                <td class="constraint detail">fk_chronologies_collectionunits<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="agetypeid">agetypeid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="chronologies.agetypeid references agetypes.agetypeid via fk_chronologies_agetypes"><a href='agetypes.html'>agetypes</a><span class='relatedKey'>.agetypeid</span></td>
+                                                <td class="constraint detail">fk_chronologies_agetypes<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="contactid">contactid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="chronologies.contactid references contacts.contactid via fk_chronologies_contacts"><a href='contacts.html'>contacts</a><span class='relatedKey'>.contactid</span></td>
+                                                <td class="constraint detail">fk_chronologies_contacts<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="isdefault">isdefault</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="chronologyname">chronologyname</span></td>
+                                    <td>varchar</td>
+                                    <td>80</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="dateprepared">dateprepared</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="agemodel">agemodel</span></td>
+                                    <td>varchar</td>
+                                    <td>80</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="ageboundyounger">ageboundyounger</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="ageboundolder">ageboundolder</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="notes">notes</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatecreated">recdatecreated</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>timezone(&#39;UTC&#39;::text, now())</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatemodified">recdatemodified</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> chronologies_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>chronologyid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>chroldage_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>ageboundolder</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>chryoungage_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>ageboundyounger</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>oldage_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>ageboundolder</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>youngage_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>ageboundyounger</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="664,287,907,463">
+<area shape="rect" id="node2" href="chronologies.html" target="_top" title="chronologies" alt="" coords="260,299,620,749">
+<area shape="rect" id="node4" href="agetypes.html" target="_top" title="agetypes" alt="" coords="12,691,209,808">
+<area shape="rect" id="node5" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,173,216,408">
+<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="11,425,210,601">
+<area shape="rect" id="node3" href="chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="675,493,896,816">
+<area shape="rect" id="node7" href="sampleages.html" target="_top" title="sampleages" alt="" coords="686,5,885,269">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/chronologies.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="937,504,1179,680">
+<area shape="rect" id="node2" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="607,850,806,938">
+<area shape="rect" id="node3" href="chronologies.html" target="_top" title="chronologies" alt="" coords="527,276,887,727">
+<area shape="rect" id="node4" href="variableunits.html" target="_top" title="variableunits" alt="" coords="607,744,806,832">
+<area shape="rect" id="node9" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="272,1004,483,1239">
+<area shape="rect" id="node6" href="agetypes.html" target="_top" title="agetypes" alt="" coords="279,183,476,300">
+<area shape="rect" id="node14" href="contacts.html" target="_top" title="contacts" alt="" coords="278,1708,477,1884">
+<area shape="rect" id="node5" href="aggregatechronologies.html" target="_top" title="aggregatechronologies" alt="" coords="1229,26,1508,114">
+<area shape="rect" id="node7" href="aggregatesampleages.html" target="_top" title="aggregatesampleages" alt="" coords="1552,375,1824,463">
+<area shape="rect" id="node8" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1269,631,1468,895">
+<area shape="rect" id="node32" href="samples.html" target="_top" title="samples" alt="" coords="959,1007,1157,1095">
+<area shape="rect" id="node15" href="collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="9,1066,225,1154">
+<area shape="rect" id="node16" href="depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="15,1171,218,1259">
+<area shape="rect" id="node17" href="sites.html" target="_top" title="sites" alt="" coords="30,960,203,1048">
+<area shape="rect" id="node18" href="rocktypes.html" target="_top" title="rocktypes" alt="" coords="31,1276,203,1364">
+<area shape="rect" id="node10" href="chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1249,131,1489,219">
+<area shape="rect" id="node11" href="chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="947,128,1169,451">
+<area shape="rect" id="node12" href="chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="587,99,827,187">
+<area shape="rect" id="node13" href="chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1241,236,1497,324">
+<area shape="rect" id="node21" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="5,1740,228,1828">
+<area shape="rect" id="node19" href="collectors.html" target="_top" title="collectors" alt="" coords="620,1166,793,1254">
+<area shape="rect" id="node20" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="572,2119,841,2207">
+<area shape="rect" id="node22" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="949,1200,1167,1288">
+<area shape="rect" id="node23" href="datasets.html" target="_top" title="datasets" alt="" coords="607,1060,806,1148">
+<area shape="rect" id="node24" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="969,1323,1147,1411">
+<area shape="rect" id="node25" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="931,2083,1185,2171">
+<area shape="rect" id="node26" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="935,1800,1181,1888">
+<area shape="rect" id="node27" href="taxa.html" target="_top" title="taxa" alt="" coords="607,1906,806,1994">
+<area shape="rect" id="node28" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="597,1554,816,1642">
+<area shape="rect" id="node29" href="eventchronology.html" target="_top" title="eventchronology" alt="" coords="1255,503,1483,591">
+<area shape="rect" id="node30" href="geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1571,567,1805,655">
+<area shape="rect" id="node31" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1263,912,1474,1000">
+<area shape="rect" id="node33" href="isometadata.html" target="_top" title="isometadata" alt="" coords="610,2224,803,2312">
+<area shape="rect" id="node34" href="lithology.html" target="_top" title="lithology" alt="" coords="620,955,793,1043">
+<area shape="rect" id="node35" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="585,1412,829,1500">
+<area shape="rect" id="node36" href="relativechronology.html" target="_top" title="relativechronology" alt="" coords="1246,386,1491,474">
+<area shape="rect" id="node37" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1259,1535,1478,1623">
+<area shape="rect" id="node38" href="siteimages.html" target="_top" title="siteimages" alt="" coords="617,1271,797,1359">
+<area shape="rect" id="node39" href="synonymy.html" target="_top" title="synonymy" alt="" coords="971,1906,1145,1994">
+<area shape="rect" id="node40" title="ti.stewards" alt="" coords="615,1659,799,1747">
+<area shape="rect" id="node41" title="ti.stewardupdates" alt="" coords="586,1764,827,1852">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/chronologies.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="664,287,907,463">
+<area shape="rect" id="node2" href="chronologies.html" target="_top" title="chronologies" alt="" coords="260,299,620,749">
+<area shape="rect" id="node4" href="agetypes.html" target="_top" title="agetypes" alt="" coords="12,691,209,808">
+<area shape="rect" id="node5" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,173,216,408">
+<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="11,425,210,601">
+<area shape="rect" id="node3" href="chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="675,493,896,816">
+<area shape="rect" id="node7" href="sampleages.html" target="_top" title="sampleages" alt="" coords="686,5,885,269">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/chronologies.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="937,723,1179,899">
+<area shape="rect" id="node2" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="607,915,806,1003">
+<area shape="rect" id="node3" href="chronologies.html" target="_top" title="chronologies" alt="" coords="527,341,887,792">
+<area shape="rect" id="node4" href="variableunits.html" target="_top" title="variableunits" alt="" coords="607,809,806,897">
+<area shape="rect" id="node9" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="272,1113,483,1348">
+<area shape="rect" id="node6" href="agetypes.html" target="_top" title="agetypes" alt="" coords="279,265,476,383">
+<area shape="rect" id="node14" href="contacts.html" target="_top" title="contacts" alt="" coords="278,1845,477,2021">
+<area shape="rect" id="node5" href="aggregatechronologies.html" target="_top" title="aggregatechronologies" alt="" coords="1229,5,1508,93">
+<area shape="rect" id="node7" href="aggregatesampleages.html" target="_top" title="aggregatesampleages" alt="" coords="1552,164,1824,252">
+<area shape="rect" id="node8" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1269,673,1468,937">
+<area shape="rect" id="node34" href="samples.html" target="_top" title="samples" alt="" coords="959,1201,1157,1289">
+<area shape="rect" id="node15" href="collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="9,1092,225,1180">
+<area shape="rect" id="node16" href="depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="15,1197,218,1285">
+<area shape="rect" id="node17" href="sites.html" target="_top" title="sites" alt="" coords="30,1408,203,1496">
+<area shape="rect" id="node18" href="rocktypes.html" target="_top" title="rocktypes" alt="" coords="31,1303,203,1391">
+<area shape="rect" id="node10" href="chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1249,111,1489,199">
+<area shape="rect" id="node11" href="chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="947,160,1169,483">
+<area shape="rect" id="node12" href="chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="587,164,827,252">
+<area shape="rect" id="node13" href="chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1241,216,1497,304">
+<area shape="rect" id="node21" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="5,1877,228,1965">
+<area shape="rect" id="node19" href="collectors.html" target="_top" title="collectors" alt="" coords="620,1303,793,1391">
+<area shape="rect" id="node20" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="572,2043,841,2131">
+<area shape="rect" id="node22" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="949,1359,1167,1447">
+<area shape="rect" id="node23" href="datasets.html" target="_top" title="datasets" alt="" coords="607,1197,806,1285">
+<area shape="rect" id="node24" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="969,1568,1147,1656">
+<area shape="rect" id="node25" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="931,1969,1185,2057">
+<area shape="rect" id="node26" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="935,2079,1181,2167">
+<area shape="rect" id="node27" href="taxa.html" target="_top" title="taxa" alt="" coords="607,2184,806,2272">
+<area shape="rect" id="node28" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="597,1691,816,1779">
+<area shape="rect" id="node29" href="dsageranges.html" target="_top" title="dsageranges" alt="" coords="962,1013,1154,1077">
+<area shape="rect" id="node30" href="dslinks.html" target="_top" title="dslinks" alt="" coords="985,1120,1131,1184">
+<area shape="rect" id="node31" href="eventchronology.html" target="_top" title="eventchronology" alt="" coords="1255,463,1483,551">
+<area shape="rect" id="node32" href="geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1571,427,1805,515">
+<area shape="rect" id="node33" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1263,568,1474,656">
+<area shape="rect" id="node35" href="isometadata.html" target="_top" title="isometadata" alt="" coords="610,1796,803,1884">
+<area shape="rect" id="node36" href="lithology.html" target="_top" title="lithology" alt="" coords="620,1056,793,1144">
+<area shape="rect" id="node37" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="585,1901,829,1989">
+<area shape="rect" id="node38" href="relativechronology.html" target="_top" title="relativechronology" alt="" coords="1246,357,1491,445">
+<area shape="rect" id="node39" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1259,1797,1478,1885">
+<area shape="rect" id="node40" href="siteimages.html" target="_top" title="siteimages" alt="" coords="617,1408,797,1496">
+<area shape="rect" id="node41" href="synonymy.html" target="_top" title="synonymy" alt="" coords="971,2184,1145,2272">
+<area shape="rect" id="node42" title="ti.stewards" alt="" coords="615,2289,799,2377">
+<area shape="rect" id="node43" title="ti.stewardupdates" alt="" coords="586,1549,827,1637">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/chronologies.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
         </div>
+        <!-- ./wrapper -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
-			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
-			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
-			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
-			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
-			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
-			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-        <!-- Navbar Right Menu -->
-
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  </header>
-  <!-- Main content -->
-  <!-- Full Width Column -->
-  <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>chronologies</h1></br>
-		      </section>
-      <!-- Main content -->
-      <section class="content">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-              <h3 id="Columns" class="box-title">Columns</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-            <div class="box-body">
-				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead align='left'>
-				<tr>
-				  <th>Column</th>
-				  <th>Type</th>
-				  <th>Size</th>
-				  <th title='Are nulls allowed?'>Nulls</th>
-				  <th title='Is column automatically updated?'>Auto</th>
-				  <th title='Default value'>Default</th>
-				  <th title='Columns in tables that reference this column'>Children</th>
-				  <th title='Columns in tables that are referenced by this column'>Parents</th>
-				  <th title='Comments' class="toggle"><span>Comments</span></th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="chronologyid">chronologyid</span></td>
-				 <td>serial</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title='Automatically updated by the database'>√</td>
-				 <td>nextval(&#39;ndb.seq_chronologies_chronologyid&#39;::regclass)</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="accumulationrates.chronologyid references chronologies.chronologyid via accumulationrates_chronologyid_fkey">
-						<a href='accumulationrates.html'>accumulationrates</a><span class='relatedKey'>.chronologyid</span>
-					</td>
-					<td class="constraint detail">
-						accumulationrates_chronologyid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="chroncontrols.chronologyid references chronologies.chronologyid via chroncontrols_chronologyid_fkey">
-						<a href='chroncontrols.html'>chroncontrols</a><span class='relatedKey'>.chronologyid</span>
-					</td>
-					<td class="constraint detail">
-						chroncontrols_chronologyid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="sampleages.chronologyid references chronologies.chronologyid via sampleages_chronologyid_fkey">
-						<a href='sampleages.html'>sampleages</a><span class='relatedKey'>.chronologyid</span>
-					</td>
-					<td class="constraint detail">
-						sampleages_chronologyid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="collectionunitid">collectionunitid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="chronologies.collectionunitid references collectionunits.collectionunitid via chronologies_collectionunitid_fkey">
-						<a href='collectionunits.html'>collectionunits</a><span class='relatedKey'>.collectionunitid</span>
-					</td>
-					<td class="constraint detail">
-						chronologies_collectionunitid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="agetypeid">agetypeid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="chronologies.agetypeid references agetypes.agetypeid via chronologies_agetypeid_fkey">
-						<a href='agetypes.html'>agetypes</a><span class='relatedKey'>.agetypeid</span>
-					</td>
-					<td class="constraint detail">
-						chronologies_agetypeid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="contactid">contactid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="chronologies.contactid references contacts.contactid via chronologies_contactid_fkey">
-						<a href='contacts.html'>contacts</a><span class='relatedKey'>.contactid</span>
-					</td>
-					<td class="constraint detail">
-						chronologies_contactid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="isdefault">isdefault</span></td>
-				 <td>bool</td>
-				 <td>1</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="chronologyname">chronologyname</span></td>
-				 <td>varchar</td>
-				 <td>80</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="dateprepared">dateprepared</span></td>
-				 <td>date</td>
-				 <td>13</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="agemodel">agemodel</span></td>
-				 <td>varchar</td>
-				 <td>80</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="ageboundyounger">ageboundyounger</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="ageboundolder">ageboundolder</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="notes">notes</span></td>
-				 <td>text</td>
-				 <td>2147483647</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatecreated">recdatecreated</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>timezone(&#39;UTC&#39;::text, now())</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatemodified">recdatemodified</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-								</tbody>
-				</table>
-				<p title='13 columns'>Table contained <span id="recordNumber">18116</span> rows<p/>
-			</div>
-		</div>
-		<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-sitemap"></i>
-
-              <h3 id="Indexes" class="box-title">Indexes</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">
-				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead>
-				 <tr>
-				  <th>Constraint Name</th>
-				  <th>Type</th>
-				  <th>Sort</th>
-				  <th>Column(s)</th>
-				 </tr>
-				</thead>
-				<tbody>
-				 <tr>
-				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> chronologies_pkey</td>
-				  <td>Primary key</td>
-				  <td><span title='Ascending'>Asc</span></td>
-				  <td>chronologyid</td>
-				 </tr>				 
-				</tbody>
-				</table>   			  
-			</div><!-- /.box-body -->
-		</div>
-				<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-code-fork"></i>
-
-              <h3 id="Relationships" class="box-title">Relationships</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">	
-			<div class="nav-tabs-custom" style="cursor: move;">
-            <!-- Tabs within a box -->
-			<h5>Close relationships within degrees of separation</h5>
-            <ul class="nav nav-tabs pull-left ui-sortable-handle">
-			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
-			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
-			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
-			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
-            </ul>
-            <div class="tab-content no-padding">            
-				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="632,199,848,375">
-<area shape="rect" id="node2" href="chronologies.html" title="chronologies" alt="" coords="247,189,585,640">
-<area shape="rect" id="node4" href="agetypes.html" title="agetypes" alt="" coords="5,575,203,692">
-<area shape="rect" id="node5" href="collectionunits.html" title="collectionunits" alt="" coords="5,72,203,307">
-<area shape="rect" id="node6" href="contacts.html" title="contacts" alt="" coords="5,324,203,471">
-<area shape="rect" id="node3" href="chroncontrols.html" title="chroncontrols" alt="" coords="629,464,851,699">
-<area shape="rect" id="node7" href="sampleages.html" title="sampleages" alt="" coords="641,5,839,181">
-</map>
-
-					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/chronologies.1degree.svg' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="1115,517,1331,693">
-<area shape="rect" id="node2" href="analysisunits.html" title="analysisunits" alt="" coords="488,533,664,621">
-<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="719,396,1057,847">
-<area shape="rect" id="node4" href="variableunits.html" title="variableunits" alt="" coords="803,864,973,952">
-<area shape="rect" id="node9" href="collectionunits.html" title="collectionunits" alt="" coords="236,1213,433,1448">
-<area shape="rect" id="node6" href="agetypes.html" title="agetypes" alt="" coords="477,248,675,365">
-<area shape="rect" id="node14" href="contacts.html" title="contacts" alt="" coords="477,1597,675,1744">
-<area shape="rect" id="node5" href="aggregatechronologies.html" title="aggregatechronologies" alt="" coords="1101,412,1344,500">
-<area shape="rect" id="node7" href="aggregatesampleages.html" title="aggregatesampleages" alt="" coords="1388,563,1621,651">
-<area shape="rect" id="node8" href="sampleages.html" title="sampleages" alt="" coords="1124,711,1321,887">
-<area shape="rect" id="node30" href="samples.html" title="samples" alt="" coords="800,969,976,1057">
-<area shape="rect" id="node15" href="collectiontypes.html" title="collectiontypes" alt="" coords="5,1140,192,1228">
-<area shape="rect" id="node16" href="depenvttypes.html" title="depenvttypes" alt="" coords="11,1351,186,1439">
-<area shape="rect" id="node17" href="sites.html" title="sites" alt="" coords="21,1245,177,1333">
-<area shape="rect" id="node18" href="rocktypes.html" title="rocktypes" alt="" coords="24,1456,173,1544">
-<area shape="rect" id="node10" href="chroncontrolranks.html" title="chroncontrolranks" alt="" coords="1399,5,1610,93">
-<area shape="rect" id="node11" href="chroncontrols.html" title="chroncontrols" alt="" coords="1112,55,1333,289">
-<area shape="rect" id="node12" href="chroncontroltypes.html" title="chroncontroltypes" alt="" coords="783,111,993,199">
-<area shape="rect" id="node13" href="chroncontrolscal14c.html" title="chroncontrolscal14c" alt="" coords="1393,111,1617,199">
-<area shape="rect" id="node21" href="contactstatuses.html" title="contactstatuses" alt="" coords="239,1629,431,1717">
-<area shape="rect" id="node19" href="collectors.html" title="collectors" alt="" coords="810,1532,966,1620">
-<area shape="rect" id="node20" href="constituentdatabases.html" title="constituentdatabases" alt="" coords="773,1989,1003,2077">
-<area shape="rect" id="node22" href="dataprocessors.html" title="dataprocessors" alt="" coords="793,1321,983,1409">
-<area shape="rect" id="node23" href="datasets.html" title="datasets" alt="" coords="488,1163,664,1251">
-<area shape="rect" id="node24" href="datasetpis.html" title="datasetpis" alt="" coords="810,1427,966,1515">
-<area shape="rect" id="node25" href="datasetsubmissions.html" title="datasetsubmissions" alt="" coords="1112,1989,1333,2077">
-<area shape="rect" id="node26" href="datasettaxonnotes.html" title="datasettaxonnotes" alt="" coords="783,1111,993,1199">
-<area shape="rect" id="node27" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="793,1673,983,1761">
-<area shape="rect" id="node28" href="geochroncontrols.html" title="geochroncontrols" alt="" coords="1402,288,1607,376">
-<area shape="rect" id="node29" href="geochronology.html" title="geochronology" alt="" coords="1129,307,1316,395">
-<area shape="rect" id="node31" href="isometadata.html" title="isometadata" alt="" coords="805,1779,971,1867">
-<area shape="rect" id="node32" href="lithology.html" title="lithology" alt="" coords="498,1268,654,1356">
-<area shape="rect" id="node33" href="publicationauthors.html" title="publicationauthors" alt="" coords="781,1884,995,1972">
-<area shape="rect" id="node34" href="sampleanalysts.html" title="sampleanalysts" alt="" coords="1128,1284,1317,1372">
-<area shape="rect" id="node35" href="siteimages.html" title="siteimages" alt="" coords="810,2131,966,2219">
-<area shape="rect" id="node36" href="synonymy.html" title="synonymy" alt="" coords="810,1216,966,1304">
-</map>
-
-					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/chronologies.2degrees.svg' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="632,199,848,375">
-<area shape="rect" id="node2" href="chronologies.html" title="chronologies" alt="" coords="247,189,585,640">
-<area shape="rect" id="node4" href="agetypes.html" title="agetypes" alt="" coords="5,575,203,692">
-<area shape="rect" id="node5" href="collectionunits.html" title="collectionunits" alt="" coords="5,72,203,307">
-<area shape="rect" id="node6" href="contacts.html" title="contacts" alt="" coords="5,324,203,471">
-<area shape="rect" id="node3" href="chroncontrols.html" title="chroncontrols" alt="" coords="629,464,851,699">
-<area shape="rect" id="node7" href="sampleages.html" title="sampleages" alt="" coords="641,5,839,181">
-</map>
-
-					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/chronologies.implied1degrees.svg' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="accumulationrates.html" title="accumulationrates" alt="" coords="1115,1468,1331,1644">
-<area shape="rect" id="node2" href="analysisunits.html" title="analysisunits" alt="" coords="488,1316,664,1404">
-<area shape="rect" id="node3" href="chronologies.html" title="chronologies" alt="" coords="719,1389,1057,1840">
-<area shape="rect" id="node4" href="variableunits.html" title="variableunits" alt="" coords="803,1939,973,2027">
-<area shape="rect" id="node9" href="collectionunits.html" title="collectionunits" alt="" coords="236,1135,433,1369">
-<area shape="rect" id="node6" href="agetypes.html" title="agetypes" alt="" coords="477,2004,675,2121">
-<area shape="rect" id="node14" href="contacts.html" title="contacts" alt="" coords="477,528,675,675">
-<area shape="rect" id="node5" href="aggregatechronologies.html" title="aggregatechronologies" alt="" coords="1101,1723,1344,1811">
-<area shape="rect" id="node7" href="aggregatesampleages.html" title="aggregatesampleages" alt="" coords="1388,1500,1621,1588">
-<area shape="rect" id="node8" href="sampleages.html" title="sampleages" alt="" coords="1124,1275,1321,1451">
-<area shape="rect" id="node32" href="samples.html" title="samples" alt="" coords="800,1248,976,1336">
-<area shape="rect" id="node15" href="collectiontypes.html" title="collectiontypes" alt="" coords="5,1120,192,1208">
-<area shape="rect" id="node16" href="depenvttypes.html" title="depenvttypes" alt="" coords="11,1225,186,1313">
-<area shape="rect" id="node17" href="sites.html" title="sites" alt="" coords="21,623,177,711">
-<area shape="rect" id="node18" href="rocktypes.html" title="rocktypes" alt="" coords="24,1331,173,1419">
-<area shape="rect" id="node10" href="chroncontrolranks.html" title="chroncontrolranks" alt="" coords="1399,2180,1610,2268">
-<area shape="rect" id="node11" href="chroncontrols.html" title="chroncontrols" alt="" coords="1112,2073,1333,2308">
-<area shape="rect" id="node12" href="chroncontroltypes.html" title="chroncontroltypes" alt="" coords="783,2116,993,2204">
-<area shape="rect" id="node13" href="chroncontrolscal14c.html" title="chroncontrolscal14c" alt="" coords="1393,2075,1617,2163">
-<area shape="rect" id="node21" href="contactstatuses.html" title="contactstatuses" alt="" coords="239,560,431,648">
-<area shape="rect" id="node19" href="collectors.html" title="collectors" alt="" coords="810,604,966,692">
-<area shape="rect" id="node20" href="constituentdatabases.html" title="constituentdatabases" alt="" coords="773,463,1003,551">
-<area shape="rect" id="node22" href="dataprocessors.html" title="dataprocessors" alt="" coords="793,920,983,1008">
-<area shape="rect" id="node23" href="datasets.html" title="datasets" alt="" coords="488,1069,664,1157">
-<area shape="rect" id="node24" href="datasetpis.html" title="datasetpis" alt="" coords="810,1025,966,1113">
-<area shape="rect" id="node25" href="datasetsubmissions.html" title="datasetsubmissions" alt="" coords="1112,463,1333,551">
-<area shape="rect" id="node26" href="datasettaxonnotes.html" title="datasettaxonnotes" alt="" coords="783,709,993,797">
-<area shape="rect" id="node27" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="793,111,983,199">
-<area shape="rect" id="node28" href="dsageranges.html" title="dsageranges" alt="" coords="804,1857,972,1921">
-<area shape="rect" id="node29" href="dslinks.html" title="dslinks" alt="" coords="824,1167,952,1231">
-<area shape="rect" id="node30" href="geochroncontrols.html" title="geochroncontrols" alt="" coords="1402,1968,1607,2056">
-<area shape="rect" id="node31" href="geochronology.html" title="geochronology" alt="" coords="1129,1968,1316,2056">
-<area shape="rect" id="node33" href="isometadata.html" title="isometadata" alt="" coords="805,252,971,340">
-<area shape="rect" id="node34" href="lithology.html" title="lithology" alt="" coords="498,1211,654,1299">
-<area shape="rect" id="node35" href="publicationauthors.html" title="publicationauthors" alt="" coords="781,357,995,445">
-<area shape="rect" id="node36" href="sampleanalysts.html" title="sampleanalysts" alt="" coords="1128,897,1317,985">
-<area shape="rect" id="node37" href="siteimages.html" title="siteimages" alt="" coords="810,5,966,93">
-<area shape="rect" id="node38" href="synonymy.html" title="synonymy" alt="" coords="810,815,966,903">
-</map>
-
-					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/chronologies.implied2degrees.svg' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-			  			</div>
-			</div>
-		  </div><!-- /.box-body -->
-		</div>
-	      </section>
-    
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div>
-      <div class="pull-right hidden-xs">
-        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
-        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
-      </div>
-      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
-    </div>
-    <!-- /.container -->
-  </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 2.2.3 -->
-<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
-<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
-<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
-
-<!-- SlimScroll -->
-<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
-<!-- Salvattore -->
-<script src="../bower/salvattore/salvattore.min.js"></script>
-<!-- AnchorJS -->
-<script src="../bower/anchor-js/anchor.min.js"></script>
-<!-- CodeMirror -->
-<script src="../bower/codemirror/codemirror.js"></script>
-<script src="../bower/codemirror/sql.js"></script>
-<!-- AdminLTE App -->
-<script src="../bower/admin-lte/dist/js/app.min.js"></script>
-<script src="table.js"></script>
-<script src="../schemaSpy.js"></script>
-</body>
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
 </html>

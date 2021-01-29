@@ -1,416 +1,414 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>datasetpis - neotomadev Database</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-  <!-- Code Mirror -->
-  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
-  <!-- Fonts -->
-  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
-  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>datasetpis - neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
-  <!-- Salvattore -->
-  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
-  <!-- SchemaSpy -->
-  <link rel="stylesheet" href="../schemaSpy.css">
-  
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="../bower/html5shiv/html5shiv.min.js"></script>
-  <script src="../bower/respond/respond.min.js"></script>
-  <![endif]-->
-</head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
-  <header class="main-header">
-    <nav class="navbar navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../index.html" class="navbar-brand"><b>neotomadev</b> Database</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>datasetpis</h1><p><span id="recordNumber">78096</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="datasetid">datasetid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="datasetpis.datasetid references datasets.datasetid via fk_datasetpis_datasets"><a href='datasets.html'>datasets</a><span class='relatedKey'>.datasetid</span></td>
+                                                <td class="constraint detail">fk_datasetpis_datasets<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="contactid">contactid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="datasetpis.contactid references contacts.contactid via fk_datasetpis_contacts"><a href='contacts.html'>contacts</a><span class='relatedKey'>.contactid</span></td>
+                                                <td class="constraint detail">fk_datasetpis_contacts<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="piorder">piorder</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatecreated">recdatecreated</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>timezone(&#39;UTC&#39;::text, now())</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatemodified">recdatemodified</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> datasetpis_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>datasetid + contactid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>ix_contactid_datasetpis</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>contactid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>ix_datasetid_datasetpis</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>datasetid</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="248,100,568,316">
+<area shape="rect" id="node2" href="contacts.html" target="_top" title="contacts" alt="" coords="5,228,204,404">
+<area shape="rect" id="node3" href="datasets.html" target="_top" title="datasets" alt="" coords="5,5,204,211">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/datasetpis.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="chronologies.html" target="_top" title="chronologies" alt="" coords="564,352,759,440">
+<area shape="rect" id="node2" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="272,457,483,545">
+<area shape="rect" id="node3" href="contacts.html" target="_top" title="contacts" alt="" coords="278,1420,477,1596">
+<area shape="rect" id="node6" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="5,1452,228,1540">
+<area shape="rect" id="node4" href="collectors.html" target="_top" title="collectors" alt="" coords="575,457,748,545">
+<area shape="rect" id="node5" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="527,563,796,651">
+<area shape="rect" id="node7" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="891,216,1109,304">
+<area shape="rect" id="node8" href="datasets.html" target="_top" title="datasets" alt="" coords="562,740,761,945">
+<area shape="rect" id="node13" href="datasettypes.html" target="_top" title="datasettypes" alt="" coords="278,763,477,851">
+<area shape="rect" id="node14" href="embargo.html" target="_top" title="embargo" alt="" coords="296,868,459,956">
+<area shape="rect" id="node9" href="datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="881,5,1119,93">
+<area shape="rect" id="node10" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="911,321,1089,409">
+<area shape="rect" id="node11" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="840,1059,1160,1275">
+<area shape="rect" id="node12" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="873,427,1127,515">
+<area shape="rect" id="node15" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="873,111,1127,199">
+<area shape="rect" id="node16" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="877,1292,1123,1380">
+<area shape="rect" id="node17" href="taxa.html" target="_top" title="taxa" alt="" coords="562,1389,761,1477">
+<area shape="rect" id="node18" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="885,532,1115,620">
+<area shape="rect" id="node19" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="552,1567,771,1655">
+<area shape="rect" id="node20" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="877,637,1123,725">
+<area shape="rect" id="node21" href="isometadata.html" target="_top" title="isometadata" alt="" coords="565,1672,758,1760">
+<area shape="rect" id="node22" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="895,743,1105,831">
+<area shape="rect" id="node23" href="isostandards.html" target="_top" title="isostandards" alt="" coords="902,848,1098,936">
+<area shape="rect" id="node24" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="539,1777,783,1865">
+<area shape="rect" id="node25" href="repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="869,953,1131,1041">
+<area shape="rect" id="node26" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1204,1484,1423,1572">
+<area shape="rect" id="node27" href="samples.html" target="_top" title="samples" alt="" coords="901,1397,1099,1485">
+<area shape="rect" id="node28" href="siteimages.html" target="_top" title="siteimages" alt="" coords="571,1883,751,1971">
+<area shape="rect" id="node29" href="synonymy.html" target="_top" title="synonymy" alt="" coords="913,1503,1087,1591">
+<area shape="rect" id="node30" title="ti.stewards" alt="" coords="569,1988,753,2076">
+<area shape="rect" id="node31" title="ti.stewardupdates" alt="" coords="541,2093,782,2181">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/datasetpis.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="248,100,568,316">
+<area shape="rect" id="node2" href="contacts.html" target="_top" title="contacts" alt="" coords="5,228,204,404">
+<area shape="rect" id="node3" href="datasets.html" target="_top" title="datasets" alt="" coords="5,5,204,211">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/datasetpis.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="chronologies.html" target="_top" title="chronologies" alt="" coords="564,1035,759,1123">
+<area shape="rect" id="node2" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="272,916,483,1004">
+<area shape="rect" id="node3" href="contacts.html" target="_top" title="contacts" alt="" coords="278,1524,477,1700">
+<area shape="rect" id="node6" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="5,1556,228,1644">
+<area shape="rect" id="node4" href="collectors.html" target="_top" title="collectors" alt="" coords="575,929,748,1017">
+<area shape="rect" id="node5" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="527,1351,796,1439">
+<area shape="rect" id="node7" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="891,1233,1109,1321">
+<area shape="rect" id="node8" href="datasets.html" target="_top" title="datasets" alt="" coords="562,707,761,912">
+<area shape="rect" id="node13" href="datasettypes.html" target="_top" title="datasettypes" alt="" coords="278,699,477,787">
+<area shape="rect" id="node14" href="embargo.html" target="_top" title="embargo" alt="" coords="296,804,459,892">
+<area shape="rect" id="node9" href="datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="881,1023,1119,1111">
+<area shape="rect" id="node10" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="911,812,1089,900">
+<area shape="rect" id="node11" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="840,1339,1160,1555">
+<area shape="rect" id="node12" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="873,917,1127,1005">
+<area shape="rect" id="node15" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="873,1128,1127,1216">
+<area shape="rect" id="node16" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="877,1677,1123,1765">
+<area shape="rect" id="node17" href="taxa.html" target="_top" title="taxa" alt="" coords="562,1705,761,1793">
+<area shape="rect" id="node18" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="885,123,1115,211">
+<area shape="rect" id="node19" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="552,2015,771,2103">
+<area shape="rect" id="node20" href="dsageranges.html" target="_top" title="dsageranges" alt="" coords="904,228,1096,292">
+<area shape="rect" id="node21" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1212,1483,1415,1547">
+<area shape="rect" id="node22" href="samples.html" target="_top" title="samples" alt="" coords="901,1572,1099,1660">
+<area shape="rect" id="node23" href="dslinks.html" target="_top" title="dslinks" alt="" coords="927,5,1073,69">
+<area shape="rect" id="node24" href="dssampdata.html" target="_top" title="dssampdata" alt="" coords="906,309,1094,373">
+<area shape="rect" id="node25" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="877,391,1123,479">
+<area shape="rect" id="node26" href="isometadata.html" target="_top" title="isometadata" alt="" coords="565,2120,758,2208">
+<area shape="rect" id="node27" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="895,496,1105,584">
+<area shape="rect" id="node28" href="isostandards.html" target="_top" title="isostandards" alt="" coords="902,601,1098,689">
+<area shape="rect" id="node29" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="539,1140,783,1228">
+<area shape="rect" id="node30" href="repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="869,707,1131,795">
+<area shape="rect" id="node31" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1204,1663,1423,1751">
+<area shape="rect" id="node32" href="siteimages.html" target="_top" title="siteimages" alt="" coords="571,1245,751,1333">
+<area shape="rect" id="node33" href="synonymy.html" target="_top" title="synonymy" alt="" coords="913,1783,1087,1871">
+<area shape="rect" id="node34" title="ti.stewards" alt="" coords="569,1564,753,1652">
+<area shape="rect" id="node35" title="ti.stewardupdates" alt="" coords="541,1909,782,1997">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/datasetpis.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
         </div>
+        <!-- ./wrapper -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
-			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
-			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
-			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
-			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
-			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
-			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-        <!-- Navbar Right Menu -->
-
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  </header>
-  <!-- Main content -->
-  <!-- Full Width Column -->
-  <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>datasetpis</h1></br>
-		      </section>
-      <!-- Main content -->
-      <section class="content">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-              <h3 id="Columns" class="box-title">Columns</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-            <div class="box-body">
-				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead align='left'>
-				<tr>
-				  <th>Column</th>
-				  <th>Type</th>
-				  <th>Size</th>
-				  <th title='Are nulls allowed?'>Nulls</th>
-				  <th title='Is column automatically updated?'>Auto</th>
-				  <th title='Default value'>Default</th>
-				  <th title='Columns in tables that reference this column'>Children</th>
-				  <th title='Columns in tables that are referenced by this column'>Parents</th>
-				  <th title='Comments' class="toggle"><span>Comments</span></th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="datasetid">datasetid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="datasetpis.datasetid references datasets.datasetid via datasetpis_datasetid_fkey">
-						<a href='datasets.html'>datasets</a><span class='relatedKey'>.datasetid</span>
-					</td>
-					<td class="constraint detail">
-						datasetpis_datasetid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="contactid">contactid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="datasetpis.contactid references contacts.contactid via datasetpis_contactid_fkey">
-						<a href='contacts.html'>contacts</a><span class='relatedKey'>.contactid</span>
-					</td>
-					<td class="constraint detail">
-						datasetpis_contactid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="piorder">piorder</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatecreated">recdatecreated</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>timezone(&#39;UTC&#39;::text, now())</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatemodified">recdatemodified</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-								</tbody>
-				</table>
-				<p title='5 columns'>Table contained <span id="recordNumber">38951</span> rows<p/>
-			</div>
-		</div>
-		<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-sitemap"></i>
-
-              <h3 id="Indexes" class="box-title">Indexes</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">
-				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead>
-				 <tr>
-				  <th>Constraint Name</th>
-				  <th>Type</th>
-				  <th>Sort</th>
-				  <th>Column(s)</th>
-				 </tr>
-				</thead>
-				<tbody>
-				 <tr>
-				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> datasetpis_pkey</td>
-				  <td>Primary key</td>
-				  <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
-				  <td>datasetid + contactid</td>
-				 </tr>				 
-				 <tr>
-				  <td title='Indexed'>ix_contactid</td>
-				  <td>Performance</td>
-				  <td><span title='Ascending'>Asc</span></td>
-				  <td>contactid</td>
-				 </tr>				 
-				</tbody>
-				</table>   			  
-			</div><!-- /.box-body -->
-		</div>
-				<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-code-fork"></i>
-
-              <h3 id="Relationships" class="box-title">Relationships</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">	
-			<div class="nav-tabs-custom" style="cursor: move;">
-            <!-- Tabs within a box -->
-			<h5>Close relationships within degrees of separation</h5>
-            <ul class="nav nav-tabs pull-left ui-sortable-handle">
-			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
-			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
-			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
-			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
-            </ul>
-            <div class="tab-content no-padding">            
-				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="datasetpis.html" title="datasetpis" alt="" coords="247,100,548,316">
-<area shape="rect" id="node2" href="contacts.html" title="contacts" alt="" coords="5,228,203,375">
-<area shape="rect" id="node3" href="datasets.html" title="datasets" alt="" coords="5,5,203,211">
-</map>
-
-					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/datasetpis.1degree.svg' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="chronologies.html" title="chronologies" alt="" coords="547,5,720,93">
-<area shape="rect" id="node2" href="collectionunits.html" title="collectionunits" alt="" coords="9,111,193,199">
-<area shape="rect" id="node3" href="contacts.html" title="contacts" alt="" coords="241,565,439,712">
-<area shape="rect" id="node6" href="contactstatuses.html" title="contactstatuses" alt="" coords="5,597,197,685">
-<area shape="rect" id="node4" href="collectors.html" title="collectors" alt="" coords="555,111,711,199">
-<area shape="rect" id="node5" href="constituentdatabases.html" title="constituentdatabases" alt="" coords="518,357,749,445">
-<area shape="rect" id="node7" href="dataprocessors.html" title="dataprocessors" alt="" coords="539,815,728,903">
-<area shape="rect" id="node8" href="datasets.html" title="datasets" alt="" coords="241,1503,439,1708">
-<area shape="rect" id="node13" href="datasettypes.html" title="datasettypes" alt="" coords="17,1525,186,1613">
-<area shape="rect" id="node14" href="embargo.html" title="embargo" alt="" coords="30,1631,173,1719">
-<area shape="rect" id="node9" href="datasetdatabases.html" title="datasetdatabases" alt="" coords="837,549,1040,637">
-<area shape="rect" id="node10" href="datasetdoi.html" title="datasetdoi" alt="" coords="557,1752,710,1840">
-<area shape="rect" id="node11" href="datasetpis.html" title="datasetpis" alt="" coords="483,920,784,1136">
-<area shape="rect" id="node12" href="datasetpublications.html" title="datasetpublications" alt="" coords="525,1857,742,1945">
-<area shape="rect" id="node15" href="datasetsubmissions.html" title="datasetsubmissions" alt="" coords="828,357,1049,445">
-<area shape="rect" id="node16" href="datasettaxonnotes.html" title="datasettaxonnotes" alt="" coords="529,1153,738,1241">
-<area shape="rect" id="node17" href="datasetvariables.html" title="datasetvariables" alt="" coords="536,1963,731,2051">
-<area shape="rect" id="node18" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="539,463,728,551">
-<area shape="rect" id="node19" href="isoinstrumentation.html" title="isoinstrumentation" alt="" coords="527,2068,740,2156">
-<area shape="rect" id="node20" href="isometadata.html" title="isometadata" alt="" coords="551,568,716,656">
-<area shape="rect" id="node21" href="isosrmetadata.html" title="isosrmetadata" alt="" coords="543,1400,723,1488">
-<area shape="rect" id="node22" href="isostandards.html" title="isostandards" alt="" coords="547,1505,719,1593">
-<area shape="rect" id="node23" href="publicationauthors.html" title="publicationauthors" alt="" coords="527,673,740,761">
-<area shape="rect" id="node24" href="repositoryspecimens.html" title="repositoryspecimens" alt="" coords="519,1611,747,1699">
-<area shape="rect" id="node25" href="sampleanalysts.html" title="sampleanalysts" alt="" coords="844,1457,1033,1545">
-<area shape="rect" id="node26" href="samples.html" title="samples" alt="" coords="545,2173,721,2261">
-<area shape="rect" id="node27" href="siteimages.html" title="siteimages" alt="" coords="555,252,711,340">
-<area shape="rect" id="node28" href="synonymy.html" title="synonymy" alt="" coords="555,1259,711,1347">
-</map>
-
-					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/datasetpis.2degrees.svg' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="datasetpis.html" title="datasetpis" alt="" coords="247,100,548,316">
-<area shape="rect" id="node2" href="contacts.html" title="contacts" alt="" coords="5,228,203,375">
-<area shape="rect" id="node3" href="datasets.html" title="datasets" alt="" coords="5,5,203,211">
-</map>
-
-					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/datasetpis.implied1degrees.svg' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="chronologies.html" title="chronologies" alt="" coords="547,604,720,692">
-<area shape="rect" id="node2" href="collectionunits.html" title="collectionunits" alt="" coords="9,1187,193,1275">
-<area shape="rect" id="node3" href="contacts.html" title="contacts" alt="" coords="241,528,439,675">
-<area shape="rect" id="node6" href="contactstatuses.html" title="contactstatuses" alt="" coords="5,560,197,648">
-<area shape="rect" id="node4" href="collectors.html" title="collectors" alt="" coords="555,709,711,797">
-<area shape="rect" id="node5" href="constituentdatabases.html" title="constituentdatabases" alt="" coords="518,252,749,340">
-<area shape="rect" id="node7" href="dataprocessors.html" title="dataprocessors" alt="" coords="539,815,728,903">
-<area shape="rect" id="node8" href="datasets.html" title="datasets" alt="" coords="241,1617,439,1823">
-<area shape="rect" id="node13" href="datasettypes.html" title="datasettypes" alt="" coords="17,1640,186,1728">
-<area shape="rect" id="node14" href="embargo.html" title="embargo" alt="" coords="30,1745,173,1833">
-<area shape="rect" id="node9" href="datasetdatabases.html" title="datasetdatabases" alt="" coords="837,391,1040,479">
-<area shape="rect" id="node10" href="datasetdoi.html" title="datasetdoi" alt="" coords="557,1728,710,1816">
-<area shape="rect" id="node11" href="datasetpis.html" title="datasetpis" alt="" coords="483,920,784,1136">
-<area shape="rect" id="node12" href="datasetpublications.html" title="datasetpublications" alt="" coords="525,1833,742,1921">
-<area shape="rect" id="node15" href="datasetsubmissions.html" title="datasetsubmissions" alt="" coords="828,252,1049,340">
-<area shape="rect" id="node16" href="datasettaxonnotes.html" title="datasettaxonnotes" alt="" coords="529,1153,738,1241">
-<area shape="rect" id="node17" href="datasetvariables.html" title="datasetvariables" alt="" coords="536,1939,731,2027">
-<area shape="rect" id="node18" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="539,147,728,235">
-<area shape="rect" id="node19" href="dsageranges.html" title="dsageranges" alt="" coords="549,2044,717,2108">
-<area shape="rect" id="node20" href="dsdatasample.html" title="dsdatasample" alt="" coords="851,2212,1026,2276">
-<area shape="rect" id="node21" href="samples.html" title="samples" alt="" coords="545,2125,721,2213">
-<area shape="rect" id="node22" href="dslinks.html" title="dslinks" alt="" coords="569,1364,697,1428">
-<area shape="rect" id="node23" href="isoinstrumentation.html" title="isoinstrumentation" alt="" coords="527,1481,740,1569">
-<area shape="rect" id="node24" href="isometadata.html" title="isometadata" alt="" coords="551,357,716,445">
-<area shape="rect" id="node25" href="isosrmetadata.html" title="isosrmetadata" alt="" coords="543,1587,723,1675">
-<area shape="rect" id="node26" href="isostandards.html" title="isostandards" alt="" coords="547,2231,719,2319">
-<area shape="rect" id="node27" href="publicationauthors.html" title="publicationauthors" alt="" coords="527,463,740,551">
-<area shape="rect" id="node28" href="repositoryspecimens.html" title="repositoryspecimens" alt="" coords="519,2372,747,2460">
-<area shape="rect" id="node29" href="sampleanalysts.html" title="sampleanalysts" alt="" coords="844,1319,1033,1407">
-<area shape="rect" id="node30" href="siteimages.html" title="siteimages" alt="" coords="555,5,711,93">
-<area shape="rect" id="node31" href="synonymy.html" title="synonymy" alt="" coords="555,1259,711,1347">
-</map>
-
-					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/datasetpis.implied2degrees.svg' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-			  			</div>
-			</div>
-		  </div><!-- /.box-body -->
-		</div>
-	      </section>
-    
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div>
-      <div class="pull-right hidden-xs">
-        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
-        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
-      </div>
-      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
-    </div>
-    <!-- /.container -->
-  </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 2.2.3 -->
-<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
-<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
-<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
-
-<!-- SlimScroll -->
-<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
-<!-- Salvattore -->
-<script src="../bower/salvattore/salvattore.min.js"></script>
-<!-- AnchorJS -->
-<script src="../bower/anchor-js/anchor.min.js"></script>
-<!-- CodeMirror -->
-<script src="../bower/codemirror/codemirror.js"></script>
-<script src="../bower/codemirror/sql.js"></script>
-<!-- AdminLTE App -->
-<script src="../bower/admin-lte/dist/js/app.min.js"></script>
-<script src="table.js"></script>
-<script src="../schemaSpy.js"></script>
-</body>
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
 </html>

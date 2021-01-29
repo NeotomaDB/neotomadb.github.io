@@ -1,521 +1,478 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>data - neotomadev Database</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-  <!-- Code Mirror -->
-  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
-  <!-- Fonts -->
-  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
-  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>data - neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
-  <!-- Salvattore -->
-  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
-  <!-- SchemaSpy -->
-  <link rel="stylesheet" href="../schemaSpy.css">
-  
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="../bower/html5shiv/html5shiv.min.js"></script>
-  <script src="../bower/respond/respond.min.js"></script>
-  <![endif]-->
-</head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
-  <header class="main-header">
-    <nav class="navbar navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../index.html" class="navbar-brand"><b>neotomadev</b> Database</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>data</h1><p><span id="recordNumber">7450923</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="dataid">dataid</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;ndb.seq_data_dataid&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="datataxonnotes.dataid references data.dataid via fk_datataxonnotes_data"><a href='datataxonnotes.html'>datataxonnotes</a><span class='relatedKey'>.dataid</span></td>
+                                                <td class="constraint detail">fk_datataxonnotes_data<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="isometadata.dataid references data.dataid via fk_isometadata_data"><a href='isometadata.html'>isometadata</a><span class='relatedKey'>.dataid</span></td>
+                                                <td class="constraint detail">fk_isometadata_data<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="isosamplepretreatments.dataid references data.dataid via fk_isosamplepretreatments_data"><a href='isosamplepretreatments.html'>isosamplepretreatments</a><span class='relatedKey'>.dataid</span></td>
+                                                <td class="constraint detail">fk_isosamplepretreatments_data<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="isospecimendata.dataid references data.dataid via fk_isospecimendata_data"><a href='isospecimendata.html'>isospecimendata</a><span class='relatedKey'>.dataid</span></td>
+                                                <td class="constraint detail">fk_isospecimendata_data<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="isostratdata.dataid references data.dataid via fk_isostratdata_data"><a href='isostratdata.html'>isostratdata</a><span class='relatedKey'>.dataid</span></td>
+                                                <td class="constraint detail">fk_isostratdata_data<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="specimens.dataid references data.dataid via fk_specimens_data"><a href='specimens.html'>specimens</a><span class='relatedKey'>.dataid</span></td>
+                                                <td class="constraint detail">fk_specimens_data<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="summarydatataphonomy.dataid references data.dataid via fk_summarydatataphonomy_data"><a href='summarydatataphonomy.html'>summarydatataphonomy</a><span class='relatedKey'>.dataid</span></td>
+                                                <td class="constraint detail">fk_summarydatataphonomy_data<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sampleid">sampleid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="data.sampleid references samples.sampleid via fk_data_samples"><a href='samples.html'>samples</a><span class='relatedKey'>.sampleid</span></td>
+                                                <td class="constraint detail">fk_data_samples<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="variableid">variableid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="data.variableid references variables.variableid via fk_data_variables"><a href='variables.html'>variables</a><span class='relatedKey'>.variableid</span></td>
+                                                <td class="constraint detail">fk_data_variables<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="value">value</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatecreated">recdatecreated</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>timezone(&#39;UTC&#39;::text, now())</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatemodified">recdatemodified</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> data_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>dataid</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="data.html" target="_top" title="data" alt="" coords="273,572,593,817">
+<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="5,507,229,712">
+<area shape="rect" id="node3" href="variables.html" target="_top" title="variables" alt="" coords="11,729,223,964">
+<area shape="rect" id="node4" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="675,5,894,181">
+<area shape="rect" id="node5" href="isometadata.html" target="_top" title="isometadata" alt="" coords="675,199,894,433">
+<area shape="rect" id="node6" href="isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="639,451,931,597">
+<area shape="rect" id="node7" href="isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="976,569,1205,745">
+<area shape="rect" id="node8" href="specimens.html" target="_top" title="specimens" alt="" coords="683,651,887,1003">
+<area shape="rect" id="node9" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="686,1020,883,1196">
+<area shape="rect" id="node10" href="summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="637,1213,932,1360">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/data.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="899,429,1141,517">
+<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="581,492,805,697">
+<area shape="rect" id="node6" href="datasets.html" target="_top" title="datasets" alt="" coords="321,695,520,783">
+<area shape="rect" id="node22" href="taxa.html" target="_top" title="taxa" alt="" coords="321,800,520,888">
+<area shape="rect" id="node27" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="321,524,520,612">
+<area shape="rect" id="node3" href="data.html" target="_top" title="data" alt="" coords="860,781,1180,1027">
+<area shape="rect" id="node4" href="variables.html" target="_top" title="variables" alt="" coords="587,1212,799,1447">
+<area shape="rect" id="node39" href="variableelements.html" target="_top" title="variableelements" alt="" coords="304,1856,537,1944">
+<area shape="rect" id="node40" href="variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="307,1371,535,1459">
+<area shape="rect" id="node41" href="variableunits.html" target="_top" title="variableunits" alt="" coords="321,1265,520,1353">
+<area shape="rect" id="node5" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="905,1149,1135,1237">
+<area shape="rect" id="node7" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1271,1355,1490,1531">
+<area shape="rect" id="node8" href="contacts.html" target="_top" title="contacts" alt="" coords="33,579,232,667">
+<area shape="rect" id="node9" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1275,147,1486,235">
+<area shape="rect" id="node10" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="897,1255,1143,1343">
+<area shape="rect" id="node11" href="isometadata.html" target="_top" title="isometadata" alt="" coords="1271,252,1490,487">
+<area shape="rect" id="node12" href="isomaterialanalyzedtypes.html" target="_top" title="isomaterialanalyzedtypes" alt="" coords="869,183,1171,271">
+<area shape="rect" id="node13" href="isosubstratetypes.html" target="_top" title="isosubstratetypes" alt="" coords="901,288,1139,376">
+<area shape="rect" id="node14" href="isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="1235,1107,1527,1253">
+<area shape="rect" id="node15" href="isopretreatmenttypes.html" target="_top" title="isopretreatmenttypes" alt="" coords="885,1465,1155,1553">
+<area shape="rect" id="node16" href="isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="1603,1228,1833,1404">
+<area shape="rect" id="node17" href="specimens.html" target="_top" title="specimens" alt="" coords="1279,1833,1483,2185">
+<area shape="rect" id="node21" href="elementtypes.html" target="_top" title="elementtypes" alt="" coords="31,1748,234,1836">
+<area shape="rect" id="node30" href="specimendomesticstatustypes.html" target="_top" title="specimendomesticstatustypes" alt="" coords="849,2175,1191,2263">
+<area shape="rect" id="node31" href="elementmaturities.html" target="_top" title="elementmaturities" alt="" coords="11,2064,254,2152">
+<area shape="rect" id="node32" href="elementportions.html" target="_top" title="elementportions" alt="" coords="20,1959,245,2047">
+<area shape="rect" id="node33" href="repositoryinstitutions.html" target="_top" title="repositoryinstitutions" alt="" coords="885,2280,1155,2368">
+<area shape="rect" id="node34" href="specimensextypes.html" target="_top" title="specimensextypes" alt="" coords="899,2069,1141,2157">
+<area shape="rect" id="node35" href="elementsymmetries.html" target="_top" title="elementsymmetries" alt="" coords="5,1853,260,1941">
+<area shape="rect" id="node18" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="915,1360,1125,1448">
+<area shape="rect" id="node19" href="isostandards.html" target="_top" title="isostandards" alt="" coords="922,1044,1118,1132">
+<area shape="rect" id="node20" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="1282,1591,1479,1767">
+<area shape="rect" id="node23" href="isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="885,1571,1155,1659">
+<area shape="rect" id="node24" href="sampleages.html" target="_top" title="sampleages" alt="" coords="921,535,1119,623">
+<area shape="rect" id="node25" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="911,5,1129,93">
+<area shape="rect" id="node26" href="samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="906,640,1134,728">
+<area shape="rect" id="node28" href="specimendates.html" target="_top" title="specimendates" alt="" coords="1611,708,1825,796">
+<area shape="rect" id="node29" href="specimengenbank.html" target="_top" title="specimengenbank" alt="" coords="1599,1836,1837,1924">
+<area shape="rect" id="node36" href="specimentaphonomy.html" target="_top" title="specimentaphonomy" alt="" coords="1588,2177,1848,2265">
+<area shape="rect" id="node37" href="taphonomictypes.html" target="_top" title="taphonomictypes" alt="" coords="1265,2203,1497,2291">
+<area shape="rect" id="node38" href="summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="1571,1965,1865,2112">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/data.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="data.html" target="_top" title="data" alt="" coords="273,572,593,817">
+<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="5,507,229,712">
+<area shape="rect" id="node3" href="variables.html" target="_top" title="variables" alt="" coords="11,729,223,964">
+<area shape="rect" id="node4" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="675,5,894,181">
+<area shape="rect" id="node5" href="isometadata.html" target="_top" title="isometadata" alt="" coords="675,199,894,433">
+<area shape="rect" id="node6" href="isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="639,451,931,597">
+<area shape="rect" id="node7" href="isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="976,569,1205,745">
+<area shape="rect" id="node8" href="specimens.html" target="_top" title="specimens" alt="" coords="683,651,887,1003">
+<area shape="rect" id="node9" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="686,1020,883,1196">
+<area shape="rect" id="node10" href="summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="637,1213,932,1360">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/data.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="899,585,1141,673">
+<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="581,611,805,816">
+<area shape="rect" id="node6" href="datasets.html" target="_top" title="datasets" alt="" coords="321,1320,520,1408">
+<area shape="rect" id="node23" href="taxa.html" target="_top" title="taxa" alt="" coords="321,715,520,803">
+<area shape="rect" id="node28" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="321,609,520,697">
+<area shape="rect" id="node3" href="data.html" target="_top" title="data" alt="" coords="860,1055,1180,1300">
+<area shape="rect" id="node4" href="variables.html" target="_top" title="variables" alt="" coords="587,1420,799,1655">
+<area shape="rect" id="node40" href="variableelements.html" target="_top" title="variableelements" alt="" coords="304,1916,537,2004">
+<area shape="rect" id="node41" href="variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="307,1577,535,1665">
+<area shape="rect" id="node42" href="variableunits.html" target="_top" title="variableunits" alt="" coords="321,1472,520,1560">
+<area shape="rect" id="node5" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="905,1739,1135,1827">
+<area shape="rect" id="node7" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1271,937,1490,1113">
+<area shape="rect" id="node8" href="contacts.html" target="_top" title="contacts" alt="" coords="33,756,232,844">
+<area shape="rect" id="node9" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="919,973,1121,1037">
+<area shape="rect" id="node10" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1275,428,1486,516">
+<area shape="rect" id="node11" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="897,1317,1143,1405">
+<area shape="rect" id="node12" href="isometadata.html" target="_top" title="isometadata" alt="" coords="1271,176,1490,411">
+<area shape="rect" id="node13" href="isomaterialanalyzedtypes.html" target="_top" title="isomaterialanalyzedtypes" alt="" coords="869,161,1171,249">
+<area shape="rect" id="node14" href="isosubstratetypes.html" target="_top" title="isosubstratetypes" alt="" coords="901,267,1139,355">
+<area shape="rect" id="node15" href="isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="1235,1563,1527,1709">
+<area shape="rect" id="node16" href="isopretreatmenttypes.html" target="_top" title="isopretreatmenttypes" alt="" coords="885,1880,1155,1968">
+<area shape="rect" id="node17" href="isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="1603,1520,1833,1696">
+<area shape="rect" id="node18" href="specimens.html" target="_top" title="specimens" alt="" coords="1279,1893,1483,2245">
+<area shape="rect" id="node22" href="elementtypes.html" target="_top" title="elementtypes" alt="" coords="31,1808,234,1896">
+<area shape="rect" id="node31" href="specimendomesticstatustypes.html" target="_top" title="specimendomesticstatustypes" alt="" coords="849,2235,1191,2323">
+<area shape="rect" id="node32" href="elementmaturities.html" target="_top" title="elementmaturities" alt="" coords="11,2124,254,2212">
+<area shape="rect" id="node33" href="elementportions.html" target="_top" title="elementportions" alt="" coords="20,2019,245,2107">
+<area shape="rect" id="node34" href="repositoryinstitutions.html" target="_top" title="repositoryinstitutions" alt="" coords="885,2340,1155,2428">
+<area shape="rect" id="node35" href="specimensextypes.html" target="_top" title="specimensextypes" alt="" coords="899,2129,1141,2217">
+<area shape="rect" id="node36" href="elementsymmetries.html" target="_top" title="elementsymmetries" alt="" coords="5,1913,260,2001">
+<area shape="rect" id="node19" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="915,1423,1125,1511">
+<area shape="rect" id="node20" href="isostandards.html" target="_top" title="isostandards" alt="" coords="922,1633,1118,1721">
+<area shape="rect" id="node21" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="1282,1131,1479,1307">
+<area shape="rect" id="node24" href="isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="885,1528,1155,1616">
+<area shape="rect" id="node25" href="sampleages.html" target="_top" title="sampleages" alt="" coords="921,691,1119,779">
+<area shape="rect" id="node26" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="911,796,1129,884">
+<area shape="rect" id="node27" href="samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="906,480,1134,568">
+<area shape="rect" id="node29" href="specimendates.html" target="_top" title="specimendates" alt="" coords="1611,428,1825,516">
+<area shape="rect" id="node30" href="specimengenbank.html" target="_top" title="specimengenbank" alt="" coords="1599,1896,1837,1984">
+<area shape="rect" id="node37" href="specimentaphonomy.html" target="_top" title="specimentaphonomy" alt="" coords="1588,2237,1848,2325">
+<area shape="rect" id="node38" href="taphonomictypes.html" target="_top" title="taphonomictypes" alt="" coords="1265,2263,1497,2351">
+<area shape="rect" id="node39" href="summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="1571,2025,1865,2172">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/data.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
         </div>
+        <!-- ./wrapper -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
-			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
-			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
-			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
-			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
-			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
-			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-        <!-- Navbar Right Menu -->
-
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  </header>
-  <!-- Main content -->
-  <!-- Full Width Column -->
-  <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>data</h1></br>
-		      </section>
-      <!-- Main content -->
-      <section class="content">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-              <h3 id="Columns" class="box-title">Columns</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-            <div class="box-body">
-				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead align='left'>
-				<tr>
-				  <th>Column</th>
-				  <th>Type</th>
-				  <th>Size</th>
-				  <th title='Are nulls allowed?'>Nulls</th>
-				  <th title='Is column automatically updated?'>Auto</th>
-				  <th title='Default value'>Default</th>
-				  <th title='Columns in tables that reference this column'>Children</th>
-				  <th title='Columns in tables that are referenced by this column'>Parents</th>
-				  <th title='Comments' class="toggle"><span>Comments</span></th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="dataid">dataid</span></td>
-				 <td>serial</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title='Automatically updated by the database'>√</td>
-				 <td>nextval(&#39;ndb.seq_data_dataid&#39;::regclass)</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="datataxonnotes.dataid references data.dataid via datataxonnotes_dataid_fkey">
-						<a href='datataxonnotes.html'>datataxonnotes</a><span class='relatedKey'>.dataid</span>
-					</td>
-					<td class="constraint detail">
-						datataxonnotes_dataid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="isometadata.dataid references data.dataid via isometadata_dataid_fkey">
-						<a href='isometadata.html'>isometadata</a><span class='relatedKey'>.dataid</span>
-					</td>
-					<td class="constraint detail">
-						isometadata_dataid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="isosamplepretreatments.dataid references data.dataid via isosamplepretreatments_dataid_fkey">
-						<a href='isosamplepretreatments.html'>isosamplepretreatments</a><span class='relatedKey'>.dataid</span>
-					</td>
-					<td class="constraint detail">
-						isosamplepretreatments_dataid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="isospecimendata.dataid references data.dataid via isospecimendata_dataid_fkey">
-						<a href='isospecimendata.html'>isospecimendata</a><span class='relatedKey'>.dataid</span>
-					</td>
-					<td class="constraint detail">
-						isospecimendata_dataid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="isostratdata.dataid references data.dataid via isostratdata_dataid_fkey">
-						<a href='isostratdata.html'>isostratdata</a><span class='relatedKey'>.dataid</span>
-					</td>
-					<td class="constraint detail">
-						isostratdata_dataid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="specimens.dataid references data.dataid via specimens_dataid_fkey">
-						<a href='specimens.html'>specimens</a><span class='relatedKey'>.dataid</span>
-					</td>
-					<td class="constraint detail">
-						specimens_dataid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				   <tr>
-					<td title="summarydatataphonomy.dataid references data.dataid via summarydatataphonomy_dataid_fkey">
-						<a href='summarydatataphonomy.html'>summarydatataphonomy</a><span class='relatedKey'>.dataid</span>
-					</td>
-					<td class="constraint detail">
-						summarydatataphonomy_dataid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sampleid">sampleid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="data.sampleid references samples.sampleid via data_sampleid_fkey">
-						<a href='samples.html'>samples</a><span class='relatedKey'>.sampleid</span>
-					</td>
-					<td class="constraint detail">
-						data_sampleid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="variableid">variableid</span></td>
-				 <td>int4</td>
-				 <td>10</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td title="data.variableid references variables.variableid via data_variableid_fkey">
-						<a href='variables.html'>variables</a><span class='relatedKey'>.variableid</span>
-					</td>
-					<td class="constraint detail">
-						data_variableid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
-					</td>
-				   </tr>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="value">value</span></td>
-				 <td>float8</td>
-				 <td>17,17</td>
-				 <td title='nullable'>√</td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatecreated">recdatecreated</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>timezone(&#39;UTC&#39;::text, now())</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-				<tr>
-				 <td><span id="recdatemodified">recdatemodified</span></td>
-				 <td>timestamp</td>
-				 <td>22</td>
-				 <td title=''></td>
-				 <td title=''></td>
-				 <td>null</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>				 
-				 </td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				  </table>					 
-				 </td>
-				 <td></td>
-				</tr>
-								</tbody>
-				</table>
-				<p title='6 columns'>Table contained <span id="recordNumber">5382825</span> rows<p/>
-			</div>
-		</div>
-		<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-sitemap"></i>
-
-              <h3 id="Indexes" class="box-title">Indexes</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">
-				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
-				<thead>
-				 <tr>
-				  <th>Constraint Name</th>
-				  <th>Type</th>
-				  <th>Sort</th>
-				  <th>Column(s)</th>
-				 </tr>
-				</thead>
-				<tbody>
-				 <tr>
-				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> data_pkey</td>
-				  <td>Primary key</td>
-				  <td><span title='Ascending'>Asc</span></td>
-				  <td>dataid</td>
-				 </tr>				 
-				</tbody>
-				</table>   			  
-			</div><!-- /.box-body -->
-		</div>
-				<div class="box box-primary">		
-			<div class="box-header with-border">
-              <i class="fa fa-code-fork"></i>
-
-              <h3 id="Relationships" class="box-title">Relationships</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>	
-			<div class="box-body">	
-			<div class="nav-tabs-custom" style="cursor: move;">
-            <!-- Tabs within a box -->
-			<h5>Close relationships within degrees of separation</h5>
-            <ul class="nav nav-tabs pull-left ui-sortable-handle">
-			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
-			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
-			  			              <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>			  			 
-			  			              <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>			  			 
-            </ul>
-            <div class="tab-content no-padding">            
-				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="data.html" title="data" alt="" coords="273,543,575,788">
-<area shape="rect" id="node2" href="samples.html" title="samples" alt="" coords="5,477,229,683">
-<area shape="rect" id="node3" href="variables.html" title="variables" alt="" coords="11,700,223,935">
-<area shape="rect" id="node4" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="652,5,860,181">
-<area shape="rect" id="node5" href="isometadata.html" title="isometadata" alt="" coords="647,199,865,404">
-<area shape="rect" id="node6" href="isosamplepretreatments.html" title="isosamplepretreatments" alt="" coords="621,421,891,568">
-<area shape="rect" id="node7" href="isospecimendata.html" title="isospecimendata" alt="" coords="937,569,1139,716">
-<area shape="rect" id="node8" href="specimens.html" title="specimens" alt="" coords="654,621,858,973">
-<area shape="rect" id="node9" href="isostratdata.html" title="isostratdata" alt="" coords="657,991,855,1167">
-<area shape="rect" id="node10" href="summarydatataphonomy.html" title="summarydatataphonomy" alt="" coords="619,1184,893,1331">
-</map>
-
-					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/data.1degree.svg' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="aggregatesamples.html" title="aggregatesamples" alt="" coords="823,281,1033,369">
-<area shape="rect" id="node2" href="samples.html" title="samples" alt="" coords="509,384,733,589">
-<area shape="rect" id="node6" href="datasets.html" title="datasets" alt="" coords="278,959,454,1047">
-<area shape="rect" id="node22" href="taxa.html" title="taxa" alt="" coords="284,497,448,585">
-<area shape="rect" id="node27" href="analysisunits.html" title="analysisunits" alt="" coords="278,392,454,480">
-<area shape="rect" id="node3" href="data.html" title="data" alt="" coords="777,597,1079,843">
-<area shape="rect" id="node4" href="variables.html" title="variables" alt="" coords="515,1068,727,1303">
-<area shape="rect" id="node39" href="variableelements.html" title="variableelements" alt="" coords="267,1311,465,1399">
-<area shape="rect" id="node40" href="variablecontexts.html" title="variablecontexts" alt="" coords="268,1521,464,1609">
-<area shape="rect" id="node41" href="variableunits.html" title="variableunits" alt="" coords="281,1416,451,1504">
-<area shape="rect" id="node5" href="datasetvariables.html" title="datasetvariables" alt="" coords="831,1071,1025,1159">
-<area shape="rect" id="node7" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="1154,1077,1362,1253">
-<area shape="rect" id="node8" href="contacts.html" title="contacts" alt="" coords="844,1176,1012,1264">
-<area shape="rect" id="node9" href="geochronology.html" title="geochronology" alt="" coords="835,387,1021,475">
-<area shape="rect" id="node10" href="isoinstrumentation.html" title="isoinstrumentation" alt="" coords="821,1281,1035,1369">
-<area shape="rect" id="node11" href="isometadata.html" title="isometadata" alt="" coords="1149,1316,1367,1521">
-<area shape="rect" id="node12" href="isomaterialanalyzedtypes.html" title="isomaterialanalyzedtypes" alt="" coords="799,1387,1057,1475">
-<area shape="rect" id="node13" href="isosubstratetypes.html" title="isosubstratetypes" alt="" coords="825,1492,1031,1580">
-<area shape="rect" id="node14" href="isosamplepretreatments.html" title="isosamplepretreatments" alt="" coords="1123,1549,1393,1696">
-<area shape="rect" id="node15" href="isopretratmenttypes.html" title="isopretratmenttypes" alt="" coords="817,1597,1039,1685">
-<area shape="rect" id="node16" href="isospecimendata.html" title="isospecimendata" alt="" coords="1474,992,1675,1139">
-<area shape="rect" id="node17" href="specimens.html" title="specimens" alt="" coords="1156,1719,1360,2071">
-<area shape="rect" id="node21" href="elementtypes.html" title="elementtypes" alt="" coords="27,1311,201,1399">
-<area shape="rect" id="node30" href="specimendomesticstatustypes.html" title="specimendomesticstatustypes" alt="" coords="781,2057,1075,2145">
-<area shape="rect" id="node31" href="elementmaturities.html" title="elementmaturities" alt="" coords="11,1753,217,1841">
-<area shape="rect" id="node32" href="elementportions.html" title="elementportions" alt="" coords="17,1585,211,1673">
-<area shape="rect" id="node33" href="repositoryinstitutions.html" title="repositoryinstitutions" alt="" coords="812,2163,1044,2251">
-<area shape="rect" id="node34" href="specimensextypes.html" title="specimensextypes" alt="" coords="823,1952,1033,2040">
-<area shape="rect" id="node35" href="elementsymmetries.html" title="elementsymmetries" alt="" coords="5,1448,223,1536">
-<area shape="rect" id="node18" href="isosrmetadata.html" title="isosrmetadata" alt="" coords="838,860,1018,948">
-<area shape="rect" id="node19" href="isostandards.html" title="isostandards" alt="" coords="842,965,1014,1053">
-<area shape="rect" id="node20" href="isostratdata.html" title="isostratdata" alt="" coords="1159,5,1357,181">
-<area shape="rect" id="node23" href="isovariablescaletypes.html" title="isovariablescaletypes" alt="" coords="813,1703,1043,1791">
-<area shape="rect" id="node24" href="sampleages.html" title="sampleages" alt="" coords="840,492,1016,580">
-<area shape="rect" id="node25" href="sampleanalysts.html" title="sampleanalysts" alt="" coords="1163,371,1353,459">
-<area shape="rect" id="node26" href="samplekeywords.html" title="samplekeywords" alt="" coords="829,140,1027,228">
-<area shape="rect" id="node28" href="specimendates.html" title="specimendates" alt="" coords="1482,1775,1667,1863">
-<area shape="rect" id="node29" href="specimengenbank.html" title="specimengenbank" alt="" coords="1471,1669,1679,1757">
-<area shape="rect" id="node36" href="specimentaphonomy.html" title="specimentaphonomy" alt="" coords="1461,1428,1688,1516">
-<area shape="rect" id="node37" href="taphonomictypes.html" title="taphonomictypes" alt="" coords="1157,897,1359,985">
-<area shape="rect" id="node38" href="summarydatataphonomy.html" title="summarydatataphonomy" alt="" coords="1437,743,1712,889">
-</map>
-
-					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/data.2degrees.svg' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="data.html" title="data" alt="" coords="273,543,575,788">
-<area shape="rect" id="node2" href="samples.html" title="samples" alt="" coords="5,477,229,683">
-<area shape="rect" id="node3" href="variables.html" title="variables" alt="" coords="11,700,223,935">
-<area shape="rect" id="node4" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="652,5,860,181">
-<area shape="rect" id="node5" href="isometadata.html" title="isometadata" alt="" coords="647,199,865,404">
-<area shape="rect" id="node6" href="isosamplepretreatments.html" title="isosamplepretreatments" alt="" coords="621,421,891,568">
-<area shape="rect" id="node7" href="isospecimendata.html" title="isospecimendata" alt="" coords="937,569,1139,716">
-<area shape="rect" id="node8" href="specimens.html" title="specimens" alt="" coords="654,621,858,973">
-<area shape="rect" id="node9" href="isostratdata.html" title="isostratdata" alt="" coords="657,991,855,1167">
-<area shape="rect" id="node10" href="summarydatataphonomy.html" title="summarydatataphonomy" alt="" coords="619,1184,893,1331">
-</map>
-
-					<a name='diagram'><img id='oneimpliedDegreeImg' src='../diagrams/data.implied1degrees.svg' usemap='#oneDegreeRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-				<div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">					
-					<map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="aggregatesamples.html" title="aggregatesamples" alt="" coords="823,237,1033,325">
-<area shape="rect" id="node2" href="samples.html" title="samples" alt="" coords="509,393,733,599">
-<area shape="rect" id="node6" href="datasets.html" title="datasets" alt="" coords="278,1275,454,1363">
-<area shape="rect" id="node23" href="taxa.html" title="taxa" alt="" coords="278,1505,454,1593">
-<area shape="rect" id="node28" href="analysisunits.html" title="analysisunits" alt="" coords="278,425,454,513">
-<area shape="rect" id="node3" href="data.html" title="data" alt="" coords="777,951,1079,1196">
-<area shape="rect" id="node4" href="variables.html" title="variables" alt="" coords="515,1564,727,1799">
-<area shape="rect" id="node40" href="variableelements.html" title="variableelements" alt="" coords="267,2061,465,2149">
-<area shape="rect" id="node41" href="variablecontexts.html" title="variablecontexts" alt="" coords="268,1745,464,1833">
-<area shape="rect" id="node42" href="variableunits.html" title="variableunits" alt="" coords="281,1640,451,1728">
-<area shape="rect" id="node5" href="datasetvariables.html" title="datasetvariables" alt="" coords="831,1565,1025,1653">
-<area shape="rect" id="node7" href="datataxonnotes.html" title="datataxonnotes" alt="" coords="1154,897,1362,1073">
-<area shape="rect" id="node8" href="contacts.html" title="contacts" alt="" coords="844,764,1012,852">
-<area shape="rect" id="node9" href="dsdatasample.html" title="dsdatasample" alt="" coords="841,869,1015,933">
-<area shape="rect" id="node10" href="geochronology.html" title="geochronology" alt="" coords="835,343,1021,431">
-<area shape="rect" id="node11" href="isoinstrumentation.html" title="isoinstrumentation" alt="" coords="821,1213,1035,1301">
-<area shape="rect" id="node12" href="isometadata.html" title="isometadata" alt="" coords="1149,623,1367,828">
-<area shape="rect" id="node13" href="isomaterialanalyzedtypes.html" title="isomaterialanalyzedtypes" alt="" coords="799,553,1057,641">
-<area shape="rect" id="node14" href="isosubstratetypes.html" title="isosubstratetypes" alt="" coords="825,659,1031,747">
-<area shape="rect" id="node15" href="isosamplepretreatments.html" title="isosamplepretreatments" alt="" coords="1123,1563,1393,1709">
-<area shape="rect" id="node16" href="isopretratmenttypes.html" title="isopretratmenttypes" alt="" coords="817,1671,1039,1759">
-<area shape="rect" id="node17" href="isospecimendata.html" title="isospecimendata" alt="" coords="1474,1604,1675,1751">
-<area shape="rect" id="node18" href="specimens.html" title="specimens" alt="" coords="1156,1956,1360,2308">
-<area shape="rect" id="node22" href="elementtypes.html" title="elementtypes" alt="" coords="27,1899,201,1987">
-<area shape="rect" id="node31" href="specimendomesticstatustypes.html" title="specimendomesticstatustypes" alt="" coords="781,2344,1075,2432">
-<area shape="rect" id="node32" href="elementmaturities.html" title="elementmaturities" alt="" coords="11,2215,217,2303">
-<area shape="rect" id="node33" href="elementportions.html" title="elementportions" alt="" coords="17,2109,211,2197">
-<area shape="rect" id="node34" href="repositoryinstitutions.html" title="repositoryinstitutions" alt="" coords="812,2449,1044,2537">
-<area shape="rect" id="node35" href="specimensextypes.html" title="specimensextypes" alt="" coords="823,2239,1033,2327">
-<area shape="rect" id="node36" href="elementsymmetries.html" title="elementsymmetries" alt="" coords="5,2004,223,2092">
-<area shape="rect" id="node19" href="isosrmetadata.html" title="isosrmetadata" alt="" coords="838,1319,1018,1407">
-<area shape="rect" id="node20" href="isostandards.html" title="isostandards" alt="" coords="842,1424,1014,1512">
-<area shape="rect" id="node21" href="isostratdata.html" title="isostratdata" alt="" coords="1159,1727,1357,1903">
-<area shape="rect" id="node24" href="isovariablescaletypes.html" title="isovariablescaletypes" alt="" coords="813,1776,1043,1864">
-<area shape="rect" id="node25" href="sampleages.html" title="sampleages" alt="" coords="840,448,1016,536">
-<area shape="rect" id="node26" href="sampleanalysts.html" title="sampleanalysts" alt="" coords="1163,340,1353,428">
-<area shape="rect" id="node27" href="samplekeywords.html" title="samplekeywords" alt="" coords="829,96,1027,184">
-<area shape="rect" id="node29" href="specimendates.html" title="specimendates" alt="" coords="1482,1495,1667,1583">
-<area shape="rect" id="node30" href="specimengenbank.html" title="specimengenbank" alt="" coords="1471,1959,1679,2047">
-<area shape="rect" id="node37" href="specimentaphonomy.html" title="specimentaphonomy" alt="" coords="1461,2195,1688,2283">
-<area shape="rect" id="node38" href="taphonomictypes.html" title="taphonomictypes" alt="" coords="1157,2325,1359,2413">
-<area shape="rect" id="node39" href="summarydatataphonomy.html" title="summarydatataphonomy" alt="" coords="1437,1777,1712,1924">
-</map>
-
-					<a name='diagram'><img id='twoimpliedDegreeImg' src='../diagrams/data.implied2degrees.svg' usemap='#twoDegreesRelationshipsDiagramImplied' class='diagram' border='0' alt='' align='left'></a>							
-				</div>
-			  			</div>
-			</div>
-		  </div><!-- /.box-body -->
-		</div>
-	      </section>
-    
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div>
-      <div class="pull-right hidden-xs">
-        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
-        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
-      </div>
-      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
-    </div>
-    <!-- /.container -->
-  </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 2.2.3 -->
-<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
-<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
-<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
-<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
-
-<!-- SlimScroll -->
-<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
-<!-- Salvattore -->
-<script src="../bower/salvattore/salvattore.min.js"></script>
-<!-- AnchorJS -->
-<script src="../bower/anchor-js/anchor.min.js"></script>
-<!-- CodeMirror -->
-<script src="../bower/codemirror/codemirror.js"></script>
-<script src="../bower/codemirror/sql.js"></script>
-<!-- AdminLTE App -->
-<script src="../bower/admin-lte/dist/js/app.min.js"></script>
-<script src="table.js"></script>
-<script src="../schemaSpy.js"></script>
-</body>
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
 </html>
