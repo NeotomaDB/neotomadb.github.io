@@ -73,7 +73,20 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>taxa</h1><p><span id="recordNumber">37675</span> rows</p><br />
+                    <h1>taxa</h1><p><span id="recordNumber">39096</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>This table lists all taxa in the database. Most taxa are biological taxa; however, some are biometric measures and some are physical parameters.</p>
+                        </div><!-- /.box-body -->
+                    </div>
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -170,6 +183,10 @@
                                             <tr>
                                                 <td title="taxaalthierarchy.taxonid references taxa.taxonid via fk_taxaalthierarchy_taxa"><a href='taxaalthierarchy.html'>taxaalthierarchy</a><span class='relatedKey'>.taxonid</span></td>
                                                 <td class="constraint detail">fk_taxaalthierarchy_taxa<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="taxonpaths.taxonid references taxa.taxonid via taxonpaths_taxonid_fkey"><a href='taxonpaths.html'>taxonpaths</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">taxonpaths_taxonid_fkey<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                             <tr>
                                                 <td title="variables.taxonid references taxa.taxonid via fk_variables_taxa"><a href='variables.html'>variables</a><span class='relatedKey'>.taxonid</span></td>
@@ -500,181 +517,186 @@
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="661,5,906,181">
-<area shape="rect" id="node2" href="contacts.html" target="_top" title="contacts" alt="" coords="15,1552,214,1728">
-<area shape="rect" id="node3" href="taxa.html" target="_top" title="taxa" alt="" coords="268,1260,612,1740">
-<area shape="rect" id="node7" href="publications.html" target="_top" title="publications" alt="" coords="14,1769,215,1916">
-<area shape="rect" id="node13" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="5,1417,224,1535">
+<area shape="rect" id="node2" href="contacts.html" target="_top" title="contacts" alt="" coords="15,1592,214,1768">
+<area shape="rect" id="node3" href="taxa.html" target="_top" title="taxa" alt="" coords="268,1287,612,1767">
+<area shape="rect" id="node7" href="publications.html" target="_top" title="publications" alt="" coords="14,1909,215,2056">
+<area shape="rect" id="node13" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="5,1457,224,1575">
 <area shape="rect" id="node4" href="ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="685,199,882,375">
 <area shape="rect" id="node5" href="externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="685,392,882,568">
-<area shape="rect" id="node6" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="659,1681,907,1887">
+<area shape="rect" id="node6" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="659,1821,907,2027">
 <area shape="rect" id="node8" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="685,585,882,761">
 <area shape="rect" id="node9" href="samples.html" target="_top" title="samples" alt="" coords="671,815,895,1020">
 <area shape="rect" id="node10" href="specimendates.html" target="_top" title="specimendates" alt="" coords="955,689,1169,983">
 <area shape="rect" id="node11" href="synonyms.html" target="_top" title="synonyms" alt="" coords="685,1037,882,1243">
-<area shape="rect" id="node12" href="synonymy.html" target="_top" title="synonymy" alt="" coords="679,1904,887,2168">
+<area shape="rect" id="node12" href="synonymy.html" target="_top" title="synonymy" alt="" coords="679,2044,887,2308">
 <area shape="rect" id="node14" href="taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="656,1260,911,1412">
-<area shape="rect" id="node15" href="variables.html" target="_top" title="variables" alt="" coords="677,1429,889,1664">
+<area shape="rect" id="node15" href="taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="692,1429,875,1552">
+<area shape="rect" id="node16" href="variables.html" target="_top" title="variables" alt="" coords="677,1569,889,1804">
 </map>
                                         <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/taxa.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1243,748,1486,836">
-<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="944,640,1168,845">
-<area shape="rect" id="node13" href="datasets.html" target="_top" title="datasets" alt="" coords="611,642,810,730">
-<area shape="rect" id="node20" href="taxa.html" target="_top" title="taxa" alt="" coords="539,1969,883,2449">
-<area shape="rect" id="node50" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="611,537,810,625">
-<area shape="rect" id="node3" href="calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="1855,2832,2088,2920">
-<area shape="rect" id="node4" href="publications.html" target="_top" title="publications" alt="" coords="285,1834,486,1981">
-<area shape="rect" id="node44" href="publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,1866,232,1954">
-<area shape="rect" id="node5" href="chronologies.html" target="_top" title="chronologies" alt="" coords="959,182,1153,270">
-<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="286,428,485,604">
-<area shape="rect" id="node9" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="7,460,230,548">
-<area shape="rect" id="node7" href="collectors.html" target="_top" title="collectors" alt="" coords="624,146,797,234">
-<area shape="rect" id="node8" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="576,396,845,484">
-<area shape="rect" id="node10" href="data.html" target="_top" title="data" alt="" coords="1259,1178,1471,1266">
-<area shape="rect" id="node11" href="variables.html" target="_top" title="variables" alt="" coords="950,1586,1162,1821">
-<area shape="rect" id="node61" href="variableelements.html" target="_top" title="variableelements" alt="" coords="594,3453,827,3541">
-<area shape="rect" id="node62" href="variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="597,1346,825,1434">
-<area shape="rect" id="node63" href="variableunits.html" target="_top" title="variableunits" alt="" coords="611,1136,810,1224">
-<area shape="rect" id="node12" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="947,324,1165,412">
-<area shape="rect" id="node14" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="967,429,1145,517">
-<area shape="rect" id="node15" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="929,1006,1183,1094">
-<area shape="rect" id="node16" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="929,534,1183,622">
-<area shape="rect" id="node17" href="datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="569,3242,852,3330">
-<area shape="rect" id="node18" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="276,3186,495,3304">
-<area shape="rect" id="node19" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="933,1112,1179,1288">
-<area shape="rect" id="node21" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1250,1600,1479,1688">
-<area shape="rect" id="node22" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1568,356,1787,444">
-<area shape="rect" id="node23" href="ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="957,2726,1155,2902">
-<area shape="rect" id="node24" href="ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="602,2854,819,2942">
-<area shape="rect" id="node25" href="ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="613,2749,809,2837">
-<area shape="rect" id="node26" href="elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="555,3137,867,3225">
-<area shape="rect" id="node27" href="elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="586,3348,835,3436">
-<area shape="rect" id="node28" href="elementtypes.html" target="_top" title="elementtypes" alt="" coords="284,3521,487,3609">
-<area shape="rect" id="node29" href="eventpublications.html" target="_top" title="eventpublications" alt="" coords="592,1452,829,1540">
-<area shape="rect" id="node30" href="externalpublications.html" target="_top" title="externalpublications" alt="" coords="927,3113,1185,3201">
-<area shape="rect" id="node31" href="externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="589,2960,832,3048">
-<area shape="rect" id="node32" href="externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="957,2920,1155,3096">
-<area shape="rect" id="node33" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="932,1942,1180,2148">
-<area shape="rect" id="node34" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1259,642,1470,730">
-<area shape="rect" id="node35" href="geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1544,1268,1811,1356">
-<area shape="rect" id="node36" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1241,1389,1488,1477">
-<area shape="rect" id="node37" href="isometadata.html" target="_top" title="isometadata" alt="" coords="1581,942,1774,1030">
-<area shape="rect" id="node38" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1260,1494,1469,1582">
-<area shape="rect" id="node39" href="isostandards.html" target="_top" title="isostandards" alt="" coords="1267,1284,1463,1372">
-<area shape="rect" id="node40" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="1579,1917,1776,2093">
-<area shape="rect" id="node41" href="isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1229,1705,1500,1793">
-<area shape="rect" id="node42" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="589,1241,833,1329">
-<area shape="rect" id="node43" href="publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="591,1557,830,1645">
-<area shape="rect" id="node45" href="publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="575,1662,847,1750">
-<area shape="rect" id="node46" href="relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="569,1804,853,1892">
-<area shape="rect" id="node47" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1265,245,1464,333">
-<area shape="rect" id="node48" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1255,474,1474,562">
-<area shape="rect" id="node49" href="samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1251,853,1479,941">
-<area shape="rect" id="node51" href="siteimages.html" target="_top" title="siteimages" alt="" coords="621,748,801,836">
-<area shape="rect" id="node52" href="specimendates.html" target="_top" title="specimendates" alt="" coords="1864,1724,2079,2017">
-<area shape="rect" id="node53" href="fractiondated.html" target="_top" title="fractiondated" alt="" coords="1577,1776,1778,1864">
-<area shape="rect" id="node54" href="specimens.html" target="_top" title="specimens" alt="" coords="1587,2110,1767,2198">
-<area shape="rect" id="node55" href="specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2132,2280,2371,2368">
-<area shape="rect" id="node56" href="synonyms.html" target="_top" title="synonyms" alt="" coords="957,2165,1155,2370">
-<area shape="rect" id="node57" href="synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="605,2502,816,2590">
-<area shape="rect" id="node58" href="synonymy.html" target="_top" title="synonymy" alt="" coords="952,1305,1160,1569">
-<area shape="rect" id="node59" href="taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="929,2388,1183,2540">
-<area shape="rect" id="node60" href="taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="575,2608,847,2696">
-<area shape="rect" id="node64" title="ti.stewards" alt="" coords="619,853,803,941">
-<area shape="rect" id="node65" title="ti.stewardupdates" alt="" coords="590,958,831,1046">
+<area shape="rect" id="node1" href="aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1243,565,1486,653">
+<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="944,614,1168,820">
+<area shape="rect" id="node13" href="datasets.html" target="_top" title="datasets" alt="" coords="611,856,810,944">
+<area shape="rect" id="node20" href="taxa.html" target="_top" title="taxa" alt="" coords="539,1833,883,2313">
+<area shape="rect" id="node50" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="611,540,810,628">
+<area shape="rect" id="node3" href="calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="1855,2456,2088,2544">
+<area shape="rect" id="node4" href="publications.html" target="_top" title="publications" alt="" coords="285,1557,486,1704">
+<area shape="rect" id="node44" href="publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,1589,232,1677">
+<area shape="rect" id="node5" href="chronologies.html" target="_top" title="chronologies" alt="" coords="959,157,1153,245">
+<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="286,446,485,622">
+<area shape="rect" id="node9" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="7,478,230,566">
+<area shape="rect" id="node7" href="collectors.html" target="_top" title="collectors" alt="" coords="624,149,797,237">
+<area shape="rect" id="node8" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="576,362,845,450">
+<area shape="rect" id="node10" href="data.html" target="_top" title="data" alt="" coords="1259,1714,1471,1802">
+<area shape="rect" id="node11" href="variables.html" target="_top" title="variables" alt="" coords="950,2617,1162,2852">
+<area shape="rect" id="node62" href="variableelements.html" target="_top" title="variableelements" alt="" coords="594,3488,827,3576">
+<area shape="rect" id="node63" href="variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="597,2678,825,2766">
+<area shape="rect" id="node64" href="variableunits.html" target="_top" title="variableunits" alt="" coords="611,2573,810,2661">
+<area shape="rect" id="node12" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="947,298,1165,386">
+<area shape="rect" id="node14" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="967,509,1145,597">
+<area shape="rect" id="node15" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="929,981,1183,1069">
+<area shape="rect" id="node16" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="929,404,1183,492">
+<area shape="rect" id="node17" href="datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="569,3277,852,3365">
+<area shape="rect" id="node18" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="276,3117,495,3234">
+<area shape="rect" id="node19" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="933,1086,1179,1262">
+<area shape="rect" id="node21" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1250,1873,1479,1961">
+<area shape="rect" id="node22" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1568,518,1787,606">
+<area shape="rect" id="node23" href="ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="957,2905,1155,3081">
+<area shape="rect" id="node24" href="ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="602,3172,819,3260">
+<area shape="rect" id="node25" href="ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="613,2820,809,2908">
+<area shape="rect" id="node26" href="elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="555,2961,867,3049">
+<area shape="rect" id="node27" href="elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="586,3382,835,3470">
+<area shape="rect" id="node28" href="elementtypes.html" target="_top" title="elementtypes" alt="" coords="284,3556,487,3644">
+<area shape="rect" id="node29" href="eventpublications.html" target="_top" title="eventpublications" alt="" coords="592,1316,829,1404">
+<area shape="rect" id="node30" href="externalpublications.html" target="_top" title="externalpublications" alt="" coords="927,3098,1185,3186">
+<area shape="rect" id="node31" href="externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="589,3066,832,3154">
+<area shape="rect" id="node32" href="externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="957,2424,1155,2600">
+<area shape="rect" id="node33" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="932,1597,1180,1802">
+<area shape="rect" id="node34" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1259,1064,1470,1152">
+<area shape="rect" id="node35" href="geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1544,1242,1811,1330">
+<area shape="rect" id="node36" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1241,2308,1488,2396">
+<area shape="rect" id="node37" href="isometadata.html" target="_top" title="isometadata" alt="" coords="1581,1137,1774,1225">
+<area shape="rect" id="node38" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1260,2481,1469,2569">
+<area shape="rect" id="node39" href="isostandards.html" target="_top" title="isostandards" alt="" coords="1267,2066,1463,2154">
+<area shape="rect" id="node40" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="1579,1961,1776,2137">
+<area shape="rect" id="node41" href="isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1229,2620,1500,2708">
+<area shape="rect" id="node42" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="589,1138,833,1226">
+<area shape="rect" id="node43" href="publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="591,1421,830,1509">
+<area shape="rect" id="node45" href="publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="575,1526,847,1614">
+<area shape="rect" id="node46" href="relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="569,1668,853,1756">
+<area shape="rect" id="node47" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1265,206,1464,294">
+<area shape="rect" id="node48" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1255,361,1474,449">
+<area shape="rect" id="node49" href="samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1251,670,1479,758">
+<area shape="rect" id="node51" href="siteimages.html" target="_top" title="siteimages" alt="" coords="621,645,801,733">
+<area shape="rect" id="node52" href="specimendates.html" target="_top" title="specimendates" alt="" coords="1864,1768,2079,2061">
+<area shape="rect" id="node53" href="fractiondated.html" target="_top" title="fractiondated" alt="" coords="1577,1820,1778,1908">
+<area shape="rect" id="node54" href="specimens.html" target="_top" title="specimens" alt="" coords="1587,2154,1767,2242">
+<area shape="rect" id="node55" href="specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2132,2113,2371,2201">
+<area shape="rect" id="node56" href="synonyms.html" target="_top" title="synonyms" alt="" coords="957,2032,1155,2237">
+<area shape="rect" id="node57" href="synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="605,2330,816,2418">
+<area shape="rect" id="node58" href="synonymy.html" target="_top" title="synonymy" alt="" coords="952,1316,1160,1580">
+<area shape="rect" id="node59" href="taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="929,2254,1183,2406">
+<area shape="rect" id="node60" href="taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="575,2436,847,2524">
+<area shape="rect" id="node61" href="taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="965,1856,1147,1978">
+<area shape="rect" id="node65" title="ti.stewards" alt="" coords="619,750,803,838">
+<area shape="rect" id="node66" title="ti.stewardupdates" alt="" coords="590,961,831,1049">
 </map>
                                         <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/taxa.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
 <area shape="rect" id="node1" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="661,5,906,181">
-<area shape="rect" id="node2" href="contacts.html" target="_top" title="contacts" alt="" coords="15,1552,214,1728">
-<area shape="rect" id="node3" href="taxa.html" target="_top" title="taxa" alt="" coords="268,1260,612,1740">
-<area shape="rect" id="node7" href="publications.html" target="_top" title="publications" alt="" coords="14,1769,215,1916">
-<area shape="rect" id="node13" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="5,1417,224,1535">
+<area shape="rect" id="node2" href="contacts.html" target="_top" title="contacts" alt="" coords="15,1592,214,1768">
+<area shape="rect" id="node3" href="taxa.html" target="_top" title="taxa" alt="" coords="268,1287,612,1767">
+<area shape="rect" id="node7" href="publications.html" target="_top" title="publications" alt="" coords="14,1909,215,2056">
+<area shape="rect" id="node13" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="5,1457,224,1575">
 <area shape="rect" id="node4" href="ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="685,199,882,375">
 <area shape="rect" id="node5" href="externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="685,392,882,568">
-<area shape="rect" id="node6" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="659,1681,907,1887">
+<area shape="rect" id="node6" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="659,1821,907,2027">
 <area shape="rect" id="node8" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="685,585,882,761">
 <area shape="rect" id="node9" href="samples.html" target="_top" title="samples" alt="" coords="671,815,895,1020">
 <area shape="rect" id="node10" href="specimendates.html" target="_top" title="specimendates" alt="" coords="955,689,1169,983">
 <area shape="rect" id="node11" href="synonyms.html" target="_top" title="synonyms" alt="" coords="685,1037,882,1243">
-<area shape="rect" id="node12" href="synonymy.html" target="_top" title="synonymy" alt="" coords="679,1904,887,2168">
+<area shape="rect" id="node12" href="synonymy.html" target="_top" title="synonymy" alt="" coords="679,2044,887,2308">
 <area shape="rect" id="node14" href="taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="656,1260,911,1412">
-<area shape="rect" id="node15" href="variables.html" target="_top" title="variables" alt="" coords="677,1429,889,1664">
+<area shape="rect" id="node15" href="taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="692,1429,875,1552">
+<area shape="rect" id="node16" href="variables.html" target="_top" title="variables" alt="" coords="677,1569,889,1804">
 </map>
                                         <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/taxa.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1243,711,1486,799">
-<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="944,603,1168,808">
-<area shape="rect" id="node13" href="datasets.html" target="_top" title="datasets" alt="" coords="611,852,810,940">
-<area shape="rect" id="node20" href="taxa.html" target="_top" title="taxa" alt="" coords="539,1829,883,2309">
-<area shape="rect" id="node51" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="611,536,810,624">
-<area shape="rect" id="node3" href="calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="1855,2340,2088,2428">
-<area shape="rect" id="node4" href="publications.html" target="_top" title="publications" alt="" coords="285,1553,486,1700">
-<area shape="rect" id="node45" href="publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,1585,232,1673">
-<area shape="rect" id="node5" href="chronologies.html" target="_top" title="chronologies" alt="" coords="959,145,1153,233">
-<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="286,427,485,603">
-<area shape="rect" id="node9" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="7,459,230,547">
-<area shape="rect" id="node7" href="collectors.html" target="_top" title="collectors" alt="" coords="624,145,797,233">
-<area shape="rect" id="node8" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="576,395,845,483">
-<area shape="rect" id="node10" href="data.html" target="_top" title="data" alt="" coords="1259,1433,1471,1521">
-<area shape="rect" id="node11" href="variables.html" target="_top" title="variables" alt="" coords="950,2501,1162,2736">
-<area shape="rect" id="node62" href="variableelements.html" target="_top" title="variableelements" alt="" coords="594,3452,827,3540">
-<area shape="rect" id="node63" href="variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="597,2643,825,2731">
-<area shape="rect" id="node64" href="variableunits.html" target="_top" title="variableunits" alt="" coords="611,2537,810,2625">
-<area shape="rect" id="node12" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="947,287,1165,375">
-<area shape="rect" id="node14" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="967,497,1145,585">
-<area shape="rect" id="node15" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="929,1005,1183,1093">
-<area shape="rect" id="node16" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="929,392,1183,480">
-<area shape="rect" id="node17" href="datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="569,3241,852,3329">
-<area shape="rect" id="node18" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="276,3081,495,3199">
-<area shape="rect" id="node19" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="933,1111,1179,1287">
-<area shape="rect" id="node21" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1250,2011,1479,2099">
-<area shape="rect" id="node22" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1568,317,1787,405">
-<area shape="rect" id="node23" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1263,1223,1466,1287">
-<area shape="rect" id="node24" href="ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="957,2789,1155,2965">
-<area shape="rect" id="node25" href="ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="602,3136,819,3224">
-<area shape="rect" id="node26" href="ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="613,2784,809,2872">
-<area shape="rect" id="node27" href="elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="555,2925,867,3013">
-<area shape="rect" id="node28" href="elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="586,3347,835,3435">
-<area shape="rect" id="node29" href="elementtypes.html" target="_top" title="elementtypes" alt="" coords="284,3520,487,3608">
-<area shape="rect" id="node30" href="eventpublications.html" target="_top" title="eventpublications" alt="" coords="592,1312,829,1400">
-<area shape="rect" id="node31" href="externalpublications.html" target="_top" title="externalpublications" alt="" coords="927,3007,1185,3095">
-<area shape="rect" id="node32" href="externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="589,3031,832,3119">
-<area shape="rect" id="node33" href="externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="957,2308,1155,2484">
-<area shape="rect" id="node34" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="932,1621,1180,1827">
-<area shape="rect" id="node35" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1259,605,1470,693">
-<area shape="rect" id="node36" href="geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1544,1025,1811,1113">
-<area shape="rect" id="node37" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1241,2304,1488,2392">
-<area shape="rect" id="node38" href="isometadata.html" target="_top" title="isometadata" alt="" coords="1581,800,1774,888">
-<area shape="rect" id="node39" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1260,1551,1469,1639">
-<area shape="rect" id="node40" href="isostandards.html" target="_top" title="isostandards" alt="" coords="1267,1763,1463,1851">
-<area shape="rect" id="node41" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="1579,1845,1776,2021">
-<area shape="rect" id="node42" href="isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1229,2504,1500,2592">
-<area shape="rect" id="node43" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="589,1135,833,1223">
-<area shape="rect" id="node44" href="publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="591,1417,830,1505">
-<area shape="rect" id="node46" href="publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="575,1523,847,1611">
-<area shape="rect" id="node47" href="relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="569,1664,853,1752">
-<area shape="rect" id="node48" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1265,269,1464,357">
-<area shape="rect" id="node49" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1255,437,1474,525">
-<area shape="rect" id="node50" href="samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1251,816,1479,904">
-<area shape="rect" id="node52" href="siteimages.html" target="_top" title="siteimages" alt="" coords="621,641,801,729">
-<area shape="rect" id="node53" href="specimendates.html" target="_top" title="specimendates" alt="" coords="1864,1652,2079,1945">
-<area shape="rect" id="node54" href="fractiondated.html" target="_top" title="fractiondated" alt="" coords="1577,1704,1778,1792">
-<area shape="rect" id="node55" href="specimens.html" target="_top" title="specimens" alt="" coords="1587,2039,1767,2127">
-<area shape="rect" id="node56" href="specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2132,1997,2371,2085">
-<area shape="rect" id="node57" href="synonyms.html" target="_top" title="synonyms" alt="" coords="957,1916,1155,2121">
-<area shape="rect" id="node58" href="synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="605,2327,816,2415">
-<area shape="rect" id="node59" href="synonymy.html" target="_top" title="synonymy" alt="" coords="952,1340,1160,1604">
-<area shape="rect" id="node60" href="taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="929,2139,1183,2291">
-<area shape="rect" id="node61" href="taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="575,2432,847,2520">
-<area shape="rect" id="node65" title="ti.stewards" alt="" coords="619,747,803,835">
-<area shape="rect" id="node66" title="ti.stewardupdates" alt="" coords="590,957,831,1045">
+<area shape="rect" id="node1" href="aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1243,578,1486,666">
+<area shape="rect" id="node2" href="samples.html" target="_top" title="samples" alt="" coords="944,576,1168,781">
+<area shape="rect" id="node13" href="datasets.html" target="_top" title="datasets" alt="" coords="611,637,810,725">
+<area shape="rect" id="node20" href="taxa.html" target="_top" title="taxa" alt="" coords="539,2186,883,2666">
+<area shape="rect" id="node52" href="analysisunits.html" target="_top" title="analysisunits" alt="" coords="611,532,810,620">
+<area shape="rect" id="node3" href="calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="1855,2552,2088,2640">
+<area shape="rect" id="node4" href="publications.html" target="_top" title="publications" alt="" coords="285,1770,486,1917">
+<area shape="rect" id="node45" href="publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,1802,232,1890">
+<area shape="rect" id="node5" href="chronologies.html" target="_top" title="chronologies" alt="" coords="959,224,1153,312">
+<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="286,422,485,598">
+<area shape="rect" id="node9" href="contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="7,454,230,542">
+<area shape="rect" id="node7" href="collectors.html" target="_top" title="collectors" alt="" coords="624,390,797,478">
+<area shape="rect" id="node8" href="constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="576,82,845,170">
+<area shape="rect" id="node10" href="data.html" target="_top" title="data" alt="" coords="1259,1140,1471,1228">
+<area shape="rect" id="node11" href="variables.html" target="_top" title="variables" alt="" coords="950,1558,1162,1793">
+<area shape="rect" id="node64" href="variableelements.html" target="_top" title="variableelements" alt="" coords="594,2057,827,2145">
+<area shape="rect" id="node65" href="variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="597,1236,825,1324">
+<area shape="rect" id="node66" href="variableunits.html" target="_top" title="variableunits" alt="" coords="611,1130,810,1218">
+<area shape="rect" id="node12" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="947,365,1165,453">
+<area shape="rect" id="node14" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="967,470,1145,558">
+<area shape="rect" id="node15" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="929,978,1183,1066">
+<area shape="rect" id="node16" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="929,82,1183,170">
+<area shape="rect" id="node17" href="datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="569,3637,852,3725">
+<area shape="rect" id="node18" href="taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="276,3372,495,3489">
+<area shape="rect" id="node19" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="933,1084,1179,1260">
+<area shape="rect" id="node21" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1250,1350,1479,1438">
+<area shape="rect" id="node22" href="datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1568,361,1787,449">
+<area shape="rect" id="node23" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1263,1058,1466,1122">
+<area shape="rect" id="node24" href="ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="957,3289,1155,3465">
+<area shape="rect" id="node25" href="ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="602,3426,819,3514">
+<area shape="rect" id="node26" href="ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="613,3321,809,3409">
+<area shape="rect" id="node27" href="elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="555,3532,867,3620">
+<area shape="rect" id="node28" href="elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="586,3216,835,3304">
+<area shape="rect" id="node29" href="elementtypes.html" target="_top" title="elementtypes" alt="" coords="284,3106,487,3194">
+<area shape="rect" id="node30" href="eventpublications.html" target="_top" title="eventpublications" alt="" coords="592,1705,829,1793">
+<area shape="rect" id="node31" href="externalpublications.html" target="_top" title="externalpublications" alt="" coords="927,2966,1185,3054">
+<area shape="rect" id="node32" href="externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="589,2930,832,3018">
+<area shape="rect" id="node33" href="externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="957,2773,1155,2949">
+<area shape="rect" id="node34" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="932,2158,1180,2364">
+<area shape="rect" id="node35" href="geochronology.html" target="_top" title="geochronology" alt="" coords="1259,732,1470,820">
+<area shape="rect" id="node36" href="geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1544,1248,1811,1336">
+<area shape="rect" id="node37" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1241,1456,1488,1544">
+<area shape="rect" id="node38" href="isometadata.html" target="_top" title="isometadata" alt="" coords="1581,949,1774,1037">
+<area shape="rect" id="node39" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1260,1561,1469,1649">
+<area shape="rect" id="node40" href="isostandards.html" target="_top" title="isostandards" alt="" coords="1267,1245,1463,1333">
+<area shape="rect" id="node41" href="isostratdata.html" target="_top" title="isostratdata" alt="" coords="1579,2021,1776,2197">
+<area shape="rect" id="node42" href="isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1229,1666,1500,1754">
+<area shape="rect" id="node43" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="589,1341,833,1429">
+<area shape="rect" id="node44" href="publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="591,1846,830,1934">
+<area shape="rect" id="node46" href="publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="575,1952,847,2040">
+<area shape="rect" id="node47" href="pubtsv.html" target="_top" title="pubtsv" alt="" coords="639,1482,783,1546">
+<area shape="rect" id="node48" href="relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="569,1564,853,1652">
+<area shape="rect" id="node49" href="sampleages.html" target="_top" title="sampleages" alt="" coords="1265,260,1464,348">
+<area shape="rect" id="node50" href="sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1255,437,1474,525">
+<area shape="rect" id="node51" href="samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1251,837,1479,925">
+<area shape="rect" id="node53" href="siteimages.html" target="_top" title="siteimages" alt="" coords="621,742,801,830">
+<area shape="rect" id="node54" href="specimendates.html" target="_top" title="specimendates" alt="" coords="1864,1722,2079,2016">
+<area shape="rect" id="node55" href="fractiondated.html" target="_top" title="fractiondated" alt="" coords="1577,1774,1778,1862">
+<area shape="rect" id="node56" href="specimens.html" target="_top" title="specimens" alt="" coords="1587,1916,1767,2004">
+<area shape="rect" id="node57" href="specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2132,2138,2371,2226">
+<area shape="rect" id="node58" href="synonyms.html" target="_top" title="synonyms" alt="" coords="957,2381,1155,2586">
+<area shape="rect" id="node59" href="synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="605,2720,816,2808">
+<area shape="rect" id="node60" href="synonymy.html" target="_top" title="synonymy" alt="" coords="952,1277,1160,1541">
+<area shape="rect" id="node61" href="taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="929,2604,1183,2756">
+<area shape="rect" id="node62" href="taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="575,2825,847,2913">
+<area shape="rect" id="node63" href="taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="965,2018,1147,2141">
+<area shape="rect" id="node67" title="ti.stewards" alt="" coords="619,848,803,936">
+<area shape="rect" id="node68" title="ti.stewardupdates" alt="" coords="590,953,831,1041">
 </map>
                                         <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/taxa.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
                                     </div>

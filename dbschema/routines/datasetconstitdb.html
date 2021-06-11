@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <div class="box-body">
-                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">&#13;&#10;  SELECT cdb.databasename, count(*)&#13;&#10;  FROM ndb.datasets AS ds&#13;&#10;  JOIN ndb.datasetsubmissions AS dss on dss.datasetid = ds.datasetid&#13;&#10;  JOIN ndb.constituentdatabases AS cdb ON cdb.databaseid = dss.databaseid&#13;&#10;  WHERE EXTRACT(month from AGE(NOW(), dss.submissiondate)) BETWEEN startperiod and endperiod&#13;&#10;  GROUP BY cdb.databasename&#13;&#10;</textarea>
+                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">&#10;  SELECT cdb.databasename, count(*)&#10;  FROM ndb.datasets AS ds&#10;  JOIN ndb.datasetsubmissions AS dss on dss.datasetid = ds.datasetid&#10;  JOIN ndb.constituentdatabases AS cdb ON cdb.databaseid = dss.databaseid&#10;  WHERE EXTRACT(year from AGE(NOW(), dss.submissiondate))*12 +&#10;   EXTRACT(month from AGE(NOW(), dss.submissiondate)) BETWEEN startperiod and endperiod&#10;  GROUP BY cdb.databasename&#10;</textarea>
                         </div>
                     </div>
                 </section>

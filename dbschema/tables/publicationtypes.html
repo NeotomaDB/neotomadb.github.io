@@ -74,6 +74,19 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>publicationtypes</h1><p><span id="recordNumber">13</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>Lookup table of Publication Types. This table is referenced by the Publications table.</p>
+                        </div><!-- /.box-body -->
+                    </div>
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -223,6 +236,8 @@
                                 <ul class="nav nav-tabs pull-left ui-sortable-handle">
                                     <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
                                     <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
                                 </ul>
                                 <div class="tab-content no-padding">
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
@@ -250,6 +265,33 @@
 <area shape="rect" id="node14" href="synonymy.html" target="_top" title="synonymy" alt="" coords="945,513,1120,601">
 </map>
                                         <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/publicationtypes.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="publications.html" target="_top" title="publications" alt="" coords="372,5,573,152">
+<area shape="rect" id="node2" href="publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,32,328,219">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/publicationtypes.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="643,5,876,93">
+<area shape="rect" id="node2" href="publications.html" target="_top" title="publications" alt="" coords="372,528,573,675">
+<area shape="rect" id="node11" href="publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,555,328,741">
+<area shape="rect" id="node3" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="633,111,886,199">
+<area shape="rect" id="node4" href="eventpublications.html" target="_top" title="eventpublications" alt="" coords="641,216,878,304">
+<area shape="rect" id="node5" href="externalpublications.html" target="_top" title="externalpublications" alt="" coords="630,321,889,409">
+<area shape="rect" id="node6" href="formtaxa.html" target="_top" title="formtaxa" alt="" coords="951,408,1115,496">
+<area shape="rect" id="node7" href="taxa.html" target="_top" title="taxa" alt="" coords="660,463,859,551">
+<area shape="rect" id="node8" href="geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="626,604,893,692">
+<area shape="rect" id="node9" href="publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="637,709,881,797">
+<area shape="rect" id="node10" href="publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="640,815,879,903">
+<area shape="rect" id="node12" href="publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="623,920,895,1008">
+<area shape="rect" id="node13" href="pubtsv.html" target="_top" title="pubtsv" alt="" coords="687,1025,831,1089">
+<area shape="rect" id="node14" href="relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="617,1107,901,1195">
+<area shape="rect" id="node15" href="synonymy.html" target="_top" title="synonymy" alt="" coords="945,513,1120,601">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/publicationtypes.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
                                     </div>
                                 </div>
                             </div>
