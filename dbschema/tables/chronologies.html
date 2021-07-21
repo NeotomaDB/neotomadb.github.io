@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>chronologies</h1><p><span id="recordNumber">25983</span> rows</p><br />
+                    <h1>chronologies</h1><p><span id="recordNumber">26108</span> rows</p><br />
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <i class="fa fa-file-text-o"></i>
@@ -145,7 +145,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>An arbitrary Chronology identification number.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="collectionunitid">collectionunitid</span></td>
@@ -166,7 +166,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                             </tr>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Collection Unit to which the Chronology applies. Field links to the CollectionUnits table.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="agetypeid">agetypeid</span></td>
@@ -187,7 +187,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                             </tr>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Age type or units. Field links to the AgeTypes table.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="contactid">contactid</span></td>
@@ -208,7 +208,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                             </tr>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Person who developed the Age Model. Field links to the Contacts table.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="isdefault">isdefault</span></td>
@@ -225,7 +225,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Indicates whether the Chronology is a default chronology or not. Default status is determined by a Neotoma data steward. Collection Units may have more than one default Chronology, but may have only one default Chronology per Age Type. Thus, there may be a default radiocarbon year Chronology and a default calibrated radiocarbon year Chronology, but only one of each. Default Chronologies may be used by the Neotoma web site, or other web sites, for displaying default diagrams or time series of data. Default Chronologies may also be of considerable use for actual research purposes; however, users may of course choose to develop their own chronologies.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="chronologyname">chronologyname</span></td>
@@ -242,7 +242,11 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Optional name for the Chronology. Some examples are:<br />
+COHMAP chron 1 A Chronology assigned by the COHMAP project.<br />
+COHMAP chron 2 An alternative Chronology assigned by the COHMAP project<br />
+NAPD 1 A Chronology assigned by the North American Pollen Database.<br />
+Gajewski 1995 A Chronology assigned by Gajewski (1995).</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="dateprepared">dateprepared</span></td>
@@ -259,7 +263,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Date that the Chronology was prepared.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="agemodel">agemodel</span></td>
@@ -276,7 +280,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The age model used for the Chronology. Some examples are: linear interpolation, 3rd order polynomial, and individually dated analysis units.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="ageboundyounger">ageboundyounger</span></td>
@@ -293,7 +297,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The younger reliable age bound for the Chronology. Younger ages may be assigned to samples, but are not regarded as reliable. If the entire Chronology is considered reliable, AgeBoundYounger is assigned the youngest sample age rounded down to the nearest 10. Thus, for 72 BP, AgeBoundYounger = 70 BP; for -45 BP, AgeBoundYounger = -50 BP.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="ageboundolder">ageboundolder</span></td>
@@ -310,7 +314,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The older reliable age bound for the Chronology. Ages older than AgeOlderBound may be assigned to samples, but are not regarded as reliable. This situation is particularly true for ages extrapolated beyond the oldest Chron Control. . If the entire Chronology is considered reliable, AgeBoundOlder is assigned the oldest sample age rounded up to the nearest 10. Thus, for 12564 BP, AgeBoundOlder is 12570.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="notes">notes</span></td>
@@ -327,7 +331,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Free form notes or comments about the Chronology.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="recdatecreated">recdatecreated</span></td>

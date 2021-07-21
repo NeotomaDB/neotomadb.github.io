@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>publications</h1><p><span id="recordNumber">11047</span> rows</p><br />
+                    <h1>publications</h1><p><span id="recordNumber">11180</span> rows</p><br />
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <i class="fa fa-file-text-o"></i>
@@ -185,7 +185,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>An arbitrary Publication identification number.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="pubtypeid">pubtypeid</span></td>
@@ -206,7 +206,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                             </tr>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Publication type. Field links to the PublicationTypes lookup table.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="year">year</span></td>
@@ -223,7 +223,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Year of publication.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="citation">citation</span></td>
@@ -240,7 +240,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The complete citation in a standard style. For Legacy citations inherited from other databases, this field holds the citation as ingested from the other databases</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="articletitle">articletitle</span></td>
@@ -257,7 +257,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The title of a journal or book chapter article.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="journal">journal</span></td>
@@ -291,7 +291,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The volume number of a journal or the volume number of a book in a set. A set of books is comprised of a fixed number of volumes and normally have ISBN numbers, not ISSN numbers. Book sets are often published simultaneously, but not necessarily. For instance, many floras, such as The Flora of North America north of Mexico and Flora Europaea, consist of a set number of volumes planned in advance but published over a period of years.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="issue">issue</span></td>
@@ -308,7 +308,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Journal issue number, normally included only if issues are independently paginated.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="pages">pages</span></td>
@@ -325,7 +325,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Page numbers for journal or book chapter articles, or the number of pages in theses, dissertations, and reports.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="citationnumber">citationnumber</span></td>
@@ -342,7 +342,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>A citation or article number used in lieu of page numbers for digital or online publications, typically used in conjunction with the DOI. For example, journals published by the American Geophysical Union since 1999 use citation numbers rather than page numbers.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="doi">doi</span></td>
@@ -359,7 +359,8 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Digital Object Identifier. A unique identifier assigned to digital publications. The DOI consists of a prefix and suffix separated by a slash. The portion before the slash stands for the publisher and is assigned by the International DOI Foundation. For example, 10.1029 is the prefix for the American Geophysical Union. The suffix is assigned by the publisher according to their protocols. For example, the DOI 10.1029/2002PA000768 is for an article submitted to Paleoceanography in 2002 and is article number 768 submitted since the system was installed. An example of CitationNumber and DOI:<br />
+Barron, J. A., L. Heusser, T. Herbert, and M. Lyle. 2003. High-resolution climatic evolution of coastal northern California during the past 16,000 years, Paleoceanography 18(1):1020. DOI:10.1029/2002PA000768.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="booktitle">booktitle</span></td>
@@ -376,7 +377,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The title of a book or journal</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="numvolumes">numvolumes</span></td>
@@ -393,7 +394,8 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Number of volumes in a set of books. Used when the entire set is referenced. An example of NumVolumes and Edition:<br />
+Wilson, D. E., and D. M. Reeder. 2005. Mammal species of the world: a taxonomic and geographic reference. Third edition. 2 volumes. The Johns Hopkins University Press, Baltimore, Maryland, USA.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="edition">edition</span></td>
@@ -410,7 +412,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Edition of a publication.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="volumetitle">volumetitle</span></td>
@@ -427,7 +429,8 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Title of a book volume in a set. Used if the individual volume is referenced. Example of Volume and VolumeTitle:<br />
+Flora of North America Editorial Committee. 2002. Flora of North America north of Mexico. Volume 26. Magnoliophyta: Liliidae: Liliales and Orchidales. Oxford University Press, New York, New York, USA.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="seriestitle">seriestitle</span></td>
@@ -444,7 +447,8 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Title of a book series. Book series consist of a series of books, typically published at irregular intervals on sometimes related but different topics. The number of volumes in a series is typically open ended. Book series are often assigned ISSN numbers as well as ISBN numbers. However, in contrast to most serials, book series have individual titles and authors or editors. Citation practices for book series vary; sometimes they are cited as books, other times as journals. The default citation for Neotoma includes all information. An example of SeriesTitle and SeriesVolume:<br />
+Curtis, J. H., and D. A. Hodell. 1993. An isotopic and trace element study of ostracods from Lake Miragoane, Haiti: A 10,500 year record of paleosalinity and paleotemperature changes in the Caribbean. Pages 135-152 in P. K. Swart, K. C. Lohmann, J. McKensie, and S. Savin, editors. Climate change in continental isotopic records. Geophysical Monograph 78. American Geophysical Union, Washington, D.C., USA.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="seriesvolume">seriesvolume</span></td>
@@ -461,7 +465,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Volume number in a series.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="publisher">publisher</span></td>
@@ -478,7 +482,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Publisher, including commercial publishing houses, university presses, government agencies, and non-governmental organizations, generally the owner of the copyright.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="url">url</span></td>
@@ -512,7 +516,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>City in which the publication was published. The first city if a list is given.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="state">state</span></td>
@@ -529,7 +533,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>State or province in which the publication was published. Used for the United States and Canada, not used for many countries.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="country">country</span></td>
@@ -546,7 +550,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Country in which the publication was published, generally the complete country name, but «USA» for the United States.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="originallanguage">originallanguage</span></td>
@@ -563,7 +567,8 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The original language if the publication or bibliographic citation is translated from another language or transliterated from a non-Latin character set. Field not needed for non-translated publications in languages using the Latin character set. In the following example, the ArticleTitle is translated from Russian to English and the BookTitle (journal name) is transliterated from Russian:<br />
+Tarasov, P.E. 1991. Late Holocene features of the Kokchetav Highland. Vestnik Moskovskogo Universiteta. Series 5. Geography 6:54-60 <a href="./../null">in Russian</a>.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="notes">notes</span></td>
@@ -580,7 +585,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Free form notes or comments about the publication, which may be added parenthetically to the citation.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="recdatecreated">recdatecreated</span></td>

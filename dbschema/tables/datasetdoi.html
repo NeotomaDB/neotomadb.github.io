@@ -115,10 +115,6 @@
                                     </td>
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
-                                            <tr>
-                                                <td title="datasetdoi.datasetid references datasets.datasetid via fk_datasetdoi_datasets"><a href='datasets.html'>datasets</a><span class='relatedKey'>.datasetid</span></td>
-                                                <td class="constraint detail">fk_datasetdoi_datasets<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
-                                            </tr>
                                         </table>
                                     </td>
                                     <td></td>
@@ -208,92 +204,10 @@
                             </table>
                         </div><!-- /.box-body -->
                     </div>
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <i class="fa fa-code-fork"></i>
-                            <h3 id="Relationships" class="box-title">Relationships</h3>
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
-                                <h5>Close relationships within degrees of separation</h5>
-                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
-                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
-                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
-                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
-                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
-                                </ul>
-                                <div class="tab-content no-padding">
-                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
-                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="248,5,568,192">
-<area shape="rect" id="node2" href="datasets.html" target="_top" title="datasets" alt="" coords="5,8,204,213">
-</map>
-                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/datasetdoi.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
-                                    </div>
-                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
-                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="554,5,771,93">
-<area shape="rect" id="node2" href="datasets.html" target="_top" title="datasets" alt="" coords="260,787,459,992">
-<area shape="rect" id="node7" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,743,216,831">
-<area shape="rect" id="node8" href="datasettypes.html" target="_top" title="datasettypes" alt="" coords="11,848,210,936">
-<area shape="rect" id="node9" href="embargo.html" target="_top" title="embargo" alt="" coords="29,953,192,1041">
-<area shape="rect" id="node3" href="datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="543,111,782,199">
-<area shape="rect" id="node4" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="503,216,823,403">
-<area shape="rect" id="node5" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="574,420,751,508">
-<area shape="rect" id="node6" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="536,525,789,613">
-<area shape="rect" id="node10" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="535,631,790,719">
-<area shape="rect" id="node11" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="540,736,785,824">
-<area shape="rect" id="node12" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="548,841,777,929">
-<area shape="rect" id="node13" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="539,947,786,1035">
-<area shape="rect" id="node14" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="558,1052,767,1140">
-<area shape="rect" id="node15" href="isostandards.html" target="_top" title="isostandards" alt="" coords="565,1157,761,1245">
-<area shape="rect" id="node16" href="repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="531,1263,794,1351">
-<area shape="rect" id="node17" href="samples.html" target="_top" title="samples" alt="" coords="563,1368,762,1456">
-<area shape="rect" id="node18" href="synonymy.html" target="_top" title="synonymy" alt="" coords="575,1473,750,1561">
-</map>
-                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/datasetdoi.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
-                                    </div>
-                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
-                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="248,5,568,192">
-<area shape="rect" id="node2" href="datasets.html" target="_top" title="datasets" alt="" coords="5,8,204,213">
-</map>
-                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/datasetdoi.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
-                                    </div>
-                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
-                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="554,87,771,175">
-<area shape="rect" id="node2" href="datasets.html" target="_top" title="datasets" alt="" coords="260,920,459,1125">
-<area shape="rect" id="node7" href="collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,849,216,937">
-<area shape="rect" id="node8" href="datasettypes.html" target="_top" title="datasettypes" alt="" coords="11,968,210,1056">
-<area shape="rect" id="node9" href="embargo.html" target="_top" title="embargo" alt="" coords="29,1073,192,1161">
-<area shape="rect" id="node3" href="datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="543,192,782,280">
-<area shape="rect" id="node4" href="datasetdoi.html" target="_top" title="datasetdoi" alt="" coords="503,297,823,484">
-<area shape="rect" id="node5" href="datasetpis.html" target="_top" title="datasetpis" alt="" coords="574,501,751,589">
-<area shape="rect" id="node6" href="datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="536,607,789,695">
-<area shape="rect" id="node10" href="datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="535,712,790,800">
-<area shape="rect" id="node11" href="datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="540,817,785,905">
-<area shape="rect" id="node12" href="datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="548,923,777,1011">
-<area shape="rect" id="node13" href="dsageranges.html" target="_top" title="dsageranges" alt="" coords="567,1028,759,1092">
-<area shape="rect" id="node14" href="dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="867,1109,1069,1173">
-<area shape="rect" id="node15" href="samples.html" target="_top" title="samples" alt="" coords="563,1145,762,1233">
-<area shape="rect" id="node16" href="dslinks.html" target="_top" title="dslinks" alt="" coords="590,5,735,69">
-<area shape="rect" id="node17" href="dssampdata.html" target="_top" title="dssampdata" alt="" coords="569,1251,757,1315">
-<area shape="rect" id="node18" href="isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="539,1332,786,1420">
-<area shape="rect" id="node19" href="isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="558,1437,767,1525">
-<area shape="rect" id="node20" href="isostandards.html" target="_top" title="isostandards" alt="" coords="565,1543,761,1631">
-<area shape="rect" id="node21" href="repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="531,1648,794,1736">
-<area shape="rect" id="node22" href="synonymy.html" target="_top" title="synonymy" alt="" coords="575,1753,750,1841">
-</map>
-                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/datasetdoi.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- /.box-body -->
+                    <div class="alert alert-warning alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-warning"></i>Diagram producer might be missing</h4>
+                        <p>No diagrams were produced please see application output for any errors</p>
                     </div>
                 </section>
                 <script>

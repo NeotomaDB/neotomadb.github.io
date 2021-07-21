@@ -77,7 +77,6 @@ analysisunitaltdepthscales
 aggregatechronologies
 sampleages
 specimendates
-datasetdoi
 geopaths
 isobiomarkerbandtypes
 lithology
@@ -144,6 +143,7 @@ isoinstrumentation
 isometadata
 chroncontrolranks
 synonymy
+datasetdoi
 isosampleorigintypes
 radiocarboncalibration
 sitestemp

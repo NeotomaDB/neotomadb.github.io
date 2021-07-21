@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>geochronology</h1><p><span id="recordNumber">32661</span> rows</p><br />
+                    <h1>geochronology</h1><p><span id="recordNumber">32812</span> rows</p><br />
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <i class="fa fa-file-text-o"></i>
@@ -142,7 +142,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>An arbitrary Geochronologic identification number.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="sampleid">sampleid</span></td>
@@ -163,7 +163,7 @@
                                             </tr>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Sample identification number. Field links to Samples table.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="geochrontypeid">geochrontypeid</span></td>
@@ -184,7 +184,7 @@
                                             </tr>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Identification number for the type of Geochronologic analysis, e.g. «Carbon-14», «Thermoluminescence». Field links to the GeochronTypes table.</p></td>
                                 </tr>
                                 <tr>
                                     <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="agetypeid">agetypeid</span></td>
@@ -205,7 +205,7 @@
                                             </tr>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Identification number for the age units, e.g. «Radiocarbon years BP», «Calibrated radiocarbon years BP».</p></td>
                                 </tr>
                                 <tr>
                                     <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="age">age</span></td>
@@ -222,7 +222,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Reported age value of the geochronologic measurement.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="errorolder">errorolder</span></td>
@@ -239,7 +239,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The older error limit of the age value. For a date reported with ±1 SD or σ, the ErrorOlder and ErrorYounger values are this value.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="erroryounger">erroryounger</span></td>
@@ -256,7 +256,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>The younger error limit of the age value.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="infinite">infinite</span></td>
@@ -273,7 +273,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Is «True» for and infinite or “greater than” geochronologic measurement, otherwise is «False».</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="delta13c">delta13c</span></td>
@@ -290,7 +290,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td><p>This column is depreciated and is replaced by the Delta13C column in the Radiocarbon table.</p></td>
+                                    <td><p>The measured or assumed δ13C value for radiocarbon dates, if provided. Radiocarbon dates are assumed to be normalized to δ13C, and if uncorrected and normalized ages are reported, the normalized age should be entered in the database.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="labnumber">labnumber</span></td>
@@ -307,7 +307,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Lab number for the geochronologic measurement.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="materialdated">materialdated</span></td>
@@ -324,7 +324,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Material analyzed for a geochronologic measurement.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="notes">notes</span></td>
@@ -341,7 +341,7 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
-                                    <td></td>
+                                    <td><p>Free form notes or comments about the geochronologic measurement.</p></td>
                                 </tr>
                                 <tr>
                                     <td><span id="recdatecreated">recdatecreated</span></td>
