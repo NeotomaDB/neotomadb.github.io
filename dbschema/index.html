@@ -78,7 +78,7 @@
                         <div class="col-md-12">
                             <div class="callout callout-info">
                                 <h4>SchemaSpy Analysis of neotoma</h4>
-                                <p>Generated on Wed. Jul. 21 12:30 PDT 2021</p>
+                                <p>Generated on Mon. Nov. 22 12:45 PST 2021</p>
                             </div>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                             <span class="label label-primary pull-right"><i class="fa fa-cog fa-2x"></i></span>
                         </div><!-- /.box-header -->
                         <div class="box-body">
-                            <p>Database Type: PostgreSQL - 9.6.22</p>
+                            <p>Database Type: PostgreSQL - 9.6.24</p>
                         </div><!-- /.box-body -->
                     </div>
                     <div class="box box-primary">
@@ -195,7 +195,7 @@
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">234</td>
+                                        <td class="detail" align="right">256</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores the samples in Aggregate Datasets.</p></td>
                                     </tr>
@@ -213,7 +213,7 @@
                                         <td class="detail" align="right">5</td>
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">13</td>
-                                        <td class="detail" align="right">89369</td>
+                                        <td class="detail" align="right">91786</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores data for Chronology Controls, which are the age-depth control points used for age models. These controls may be geophysical controls, such as radiocarbon dates, but include many other kinds of age controls, such as biostratigraphic controls, archaeological cultural associations, and volcanic tephras. In the case of radiocarbon dates, a Chronology Control may not simply be the raw radiocarbon date reported by the laboratory, but perhaps a radiocarbon date corrected for an old carbon reservoir, a calibrated radiocarbon date, or an average of several radiocarbon dates from the same level. A common control for lake-sediment cores is the age of the top of the core, which may be the year the core was taken or perhaps an estimate of 0 BP if a few cm of surficial sediment were lost.</p></td>
                                     </tr>
@@ -222,7 +222,7 @@
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">53</td>
+                                        <td class="detail" align="right">54</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -258,7 +258,7 @@
                                         <td class="detail" align="right">13</td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">26</td>
-                                        <td class="detail" align="right">11180</td>
+                                        <td class="detail" align="right">11489</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores publication or bibliographic data. The table is designed with fields for bibliographic data so that bibliographies can be formatted in different styles and potentially exported to bibliographic software such EndNote®. In the constituent databases that were originally merged into Neotoma, bibliographic entries were not parsed into separate fields, but rather were stored as free-form text. Because complete parsing of these thousands of legacy bibliographic entries into individual fields would have been prohibitively time consuming, the existing bibliographic data were ingested “as is” with a PubTypeID = Other. However, for legacy publications, the year of publication was added to the Year field, and authors were parsed into the PublicationAuthors table and added to the Contacts table. In addition, some global changes were made. For example, «Pp.» was changed to «Pages», «Ed.» to «Editor», and «Eds.» to «Editors». Also for FAUNMAP entries, abbreviated journal names were changed to fully spelled out names.<br />
 The merged databases used different bibliographic styles, and data entry personnel working on the same database sometimes followed different conventions. Consequently, the current bibliographic entries are not stylistically uniform. Eventually, the legacy bibliographic data will be parsed into separate fields.<br />
@@ -279,7 +279,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <td class="detail" align="right">8</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">12</td>
-                                        <td class="detail" align="right">408092</td>
+                                        <td class="detail" align="right">421532</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores sample data. Samples belong to Analysis Units, which belong to Collection Units, which belong to Sites. Samples also belong to a Dataset, and the Dataset determines the type of sample. Thus, there could be two different samples from the same Analysis Unit, one belonging to a pollen dataset, the other to a plant macrofossil dataset.</p></td>
                                     </tr>
@@ -297,7 +297,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">8</td>
-                                        <td class="detail" align="right">21835</td>
+                                        <td class="detail" align="right">24489</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores the lithologic descriptions of Collection Units.</p></td>
                                     </tr>
@@ -333,7 +333,7 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">28504</td>
+                                        <td class="detail" align="right">29551</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Publications in which Geochronologic measurements are reported. Many older radiocarbon dates are reported in the journal Radiocarbon. Dates may be reported in multiple publications. The “publication” could be a database such as the online Canadian Archaeological Radiocarbon Database.</p></td>
                                     </tr>
@@ -365,15 +365,6 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
-                                        <td class="detail"><a href="tables/summarydatataphonomy.html">summarydatataphonomy</a></td>
-                                        <td class="detail" align="right">0</td>
-                                        <td class="detail" align="right">2</td>
-                                        <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">42404</td>
-                                        <td class="detail" align="right">Table</td>
-                                        <td class="comment detail" style="display: table-cell;"></td>
-                                    </tr>
-                                    <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/synonymtypes.html">synonymtypes</a></td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">0</td>
@@ -383,11 +374,20 @@ Authors are stored in the PublicationAuthors table. Editors are also stored in t
                                         <td class="comment detail" style="display: table-cell;"><p>Lookup table of Synonym Types. Table is referenced by the Synonyms table.</p></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
+                                        <td class="detail"><a href="tables/summarydatataphonomy.html">summarydatataphonomy</a></td>
+                                        <td class="detail" align="right">0</td>
+                                        <td class="detail" align="right">2</td>
+                                        <td class="detail" align="right">4</td>
+                                        <td class="detail" align="right">42901</td>
+                                        <td class="detail" align="right">Table</td>
+                                        <td class="comment detail" style="display: table-cell;"></td>
+                                    </tr>
+                                    <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/chronologies.html">chronologies</a></td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">13</td>
-                                        <td class="detail" align="right">26108</td>
+                                        <td class="detail" align="right">27934</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores Chronology data. A Chronology refers to an explicit chronology assigned to a Collection Unit. A Chronology has Chronology Controls, the actual age-depth control points, which are stored in the ChronControls table. A Chronology is also based on an Age Model, which may be a numerical method that fits a curve to a set of age-depth control points or may simply be individually dated Analysis Units.<br />
 A Collection Unit may have more than one Chronology, for example one in radiocarbon years and another in calibrated radiocarbon years. There may be a Chronology developed by the original author and another developed by a later research project. Chronologies may be stored for archival reasons, even though they are now believed to have problems, if they were used for an important research project. One Chronology per Age Type may be designated the default Chronology, which is the Chronology currently preferred by the database stewards.<br />
@@ -408,7 +408,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">17</td>
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">14</td>
-                                        <td class="detail" align="right">39989</td>
+                                        <td class="detail" align="right">41051</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists all taxa in the database. Most taxa are biological taxa; however, some are biometric measures and some are physical parameters.</p></td>
                                     </tr>
@@ -426,7 +426,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">263953</td>
+                                        <td class="detail" align="right">269124</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists the Sample Analysts.</p></td>
                                     </tr>
@@ -471,7 +471,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">6</td>
                                         <td class="detail" align="right">10</td>
-                                        <td class="detail" align="right">2658</td>
+                                        <td class="detail" align="right">2657</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table enables queries for dated specimens of individual taxa. Although the MaterialDated field in the Geochronology table may list the taxa dated, this protocol is not enforced, and the field is not linked to the taxa table.</p></td>
                                     </tr>
@@ -489,7 +489,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">468</td>
+                                        <td class="detail" align="right">487</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -525,7 +525,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">372</td>
+                                        <td class="detail" align="right">376</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>A lookup table of institutions that are repositories for fossil specimens. Table is referenced by the RepositorySpecimens table.</p></td>
                                     </tr>
@@ -552,7 +552,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">4760</td>
+                                        <td class="detail" align="right">4972</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists the repositories in which fossil specimens have been accessioned or reposited. The inventory in Neotoma is by Dataset, which is the collection of specimens from a Collection Unit. Occasionally, specimens from a single Collection Unit have been reposited at different institutions, in which case multiple records for that Dataset occur in the table.</p></td>
                                     </tr>
@@ -588,7 +588,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">13</td>
-                                        <td class="detail" align="right">19308</td>
+                                        <td class="detail" align="right">19581</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>The Sites table stores information about sites or localities, including name, geographic coordinates, and description. Sites generally have an areal extent and can be circumscribed by a latitude-longitude box. However, site data ingested from legacy databases have included only point locations. The lat-long box can be used either to circumscribe the aerial extent of a site or to provide purposeful imprecision to the site location. Site location may be imprecise because the original description was vague, e.g. «a gravel bar 5 miles east of town», or because the investigators, land owner, or land management agency may not want the exact location made public, perhaps to prevent looting and vandalism. In the first case, the lat-long box can be made sufficiently large to encompass the true location and in the second case to prevent exact location.</p></td>
                                     </tr>
@@ -606,7 +606,7 @@ A younger and older age bounds are assigned to the Chronology. Within these boun
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">7</td>
-                                        <td class="detail" align="right">10065</td>
+                                        <td class="detail" align="right">10066</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Lookup table of GeoPoliticalUnits. Table is referenced by the SiteGeoPolitical table. These are countries and various subdivisions. Countries and subdivisions were acquired from the U.S. Central Intelligence Agency World Factbook8 and the ISO 3166-1 and ISO 3166-2 databases9.<br />
 Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally countries. There are a few exceptions, including Antarctica and island territories, such as Greenland, which although a Danish territory, is geographically separate and distinct. Rank 2 units are generally secondary political divisions with various designations: e.g. states in the United States, provinces in Canada, and regions in France. For some countries, the secondary divisions are not political but rather distinct geographic entities, such as islands. The secondary divisions of some island nations include either groups of islands or sections of more highly populated islands; however, the actual island on which a site is located is more important information. Some countries also have Rank 3 units, e.g. counties in the United States and metropolitan departments in France. In addition to purely political units, various other administrative regions and geographic entities can be contained in this table. Examples of administrative regions are National Parks and Forests. It might be quite useful, for example, to have a record of all the sites in Yellowstone National Park. These additional units are Rank 4, and they can be added to the database as warranted.</p></td>
@@ -634,7 +634,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">42</td>
+                                        <td class="detail" align="right">44</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Variable Contexts lookup table. Table is referenced by the Variables table.</p></td>
                                     </tr>
@@ -670,7 +670,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">12</td>
-                                        <td class="detail" align="right">27212</td>
+                                        <td class="detail" align="right">27847</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -679,7 +679,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">6</td>
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">20</td>
-                                        <td class="detail" align="right">27478</td>
+                                        <td class="detail" align="right">29369</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores data for Collection Units.</p></td>
                                     </tr>
@@ -706,7 +706,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">12731</td>
+                                        <td class="detail" align="right">13861</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists the Sample Analysts.</p></td>
                                     </tr>
@@ -738,15 +738,6 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
-                                        <td class="detail"><a href="tables/relativeagescales.html">relativeagescales</a></td>
-                                        <td class="detail" align="right">1</td>
-                                        <td class="detail" align="right">0</td>
-                                        <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">9</td>
-                                        <td class="detail" align="right">Table</td>
-                                        <td class="comment detail" style="display: table-cell;"><p>Lookup table of Relative Age Scales. Table is referenced by the RelativeAges table.</p></td>
-                                    </tr>
-                                    <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/rocktypes.html">rocktypes</a></td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">1</td>
@@ -756,11 +747,20 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
+                                        <td class="detail"><a href="tables/relativeagescales.html">relativeagescales</a></td>
+                                        <td class="detail" align="right">1</td>
+                                        <td class="detail" align="right">0</td>
+                                        <td class="detail" align="right">4</td>
+                                        <td class="detail" align="right">9</td>
+                                        <td class="detail" align="right">Table</td>
+                                        <td class="comment detail" style="display: table-cell;"><p>Lookup table of Relative Age Scales. Table is referenced by the RelativeAges table.</p></td>
+                                    </tr>
+                                    <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/synonymy.html">synonymy</a></td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">5</td>
                                         <td class="detail" align="right">11</td>
-                                        <td class="detail" align="right">27949</td>
+                                        <td class="detail" align="right">30143</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>The synonymy table links dataset-level synonymies to particular publications or contacts.  This allows users to maintain the original taxonomic information within a table, but tie it to newer and more authoritative taxonomic information.</p></td>
                                     </tr>
@@ -769,7 +769,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">7</td>
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">7</td>
-                                        <td class="detail" align="right">43986</td>
+                                        <td class="detail" align="right">45076</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists Variables, which always consist of a Taxon and Units of measurement. Variables can also have Elements, Contexts, and Modifications. Thus, the same taxon with different measurement units (e.g. present/absent, NISP, MNI) are different Variables.</p></td>
                                     </tr>
@@ -787,7 +787,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">2509</td>
+                                        <td class="detail" align="right">2534</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists common synonyms for taxa in the Taxa table. No effort has been made to provide a complete taxonomic synonymy, but rather to list synonyms commonly used in recent literature.  This table is not the same as the Synonomy table, also present in Neotoma, which links a specific synonymy to a dataset</p></td>
                                     </tr>
@@ -805,7 +805,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">16</td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">17</td>
-                                        <td class="detail" align="right">11407</td>
+                                        <td class="detail" align="right">11672</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists persons and organizations referenced by the Chronologies, Collectors, DatasetPIs, DatasetSubmissions, Projects, PublicationAuthors, SampleAnalysts, and SiteImages tables.</p></td>
                                     </tr>
@@ -814,7 +814,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">49046</td>
+                                        <td class="detail" align="right">49603</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists the GeoPolitical units in which sites occur.</p></td>
                                     </tr>
@@ -841,7 +841,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">40514</td>
+                                        <td class="detail" align="right">42498</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -859,7 +859,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">8</td>
-                                        <td class="detail" align="right">515912</td>
+                                        <td class="detail" align="right">530708</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores sample ages. Ages are assigned to a Chronology. Because there may be more than one Chronology for a Collection Unit, samples may be assigned different ages for different Chronologies. A simple example is one sample age in radiocarbon years and another in calibrated radiocarbon years. The age units are an attribute of the Chronology.</p></td>
                                     </tr>
@@ -922,7 +922,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">7</td>
-                                        <td class="detail" align="right">262</td>
+                                        <td class="detail" align="right">263</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -931,7 +931,7 @@ Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally 
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">10</td>
-                                        <td class="detail" align="right">4</td>
+                                        <td class="detail" align="right">5</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores metadata for Aggregate Chronologies. An Aggregate Chronology refers to an explicit chronology assigned to a sample Aggregate. The individual Aggregate Samples have ages assigned in the AggregateSampleAges table. An Aggregate Chronology would be used, for example, for a set of packrat middens assigned to an AggregateDataset. The Aggregate Chronology is analogous to the Chronology assigned to samples from a single Collection Unit.<br />
 An Aggregate may have more than one Aggregate Chronology, for example one in radiocarbon years and another in calibrated radiocarbon years. One Aggregate Chronology per Age Type may be designated the default, which is the Aggregate Chronology currently preferred by the database stewards.</p></td>
@@ -950,7 +950,7 @@ An Aggregate may have more than one Aggregate Chronology, for example one in rad
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">6</td>
+                                        <td class="detail" align="right">7</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Aggregate Datasets are aggregates of samples of a particular data type. Some examples:<br />
 * Plant macrofossil samples from a group of packrat middens collected from a particular valley, mountain range, or other similarly defined geographic area. Each midden is from a different Site or Collection Unit, but they are grouped into time series for that area and are published as a single dataset.<br />
@@ -963,7 +963,7 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">41442</td>
+                                        <td class="detail" align="right">43528</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>The Collectors table lists the people who collected Collection Units.</p></td>
                                     </tr>
@@ -999,7 +999,7 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">8</td>
-                                        <td class="detail" align="right">1201</td>
+                                        <td class="detail" align="right">1211</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores the editors of publications for which chapters or sections are the primary bibliographic entries. Chapter authors are stored in the PublicatonAuthors table, where they are linked to the Contacts table. However, publication editors are not cross-referenced in the Contacts table, because chapter authors are the principal citation.</p></td>
                                     </tr>
@@ -1017,7 +1017,7 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">10</td>
-                                        <td class="detail" align="right">2608</td>
+                                        <td class="detail" align="right">2607</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1058,22 +1058,22 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
-                                        <td class="detail"><a href="tables/contextsdatasettypes.html">contextsdatasettypes</a></td>
-                                        <td class="detail" align="right">0</td>
-                                        <td class="detail" align="right">2</td>
-                                        <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">107</td>
-                                        <td class="detail" align="right">Table</td>
-                                        <td class="comment detail" style="display: table-cell;"></td>
-                                    </tr>
-                                    <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/datasets.html">datasets</a></td>
                                         <td class="detail" align="right">17</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">8</td>
-                                        <td class="detail" align="right">41146</td>
+                                        <td class="detail" align="right">43132</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores the data for Datasets. A Dataset is the set of samples for a particular data type from a Collection Unit. A Collection Unit may have multiple Datasets for different data types, for example one dataset for pollen and another for plant macrofossils. Every Sample is assigned to a Dataset, and every Dataset is assigned to a Collection Unit. Samples from different Collection Units cannot be assigned to the same Dataset (although they may be assigned to Aggregate Datasets).</p></td>
+                                    </tr>
+                                    <tr class="tbl even" valign="top">
+                                        <td class="detail"><a href="tables/contextsdatasettypes.html">contextsdatasettypes</a></td>
+                                        <td class="detail" align="right">0</td>
+                                        <td class="detail" align="right">2</td>
+                                        <td class="detail" align="right">4</td>
+                                        <td class="detail" align="right">111</td>
+                                        <td class="detail" align="right">Table</td>
+                                        <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/calibrationprograms.html">calibrationprograms</a></td>
@@ -1125,7 +1125,7 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">22654</td>
+                                        <td class="detail" align="right">22871</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1134,7 +1134,7 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="detail" align="right">7</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">8065331</td>
+                                        <td class="detail" align="right">8364360</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>The primary data table in the database. Each occurrence of a Variable in a sample comprises a record in the Data table.</p></td>
                                     </tr>
@@ -1152,7 +1152,7 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">36934</td>
+                                        <td class="detail" align="right">37787</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1161,7 +1161,7 @@ The examples above are datasets predefined in the database. New aggregate datase
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">9</td>
-                                        <td class="detail" align="right">25311</td>
+                                        <td class="detail" align="right">26072</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists authors as their names are given in publications. Only the initials are stored for authors’ given names. The ContactID links to the author’s full name and contact data in the Contacts table. Thus, for a bibliographic entry, Charles Robert Darwin is listed as C. R. Darwin, or as C. Darwin if the publication did not include his middle name. Book editors are also stored in this table if the entire book is cited. However, if a book chapter or section is cited, authors are stored in this table, but the book editors are stored in the PublicationEditors table. Thus, for the following reference, G. C. Frison is stored in the PublicationAuthors table.<br />
 Frison, G. C., editor. 1996. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA.<br />
@@ -1209,7 +1209,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">46945</td>
+                                        <td class="detail" align="right">49722</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table lists the publications for datasets.</p></td>
                                     </tr>
@@ -1236,7 +1236,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">5759</td>
+                                        <td class="detail" align="right">5933</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1254,7 +1254,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">14</td>
-                                        <td class="detail" align="right">32812</td>
+                                        <td class="detail" align="right">33763</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores geochronologic data. Geochronologic measurements are from geochronologic samples, which are from Analysis Units, which may have a depth and thickness. Geochronologic measurements may be from the same or different Analysis Units as fossils. In the case of faunal excavations, geochronologic samples are typically from the same Analysis Units as the fossils, and there may be multiple geochronologic samples from a single Analysis Unit. In the case of cores used for microfossil analysis, geochronologic samples are often from separate Analysis Units; dated core sections are often thicker than microfossil Analysis Units.</p></td>
                                     </tr>
@@ -1281,7 +1281,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">34</td>
+                                        <td class="detail" align="right">36</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1290,7 +1290,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">410</td>
+                                        <td class="detail" align="right">411</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1304,29 +1304,29 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
-                                        <td class="detail"><a href="tables/ecolgroups.html">ecolgroups</a></td>
-                                        <td class="detail" align="right">0</td>
-                                        <td class="detail" align="right">3</td>
-                                        <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">37939</td>
-                                        <td class="detail" align="right">Table</td>
-                                        <td class="comment detail" style="display: table-cell;"><p>Taxa are assigned to Sets of Ecological Groups. A taxon may be assigned to more than one Set of Ecological Groups, representing different schemes for organizing taxa.</p></td>
-                                    </tr>
-                                    <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/elementtaxagroups.html">elementtaxagroups</a></td>
                                         <td class="detail" align="right">3</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">897</td>
+                                        <td class="detail" align="right">903</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
+                                    </tr>
+                                    <tr class="tbl even" valign="top">
+                                        <td class="detail"><a href="tables/ecolgroups.html">ecolgroups</a></td>
+                                        <td class="detail" align="right">0</td>
+                                        <td class="detail" align="right">3</td>
+                                        <td class="detail" align="right">5</td>
+                                        <td class="detail" align="right">38985</td>
+                                        <td class="detail" align="right">Table</td>
+                                        <td class="comment detail" style="display: table-cell;"><p>Taxa are assigned to Sets of Ecological Groups. A taxon may be assigned to more than one Set of Ecological Groups, representing different schemes for organizing taxa.</p></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/dataprocessors.html">dataprocessors</a></td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">51478</td>
+                                        <td class="detail" align="right">54317</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1335,7 +1335,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">9</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">11</td>
-                                        <td class="detail" align="right">360389</td>
+                                        <td class="detail" align="right">371106</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>This table stores the data for Analysis Units.</p></td>
                                     </tr>
@@ -1353,18 +1353,9 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">185</td>
+                                        <td class="detail" align="right">186</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Lookup table of Ecological Group Types. Table is referenced by the EcolGroups table.</p></td>
-                                    </tr>
-                                    <tr class="tbl even" valign="top">
-                                        <td class="detail"><a href="tables/isospecimendata.html">isospecimendata</a></td>
-                                        <td class="detail" align="right">0</td>
-                                        <td class="detail" align="right">2</td>
-                                        <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">2841</td>
-                                        <td class="detail" align="right">Table</td>
-                                        <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/isoscaletypes.html">isoscaletypes</a></td>
@@ -1372,6 +1363,15 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">5</td>
                                         <td class="detail" align="right">8</td>
+                                        <td class="detail" align="right">Table</td>
+                                        <td class="comment detail" style="display: table-cell;"></td>
+                                    </tr>
+                                    <tr class="tbl even" valign="top">
+                                        <td class="detail"><a href="tables/isospecimendata.html">isospecimendata</a></td>
+                                        <td class="detail" align="right">0</td>
+                                        <td class="detail" align="right">2</td>
+                                        <td class="detail" align="right">6</td>
+                                        <td class="detail" align="right">2841</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1389,7 +1389,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">5</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">820</td>
+                                        <td class="detail" align="right">826</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1416,7 +1416,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">1</td>
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">8</td>
-                                        <td class="detail" align="right">855</td>
+                                        <td class="detail" align="right">862</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Lookup table of Variable Elements. Table is referenced by the Variables table.</p></td>
                                     </tr>
@@ -1434,18 +1434,9 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">6</td>
-                                        <td class="detail" align="right">138</td>
+                                        <td class="detail" align="right">141</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Tephras lookup table. This table stores recognized tephras with established ages. Referenced by the Tephrachronology table.</p></td>
-                                    </tr>
-                                    <tr class="tbl even" valign="top">
-                                        <td class="detail"><a href="tables/taxonpaths.html">taxonpaths</a></td>
-                                        <td class="detail" align="right">0</td>
-                                        <td class="detail" align="right">1</td>
-                                        <td class="detail" align="right">2</td>
-                                        <td class="detail" align="right">0</td>
-                                        <td class="detail" align="right">Table</td>
-                                        <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
                                     <tr class="tbl even" valign="top">
                                         <td class="detail"><a href="tables/taphonomicsystems.html">taphonomicsystems</a></td>
@@ -1453,6 +1444,15 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">5</td>
                                         <td class="detail" align="right">9</td>
+                                        <td class="detail" align="right">Table</td>
+                                        <td class="comment detail" style="display: table-cell;"></td>
+                                    </tr>
+                                    <tr class="tbl even" valign="top">
+                                        <td class="detail"><a href="tables/taxonpaths.html">taxonpaths</a></td>
+                                        <td class="detail" align="right">0</td>
+                                        <td class="detail" align="right">1</td>
+                                        <td class="detail" align="right">2</td>
+                                        <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1479,7 +1479,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">81881</td>
+                                        <td class="detail" align="right">101946</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1497,7 +1497,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">9</td>
-                                        <td class="detail" align="right">50304</td>
+                                        <td class="detail" align="right">52296</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Submissions to the database are of Datasets. Submissions may be original submissions, resubmissions, compilations from other databases, or recompilations. See the description of the DatasetSubmissionTypes table.</p></td>
                                     </tr>
@@ -1524,7 +1524,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">2</td>
                                         <td class="detail" align="right">5</td>
-                                        <td class="detail" align="right">1242</td>
+                                        <td class="detail" align="right">1258</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"></td>
                                     </tr>
@@ -1542,7 +1542,7 @@ Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site:
                                         <td class="detail" align="right">4</td>
                                         <td class="detail" align="right">0</td>
                                         <td class="detail" align="right">4</td>
-                                        <td class="detail" align="right">152</td>
+                                        <td class="detail" align="right">156</td>
                                         <td class="detail" align="right">Table</td>
                                         <td class="comment detail" style="display: table-cell;"><p>Lookup table of Variable Units. Table is referenced by the Variables table.</p></td>
                                     </tr>
