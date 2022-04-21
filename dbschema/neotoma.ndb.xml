@@ -164,7 +164,7 @@
             <column ascending="true" name="aggregatechronid"/>
          </index>
       </table>
-      <table name="aggregatedatasets" numRows="7" remarks="Aggregate Datasets are aggregates of samples of a particular data type. Some examples:  &#10;* Plant macrofossil samples from a group of packrat middens collected from a particular valley, mountain range, or other similarly defined geographic area. Each midden is from a different Site or Collection Unit, but they are grouped into time series for that area and are published as a single dataset.&#10;* Samples collected from 32 cutbanks along several km of Roberts Creek, northeast Iowa. Each sample is from a different site, but they form a time series from 0-12,510 14C yr BP, and pollen, plant macrofossils, and beetles were published and graphed as if from a single site.&#10;* A set of pollen surface samples from a particular region or study that were published and analyzed as a single dataset and submitted to the database as a single dataset.&#10;The examples above are datasets predefined in the database. New aggregate datasets could be assembled for particular studies, for example all the pollen samples for a given time slice for a given geographic region." schema="ndb" type="TABLE">
+      <table name="aggregatedatasets" numRows="9" remarks="Aggregate Datasets are aggregates of samples of a particular data type. Some examples:  &#10;* Plant macrofossil samples from a group of packrat middens collected from a particular valley, mountain range, or other similarly defined geographic area. Each midden is from a different Site or Collection Unit, but they are grouped into time series for that area and are published as a single dataset.&#10;* Samples collected from 32 cutbanks along several km of Roberts Creek, northeast Iowa. Each sample is from a different site, but they form a time series from 0-12,510 14C yr BP, and pollen, plant macrofossils, and beetles were published and graphed as if from a single site.&#10;* A set of pollen surface samples from a particular region or study that were published and analyzed as a single dataset and submitted to the database as a single dataset.&#10;The examples above are datasets predefined in the database. New aggregate datasets could be assembled for particular studies, for example all the pollen samples for a given time slice for a given geographic region." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_aggregatedatasets_aggregatedatasetid'::regclass)" digits="0" id="0" name="aggregatedatasetid" nullable="false" remarks="An arbitrary Aggregate Dataset identification number." size="10" type="serial" typeCode="4">
             <child column="aggregatedatasetid" foreignKey="fk_aggregatechronologies_aggregatedatasets" implied="false" onDeleteCascade="true" schema="ndb" table="aggregatechronologies"/>
             <child column="aggregatedatasetid" foreignKey="fk_aggregatesampleages_aggregatedatasets" implied="false" onDeleteCascade="true" schema="ndb" table="aggregatesampleages"/>
@@ -216,7 +216,7 @@
             <column ascending="true" name="sampleageid"/>
          </index>
       </table>
-      <table name="aggregatesamples" numRows="256" remarks="This table stores the samples in Aggregate Datasets." schema="ndb" type="TABLE">
+      <table name="aggregatesamples" numRows="346" remarks="This table stores the samples in Aggregate Datasets." schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="aggregatedatasetid" nullable="false" remarks="An arbitrary Aggregate Dataset identification number. Field links to the AggregateDatasets table." size="10" type="int4" typeCode="4">
             <parent column="aggregatedatasetid" foreignKey="fk_aggregatesamples_aggregatedatasets" implied="false" onDeleteCascade="true" schema="ndb" table="aggregatedatasets"/>
          </column>
@@ -232,7 +232,7 @@
             <column ascending="true" name="sampleid"/>
          </index>
       </table>
-      <table name="analysisunitaltdepths" numRows="6946" remarks="" schema="ndb" type="TABLE">
+      <table name="analysisunitaltdepths" numRows="6987" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="analysisunitid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="analysisunitid" foreignKey="fk_analysisunitaltdepths_analysisunits" implied="false" onDeleteCascade="true" schema="ndb" table="analysisunits"/>
          </column>
@@ -249,7 +249,7 @@
             <column ascending="true" name="analysisunitid"/>
          </index>
       </table>
-      <table name="analysisunitaltdepthscales" numRows="50" remarks="" schema="ndb" type="TABLE">
+      <table name="analysisunitaltdepthscales" numRows="51" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_analysisunitaltdepthscales_altdepthscaleid'::regclass)" digits="0" id="0" name="altdepthscaleid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child column="altdepthscaleid" foreignKey="fk_analysisunitaltdepths_analysisunitaltdepthscales" implied="false" onDeleteCascade="true" schema="ndb" table="analysisunitaltdepths"/>
          </column>
@@ -282,7 +282,7 @@
             <column ascending="true" name="lithostratid"/>
          </index>
       </table>
-      <table name="analysisunits" numRows="371106" remarks="This table stores the data for Analysis Units." schema="ndb" type="TABLE">
+      <table name="analysisunits" numRows="396944" remarks="This table stores the data for Analysis Units." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_analysisunits_analysisunitid'::regclass)" digits="0" id="0" name="analysisunitid" nullable="false" remarks="An arbitrary Analysis Unit identification number." size="10" type="serial" typeCode="4">
             <child column="analysisunitid" foreignKey="fk_accumulationrates_analysisunits" implied="false" onDeleteCascade="true" schema="ndb" table="accumulationrates"/>
             <child column="analysisunitid" foreignKey="fk_analysisunitaltdepths_analysisunits" implied="false" onDeleteCascade="true" schema="ndb" table="analysisunitaltdepths"/>
@@ -335,7 +335,7 @@
             <column ascending="true" name="calibrationcurveid"/>
          </index>
       </table>
-      <table name="calibrationprograms" numRows="72" remarks="" schema="ndb" type="TABLE">
+      <table name="calibrationprograms" numRows="73" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_calibrationprograms_calibrationprogramid'::regclass)" digits="0" id="0" name="calibrationprogramid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child column="calibrationprogramid" foreignKey="fk_chroncontrolscal14c_calibrationprograms" implied="false" onDeleteCascade="true" schema="ndb" table="chroncontrolscal14c"/>
             <child column="calibrationprogramid" foreignKey="fk_specimendatescal_calibrationprograms" implied="false" onDeleteCascade="true" schema="ndb" table="specimendatescal"/>
@@ -422,7 +422,7 @@
             <column ascending="true" name="chroncontrolrankid"/>
          </index>
       </table>
-      <table name="chroncontrols" numRows="91786" remarks="This table stores data for Chronology Controls, which are the age-depth control points used for age models. These controls may be geophysical controls, such as radiocarbon dates, but include many other kinds of age controls, such as biostratigraphic controls, archaeological cultural associations, and volcanic tephras. In the case of radiocarbon dates, a Chronology Control may not simply be the raw radiocarbon date reported by the laboratory, but perhaps a radiocarbon date corrected for an old carbon reservoir, a calibrated radiocarbon date, or an average of several radiocarbon dates from the same level. A common control for lake-sediment cores is the age of the top of the core, which may be the year the core was taken or perhaps an estimate of 0 BP if a few cm of surficial sediment were lost." schema="ndb" type="TABLE">
+      <table name="chroncontrols" numRows="94780" remarks="This table stores data for Chronology Controls, which are the age-depth control points used for age models. These controls may be geophysical controls, such as radiocarbon dates, but include many other kinds of age controls, such as biostratigraphic controls, archaeological cultural associations, and volcanic tephras. In the case of radiocarbon dates, a Chronology Control may not simply be the raw radiocarbon date reported by the laboratory, but perhaps a radiocarbon date corrected for an old carbon reservoir, a calibrated radiocarbon date, or an average of several radiocarbon dates from the same level. A common control for lake-sediment cores is the age of the top of the core, which may be the year the core was taken or perhaps an estimate of 0 BP if a few cm of surficial sediment were lost." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_chroncontrols_chroncontrolid'::regclass)" digits="0" id="0" name="chroncontrolid" nullable="false" remarks="An arbitrary Chronology Control identification number." size="10" type="serial" typeCode="4">
             <child column="chroncontrolid" foreignKey="fk_chroncontrolranks_chroncontrols" implied="false" onDeleteCascade="true" schema="ndb" table="chroncontrolranks"/>
             <child column="chroncontrolid" foreignKey="fk_chroncontrolscal14c_chroncontrols" implied="false" onDeleteCascade="true" schema="ndb" table="chroncontrolscal14c"/>
@@ -464,7 +464,7 @@
             <column ascending="true" name="agelimityounger"/>
          </index>
       </table>
-      <table name="chroncontrolscal14c" numRows="5933" remarks="" schema="ndb" type="TABLE">
+      <table name="chroncontrolscal14c" numRows="6244" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="chroncontrolid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="chroncontrolid" foreignKey="fk_chroncontrolscal14c_chroncontrols" implied="false" onDeleteCascade="true" schema="ndb" table="chroncontrols"/>
          </column>
@@ -498,7 +498,7 @@
             <column ascending="true" name="chroncontroltypeid"/>
          </index>
       </table>
-      <table name="chronologies" numRows="27934" remarks="This table stores Chronology data. A Chronology refers to an explicit chronology assigned to a Collection Unit. A Chronology has Chronology Controls, the actual age-depth control points, which are stored in the ChronControls table. A Chronology is also based on an Age Model, which may be a numerical method that fits a curve to a set of age-depth control points or may simply be individually dated Analysis Units.&#10;A Collection Unit may have more than one Chronology, for example one in radiocarbon years and another in calibrated radiocarbon years. There may be a Chronology developed by the original author and another developed by a later research project. Chronologies may be stored for archival reasons, even though they are now believed to have problems, if they were used for an important research project. One Chronology per Age Type may be designated the default Chronology, which is the Chronology currently preferred by the database stewards.&#10;Based upon the Chronology, which includes the Age Model and the Chron Controls, ages are assigned to individual samples, which are stored in the SampleAges table.&#10;A younger and older age bounds are assigned to the Chronology. Within these bounds the Chronology is regarded as reliable. Ages may be assigned to samples beyond the reliable age bounds, but these are not considered reliable" schema="ndb" type="TABLE">
+      <table name="chronologies" numRows="28470" remarks="This table stores Chronology data. A Chronology refers to an explicit chronology assigned to a Collection Unit. A Chronology has Chronology Controls, the actual age-depth control points, which are stored in the ChronControls table. A Chronology is also based on an Age Model, which may be a numerical method that fits a curve to a set of age-depth control points or may simply be individually dated Analysis Units.&#10;A Collection Unit may have more than one Chronology, for example one in radiocarbon years and another in calibrated radiocarbon years. There may be a Chronology developed by the original author and another developed by a later research project. Chronologies may be stored for archival reasons, even though they are now believed to have problems, if they were used for an important research project. One Chronology per Age Type may be designated the default Chronology, which is the Chronology currently preferred by the database stewards.&#10;Based upon the Chronology, which includes the Age Model and the Chron Controls, ages are assigned to individual samples, which are stored in the SampleAges table.&#10;A younger and older age bounds are assigned to the Chronology. Within these bounds the Chronology is regarded as reliable. Ages may be assigned to samples beyond the reliable age bounds, but these are not considered reliable" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_chronologies_chronologyid'::regclass)" digits="0" id="0" name="chronologyid" nullable="false" remarks="An arbitrary Chronology identification number." size="10" type="serial" typeCode="4">
             <child column="chronologyid" foreignKey="fk_accumulationrates_chronologies" implied="false" onDeleteCascade="false" schema="ndb" table="accumulationrates"/>
             <child column="chronologyid" foreignKey="fk_chroncontrols_chronologies" implied="false" onDeleteCascade="true" schema="ndb" table="chroncontrols"/>
@@ -551,7 +551,7 @@
             <column ascending="true" name="colltypeid"/>
          </index>
       </table>
-      <table name="collectionunits" numRows="29369" remarks="This table stores data for Collection Units." schema="ndb" type="TABLE">
+      <table name="collectionunits" numRows="29939" remarks="This table stores data for Collection Units." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_collectionunits_collectionunitid'::regclass)" digits="0" id="0" name="collectionunitid" nullable="false" remarks="An arbitrary Collection Unit identification number." size="10" type="serial" typeCode="4">
             <child column="collectionunitid" foreignKey="fk_analysisunits_collectionunits" implied="false" onDeleteCascade="true" schema="ndb" table="analysisunits"/>
             <child column="collectionunitid" foreignKey="fk_chronologies_collectionunits" implied="false" onDeleteCascade="true" schema="ndb" table="chronologies"/>
@@ -601,7 +601,7 @@
             <column ascending="true" name="siteid"/>
          </index>
       </table>
-      <table name="collectors" numRows="43528" remarks="The Collectors table lists the people who collected Collection Units." schema="ndb" type="TABLE">
+      <table name="collectors" numRows="44045" remarks="The Collectors table lists the people who collected Collection Units." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_collectors_collectorid'::regclass)" digits="0" id="0" name="collectorid" nullable="false" remarks="An arbitrary Collector identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="collectionunitid" nullable="false" remarks="CollectionUnit collected. Field links to CollectionUnits table." size="10" type="int4" typeCode="4">
             <parent column="collectionunitid" foreignKey="fk_collectors_collectionunits" implied="false" onDeleteCascade="true" schema="ndb" table="collectionunits"/>
@@ -635,7 +635,7 @@
             <column ascending="true" name="databaseid"/>
          </index>
       </table>
-      <table name="contacts" numRows="11672" remarks="This table lists persons and organizations referenced by the Chronologies, Collectors, DatasetPIs, DatasetSubmissions, Projects, PublicationAuthors, SampleAnalysts, and SiteImages tables." schema="ndb" type="TABLE">
+      <table name="contacts" numRows="12074" remarks="This table lists persons and organizations referenced by the Chronologies, Collectors, DatasetPIs, DatasetSubmissions, Projects, PublicationAuthors, SampleAnalysts, and SiteImages tables." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_contacts_contactid'::regclass)" digits="0" id="0" name="contactid" nullable="false" remarks="An arbitrary Contact identification number." size="10" type="serial" typeCode="4">
             <child column="contactid" foreignKey="fk_chronologies_contacts" implied="false" onDeleteCascade="false" schema="ndb" table="chronologies"/>
             <child column="contactid" foreignKey="fk_collectors_contacts" implied="false" onDeleteCascade="false" schema="ndb" table="collectors"/>
@@ -693,7 +693,7 @@
             <column ascending="true" name="contactstatusid"/>
          </index>
       </table>
-      <table name="contextsdatasettypes" numRows="111" remarks="" schema="ndb" type="TABLE">
+      <table name="contextsdatasettypes" numRows="144" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasettypeid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasettypeid" foreignKey="fk_contextsdatasettypes_datasettypes" implied="false" onDeleteCascade="true" schema="ndb" table="datasettypes"/>
          </column>
@@ -709,7 +709,7 @@
             <column ascending="true" name="variablecontextid"/>
          </index>
       </table>
-      <table name="data" numRows="8364360" remarks="The primary data table in the database. Each occurrence of a Variable in a sample comprises a record in the Data table." schema="ndb" type="TABLE">
+      <table name="data" numRows="8989241" remarks="The primary data table in the database. Each occurrence of a Variable in a sample comprises a record in the Data table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_data_dataid'::regclass)" digits="0" id="0" name="dataid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child column="dataid" foreignKey="fk_datataxonnotes_data" implied="false" onDeleteCascade="true" schema="ndb" table="datataxonnotes"/>
             <child column="dataid" foreignKey="fk_isometadata_data" implied="false" onDeleteCascade="true" schema="ndb" table="isometadata"/>
@@ -739,7 +739,7 @@
             <column ascending="true" name="variableid"/>
          </index>
       </table>
-      <table name="dataprocessors" numRows="54317" remarks="" schema="ndb" type="TABLE">
+      <table name="dataprocessors" numRows="55124" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_dataprocessors_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
          </column>
@@ -755,7 +755,7 @@
             <column ascending="true" name="contactid"/>
          </index>
       </table>
-      <table name="datasetdatabases" numRows="42498" remarks="" schema="ndb" type="TABLE">
+      <table name="datasetdatabases" numRows="43504" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_datasetdatabases_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
          </column>
@@ -777,7 +777,7 @@
             <column ascending="true" name="databaseid"/>
          </index>
       </table>
-      <table name="datasetdoi" numRows="36558" remarks="" schema="ndb" type="TABLE">
+      <table name="datasetdoi" numRows="39856" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="doi" nullable="false" remarks="" size="50" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="timezone('UTC'::text, now())" digits="0" id="2" name="recdatecreated" nullable="false" remarks="" size="22" type="timestamp" typeCode="93"/>
@@ -789,7 +789,7 @@
             <column ascending="true" name="doi"/>
          </index>
       </table>
-      <table name="datasetpis" numRows="101946" remarks="" schema="ndb" type="TABLE">
+      <table name="datasetpis" numRows="104111" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="Dataset identification number. Field links to Dataset table." size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_datasetpis_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
          </column>
@@ -799,12 +799,6 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="piorder" nullable="true" remarks="Order in which PIs are listed." size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="timezone('UTC'::text, now())" digits="0" id="3" name="recdatecreated" nullable="false" remarks="" size="22" type="timestamp" typeCode="93"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="recdatemodified" nullable="false" remarks="" size="22" type="timestamp" typeCode="93"/>
-         <primaryKey column="datasetid" sequenceNumberInPK="1"/>
-         <primaryKey column="contactid" sequenceNumberInPK="2"/>
-         <index name="datasetpis_pkey" unique="true">
-            <column ascending="true" name="datasetid"/>
-            <column ascending="true" name="contactid"/>
-         </index>
          <index name="ix_contactid_datasetpis" unique="false">
             <column ascending="true" name="contactid"/>
          </index>
@@ -812,7 +806,7 @@
             <column ascending="true" name="datasetid"/>
          </index>
       </table>
-      <table name="datasetpublications" numRows="49722" remarks="This table lists the publications for datasets." schema="ndb" type="TABLE">
+      <table name="datasetpublications" numRows="51176" remarks="This table lists the publications for datasets." schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="Dataset identification number. Field links to Dataset table." size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_datasetpublications_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
          </column>
@@ -835,7 +829,7 @@
             <column ascending="true" name="publicationid"/>
          </index>
       </table>
-      <table name="datasets" numRows="43132" remarks="This table stores the data for Datasets. A Dataset is the set of samples for a particular data type from a Collection Unit. A Collection Unit may have multiple Datasets for different data types, for example one dataset for pollen and another for plant macrofossils. Every Sample is assigned to a Dataset, and every Dataset is assigned to a Collection Unit. Samples from different Collection Units cannot be assigned to the same Dataset (although they may be assigned to Aggregate Datasets)." schema="ndb" type="TABLE">
+      <table name="datasets" numRows="44137" remarks="This table stores the data for Datasets. A Dataset is the set of samples for a particular data type from a Collection Unit. A Collection Unit may have multiple Datasets for different data types, for example one dataset for pollen and another for plant macrofossils. Every Sample is assigned to a Dataset, and every Dataset is assigned to a Collection Unit. Samples from different Collection Units cannot be assigned to the same Dataset (although they may be assigned to Aggregate Datasets)." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_datasets_datasetid'::regclass)" digits="0" id="0" name="datasetid" nullable="false" remarks="An arbitrary Dataset identification number." size="10" type="serial" typeCode="4">
             <child column="datasetid" foreignKey="fk_dataprocessors_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="dataprocessors"/>
             <child column="datasetid" foreignKey="fk_datasetdatabases_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasetdatabases"/>
@@ -879,7 +873,7 @@
             <column ascending="true" name="datasettypeid"/>
          </index>
       </table>
-      <table name="datasetsubmissions" numRows="52296" remarks="Submissions to the database are of Datasets. Submissions may be original submissions, resubmissions, compilations from other databases, or recompilations. See the description of the DatasetSubmissionTypes table." schema="ndb" type="TABLE">
+      <table name="datasetsubmissions" numRows="53276" remarks="Submissions to the database are of Datasets. Submissions may be original submissions, resubmissions, compilations from other databases, or recompilations. See the description of the DatasetSubmissionTypes table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_datasetsubmissions_submissionid'::regclass)" digits="0" id="0" name="submissionid" nullable="false" remarks="An arbitrary submission identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="datasetid" nullable="false" remarks="Dataset identification number. Field links to the Datasets table. Datasets may occur multiple times in this table (e.g. once for the original compilation into a different database and a second time for the recompilation into Neotoma)." size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_datasetsubmissions_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
@@ -920,7 +914,7 @@
             <column ascending="true" name="submissiontypeid"/>
          </index>
       </table>
-      <table name="datasettaxagrouptypes" numRows="180" remarks="" schema="ndb" type="TABLE">
+      <table name="datasettaxagrouptypes" numRows="181" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasettypeid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasettypeid" foreignKey="fk_datasettaxagrouptypes_datasettypes" implied="false" onDeleteCascade="true" schema="ndb" table="datasettypes"/>
          </column>
@@ -936,7 +930,7 @@
             <column ascending="true" name="taxagroupid"/>
          </index>
       </table>
-      <table name="datasettaxonnotes" numRows="1202" remarks="" schema="ndb" type="TABLE">
+      <table name="datasettaxonnotes" numRows="1219" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_datasettaxonnotes_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
          </column>
@@ -957,7 +951,7 @@
             <column ascending="true" name="taxonid"/>
          </index>
       </table>
-      <table name="datasettypes" numRows="38" remarks="Lookup table for Dataset Types. Table is referenced by the Datasets table." schema="ndb" type="TABLE">
+      <table name="datasettypes" numRows="39" remarks="Lookup table for Dataset Types. Table is referenced by the Datasets table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_datasettypes_datasettypeid'::regclass)" digits="0" id="0" name="datasettypeid" nullable="false" remarks="An arbitrary Dataset Type identification number." size="10" type="serial" typeCode="4">
             <child column="datasettypeid" foreignKey="fk_contextsdatasettypes_datasettypes" implied="false" onDeleteCascade="true" schema="ndb" table="contextsdatasettypes"/>
             <child column="datasettypeid" foreignKey="fk_datasets_datasettypes" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
@@ -1094,7 +1088,7 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="samples" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="observations" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
       </table>
-      <table name="ecolgroups" numRows="38985" remarks="Taxa are assigned to Sets of Ecological Groups. A taxon may be assigned to more than one Set of Ecological Groups, representing different schemes for organizing taxa." schema="ndb" type="TABLE">
+      <table name="ecolgroups" numRows="40377" remarks="Taxa are assigned to Sets of Ecological Groups. A taxon may be assigned to more than one Set of Ecological Groups, representing different schemes for organizing taxa." schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="taxonid" nullable="false" remarks="Taxon identification number. Field links to the Taxa table." size="10" type="int4" typeCode="4">
             <parent column="taxonid" foreignKey="fk_ecolgroups_taxa" implied="false" onDeleteCascade="true" schema="ndb" table="taxa"/>
          </column>
@@ -1146,7 +1140,7 @@
             <column ascending="true" name="ecolsetid"/>
          </index>
       </table>
-      <table name="elementdatasettaxagroups" numRows="1258" remarks="" schema="ndb" type="TABLE">
+      <table name="elementdatasettaxagroups" numRows="1305" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasettypeid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasettypeid" foreignKey="fk_datasettypeid" implied="false" onDeleteCascade="false" schema="ndb" table="datasettypes"/>
          </column>
@@ -1248,7 +1242,7 @@
             <column ascending="true" name="portionid"/>
          </index>
       </table>
-      <table name="elementtaxagroups" numRows="903" remarks="" schema="ndb" type="TABLE">
+      <table name="elementtaxagroups" numRows="938" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_elementtaxagroups_elementtaxagroupid'::regclass)" digits="0" id="0" name="elementtaxagroupid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child column="elementtaxagroupid" foreignKey="fk_elementtaxagroupmaturities_elementtaxagroup" implied="false" onDeleteCascade="true" schema="ndb" table="elementtaxagroupmaturities"/>
             <child column="elementtaxagroupid" foreignKey="fk_elementtaxagroupportions_elementtaxagroups" implied="false" onDeleteCascade="true" schema="ndb" table="elementtaxagroupportions"/>
@@ -1287,7 +1281,7 @@
             <column ascending="true" name="symmetryid"/>
          </index>
       </table>
-      <table name="elementtypes" numRows="826" remarks="" schema="ndb" type="TABLE">
+      <table name="elementtypes" numRows="860" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_elementtypes_elementtypeid'::regclass)" digits="0" id="0" name="elementtypeid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child column="elementtypeid" foreignKey="fk_elementtaxagrouptypes_elementtypes" implied="false" onDeleteCascade="true" schema="ndb" table="elementtaxagroups"/>
             <child column="elementtypeid" foreignKey="fk_isostratdata_elementtypes" implied="false" onDeleteCascade="true" schema="ndb" table="isostratdata"/>
@@ -1317,7 +1311,7 @@
             <column ascending="true" name="embargoid"/>
          </index>
       </table>
-      <table name="eventchronology" numRows="263" remarks="" schema="ndb" type="TABLE">
+      <table name="eventchronology" numRows="267" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_eventchronology_eventchronologyid'::regclass)" digits="0" id="0" name="eventchronologyid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="analysisunitid" nullable="true" remarks="" size="10" type="int4" typeCode="4">
             <parent column="analysisunitid" foreignKey="evc_alu" implied="false" onDeleteCascade="false" schema="ndb" table="analysisunits"/>
@@ -1499,7 +1493,7 @@
             <column ascending="true" name="fractionid"/>
          </index>
       </table>
-      <table name="geochroncontrols" numRows="37787" remarks="" schema="ndb" type="TABLE">
+      <table name="geochroncontrols" numRows="39884" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="chroncontrolid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="chroncontrolid" foreignKey="fk_geochroncontrols_chroncontrols" implied="false" onDeleteCascade="false" schema="ndb" table="chroncontrols"/>
          </column>
@@ -1521,7 +1515,7 @@
             <column ascending="true" name="geochronid"/>
          </index>
       </table>
-      <table name="geochronology" numRows="33763" remarks="This table stores geochronologic data. Geochronologic measurements are from geochronologic samples, which are from Analysis Units, which may have a depth and thickness. Geochronologic measurements may be from the same or different Analysis Units as fossils. In the case of faunal excavations, geochronologic samples are typically from the same Analysis Units as the fossils, and there may be multiple geochronologic samples from a single Analysis Unit. In the case of cores used for microfossil analysis, geochronologic samples are often from separate Analysis Units; dated core sections are often thicker than microfossil Analysis Units." schema="ndb" type="TABLE">
+      <table name="geochronology" numRows="35953" remarks="This table stores geochronologic data. Geochronologic measurements are from geochronologic samples, which are from Analysis Units, which may have a depth and thickness. Geochronologic measurements may be from the same or different Analysis Units as fossils. In the case of faunal excavations, geochronologic samples are typically from the same Analysis Units as the fossils, and there may be multiple geochronologic samples from a single Analysis Unit. In the case of cores used for microfossil analysis, geochronologic samples are often from separate Analysis Units; dated core sections are often thicker than microfossil Analysis Units." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_geochronology_geochronid'::regclass)" digits="0" id="0" name="geochronid" nullable="false" remarks="An arbitrary Geochronologic identification number." size="10" type="serial" typeCode="4">
             <child column="geochronid" foreignKey="fk_geochroncontrols_geochronology" implied="false" onDeleteCascade="false" schema="ndb" table="geochroncontrols"/>
             <child column="geochronid" foreignKey="fk_geochronpublications_geochronology" implied="false" onDeleteCascade="true" schema="ndb" table="geochronpublications"/>
@@ -1557,7 +1551,7 @@
             <column ascending="true" name="sampleid"/>
          </index>
       </table>
-      <table name="geochronpublications" numRows="29551" remarks="Publications in which Geochronologic measurements are reported. Many older radiocarbon dates are reported in the journal Radiocarbon. Dates may be reported in multiple publications. The “publication” could be a database such as the online Canadian Archaeological Radiocarbon Database." schema="ndb" type="TABLE">
+      <table name="geochronpublications" numRows="32319" remarks="Publications in which Geochronologic measurements are reported. Many older radiocarbon dates are reported in the journal Radiocarbon. Dates may be reported in multiple publications. The “publication” could be a database such as the online Canadian Archaeological Radiocarbon Database." schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="geochronid" nullable="false" remarks="Geochronologic identification number. Field links to the Geochronology table." size="10" type="int4" typeCode="4">
             <parent column="geochronid" foreignKey="fk_geochronpublications_geochronology" implied="false" onDeleteCascade="true" schema="ndb" table="geochronology"/>
          </column>
@@ -1612,7 +1606,7 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="rank" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="path" nullable="true" remarks="" size="10" type="_int4" typeCode="2003"/>
       </table>
-      <table name="geopoliticalunits" numRows="10066" remarks="Lookup table of GeoPoliticalUnits. Table is referenced by the SiteGeoPolitical table. These are countries and various subdivisions. Countries and subdivisions were acquired from the U.S. Central Intelligence Agency World Factbook8 and the ISO 3166-1 and ISO 3166-2 databases9.&#10;Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally countries. There are a few exceptions, including Antarctica and island territories, such as Greenland, which although a Danish territory, is geographically separate and distinct. Rank 2 units are generally secondary political divisions with various designations: e.g. states in the United States, provinces in Canada, and regions in France. For some countries, the secondary divisions are not political but rather distinct geographic entities, such as islands. The secondary divisions of some island nations include either groups of islands or sections of more highly populated islands; however, the actual island on which a site is located is more important information. Some countries also have Rank 3 units, e.g. counties in the United States and metropolitan departments in France. In addition to purely political units, various other administrative regions and geographic entities can be contained in this table. Examples of administrative regions are National Parks and Forests. It might be quite useful, for example, to have a record of all the sites in Yellowstone National Park. These additional units are Rank 4, and they can be added to the database as warranted." schema="ndb" type="TABLE">
+      <table name="geopoliticalunits" numRows="10067" remarks="Lookup table of GeoPoliticalUnits. Table is referenced by the SiteGeoPolitical table. These are countries and various subdivisions. Countries and subdivisions were acquired from the U.S. Central Intelligence Agency World Factbook8 and the ISO 3166-1 and ISO 3166-2 databases9.&#10;Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally countries. There are a few exceptions, including Antarctica and island territories, such as Greenland, which although a Danish territory, is geographically separate and distinct. Rank 2 units are generally secondary political divisions with various designations: e.g. states in the United States, provinces in Canada, and regions in France. For some countries, the secondary divisions are not political but rather distinct geographic entities, such as islands. The secondary divisions of some island nations include either groups of islands or sections of more highly populated islands; however, the actual island on which a site is located is more important information. Some countries also have Rank 3 units, e.g. counties in the United States and metropolitan departments in France. In addition to purely political units, various other administrative regions and geographic entities can be contained in this table. Examples of administrative regions are National Parks and Forests. It might be quite useful, for example, to have a record of all the sites in Yellowstone National Park. These additional units are Rank 4, and they can be added to the database as warranted." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_geopoliticalunits_geopoliticalid'::regclass)" digits="0" id="0" name="geopoliticalid" nullable="false" remarks="An arbitrary GeoPolitical identification number." size="10" type="serial" typeCode="4">
             <child column="geoin" foreignKey="geopaths_geoin_fkey" implied="false" onDeleteCascade="false" schema="ndb" table="geopaths"/>
             <child column="geopoliticalid" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="ndb" table="geopoldepth"/>
@@ -1660,7 +1654,7 @@
             <column ascending="true" name="isobiomarkertypeid"/>
          </index>
       </table>
-      <table name="isoinstrumentation" numRows="63" remarks="" schema="ndb" type="TABLE">
+      <table name="isoinstrumentation" numRows="69" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_isoinstrumentation_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
          </column>
@@ -1727,7 +1721,7 @@
             <column ascending="true" name="isomatanaltypeid"/>
          </index>
       </table>
-      <table name="isometadata" numRows="2108" remarks="" schema="ndb" type="TABLE">
+      <table name="isometadata" numRows="2497" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_isometadata_isometadataid'::regclass)" digits="0" id="0" name="isometadataid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="dataid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="dataid" foreignKey="fk_isometadata_data" implied="false" onDeleteCascade="true" schema="ndb" table="data"/>
@@ -1802,9 +1796,11 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="recdatemodified" nullable="false" remarks="" size="22" type="timestamp" typeCode="93"/>
          <primaryKey column="dataid" sequenceNumberInPK="1"/>
          <primaryKey column="isopretreatmenttypeid" sequenceNumberInPK="2"/>
+         <primaryKey column="order" sequenceNumberInPK="3"/>
          <index name="isosamplepretreatments_pkey" unique="true">
             <column ascending="true" name="dataid"/>
             <column ascending="true" name="isopretreatmenttypeid"/>
+            <column ascending="true" name="order"/>
          </index>
       </table>
       <table name="isoscaletypes" numRows="8" remarks="" schema="ndb" type="TABLE">
@@ -1820,7 +1816,7 @@
             <column ascending="true" name="isoscaletypeid"/>
          </index>
       </table>
-      <table name="isospecimendata" numRows="2841" remarks="" schema="ndb" type="TABLE">
+      <table name="isospecimendata" numRows="3427" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_isospecimendata_isospecimendataid'::regclass)" digits="0" id="0" name="isospecimendataid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="dataid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="dataid" foreignKey="fk_isospecimendata_data" implied="false" onDeleteCascade="true" schema="ndb" table="data"/>
@@ -1889,7 +1885,7 @@
             <column ascending="true" name="isostandardtypeid"/>
          </index>
       </table>
-      <table name="isostratdata" numRows="527" remarks="" schema="ndb" type="TABLE">
+      <table name="isostratdata" numRows="634" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="dataid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="dataid" foreignKey="fk_isostratdata_data" implied="false" onDeleteCascade="true" schema="ndb" table="data"/>
          </column>
@@ -1948,7 +1944,7 @@
             <column ascending="true" name="keywordid"/>
          </index>
       </table>
-      <table name="lakeparameters" numRows="22871" remarks="" schema="ndb" type="TABLE">
+      <table name="lakeparameters" numRows="22926" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="siteid" nullable="false" remarks="FK: SiteID links to Sites table" size="10" type="int4" typeCode="4">
             <parent column="siteid" foreignKey="fk_lakeparameters_sites" implied="false" onDeleteCascade="true" schema="ndb" table="sites"/>
          </column>
@@ -1985,7 +1981,7 @@
             <column ascending="true" name="lakeparameterid"/>
          </index>
       </table>
-      <table name="lithology" numRows="24489" remarks="This table stores the lithologic descriptions of Collection Units." schema="ndb" type="TABLE">
+      <table name="lithology" numRows="25983" remarks="This table stores the lithologic descriptions of Collection Units." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_lithology_lithologyid'::regclass)" digits="0" id="0" name="lithologyid" nullable="false" remarks="An arbitrary identification number for a lithologic unit." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="collectionunitid" nullable="false" remarks="Collection Unit identification number. Field links to the CollectionUnits table." size="10" type="int4" typeCode="4">
             <parent column="collectionunitid" foreignKey="fk_lithology_collectionunits" implied="false" onDeleteCascade="true" schema="ndb" table="collectionunits"/>
@@ -2036,7 +2032,7 @@
             <column ascending="true" name="lithostratunitid"/>
          </index>
       </table>
-      <table name="publicationauthors" numRows="26072" remarks="This table lists authors as their names are given in publications. Only the initials are stored for authors’ given names. The ContactID links to the author’s full name and contact data in the Contacts table. Thus, for a bibliographic entry, Charles Robert Darwin is listed as C. R. Darwin, or as C. Darwin if the publication did not include his middle name. Book editors are also stored in this table if the entire book is cited. However, if a book chapter or section is cited, authors are stored in this table, but the book editors are stored in the PublicationEditors table. Thus, for the following reference, G. C. Frison is stored in the PublicationAuthors table.&#10;Frison, G. C., editor. 1996. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA.&#10;Whereas for the following publication, L. S. Cummings is listed in the PublicationAuthors table, and G. C. Frison is listed in the PublicationEditors table.&#10;Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site: stratigraphic pollen and phyrolith analysis. Pages 177-193 in G. C. Frison, editor. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA." schema="ndb" type="TABLE">
+      <table name="publicationauthors" numRows="27778" remarks="This table lists authors as their names are given in publications. Only the initials are stored for authors’ given names. The ContactID links to the author’s full name and contact data in the Contacts table. Thus, for a bibliographic entry, Charles Robert Darwin is listed as C. R. Darwin, or as C. Darwin if the publication did not include his middle name. Book editors are also stored in this table if the entire book is cited. However, if a book chapter or section is cited, authors are stored in this table, but the book editors are stored in the PublicationEditors table. Thus, for the following reference, G. C. Frison is stored in the PublicationAuthors table.&#10;Frison, G. C., editor. 1996. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA.&#10;Whereas for the following publication, L. S. Cummings is listed in the PublicationAuthors table, and G. C. Frison is listed in the PublicationEditors table.&#10;Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site: stratigraphic pollen and phyrolith analysis. Pages 177-193 in G. C. Frison, editor. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_publicationauthors_authorid'::regclass)" digits="0" id="0" name="authorid" nullable="false" remarks="An arbitrary Author identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="publicationid" nullable="false" remarks="Publication identification number. Field links to the Publications table." size="10" type="int4" typeCode="4">
             <parent column="publicationid" foreignKey="fk_publicationauthors_publications" implied="false" onDeleteCascade="true" schema="ndb" table="publications"/>
@@ -2061,7 +2057,7 @@
             <column ascending="true" name="publicationid"/>
          </index>
       </table>
-      <table name="publicationeditors" numRows="1211" remarks="This table stores the editors of publications for which chapters or sections are the primary bibliographic entries. Chapter authors are stored in the PublicatonAuthors table, where they are linked to the Contacts table. However, publication editors are not cross-referenced in the Contacts table, because chapter authors are the principal citation." schema="ndb" type="TABLE">
+      <table name="publicationeditors" numRows="1368" remarks="This table stores the editors of publications for which chapters or sections are the primary bibliographic entries. Chapter authors are stored in the PublicatonAuthors table, where they are linked to the Contacts table. However, publication editors are not cross-referenced in the Contacts table, because chapter authors are the principal citation." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_publicationeditors_editorid'::regclass)" digits="0" id="0" name="editorid" nullable="false" remarks="An arbitrary Editor identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="publicationid" nullable="false" remarks="Publication identification number. Field links to the Publications table." size="10" type="int4" typeCode="4">
             <parent column="publicationid" foreignKey="fk_publicationeditors_publications" implied="false" onDeleteCascade="true" schema="ndb" table="publications"/>
@@ -2080,7 +2076,7 @@
             <column ascending="true" name="publicationid"/>
          </index>
       </table>
-      <table name="publications" numRows="11489" remarks="This table stores publication or bibliographic data. The table is designed with fields for bibliographic data so that bibliographies can be formatted in different styles and potentially exported to bibliographic software such EndNote®. In the constituent databases that were originally merged into Neotoma, bibliographic entries were not parsed into separate fields, but rather were stored as free-form text. Because complete parsing of these thousands of legacy bibliographic entries into individual fields would have been prohibitively time consuming, the existing bibliographic data were ingested “as is” with a PubTypeID = Other. However, for legacy publications, the year of publication was added to the Year field, and authors were parsed into the PublicationAuthors table and added to the Contacts table. In addition, some global changes were made. For example, «Pp.» was changed to «Pages», «Ed.» to «Editor», and «Eds.» to «Editors». Also for FAUNMAP entries, abbreviated journal names were changed to fully spelled out names.&#10;The merged databases used different bibliographic styles, and data entry personnel working on the same database sometimes followed different conventions. Consequently, the current bibliographic entries are not stylistically uniform. Eventually, the legacy bibliographic data will be parsed into separate fields.&#10;The Publications table has fields to accommodate a number of different types of publications. Some fields contain different kinds of data for different kinds of publications. For example, the BookTitle field stores the titles of books, but stores the journal name for journal articles. The Publisher field stores the name of the publisher for books, but the name of the university for theses and dissertations.&#10;Authors are stored in the PublicationAuthors table. Editors are also stored in the PublicationAuthors table if the entire publication is cited. The PublicationAuthors table has a ContactID field, which links to the Contacts table, where full names and contact information is stored for authors and editors. The PubTypeID «Authored Book» or «Edited Book» indicates whether the Publication Authors records are authors or editors. If a book chapter or section is the primary bibliographic entry, then the book editors are stored in the PublicationEditors table, which does not have a ContactID field." schema="ndb" type="TABLE">
+      <table name="publications" numRows="12311" remarks="This table stores publication or bibliographic data. The table is designed with fields for bibliographic data so that bibliographies can be formatted in different styles and potentially exported to bibliographic software such EndNote®. In the constituent databases that were originally merged into Neotoma, bibliographic entries were not parsed into separate fields, but rather were stored as free-form text. Because complete parsing of these thousands of legacy bibliographic entries into individual fields would have been prohibitively time consuming, the existing bibliographic data were ingested “as is” with a PubTypeID = Other. However, for legacy publications, the year of publication was added to the Year field, and authors were parsed into the PublicationAuthors table and added to the Contacts table. In addition, some global changes were made. For example, «Pp.» was changed to «Pages», «Ed.» to «Editor», and «Eds.» to «Editors». Also for FAUNMAP entries, abbreviated journal names were changed to fully spelled out names.&#10;The merged databases used different bibliographic styles, and data entry personnel working on the same database sometimes followed different conventions. Consequently, the current bibliographic entries are not stylistically uniform. Eventually, the legacy bibliographic data will be parsed into separate fields.&#10;The Publications table has fields to accommodate a number of different types of publications. Some fields contain different kinds of data for different kinds of publications. For example, the BookTitle field stores the titles of books, but stores the journal name for journal articles. The Publisher field stores the name of the publisher for books, but the name of the university for theses and dissertations.&#10;Authors are stored in the PublicationAuthors table. Editors are also stored in the PublicationAuthors table if the entire publication is cited. The PublicationAuthors table has a ContactID field, which links to the Contacts table, where full names and contact information is stored for authors and editors. The PubTypeID «Authored Book» or «Edited Book» indicates whether the Publication Authors records are authors or editors. If a book chapter or section is the primary bibliographic entry, then the book editors are stored in the PublicationEditors table, which does not have a ContactID field." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_publications_publicationid'::regclass)" digits="0" id="0" name="publicationid" nullable="false" remarks="An arbitrary Publication identification number." size="10" type="serial" typeCode="4">
             <child column="publicationid" foreignKey="fk_calibrationcurves_publications" implied="false" onDeleteCascade="true" schema="ndb" table="calibrationcurves"/>
             <child column="publicationid" foreignKey="fk_datasetpublications_publications" implied="false" onDeleteCascade="false" schema="ndb" table="datasetpublications"/>
@@ -2162,7 +2158,7 @@
          </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="pubtsv" nullable="true" remarks="" size="2147483647" type="tsvector" typeCode="1111"/>
       </table>
-      <table name="radiocarbon" numRows="27847" remarks="" schema="ndb" type="TABLE">
+      <table name="radiocarbon" numRows="29746" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="geochronid" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="radiocarbonmethodid" nullable="true" remarks="" size="10" type="int4" typeCode="4">
             <parent column="radiocarbonmethodid" foreignKey="fk_radiocarbonmethodid" implied="false" onDeleteCascade="false" schema="ndb" table="radiocarbonmethods"/>
@@ -2297,7 +2293,7 @@
             <column ascending="true" name="relativeageid"/>
          </index>
       </table>
-      <table name="repositoryinstitutions" numRows="376" remarks="A lookup table of institutions that are repositories for fossil specimens. Table is referenced by the RepositorySpecimens table." schema="ndb" type="TABLE">
+      <table name="repositoryinstitutions" numRows="382" remarks="A lookup table of institutions that are repositories for fossil specimens. Table is referenced by the RepositorySpecimens table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_repositoryinstitutions_repositoryid'::regclass)" digits="0" id="0" name="repositoryid" nullable="false" remarks="An arbitrary Repository identification number. Repositories include museums, university departments, and various governmental agencies." size="10" type="serial" typeCode="4">
             <child column="repositoryid" foreignKey="fk_repositoryspecimens_repositoryinstitutions" implied="false" onDeleteCascade="false" schema="ndb" table="repositoryspecimens"/>
             <child column="repositoryid" foreignKey="fk_specimens_repositoryinstitutions" implied="false" onDeleteCascade="true" schema="ndb" table="specimens"/>
@@ -2312,7 +2308,7 @@
             <column ascending="true" name="repositoryid"/>
          </index>
       </table>
-      <table name="repositoryspecimens" numRows="4972" remarks="This table lists the repositories in which fossil specimens have been accessioned or reposited. The inventory in Neotoma is by Dataset, which is the collection of specimens from a Collection Unit. Occasionally, specimens from a single Collection Unit have been reposited at different institutions, in which case multiple records for that Dataset occur in the table." schema="ndb" type="TABLE">
+      <table name="repositoryspecimens" numRows="5052" remarks="This table lists the repositories in which fossil specimens have been accessioned or reposited. The inventory in Neotoma is by Dataset, which is the collection of specimens from a Collection Unit. Occasionally, specimens from a single Collection Unit have been reposited at different institutions, in which case multiple records for that Dataset occur in the table." schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="false" remarks="Dataset identification number. Field links to the Datasets table." size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_repositoryspecimens_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
          </column>
@@ -2349,7 +2345,7 @@
             <column ascending="true" name="rocktypeid"/>
          </index>
       </table>
-      <table name="sampleages" numRows="530708" remarks="This table stores sample ages. Ages are assigned to a Chronology. Because there may be more than one Chronology for a Collection Unit, samples may be assigned different ages for different Chronologies. A simple example is one sample age in radiocarbon years and another in calibrated radiocarbon years. The age units are an attribute of the Chronology." schema="ndb" type="TABLE">
+      <table name="sampleages" numRows="557671" remarks="This table stores sample ages. Ages are assigned to a Chronology. Because there may be more than one Chronology for a Collection Unit, samples may be assigned different ages for different Chronologies. A simple example is one sample age in radiocarbon years and another in calibrated radiocarbon years. The age units are an attribute of the Chronology." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_sampleages_sampleageid'::regclass)" digits="0" id="0" name="sampleageid" nullable="false" remarks="An arbitrary Sample Age identification number." size="10" type="serial" typeCode="4">
             <child column="sampleageid" foreignKey="fk_aggregatesampleages_sampleages" implied="false" onDeleteCascade="true" schema="ndb" table="aggregatesampleages"/>
          </column>
@@ -2384,7 +2380,7 @@
             <column ascending="true" name="ageyounger"/>
          </index>
       </table>
-      <table name="sampleanalysts" numRows="269124" remarks="This table lists the Sample Analysts." schema="ndb" type="TABLE">
+      <table name="sampleanalysts" numRows="283461" remarks="This table lists the Sample Analysts." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_sampleanalysts_analystid'::regclass)" digits="0" id="0" name="analystid" nullable="false" remarks="An arbitrary Sample Analyst identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sampleid" nullable="false" remarks="Sample identification number. Field links to the Samples table." size="10" type="int4" typeCode="4">
             <parent column="sampleid" foreignKey="fk_sampleanalysts_samples" implied="false" onDeleteCascade="true" schema="ndb" table="samples"/>
@@ -2406,7 +2402,7 @@
             <column ascending="true" name="sampleid"/>
          </index>
       </table>
-      <table name="samplekeywords" numRows="13861" remarks="This table lists the Sample Analysts." schema="ndb" type="TABLE">
+      <table name="samplekeywords" numRows="14022" remarks="This table lists the Sample Analysts." schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="sampleid" nullable="false" remarks="Sample identification number. Field links to the Samples table." size="10" type="int4" typeCode="4">
             <parent column="sampleid" foreignKey="fk_samplekeywords_samples" implied="false" onDeleteCascade="true" schema="ndb" table="samples"/>
          </column>
@@ -2428,7 +2424,7 @@
             <column ascending="true" name="sampleid"/>
          </index>
       </table>
-      <table name="samples" numRows="421532" remarks="This table stores sample data. Samples belong to Analysis Units, which belong to Collection Units, which belong to Sites. Samples also belong to a Dataset, and the Dataset determines the type of sample. Thus, there could be two different samples from the same Analysis Unit, one belonging to a pollen dataset, the other to a plant macrofossil dataset." schema="ndb" type="TABLE">
+      <table name="samples" numRows="446718" remarks="This table stores sample data. Samples belong to Analysis Units, which belong to Collection Units, which belong to Sites. Samples also belong to a Dataset, and the Dataset determines the type of sample. Thus, there could be two different samples from the same Analysis Unit, one belonging to a pollen dataset, the other to a plant macrofossil dataset." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_samples_sampleid'::regclass)" digits="0" id="0" name="sampleid" nullable="false" remarks="An arbitrary Sample identification number." size="10" type="serial" typeCode="4">
             <child column="sampleid" foreignKey="fk_aggregatesamples_samples" implied="false" onDeleteCascade="true" schema="ndb" table="aggregatesamples"/>
             <child column="sampleid" foreignKey="fk_data_samples" implied="false" onDeleteCascade="true" schema="ndb" table="data"/>
@@ -2470,7 +2466,7 @@
             <column ascending="true" name="taxonid"/>
          </index>
       </table>
-      <table name="sitegeopolitical" numRows="49603" remarks="This table lists the GeoPolitical units in which sites occur." schema="ndb" type="TABLE">
+      <table name="sitegeopolitical" numRows="50191" remarks="This table lists the GeoPolitical units in which sites occur." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_sitegeopolitical_sitegeopoliticalid'::regclass)" digits="0" id="0" name="sitegeopoliticalid" nullable="false" remarks="An arbitrary Site GeoPolitical identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="siteid" nullable="false" remarks="Site identification number. Field links to the Sites table." size="10" type="int4" typeCode="4">
             <parent column="siteid" foreignKey="fk_sitegeopolitical_sites" implied="false" onDeleteCascade="true" schema="ndb" table="sites"/>
@@ -2513,7 +2509,7 @@
             <column ascending="true" name="siteid"/>
          </index>
       </table>
-      <table name="sites" numRows="19581" remarks="The Sites table stores information about sites or localities, including name, geographic coordinates, and description. Sites generally have an areal extent and can be circumscribed by a latitude-longitude box. However, site data ingested from legacy databases have included only point locations. The lat-long box can be used either to circumscribe the aerial extent of a site or to provide purposeful imprecision to the site location. Site location may be imprecise because the original description was vague, e.g. «a gravel bar 5 miles east of town», or because the investigators, land owner, or land management agency may not want the exact location made public, perhaps to prevent looting and vandalism. In the first case, the lat-long box can be made sufficiently large to encompass the true location and in the second case to prevent exact location." schema="ndb" type="TABLE">
+      <table name="sites" numRows="19910" remarks="The Sites table stores information about sites or localities, including name, geographic coordinates, and description. Sites generally have an areal extent and can be circumscribed by a latitude-longitude box. However, site data ingested from legacy databases have included only point locations. The lat-long box can be used either to circumscribe the aerial extent of a site or to provide purposeful imprecision to the site location. Site location may be imprecise because the original description was vague, e.g. «a gravel bar 5 miles east of town», or because the investigators, land owner, or land management agency may not want the exact location made public, perhaps to prevent looting and vandalism. In the first case, the lat-long box can be made sufficiently large to encompass the true location and in the second case to prevent exact location." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_sites_siteid'::regclass)" digits="0" id="0" name="siteid" nullable="false" remarks="An arbitrary Site identification number." size="10" type="serial" typeCode="4">
             <child column="siteid" foreignKey="fk_collectionunits_sites" implied="false" onDeleteCascade="true" schema="ndb" table="collectionunits"/>
             <child column="siteid" foreignKey="fk_lakeparameters_sites" implied="false" onDeleteCascade="true" schema="ndb" table="lakeparameters"/>
@@ -2565,7 +2561,7 @@
             <column ascending="true" name="siteid"/>
          </index>
       </table>
-      <table name="specimendates" numRows="2657" remarks="This table enables queries for dated specimens of individual taxa. Although the MaterialDated field in the Geochronology table may list the taxa dated, this protocol is not enforced, and the field is not linked to the taxa table." schema="ndb" type="TABLE">
+      <table name="specimendates" numRows="2664" remarks="This table enables queries for dated specimens of individual taxa. Although the MaterialDated field in the Geochronology table may list the taxa dated, this protocol is not enforced, and the field is not linked to the taxa table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_specimendates_specimendateid'::regclass)" digits="0" id="0" name="specimendateid" nullable="false" remarks="An arbitrary specimen date ID" size="10" type="serial" typeCode="4">
             <child column="specimendateid" foreignKey="fk_specimendatescal_specimendates" implied="false" onDeleteCascade="true" schema="ndb" table="specimendatescal"/>
          </column>
@@ -2647,7 +2643,7 @@
             <column ascending="true" name="genbanknr"/>
          </index>
       </table>
-      <table name="specimens" numRows="2473" remarks="" schema="ndb" type="TABLE">
+      <table name="specimens" numRows="2685" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_specimens_specimenid'::regclass)" digits="0" id="0" name="specimenid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
             <child column="specimenid" foreignKey="fk_isospecimendata_specimens" implied="false" onDeleteCascade="false" schema="ndb" table="isospecimendata"/>
             <child column="specimenid" foreignKey="fk_specimendates_specimens" implied="false" onDeleteCascade="true" schema="ndb" table="specimendates"/>
@@ -2719,7 +2715,7 @@
             <column ascending="true" name="taphonomictypeid"/>
          </index>
       </table>
-      <table name="summarydatataphonomy" numRows="42901" remarks="" schema="ndb" type="TABLE">
+      <table name="summarydatataphonomy" numRows="43109" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="dataid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="dataid" foreignKey="fk_summarydatataphonomy_data" implied="false" onDeleteCascade="true" schema="ndb" table="data"/>
          </column>
@@ -2735,7 +2731,7 @@
             <column ascending="true" name="taphonomictypeid"/>
          </index>
       </table>
-      <table name="synonyms" numRows="2534" remarks="This table lists common synonyms for taxa in the Taxa table. No effort has been made to provide a complete taxonomic synonymy, but rather to list synonyms commonly used in recent literature.  This table is not the same as the Synonomy table, also present in Neotoma, which links a specific synonymy to a dataset" schema="ndb" type="TABLE">
+      <table name="synonyms" numRows="2689" remarks="This table lists common synonyms for taxa in the Taxa table. No effort has been made to provide a complete taxonomic synonymy, but rather to list synonyms commonly used in recent literature.  This table is not the same as the Synonomy table, also present in Neotoma, which links a specific synonymy to a dataset" schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_synonyms_synonymid'::regclass)" digits="0" id="0" name="synonymid" nullable="false" remarks="An arbitrary synonym identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="invalidtaxonid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="taxonid" foreignKey="fk_synonyms_invalidtaxa" implied="false" onDeleteCascade="true" schema="ndb" table="taxa"/>
@@ -2768,7 +2764,7 @@
             <column ascending="true" name="synonymtypeid"/>
          </index>
       </table>
-      <table name="synonymy" numRows="30143" remarks="The synonymy table links dataset-level synonymies to particular publications or contacts.  This allows users to maintain the original taxonomic information within a table, but tie it to newer and more authoritative taxonomic information." schema="ndb" type="TABLE">
+      <table name="synonymy" numRows="32460" remarks="The synonymy table links dataset-level synonymies to particular publications or contacts.  This allows users to maintain the original taxonomic information within a table, but tie it to newer and more authoritative taxonomic information." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_synonymy_synonymyid'::regclass)" digits="0" id="0" name="synonymyid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="datasetid" nullable="false" remarks="DatasetID from the Datasets table" size="10" type="int4" typeCode="4">
             <parent column="datasetid" foreignKey="fk_synonymy_datasets" implied="false" onDeleteCascade="true" schema="ndb" table="datasets"/>
@@ -2853,7 +2849,7 @@
             <column ascending="true" name="taphonomictypeid"/>
          </index>
       </table>
-      <table name="taxa" numRows="41051" remarks="This table lists all taxa in the database. Most taxa are biological taxa; however, some are biometric measures and some are physical parameters." schema="ndb" type="TABLE">
+      <table name="taxa" numRows="42594" remarks="This table lists all taxa in the database. Most taxa are biological taxa; however, some are biometric measures and some are physical parameters." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_taxa_taxonid'::regclass)" digits="0" id="0" name="taxonid" nullable="false" remarks="An arbitrary Taxon identification number." size="10" type="serial" typeCode="4">
             <child column="taxonid" foreignKey="fk_datasettaxonnotes_taxa" implied="false" onDeleteCascade="true" schema="ndb" table="datasettaxonnotes"/>
             <child column="taxonid" foreignKey="fk_ecolgroups_taxa" implied="false" onDeleteCascade="true" schema="ndb" table="ecolgroups"/>
@@ -2966,7 +2962,7 @@
             <column ascending="true" name="taxonid"/>
          </index>
       </table>
-      <table name="tephras" numRows="141" remarks="Tephras lookup table. This table stores recognized tephras with established ages. Referenced by the Tephrachronology table." schema="ndb" type="TABLE">
+      <table name="tephras" numRows="145" remarks="Tephras lookup table. This table stores recognized tephras with established ages. Referenced by the Tephrachronology table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_tephras_tephraid'::regclass)" digits="0" id="0" name="tephraid" nullable="false" remarks="An arbitrary Tephra identification number." size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="eventid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="eventid" foreignKey="fk_tephras_events" implied="false" onDeleteCascade="true" schema="ndb" table="events"/>
@@ -2982,7 +2978,7 @@
             <column ascending="true" name="tephraid"/>
          </index>
       </table>
-      <table name="unitsdatasettypes" numRows="487" remarks="" schema="ndb" type="TABLE">
+      <table name="unitsdatasettypes" numRows="535" remarks="" schema="ndb" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasettypeid" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <parent column="datasettypeid" foreignKey="fk_unitsdatasettypes_datasettypes" implied="false" onDeleteCascade="true" schema="ndb" table="datasettypes"/>
          </column>
@@ -2998,7 +2994,7 @@
             <column ascending="true" name="variableunitsid"/>
          </index>
       </table>
-      <table name="variablecontexts" numRows="44" remarks="Variable Contexts lookup table. Table is referenced by the Variables table." schema="ndb" type="TABLE">
+      <table name="variablecontexts" numRows="60" remarks="Variable Contexts lookup table. Table is referenced by the Variables table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_variablecontexts_variablecontextid'::regclass)" digits="0" id="0" name="variablecontextid" nullable="false" remarks="An arbitrary Variable Context identification number." size="10" type="serial" typeCode="4">
             <child column="variablecontextid" foreignKey="fk_contextsdatasettypes_variablecontexts" implied="false" onDeleteCascade="true" schema="ndb" table="contextsdatasettypes"/>
             <child column="variablecontextid" foreignKey="fk_variables_variablecontexts" implied="false" onDeleteCascade="true" schema="ndb" table="variables"/>
@@ -3011,7 +3007,7 @@
             <column ascending="true" name="variablecontextid"/>
          </index>
       </table>
-      <table name="variableelements" numRows="862" remarks="Lookup table of Variable Elements. Table is referenced by the Variables table." schema="ndb" type="TABLE">
+      <table name="variableelements" numRows="900" remarks="Lookup table of Variable Elements. Table is referenced by the Variables table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_variableelements_variableelementid'::regclass)" digits="0" id="0" name="variableelementid" nullable="false" remarks="An arbitrary Variable Element identification number." size="10" type="serial" typeCode="4">
             <child column="variableelementid" foreignKey="fk_variables_variableelements" implied="false" onDeleteCascade="true" schema="ndb" table="variables"/>
          </column>
@@ -3035,7 +3031,7 @@
             <column ascending="true" name="variableelementid"/>
          </index>
       </table>
-      <table name="variables" numRows="45076" remarks="This table lists Variables, which always consist of a Taxon and Units of measurement. Variables can also have Elements, Contexts, and Modifications. Thus, the same taxon with different measurement units (e.g. present/absent, NISP, MNI) are different Variables." schema="ndb" type="TABLE">
+      <table name="variables" numRows="48476" remarks="This table lists Variables, which always consist of a Taxon and Units of measurement. Variables can also have Elements, Contexts, and Modifications. Thus, the same taxon with different measurement units (e.g. present/absent, NISP, MNI) are different Variables." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_variables_variableid'::regclass)" digits="0" id="0" name="variableid" nullable="false" remarks="An arbitrary Variable identification number." size="10" type="serial" typeCode="4">
             <child column="variableid" foreignKey="fk_data_variables" implied="false" onDeleteCascade="true" schema="ndb" table="data"/>
             <child column="variableid" foreignKey="fk_datasetvariables_variables" implied="false" onDeleteCascade="true" schema="ndb" table="datasetvariables"/>
@@ -3072,7 +3068,7 @@
             <column ascending="true" name="variableunitsid"/>
          </index>
       </table>
-      <table name="variableunits" numRows="156" remarks="Lookup table of Variable Units. Table is referenced by the Variables table." schema="ndb" type="TABLE">
+      <table name="variableunits" numRows="170" remarks="Lookup table of Variable Units. Table is referenced by the Variables table." schema="ndb" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('ndb.seq_variableunits_variableunitsid'::regclass)" digits="0" id="0" name="variableunitsid" nullable="false" remarks="An arbitrary Variable Units identification number." size="10" type="serial" typeCode="4">
             <child column="variableunitsid" foreignKey="fk_accumulationrates_variableunits" implied="false" onDeleteCascade="true" schema="ndb" table="accumulationrates"/>
             <child column="variableunitsid" foreignKey="fk_analysisunitaltdepths_variableunits" implied="false" onDeleteCascade="true" schema="ndb" table="analysisunitaltdepthscales"/>
