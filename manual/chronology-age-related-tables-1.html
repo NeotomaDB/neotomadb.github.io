@@ -299,8 +299,8 @@ div.csl-indent {
 <div id="AgeTypes" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> AgeTypes<a href="chronology-age-related-tables-1.html#AgeTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Age Types or units. This table is referenced by the <a href="chronology-age-related-tables-1.html#Chronologies"><code>chronologies</code></a> and <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a> tables.</p>
-<div id="htmlwidget-db4029f71fb45a4cb1e9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-db4029f71fb45a4cb1e9">{"x":{"filter":"none","vertical":false,"data":[["agetypeid","agetype","precedence","shortagetype","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","character varying(32)","timestamp(0) without time zone","timestamp(0) without time zone"],["agetypes_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-887c334a02e1d3402e3a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-887c334a02e1d3402e3a">{"x":{"filter":"none","vertical":false,"data":[["agetypeid","agetype","precedence","shortagetype","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","character varying(32)","timestamp(0) without time zone","timestamp(0) without time zone"],["agetypes_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>AgeTypeID (Primary Key)</strong>: An arbitrary Age Type identification number.</li>
 <li><strong>AgeType</strong>: Age type or units. Includes the following:
@@ -317,8 +317,8 @@ div.csl-indent {
 <h2><span class="header-section-number">7.2</span> AggregateChronologies<a href="chronology-age-related-tables-1.html#AggregateChronologies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores metadata for Aggregate Chronologies. An Aggregate Chronology refers to an explicit chronology assigned to a sample Aggregate. The individual Aggregate Samples have ages assigned in the <a href="chronology-age-related-tables-1.html#AggregateSampleAges"><code>aggregatesampleages</code></a> table. An Aggregate Chronology would be used, for example, for a set of packrat middens assigned to an <a href="#AggregateDatasets"><code>aggregatedatasets</code></a>. The Aggregate Chronology is analagous to the Chronology assigned to samples from a single Collection Unit.</p>
 <p>An Aggregate may have more than one Aggregate Chronology, for example one in radiocarbon years and another in calibrated radiocarbon years. One Aggreagate Chronology per Age Type may be designated the default, which is the Aggregate Chronology currently preferred by the database stewards.</p>
-<div id="htmlwidget-e2c62ecfe77ec733f571" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e2c62ecfe77ec733f571">{"x":{"filter":"none","vertical":false,"data":[["aggregatechronid","aggregatedatasetid","agetypeid","isdefault","chronologyname","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","boolean","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatechronologies_pkey","fk_aggregatechronologies_aggregatedatasets","fk_aggregatechronologies_agetypes","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c1afc0f7a686b5780d1f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1afc0f7a686b5780d1f">{"x":{"filter":"none","vertical":false,"data":[["aggregatechronid","aggregatedatasetid","agetypeid","isdefault","chronologyname","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","boolean","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatechronologies_pkey","fk_aggregatechronologies_aggregatedatasets","fk_aggregatechronologies_agetypes","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>AggregateChronID (Primary Key)</strong>: An arbitrary Aggregate Chronology identification number.</li>
 <li><strong>AggregateDatasetID (Foreign Key)</strong>: Dataset to which the Aggregate Chronology applies. Field links to the <a href="#AggregateDatasets"><code>aggregatedatasets</code></a> table.</li>
@@ -334,8 +334,8 @@ div.csl-indent {
 <h2><span class="header-section-number">7.3</span> ChronControls<a href="chronology-age-related-tables-1.html#ChronControls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores data for Chronology Controls, which are the age-depth control points used for age models. These controls may be geophysical controls, such as radiocarbon dates, but include many other kinds of age controls, such as biostratigraphic controls, archaeological cultural associations, and volcanic tephras. In the case of radiocarbon dates, a Chronology Control may not simply be the raw radiocarbon date reported by the laboratory, but perhaps a radiocarbon date corrected for an old carbon reservoir, a calibrated radiocarbon date, or an average of several radiocarbon dates from the same level. A common control for
 lake-sediment cores is the age of the top of the core, which may be the year the core was taken or perhaps an estimate of 0 BP if a few cm of surficial sediment were lost.</p>
-<div id="htmlwidget-bb640b8f254f98a63015" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bb640b8f254f98a63015">{"x":{"filter":"none","vertical":false,"data":[["chroncontrolid","chronologyid","chroncontroltypeid","depth","thickness","age","agelimityounger","agelimitolder","notes","recdatecreated","recdatemodified","analysisunitid","agetypeid"],["integer","integer","integer","double precision","double precision","double precision","double precision","double precision","text","timestamp(0) without time zone","timestamp(0) without time zone","integer","integer"],["chroncontrols_pkey","fk_chroncontrols_chronologies","fk_chroncontrols_chroncontroltypes","","","","","","","","","fk_chroncontrols_analysisunits","fk_chroncontrols_agetypes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-af72a359cab8fc638096" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-af72a359cab8fc638096">{"x":{"filter":"none","vertical":false,"data":[["chroncontrolid","chronologyid","chroncontroltypeid","depth","thickness","age","agelimityounger","agelimitolder","notes","recdatecreated","recdatemodified","analysisunitid","agetypeid"],["integer","integer","integer","double precision","double precision","double precision","double precision","double precision","text","timestamp(0) without time zone","timestamp(0) without time zone","integer","integer"],["chroncontrols_pkey","fk_chroncontrols_chronologies","fk_chroncontrols_chroncontroltypes","","","","","","","","","fk_chroncontrols_analysisunits","fk_chroncontrols_agetypes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>ChronControlID (Primary Key)</strong>: An arbitrary Chronology Control identification number.</li>
 <li><strong>ChronologyID (Foreign Key)</strong>: Chronology to which the ChronControl belongs. Field links to the Chronolgies table.</li>
@@ -351,8 +351,8 @@ lake-sediment cores is the age of the top of the core, which may be the year the
 <div id="ChronControlTypes" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> ChronControlTypes<a href="chronology-age-related-tables-1.html#ChronControlTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Chronology Control Types. This table is referenced by the <a href="chronology-age-related-tables-1.html#ChronControls"><code>chroncontrols</code></a> table.</p>
-<div id="htmlwidget-23435540bd71fc4f6de3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-23435540bd71fc4f6de3">{"x":{"filter":"none","vertical":false,"data":[["chroncontroltypeid","chroncontroltype","higherchroncontroltypeid","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["chroncontroltypes_pkey","","fk_higherchroncontroltypeid","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-48b6f0c077ee5b29ccd8" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-48b6f0c077ee5b29ccd8">{"x":{"filter":"none","vertical":false,"data":[["chroncontroltypeid","chroncontroltype","higherchroncontroltypeid","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["chroncontroltypes_pkey","","fk_higherchroncontroltypeid","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>ChronControlTypeID (Primary Key)</strong>: An arbitrary Chronology Control Type identification number.</li>
 <li><strong>ChronControlType</strong>: The type of Chronology Control object. Chronology Controls include
@@ -390,15 +390,15 @@ the <a href="#SampleAges"><code>SampleAges</code></a> table.</p>
 these bounds the Chronology is regarded as reliable. Ages may be
 assigned to samples beyond the reliable age bounds, but these are not
 considered reliable.</p>
-<div id="htmlwidget-db302de1e5de908934d2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-db302de1e5de908934d2">{"x":{"filter":"none","vertical":false,"data":[["chronologyid","collectionunitid","agetypeid","contactid","isdefault","chronologyname","dateprepared","agemodel","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","boolean","character varying(80)","date","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["chronologies_pkey","fk_chronologies_collectionunits","fk_chronologies_agetypes","fk_chronologies_contacts","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e1a9b83631d6b5faa566" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e1a9b83631d6b5faa566">{"x":{"filter":"none","vertical":false,"data":[["chronologyid","collectionunitid","agetypeid","contactid","isdefault","chronologyname","dateprepared","agemodel","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","boolean","character varying(80)","date","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["chronologies_pkey","fk_chronologies_collectionunits","fk_chronologies_agetypes","fk_chronologies_contacts","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>ChronologyID (Primary Key)</strong>: An arbitrary Chronology identification number.</li>
 <li><strong>CollectionUnitID (Foreign Key)</strong>: Collection Unit to which the Chronology applies. Field links to the
-<code class="interpreted-text" role="ref">CollectionUnits</code> table.</li>
+<code>collectionunits</code>[#CollectionUnits] table.</li>
 <li><strong>AgeTypeID (Foreign Key)</strong>: Age type or units. Field links to the <code class="interpreted-text" role="ref">AgeTypes</code> table.</li>
 <li><strong>ContactID (Foreign Key)</strong>: Person who developed the Age Model. Field links to the
-<code class="interpreted-text" role="ref">Contacts</code> table.</li>
+<code>contacts</code>[#Contacts] table.</li>
 <li><strong>IsDefault</strong>: Indicates whether the Chronology is a default chronology or not.
 Default status is determined by a Neotoma data steward. Collection
 Units may have more than one default Chronology, but may have only
@@ -622,15 +622,15 @@ is 12570.</li>
 Dataset. The table is necessary because samples may be from Collection
 Units with multiple chronologies, and this table stores the links to the
 sample ages desired for the Aggregate Dataset.</p>
-<div id="htmlwidget-09e7deb8ce2617ea7f78" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-09e7deb8ce2617ea7f78">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","aggregatechronid","sampleageid","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatesampleages_pkey, fk_aggregatesampleages_aggregatedatasets","aggregatesampleages_pkey, fk_aggregatesampleages_aggregatechronologies","aggregatesampleages_pkey, fk_aggregatesampleages_sampleages","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-970bbca1aaeffb52c1ef" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-970bbca1aaeffb52c1ef">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","aggregatechronid","sampleageid","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatesampleages_pkey, fk_aggregatesampleages_aggregatedatasets","aggregatesampleages_pkey, fk_aggregatesampleages_aggregatechronologies","aggregatesampleages_pkey, fk_aggregatesampleages_sampleages","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>AggregateDatasetID (Primary Key, Foreign Key)</strong>: Aggregate Dataset identification number. Field links to the
-<code class="interpreted-text" role="ref">AggregateDatasets</code> table.</li>
+<code>aggregatedatasets</code>[#AggregateDatasets] table.</li>
 <li><strong>AggregateChronID (Primary Key, Foreign Key)</strong>: Aggregate Chronology identification number Field links to the
-<code class="interpreted-text" role="ref">AggregateChronologies</code> table.</li>
+<code>aggregatechronologies</code>[#AggregateChronologies] table.</li>
 <li><strong>SampleAgeID (Primary Key, Foreign Key)</strong>: Sample Age ID number. Field links to the
-<code class="interpreted-text" role="ref">SampleAges</code> table.</li>
+<code>sampleages</code>[#SampleAges] table.</li>
 </ul>
 <div id="sql-example-10" class="section level3 hasAnchor" number="7.6.1">
 <h3><span class="header-section-number">7.6.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -786,17 +786,17 @@ sample ages desired for the Aggregate Dataset.</p>
 <div id="Geochronology" class="section level2 hasAnchor" number="7.7">
 <h2><span class="header-section-number">7.7</span> <code>geochronology</code><a href="chronology-age-related-tables-1.html#Geochronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores geochronologic data. Geochronologic measurements are from geochronologic samples, which are from Analysis Units, which may have a depth and thickness. Geochronologic measurements may be from the same or different Analysis Units as fossils. In the case of faunal excavations, geochronologic samples are typically from the same Analysis Units as the fossils, and there may be multiple geochronologic samples from a single Analysis Unit. In the case of cores used for microfossil analyses, geochronologic samples are often from separate <a href="#AnalysisUnits"><code>analysisunits</code></a>; dated core sections are often thicker than microfossil Analysis Units.</p>
-<div id="htmlwidget-56e42e2422b0a9de9c7b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-56e42e2422b0a9de9c7b">{"x":{"filter":"none","vertical":false,"data":[["geochronid","sampleid","geochrontypeid","agetypeid","age","errorolder","erroryounger","infinite","delta13c","labnumber","materialdated","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","double precision","double precision","double precision","boolean","double precision","character varying(40)","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["geochronology_pkey","fk_geochronology_samples","fk_geochronology_geochrontypes","fk_geochronology_agetypes","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c3cafef68041038aa7e2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c3cafef68041038aa7e2">{"x":{"filter":"none","vertical":false,"data":[["geochronid","sampleid","geochrontypeid","agetypeid","age","errorolder","erroryounger","infinite","delta13c","labnumber","materialdated","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","double precision","double precision","double precision","boolean","double precision","character varying(40)","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["geochronology_pkey","fk_geochronology_samples","fk_geochronology_geochrontypes","fk_geochronology_agetypes","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>GeochronID (Primary Key)</strong>: An arbitrary Geochronologic identificantion number.</li>
 <li><strong>SampleID (Foreign Key)</strong>: Sample identification number. Field links to <a href="#Samples"><code>samples</code></a> table.</li>
-<li><strong>GeochronTypeID (Foreign Key)</strong>: Identification number for the type of Geochronologic analysis, e.g. «Carbon-14», «Thermoluminescence». Field links to the <a href="chronology-age-related-tables-1.html#GeochronTypes"><code>geochrontypes</code></a> table.</li>
+<li><strong>GeochronTypeID (Foreign Key)</strong>: Identification number for the type of Geochronologic analysis, e.g. «Carbon-14», <strong>Thermoluminescence</strong>. Field links to the <a href="chronology-age-related-tables-1.html#GeochronTypes"><code>geochrontypes</code></a> table.</li>
 <li><strong>AgeTypeID (Foreign Key)</strong>: Identification number for the age units, e.g. «Radiocarbon years BP», «Calibrated radiocarbon years BP».</li>
 <li><strong>Age</strong>: Reported age value of the geochronologic measurement.</li>
 <li><strong>ErrorOlder</strong>: The older error limit of the age value. For a date reported with ±1 SD or σ, the ErrorOlder and ErrorYounger values are this value.</li>
 <li><strong>ErrorYounger</strong>: The younger error limit of the age value.</li>
-<li><strong>Infinite</strong>: Is «True» for and infinite or “greater than” geochronologic measurement, otherwise is «False».</li>
+<li><strong>Infinite</strong>: Is <strong>True</strong> for and infinite or “greater than” geochronologic measurement, otherwise is <strong>False</strong>.</li>
 <li><strong>Delta13C</strong>: The measured or assumed δ<sup>13</sup>C value for radiocarbon dates, if provided. Radiocarbon dates are assumed to be normalized to δ<sup>13</sup>C, and if uncorrected and normalized ages are reported, the normalized age should be entered in the database.</li>
 <li><strong>LabNumber</strong>: Lab number for the geochronologic measurement.</li>
 <li><strong>Material Dated</strong>: Material analyzed for a geochronologic measurement.</li>
@@ -829,45 +829,21 @@ older radiocarbon dates are reported in the journal <em>Radiocarbon</em>. Dates
 may be reported in multiple publications. The "publication" could be a
 database such as the online Canadian Archaeological Radiocarbon
 Database.</p>
-<div id="htmlwidget-1523071ac59315b92f9d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1523071ac59315b92f9d">{"x":{"filter":"none","vertical":false,"data":[["geochronid","publicationid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_geochronpublications_geochronology, geochronpublications_pkey","fk_geochronpublications_publications, geochronpublications_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7db9427ae16ff550bcfe" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7db9427ae16ff550bcfe">{"x":{"filter":"none","vertical":false,"data":[["geochronid","publicationid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_geochronpublications_geochronology, geochronpublications_pkey","fk_geochronpublications_publications, geochronpublications_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>GeochronID (Primary Key, Foreign Key)</strong>: Geochronologic identification number. Field links to the
-<code class="interpreted-text" role="ref">Geochronology</code> table.</li>
+<code>geochronology</code>[#Geochronology] table.</li>
 <li><strong>PublicationID (Primary Key, Foreign Key)</strong>: Publication identification number. Field links to the
-<code class="interpreted-text" role="ref">Publications</code> table.</li>
+<code>publications</code>[#Publications] table.</li>
 </ul>
 </div>
 <div id="GeochronTypes" class="section level2 hasAnchor" number="7.9">
 <h2><span class="header-section-number">7.9</span> GeochronTypes<a href="chronology-age-related-tables-1.html#GeochronTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table for Geochronology Types. Table is referenced by the
-<code class="interpreted-text" role="ref">Geochronology</code> table.</p>
-<table style="width:74%;">
-<colgroup>
-<col width="40%" />
-<col width="23%" />
-<col width="9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Field Name</th>
-<th align="left">Variable Type</th>
-<th align="left">Key</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">GeochronTypeID</td>
-<td align="left">Long Integer</td>
-<td align="left">PK</td>
-</tr>
-<tr class="even">
-<td align="left">GeochronType</td>
-<td align="left">Text</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
+<code>geochronology</code>[#Geochronology] table.</p>
+<div id="htmlwidget-bd9d5f419cc0bb9460c8" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bd9d5f419cc0bb9460c8">{"x":{"filter":"none","vertical":false,"data":[["geochrontypeid","geochrontype","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["geochrontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>GeochronTypeID (Primary Key)</strong>: Geochronology Type identification number.</li>
 <li><strong>GeochronType</strong>: Type of Geochronologic measurement.</li>
@@ -877,127 +853,29 @@ Database.</p>
 <h2><span class="header-section-number">7.10</span> RelativeAgePublications<a href="chronology-age-related-tables-1.html#RelativeAgePublications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores Publications in which Relative Ages are reported for
 CollectionUnits.</p>
-<table style="width:98%;">
-<colgroup>
-<col width="31%" />
-<col width="16%" />
-<col width="10%" />
-<col width="38%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Field Name</th>
-<th align="left">Variable Type</th>
-<th align="left">Key</th>
-<th align="left">Reference Table</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">RelativeAgeID</td>
-<td align="left">Long Integer</td>
-<td align="left">PK, FK</td>
-<td align="left"><code class="interpreted-text" role="ref">RelativeAges</code></td>
-</tr>
-<tr class="even">
-<td align="left">PublicationID</td>
-<td align="left">Long Integer</td>
-<td align="left">PK, FK</td>
-<td align="left"><code class="interpreted-text" role="ref">Publications</code></td>
-</tr>
-</tbody>
-</table>
+<div id="htmlwidget-019a521fcd297b8151bd" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-019a521fcd297b8151bd">{"x":{"filter":"none","vertical":false,"data":[["relativeageid","publicationid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_relativeagepublications_relativeages, relativeagepublications_pkey","fk_relativeagepublications_publications, relativeagepublications_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>RelativeAgeID (Primary Key, Foreign Key)</strong>: Relative Ages identification number. Field links to the
-<code class="interpreted-text" role="ref">RelativeAges</code> table.</li>
+<code>relativeages</code>[#RelativeAges] table.</li>
 <li><strong>PublicationID (Primary Key, Foreign Key)</strong>: Publication identification number. Field links to
-<code class="interpreted-text" role="ref">Publications</code> table.</li>
+<code>publications</code>[#Publications] table.</li>
 </ul>
 </div>
 <div id="RelativeAges" class="section level2 hasAnchor" number="7.11">
 <h2><span class="header-section-number">7.11</span> RelativeAges<a href="chronology-age-related-tables-1.html#RelativeAges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of RelativeAges. Table is referenced by the
-<code class="interpreted-text" role="ref">RelativeChronology</code> table.</p>
-<table style="width:98%;">
-<colgroup>
-<col width="28%" />
-<col width="16%" />
-<col width="7%" />
-<col width="44%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Field Name</th>
-<th align="left">Variable Type</th>
-<th align="left">Key</th>
-<th align="left">Reference Table</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">RelativeAgeID</td>
-<td align="left">Long Integer</td>
-<td align="left">PK</td>
-<td align="left"> </td>
-</tr>
-<tr class="even">
-<td align="left">RelativeAgeUnitID</td>
-<td align="left">Long Integer</td>
-<td align="left">FK</td>
-<td align="left"><code class="interpreted-text" role="ref">RelativeAgeUnits</code></td>
-</tr>
-<tr class="odd">
-<td align="left">RelativeAgeScaleID</td>
-<td align="left">Long Integer</td>
-<td align="left">FK</td>
-<td align="left"><code class="interpreted-text" role="ref">RelativeAgeScales</code></td>
-</tr>
-<tr class="even">
-<td align="left">RelativeAge</td>
-<td align="left">Text</td>
-<td align="left"></td>
-<td align="left"> </td>
-</tr>
-<tr class="odd">
-<td align="left">C14AgeYounger</td>
-<td align="left">Double</td>
-<td align="left"></td>
-<td align="left"> </td>
-</tr>
-<tr class="even">
-<td align="left">C14AgeOlder</td>
-<td align="left">Double</td>
-<td align="left"></td>
-<td align="left"> </td>
-</tr>
-<tr class="odd">
-<td align="left">CalAgeYounger</td>
-<td align="left">Double</td>
-<td align="left"></td>
-<td align="left"> </td>
-</tr>
-<tr class="even">
-<td align="left">CalAgeOlder</td>
-<td align="left">Double</td>
-<td align="left"></td>
-<td align="left"> </td>
-</tr>
-<tr class="odd">
-<td align="left">Notes</td>
-<td align="left">Memo</td>
-<td align="left"></td>
-<td align="left"> </td>
-</tr>
-</tbody>
-</table>
+<code>relativechronology</code>[#RelativeChronology] table.</p>
+<div id="htmlwidget-de6831d9ccab47ed0cae" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-de6831d9ccab47ed0cae">{"x":{"filter":"none","vertical":false,"data":[["relativeageid","relativeageunitid","relativeagescaleid","relativeage","c14ageyounger","c14ageolder","calageyounger","calageolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","double precision","double precision","double precision","double precision","text","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeages_pkey","fk_relativeages_relativeageunits","fk_relativeages_relativeagescales","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>RelativeAgeID (Primary Key)</strong>: An arbitrary Relative Age identification number.</li>
 <li><strong>RelativeAgeUnitID (Foreign Key)</strong>: Relative Age Unit (e.g. «Marine isotope stage», «Land mammal age»).
-Field links to the <code class="interpreted-text" role="ref">RelativeAgeUnits</code>
+Field links to the <code>relativeageunits</code>[#RelativeAgeUnits]
 lookup table.</li>
 <li><strong>RelativeAgeScaleID (Foreign Key)</strong>: Relative Age Scale (e.g. «Geologic time scale», «Marine isotope
 stages»). Field links to the <code class="interpreted-text" role="ref">RelativeAgeScales</code> lookup table.</li>
-<li><strong>RelativeAge</strong>: Relative Age (e.g. «Rancholabrean», a land mammal age; «MIS 11»,
+<li><strong>RelativeAge</strong>: Relative Age (e.g. <strong>Rancholabrean</strong>, a land mammal age; «MIS 11»,
 marine isotope stage 11).</li>
 <li><strong>C14AgeYounger</strong>: Younger age of the Relative Age unit in <sup>14</sup>C yr B.P. Applies only
 to Relative Age units within the radiocarbon time scale.</li>
@@ -1085,8 +963,8 @@ Relative Age units within the radiocarbon time scale.</li>
 <div id="RadiocarbonCalibration" class="section level2 hasAnchor" number="7.12">
 <h2><span class="header-section-number">7.12</span> RadiocarbonCalibration<a href="chronology-age-related-tables-1.html#RadiocarbonCalibration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Radiocarbon calibraton table. This table is intended for quick calibraton of age-model radiocarbon dates. These calibrated dates are for perusal and data exploration only. Please see Section <em>2.5</em> for a full discussion.</p>
-<div id="htmlwidget-ed05a0bbe8dfc9255bf2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ed05a0bbe8dfc9255bf2">{"x":{"filter":"none","vertical":false,"data":[["c14yrbp","calyrbp"],["integer","integer"],["radiocarboncalibration_pkey",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2a671959aece9abce867" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2a671959aece9abce867">{"x":{"filter":"none","vertical":false,"data":[["c14yrbp","calyrbp"],["integer","integer"],["radiocarboncalibration_pkey",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>C14yrBP</strong>: Age in radiocarbon years BP. The range is -100 to 45,000 by 1-year
 increments.</li>
@@ -1096,8 +974,8 @@ increments.</li>
 <div id="RelativeAgeScales" class="section level2 hasAnchor" number="7.13">
 <h2><span class="header-section-number">7.13</span> RelativeAgeScales<a href="chronology-age-related-tables-1.html#RelativeAgeScales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Relative Age Scales. Table is referenced by the <a href="chronology-age-related-tables-1.html#RelativeAges"><code>RelativeAges</code></a> table.</p>
-<div id="htmlwidget-626efbd92aba172ee404" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-626efbd92aba172ee404">{"x":{"filter":"none","vertical":false,"data":[["relativeagescaleid","relativeagescale","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeagescales_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5a8769e4c736fa3f2a14" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5a8769e4c736fa3f2a14">{"x":{"filter":"none","vertical":false,"data":[["relativeagescaleid","relativeagescale","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeagescales_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>RelativeAgeScaleID (Primary Key)</strong>: An arbitrary Relative Age Scale identification number.</li>
 <li><strong>RelativeAgeScale</strong>: Relative Age Scale. The table stores the following Relative Age
@@ -1117,8 +995,8 @@ increments.</li>
 <div id="RelativeAgeUnits" class="section level2 hasAnchor" number="7.14">
 <h2><span class="header-section-number">7.14</span> RelativeAgeUnits<a href="chronology-age-related-tables-1.html#RelativeAgeUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of RelativeAgeUnits. Table is referenced by the <a href="chronology-age-related-tables-1.html#RelativeAges"><code>relativeages</code></a> table.</p>
-<div id="htmlwidget-152b702a60ff57c14d9b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-152b702a60ff57c14d9b">{"x":{"filter":"none","vertical":false,"data":[["relativeageunitid","relativeageunit","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeageunits_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-22996b65dd824b44afad" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-22996b65dd824b44afad">{"x":{"filter":"none","vertical":false,"data":[["relativeageunitid","relativeageunit","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeageunits_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><p><strong>RelativeAgeUnitID (Primary Key)</strong>: An arbitrary Relative Age Unit identification number.</p></li>
 <li><p><strong>RelativeAgeUnit</strong>: Relative Age Unit. Below are the Relative Age Units for the
@@ -1156,49 +1034,49 @@ increments.</li>
 </tbody>
 </table></li>
 </ul>
-<p>«Period», «Epoch», and «Stage» are defined by the International
+<p><strong>Period</strong>, <strong>Epoch</strong>, and <strong>Stage</strong> are defined by the International
 Commission on Statigraphy. An «Informal stage» is defined in Neotoma.</p>
 </div>
 <div id="RelativeChronology" class="section level2 hasAnchor" number="7.15">
 <h2><span class="header-section-number">7.15</span> <code>relativechronology</code><a href="chronology-age-related-tables-1.html#RelativeChronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This table stores relative chronologic data. Relative Ages are assigned to Analysis Units, The Relative Age data along with any possible <code class="interpreted-text" role="ref">Geochronology</code> and <code class="interpreted-text" role="ref">Tephrachronology</code> data are used to create a chronology.</p>
-<div id="htmlwidget-4d8bc35f5a684cac2716" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4d8bc35f5a684cac2716">{"x":{"filter":"none","vertical":false,"data":[["relativechronid","analysisunitid","relativeageid","notes","recdatecreated","recdatemodified","chroncontrolid"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["relativechronology_pkey","fk_relativechronology_analysisunits","fk_relativechronology_relativeages","","","","rc_ccid"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>This table stores relative chronologic data. Relative Ages are assigned to Analysis Units, The Relative Age data along with any possible <code>geochronology</code>[#Geochronology] and <code>Tephrachronology</code>[#Tephrachronology] data are used to create a chronology.</p>
+<div id="htmlwidget-b20696b9fec0511a1451" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b20696b9fec0511a1451">{"x":{"filter":"none","vertical":false,"data":[["relativechronid","analysisunitid","relativeageid","notes","recdatecreated","recdatemodified","chroncontrolid"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["relativechronology_pkey","fk_relativechronology_analysisunits","fk_relativechronology_relativeages","","","","rc_ccid"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>RelativeChronID (Primary Key)</strong>: An arbitrary Relative Chronology identification number.</li>
 <li><strong>AnalysisUnitID (Foreign Key)</strong>: Analysis Unit identification number. Field links to the
-<code class="interpreted-text" role="ref">AnalysisUnits</code> table.</li>
+<code>AnalysisUnits</code>[#AnalysisUnits] table.</li>
 <li><strong>RelativeAgeID (Foreign Key)</strong>: Relative Age identification number. Field links to the
-<code class="interpreted-text" role="ref">RelativeAges</code> lookup table.</li>
+<code>RelativeAges</code>[#RelativeAges] lookup table.</li>
 <li><strong>Notes</strong>: Free form notes or comments.</li>
 </ul>
 </div>
 <div id="Tephrachronology" class="section level2 hasAnchor" number="7.16">
 <h2><span class="header-section-number">7.16</span> Tephrachronology<a href="chronology-age-related-tables-1.html#Tephrachronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores tephrachronologic data. The table relates Analysis Units with dated tephras in the <a href="chronology-age-related-tables-1.html#Tephras"><code>tephras</code></a> table. These are tephras with established ages that are used form a chronology. The tephras are typically not directly dated at the Site of the Analysis Unit, but have been dated at other sites. A directly dated tephra, <em>e.g.</em> an argon-argon date, belongs in the <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a> table.</p>
-<div id="htmlwidget-d058305a2f3d52c29972" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d058305a2f3d52c29972">{"x":{"filter":"none","vertical":false,"data":[[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5346f7a659fb6cad7e6b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5346f7a659fb6cad7e6b">{"x":{"filter":"none","vertical":false,"data":[[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>TephrachronID (Primary Key)</strong> An arbitrary Tephrachronology
 identification number.</li>
 <li><strong>AnalysisUnitID (Foreign Key)</strong> Analysis Unit identification number.
-Field links to the <code class="interpreted-text" role="ref">AnalysisUnits</code> table.
+Field links to the <code>AnalysisUnits</code>[#AnalysisUnits] table.
 The tephra may be contained within the AnalysisUnit, especially in
 excavations, or the AnalysisUnit may be assigned specifically to the
 tephra, particulary with cores.</li>
 <li><strong>TephraID (Foreign Key)</strong> Tephra identification number. Field links to
-the <code class="interpreted-text" role="ref">Tephras</code> table.</li>
+the <code>Tephras</code>[#Tephras] table.</li>
 <li><strong>Notes</strong> Free form notes or comments about the tephra.</li>
 </ul>
 </div>
 <div id="Tephras" class="section level2 hasAnchor" number="7.17">
 <h2><span class="header-section-number">7.17</span> Tephras<a href="chronology-age-related-tables-1.html#Tephras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tephras lookup table. This table stores recognized tephras with established ages. Referenced by the <a href="chronology-age-related-tables-1.html#Tephrachronology"><code>tephrachronology</code></a> table.</p>
-<div id="htmlwidget-5b6761d14519994d7a97" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5b6761d14519994d7a97">{"x":{"filter":"none","vertical":false,"data":[["tephraid","eventid","analysisunitid","notes","recdatecreated","recdatemodified"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["tephras_pkey","fk_tephras_events","fk_tephras_analysisunits","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bcad484abd7b6142af94" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bcad484abd7b6142af94">{"x":{"filter":"none","vertical":false,"data":[["tephraid","eventid","analysisunitid","notes","recdatecreated","recdatemodified"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["tephras_pkey","fk_tephras_events","fk_tephras_analysisunits","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong>TephraID (Primary Key)</strong>: An arbitrary Tephra identification number.</li>
-<li><strong>TephraName</strong>: Name of the tephra, e.g. «Mazama».</li>
+<li><strong>TephraName</strong>: Name of the tephra, e.g. <strong>Mazama</strong>.</li>
 <li><strong>C14Age</strong>: Age of the tephra in <sup>14</sup>C yr BP. For example, Hallett et al. (1997)
 provide an estimate of the age of the Mazama tephra based on
 radiocarbon dating of plant macrofossils in lake sediments encasing

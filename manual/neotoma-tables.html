@@ -318,19 +318,19 @@ so on.</p>
 <h2><span class="header-section-number">5.2</span> Dataset &amp; Collection Related Tables<a href="neotoma-tables.html#dataset-collection-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tables related to complete datasets, or collections of samples. These include Collection information, but only refer to sites, since, as described in the Design Concepts, datasets are conceptually nested within sites, even if a site contains only a single dataset.</p>
 <ul>
-<li><code class="interpreted-text" role="ref">AggregateDatasets</code>,</li>
-<li><code class="interpreted-text" role="ref">AggregateOrderTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">CollectionTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">CollectionUnits</code>,</li>
-<li><code class="interpreted-text" role="ref">DatasetPublications</code>,</li>
-<li><code class="interpreted-text" role="ref">Datasets</code>,</li>
-<li><code class="interpreted-text" role="ref">DatasetSubmissions</code>,</li>
-<li><code class="interpreted-text" role="ref">DatasetSubmissionTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">DatasetTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">DatasetPIs</code>,</li>
-<li><code class="interpreted-text" role="ref">DepEnvtTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">Lithology</code>,</li>
-<li><code class="interpreted-text" role="ref">Projects</code>.</li>
+<li><code>aggregatedatasets</code>[#AggregateDatasets],</li>
+<li><code>aggregateordertypes</code>[#AggregateOrderTypes],</li>
+<li><code>collectiontypes</code>[#CollectionTypes],</li>
+<li><code>collectionunits</code>[#CollectionUnits],</li>
+<li><code>datasetpublications</code>[#DatasetPublications],</li>
+<li><code>datasets</code>[#Datasets],</li>
+<li><code>datasetsubmissions</code>[#DatasetSubmissions],</li>
+<li><code>datasetsubmissiontypes</code>[#DatasetSubmissionTypes],</li>
+<li><code>datasettypes</code>[#DatasetTypes],</li>
+<li><code>datasetpis</code>[#DatasetPIs],</li>
+<li><code>depenvttypes</code>[#DepEnvtTypes],</li>
+<li><code>lithology</code>[#Lithology],</li>
+<li><code>projects</code>[#Projects].</li>
 </ul>
 </div>
 <div id="chronology-age-related-tables" class="section level2 hasAnchor" number="5.3">
@@ -339,23 +339,23 @@ so on.</p>
 assess sample ages. Includes secondary information on tephras, and
 geochronological data types.</p>
 <ul>
-<li><code class="interpreted-text" role="ref">AgeTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">AggregateChronologies</code>,</li>
-<li><code class="interpreted-text" role="ref">ChronControls</code>,</li>
-<li><code class="interpreted-text" role="ref">ChronControlTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">Chronologies</code>,</li>
-<li><code class="interpreted-text" role="ref">AggregateSampleAges</code>,</li>
-<li><code class="interpreted-text" role="ref">Geochronology</code>,</li>
-<li><code class="interpreted-text" role="ref">GeochronPublications</code>,</li>
-<li><code class="interpreted-text" role="ref">GeochronTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">RelativeAgePublications</code>,</li>
-<li><code class="interpreted-text" role="ref">RelativeAges</code>,</li>
-<li><code class="interpreted-text" role="ref">RadiocarbonCalibration</code>,</li>
-<li><code class="interpreted-text" role="ref">RelativeAgeScales</code>,</li>
-<li><code class="interpreted-text" role="ref">RelativeAgeUnits</code>,</li>
-<li><code class="interpreted-text" role="ref">RelativeChronology</code>,</li>
-<li><code class="interpreted-text" role="ref">Tephrachronology</code>,</li>
-<li><code class="interpreted-text" role="ref">Tephras</code>.</li>
+<li><code>agetypes</code>[#AgeTypes],</li>
+<li><code>aggregatechronologies</code>[#AggregateChronologies],</li>
+<li><code>chroncontrols</code>[#ChronControls],</li>
+<li><code>chroncontroltypes</code>[#ChronControlTypes],</li>
+<li><code>chronologies</code>[#Chronologies],</li>
+<li><code>aggregatesampleages</code>[#AggregateSampleAges],</li>
+<li><code>geochronology</code>[#Geochronology],</li>
+<li><code>geochronpublications</code>[#GeochronPublications],</li>
+<li><code>geochrontypes</code>[#GeochronTypes],</li>
+<li><code>relativeagepublications</code>[#RelativeAgePublications],</li>
+<li><code>relativeages</code>[#RelativeAges],</li>
+<li><code>radiocarboncalibration</code>[#RadiocarbonCalibration],</li>
+<li><code>relativeagescales</code>[#RelativeAgeScales],</li>
+<li><code>relativeageunits</code>[#RelativeAgeUnits],</li>
+<li><code>relativechronology</code>[#RelativeChronology],</li>
+<li><code>tephrachronology</code>[#Tephrachronology],</li>
+<li><code>tephras</code>[#Tephras].</li>
 </ul>
 </div>
 <div id="sample-related-tables" class="section level2 hasAnchor" number="5.4">
@@ -365,16 +365,16 @@ includes the age of the sample, the data content of the sample, and
 information relating to the physical condition or situation of the
 samples themselves.</p>
 <ul>
-<li><code class="interpreted-text" role="ref">AnalysisUnits</code>,</li>
-<li><code class="interpreted-text" role="ref">Data</code>, <code>DepAgents</code>{.interpreted-text</li>
-<li>role=“ref”}, <code class="interpreted-text" role="ref">DepAgentTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">SampleAges</code>,</li>
-<li><code class="interpreted-text" role="ref">SampleAnalysts</code>,</li>
-<li><code class="interpreted-text" role="ref">SampleKeywords</code>,</li>
-<li><code class="interpreted-text" role="ref">Samples</code>,</li>
-<li><code class="interpreted-text" role="ref">AggregateSamples</code>,</li>
-<li><code class="interpreted-text" role="ref">FaciesTypes</code>,</li>
-<li><code class="interpreted-text" role="ref">Keywords</code>.</li>
+<li><code>analysisunits</code>[#AnalysisUnits],</li>
+<li><code>data</code>[#Data], <code>depagents</code>{.interpreted-text</li>
+<li>role=“ref”}, <code>depagenttypes</code>[#DepAgentTypes],</li>
+<li><code>sampleages</code>[#SampleAges],</li>
+<li><code>sampleanalysts</code>[#SampleAnalysts],</li>
+<li><code>samplekeywords</code>[#SampleKeywords],</li>
+<li><code>samples</code>[#Samples],</li>
+<li><code>aggregatesamples</code>[#AggregateSamples],</li>
+<li><code>faciestypes</code>[#FaciesTypes],</li>
+<li><code>keywords</code>[#Keywords].</li>
 </ul>
 </div>
 <div id="taxonomy-related-tables" class="section level2 hasAnchor" number="5.5">
@@ -401,9 +401,9 @@ morphological or phylogenetic relationships.</p>
 <h2><span class="header-section-number">5.6</span> Individual Related Tables<a href="neotoma-tables.html#individual-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tables associated with individuals, institutions and organizations.</p>
 <ul>
-<li><code class="interpreted-text" role="ref">Collectors</code>,</li>
-<li><code class="interpreted-text" role="ref">Contacts</code>,</li>
-<li><code class="interpreted-text" role="ref">ContactStatuses</code></li>
+<li><code>collectors</code>[#Collectors],</li>
+<li><code>contacts</code>[#Contacts],</li>
+<li><code>contactstatuses</code>[#ContactStatuses]</li>
 </ul>
 </div>
 <div id="publication-related-tables" class="section level2 hasAnchor" number="5.7">
@@ -411,10 +411,10 @@ morphological or phylogenetic relationships.</p>
 <p>Information relating to the publication of primary or derived data
 within the Neotoma Paleoecological Database.</p>
 <ul>
-<li><code class="interpreted-text" role="ref">PublicationAuthors</code>,</li>
-<li><code class="interpreted-text" role="ref">PublicationEditors</code>,</li>
-<li><code class="interpreted-text" role="ref">Publications</code>,</li>
-<li><code class="interpreted-text" role="ref">PublicationTypes</code></li>
+<li><code>publicationauthors</code>[#PublicationAuthors],</li>
+<li><code>publicationeditors</code>[#PublicationEditors],</li>
+<li><code>publications</code>[#Publications],</li>
+<li><code>publicationtypes</code>[#PublicationTypes]</li>
 </ul>
 
 </div>
