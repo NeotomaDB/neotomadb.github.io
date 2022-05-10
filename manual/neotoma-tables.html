@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Neotoma Tables | Neotoma Paleoecology Manual v2.0</title>
+  <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Neotoma Tables | Neotoma Paleoecology Manual v2.0" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Neotoma Tables | Neotoma Paleoecology Manual v2.0" />
+  
+  <meta name="twitter:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+<meta name="author" content="Simon Goring" />
+
+
+<meta name="date" content="2022-05-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="database-design-concepts.html"/>
+<link rel="next" href="taxonomy-related-tables-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
+<li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
+<li class="chapter" data-level="2.3.4" data-path="introduction.html"><a href="introduction.html#BEETLE"><i class="fa fa-check"></i><b>2.3.4</b> BEETLE</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
+<li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
+<li class="chapter" data-level="4.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>4.4</b> Taxa and Ecological Groups</a></li>
+<li class="chapter" data-level="4.5" data-path="database-design-concepts.html"><a href="database-design-concepts.html#chronology"><i class="fa fa-check"></i><b>4.5</b> Chronology</a></li>
+<li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
+<li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
+<li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
+<li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
+<li class="chapter" data-level="5.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>5.4</b> Sample Related Tables</a></li>
+<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.5</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>6</b> Taxonomy Related Tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>6.1</b> ecolgroups</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="6.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>6.1.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>6.2</b> ecolgrouptypes</a></li>
+<li class="chapter" data-level="6.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>6.3</b> ecolsettypes</a></li>
+<li class="chapter" data-level="6.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>6.4</b> synonyms</a></li>
+<li class="chapter" data-level="6.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>6.5</b> synonymtypes</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>6.5.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>6.6</b> taxa</a></li>
+<li class="chapter" data-level="6.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>6.7</b> taxagrouptypes</a></li>
+<li class="chapter" data-level="6.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>6.8</b> Variables</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>6.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="6.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>6.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="6.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>6.8.3</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>6.9</b> VariableContexts</a></li>
+<li class="chapter" data-level="6.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>6.10</b> VariableElements</a></li>
+<li class="chapter" data-level="6.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>6.11</b> VariableModifications</a></li>
+<li class="chapter" data-level="6.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>6.12</b> VariableUnits</a></li>
+<li class="chapter" data-level="6.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>6.13</b> RepositoryInstitutions</a></li>
+<li class="chapter" data-level="6.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>6.14</b> RepositorySpecimens</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>6.14.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>6.15</b> specimendates</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Chronology &amp; Age Related Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>7.1</b> AgeTypes</a></li>
+<li class="chapter" data-level="7.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>7.2</b> AggregateChronologies</a></li>
+<li class="chapter" data-level="7.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>7.3</b> ChronControls</a></li>
+<li class="chapter" data-level="7.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>7.4</b> ChronControlTypes</a></li>
+<li class="chapter" data-level="7.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>7.5</b> Chronologies</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>7.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>7.5.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>7.6</b> AggregateSampleAges</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>7.6.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>7.7</b> <code>geochronology</code></a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>7.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>7.8</b> GeochronPublications</a></li>
+<li class="chapter" data-level="7.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>7.9</b> GeochronTypes</a></li>
+<li class="chapter" data-level="7.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>7.10</b> RelativeAgePublications</a></li>
+<li class="chapter" data-level="7.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>7.11</b> RelativeAges</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>7.12</b> RadiocarbonCalibration</a></li>
+<li class="chapter" data-level="7.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>7.13</b> RelativeAgeScales</a></li>
+<li class="chapter" data-level="7.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>7.14</b> RelativeAgeUnits</a></li>
+<li class="chapter" data-level="7.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>7.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="7.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>7.16</b> Tephrachronology</a></li>
+<li class="chapter" data-level="7.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>7.17</b> Tephras</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Neotoma Paleoecology Manual v2.0</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="neotoma-tables" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Neotoma Tables<a href="neotoma-tables.html#neotoma-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The Neotoma Database contains more than 100 tables and as new proxy
+types get added, or new metadata is stored, the number of tables may
+increase or decrease. As a result, this manual should not be considered
+the final authority, but it should provide nearly complete coverage of
+the database and its structure. In particular, do our best to divide
+tables into logical groupings: Chronology &amp; Age related tables, Dataset
+related tables, Site related tables, Contact tables, Sample tables and
+so on.</p>
+<div id="site-related-tables" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Site Related Tables<a href="neotoma-tables.html#site-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tables for key geographic information relating to the dataset. Specifically geographic coordinates, geo-political units and any situational information such as images of the site itself.</p>
+<ul>
+<li><a href="#SiteImages"><code>siteimages</code></a></li>
+<li><a href="#Sites"><code>sites</code></a></li>
+<li><a href="#SiteGeoPolitical"><code>sitegeopolitical</code></a></li>
+<li><a href="GeoPoliticalUnits"><code>geopoliticalunits</code></a></li>
+</ul>
+</div>
+<div id="dataset-collection-related-tables" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Dataset &amp; Collection Related Tables<a href="neotoma-tables.html#dataset-collection-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tables related to complete datasets, or collections of samples. These include Collection information, but only refer to sites, since, as described in the Design Concepts, datasets are conceptually nested within sites, even if a site contains only a single dataset.</p>
+<ul>
+<li><code class="interpreted-text" role="ref">AggregateDatasets</code>,</li>
+<li><code class="interpreted-text" role="ref">AggregateOrderTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">CollectionTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">CollectionUnits</code>,</li>
+<li><code class="interpreted-text" role="ref">DatasetPublications</code>,</li>
+<li><code class="interpreted-text" role="ref">Datasets</code>,</li>
+<li><code class="interpreted-text" role="ref">DatasetSubmissions</code>,</li>
+<li><code class="interpreted-text" role="ref">DatasetSubmissionTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">DatasetTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">DatasetPIs</code>,</li>
+<li><code class="interpreted-text" role="ref">DepEnvtTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">Lithology</code>,</li>
+<li><code class="interpreted-text" role="ref">Projects</code>.</li>
+</ul>
+</div>
+<div id="chronology-age-related-tables" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Chronology &amp; Age Related Tables<a href="neotoma-tables.html#chronology-age-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Information about the age models and chronological controls used to
+assess sample ages. Includes secondary information on tephras, and
+geochronological data types.</p>
+<ul>
+<li><code class="interpreted-text" role="ref">AgeTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">AggregateChronologies</code>,</li>
+<li><code class="interpreted-text" role="ref">ChronControls</code>,</li>
+<li><code class="interpreted-text" role="ref">ChronControlTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">Chronologies</code>,</li>
+<li><code class="interpreted-text" role="ref">AggregateSampleAges</code>,</li>
+<li><code class="interpreted-text" role="ref">Geochronology</code>,</li>
+<li><code class="interpreted-text" role="ref">GeochronPublications</code>,</li>
+<li><code class="interpreted-text" role="ref">GeochronTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">RelativeAgePublications</code>,</li>
+<li><code class="interpreted-text" role="ref">RelativeAges</code>,</li>
+<li><code class="interpreted-text" role="ref">RadiocarbonCalibration</code>,</li>
+<li><code class="interpreted-text" role="ref">RelativeAgeScales</code>,</li>
+<li><code class="interpreted-text" role="ref">RelativeAgeUnits</code>,</li>
+<li><code class="interpreted-text" role="ref">RelativeChronology</code>,</li>
+<li><code class="interpreted-text" role="ref">Tephrachronology</code>,</li>
+<li><code class="interpreted-text" role="ref">Tephras</code>.</li>
+</ul>
+</div>
+<div id="sample-related-tables" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Sample Related Tables<a href="neotoma-tables.html#sample-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Information relating to individual samples or analysis units. This
+includes the age of the sample, the data content of the sample, and
+information relating to the physical condition or situation of the
+samples themselves.</p>
+<ul>
+<li><code class="interpreted-text" role="ref">AnalysisUnits</code>,</li>
+<li><code class="interpreted-text" role="ref">Data</code>, <code>DepAgents</code>{.interpreted-text</li>
+<li>role=“ref”}, <code class="interpreted-text" role="ref">DepAgentTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">SampleAges</code>,</li>
+<li><code class="interpreted-text" role="ref">SampleAnalysts</code>,</li>
+<li><code class="interpreted-text" role="ref">SampleKeywords</code>,</li>
+<li><code class="interpreted-text" role="ref">Samples</code>,</li>
+<li><code class="interpreted-text" role="ref">AggregateSamples</code>,</li>
+<li><code class="interpreted-text" role="ref">FaciesTypes</code>,</li>
+<li><code class="interpreted-text" role="ref">Keywords</code>.</li>
+</ul>
+</div>
+<div id="taxonomy-related-tables" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Taxonomy Related Tables<a href="neotoma-tables.html#taxonomy-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tables related to taxonomic information, phylogenetic information and
+ecological classifications. These tables also include hierarchy based on
+morphological or phylogenetic relationships.</p>
+<ul>
+<li><a href="#EcolGroups"><code>ecolgroups</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><code>ecolgrouptypes</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#EcolSetTypes"><code>ecolsettypes</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#Synonyms"><code>synonyms</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#SynonymTypes"><code>synonymtypes</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><code>taxagrouptypes</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#Variables"><code>variables</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#VariableContexts"><code>variablecontexts</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#VariableElements"><code>variableelements</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#VariableModifications"><code>variablemodifications</code></a></li>
+<li><a href="taxonomy-related-tables-1.html#VariableUnits"><code>variableunits</code></a></li>
+</ul>
+</div>
+<div id="individual-related-tables" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Individual Related Tables<a href="neotoma-tables.html#individual-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tables associated with individuals, institutions and organizations.</p>
+<ul>
+<li><code class="interpreted-text" role="ref">Collectors</code>,</li>
+<li><code class="interpreted-text" role="ref">Contacts</code>,</li>
+<li><code class="interpreted-text" role="ref">ContactStatuses</code></li>
+</ul>
+</div>
+<div id="publication-related-tables" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Publication Related Tables<a href="neotoma-tables.html#publication-related-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Information relating to the publication of primary or derived data
+within the Neotoma Paleoecological Database.</p>
+<ul>
+<li><code class="interpreted-text" role="ref">PublicationAuthors</code>,</li>
+<li><code class="interpreted-text" role="ref">PublicationEditors</code>,</li>
+<li><code class="interpreted-text" role="ref">Publications</code>,</li>
+<li><code class="interpreted-text" role="ref">PublicationTypes</code></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="database-design-concepts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taxonomy-related-tables-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"max-depth": 4
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

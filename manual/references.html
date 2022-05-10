@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 References | Neotoma Paleoecology Manual v2.0</title>
+  <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 References | Neotoma Paleoecology Manual v2.0" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 References | Neotoma Paleoecology Manual v2.0" />
+  
+  <meta name="twitter:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+<meta name="author" content="Simon Goring" />
+
+
+<meta name="date" content="2022-05-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chronology-age-related-tables-1.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
+<li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
+<li class="chapter" data-level="2.3.4" data-path="introduction.html"><a href="introduction.html#BEETLE"><i class="fa fa-check"></i><b>2.3.4</b> BEETLE</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
+<li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
+<li class="chapter" data-level="4.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>4.4</b> Taxa and Ecological Groups</a></li>
+<li class="chapter" data-level="4.5" data-path="database-design-concepts.html"><a href="database-design-concepts.html#chronology"><i class="fa fa-check"></i><b>4.5</b> Chronology</a></li>
+<li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
+<li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
+<li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
+<li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
+<li class="chapter" data-level="5.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>5.4</b> Sample Related Tables</a></li>
+<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.5</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>6</b> Taxonomy Related Tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>6.1</b> ecolgroups</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="6.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>6.1.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>6.2</b> ecolgrouptypes</a></li>
+<li class="chapter" data-level="6.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>6.3</b> ecolsettypes</a></li>
+<li class="chapter" data-level="6.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>6.4</b> synonyms</a></li>
+<li class="chapter" data-level="6.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>6.5</b> synonymtypes</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>6.5.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>6.6</b> taxa</a></li>
+<li class="chapter" data-level="6.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>6.7</b> taxagrouptypes</a></li>
+<li class="chapter" data-level="6.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>6.8</b> Variables</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>6.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="6.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>6.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="6.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>6.8.3</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>6.9</b> VariableContexts</a></li>
+<li class="chapter" data-level="6.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>6.10</b> VariableElements</a></li>
+<li class="chapter" data-level="6.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>6.11</b> VariableModifications</a></li>
+<li class="chapter" data-level="6.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>6.12</b> VariableUnits</a></li>
+<li class="chapter" data-level="6.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>6.13</b> RepositoryInstitutions</a></li>
+<li class="chapter" data-level="6.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>6.14</b> RepositorySpecimens</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>6.14.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>6.15</b> specimendates</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Chronology &amp; Age Related Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>7.1</b> AgeTypes</a></li>
+<li class="chapter" data-level="7.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>7.2</b> AggregateChronologies</a></li>
+<li class="chapter" data-level="7.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>7.3</b> ChronControls</a></li>
+<li class="chapter" data-level="7.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>7.4</b> ChronControlTypes</a></li>
+<li class="chapter" data-level="7.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>7.5</b> Chronologies</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>7.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>7.5.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>7.6</b> AggregateSampleAges</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>7.6.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>7.7</b> <code>geochronology</code></a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>7.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>7.8</b> GeochronPublications</a></li>
+<li class="chapter" data-level="7.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>7.9</b> GeochronTypes</a></li>
+<li class="chapter" data-level="7.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>7.10</b> RelativeAgePublications</a></li>
+<li class="chapter" data-level="7.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>7.11</b> RelativeAges</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>7.12</b> RadiocarbonCalibration</a></li>
+<li class="chapter" data-level="7.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>7.13</b> RelativeAgeScales</a></li>
+<li class="chapter" data-level="7.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>7.14</b> RelativeAgeUnits</a></li>
+<li class="chapter" data-level="7.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>7.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="7.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>7.16</b> Tephrachronology</a></li>
+<li class="chapter" data-level="7.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>7.17</b> Tephras</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Neotoma Paleoecology Manual v2.0</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>American Ornithologists' Union. 1983. Check-list of North American
+birds, seventh edition. American Ornithologists' Union, Washington,
+D.C., USA. <span class="math display">\[&lt;http://www.aou.org/checklist/index.php3&gt;\]</span></p>
+<p>Angiosperm Phylogeny Group. 2003. An update of the Angiosperm Phylogeny
+Group classification for the orders and families of flowering plants:
+APG II. Botanical Journal of the Linnean Society 141:399-436.</p>
+<p>Ashworth, A. C. 2001. Perspectives on Quaternary beetles and climate
+change. <em>in</em> L. C. Gerhard, W. E. Harrison, and B. M. Hanson, editors.
+Geological perspectives of global climate change. AAPG Studies in
+Geology 47. American Association of Petroleum Geologists, Tulsa,
+Oklahoma, USA.</p>
+<p>Ashworth, A. C. 2004. Quaternary Coleoptera of the United States and
+Canada. Pages 505-517 <em>in</em> A. R. Gillespie, S. C. Porter, and B. F.
+Atwater, editors. The Quaternary Period in the United States.
+Developments in Quaternary Science 1. Elsevier, Amsterdam, The
+Netherlands.</p>
+<p>Asselin, H., and S. Payette. 2005. Late Holocene opening of the forest
+tundra landscape in northern Québec, Canada. Global Ecology and
+Biogeography 14:307-313.</p>
+<p>Barnosky, A. D., E. A. Hadly, and C. J. Bell. 2003. Mammalian response
+to global warming on varied temporal scales. Journal of Mammalogy
+84:354-368.</p>
+<p>Barnosky, A. D., P. L. Koch, R. S. Feranec, S. L. Wing, and A. B.
+Shabel. 2004. Assessing the causes of late Pleistocene extinctions on
+the continents. Science 306:70-75.</p>
+<p>Bartlein, P. J., K. H. Anderson, P. M. Anderson, M. E. Edwards, C. J.
+Mock, R. S. Thompson, R. S. Webb, T. Webb, III, and C. Whitlock. 1998.
+Paleoclimate simulations for North America over the past 21,000 years:
+features of the simulated climate and comparisons with
+paleoenvironmental data. Quaternary Science Reviews 17:549-585.</p>
+<p>Bartlein, P. J., C. Whitlock, and S. L. Shafer. 1997. Future climate in
+the Yellowstone National Park region and its potential impact on
+vegetation. Conservation Biology 11:782-792.</p>
+<p>Bell, C. J., and A. D. Barnosky. 2000. The microtine rodents from the
+Pit locality in Porcupine Cave, Park County, Colorado. Annals of
+Carnegie Museum 69:93-134.</p>
+<p>Bell, C. J., and J. I. Mead. 1998. Late Pleistocene microtine rodents
+from Snake Creek Burial Cave, White Pine County, Nevada. Great Basin
+Naturalist 58:82-86.</p>
+<p>Berglund, B. E., H. J. B. Birks, M. Ralska-Jasiewiczowa, and H. E.
+Wright, editors. 1996. Palaeoecological events during the last 15 000
+years: regional syntheses of palaeoecological studies of lakes and mires
+in Europe, volumes. John Wiley &amp; Sons, Chichester, England.</p>
+<p>Birks, H. H. 2003. The importance of plant macrofossils in the
+reconstruction of lateglacial vegetation and climate: examples from
+Scotland, western Norway, and Minnesota, USA. Quaternary Science Reviews
+22:453-473.</p>
+<p>Bronk Ramsey, C. 1995. Radiocarbon calibration and analysis of
+stratigraphy: The OxCal program. Radiocarbon 37:425-430.</p>
+<p>Bronk Ramsey, C. 2001. Development of the radiocarbon calibration
+program OxCal. Radiocarbon 43(2A):355-363.</p>
+<p>Brown, J. H., S. K. M. Ernest, J. M. Parody, and J. P. Haskell. 2001.
+Regulation of diversity: maintenance of species richness in changing
+environments. Oecologia 126:321-332.</p>
+<p>Burns, C. E., K. M. Johnson, and O. J. Schmitz. 2003. Global climate
+change and mammalian species diversity in U.S. national parks.
+Proceedings of the National Academy of Sciences of the United States of
+America 100:11474-11477.</p>
+<p>Camill, P., C. E. Umbanhowar, Jr., R. Teed, C. E. Geiss, J. Aldinger, L.
+Dvorak, J. Kenning, J. Limmer, and K. Walkup. 2003. Late-glacial and
+Holocene climatic effects on fire and vegetation dynamics at the
+prairie–forest ecotone in south-central Minnesota. Journal of Ecology
+91:822-836.</p>
+<p>Cannon, M. D., and D. J. Meltzer. 2004. Early Paleoindian foraging:
+examining the faunal evidence for large mammal specialization and
+regional variability in prey choice. Quaternary Science Reviews
+23:1955-1987.</p>
+<p>CAPE Project Members. 2001. Holocene paleoclimate data from the Arctic:
+testing models of global climate change. Quaternary Science Reviews
+20:1275-1287.</p>
+<p>Chapman, A. D. 1991. Australian plant name index, 4 volumes. Australian
+flora and fauna series 12. Australian Government Publishing Service,
+Canberra.</p>
+<p>Chiu, T.-C., R. G. Fairbanks, L. Cao, and R. A. Mortlock. 2007. Analysis
+of the atmospheric <sup>14</sup>C record spanning the past 50,000 years derived
+from high-precision <sup>230</sup>Th/<sup>234</sup>U/<sup>238</sup>U, <sup>231</sup>Pa/<sup>235</sup>U and <sup>14</sup>C
+dates on fossil corals. Quaternary Science Reviews 26:18-36.</p>
+<p>COHMAP Members. 1988. Climatic changes of the last 18,000 years:
+observations and model simulations. Science 241:1043-1052.</p>
+<p>Cole, K. L., M. B. Davis, F. Stearns, K. Walker, and G. Guntenspergen.
+1. Historical landcover changes in the Great Lakes region. Pages
+43-50 <em>in</em> T. D. Sisk, editor. Perspectives on the land use history of
+North America: a context for understanding our changing environment.
+Biological Science Report USGS/BRD/BSR 1998-0003. United States
+Geological Survey, Biological Resources Division.</p>
+<p>Committee on Ungulate Management in Yellowstone National Park, N. R. C.
+1. Ecological dynamics on Yellowstone's northern range. National
+Academy Press, Washington, D.C., USA.</p>
+<p>Comps, B., D. Gömöry, J. Letouzey, B. Thiébaut, and R. J. Petit. 2001.
+Diverging trends between heterozygosity and allelic richness during
+postglacial colonization in the European beech. Genetics 157:389-397.</p>
+<p>Czaplewski, N. J., J. I. Mead, C. J. Bell, W. D. Peachey, and T.-L. Ku.
+1. Papago Springs Cave revisited, part II: vertebrate paleofauna.
+Occasional Papers of the Oklahoma Museum of Natural History 5:1-41.</p>
+<p>Czaplewski, N. J., W. L. Puckette, and C. Russell. 2002. A Pleistocene
+tapir and associated mammals from the southwestern Ozark highland.
+Journal of Cave and Karst Studies 64:97-107.</p>
+<p>Czerepanov, S. K. 1995. Vascular plants of Russia and adjacent states
+(the former USSR). Cambridge University Press, Cambridge, England.</p>
+<p>Davis, M. B., C. Douglas, R. Calcote, K. Cole, M. Winkler, and R.
+Flakne. 2000. Holocene climate in the western Great Lakes National Parks
+and Lakeshores: implications for future climate change. Conservation
+Biology 14:968-983.</p>
+<p>Eschmeyer, W. N., editor. 1998. Catalog of fishes, 3 volumes. California
+Academy of Sciences, San Francisco, California, USA.
+<span class="math display">\[&lt;http://research.calacademy.org/research/ichthyology/catalog/&gt;\]</span></p>
+<p>Fairbanks, R. G., R. A. Mortlock, T.-C. Chiu, L. Cao, A. Kaplan, T. P.
+Guilderson, T. W. Fairbanks, A. L. Bloom, P. M. Grootes, and M.-J.
+Nadeau. 2005. Radiocarbon calibration curve spanning 0 to 50,000 years
+BP based on paired <sup>230</sup>Th/<sup>234</sup>U/<sup>238</sup>U and <sup>14</sup>C dates on pristine
+corals. Quaternary Science Reviews 24:1781-1796.</p>
+<p>Farrera, I., S. P. Harrison, I. C. Prentice, G. Ramstein, J. Guiot, P.
+J. Bartlein, R. Bonnefille, M. Bush, W. Cramer, U. von Grafenstein, K.
+Holmgren, H. Hooghiemstra, G. Hope, D. Jolly, S.-E. Lauritzen, Y. Ono,
+S. Pinot, M. Stute, and G. Yu. 1999. Tropical climates at the Last
+Glacial Maximum: a new synthesis of terrestrial palaeoclimate data. I.
+Vegetation, lake-levels and geochemistry. Climate Dynamics 15:823-856.</p>
+<p>FAUNMAP Working Group. 1994. FAUNMAP: a database documenting late
+Quaternary distributions of mammal species in the United States.
+Illinois State Museum Scientific Papers 35(1-2):1-690.</p>
+<p>FAUNMAP Working Group. 1996. Spatial response of mammals to late
+Quaternary environmental fluctuations. Science 272:1601-1606.</p>
+<p>Fedorov, V. B. 1999. Contrasting mitochondrial DNA diversity estimates
+in two sympatric genera of Arctic lemmings (<em>Discrostonyx</em>: <em>Lemmus</em>)
+indicate different responses to Quaternary environmental fluctuations.
+Proceedings of the Royal Society of London B 266:621-626.</p>
+<p>Flora of North America Editorial Committee. 1993+. Flora of North
+America north of Mexico, 14+ volumes. Oxford University Press, New York,
+New York, USA. <span class="math display">\[&lt;http://hua.huh.harvard.edu/FNA/&gt;\]</span></p>
+<p>Futyma, R. P., and N. G. Miller. 2001. Postglacial history of a marl
+fen: vegetational stability at Byron-Bergen Swamp, New York. Canadian
+Journal of Botany 79:1425-1438.</p>
+<p>Gavin, D. G., J. S. McLachlan, L. B. Brubaker, and K. A. Young. 2001.
+Postglacial history of subalpine forests, Olympic Peninsula, Washington,
+USA. The Holocene 11:177-188.</p>
+<p>Good, J. M., and J. Sullivan. 2001. Phylogeography of the red-tailed
+chipmunk (Tamias ruficaudus), a northern Rocky Mountain endemic.
+Molecular Ecology 2001:2683-2695.</p>
+<p>Graham, R. W. 2001. Late Quaternary biogeography and extinction of
+Proboscideans in North America. Pages 707-709 <em>in</em> G. Cavarretta, P.
+Giola, M. Mussi, and M. R. Palombo, editors. The World of Elephants:
+Proceedings of the 1<sup>st</sup> International Congress, Rome, Italy, 16-20
+October 2001. Consiglio Nazionale delle Ricerche, Rome, Italy.</p>
+<p>Graham, R. W., and M. A. Graham. 1994. The late Quaternary distribution
+of <em>Martes</em> in North America. Pages 26-58 <em>in</em> S. W. Buskirk, A. S.
+Harestoel, M. G. Raphael, and R. A. Powell, editors. The biology and
+conservation of martens, sables, and fishers. Cornell University Press,
+Ithaca, New York, USA.</p>
+<p>Grayson, D. K. 2001. The archaeological record of human impacts on
+animal populations. Journal of World Prehistory 15:1-68.</p>
+<p>Grayson, D. K. in press. Early Americans and Pleistocene mammals in
+North America. <em>in</em> Handbook of North American Indians. Volume 3.
+Environment, origins, and population. Smithsonian Institution Press,
+Washington, D.C., USA.</p>
+<p>Grayson, D. K., and D. J. Meltzer. 2002. Clovis hunting and large mammal
+extinction: a critical review of the evidence. Journal of World
+Prehistory 16:313-359.</p>
+<p>Guiot, J., J. J. Boreux, P. Braconnot, F. Torre, and PMIP participants.
+1. Data-model comparison using fuzzy logic in paleoclimatology.
+Climate Dynamics 15:569-581.</p>
+<p>Hallett, D. J., L. V. Hills, and J. J. Clague. 1997. New accelerator
+mass spectrometry radiocarbon ages for the Mazama tephra layer from
+Kootenay National Park, British Columbia, Canada. Canadian Journal of
+Earth Sciences 34:1202-1209.</p>
+<p>Haskell, J. 2001. The latitudinal gradient of diversity through the
+Holocene as recorded by fossil pollen in Europe. Evolutionary Ecology
+Research 3:345-360.</p>
+<p>Hewitt, G. M. 2000. The genetic legacy of the Quaternary ice ages.
+Nature 405:907-913.</p>
+<p>Hewitt, G. M. 2004. Genetic consequences of climatic oscillations in the
+Quaternary. Philosophical Transactions of the Royal Society of London B
+359:183-195.</p>
+<p>International Commission on Zoological Nomenclature. 1999. International
+Code of Zoological Nomenclature, fourth edition. International Trust for
+Zoological Nomenclature, London, United Kingdom.
+<span class="math display">\[&lt;http://www.iczn.org/iczn/index.jsp&gt;\]</span></p>
+<p>Iversen, J., and J. Troels-Smith. 1950. Pollenmorfologiske definitioner
+og typer. Danmarks Geologiske Undersøgelse Series 4 3(8):1-54.</p>
+<p>Jackson, S. T., and R. K. Booth. 2002. The role of late Holocene climate
+variability in the expansion of yellow birch in the western Great Lakes
+region. Diversity and Distributions 8:275-284.</p>
+<p>Jackson, S. T., J. T. Overpeck, T. Webb, III, S. E. Keattch, and K. H.
+Anderson. 1997. Mapped plant-macrofossil and pollen records of late
+Quaternary vegetation change in eastern North America. Quaternary
+Science Reviews 16:1-70.</p>
+<p>Jackson, S. T., R. S. Webb, K. H. Anderson, J. T. Overpeck, T. Webb,
+III, J. W. Williams, and B. C. S. Hansen. 2000. Vegetation and
+environment in eastern North America during the last glacial maximum.
+Quaternary Science Reviews 19:489-508.</p>
+<p>Jackson, S. T., and C. Weng. 1999. Late Quaternary extinction of a tree
+species in eastern North America. Proceedings of the National Academy of
+Sciences of the United States of America 96:13847-13852.</p>
+<p>Jackson, S. T., and J. W. Williams. 2004. Modern analogs in Quaternary
+paleoecology: here today, gone yesterday, gone tomorrow? Annual Review
+of Earth and Planetary Sciences 32:495-537.</p>
+<p>Kageyama, M., O. Peyron, S. Pinot, P. Tarasov, J. Guiot, S. Joussaume,
+and G. Ramstein. 2001. The Last Glacial Maximum climate over Europe and
+western Siberia: a PMIP comparison between models and data. Climate
+Dynamics 17:23-43.</p>
+<p>Kaplan, J. O., N. H. Bigelow, I. C. Prentice, S. P. Harrison, P. J.
+Bartlein, T. R. Christensen, W. Cramer, N. V. Matveyeva, A. D. McGuire,
+D. F. Murray, V. Y. Razzhivin, B. Smith, D. A. Walker, P. M. Anderson,
+A. A. Andreev, L. B. Brubaker, M. E. Edwards, and A. V. Lozhkin. 2003.
+Climate change and Arctic ecosystems: 2. Modeling, paleodata-model
+comparisons, and future projections. Journal of Geophysical Research
+108(D19):8171. <a href="DOI:10.1029/2002JD002559" class="uri">DOI:10.1029/2002JD002559</a>.</p>
+<p>Kohfeld, K. E., and S. P. Harrison. 2000. How well can we simulate past
+climates? Evaluating the models using global palaeoenvironmental
+datasets. Quaternary Science Reviews 19:321-346.</p>
+<p>Kropf, M., J. W. Kadereit, and H. P. Comes. 2003. Differential cycles of
+range contraction and expansion in European high mountain plants during
+the Late Quaternary: insights from <em>Pritzelago alpina</em> (L.) O. Kuntze
+(Brassicaceae). Molecular Ecology 12:931-949.</p>
+<p>Lascoux, M., A. E. Palmé, R. Cheddadi, and R. G. Latta. 2004. Impact of
+Ice Ages on the genetic structure of trees and shrubs. Proceedings of
+the Royal Society of London B 359:197-207.</p>
+<p>Lebrun, J.-P., and A. L. Stork. 1991-1997. Enumération des plantes à
+fleurs d'Afrique Tropicale, 4 volumes. Conservatoire et Jardins
+Botaniques de la Ville de Genève, Geneva, Switzerland.</p>
+<p>Lessa, E. P., J. A. Cook, and J. L. Patton. 2003. Genetic footprints of
+demographic expansion in North America, but not Amazonia during the late
+Quaternary. Proceedings of the National Academy of Sciences of the
+United States of America 100:10331-10334.</p>
+<p>Martínez-Meyer, E., A. T. Peterson, and W. W. Hargrove. 2004. Ecological
+niches as stable distributional constraints on mammal species, with
+implications for Pleistocene extinctions and climate change projections
+for biodiversity. Global Ecology and Biogeography 13:305-314.</p>
+<p>McNeill, J., F. R. Barrie, H. M. Burdet, V. Demoulin, D. J. Hawksworth,
+K. Marhold, D. H. Nicolson, J. Prado, P. C. Silva, J. E. Skog, J. H.
+Wiersema, and N. J. Turland. 2006. International code of Botanical
+Nomenclature (Vienna Code) adopted by the Seventh International
+Botanical Congress Vienna, Austria, July 2005. A.R.G. Gantner Velag,
+Ruggell, Liechtenstein. <span class="math display">\[&lt;http://ibot.sav.sk/icbn/main.htm&gt;\]</span></p>
+<p>Morgan, A. V., A. Morgan, A. C. Ashworth, and J. V. Matthews, Jr. 1983.
+Late Wisconsin fossil beetles in North America. Pages 354-363 <em>in</em> S. C.
+Porter, editor. Late-Quaternary environments of the United States.
+Volume 1. The late Pleistocene. University of Minnesota Press,
+Minneapolis, Minnesota, USA.</p>
+<p>Newby, P. E., P. Killoran, M. R. Waldorf, B. N. Shuman, R. S. Webb, and
+T. Webb III. 2000. 14,000 years of sediment, vegetation, and water-level
+changes at the Makepeace Cedar Swamp, southeastern Massachusetts.
+Quaternary Research 53:352-368.</p>
+<p>Noss, R. F., R. Graham, D. R. McCullough, F. L. Ramsey, J. Seavey, C.
+Whitlock, and M. P. Williams. 2000. Review of scientific material
+relevant to the cccurrence, ecosystem role, and tested management
+options for mountain goats in Olympic National Park. Fulfillment of
+contract #14-01-0001-99-C-05, U. S. Department of Interior.
+Conservation Biology Institute, Corvallis, Oregon, USA.
+<a href="http://www.consbio.org/cbi/professional_services/goat/goat_pdf.htm" class="uri">http://www.consbio.org/cbi/professional_services/goat/goat_pdf.htm</a>.</p>
+<p>Owen, P. R., C. J. Bell, and E. M. Mead. 2000. Fossils, diet, and
+conservation of black-footed ferrets (<em>Mustela nigripes</em>). Journal of
+Mammalogy 81:422-433.</p>
+<p>Pasenko, M. R., and B. W. Schubert. 2004. <em>Mammuthus jeffersonii</em>
+(Proboscidea, Mammalia) from northern Illinois. PaleoBios 24(3):19-24.</p>
+<p>Petit, J. R., I. Aguinagalde, J.-L. de Beaulieu, C. Bittkau, S. Brewer,
+R. Cheddadi, R. Ennos, S. Fineschi, D. Grivet, M. Lascoux, A. Mohanty,
+G. Müller-Starck, B. Demesure-Musch, A. Palmé, J. P. Martin, S. Rendell,
+and G. G. Vendramin. 2003. Glacial refugia: hotspots but not melting
+pots of genetic diversity. Science 300:1563-1565.</p>
+<p>Petit, R. J., R. Bialozyt, P. Garnier-Géré, and A. Hampe. 2004. Ecology
+and genetics of tree invasions: from recent introductions to Quaternary
+migrations. Forest Ecology and Management 197:117-137.</p>
+<p>Petit, R. J., S. Brewer, S. Bordács, K. Burg, R. Cheddadi, E. Coart, J.
+Cottrell, U. M. Csaikl, B. van Dam, J. D. Deans, S. Espinel, S.
+Fineschi, R. Finkeldey, I. Glaz, P. G. Goicoechea, J. S. Jensen, A. O.
+König, A. J. Lowe, S. F. Madsen, G. Mátyás, R. C. Munro, F. Popescu, D.
+Slade, H. Tabbener, S. G. M. de Vries, B. Ziegenhagen, J.-L. de
+Beaulieu, and A. Kremer. 2002. Identification of refugia and
+post-glacial colonisation routes of European white oaks based on
+chloroplast DNA and fossil pollen evidence. Forest Ecology and
+Management 156:49-74.</p>
+<p>Petit, R. J., E. Pineau, B. Demesure, R. Bacilieri, A. Ducousso, and A.
+Kremer. 1997. Chloroplast DNA footprints of postglacial recolonization
+by oaks. Proceedings of the National Academy of Sciences of the United
+States of America 94:9996-10001.</p>
+<p>Prentice, I. C., D. Jolly, and BIOME 6000 participants. 2000.
+Mid-Holocene and glacial-maximum vegetation geography of the northern
+continents and Africa. Journal of Biogeography 27:507-519.</p>
+<p>Qian, H., and R. E. Ricklefs. 2000. Large-scale processes and the Asian
+bias in species diversity of temperate plants. Nature 407:180-182.</p>
+<p>Reimer, P. J., M. G. L. Baillie, E. Bard, A. Bayliss, J. W. Beck, C. J.
+H. Bertrand, P. G. Blackwell, C. E. Buck, G. S. Burr, K. B. Cutler, P.
+E. Damon, R. L. Edwards, R. G. Fairbanks, M. Friedrich, T. P.
+Guilderson, A. G. Hogg, K. A. Hughen, B. Kromer, G. McCormac, S.
+Manning, C. B. Ramsey, R. W. Reimer, S. Remmele, J. R. Southon, M.
+Stuiver, S. Talamo, F. W. Taylor, J. van der Plicht, and C. E.
+Weyhenmeyer. 2004. INTCAL04 terrestrial radiocarbon age calibration,
+0-26 cal kyr BP. Radiocarbon 46:1029-1058.</p>
+<p>Rosenberg, S. M., I. R. Walker, and R. W. Mathewes. 2003. Postglacial
+spread of hemlock (<em>Tsuga</em>) and vegetation history in Mount Revelstoke
+National Park, British Columbia, Canada. Canadian Journal of Botany
+81:139-151.</p>
+<p>Runck, A. M., and J. A. Cook. 2005. Postglacial expansion of the
+southern red-backed vole (<em>Clethrionomys gapperi</em>) in North America.
+Molecular Ecology 14:1445-1456.</p>
+<p>Schauffler, M., and G. L. Jacobson, Jr. 2002. Persistence of coastal
+spruce refugia during the Holocene in northern New England, USA,
+detected by stand-scale pollen stratigraphies. Journal of Ecology
+90:235-250.</p>
+<p>Schmitz, O. J., E. Post, C. E. Burns, and K. M. Johnston. 2003.
+Ecosystem responses to global climate change: moving beyond color
+mapping. Bioscience 53:1199-1205.</p>
+<p>Silvertown, J. 1985. History of a latitudinal diversity gradient: woody
+plants in Europe 13,000–1,000 years. Journal of Biogeography
+12:519-525.</p>
+<p>Stevens, P. F. 2007+. Angiosperm Phylogeny Website. Version 8, June
+1. <span class="math display">\[&lt;http://www.mobot.org/MOBOT/research/APweb/&gt;\]</span></p>
+<p>Stuiver, M., and P. J. Reimer. 1993. Extended <sup>14</sup>C database and revised
+CALIB radiocarbon calibration program. Radiocarbon 35:215-230.</p>
+<p>Telford, R. J., E. Heegaard, and H. J. B. Birks. 2004a. All age-depth
+models are wrong: but how badly? Quaternary Science Reviews 23:1-5.</p>
+<p>Telford, R. J., E. Heegaard, and H. J. B. Birks. 2004b. The intercept is
+a poor estimate of a calibrated radiocarbon age. The Holocene
+14:296-298.</p>
+<p>Thompson, R. S., and K. H. Anderson. 2000. Biomes of western North
+America at 18,000, 6000 and 0 <sup>14</sup>C yr BP reconstructed from pollen and
+packrat midden data. Journal of Biogeography 27:555-584.</p>
+<p>Tremblay, N. O., and D. J. Schoen. 1999. Molecular phylogeography of
+<em>Dryas integrifolia</em>: glacial refugia and postglacial recolonization.
+Molecular Ecology 8:1187-1198.</p>
+<p>Turgeon, D. D., J. F. Quinn, Jr., A. E. Bogan, E. V. Coan, F. G.
+Hochberg, W. G. Lyons, P. M. Mikkelsen, R. J. Neves, C. F. E. Roper, G.
+Rosenberg, B. Roth, A. Scheltema, F. G. Thompson, M. Vecchione, and J.
+D. Williams. 1998. Common and scientific names of aquatic invertebrates
+from the United States and Canada: mollusks, second edition. American
+Fisheries Society, Special Publication 26, Bethesda, Maryland, USA.</p>
+<p>Tutin, T. G., <em>et al</em>., editor. 1964-1993. Flora Europaea, 5 volumes.
+Cambridge University Press, Cambridge, United Kingdom.
+<span class="math display">\[&lt;http://rbg-web2.rbge.org.uk/FE/fe.html&gt;\]</span></p>
+<p>Webb, T., III. 1981. The past 11,000 years of vegetational change in
+eastern North America. Bioscience 31:501-506.</p>
+<p>Webb, T., III. 1987. The appearance and disappearance of major
+vegetational assemblages: long-term vegetational dynamics in eastern
+North America. Vegetatio 69:177-187.</p>
+<p>Webb, T., III. 1988. Eastern North America. Pages 385-414 <em>in</em> B.
+Huntley and T. Webb, III, editors. Vegetation history. Handbook of
+vegetation science 7. Kluwer Academic Publishers, Dordrecht.</p>
+<p>Webb, T., III, B. Shuman, and J. W. Williams. 2004. Climatically forced
+vegetation dynamics in eastern North America during the late Quaternary
+Period. Pages 459-478 <em>in</em> A. R. Gillespie, S. C. Porter, and B. F.
+Atwater, editors. The Quaternary Period in the United States.
+Developments in Quaternary science 1. Elsevier, Amsterdam, The
+Netherlands.</p>
+<p>Whorley, J. R., S. T. Alvarez-Castañeda, and G. J. Kenagy. 2004. Genetic
+structure of desert ground squirrels over a 20-degree-latitude transect
+from Oregon through the Baja California peninsula. Molecular Ecology
+13:2709-2720.</p>
+<p>Willard, D. A., T. M. Cronin, and S. Verardo. 2003. Late-Holocene
+climate and ecosystem history from Chesapeake Bay sediment cores, USA.
+The Holocene 13:201-214.</p>
+<p>Williams, J. W. 2003. Variations in tree cover in North America since
+the last glacial maximum. Global and Planetary Change 35:1-23.</p>
+<p>Williams, J. W., B. N. Shuman, and T. Webb, III. 2001. Dissimilarity
+analyses of late-Quaternary vegetation and climate in eastern North
+America. Ecology 82:3346-3362.</p>
+<p>Williams, J. W., B. N. Shuman, T. Webb, III, P. J. Bartlein, and P. L.
+Luduc. 2004. Late-Quaternary vegetation dynamics in North America:
+scaling from taxa to biomes. Ecological Monographs 74:309-334.</p>
+<p>Williams, J. W., R. L. Summers, and T. Webb, III. 1998. Applying plant
+functional types to construct biome maps from eastern North American
+pollen data: comparisons with model results. Quaternary Science Reviews
+17:607-627.</p>
+<p>Williams, J. W., T. Webb, III, P. H. Richard, and P. Newby. 2000. Late
+Quaternary biomes of Canada and the eastern United States. Journal of
+Biogeography 27:585-607.</p>
+<p>Wilson, D. E., and D. M. Reeder. 2005. Mammal species of the world: a
+taxonomic and geographic reference, third edition, 2 volumes. The Johns
+Hopkins University Press, Baltimore, Maryland, USA.
+<span class="math display">\[&lt;http://www.bucknell.edu/msw3/&gt;\]</span></p>
+<p>Wroe, S., J. Field, R. Fullagar, and L. S. Jermiin. 2004. Megafaunal
+extinction in the late Quaternary and the global overkill hypothesis.
+Alcheringa 28:291-331.</p>
+<p>Zdanowicz, C. M., G. A. Zielinski, and M. S. Germani. 1999. Mount Mazama
+eruption: calendrical age verified and atmospheric impact assessed.
+Geology 27:621-624.</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Ashworth, A. C. 2004. <span>“The Quaternary Period in the United States.”</span> In, edited by A. R. Gillespie, S. C. Porter, and B. F. Atwater. Vol. 1. Developments in Quaternary Science. Amsterdam, The Netherlands: Elsevier.
+</div>
+<div class="csl-entry">
+Ashworth, Allan C. n.d. <span>“Geological Perspectives of Global Climate Change.”</span> In. Vol. 47. AAPG Studies in Geology. American Association of Petrolium Geologists.
+</div>
+<div class="csl-entry">
+Berglund, Björn E, HJB Birks, M Ralska-Jasiewickzowa, and Herbert E Wright. 1996. <em>Palaeoecological Events During the Last 15 000 Years: Regional Synthesis of Palaeoecological Studies of Lakes and Mires in Europe</em>. Wiley.
+</div>
+<div class="csl-entry">
+Birks, H. H. 2003. <span>“The Importance of Plant Macrofossils in the Reconstruction of Lateglacial Vegetation and Climate: Examples from Scotland, Western Norway, and Minnesota, USA.”</span> Journal Article. <em>Quaternary Science Reviews</em> 22: 453–73.
+</div>
+<div class="csl-entry">
+Church, Michael. 1989. <span>“IGCP Project 158: Paleohydrology of the Temperate Zone During the Last 15 000 Years: Introduction.”</span> <em>Canadian Journal of Earth Sciences</em> 26: 1809–10.
+</div>
+<div class="csl-entry">
+COHMAP Members. 1988. <span>“Climatic Changes of the Last 18,000 Years: Observations and Model Simulations.”</span> Journal Article. <em>Science</em> 24: 1043–52.
+</div>
+<div class="csl-entry">
+FAUNMAP Working Group. 1994. <em><span>FAUNMAP</span>: A Database Documenting Late <span>Q</span>uaternary Distributions of Mammal Species in the <span>U</span>nited <span>S</span>tates</em>. Book. Vol. XXV, No. 1. Scientific Papers. Springfield, IL: Illinois State Museum.
+</div>
+<div class="csl-entry">
+Gibbard, Philip L, Martin J Head, Michael JC Walker, and Subcommission on Quaternary Stratigraphy. 2010. <span>“Formal Ratification of the <span>Q</span>uaternary <span>S</span>ystem/<span>P</span>eriod and the <span>P</span>leistocene <span>S</span>eries/<span>E</span>poch with a Base at 2.58 <span>Ma</span>.”</span> <em>Journal of Quaternary Science</em> 25 (2): 96–102. <a href="https://doi.org/10.1002/jqs.1338">https://doi.org/10.1002/jqs.1338</a>.
+</div>
+<div class="csl-entry">
+Goring, Simon, Andria Dawson, Gavin Simpson, Karthik Ram, Russ Graham, Eric Grimm, and John Williams. 2015. <span>“Neotoma: A Programmatic Interface to the Neotoma Paleoecological Database.”</span> <em>Open Quaternary</em> 1 (1).
+</div>
+<div class="csl-entry">
+Graham, R. W., and Jr. E. L. Lundelius. 2010. <span>“FAUNMAP II: New Data for North America with a Temporal Extension for the Blancan, Irvingtonian and Early Rancholabrean.”</span> <a href="https://ucmp.berkeley.edu/faunmap">https://ucmp.berkeley.edu/faunmap</a>.
+</div>
+<div class="csl-entry">
+Graham, Russell. 2006. <span>“Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.”</span> <em><span>NSF</span> Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349</a>.
+</div>
+<div class="csl-entry">
+Grimm, EC. 2008. <span>“Neotoma: An Ecosystem Database for the Pliocene, Pleistocene, and Holocene.”</span> <em>Illinois State Museum Scientific Papers E Series</em> 1.
+</div>
+<div class="csl-entry">
+Grimm, Eric C. 2006. <span>“Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.”</span> <em><span>NSF</span> Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289</a>.
+</div>
+<div class="csl-entry">
+Group, FAUNMAP Working. 1996. <span>“Spatial Response of Mammals to Late Quaternary Environmental Fluctuations.”</span> Journal Article. <em>Science</em> 272: 1601–6.
+</div>
+<div class="csl-entry">
+Huntley, B., and I. C. Prentice. 1993. <span>“Holocene Vegetation and Climates of Europe.”</span> Book Section. In <em>Global Climates Since the Last Glacial Maximum</em>, edited by Jr. Wright H. E., J. E. Kutzbach, III Webb T., W. F. Ruddimann, F. A. Street-Perrott, and P. J. Bartlein, 136–68. Minneapolis: University of Minnesota Press.
+</div>
+<div class="csl-entry">
+Jackson, S. T., and R. K. Booth. 2002. <span>“The Role of Late Holocene Climate Variability in the Expansion of Yellow Birch in the Western Great Lakes Region.”</span> Journal Article. <em>Diversity and Distributions</em> 8 (5): 275–84. <a href="&lt;Go to ISI&gt;://000177738400003">&lt;Go to ISI&gt;://000177738400003</a>.
+</div>
+<div class="csl-entry">
+Jackson, S. T., J. T. Overpeck, III Webb T., S. E. Keattch, and K. H. Anderson. 1997. <span>“Mapped Plant-Macrofossil and Pollen Records of Late Quaternary Vegetation Change in Eastern North America.”</span> Journal Article. <em>Quaternary Science Reviews</em> 16: 1–70.
+</div>
+<div class="csl-entry">
+Jackson, S. T., R. S. Webb, K. H. Anderson, J. T. Overpeck, III Webb T., J. W. Williams, and B. C. S. Hansen. 2000. <span>“Vegetation and Environment in Eastern North America During the Last Glacial Maximum.”</span> Journal Article. <em>Quaternary Science Reviews</em> 19: 489–508.
+</div>
+<div class="csl-entry">
+Jacobson, George L. 2021. <span>“A Tribute to <span>Eric C. Grimm</span> (1951–2020).”</span> <em>Palynology</em> 45 (2): 187–90. <a href="https://doi.org/10.1080/01916122.2020.1870281">https://doi.org/10.1080/01916122.2020.1870281</a>.
+</div>
+<div class="csl-entry">
+Morgan, AV, A Morgan, AC Ashworth, JV Matthews, and SC Porter. 1983. <span>“Late Wisconsin Fossil Beetles in North America.”</span> In <em>Late Quaternary Environments of the United States</em>, 1:354–63. London: Longman.
+</div>
+<div class="csl-entry">
+Webb, III, T. 1981. <span>“The Past 11,000 Years of Vegetational Change in Eastern North America.”</span> Journal Article. <em>Bioscience</em> 31: 501–6.
+</div>
+<div class="csl-entry">
+———. 1987. <span>“The Appearance and Disappearance of Major Vegetational Assemblages: Long-Term Vegetational Dynamics in Eastern North America.”</span> Journal Article. <em>Vegetatio</em> 69: 177–87.
+</div>
+<div class="csl-entry">
+———. 1988. <span>“Glacial and Holocene Vegetation History: Eastern North America.”</span> Book Section. In <em>Vegetation History</em>, edited by B. Huntley and III Webb T., 385–414. Dordrecht: Kluwer Academic.
+</div>
+<div class="csl-entry">
+Wright, Jr., H. E., J. E. Kutzbach, III Webb T., W. F. Ruddiman, F. A. Street-Perrott, and P. J Bartlein. 1993. <em>Global Climates Since the Last Glacial Maximum</em>. Book. Minneapolis: University of Minnesota Press.
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chronology-age-related-tables-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"max-depth": 4
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

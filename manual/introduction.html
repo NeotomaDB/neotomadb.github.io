@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Introduction | Neotoma Paleoecology Manual v2.0</title>
+  <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Introduction | Neotoma Paleoecology Manual v2.0" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Introduction | Neotoma Paleoecology Manual v2.0" />
+  
+  <meta name="twitter:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+<meta name="author" content="Simon Goring" />
+
+
+<meta name="date" content="2022-05-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="sql-quickly.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
+<li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
+<li class="chapter" data-level="2.3.4" data-path="introduction.html"><a href="introduction.html#BEETLE"><i class="fa fa-check"></i><b>2.3.4</b> BEETLE</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
+<li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
+<li class="chapter" data-level="4.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>4.4</b> Taxa and Ecological Groups</a></li>
+<li class="chapter" data-level="4.5" data-path="database-design-concepts.html"><a href="database-design-concepts.html#chronology"><i class="fa fa-check"></i><b>4.5</b> Chronology</a></li>
+<li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
+<li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
+<li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
+<li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
+<li class="chapter" data-level="5.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>5.4</b> Sample Related Tables</a></li>
+<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.5</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>6</b> Taxonomy Related Tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>6.1</b> ecolgroups</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="6.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>6.1.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>6.2</b> ecolgrouptypes</a></li>
+<li class="chapter" data-level="6.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>6.3</b> ecolsettypes</a></li>
+<li class="chapter" data-level="6.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>6.4</b> synonyms</a></li>
+<li class="chapter" data-level="6.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>6.5</b> synonymtypes</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>6.5.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>6.6</b> taxa</a></li>
+<li class="chapter" data-level="6.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>6.7</b> taxagrouptypes</a></li>
+<li class="chapter" data-level="6.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>6.8</b> Variables</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>6.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="6.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>6.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="6.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>6.8.3</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>6.9</b> VariableContexts</a></li>
+<li class="chapter" data-level="6.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>6.10</b> VariableElements</a></li>
+<li class="chapter" data-level="6.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>6.11</b> VariableModifications</a></li>
+<li class="chapter" data-level="6.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>6.12</b> VariableUnits</a></li>
+<li class="chapter" data-level="6.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>6.13</b> RepositoryInstitutions</a></li>
+<li class="chapter" data-level="6.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>6.14</b> RepositorySpecimens</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>6.14.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>6.15</b> specimendates</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Chronology &amp; Age Related Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>7.1</b> AgeTypes</a></li>
+<li class="chapter" data-level="7.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>7.2</b> AggregateChronologies</a></li>
+<li class="chapter" data-level="7.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>7.3</b> ChronControls</a></li>
+<li class="chapter" data-level="7.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>7.4</b> ChronControlTypes</a></li>
+<li class="chapter" data-level="7.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>7.5</b> Chronologies</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>7.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>7.5.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>7.6</b> AggregateSampleAges</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>7.6.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>7.7</b> <code>geochronology</code></a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>7.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>7.8</b> GeochronPublications</a></li>
+<li class="chapter" data-level="7.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>7.9</b> GeochronTypes</a></li>
+<li class="chapter" data-level="7.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>7.10</b> RelativeAgePublications</a></li>
+<li class="chapter" data-level="7.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>7.11</b> RelativeAges</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>7.12</b> RadiocarbonCalibration</a></li>
+<li class="chapter" data-level="7.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>7.13</b> RelativeAgeScales</a></li>
+<li class="chapter" data-level="7.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>7.14</b> RelativeAgeUnits</a></li>
+<li class="chapter" data-level="7.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>7.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="7.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>7.16</b> Tephrachronology</a></li>
+<li class="chapter" data-level="7.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>7.17</b> Tephras</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Neotoma Paleoecology Manual v2.0</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Neotoma is a public database containing fossil data from the Holocene, Pleistocene, and Pliocene, or approximately the last 5.3 million years. The database stores associated physical data from fossil bearing deposits, for example sediment loss-on-ignition and geochemical data. The database also stores data from modern samples that are used to interpret fossil data.</p>
+<p>The initial development of Neotoma was funded by a grant from the U.S. National Science Foundation Geoinformatics program. The inital grant was a collaborative proposal between Penn State University <span class="citation">(<a href="#ref-nsf0622349" role="doc-biblioref">R. Graham 2006</a>)</span> and the Illinois State Museum <span class="citation">(<a href="#ref-nsf0622289" role="doc-biblioref">E. C. Grimm 2006</a>)</span>. It had five Principle Investigators, Russell W. Graham, Eric C. Grimm, Stephen T. Jackson, Allan C. Ashworth, and John W. (Jack) Williams.</p>
+<p>Initially, data within Neotoma were merged from four existing databases: the Global Pollen Database, <a href="<a href="introduction.html#FAUNMAP">2.3.3</a>">FAUNMAP</a>, a database of mammalian fauna <span class="citation">(<a href="#ref-Group1994" role="doc-biblioref">FAUNMAP Working Group 1994</a>)</span>, the North American Plant Macrofossil Database, and a <a href="<a href="introduction.html#BEETLE">2.3.4</a>">fossil beetle database</a> assembled by Allan Ashworth. Although structurally different, these databases contain similar kinds of data, and merging them was quite practical. The rationale for this merging was twofold:</p>
+<ol style="list-style-type: decimal">
+<li>To facilitate analyses of past biotic communities at the ecosystem level</li>
+<li>To reduce the overhead in maintaining and distributing several independent databases.</li>
+</ol>
+<p>Because the proxy types that Neotoma integrated were sufficiently diverse, the data model had to focus on the commonalities as the core of the database structure, specifically elements of stratigraphy and chronology. This design facilitated the gradual inclusion of other database types including the addition of ostracode, diatom, chironmid, and freshwater mussel datasets.</p>
+<p>The Neotoma database was initially designed by Eric C. Grimm and implemented in Microsoft® Access®. Neotoma was ported to SQL Server, where it was served from the <a href="https://sites.psu.edu/environmentalinformatics/">Center for Environmental Informatics</a> at Penn State University. Subsequently the database was ported to PostgreSQL, to support a fully open data ecosystem with an Application-Program Interface (API) that could be integrated into R packages <span class="citation">(e.g., <a href="#ref-goring2015neotoma" role="doc-biblioref">Goring et al. 2015</a>)</span> or other programming languages.</p>
+<div id="whence-neotoma" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Whence Neotoma<a href="introduction.html#whence-neotoma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><img src="assets/images/Neotoma_magister.jpg" alt="Image of a packrat" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A packrat of the genus <em>Neotoma</em>. Credit: Alan Cressler, CC BY-SA 2.0 <a href="https://creativecommons.org/licenses/by-sa/2.0" class="uri">https://creativecommons.org/licenses/by-sa/2.0</a>, via Wikimedia Commons</td>
+</tr>
+</tbody>
+</table>
+<p>Neotoma was called a “Late Neogene Terrestrial Ecosystem Database” in the <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=0622289">original NSF proposal</a>. At the time this proposal was written, the Neogene Period included the Miocene, Pliocene, Pleistocene, and Holocene epochs. However, a proposal before the International Commission on Stratigraphy elevated the Quaternary to a System or Period following the Neogene <span class="citation">(<a href="#ref-gibbard2010formal" role="doc-biblioref">Gibbard et al. 2010</a>)</span>, terminating the Neogene at the end of Pliocene. To account for the change in nomenclature, numerous names and companion acronyms were considered, but none engendered enthusiastic support. B. Brandon Curry proposed the name <strong>Neotoma</strong>, and this name struck a fancy. <em>Neotoma</em> is the <a href="https://en.wikipedia.org/wiki/Pack_rat">genus for the packrat</a>. Packrats are prodigious collectors of anything in their territory, and moreover they are collectors of fossil data. <strong>Neotoma</strong> packrats collect plant macrofossils and bones, and pollen is preserved in their amberat – hardened, dried urine, which impregnates their middens and preserves them for millennia.</p>
+</div>
+<div id="rationale" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Rationale<a href="introduction.html#rationale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Paleobiological data from the recent geological past have been invaluable for understanding ecological dynamics at timescales inaccessible to direct observation, including ecosystem evolution, contemporary patterns of biodiversity, principles of ecosystem organization, particularly the individualistic response of species to environmental gradients, and the biotic response to climatic change, both gradual and abrupt. Understanding the dynamics of ecological systems requires ecological time series, but many ecological processes operate too slowly to be amenable to experimentation or direct observation. In addition to having ecological significance, fossil data have tremendous importance for climatology and global change research. Fossil floral and faunal data are crucial for climate-model verification and are essential for elucidating climate-vegetation interactions that may partly control climate.</p>
+<p>Basic paleobiological research is site based, and paleobiologists have devoted innumerable hours to identifying, counting, and cataloging fossils from cores, sections, and excavations. These data are typically published in papers describing single sites or small numbers of sites. Often, the data are published graphically, as in a pollen diagram, and the actual data reside on the investigator’s computer or in a file cabinet. These basic data are similar to museum collections, costly to replace, sometimes irreplaceable, and their value does not diminish with time. Also similar to museum collections, the data require cataloging and curation. Whereas physical specimens of large fossils, such as animal bones, are typically accessioned into museums, microfossils, such as pollen, are not accessioned, and the digital data are the primary objects, and their loss is equivalent to losing valuable museum specimens. The integrated database that we propose ensures safe, long-term archiving of these data.</p>
+<p>Large independent databases exist for fossil pollen, plant macrofossils, and mammals: the Global Pollen Database (GPD), the North American Plant Macrofossil Database (NAPMD), and FAUNMAP. In addition, a database of fossil beetles (BEETLE) has been assembled and integrated into Neotoma. These databases, as with others in the Earth and ecosystem sciences, have become essential cyberinfrastructure. Nevertheless, these resources were originally developed as standalone databases in the early 1990’s. GPD and NAPMD were stored in <a href="https://en.wikipedia.org/wiki/Paradox_(database)">Paradox®</a> file formats; FAUNMAP in <a href="https://en.wikipedia.org/wiki/Microsoft_Access">Microsoft Access</a>. Since initial database development, emphasis has been placed on ingest of new and legacy data. However, database and Internet technology have advanced greatly since 1995, and the current relational database software, ingest programs, data retrieval algorithms, output formats, and analysis tools are outdated and minimal. Moreover, the databases are not linked, so that integrated analyses are difficult.</p>
+<p>Although GPD, NAPMD, and FAUNMAP were developed independently, they have much in common. The basic data of all three databases as well as BEETLE are essentially lists of taxa from cores, excavations, or sections, often with quantitative measures of abundance. The three databases include similar metadata. The objective of Neotoma is to build a unified data structure that will incorporate all of these databases. The database will initially incorporate pollen, plant macrofossil, mammal, and beetle data. However, the database designed facilitates the incorporation of all kinds of fossil data.</p>
+<p>Various teams of investigators have developed databases for paleobiological data that have been project or discipline based,
+including the four databases to be integrated in this project. However, long-term maintenance and sustainability have been problematic because of the need to secure continuous funding. Nevertheless, these databases have become the established archives for their disciplines and, new data are continuously contributed. However, because of funding hiatuses, long spells may intervene between times of data contribution and their public availability. For example, the plant macrofossil database has not incorporated any new data since 1999. The number of different databases and disciplines exacerbates the problem, because each database requires a database manager. Consolidation of informatics technology helps address this overhead issue. However, specialists are still essential for management and supervision of data collection and quality control for their disciplines or organismal groups.</p>
+<p>The purposes of Neotoma are:</p>
+<ul>
+<li>to facilitate studies of ecosystem development and response to climate change</li>
+<li>to provide the historical context for understanding biodiversity dynamics, including genetic diversity</li>
+<li>to provide the data for climate-model validation</li>
+<li>to provide a safe, long-term, low-cost archive for a wide variety of paleobiological data.</li>
+</ul>
+<p>Site-based studies are invaluable in their own right, and they are the generators of new data. However, much is gained by marshalling data from geographic arrays of sites for synoptic, broad-scale ecosystem studies. In order to carry out such studies efficiently, a queryable database is required. Thus, it is much morethan an archive; it is essential cyberinfrastructure for paleoenvironmental research. The database facilitates integration, synthesis, and understanding, and it promotes information sharing and collaboration. The individual databases have been extensively used for scientific research, with several hundred scientific publications directly based upon data drawn from these databases. This project will enhance those databases and will continue their public access. By integrating these databases and by simplifying the contributor interface, we can reduce the number of people necessary for community-wide database maintenance, and thereby help ensure their long-term sustainability and existence.</p>
+</div>
+<div id="history-of-the-constituent-databases" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> History of the Constituent Databases<a href="introduction.html#history-of-the-constituent-databases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="global-pollen-database" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Global Pollen Database<a href="introduction.html#global-pollen-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In an early effort, the Cooperative Holocene Mapping Project <span class="citation">(<a href="#ref-Members1988" role="doc-biblioref">COHMAP Members 1988</a>; <a href="#ref-Wright1993c" role="doc-biblioref">Wright et al. 1993</a>)</span> assembled pollen data in the 1970s and 1980s to test climate models. Although data-model comparison was the principal objective of the COHMAP project, the synoptic analyses of the pollen data, particularly maps showing the constantly shifting ranges of species in response to climate change, were revelatory and led to much ecological insight <span class="citation">(e.g. <a href="#ref-Webb1981" role="doc-biblioref">Webb 1981</a>, <a href="#ref-Webb1987a" role="doc-biblioref">1987</a>, <a href="#ref-Webb1988b" role="doc-biblioref">1988</a>)</span>.</p>
+<p>The COHMAP pollen “database” was a set of flat files with a fixed file format for data and for chronologies. FORTRAN programs were written to read these files and to assemble data for particular analyses. Thompson Webb III managed the COHMAP pollen database at Brown University, but as the quantity of data increased, data management became increasingly cumbersome; the data needed to be migrated to a relational database management system. Discussions with E. C. Grimm led to the initiation of the North American Pollen Database (NAPD) in 1990.</p>
+<p>At the same time in , the International Geological Correlation Project IGCP 158 <span class="citation">(<a href="#ref-Church1989IGCPP1" role="doc-biblioref">Church 1989</a>)</span> was conducting a major collaborative synthesis of paleoecological data, primarily of pollen, making the need for a pollen database painfully obvious. In the forward to the book resulting from this project <span class="citation">(<a href="#ref-berglund1996palaeoecological" role="doc-biblioref">Berglund et al. 1996</a>)</span>, J.L. de Beaulieu describes the role that the IGCP 158 project had in launching the European Pollen Database <span class="citation">(<a href="#ref-Huntley1993b" role="doc-biblioref">Huntley and Prentice 1993</a>)</span>. A workshop to develop a European Pollen Database (EPD) was held in in 1. North American representatives also attended, and the organizers of NAPD and EPD commenced a long-standing collaboration to develop compatible databases. NAPD and EPD held several joint workshops and developed the same data structure. Nevertheless, the two databases were independently established, partly because Internet capabilities were not yet sufficient to easily manage a merged database. The pollen databases were developed in Paradox, which at the time was the most powerful RDBMS readily available for the PC platform. NAPD and EPD established two important protocols:</p>
+<ul>
+<li>the databases were relational and queryable</li>
+<li>they were publicly available.</li>
+</ul>
+<p>As the success the NAPD-EPD partnership escalated, working groups initiated pollen databases for other regions, including the Latin American Pollen Database (LAPD) in 1994, the Pollen Database for and the Russian Far East (PDSRFE) in 1995, and the African Pollen Database (APD) in 1996. At its initial organizational workshop, LAPD opted to merge with NAPD, rather than develop a standalone database, and the Global Pollen Database was born. PDSRFE also followed this model. APD developed independently, but uses the table structure of GPD and EPD. Pollen database projects have also been initiated in other regions, and the GPD contains some of these data, including the Indo-Pacific Pollen Database and the Japanese Pollen Database.</p>
+<pre><code>## Warning: Ignoring unknown parameters: binwidth, bins, pad</code></pre>
+<pre><code>## Don&#39;t know how to automatically pick scale for object of type integer64. Defaulting to continuous.</code></pre>
+<pre><code>## Warning: Removed 4349 rows containing missing values (position_stack).</code></pre>
+<div class="figure"><span style="display:block;" id="fig:agedistributions"></span>
+<img src="_main_files/figure-html/agedistributions-1.png" alt="Histogram of sample age distributions in Neotoma for the first 200000 years of samples showing that data is heavily skewed the the present." width="672" />
+<p class="caption">
+Figure 2.1: Sample age distributions in Neotoma for a subset of Neotoma data. Ages are heavily skewed to samples in the last 10,000 years, and moreso to the near-present.
+</p>
+</div>
+<p>The pollen databases contain data from the Holocene, Pleistocene, and Pliocene, although most data are from the last 20,000 years (Fig. <a href="introduction.html#fig:agedistributions">2.1</a>). Included are fossil data, mainly from cores and sections, and modern surface samples, which are essential for calibrating fossil data. NAPD data are not separate from the GPD, but rather the NAPD is the North American subset of GPD. EPD has both public and restricted data — a concession that had to be made early on to assuage some contributors.</p>
+</div>
+<div id="north-american-plant-macrofossil-database" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> North American Plant Macrofossil Database<a href="introduction.html#north-american-plant-macrofossil-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Plant macrofossils include plant organs generally visible to the naked eye, including seeds, fruits, leaves, needles, wood, bud scales, and megaspores. Synoptic-scale mapping of plant macrofossils from modern assemblages <span class="citation">(<a href="#ref-Jackson1997" role="doc-biblioref">Jackson et al. 1997</a>)</span> and fossil assemblages <span class="citation">(<a href="#ref-Jackson1997" role="doc-biblioref">Jackson et al. 1997</a>, <a href="#ref-Jackson2000c" role="doc-biblioref">2000</a>; <a href="#ref-Jackson2002" role="doc-biblioref">Jackson and Booth 2002</a>)</span> have shown the utility of plant macrofossils in providing spatially and taxonomically precise reconstructions of past species ranges. Although plant macrofossil records are spatially precise, synoptic networks of high-quality sites can scale up to yield aggregate views of past distributions <span class="citation">(<a href="#ref-Jackson1997" role="doc-biblioref">Jackson et al. 1997</a>)</span>. In addition, macrofossils, with their greater taxonomic resolution, augment the pollen data by providing information on which species might have been present, and can resolve issues of long-distance transport <span class="citation">(<a href="#ref-Birks2003" role="doc-biblioref">Birks 2003</a>)</span>.</p>
+<p>The North American Plant Macrofossil Database (NAPMD) has been directed by S.T. Jackson at the . Highest priority has been placed on data from the last 30,000 years, although some earlier Pleistocene and late Pliocene data are included. The database originated as a research database for selected taxa from Late Quaternary sediments of eastern North America <span class="citation">(<a href="#ref-Jackson1997" role="doc-biblioref">Jackson et al. 1997</a>)</span>. In 1994, an effort was initiated with NOAA funding to build on this foundation to develop a cooperative, relational database comprising all of , a longer time span, and all plant taxa.</p>
+<p>The structure of NAPMD was adapted from the pollen database and was also stored in a Paradox file format. Although the plant macrofossil database was well served by the data model structure, modifications were made to accommodate different organs from the same species and to deal with the various quantitative measures of abundance. The Plant Macrofossil database also included surface samples, which were not part of the pollen databases at the time, but are useful for the interpretation of fossil data.</p>
+</div>
+<div id="FAUNMAP" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> FAUNMAP<a href="introduction.html#FAUNMAP" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R.W. Graham, E.L. Lundelius, Jr., and a group of Regional Collaborators organized a project to develop a database for late Quaternary faunal data from the , which the U.S. NSF funded in 1990. This project had a research agenda, and its seminal paper focused on the individualistic behavior displayed by animal species <span class="citation">(<a href="#ref-Group1994" role="doc-biblioref">FAUNMAP Working Group 1994</a>)</span>.</p>
+<p>Two FAUNMAP databases exist, FAUNMAP I and FAUNMAP II. Both databases were coordinated by R. W. Graham and E. L. Lundelius, Jr. and funded by NSF. Both are relational databases for fossil mammal sites. The data were extracted from peer-reviewed literature, selected theses and dissertations, and selected contract reports for both paleontology and archaeology (all data is currently contained within the Neotoma publications tables). Unpublished collections were not included. Data were originally captured in Paradox but were later migrated to Microsoft Access.</p>
+<p>FAUNMAP I contains data from sites in the continental United States (the lower 48 States) that date between 500 BP and ~40,000 BP. Funding for FAUNMAP I ended in 1994, with the production of two major publications by the FAUNMAP Working Group <span class="citation">(<a href="#ref-Group1994" role="doc-biblioref">FAUNMAP Working Group 1994</a>; <a href="#ref-Group1996" role="doc-biblioref">Group 1996</a>)</span>, along with publications from individual members and many others who accessed the database on-line. Graham and Lundelius continued the FAUNMAP project, developing FAUNMAP II with funding from NSF beginning in 1998. FAUNMAP II <span class="citation">(<a href="#ref-faunmapTwo" role="doc-biblioref">Graham R. W. and E. L. Lundelius 2010</a>)</span> shares the same structure as FAUNMAP I but expands the spatial coverage to include and and extends the temporal coverage to the Pliocene (5 Ma). In addition, sites published since 1994, when FAUNMAP I was completed, have been added for the contiguous 48 States. In all, FAUNMAP I and II contain more than 5000 fossil-mammal sites with more than 600 mammal species for all of North America north of Mexico that range in age from 0.5 ka to 5 Ma­.</p>
+<p>The detailed structure of the FAUNMAP database is described in FAUNMAP Working Group <span class="citation">(<a href="#ref-Group1994" role="doc-biblioref">FAUNMAP Working Group 1994</a>)</span>. Sites identified by name and location were subdivided into Analysis Units (AU’s), which varied from site to site depending upon the definitions used in the original publications (e.g., stratigraphic horizons, cultural horizons, excavation levels, biostratigraphic zones). All data (<em>i.e.</em>, taxa identified, and counts of individual specimens) and metadata (sediment types, depositional environments, facies, radiometric and other geochronological dates, modifications of bone) were associated with the individual AUs. This structure – analysis units within sites – allows for information to be extracts at the site level, or at the smallest sample subdivision. The analysis unit permits fine-scale temporal resolution and analysis. Similar to the GPD and NAPMD, FAUNMAP contains archival and research tables. Similar to the plant macrofossil database, FAUNMAP contains a variety of quantitative measures of abundance (<em>e.g.</em>, MNI, NISP), and presence data are more commonly used for analysis.</p>
+</div>
+<div id="BEETLE" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> BEETLE<a href="introduction.html#BEETLE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Many beetles have highly specific ecological and climatic requirements and are valuable indicators of past environments <span class="citation">(<a href="#ref-morgan1983late" role="doc-biblioref">Morgan et al. 1983</a>; <a href="#ref-ashworth2001aapg" role="doc-biblioref">Allan C. Ashworth, n.d.</a>; <a href="#ref-ashworth2004coleoptera" role="doc-biblioref">A. C. Ashworth 2004</a>)</span>. Coleoptera is one of the most diverse groups of organisms on Earth, and of the insects, perhaps the most commonly preserved as fossils. Allan Ashworth has assembled a database of fossil beetles from . The data, which were recorded in Excel, contain 5523 individual records of 2567 taxa from 199 sites and 165 publications. Metadata include site name, latitude and longitude, lithology of sediment, absolute age, and geological age. The basic data are similar to plant and mammal databases – lists of taxa from sites. The metadata have not been recorded to the extent of the other databases, especially chronological data, but Ashworth has resolved the taxonomic issues and has assembled the publications, so that the additional metadata can be easily pulled together.</p>
+</div>
+</div>
+<div id="who-will-use-neotoma" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Who Will Use Neotoma?<a href="introduction.html#who-will-use-neotoma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The existing databases have been used widely for a variety of studies. Because the databases have been available on-line, precise determination of how many publications have made use of them is difficult. In addition, the databases are widely used for instructional purposes. Below are examples of the kinds of people who have used these databases and who we expect will find the new, integrated database even more useful.</p>
+<ul>
+<li><p><strong>Paleoecologists</strong> seeking to place a new record into a regional/continental/global context (e.g., Bell and Mead 1998, Czaplewski et al. 1999, Bell and Barnosky 2000, Newby et al. 2000, Futyma and Miller 2001, Gavin et al. 2001, Czaplewski et al. 2002, Schauffler and Jacobson 2002, Camill et al. 2003, Rosenberg et al. 2003, Willard et al. 2003, Pasenko and Schubert 2004, and many others).</p></li>
+<li><p><strong>Synoptic paleoecologists</strong> interested in mapping regional to sub-continental to global patterns of vegetation change (e.g., Jackson et al. 1997, Williams et al. 1998, Jackson et al. 2000, Prentice et al. 2000, Thompson and Anderson 2000, Williams et al. 2000, Williams et al. 2001, Williams 2003, Webb et al. 2004, Williams et al. 2004, Asselin and Payette 2005).</p></li>
+<li><p><strong>Synoptic paleoclimatologists</strong> building benchmark paleoclimatic reconstructions for GCM evaluation (e.g., Bartlein et al. 1998, Farrera et al. 1999, Guiot et al. 1999, Kohfeld and Harrison 2000, CAPE Project Members 2001, Kageyama et al. 2001, Kaplan et al. 2003).</p></li>
+<li><p><strong>Paleontologists</strong> trying to understand the timing, patterns, and causes of extinction events (e.g., Jackson and Weng 1999, Graham 2001, Barnosky et al. 2004, Martínez-Meyer et al. 2004, Wroe et al. 2004).</p></li>
+<li><p><strong>Evolutionary biologists</strong> mapping the genetic legacies of Quaternary climatic variations (e.g., Petit et al. 1997, Fedorov 1999, Tremblay and Schoen 1999, Hewitt 2000, Comps et al. 2001, Good and Sullivan 2001, Petit et al. 2002, Kropf et al. 2003, Lessa et al. 2003, Petit et al. 2003, Hewitt 2004, Lascoux et al. 2004, Petit et al. 2004, Whorley et al. 2004, Runck and Cook 2005).</p></li>
+<li><p><strong>Macroecologists</strong> interested in temporal records of species turnover and biodiversity and historical controls on modern patterns of floristic diversity (e.g., Silvertown 1985, Qian and Ricklefs 2000, Brown et al. 2001, Haskell 2001).</p></li>
+<li><p><strong>Archeologists</strong> who are studying human subsistence patterns and interactions with their environment (e.g., Grayson 2001, Grayson and Meltzer 2002, Cannon and Meltzer 2004, Grayson in press).</p></li>
+<li><p><strong>Natural resource managers</strong> who need to know historical ranges and abundances of plants and animals for designing conservation and management plans (e.g., Graham and Graham 1994, Cole et al. 1998, Noss et al. 2000, Owen et al. 2000, Committee on Ungulate Management in Yellowstone National Park 2002, Burns et al. 2003)</p></li>
+<li><p><strong>Scientists</strong> trying to understand the potential response of plants, animals, biomes, ecosystems, and biodiversity to global warming (e.g., Bartlein et al. 1997, Davis et al. 2000, Barnosky et al. 2003, Burns et al. 2003, Kaplan et al. 2003, Schmitz et al. 2003, Jackson and Williams 2004, Martínez-Meyer et al. 2004)</p></li>
+<li><p><strong>Teachers</strong> who use the databases for teaching purposes and class exercises.</p></li>
+</ul>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ashworth2004coleoptera" class="csl-entry">
+Ashworth, A. C. 2004. <span>“The Quaternary Period in the United States.”</span> In, edited by A. R. Gillespie, S. C. Porter, and B. F. Atwater. Vol. 1. Developments in Quaternary Science. Amsterdam, The Netherlands: Elsevier.
+</div>
+<div id="ref-ashworth2001aapg" class="csl-entry">
+Ashworth, Allan C. n.d. <span>“Geological Perspectives of Global Climate Change.”</span> In. Vol. 47. AAPG Studies in Geology. American Association of Petrolium Geologists.
+</div>
+<div id="ref-berglund1996palaeoecological" class="csl-entry">
+Berglund, Björn E, HJB Birks, M Ralska-Jasiewickzowa, and Herbert E Wright. 1996. <em>Palaeoecological Events During the Last 15 000 Years: Regional Synthesis of Palaeoecological Studies of Lakes and Mires in Europe</em>. Wiley.
+</div>
+<div id="ref-Birks2003" class="csl-entry">
+Birks, H. H. 2003. <span>“The Importance of Plant Macrofossils in the Reconstruction of Lateglacial Vegetation and Climate: Examples from Scotland, Western Norway, and Minnesota, USA.”</span> Journal Article. <em>Quaternary Science Reviews</em> 22: 453–73.
+</div>
+<div id="ref-Church1989IGCPP1" class="csl-entry">
+Church, Michael. 1989. <span>“IGCP Project 158: Paleohydrology of the Temperate Zone During the Last 15 000 Years: Introduction.”</span> <em>Canadian Journal of Earth Sciences</em> 26: 1809–10.
+</div>
+<div id="ref-Members1988" class="csl-entry">
+COHMAP Members. 1988. <span>“Climatic Changes of the Last 18,000 Years: Observations and Model Simulations.”</span> Journal Article. <em>Science</em> 24: 1043–52.
+</div>
+<div id="ref-Group1994" class="csl-entry">
+FAUNMAP Working Group. 1994. <em><span>FAUNMAP</span>: A Database Documenting Late <span>Q</span>uaternary Distributions of Mammal Species in the <span>U</span>nited <span>S</span>tates</em>. Book. Vol. XXV, No. 1. Scientific Papers. Springfield, IL: Illinois State Museum.
+</div>
+<div id="ref-gibbard2010formal" class="csl-entry">
+Gibbard, Philip L, Martin J Head, Michael JC Walker, and Subcommission on Quaternary Stratigraphy. 2010. <span>“Formal Ratification of the <span>Q</span>uaternary <span>S</span>ystem/<span>P</span>eriod and the <span>P</span>leistocene <span>S</span>eries/<span>E</span>poch with a Base at 2.58 <span>Ma</span>.”</span> <em>Journal of Quaternary Science</em> 25 (2): 96–102. <a href="https://doi.org/10.1002/jqs.1338">https://doi.org/10.1002/jqs.1338</a>.
+</div>
+<div id="ref-goring2015neotoma" class="csl-entry">
+Goring, Simon, Andria Dawson, Gavin Simpson, Karthik Ram, Russ Graham, Eric Grimm, and John Williams. 2015. <span>“Neotoma: A Programmatic Interface to the Neotoma Paleoecological Database.”</span> <em>Open Quaternary</em> 1 (1).
+</div>
+<div id="ref-faunmapTwo" class="csl-entry">
+Graham, R. W., and Jr. E. L. Lundelius. 2010. <span>“FAUNMAP II: New Data for North America with a Temporal Extension for the Blancan, Irvingtonian and Early Rancholabrean.”</span> <a href="https://ucmp.berkeley.edu/faunmap">https://ucmp.berkeley.edu/faunmap</a>.
+</div>
+<div id="ref-nsf0622349" class="csl-entry">
+Graham, Russell. 2006. <span>“Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.”</span> <em><span>NSF</span> Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349</a>.
+</div>
+<div id="ref-nsf0622289" class="csl-entry">
+Grimm, Eric C. 2006. <span>“Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.”</span> <em><span>NSF</span> Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289</a>.
+</div>
+<div id="ref-Group1996" class="csl-entry">
+Group, FAUNMAP Working. 1996. <span>“Spatial Response of Mammals to Late Quaternary Environmental Fluctuations.”</span> Journal Article. <em>Science</em> 272: 1601–6.
+</div>
+<div id="ref-Huntley1993b" class="csl-entry">
+Huntley, B., and I. C. Prentice. 1993. <span>“Holocene Vegetation and Climates of Europe.”</span> Book Section. In <em>Global Climates Since the Last Glacial Maximum</em>, edited by Jr. Wright H. E., J. E. Kutzbach, III Webb T., W. F. Ruddimann, F. A. Street-Perrott, and P. J. Bartlein, 136–68. Minneapolis: University of Minnesota Press.
+</div>
+<div id="ref-Jackson2002" class="csl-entry">
+Jackson, S. T., and R. K. Booth. 2002. <span>“The Role of Late Holocene Climate Variability in the Expansion of Yellow Birch in the Western Great Lakes Region.”</span> Journal Article. <em>Diversity and Distributions</em> 8 (5): 275–84. <a href="&lt;Go to ISI&gt;://000177738400003">&lt;Go to ISI&gt;://000177738400003</a>.
+</div>
+<div id="ref-Jackson1997" class="csl-entry">
+Jackson, S. T., J. T. Overpeck, III Webb T., S. E. Keattch, and K. H. Anderson. 1997. <span>“Mapped Plant-Macrofossil and Pollen Records of Late Quaternary Vegetation Change in Eastern North America.”</span> Journal Article. <em>Quaternary Science Reviews</em> 16: 1–70.
+</div>
+<div id="ref-Jackson2000c" class="csl-entry">
+Jackson, S. T., R. S. Webb, K. H. Anderson, J. T. Overpeck, III Webb T., J. W. Williams, and B. C. S. Hansen. 2000. <span>“Vegetation and Environment in Eastern North America During the Last Glacial Maximum.”</span> Journal Article. <em>Quaternary Science Reviews</em> 19: 489–508.
+</div>
+<div id="ref-morgan1983late" class="csl-entry">
+Morgan, AV, A Morgan, AC Ashworth, JV Matthews, and SC Porter. 1983. <span>“Late Wisconsin Fossil Beetles in North America.”</span> In <em>Late Quaternary Environments of the United States</em>, 1:354–63. London: Longman.
+</div>
+<div id="ref-Webb1981" class="csl-entry">
+Webb, III, T. 1981. <span>“The Past 11,000 Years of Vegetational Change in Eastern North America.”</span> Journal Article. <em>Bioscience</em> 31: 501–6.
+</div>
+<div id="ref-Webb1987a" class="csl-entry">
+———. 1987. <span>“The Appearance and Disappearance of Major Vegetational Assemblages: Long-Term Vegetational Dynamics in Eastern North America.”</span> Journal Article. <em>Vegetatio</em> 69: 177–87.
+</div>
+<div id="ref-Webb1988b" class="csl-entry">
+———. 1988. <span>“Glacial and Holocene Vegetation History: Eastern North America.”</span> Book Section. In <em>Vegetation History</em>, edited by B. Huntley and III Webb T., 385–414. Dordrecht: Kluwer Academic.
+</div>
+<div id="ref-Wright1993c" class="csl-entry">
+Wright, Jr., H. E., J. E. Kutzbach, III Webb T., W. F. Ruddiman, F. A. Street-Perrott, and P. J Bartlein. 1993. <em>Global Climates Since the Last Glacial Maximum</em>. Book. Minneapolis: University of Minnesota Press.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sql-quickly.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"max-depth": 4
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
