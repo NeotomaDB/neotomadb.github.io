@@ -63,27 +63,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -92,9 +90,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -127,28 +125,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -164,12 +140,10 @@ div.csl-indent {
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
-<ul>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
-<ul>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
 <li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
 <li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
@@ -177,20 +151,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
-<ul>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a><ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
-<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
-<ul>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a><ul>
 <li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
 <li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
 <li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
@@ -199,8 +169,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
 <li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
-<ul>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a><ul>
 <li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
 <li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
 <li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
@@ -209,24 +178,20 @@ div.csl-indent {
 <li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
 <li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>6</b> Taxonomy Related Tables</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>6.1</b> ecolgroups</a>
-<ul>
+<li class="chapter" data-level="6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>6</b> Taxonomy Related Tables</a><ul>
+<li class="chapter" data-level="6.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>6.1</b> ecolgroups</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
 <li class="chapter" data-level="6.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>6.1.2</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>6.2</b> ecolgrouptypes</a></li>
 <li class="chapter" data-level="6.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>6.3</b> ecolsettypes</a></li>
 <li class="chapter" data-level="6.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>6.4</b> synonyms</a></li>
-<li class="chapter" data-level="6.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>6.5</b> synonymtypes</a>
-<ul>
+<li class="chapter" data-level="6.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>6.5</b> synonymtypes</a><ul>
 <li class="chapter" data-level="6.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>6.5.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>6.6</b> taxa</a></li>
 <li class="chapter" data-level="6.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>6.7</b> taxagrouptypes</a></li>
-<li class="chapter" data-level="6.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>6.8</b> Variables</a>
-<ul>
+<li class="chapter" data-level="6.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>6.8</b> Variables</a><ul>
 <li class="chapter" data-level="6.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>6.8.1</b> SQL Example</a></li>
 <li class="chapter" data-level="6.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>6.8.2</b> SQL Example</a></li>
 <li class="chapter" data-level="6.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>6.8.3</b> SQL Example</a></li>
@@ -236,37 +201,31 @@ div.csl-indent {
 <li class="chapter" data-level="6.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>6.11</b> VariableModifications</a></li>
 <li class="chapter" data-level="6.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>6.12</b> VariableUnits</a></li>
 <li class="chapter" data-level="6.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>6.13</b> RepositoryInstitutions</a></li>
-<li class="chapter" data-level="6.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>6.14</b> RepositorySpecimens</a>
-<ul>
+<li class="chapter" data-level="6.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>6.14</b> RepositorySpecimens</a><ul>
 <li class="chapter" data-level="6.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>6.14.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="6.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>6.15</b> specimendates</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Chronology &amp; Age Related Tables</a>
-<ul>
+<li class="chapter" data-level="7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Chronology &amp; Age Related Tables</a><ul>
 <li class="chapter" data-level="7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>7.1</b> AgeTypes</a></li>
 <li class="chapter" data-level="7.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>7.2</b> AggregateChronologies</a></li>
 <li class="chapter" data-level="7.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>7.3</b> ChronControls</a></li>
 <li class="chapter" data-level="7.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>7.4</b> ChronControlTypes</a></li>
-<li class="chapter" data-level="7.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>7.5</b> Chronologies</a>
-<ul>
+<li class="chapter" data-level="7.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>7.5</b> Chronologies</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>7.5.1</b> SQL Example</a></li>
 <li class="chapter" data-level="7.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>7.5.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>7.6</b> AggregateSampleAges</a>
-<ul>
+<li class="chapter" data-level="7.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>7.6</b> AggregateSampleAges</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
 <li class="chapter" data-level="7.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>7.6.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>7.7</b> <code>geochronology</code></a>
-<ul>
+<li class="chapter" data-level="7.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>7.7</b> <code>geochronology</code></a><ul>
 <li class="chapter" data-level="7.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>7.7.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>7.8</b> GeochronPublications</a></li>
 <li class="chapter" data-level="7.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>7.9</b> GeochronTypes</a></li>
 <li class="chapter" data-level="7.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>7.10</b> RelativeAgePublications</a></li>
-<li class="chapter" data-level="7.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>7.11</b> RelativeAges</a>
-<ul>
+<li class="chapter" data-level="7.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>7.11</b> RelativeAges</a><ul>
 <li class="chapter" data-level="7.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="7.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>7.12</b> RadiocarbonCalibration</a></li>
@@ -294,9 +253,9 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="database-design-concepts" class="section level1 hasAnchor" number="4">
+<div id="database-design-concepts" class="section level1 hasAnchor">
 <h1><span class="header-section-number">4</span> Database Design Concepts<a href="database-design-concepts.html#database-design-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sites-collection-units-analysis-units-samples-and-datasets" class="section level2 hasAnchor" number="4.1">
+<div id="sites-collection-units-analysis-units-samples-and-datasets" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.1</span> Sites, Collection Units, Analysis Units, Samples, and Datasets<a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Fossil data are site based. A <a href="#Sites"><code>site</code></a> has a name, latitude-longitude coordinates, altitude, and areal extent. In Neotoma, Sites are designated geographically as boxes with north and south latitude coordinates and east and west longitude coordinates. If the areal extent is not known, the box collapses to a point, with the north and south latitudes equal and the east and west longitudes equal. Most of the legacy sites in Neotoma currently have point coordinates. The lat-long box can circumscribe the site, for example a lake, or it may circumscribe a larger area in which the site lies either because the exact location of the site is not known or because the exact location is purposely kept vague. In the case of many legacy sites, the exact location is not know precisely; for example, it may have been described as «on a gravel bar 5 miles east of town». The exact locations of some sites have purposely been kept vague to prevent looting and vandalism.</p>
 <p>A (<code>Collection Unit</code>)[#CollectionUnits] is a unit from a site from which a collection of fossils or other data have been made. Typical Collection Units are cores, sections, and excavation units. A site may have several Collection Units. A Collection Unit is located spatially within a site and may have precise GPS latitude-longitude coordinates. Its definition is quite flexible. For pollen data, a Collection Unit is typically a core, a section, or surface sample. A Collection Unit can also be a composite core comprised of two or more adjacent cores pieced together to form a continuous stratigraphic sequence. A Collection Unit can also be an excavation unit. For faunal data, a Collection Unit could be as precise as an excavation square, or it could be a group of squares from a particular feature within a site. For example, consider a pit cave with three sediment cones, each with several excavation squares. Collection Units could be defined as the individual squares, or as three composite Collection Units, one from each sediment cone. Another example is an archaeological site, from which the reported Collection Units are different structures, although each structure may have had several excavation squares. The precision in the database depends on how data were entered or reported.</p>
@@ -309,12 +268,12 @@ div.csl-indent {
 <p><a href="#Samples"><code>samples</code></a> are of a single data type from an Analysis Unit. For example, there may be a vertebrate faunal sample and a macrobotanical sample from the same Analysis Unit; or there may be a pollen sample and an ostracode sample from the same Analysis Unit. There can be multiple samples of the same data type from an Analysis Unit, for example two pollen samples counted by different analysts. Normally, vertebrate fossils from an Analysis Unit comprise a single sample; however, if the fossils are of mixed age, individually dated bones may be treated as separate samples, each with a precise age. In addition to fossils, samples may also be used for physical measurements, such as loss-on-ignition. Geochronologic measurements, such as radiocarbon dates, are made on geochronologic samples.</p>
 <p>A <a href="#Datasets"><code>dataset</code></a> is a set of Samples of a single data type from a Collection Unit. For example the pollen data from a core comprise a pollen Dataset. The geochronologic samples from a Collection Unit form a geochronologic Dataset. Every Sample is assigned to a Dataset, and every Dataset is assigned to a Collection Unit. Samples from different Collection Units cannot be assigned to the same Dataset (although they may be assigned to Aggregate Datasets).</p>
 <div class="figure">
-<img src="../assets/images/image5.png" alt="" />
+<img src="../assets/images/image5.png" alt="image1" />
 <p class="caption">image1</p>
 </div>
 <p><strong>Figure 1</strong>. Diagram showing the relationships between tables in Neotoma, the Pollen Database, and FAUNMAP. Because the pollen database has only pollen, no need exists for Analysis Units, which may have multiple data types. FAUNMAP does not make a hierarchical distinction between Collection Units and Analysis Units, and the data for both Analysis Units and fauna are contained in the Faunal table, although within the Faunal table, implicit one-to-many relationships exist between Localities and Analysis Units and between Analysis Units and faunal data.</p>
 </div>
-<div id="taxa-and-variables" class="section level2 hasAnchor" number="4.2">
+<div id="taxa-and-variables" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.2</span> Taxa and Variables<a href="database-design-concepts.html#taxa-and-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In general, a sample in Neotoma has a list of taxa with some measure of abundances. The <a href="#Data"><code>data</code></a> table in Neotoma has fields for SampleID, VariableID, and Value. <strong>Variables</strong>, which are listed in the <a href="taxonomy-related-tables-1.html#Variables"><code>variables</code></a> table, consist of a <strong>Taxon</strong>, referenced in the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table, as well as the identified <strong>Element,</strong> measurement <strong>Units</strong>, <strong>Context</strong>, and <strong>Modification</strong>. A Taxon is generally a biological Taxon, but a Taxon may also be a physical attribute such as loss-on-ignition.</p>
 <ul>
@@ -324,7 +283,7 @@ div.csl-indent {
 <li>Variable <strong>Modifications</strong> include various modifications to fossils or modifiers to Variables, including human modifications to bones (e.g. «bone tool», «human butchering», «burned») and preservational and taphonomic modifications (e.g. «carnivore gnawed», «fragment»). Modifications for pollen include preservational classifications such as «corroded» and «degraded».</li>
 </ul>
 </div>
-<div id="taxonomy-and-synonymy" class="section level2 hasAnchor" number="4.3">
+<div id="taxonomy-and-synonymy" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.3</span> Taxonomy and Synonymy<a href="database-design-concepts.html#taxonomy-and-synonymy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Neotoma does not change or question identifications from original sources, although taxonomic names may be synonymized to currently accepted names. Thus, for example, the old (although still valid) non-standard plant family names such as Gramineae and Compositae are synonimized to their standard family names terminated with «-aceae», viz. Poaceae and Asteraceae. Neotoma has not attempted to establish complete or comprehensive synonymies. However, the <a href="taxonomy-related-tables-1.html#Synonyms"><code>synonyms</code></a> table lists commonly encountered synonyms. The descriptions of the <a href="taxonomy-related-tables-1.html#SynonymTypes"><code>synonymtypes</code></a> and <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> tables contain fuller discussions of synonymiztions made in Neotoma.</p>
 <p>An important feature of Neotoma is that the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table is hierarchical. Each Taxon has a HigherTaxonID, which is the TaxonID of the next higher taxonomic rank. Thus, data are stored at the highest taxonomic resolution reported by the original investigators, but can be extracted
@@ -345,13 +304,13 @@ at a higher taxonomic level.</p>
 <li>Beetles – Comprehensive manuals do not exist. Original taxonomic authorities are cited, and the database is considered authoritative.</li>
 </ul>
 </div>
-<div id="taxa-and-ecological-groups" class="section level2 hasAnchor" number="4.4">
+<div id="taxa-and-ecological-groups" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.4</span> Taxa and Ecological Groups<a href="database-design-concepts.html#taxa-and-ecological-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table, each taxon is assigned a TaxaGroupID, which refers to the <a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><code>taxagrouptypes</code></a> table. These are major taxonomic groups, such as «Vascular plants», «Diatoms», «Testate amoebae», «Mammals», «Reptiles and amphibians», «Fish», and «Molluscs». Also included are «Charcoal» and «Physical variables».</p>
 <p><strong>Ecological Groups</strong> are groupings of taxa within Taxa Groups, which may be ecological or taxonomic. Ecological Groups are assigned in the <a href="#EcolGroups"><code>ecolgroups</code></a> table, in which taxa are assigned an <code>ecolgroupid</code>, which links to the <a href="taxonomy-related-tables-1.html#EcolGroupTypes"><code>ecolgrouptypes</code></a> table, and an EcolSetID, which links to the <a href="taxonomy-related-tables-1.html#EcolSetTypes"><code>ecolsettypes</code></a> table.</p>
 <p>Ecological Groups are commonly used to organize taxa lists and stratigraphic diagrams. For any taxonomic group, more than one Ecological Set may be assigned. For example, beetles may be assigned to a set of ecological groups, such as dung and bark beetles, and to second set based on taxonomy. Vascular plants are assigned to a «Default plant» set comprised of groups such as «Trees and Shrubs», «Upland Herbs», and «Terrestrial Vascular Cryptogams». Default pollen diagrams can then be generated based on a pollen sum of these three groups. Mammals are assigned to a «Vertebrate orders» set.</p>
 </div>
-<div id="chronology" class="section level2 hasAnchor" number="4.5">
+<div id="chronology" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.5</span> Chronology<a href="database-design-concepts.html#chronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Neotoma stores both the archival data used to reconstruct chronologies as well as interpreted chronologies derived from the archival data. The basic data used to reconstruct chronologies occurs in three tables:</p>
 <ul>
@@ -362,14 +321,14 @@ at a higher taxonomic level.</p>
 <p>The <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a> table includes geophysical measurements such as radiocarbon, thermoluminescence, uranium series, and potassium-argon dates. This table also includes dendrochronological dates derived from tree-ring chronologies, for example logs in archaeological structures. The <a href="chronology-age-related-tables-1.html#Tephrachronology"><code>tephrachronology</code></a> table records tephras in Analysis Units. This table refers to the <a href="chronology-age-related-tables-1.html#Tephras"><code>tephras</code></a> lookup table, which stores the ages for known tephras. The <a href="chronology-age-related-tables-1.html#RelativeChronology"><code>relativechronology</code></a> table stores relative age information for Analysis Units. Relative age scales include the archaeological time scale, geologic time scale, geomagnetic polarity time scale, marine isotope stages, North American land mammal ages, and Quaternary event classification. For example, diagnostic artifacts from an archaeological site may have cultural associations with a known age ranges, which can be assigned to Analysis Units. The faunal assemblage from an Analysis Unit may be assignable to particular land mammal age, which places it within a broad time range. Sedimentary units may be assigned to particular geomagnetic chrons, marine isotope stages, or Quaternary events, such as a particular interglacial. Many of these relative ages have rather broad time spans, but do provide some chronologic control.</p>
 <p>Actual Chronologies are constructed from the basic chronologic data in the <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a>, <a href="chronology-age-related-tables-1.html#Tephrachronology"><code>tephrachronology</code></a>, and <a href="chronology-age-related-tables-1.html#RelativeChronology"><code>relativechronology</code></a> tables. These chronologies are stored in the <a href="chronology-age-related-tables-1.html#Chronologies"><code>chronologies</code></a> table. A Chronology applies to a Collection Unit and consists of a number of Chron Controls, which are ages assigned to Analysis Units. A Chron Control may be an actual geochronologic measurement, such as a radiocarbon date, or it may be derived from the actual measurement, such as a radiocarbon date adjusted for an old carbon reservoir or calibrated to calendar years. A Chron Control may by an average of several radiocarbon dates from the same Analyis Unit. Different kinds of basic chronologic data may be used to assign an age to an Analysis Unit, for example radiocarbon dates and diagnostic archaeological artifacts. Some relative Chron Controls are not from one of the established relative time scales. Examples of these are local biostratigraphic controls, which may be based on dated horizons from nearby sites. A familiar example in is the <em>Ambrosia</em>-rise, which marks European settlement. The exact date varies regionally, depending on when settlement occurred locally. For a given site, the date assigned to the <em>Ambrosia</em>-rise may be based on historical information about when settlement occurred or possibly on geophysical dating (e.g. <sup>210</sup>Pb) of a nearby site.</p>
 <div class="figure">
-<img src="assets/images/image6.png" alt="" />
+<img src="assets/images/image6.png" alt="image2" />
 <p class="caption">image2</p>
 </div>
 <p>For continuous stratigraphic sequences, such as cores, not every Analysis Unit may have a direct date. Therefore, ages are commonly interpolated between dated Analysis Units. In this case, the ChronControls are the age-depth control points for an age model, which may be linear interpolation between Chron Controls or a fitted curve or spline.</p>
 <p><strong>Figure 2. Smoothed quick radiocarbon calibration curve. At the scale of this figure the difference is mostly less than the line thickness.</strong></p>
 <p>Age is measured in different time scales, the two most commn being radiocarbon years before present (<sup>14</sup>C yr BP) or presumed calendar years before present (cal yr BP). For a calibrated radiocarbon date, «cal yr BP» technically stands for «calibrated years before present», i.e. calibrated to calendar years. In Neotoma, «cal yr BP» is used for both calibrated radiocarbon years and for other ages scales presumed to be in calendar years, viz. dendrochronologic years and other geochronlogic ages believed to be in calendar years. The zero datum for any «BP» age is ad 1950, regardless of its derivation. Thus, BP ages younger than ad 1950 are negative—ad 2000 = ‑50 BP.</p>
 <div class="figure">
-<img src="assets/images/image7.png" alt="" />
+<img src="assets/images/image7.png" alt="image3" />
 <p class="caption">image3</p>
 </div>
 <p>Ages may be reported in ad/bc age units, in which case bc years are stored as negative values. If ages are reported with a datum other than ad 1950 for BP years, the ages must be converted to an ad 1950 datum or to the ad/bc age scale before entry into Neotoma. For example, <sup>210</sup>Pb dates are often reported relative to the year of analysis; these must be converted to either ad/bc or «cal yr BP» with an ad 1950 datum.</p>
@@ -379,19 +338,19 @@ at a higher taxonomic level.</p>
 <p>Calibrated radiocarbon dates better represent the true time scale and the true errors and probability distributions of the age estimates. In addition, other important paleo records, notably the ice cores and tree-ring records, have calendar-year time-scales. Therefore, for comparison among proxies and records, it is clearly desirable to place all records on the same time-scale, viz. a calendar-year time-scale. Although this goal is laudable, most of the data ingested into Neotoma from other databases is on a radiocarbon time scale. The majority of assigned ages and almost all the ages from the pollen database are interpolated ages derived from age models. The proper method for deriving calibrated ages is to calibrate the radiocarbon dates and then reinterpolate new ages between these calibrated dates.</p>
 <p>Virtually all age models are problematic. A key problem is that most age models linearly interpolate between age-depth points or fit functions or splines to points. However, radiocarbon ages are not points, but probability distributions. Moreover, the probability distributions of calibrated ages are non-Gaussian. Each calibrated age has a unique probability distribution, and many are bimodal or multimodal. Various investigators have used different points, including the intercepts of the radiocarbon age with the calibration curve and the midpoint of the 1σ or 2σ probability distributon. The former is particularly inappropriate (Telford et al. 2004b). The 50% median probability is probably the best single point; however, because of multimodality, this particular point may, in fact, be very unlikely. Nevertheless, if it falls between more-or-less equally probable modes, it may still be the best single point. Most age models for cores are based on relataively few radiocarbon dates, and the uncertainties of the interpolated ages are unknown and large (Telford et al. 2004a). Indeed, chronology is perhaps the greatest challenge for future research with this database.</p>
 <div class="figure">
-<img src="assets/images/image9.png" alt="" />
+<img src="assets/images/image9.png" alt="image5" />
 <p class="caption">image5</p>
 </div>
 <p><strong>Figure 5. Anomalies (Sample ages from Neotoma default calendar-year age models minus ages calculated with the Neotoma quick calibration curve) vs. time.</strong></p>
 <p>Given the need for a common age scale and the enormity of the task to properly develop new age models, a <a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><code>radiocarboncalibration</code></a> conversion table was developed to quickly convert sample ages in radiocarbon years to calendar years. These calibrated ages are for perusal and data exploration; however, the differences between these ages and those calculated with traditional age models are relatively small. The table contains radiocarbon ages from -100 to 45,000 in 1-year increments with corresponding calibrated values. The table was generated by smoothing the INTCAL04 calibration curve with an FFT filter so that the curve is monotonically increasing, i.e. so that there are no age reversals in calibrated age. The INTCAL04 curve is in 5-yr increments from -5 to 12,500 <sup>14</sup>C yr BP, 10-yr increments from 12,500 to 15,000 <sup>14</sup>C yr BP, and 20-yr increments from 15,000 to 26,000 <sup>14</sup>C yr BP. The FFT filter was 50 points (250 yr) for the first interval, 25 points (250 yr) for the second interval, and 10 points (200 yr) for the third interval. For the calibration beyond 26,000 <sup>14</sup>C yr BP, a calibrated age was determined with the Fairbanks0107 calibration curve every 100 years with a standard deviation of ±100 years from 20,000±100 <sup>14</sup>C yr BP to 46,700±100 <sup>14</sup>C yr BP. These were then smoothed with a 5-sample (500-yr) FFT filter. The curve kinks sharply after 45,000 <sup>14</sup>C yr BP, so the quick calibration curve was terminated at this date. The Fairbanks0107 curve diverges somewhat from the INTCAL04 curve for the portion they overlap in age. From 20,000 to 26,000 <sup>14</sup>C yr BP, the difference was prorated linearly from zero divergence from the INTCAL04 curve at 20,000 <sup>14</sup>C yr BP to zero divergence from the Fairbanks0107 curve at 26,000 <sup>14</sup>C yr BP. <strong>Figure 2</strong> shows the smoothed curve, and Error! Reference source not found. shows an enlargement of part of the curve.</p>
 <p>An analysis was made to assess the deviation between ages derived from traditionally calibrated age models and ages derived from the quick calibration curve. From the database, 57 default Chronologies in calibrated radiocarbon years were selected. The Chron Controls were all calibrated radiocarbon dates, except for top dates, European settlement dates, and <sup>210</sup>Pb dates in the uppermost portions of the cores. A few Chronologies used the Zdanowicz et al. (1999) calendar-year age from the GISP2 ice core. Ages beyond the reliable age limit (<code>Chronologies.AgeBoundOlder</code>[#Chronologies]) were not used. These 57 Chronologies had a total of 1945 Sample Ages in calibrated radiocarbon years. <strong>Figure 4</strong> shows graph of ages from the Neotoma age models vs. the ages calculated with the quick calibration curve. Error! Reference source not found. shows the anomalies vs. time and <strong>Figure 6</strong> shows a histogram of the distribution of anomalies. Nearly half (47%) of the anomalies are &lt;25 years, 86% are &lt;100 years, 97% are &lt;200 years, and 99.4% are &lt;300 years. The average absolute anomaly is 49.2 years, and the median is 29 years. Thus, the quick calibration curve provides remarkably good results. The ages have no confidence limits, but neither do the interpolated ages of most age models.</p>
 <div class="figure">
-<img src="assets/images/image10.png" alt="" />
+<img src="assets/images/image10.png" alt="image6" />
 <p class="caption">image6</p>
 </div>
 <p>Figure 6. Binned distribution of anomalies between Neotoma default calendar-year age models and ages calculated with the Neotoma quick calibration curve.</p>
 </div>
-<div id="sediment-and-depositional-environments" class="section level2 hasAnchor" number="4.6">
+<div id="sediment-and-depositional-environments" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.6</span> Sediment and Depositional Environments<a href="database-design-concepts.html#sediment-and-depositional-environments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Several tables deal with depositional environments, depositional agents, and sediment descriptions. In Neotoma, the <strong>Depositional Environment</strong>
 refers to the Depositional Environment of the site today, for example, «», «Fen», «Cave», «Colluvial Fan». Depositional Environments may vary within a Site. For example, a lake with a marginal fen has lake and fen Depositional Environments. Thus, Depositional Environments are an attribute of Collection Units and are assigned in the <a href="#CollectionUnits"><code>collectionunits</code></a> table. Depositional Environments are listed in the in the <a href="#DepEnvtTypes"><code>depenvttypes</code></a> lookup table, and they are hierarchical, for example:</p>
@@ -399,10 +358,10 @@ refers to the Depositional Environment of the site today, for example, «», «F
 <p>Glacial Lacustrine</p>
 </blockquote>
 <p>Any of these Depositional Environments may be assigned to a Collection Unit, but because they are hierarchical, Collection Units may be grouped at higher levels, for example, all Collection Units from natural lakes. The top level Depositional Environments, with some examples, are:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="database-design-concepts.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> depenvt <span class="kw">AS</span> <span class="ot">&quot;Depositional Environment&quot;</span> </span>
-<span id="cb8-2"><a href="database-design-concepts.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.depenvttypes </span>
-<span id="cb8-3"><a href="database-design-concepts.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> depenvtid <span class="op">=</span> depenvthigherid </span>
-<span id="cb8-4"><a href="database-design-concepts.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">SELECT</span> depenvt <span class="kw">AS</span> <span class="ot">&quot;Depositional Environment&quot;</span> </a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="kw">FROM</span> ndb.depenvttypes </a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">WHERE</span> depenvtid <span class="op">=</span> depenvthigherid </a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="kw">LIMIT</span> <span class="dv">10</span>;</a></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:topleveldepenv">Table 4.1: </span>Displaying records 1 - 10</caption>
@@ -450,7 +409,7 @@ refers to the Depositional Environment of the site today, for example, «», «F
 table and are assigned to Analysis Units in the <a href="#DepAgents"><code>depagents</code></a> table.</p>
 <p>Whereas Facies and Depositional Agents are both keyed to Analysis Units, the <a href="#Lithology"><code>lithology</code></a> table is keyed to Collection Units. Analysis Units, especially from cores, may not be contiguous but be placed at discrete intervals down section. Lithologic units are defined by depth in the Collection Unit. Whereas Facies have short descriptions and are keyed to the <a href="#FaciesTypes"><code>faciestypes</code></a> lookup table, the <code>Lithology.Description</code>[#Lithology] field is a memo, and lithologic descriptions much more detailed than Facies descriptions. FAUNMAP, which was built around Analysis Units, stores Facies and Depositional Agent data; whereas the pollen database, which was centered on Collection Units, stores lithologic data.</p>
 </div>
-<div id="date-fields" class="section level2 hasAnchor" number="4.7">
+<div id="date-fields" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.7</span> Date Fields<a href="database-design-concepts.html#date-fields" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Neotoma uses date fields in several tables. Dates are stored internally as a double precision floating point number, which facilitates calculations and functions involving dates. The disadvantage is that complete dates must be stored, i.e. year, month, and day; whereas in many cases only the year or month are known, for example the month a core was collected. Neotoma had adapted the convention that if only the month is known, the day is set to the first of the month; if only the year is known, the month and day are set to January 1. Thus, «June 1984» is set to «June 1, 1984»; and «1984» is set to «January 1, 1984». The drawback, of course, is that these imprecise dates cannot be distinguished from precise dates on the first of the month. However, it was determined that the advantages of the date fields outweighed this disadvantage.</p>
 
@@ -459,11 +418,11 @@ table and are assigned to Analysis Units in the <a href="#DepAgents"><code>depag
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p><a href="http://www.ipni.org" class="uri">http://www.ipni.org</a><a href="database-design-concepts.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p><a href="http://medias.obs-mip.fr/apd/" class="uri">http://medias.obs-mip.fr/apd/</a><a href="database-design-concepts.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p><a href="http://calib.qub.ac.uk/calib/" class="uri">http://calib.qub.ac.uk/calib/</a><a href="database-design-concepts.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p><a href="http://c14.arch.ox.ac.uk/embed.php?File=oxcal.html" class="uri">http://c14.arch.ox.ac.uk/embed.php?File=oxcal.html</a><a href="database-design-concepts.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p><a href="http://radiocarbon.ldeo.columbia.edu/research/radcarbcal.htm" class="uri">http://radiocarbon.ldeo.columbia.edu/research/radcarbcal.htm</a><a href="database-design-concepts.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p><a href="http://www.ipni.org" class="uri">http://www.ipni.org</a><a href="database-design-concepts.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p><a href="http://medias.obs-mip.fr/apd/" class="uri">http://medias.obs-mip.fr/apd/</a><a href="database-design-concepts.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="http://calib.qub.ac.uk/calib/" class="uri">http://calib.qub.ac.uk/calib/</a><a href="database-design-concepts.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="http://c14.arch.ox.ac.uk/embed.php?File=oxcal.html" class="uri">http://c14.arch.ox.ac.uk/embed.php?File=oxcal.html</a><a href="database-design-concepts.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><a href="http://radiocarbon.ldeo.columbia.edu/research/radcarbcal.htm" class="uri">http://radiocarbon.ldeo.columbia.edu/research/radcarbcal.htm</a><a href="database-design-concepts.html#fnref5" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

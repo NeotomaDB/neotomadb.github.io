@@ -63,27 +63,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -92,9 +90,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -127,28 +125,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -164,12 +140,10 @@ div.csl-indent {
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
-<ul>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
-<ul>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
 <li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
 <li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
@@ -177,20 +151,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
-<ul>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a><ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
-<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
-<ul>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a><ul>
 <li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
 <li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
 <li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
@@ -199,8 +169,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
 <li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
-<ul>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a><ul>
 <li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
 <li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
 <li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
@@ -209,24 +178,20 @@ div.csl-indent {
 <li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
 <li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>6</b> Taxonomy Related Tables</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>6.1</b> ecolgroups</a>
-<ul>
+<li class="chapter" data-level="6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>6</b> Taxonomy Related Tables</a><ul>
+<li class="chapter" data-level="6.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>6.1</b> ecolgroups</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
 <li class="chapter" data-level="6.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>6.1.2</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>6.2</b> ecolgrouptypes</a></li>
 <li class="chapter" data-level="6.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>6.3</b> ecolsettypes</a></li>
 <li class="chapter" data-level="6.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>6.4</b> synonyms</a></li>
-<li class="chapter" data-level="6.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>6.5</b> synonymtypes</a>
-<ul>
+<li class="chapter" data-level="6.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>6.5</b> synonymtypes</a><ul>
 <li class="chapter" data-level="6.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>6.5.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>6.6</b> taxa</a></li>
 <li class="chapter" data-level="6.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>6.7</b> taxagrouptypes</a></li>
-<li class="chapter" data-level="6.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>6.8</b> Variables</a>
-<ul>
+<li class="chapter" data-level="6.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>6.8</b> Variables</a><ul>
 <li class="chapter" data-level="6.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>6.8.1</b> SQL Example</a></li>
 <li class="chapter" data-level="6.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>6.8.2</b> SQL Example</a></li>
 <li class="chapter" data-level="6.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>6.8.3</b> SQL Example</a></li>
@@ -236,37 +201,31 @@ div.csl-indent {
 <li class="chapter" data-level="6.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>6.11</b> VariableModifications</a></li>
 <li class="chapter" data-level="6.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>6.12</b> VariableUnits</a></li>
 <li class="chapter" data-level="6.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>6.13</b> RepositoryInstitutions</a></li>
-<li class="chapter" data-level="6.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>6.14</b> RepositorySpecimens</a>
-<ul>
+<li class="chapter" data-level="6.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>6.14</b> RepositorySpecimens</a><ul>
 <li class="chapter" data-level="6.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>6.14.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="6.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>6.15</b> specimendates</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Chronology &amp; Age Related Tables</a>
-<ul>
+<li class="chapter" data-level="7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Chronology &amp; Age Related Tables</a><ul>
 <li class="chapter" data-level="7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>7.1</b> AgeTypes</a></li>
 <li class="chapter" data-level="7.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>7.2</b> AggregateChronologies</a></li>
 <li class="chapter" data-level="7.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>7.3</b> ChronControls</a></li>
 <li class="chapter" data-level="7.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>7.4</b> ChronControlTypes</a></li>
-<li class="chapter" data-level="7.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>7.5</b> Chronologies</a>
-<ul>
+<li class="chapter" data-level="7.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>7.5</b> Chronologies</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>7.5.1</b> SQL Example</a></li>
 <li class="chapter" data-level="7.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>7.5.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>7.6</b> AggregateSampleAges</a>
-<ul>
+<li class="chapter" data-level="7.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>7.6</b> AggregateSampleAges</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
 <li class="chapter" data-level="7.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>7.6.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>7.7</b> <code>geochronology</code></a>
-<ul>
+<li class="chapter" data-level="7.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>7.7</b> <code>geochronology</code></a><ul>
 <li class="chapter" data-level="7.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>7.7.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>7.8</b> GeochronPublications</a></li>
 <li class="chapter" data-level="7.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>7.9</b> GeochronTypes</a></li>
 <li class="chapter" data-level="7.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>7.10</b> RelativeAgePublications</a></li>
-<li class="chapter" data-level="7.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>7.11</b> RelativeAges</a>
-<ul>
+<li class="chapter" data-level="7.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>7.11</b> RelativeAges</a><ul>
 <li class="chapter" data-level="7.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="7.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>7.12</b> RadiocarbonCalibration</a></li>
@@ -294,7 +253,7 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 hasAnchor" number="8">
+<div id="references" class="section level1 hasAnchor">
 <h1><span class="header-section-number">8</span> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>American Ornithologists' Union. 1983. Check-list of North American
 birds, seventh edition. American Ornithologists' Union, Washington,
@@ -672,78 +631,78 @@ Alcheringa 28:291-331.</p>
 eruption: calendrical age verified and atmospheric impact assessed.
 Geology 27:621-624.</p>
 
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div class="csl-entry">
-Ashworth, A. C. 2004. <span>“The Quaternary Period in the United States.”</span> In, edited by A. R. Gillespie, S. C. Porter, and B. F. Atwater. Vol. 1. Developments in Quaternary Science. Amsterdam, The Netherlands: Elsevier.
+<div id="refs" class="references">
+<div>
+<p>Ashworth, A. C. 2004. “The Quaternary Period in the United States.” In, edited by A. R. Gillespie, S. C. Porter, and B. F. Atwater. Vol. 1. Developments in Quaternary Science. Amsterdam, The Netherlands: Elsevier.</p>
 </div>
-<div class="csl-entry">
-Ashworth, Allan C. n.d. <span>“Geological Perspectives of Global Climate Change.”</span> In. Vol. 47. AAPG Studies in Geology. American Association of Petrolium Geologists.
+<div>
+<p>Ashworth, Allan C. n.d. “Geological Perspectives of Global Climate Change.” In. Vol. 47. AAPG Studies in Geology. American Association of Petrolium Geologists.</p>
 </div>
-<div class="csl-entry">
-Berglund, Björn E, HJB Birks, M Ralska-Jasiewickzowa, and Herbert E Wright. 1996. <em>Palaeoecological Events During the Last 15 000 Years: Regional Synthesis of Palaeoecological Studies of Lakes and Mires in Europe</em>. Wiley.
+<div>
+<p>Berglund, Björn E, HJB Birks, M Ralska-Jasiewickzowa, and Herbert E Wright. 1996. <em>Palaeoecological Events During the Last 15 000 Years: Regional Synthesis of Palaeoecological Studies of Lakes and Mires in Europe</em>. Wiley.</p>
 </div>
-<div class="csl-entry">
-Birks, H. H. 2003. <span>“The Importance of Plant Macrofossils in the Reconstruction of Lateglacial Vegetation and Climate: Examples from Scotland, Western Norway, and Minnesota, USA.”</span> Journal Article. <em>Quaternary Science Reviews</em> 22: 453–73.
+<div>
+<p>Birks, H. H. 2003. “The Importance of Plant Macrofossils in the Reconstruction of Lateglacial Vegetation and Climate: Examples from Scotland, Western Norway, and Minnesota, Usa.” Journal Article. <em>Quaternary Science Reviews</em> 22: 453–73.</p>
 </div>
-<div class="csl-entry">
-Church, Michael. 1989. <span>“IGCP Project 158: Paleohydrology of the Temperate Zone During the Last 15 000 Years: Introduction.”</span> <em>Canadian Journal of Earth Sciences</em> 26: 1809–10.
+<div>
+<p>Church, Michael. 1989. “IGCP Project 158: Paleohydrology of the Temperate Zone During the Last 15 000 Years: Introduction.” <em>Canadian Journal of Earth Sciences</em> 26: 1809–10.</p>
 </div>
-<div class="csl-entry">
-COHMAP Members. 1988. <span>“Climatic Changes of the Last 18,000 Years: Observations and Model Simulations.”</span> Journal Article. <em>Science</em> 24: 1043–52.
+<div>
+<p>COHMAP Members. 1988. “Climatic Changes of the Last 18,000 Years: Observations and Model Simulations.” Journal Article. <em>Science</em> 24: 1043–52.</p>
 </div>
-<div class="csl-entry">
-FAUNMAP Working Group. 1994. <em><span>FAUNMAP</span>: A Database Documenting Late <span>Q</span>uaternary Distributions of Mammal Species in the <span>U</span>nited <span>S</span>tates</em>. Book. Vol. XXV, No. 1. Scientific Papers. Springfield, IL: Illinois State Museum.
+<div>
+<p>FAUNMAP Working Group. 1994. <em>FAUNMAP: A Database Documenting Late Quaternary Distributions of Mammal Species in the United States</em>. Book. Vols. XXV, No. 1. Scientific Papers. Springfield, IL: Illinois State Museum.</p>
 </div>
-<div class="csl-entry">
-Gibbard, Philip L, Martin J Head, Michael JC Walker, and Subcommission on Quaternary Stratigraphy. 2010. <span>“Formal Ratification of the <span>Q</span>uaternary <span>S</span>ystem/<span>P</span>eriod and the <span>P</span>leistocene <span>S</span>eries/<span>E</span>poch with a Base at 2.58 <span>Ma</span>.”</span> <em>Journal of Quaternary Science</em> 25 (2): 96–102. <a href="https://doi.org/10.1002/jqs.1338">https://doi.org/10.1002/jqs.1338</a>.
+<div>
+<p>Gibbard, Philip L, Martin J Head, Michael JC Walker, and Subcommission on Quaternary Stratigraphy. 2010. “Formal Ratification of the Quaternary System/Period and the Pleistocene Series/Epoch with a Base at 2.58 Ma.” <em>Journal of Quaternary Science</em> 25 (2): 96–102. <a href="https://doi.org/10.1002/jqs.1338">https://doi.org/10.1002/jqs.1338</a>.</p>
 </div>
-<div class="csl-entry">
-Goring, Simon, Andria Dawson, Gavin Simpson, Karthik Ram, Russ Graham, Eric Grimm, and John Williams. 2015. <span>“Neotoma: A Programmatic Interface to the Neotoma Paleoecological Database.”</span> <em>Open Quaternary</em> 1 (1).
+<div>
+<p>Goring, Simon, Andria Dawson, Gavin Simpson, Karthik Ram, Russ Graham, Eric Grimm, and John Williams. 2015. “Neotoma: A Programmatic Interface to the Neotoma Paleoecological Database.” <em>Open Quaternary</em> 1 (1).</p>
 </div>
-<div class="csl-entry">
-Graham, R. W., and Jr. E. L. Lundelius. 2010. <span>“FAUNMAP II: New Data for North America with a Temporal Extension for the Blancan, Irvingtonian and Early Rancholabrean.”</span> <a href="https://ucmp.berkeley.edu/faunmap">https://ucmp.berkeley.edu/faunmap</a>.
+<div>
+<p>Graham, Russell. 2006. “Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.” <em>NSF Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349</a>.</p>
 </div>
-<div class="csl-entry">
-Graham, Russell. 2006. <span>“Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.”</span> <em><span>NSF</span> Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349</a>.
+<div>
+<p>Graham, R.W., and Jr. E.L. Lundelius. 2010. “FAUNMAP Ii: New Data for North America with a Temporal Extension for the Blancan, Irvingtonian and Early Rancholabrean.” <a href="https://ucmp.berkeley.edu/faunmap">https://ucmp.berkeley.edu/faunmap</a>.</p>
 </div>
-<div class="csl-entry">
-Grimm, EC. 2008. <span>“Neotoma: An Ecosystem Database for the Pliocene, Pleistocene, and Holocene.”</span> <em>Illinois State Museum Scientific Papers E Series</em> 1.
+<div>
+<p>Grimm, EC. 2008. “Neotoma: An Ecosystem Database for the Pliocene, Pleistocene, and Holocene.” <em>Illinois State Museum Scientific Papers E Series</em> 1.</p>
 </div>
-<div class="csl-entry">
-Grimm, Eric C. 2006. <span>“Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.”</span> <em><span>NSF</span> Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289</a>.
+<div>
+<p>Grimm, Eric C. 2006. “Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.” <em>NSF Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289</a>.</p>
 </div>
-<div class="csl-entry">
-Group, FAUNMAP Working. 1996. <span>“Spatial Response of Mammals to Late Quaternary Environmental Fluctuations.”</span> Journal Article. <em>Science</em> 272: 1601–6.
+<div>
+<p>Group, FAUNMAP Working. 1996. “Spatial Response of Mammals to Late Quaternary Environmental Fluctuations.” Journal Article. <em>Science</em> 272: 1601–6.</p>
 </div>
-<div class="csl-entry">
-Huntley, B., and I. C. Prentice. 1993. <span>“Holocene Vegetation and Climates of Europe.”</span> Book Section. In <em>Global Climates Since the Last Glacial Maximum</em>, edited by Jr. Wright H. E., J. E. Kutzbach, III Webb T., W. F. Ruddimann, F. A. Street-Perrott, and P. J. Bartlein, 136–68. Minneapolis: University of Minnesota Press.
+<div>
+<p>Huntley, B., and I. C. Prentice. 1993. “Holocene Vegetation and Climates of Europe.” Book Section. In <em>Global Climates Since the Last Glacial Maximum</em>, edited by Jr. Wright H. E., J. E. Kutzbach, III Webb T., W. F. Ruddimann, F. A. Street-Perrott, and P. J. Bartlein, 136–68. Minneapolis: University of Minnesota Press.</p>
 </div>
-<div class="csl-entry">
-Jackson, S. T., and R. K. Booth. 2002. <span>“The Role of Late Holocene Climate Variability in the Expansion of Yellow Birch in the Western Great Lakes Region.”</span> Journal Article. <em>Diversity and Distributions</em> 8 (5): 275–84. <a href="&lt;Go to ISI&gt;://000177738400003">&lt;Go to ISI&gt;://000177738400003</a>.
+<div>
+<p>Jackson, S. T., and R. K. Booth. 2002. “The Role of Late Holocene Climate Variability in the Expansion of Yellow Birch in the Western Great Lakes Region.” Journal Article. <em>Diversity and Distributions</em> 8 (5): 275–84. <a href="&lt;Go to ISI&gt;://000177738400003">&lt;Go to ISI&gt;://000177738400003</a>.</p>
 </div>
-<div class="csl-entry">
-Jackson, S. T., J. T. Overpeck, III Webb T., S. E. Keattch, and K. H. Anderson. 1997. <span>“Mapped Plant-Macrofossil and Pollen Records of Late Quaternary Vegetation Change in Eastern North America.”</span> Journal Article. <em>Quaternary Science Reviews</em> 16: 1–70.
+<div>
+<p>Jackson, S. T., J. T. Overpeck, III Webb T., S. E. Keattch, and K. H. Anderson. 1997. “Mapped Plant-Macrofossil and Pollen Records of Late Quaternary Vegetation Change in Eastern North America.” Journal Article. <em>Quaternary Science Reviews</em> 16: 1–70.</p>
 </div>
-<div class="csl-entry">
-Jackson, S. T., R. S. Webb, K. H. Anderson, J. T. Overpeck, III Webb T., J. W. Williams, and B. C. S. Hansen. 2000. <span>“Vegetation and Environment in Eastern North America During the Last Glacial Maximum.”</span> Journal Article. <em>Quaternary Science Reviews</em> 19: 489–508.
+<div>
+<p>Jackson, S. T., R. S. Webb, K. H. Anderson, J. T. Overpeck, III Webb T., J. W. Williams, and B. C. S. Hansen. 2000. “Vegetation and Environment in Eastern North America During the Last Glacial Maximum.” Journal Article. <em>Quaternary Science Reviews</em> 19: 489–508.</p>
 </div>
-<div class="csl-entry">
-Jacobson, George L. 2021. <span>“A Tribute to <span>Eric C. Grimm</span> (1951–2020).”</span> <em>Palynology</em> 45 (2): 187–90. <a href="https://doi.org/10.1080/01916122.2020.1870281">https://doi.org/10.1080/01916122.2020.1870281</a>.
+<div>
+<p>Jacobson, George L. 2021. “A Tribute to Eric C. Grimm (1951–2020).” <em>Palynology</em> 45 (2): 187–90. <a href="https://doi.org/10.1080/01916122.2020.1870281">https://doi.org/10.1080/01916122.2020.1870281</a>.</p>
 </div>
-<div class="csl-entry">
-Morgan, AV, A Morgan, AC Ashworth, JV Matthews, and SC Porter. 1983. <span>“Late Wisconsin Fossil Beetles in North America.”</span> In <em>Late Quaternary Environments of the United States</em>, 1:354–63. London: Longman.
+<div>
+<p>Morgan, AV, A Morgan, AC Ashworth, JV Matthews, and SC Porter. 1983. “Late Wisconsin Fossil Beetles in North America.” In <em>Late Quaternary Environments of the United States</em>, 1:354–63. London: Longman.</p>
 </div>
-<div class="csl-entry">
-Webb, III, T. 1981. <span>“The Past 11,000 Years of Vegetational Change in Eastern North America.”</span> Journal Article. <em>Bioscience</em> 31: 501–6.
+<div>
+<p>Webb, III, T. 1981. “The Past 11,000 Years of Vegetational Change in Eastern North America.” Journal Article. <em>Bioscience</em> 31: 501–6.</p>
 </div>
-<div class="csl-entry">
-———. 1987. <span>“The Appearance and Disappearance of Major Vegetational Assemblages: Long-Term Vegetational Dynamics in Eastern North America.”</span> Journal Article. <em>Vegetatio</em> 69: 177–87.
+<div>
+<p>———. 1987. “The Appearance and Disappearance of Major Vegetational Assemblages: Long-Term Vegetational Dynamics in Eastern North America.” Journal Article. <em>Vegetatio</em> 69: 177–87.</p>
 </div>
-<div class="csl-entry">
-———. 1988. <span>“Glacial and Holocene Vegetation History: Eastern North America.”</span> Book Section. In <em>Vegetation History</em>, edited by B. Huntley and III Webb T., 385–414. Dordrecht: Kluwer Academic.
+<div>
+<p>———. 1988. “Glacial and Holocene Vegetation History: Eastern North America.” Book Section. In <em>Vegetation History</em>, edited by B. Huntley and III Webb T., 385–414. Dordrecht: Kluwer Academic.</p>
 </div>
-<div class="csl-entry">
-Wright, Jr., H. E., J. E. Kutzbach, III Webb T., W. F. Ruddiman, F. A. Street-Perrott, and P. J Bartlein. 1993. <em>Global Climates Since the Last Glacial Maximum</em>. Book. Minneapolis: University of Minnesota Press.
+<div>
+<p>Wright, Jr., H. E., J. E. Kutzbach, III Webb T., W. F. Ruddiman, F. A. Street-Perrott, and P. J Bartlein. 1993. <em>Global Climates Since the Last Glacial Maximum</em>. Book. Minneapolis: University of Minnesota Press.</p>
 </div>
 </div>
 </div>

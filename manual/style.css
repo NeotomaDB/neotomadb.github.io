@@ -142,3 +142,14 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+div.references {
+  margin-left: 1cm;
+  text-indent: -0.5cm;
+  font-family: "EB Garamond";
+  font-size: 11pt
+}
+
+div.references.hangingindent:hover{
+  background:#dddddd
+}
