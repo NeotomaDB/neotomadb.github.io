@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Introduction | Neotoma Paleoecology Manual v2.0</title>
+  <title>9 Publications | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Introduction | Neotoma Paleoecology Manual v2.0" />
+  <meta property="og:title" content="9 Publications | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Introduction | Neotoma Paleoecology Manual v2.0" />
+  <meta name="twitter:title" content="9 Publications | Neotoma Paleoecology Manual v2.0" />
   
   <meta name="twitter:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="sql-quickly.html"/>
+<link rel="prev" href="publication-related-tables-1.html"/>
+<link rel="next" href="PublicationTypes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -330,188 +330,245 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor">
-<h1><span class="header-section-number">2</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Neotoma is a public database containing fossil data from the Holocene, Pleistocene, and Pliocene, or approximately the last 5.3 million years. The database stores associated physical data from fossil bearing deposits, for example sediment loss-on-ignition and geochemical data. The database also stores data from modern samples that are used to interpret fossil data.</p>
-<p>The initial development of Neotoma was funded by a grant from the U.S. National Science Foundation Geoinformatics program. The inital grant was a collaborative proposal between Penn State University <span class="citation">(Graham <a href="#ref-nsf0622349">2006</a>)</span> and the Illinois State Museum <span class="citation">(Grimm <a href="#ref-nsf0622289">2006</a>)</span>. It had five Principle Investigators, Russell W. Graham, Eric C. Grimm, Stephen T. Jackson, Allan C. Ashworth, and John W. (Jack) Williams.</p>
-<p>Initially, data within Neotoma were merged from four existing databases: the Global Pollen Database, <a href="<a href="introduction.html#FAUNMAP">2.3.3</a>">FAUNMAP</a>, a database of mammalian fauna <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>)</span>, the North American Plant Macrofossil Database, and a <a href="<a href="introduction.html#BEETLE">2.3.4</a>">fossil beetle database</a> assembled by Allan Ashworth. Although structurally different, these databases contain similar kinds of data, and merging them was quite practical. The rationale for this merging was twofold:</p>
-<ol style="list-style-type: decimal">
-<li>To facilitate analyses of past biotic communities at the ecosystem level</li>
-<li>To reduce the overhead in maintaining and distributing several independent databases.</li>
-</ol>
-<p>Because the proxy types that Neotoma integrated were sufficiently diverse, the data model had to focus on the commonalities as the core of the database structure, specifically elements of stratigraphy and chronology. This design facilitated the gradual inclusion of other database types including the addition of ostracode, diatom, chironmid, and freshwater mussel datasets.</p>
-<p>The Neotoma database was initially designed by Eric C. Grimm and implemented in Microsoft® Access®. Neotoma was ported to SQL Server, where it was served from the <a href="https://sites.psu.edu/environmentalinformatics/">Center for Environmental Informatics</a> at Penn State University. Subsequently the database was ported to PostgreSQL, to support a fully open data ecosystem with an Application-Program Interface (API) that could be integrated into R packages <span class="citation">(e.g., Goring et al. <a href="#ref-goring2015neotoma">2015</a>)</span> or other programming languages.</p>
-<div id="whence-neotoma" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.1</span> Whence Neotoma<a href="introduction.html#whence-neotoma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<table>
+<div id="Publications" class="section level1 hasAnchor">
+<h1><span class="header-section-number">9</span> Publications<a href="Publications.html#Publications" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This table stores publication or bibliographic data. The table is designed with fields for bibliographic data so that bibliographies can be formatted in different styles and potentially exported to bibliographic software such EndNote®. In the constituent databases that were originally merged into Neotoma, bibliographic entries were not parsed into separate fields, but rather were stored as free-form text.</p>
+<p>Because complete parsing of these thousands of legacy bibliographic entries into individual fields would have been prohibitively time consuming, the existing bibliographic data were ingested “as is” with a PubTypeID = Other. However, for legacy publications, the year of publication was added to the Year field, and authors were parsed into the <code class="interpreted-text" role="ref">PublicationAuthors</code> table and added to the <code class="interpreted-text" role="ref">Contacts</code> table. In addition, some global changes were made. For example, «Pp.» was changed to «Pages», «Ed.» to «Editor», and «Eds.» to «Editors». Also for FAUNMAP entries, abbreviated journal names were changed to fully spelled out names.</p>
+<p>The merged databases used different bibliographic styles, and data entry personnel working on the same database sometimes followed different conventions. Consequently, the current bibliographic entries are not stylistically uniform. Eventually, the legacy bibliographic data will be parsed into separate fields.</p>
+<p>The Publications table has fields to accommodate a number of different types of publications. Some fields contain different kinds of data for different kinds of publications. For example, the BookTitle field stores the titles of books, but stores the journal name for journal articles. The Publisher field stores the name of the publisher for books, but the name of the university for theses and dissertations.</p>
+<p>Authors are stored in the <code class="interpreted-text" role="ref">PublicationAuthors</code> table. Editors are also stored in the <code class="interpreted-text" role="ref">PublicationAuthors</code> table if the entire publication is cited. The <code class="interpreted-text" role="ref">PublicationAuthors</code> table has a ContactID field, which links to the <code class="interpreted-text" role="ref">Contacts</code> table, where full names and contact information is stored for authors and editors. The PubTypeID «Authored Book» or «Edited Book» indicates whether the PublicationAuathors records are authors or editors. If a book chapter or section is the primary bibliographic entry, then the book editors are stored in the <code class="interpreted-text" role="ref">PublicationEditors</code> table, which does not have a ContactID field.</p>
+<table style="width:97%;">
 <colgroup>
-<col width="100%" />
+<col width="37%" />
+<col width="22%" />
+<col width="9%" />
+<col width="28%" />
 </colgroup>
-<thead>
-<tr class="header">
-<th align="center"><img src="assets/images/Neotoma_magister.jpg" alt="Image of a packrat" /></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td align="center">A packrat of the genus <em>Neotoma</em>. Credit: Alan Cressler, CC BY-SA 2.0 <a href="https://creativecommons.org/licenses/by-sa/2.0" class="uri">https://creativecommons.org/licenses/by-sa/2.0</a>, via Wikimedia Commons</td>
+<td align="left"><strong>Table: Publications</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left">PublicationID
+PubTypeID
+Year
+Citation
+ArticleTitle
+BookTitle
+Volume
+Issue
+Pages
+CitationNumber
+DOI
+NumVolumes
+Edition
+VolumeTitle
+SeriesTitle
+SeriesVolume
+Publisher
+City
+State
+Country
+OriginalLanguage
+Notes</td>
+<td>Long Integer
+Long Integer
+Text
+Memo
+Memo
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Text
+Memo</td>
+<td>PK
+FK</td>
+<td>Publications
+PublicationTypes
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </td>
 </tr>
 </tbody>
 </table>
-<p>Neotoma was called a “Late Neogene Terrestrial Ecosystem Database” in the <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=0622289">original NSF proposal</a>. At the time this proposal was written, the Neogene Period included the Miocene, Pliocene, Pleistocene, and Holocene epochs. However, a proposal before the International Commission on Stratigraphy elevated the Quaternary to a System or Period following the Neogene <span class="citation">(Gibbard et al. <a href="#ref-gibbard2010formal">2010</a>)</span>, terminating the Neogene at the end of Pliocene. To account for the change in nomenclature, numerous names and companion acronyms were considered, but none engendered enthusiastic support. B. Brandon Curry proposed the name <strong>Neotoma</strong>, and this name struck a fancy. <em>Neotoma</em> is the <a href="https://en.wikipedia.org/wiki/Pack_rat">genus for the packrat</a>. Packrats are prodigious collectors of anything in their territory, and moreover they are collectors of fossil data. <strong>Neotoma</strong> packrats collect plant macrofossils and bones, and pollen is preserved in their amberat – hardened, dried urine, which impregnates their middens and preserves them for millennia.</p>
-</div>
-<div id="rationale" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.2</span> Rationale<a href="introduction.html#rationale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Paleobiological data from the recent geological past have been invaluable for understanding ecological dynamics at timescales inaccessible to direct observation, including ecosystem evolution, contemporary patterns of biodiversity, principles of ecosystem organization, particularly the individualistic response of species to environmental gradients, and the biotic response to climatic change, both gradual and abrupt. Understanding the dynamics of ecological systems requires ecological time series, but many ecological processes operate too slowly to be amenable to experimentation or direct observation. In addition to having ecological significance, fossil data have tremendous importance for climatology and global change research. Fossil floral and faunal data are crucial for climate-model verification and are essential for elucidating climate-vegetation interactions that may partly control climate.</p>
-<p>Basic paleobiological research is site based, and paleobiologists have devoted innumerable hours to identifying, counting, and cataloging fossils from cores, sections, and excavations. These data are typically published in papers describing single sites or small numbers of sites. Often, the data are published graphically, as in a pollen diagram, and the actual data reside on the investigator’s computer or in a file cabinet. These basic data are similar to museum collections, costly to replace, sometimes irreplaceable, and their value does not diminish with time. Also similar to museum collections, the data require cataloging and curation. Whereas physical specimens of large fossils, such as animal bones, are typically accessioned into museums, microfossils, such as pollen, are not accessioned, and the digital data are the primary objects, and their loss is equivalent to losing valuable museum specimens. The integrated database that we propose ensures safe, long-term archiving of these data.</p>
-<p>Large independent databases exist for fossil pollen, plant macrofossils, and mammals: the Global Pollen Database (GPD), the North American Plant Macrofossil Database (NAPMD), and FAUNMAP. In addition, a database of fossil beetles (BEETLE) has been assembled and integrated into Neotoma. These databases, as with others in the Earth and ecosystem sciences, have become essential cyberinfrastructure. Nevertheless, these resources were originally developed as standalone databases in the early 1990’s. GPD and NAPMD were stored in <a href="https://en.wikipedia.org/wiki/Paradox_(database)">Paradox®</a> file formats; FAUNMAP in <a href="https://en.wikipedia.org/wiki/Microsoft_Access">Microsoft Access</a>. Since initial database development, emphasis has been placed on ingest of new and legacy data. However, database and Internet technology have advanced greatly since 1995, and the current relational database software, ingest programs, data retrieval algorithms, output formats, and analysis tools are outdated and minimal. Moreover, the databases are not linked, so that integrated analyses are difficult.</p>
-<p>Although GPD, NAPMD, and FAUNMAP were developed independently, they have much in common. The basic data of all three databases as well as BEETLE are essentially lists of taxa from cores, excavations, or sections, often with quantitative measures of abundance. The three databases include similar metadata. The objective of Neotoma is to build a unified data structure that will incorporate all of these databases. The database will initially incorporate pollen, plant macrofossil, mammal, and beetle data. However, the database designed facilitates the incorporation of all kinds of fossil data.</p>
-<p>Various teams of investigators have developed databases for paleobiological data that have been project or discipline based,
-including the four databases to be integrated in this project. However, long-term maintenance and sustainability have been problematic because of the need to secure continuous funding. Nevertheless, these databases have become the established archives for their disciplines and, new data are continuously contributed. However, because of funding hiatuses, long spells may intervene between times of data contribution and their public availability. For example, the plant macrofossil database has not incorporated any new data since 1999. The number of different databases and disciplines exacerbates the problem, because each database requires a database manager. Consolidation of informatics technology helps address this overhead issue. However, specialists are still essential for management and supervision of data collection and quality control for their disciplines or organismal groups.</p>
-<p>The purposes of Neotoma are:</p>
-<ul>
-<li>to facilitate studies of ecosystem development and response to climate change</li>
-<li>to provide the historical context for understanding biodiversity dynamics, including genetic diversity</li>
-<li>to provide the data for climate-model validation</li>
-<li>to provide a safe, long-term, low-cost archive for a wide variety of paleobiological data.</li>
-</ul>
-<p>Site-based studies are invaluable in their own right, and they are the generators of new data. However, much is gained by marshalling data from geographic arrays of sites for synoptic, broad-scale ecosystem studies. In order to carry out such studies efficiently, a queryable database is required. Thus, it is much morethan an archive; it is essential cyberinfrastructure for paleoenvironmental research. The database facilitates integration, synthesis, and understanding, and it promotes information sharing and collaboration. The individual databases have been extensively used for scientific research, with several hundred scientific publications directly based upon data drawn from these databases. This project will enhance those databases and will continue their public access. By integrating these databases and by simplifying the contributor interface, we can reduce the number of people necessary for community-wide database maintenance, and thereby help ensure their long-term sustainability and existence.</p>
-</div>
-<div id="history-of-the-constituent-databases" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.3</span> History of the Constituent Databases<a href="introduction.html#history-of-the-constituent-databases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="global-pollen-database" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.1</span> Global Pollen Database<a href="introduction.html#global-pollen-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In an early effort, the Cooperative Holocene Mapping Project <span class="citation">(COHMAP Members <a href="#ref-Members1988">1988</a>; Wright et al. <a href="#ref-Wright1993c">1993</a>)</span> assembled pollen data in the 1970s and 1980s to test climate models. Although data-model comparison was the principal objective of the COHMAP project, the synoptic analyses of the pollen data, particularly maps showing the constantly shifting ranges of species in response to climate change, were revelatory and led to much ecological insight <span class="citation">(e.g. Webb <a href="#ref-Webb1981">1981</a>, <a href="#ref-Webb1987a">1987</a>, <a href="#ref-Webb1988b">1988</a>)</span>.</p>
-<p>The COHMAP pollen “database” was a set of flat files with a fixed file format for data and for chronologies. FORTRAN programs were written to read these files and to assemble data for particular analyses. Thompson Webb III managed the COHMAP pollen database at Brown University, but as the quantity of data increased, data management became increasingly cumbersome; the data needed to be migrated to a relational database management system. Discussions with E. C. Grimm led to the initiation of the North American Pollen Database (NAPD) in 1990.</p>
-<p>At the same time in , the International Geological Correlation Project IGCP 158 <span class="citation">(Church <a href="#ref-Church1989IGCPP1">1989</a>)</span> was conducting a major collaborative synthesis of paleoecological data, primarily of pollen, making the need for a pollen database painfully obvious. In the forward to the book resulting from this project <span class="citation">(Berglund et al. <a href="#ref-berglund1996palaeoecological">1996</a>)</span>, J.L. de Beaulieu describes the role that the IGCP 158 project had in launching the European Pollen Database <span class="citation">(Huntley and Prentice <a href="#ref-Huntley1993b">1993</a>)</span>. A workshop to develop a European Pollen Database (EPD) was held in in 1. North American representatives also attended, and the organizers of NAPD and EPD commenced a long-standing collaboration to develop compatible databases. NAPD and EPD held several joint workshops and developed the same data structure. Nevertheless, the two databases were independently established, partly because Internet capabilities were not yet sufficient to easily manage a merged database. The pollen databases were developed in Paradox, which at the time was the most powerful RDBMS readily available for the PC platform. NAPD and EPD established two important protocols:</p>
-<ul>
-<li>the databases were relational and queryable</li>
-<li>they were publicly available.</li>
-</ul>
-<p>As the success the NAPD-EPD partnership escalated, working groups initiated pollen databases for other regions, including the Latin American Pollen Database (LAPD) in 1994, the Pollen Database for and the Russian Far East (PDSRFE) in 1995, and the African Pollen Database (APD) in 1996. At its initial organizational workshop, LAPD opted to merge with NAPD, rather than develop a standalone database, and the Global Pollen Database was born. PDSRFE also followed this model. APD developed independently, but uses the table structure of GPD and EPD. Pollen database projects have also been initiated in other regions, and the GPD contains some of these data, including the Indo-Pacific Pollen Database and the Japanese Pollen Database.</p>
-<pre><code>## Warning: Ignoring unknown parameters: binwidth, bins, pad</code></pre>
-<pre><code>## Don&#39;t know how to automatically pick scale for object of type integer64. Defaulting to continuous.</code></pre>
-<pre><code>## Warning: Removed 4349 rows containing missing values (position_stack).</code></pre>
-<div class="figure"><span style="display:block;" id="fig:agedistributions"></span>
-<img src="_main_files/figure-html/agedistributions-1.png" alt="Histogram of sample age distributions in Neotoma for the first 200000 years of samples showing that data is heavily skewed the the present." width="672" />
-<p class="caption">
-Figure 2.1: Sample age distributions in Neotoma for a subset of Neotoma data. Ages are heavily skewed to samples in the last 10,000 years, and moreso to the near-present.
-</p>
-</div>
-<p>The pollen databases contain data from the Holocene, Pleistocene, and Pliocene, although most data are from the last 20,000 years (Fig. <a href="introduction.html#fig:agedistributions">2.1</a>). Included are fossil data, mainly from cores and sections, and modern surface samples, which are essential for calibrating fossil data. NAPD data are not separate from the GPD, but rather the NAPD is the North American subset of GPD. EPD has both public and restricted data — a concession that had to be made early on to assuage some contributors.</p>
-</div>
-<div id="north-american-plant-macrofossil-database" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.2</span> North American Plant Macrofossil Database<a href="introduction.html#north-american-plant-macrofossil-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Plant macrofossils include plant organs generally visible to the naked eye, including seeds, fruits, leaves, needles, wood, bud scales, and megaspores. Synoptic-scale mapping of plant macrofossils from modern assemblages <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>)</span> and fossil assemblages <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>, <a href="#ref-Jackson2000c">2000</a>; Jackson and Booth <a href="#ref-Jackson2002">2002</a>)</span> have shown the utility of plant macrofossils in providing spatially and taxonomically precise reconstructions of past species ranges. Although plant macrofossil records are spatially precise, synoptic networks of high-quality sites can scale up to yield aggregate views of past distributions <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>)</span>. In addition, macrofossils, with their greater taxonomic resolution, augment the pollen data by providing information on which species might have been present, and can resolve issues of long-distance transport <span class="citation">(Birks <a href="#ref-Birks2003">2003</a>)</span>.</p>
-<p>The North American Plant Macrofossil Database (NAPMD) has been directed by S.T. Jackson at the . Highest priority has been placed on data from the last 30,000 years, although some earlier Pleistocene and late Pliocene data are included. The database originated as a research database for selected taxa from Late Quaternary sediments of eastern North America <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>)</span>. In 1994, an effort was initiated with NOAA funding to build on this foundation to develop a cooperative, relational database comprising all of , a longer time span, and all plant taxa.</p>
-<p>The structure of NAPMD was adapted from the pollen database and was also stored in a Paradox file format. Although the plant macrofossil database was well served by the data model structure, modifications were made to accommodate different organs from the same species and to deal with the various quantitative measures of abundance. The Plant Macrofossil database also included surface samples, which were not part of the pollen databases at the time, but are useful for the interpretation of fossil data.</p>
-</div>
-<div id="FAUNMAP" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.3</span> FAUNMAP<a href="introduction.html#FAUNMAP" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>R.W. Graham, E.L. Lundelius, Jr., and a group of Regional Collaborators organized a project to develop a database for late Quaternary faunal data from the , which the U.S. NSF funded in 1990. This project had a research agenda, and its seminal paper focused on the individualistic behavior displayed by animal species <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>)</span>.</p>
-<p>Two FAUNMAP databases exist, FAUNMAP I and FAUNMAP II. Both databases were coordinated by R. W. Graham and E. L. Lundelius, Jr. and funded by NSF. Both are relational databases for fossil mammal sites. The data were extracted from peer-reviewed literature, selected theses and dissertations, and selected contract reports for both paleontology and archaeology (all data is currently contained within the Neotoma publications tables). Unpublished collections were not included. Data were originally captured in Paradox but were later migrated to Microsoft Access.</p>
-<p>FAUNMAP I contains data from sites in the continental United States (the lower 48 States) that date between 500 BP and ~40,000 BP. Funding for FAUNMAP I ended in 1994, with the production of two major publications by the FAUNMAP Working Group <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>; Group <a href="#ref-Group1996">1996</a>)</span>, along with publications from individual members and many others who accessed the database on-line. Graham and Lundelius continued the FAUNMAP project, developing FAUNMAP II with funding from NSF beginning in 1998. FAUNMAP II <span class="citation">(Graham and E.L. Lundelius <a href="#ref-faunmapTwo">2010</a>)</span> shares the same structure as FAUNMAP I but expands the spatial coverage to include and and extends the temporal coverage to the Pliocene (5 Ma). In addition, sites published since 1994, when FAUNMAP I was completed, have been added for the contiguous 48 States. In all, FAUNMAP I and II contain more than 5000 fossil-mammal sites with more than 600 mammal species for all of North America north of Mexico that range in age from 0.5 ka to 5 Ma­.</p>
-<p>The detailed structure of the FAUNMAP database is described in FAUNMAP Working Group <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>)</span>. Sites identified by name and location were subdivided into Analysis Units (AU’s), which varied from site to site depending upon the definitions used in the original publications (e.g., stratigraphic horizons, cultural horizons, excavation levels, biostratigraphic zones). All data (<em>i.e.</em>, taxa identified, and counts of individual specimens) and metadata (sediment types, depositional environments, facies, radiometric and other geochronological dates, modifications of bone) were associated with the individual AUs. This structure – analysis units within sites – allows for information to be extracts at the site level, or at the smallest sample subdivision. The analysis unit permits fine-scale temporal resolution and analysis. Similar to the GPD and NAPMD, FAUNMAP contains archival and research tables. Similar to the plant macrofossil database, FAUNMAP contains a variety of quantitative measures of abundance (<em>e.g.</em>, MNI, NISP), and presence data are more commonly used for analysis.</p>
-</div>
-<div id="BEETLE" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.4</span> BEETLE<a href="introduction.html#BEETLE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Many beetles have highly specific ecological and climatic requirements and are valuable indicators of past environments <span class="citation">(Morgan et al. <a href="#ref-morgan1983late">1983</a>; Ashworth, <a href="#ref-ashworth2001aapg">n.d.</a>, <a href="#ref-ashworth2004coleoptera">2004</a>)</span>. Coleoptera is one of the most diverse groups of organisms on Earth, and of the insects, perhaps the most commonly preserved as fossils. Allan Ashworth has assembled a database of fossil beetles from . The data, which were recorded in Excel, contain 5523 individual records of 2567 taxa from 199 sites and 165 publications. Metadata include site name, latitude and longitude, lithology of sediment, absolute age, and geological age. The basic data are similar to plant and mammal databases – lists of taxa from sites. The metadata have not been recorded to the extent of the other databases, especially chronological data, but Ashworth has resolved the taxonomic issues and has assembled the publications, so that the additional metadata can be easily pulled together.</p>
-</div>
-</div>
-<div id="who-will-use-neotoma" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.4</span> Who Will Use Neotoma?<a href="introduction.html#who-will-use-neotoma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The existing databases have been used widely for a variety of studies. Because the databases have been available on-line, precise determination of how many publications have made use of them is difficult. In addition, the databases are widely used for instructional purposes. Below are examples of the kinds of people who have used these databases and who we expect will find the new, integrated database even more useful.</p>
-<ul>
-<li><strong>Paleoecologists</strong> seeking to place a new record into a regional/continental/global context (e.g., Bell and Mead 1998, Czaplewski et al. 1999, Bell and Barnosky 2000, Newby et al. 2000, Futyma and Miller 2001, Gavin et al. 2001, Czaplewski et al. 2002, Schauffler and Jacobson 2002, Camill et al. 2003, Rosenberg et al. 2003, Willard et al. 2003, Pasenko and Schubert 2004, and many others).</li>
-<li><strong>Synoptic paleoecologists</strong> interested in mapping regional to sub-continental to global patterns of vegetation change (e.g., Jackson et al. 1997, Williams et al. 1998, Jackson et al. 2000, Prentice et al. 2000, Thompson and Anderson 2000, Williams et al. 2000, Williams et al. 2001, Williams 2003, Webb et al. 2004, Williams et al. 2004, Asselin and Payette 2005).</li>
-<li><strong>Synoptic paleoclimatologists</strong> building benchmark paleoclimatic reconstructions for GCM evaluation (e.g., Bartlein et al. 1998, Farrera et al. 1999, Guiot et al. 1999, Kohfeld and Harrison 2000, CAPE Project Members 2001, Kageyama et al. 2001, Kaplan et al. 2003).</li>
-<li><strong>Paleontologists</strong> trying to understand the timing, patterns, and causes of extinction events (e.g., Jackson and Weng 1999, Graham 2001, Barnosky et al. 2004, Martínez-Meyer et al. 2004, Wroe et al. 2004).</li>
-<li><p><strong>Evolutionary biologists</strong> mapping the genetic legacies of Quaternary climatic variations (e.g., Petit et al. 1997, Fedorov 1999, Tremblay and Schoen 1999, Hewitt 2000, Comps et al. 2001, Good and Sullivan 2001, Petit et al. 2002, Kropf et al. 2003, Lessa et al. 2003, Petit et al. 2003, Hewitt 2004, Lascoux et al. 2004, Petit et al. 2004, Whorley et al. 2004, Runck and Cook 2005).</p></li>
-<li><strong>Macroecologists</strong> interested in temporal records of species turnover and biodiversity and historical controls on modern patterns of floristic diversity (e.g., Silvertown 1985, Qian and Ricklefs 2000, Brown et al. 2001, Haskell 2001).</li>
-<li><strong>Archeologists</strong> who are studying human subsistence patterns and interactions with their environment (e.g., Grayson 2001, Grayson and Meltzer 2002, Cannon and Meltzer 2004, Grayson in press).</li>
-<li><strong>Natural resource managers</strong> who need to know historical ranges and abundances of plants and animals for designing conservation and management plans (e.g., Graham and Graham 1994, Cole et al. 1998, Noss et al. 2000, Owen et al. 2000, Committee on Ungulate Management in Yellowstone National Park 2002, Burns et al. 2003)</li>
-<li><strong>Scientists</strong> trying to understand the potential response of plants, animals, biomes, ecosystems, and biodiversity to global warming (e.g., Bartlein et al. 1997, Davis et al. 2000, Barnosky et al. 2003, Burns et al. 2003, Kaplan et al. 2003, Schmitz et al. 2003, Jackson and Williams 2004, Martínez-Meyer et al. 2004)</li>
-<li><p><strong>Teachers</strong> who use the databases for teaching purposes and class exercises.</p></li>
-</ul>
-
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-ashworth2004coleoptera">
-<p>Ashworth, A. C. 2004. “The Quaternary Period in the United States.” In, edited by A. R. Gillespie, S. C. Porter, and B. F. Atwater. Vol. 1. Developments in Quaternary Science. Amsterdam, The Netherlands: Elsevier.</p>
-</div>
-<div id="ref-ashworth2001aapg">
-<p>Ashworth, Allan C. n.d. “Geological Perspectives of Global Climate Change.” In. Vol. 47. AAPG Studies in Geology. American Association of Petrolium Geologists.</p>
-</div>
-<div id="ref-berglund1996palaeoecological">
-<p>Berglund, Björn E, HJB Birks, M Ralska-Jasiewickzowa, and Herbert E Wright. 1996. <em>Palaeoecological Events During the Last 15 000 Years: Regional Synthesis of Palaeoecological Studies of Lakes and Mires in Europe</em>. Wiley.</p>
-</div>
-<div id="ref-Birks2003">
-<p>Birks, H. H. 2003. “The Importance of Plant Macrofossils in the Reconstruction of Lateglacial Vegetation and Climate: Examples from Scotland, Western Norway, and Minnesota, Usa.” Journal Article. <em>Quaternary Science Reviews</em> 22: 453–73.</p>
-</div>
-<div id="ref-Church1989IGCPP1">
-<p>Church, Michael. 1989. “IGCP Project 158: Paleohydrology of the Temperate Zone During the Last 15 000 Years: Introduction.” <em>Canadian Journal of Earth Sciences</em> 26: 1809–10.</p>
-</div>
-<div id="ref-Members1988">
-<p>COHMAP Members. 1988. “Climatic Changes of the Last 18,000 Years: Observations and Model Simulations.” Journal Article. <em>Science</em> 24: 1043–52.</p>
-</div>
-<div id="ref-Group1994">
-<p>FAUNMAP Working Group. 1994. <em>FAUNMAP: A Database Documenting Late Quaternary Distributions of Mammal Species in the United States</em>. Book. Vols. XXV, No. 1. Scientific Papers. Springfield, IL: Illinois State Museum.</p>
-</div>
-<div id="ref-gibbard2010formal">
-<p>Gibbard, Philip L, Martin J Head, Michael JC Walker, and Subcommission on Quaternary Stratigraphy. 2010. “Formal Ratification of the Quaternary System/Period and the Pleistocene Series/Epoch with a Base at 2.58 Ma.” <em>Journal of Quaternary Science</em> 25 (2): 96–102. <a href="https://doi.org/10.1002/jqs.1338">https://doi.org/10.1002/jqs.1338</a>.</p>
-</div>
-<div id="ref-goring2015neotoma">
-<p>Goring, Simon, Andria Dawson, Gavin Simpson, Karthik Ram, Russ Graham, Eric Grimm, and John Williams. 2015. “Neotoma: A Programmatic Interface to the Neotoma Paleoecological Database.” <em>Open Quaternary</em> 1 (1).</p>
-</div>
-<div id="ref-nsf0622349">
-<p>Graham, Russell. 2006. “Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.” <em>NSF Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349</a>.</p>
-</div>
-<div id="ref-faunmapTwo">
-<p>Graham, R.W., and Jr. E.L. Lundelius. 2010. “FAUNMAP Ii: New Data for North America with a Temporal Extension for the Blancan, Irvingtonian and Early Rancholabrean.” <a href="https://ucmp.berkeley.edu/faunmap">https://ucmp.berkeley.edu/faunmap</a>.</p>
-</div>
-<div id="ref-nsf0622289">
-<p>Grimm, Eric C. 2006. “Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.” <em>NSF Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289</a>.</p>
-</div>
-<div id="ref-Group1996">
-<p>Group, FAUNMAP Working. 1996. “Spatial Response of Mammals to Late Quaternary Environmental Fluctuations.” Journal Article. <em>Science</em> 272: 1601–6.</p>
-</div>
-<div id="ref-Huntley1993b">
-<p>Huntley, B., and I. C. Prentice. 1993. “Holocene Vegetation and Climates of Europe.” Book Section. In <em>Global Climates Since the Last Glacial Maximum</em>, edited by Jr. Wright H. E., J. E. Kutzbach, III Webb T., W. F. Ruddimann, F. A. Street-Perrott, and P. J. Bartlein, 136–68. Minneapolis: University of Minnesota Press.</p>
-</div>
-<div id="ref-Jackson2002">
-<p>Jackson, S. T., and R. K. Booth. 2002. “The Role of Late Holocene Climate Variability in the Expansion of Yellow Birch in the Western Great Lakes Region.” Journal Article. <em>Diversity and Distributions</em> 8 (5): 275–84. <a href="&lt;Go to ISI&gt;://000177738400003">&lt;Go to ISI&gt;://000177738400003</a>.</p>
-</div>
-<div id="ref-Jackson1997">
-<p>Jackson, S. T., J. T. Overpeck, III Webb T., S. E. Keattch, and K. H. Anderson. 1997. “Mapped Plant-Macrofossil and Pollen Records of Late Quaternary Vegetation Change in Eastern North America.” Journal Article. <em>Quaternary Science Reviews</em> 16: 1–70.</p>
-</div>
-<div id="ref-Jackson2000c">
-<p>Jackson, S. T., R. S. Webb, K. H. Anderson, J. T. Overpeck, III Webb T., J. W. Williams, and B. C. S. Hansen. 2000. “Vegetation and Environment in Eastern North America During the Last Glacial Maximum.” Journal Article. <em>Quaternary Science Reviews</em> 19: 489–508.</p>
-</div>
-<div id="ref-morgan1983late">
-<p>Morgan, AV, A Morgan, AC Ashworth, JV Matthews, and SC Porter. 1983. “Late Wisconsin Fossil Beetles in North America.” In <em>Late Quaternary Environments of the United States</em>, 1:354–63. London: Longman.</p>
-</div>
-<div id="ref-Webb1981">
-<p>Webb, III, T. 1981. “The Past 11,000 Years of Vegetational Change in Eastern North America.” Journal Article. <em>Bioscience</em> 31: 501–6.</p>
-</div>
-<div id="ref-Webb1987a">
-<p>Webb, III, T. 1987. “The Appearance and Disappearance of Major Vegetational Assemblages: Long-Term Vegetational Dynamics in Eastern North America.” Journal Article. <em>Vegetatio</em> 69: 177–87.</p>
-</div>
-<div id="ref-Webb1988b">
-<p>Webb, III, T. 1988. “Glacial and Holocene Vegetation History: Eastern North America.” Book Section. In <em>Vegetation History</em>, edited by B. Huntley and III Webb T., 385–414. Dordrecht: Kluwer Academic.</p>
-</div>
-<div id="ref-Wright1993c">
-<p>Wright, Jr., H. E., J. E. Kutzbach, III Webb T., W. F. Ruddiman, F. A. Street-Perrott, and P. J Bartlein. 1993. <em>Global Climates Since the Last Glacial Maximum</em>. Book. Minneapolis: University of Minnesota Press.</p>
-</div>
+<dl>
+<dt><strong>PublicationID (Primary Key)</strong></dt>
+<dd><p>An arbitrary Publication identification number.</p>
+</dd>
+<dt><strong>PubTypeID (Foreign Key)</strong></dt>
+<dd><p>Publication type. Field links to the
+<code class="interpreted-text" role="ref">PublicationTypes</code> lookup table.</p>
+</dd>
+<dt><strong>Year</strong></dt>
+<dd><p>Year of publication.</p>
+</dd>
+<dt><strong>Citation</strong></dt>
+<dd><p>The complete citation in a standard style. For Legacy citations
+inherited from other databases, this field holds the citation as
+ingested from the other databases.</p>
+</dd>
+<dt><strong>ArticleTitle</strong></dt>
+<dd><p>The title of a journal or book chapter article.</p>
+</dd>
+<dt><strong>BookTitle</strong></dt>
+<dd><p>The title of a book or journal</p>
+</dd>
+<dt><strong>Volume</strong></dt>
+<dd><p>The volume number of a journal or the volume number of a book in a
+set. A set of books is comprised of a fixed number of volumes and
+normally have ISBN numbers, not ISSN numbers. Book sets are often
+published simultaneously, but not necessarily. For instance, many
+floras, such as <em>The</em> <em>Flora of North America north of</em> and <em>Flora
+Europaea</em>, consist of a set number of volumes planned in advance but
+published over a period of years.</p>
+</dd>
+<dt><strong>Issue</strong></dt>
+<dd><p>Journal issue number, normally included only if issues are
+independently paginated.</p>
+</dd>
+<dt><strong>Pages</strong></dt>
+<dd><p>Page numbers for journal or book chapter articles, or the number of
+pages in theses, dissertations, and reports.</p>
+</dd>
+<dt><strong>CitationNumber</strong></dt>
+<dd><p>A citation or article number used in lieu of page numbers for
+digital or online publications, typically used in conjunction with
+the DOI. For example, journals published by the American Geophysical
+Union since 1999 use citation numbers rather than page numbers.</p>
+</dd>
+<dt><strong>DOI</strong></dt>
+<dd><p>Digital Object Identifier. A unique identifier assigned to digital
+publications. The DOI consists of a prefix and suffix separated by a
+slash. The portion before the slash stands for the publisher and is
+assigned by the International DOI Foundation. For example, 10.1029
+is the prefix for the American Geophysical Union. The suffix is
+assigned by the publisher according to their protocols. For example,
+the DOI 10.1029/2002PA000768 is for an article submitted to
+<em>Paleoceanography</em> in 2002 and is article number 768 submitted since
+the system was installed. An example of CitationNumber and DOI:</p>
+<blockquote>
+<p>Barron, J. A., L. Heusser, T. Herbert, and M. Lyle. 2003.
+High-resolution climatic evolution of coastal northern during the
+past 16,000 years, Paleoceanography 18(1):<strong>1020.
+<a href="DOI:10.1029/2002PA000768" class="uri">DOI:10.1029/2002PA000768</a>.</strong></p>
+</blockquote>
+</dd>
+<dt><strong>NumVolumes</strong></dt>
+<dd><p>Number of volumes in a set of books. Used when the entire set is
+referenced. An example of NumVolumes and Edition:</p>
+<p>Wilson, D. E., and D. M. Reeder. 2005. Mammal species of the world:
+a taxonomic and geographic reference. <strong>Third edition. 2 volumes</strong>.
+The Johns Hopkins University Press, Baltimore, Maryland, USA.</p>
+</dd>
+<dt><strong>Edition</strong></dt>
+<dd><p>Edition of a publication.</p>
+</dd>
+<dt><strong>VolumeTitle</strong></dt>
+<dd><p>Title of a book volume in a set. Used if the individual volume is
+referenced. Example of Volume and VolumeTitle:</p>
+<p>Flora of North America Editorial Committee. 2002. Flora of North
+America north of . <strong>Volume 26</strong>. <strong>Magnoliophyta: Liliidae:
+Liliales and Orchidales</strong>. Oxford University Press, New York, New
+York, USA.</p>
+</dd>
+<dt><strong>SeriesTitle</strong></dt>
+<dd><p>Title of a book series. Book series consist of a series of books,
+typically published at irregular intervals on sometimes related but
+different topics. The number of volumes in a series is typically
+open ended. Book series are often assigned ISSN numbers as well as
+ISBN numbers. However, in contrast to most serials, book series have
+individual titles and authors or editors. Citation practices for
+book series vary; sometimes they are cited as books, other times as
+journals. The default citation for Neotoma includes all information.
+An example of SeriesTitle and SeriesVolume:</p>
+</dd>
+</dl>
+<blockquote>
+<p>Curtis, J. H., and D. A. Hodell. 1993. An isotopic and trace element
+study of ostracods from , : A 10,500 year record of paleosalinity and
+paleotemperature changes in the . Pages 135-152 in P. K. Swart, K. C.
+Lohmann, J. McKensie, and S. Savin, editors. Climate change in
+continental isotopic records. <strong>Geophysical Monograph 78</strong>. American
+Geophysical Union, Washington, D.C., USA.</p>
+</blockquote>
+<dl>
+<dt><strong>SeriesVolume</strong></dt>
+<dd><p>Volume number in a series.</p>
+</dd>
+<dt><strong>Publisher</strong></dt>
+<dd><p>Publisher, including commercial publishing houses, university
+presses, government agencies, and non-governmental organizations,
+generally the owner of the copyright.</p>
+</dd>
+<dt><strong>City</strong></dt>
+<dd><p>City in which the publication was published. The first city if a
+list is given.</p>
+</dd>
+<dt><strong>State</strong></dt>
+<dd><p>State or province in which the publication was published. Used for
+the and , not used for many countries.</p>
+</dd>
+<dt><strong>Country</strong></dt>
+<dd><p>Country in which the publication was published, generally the
+complete country name, but «» for the .</p>
+</dd>
+<dt><strong>OriginalLanguage</strong></dt>
+<dd><p>The original language if the publication or bibliographic citation
+is translated from another language or transliterated from a
+non-Latin character set. Field not needed for non-translated
+publications in languages using the Latin character set. In the
+following example, the ArticleTitle is translated from Russian to
+English and the BookTitle (journal name) is transliterated from
+Russian:</p>
+<p>Tarasov, P.E. 1991. Late Holocene features of the Kokchetav
+Highland. Vestnik Moskovskogo Universiteta. Series 5. Geography
+<strong>6</strong>:54-60 <span class="math display">\[in **Russian**\]</span>.</p>
+</dd>
+<dt><strong>Notes</strong></dt>
+<dd><p>Free form notes or comments about the publication, which may be
+added parenthetically to the citation.</p>
+</dd>
+</dl>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sql-quickly.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="publication-related-tables-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="PublicationTypes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Introduction | Neotoma Paleoecology Manual v2.0</title>
+  <title>12 Site Related Tables | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Introduction | Neotoma Paleoecology Manual v2.0" />
+  <meta property="og:title" content="12 Site Related Tables | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Introduction | Neotoma Paleoecology Manual v2.0" />
+  <meta name="twitter:title" content="12 Site Related Tables | Neotoma Paleoecology Manual v2.0" />
   
   <meta name="twitter:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="sql-quickly.html"/>
+<link rel="prev" href="sample-related-tables-1.html"/>
+<link rel="next" href="taxonomy-related-tables-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -330,188 +330,735 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor">
-<h1><span class="header-section-number">2</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Neotoma is a public database containing fossil data from the Holocene, Pleistocene, and Pliocene, or approximately the last 5.3 million years. The database stores associated physical data from fossil bearing deposits, for example sediment loss-on-ignition and geochemical data. The database also stores data from modern samples that are used to interpret fossil data.</p>
-<p>The initial development of Neotoma was funded by a grant from the U.S. National Science Foundation Geoinformatics program. The inital grant was a collaborative proposal between Penn State University <span class="citation">(Graham <a href="#ref-nsf0622349">2006</a>)</span> and the Illinois State Museum <span class="citation">(Grimm <a href="#ref-nsf0622289">2006</a>)</span>. It had five Principle Investigators, Russell W. Graham, Eric C. Grimm, Stephen T. Jackson, Allan C. Ashworth, and John W. (Jack) Williams.</p>
-<p>Initially, data within Neotoma were merged from four existing databases: the Global Pollen Database, <a href="<a href="introduction.html#FAUNMAP">2.3.3</a>">FAUNMAP</a>, a database of mammalian fauna <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>)</span>, the North American Plant Macrofossil Database, and a <a href="<a href="introduction.html#BEETLE">2.3.4</a>">fossil beetle database</a> assembled by Allan Ashworth. Although structurally different, these databases contain similar kinds of data, and merging them was quite practical. The rationale for this merging was twofold:</p>
-<ol style="list-style-type: decimal">
-<li>To facilitate analyses of past biotic communities at the ecosystem level</li>
-<li>To reduce the overhead in maintaining and distributing several independent databases.</li>
-</ol>
-<p>Because the proxy types that Neotoma integrated were sufficiently diverse, the data model had to focus on the commonalities as the core of the database structure, specifically elements of stratigraphy and chronology. This design facilitated the gradual inclusion of other database types including the addition of ostracode, diatom, chironmid, and freshwater mussel datasets.</p>
-<p>The Neotoma database was initially designed by Eric C. Grimm and implemented in Microsoft® Access®. Neotoma was ported to SQL Server, where it was served from the <a href="https://sites.psu.edu/environmentalinformatics/">Center for Environmental Informatics</a> at Penn State University. Subsequently the database was ported to PostgreSQL, to support a fully open data ecosystem with an Application-Program Interface (API) that could be integrated into R packages <span class="citation">(e.g., Goring et al. <a href="#ref-goring2015neotoma">2015</a>)</span> or other programming languages.</p>
-<div id="whence-neotoma" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.1</span> Whence Neotoma<a href="introduction.html#whence-neotoma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<table>
+<div id="site-related-tables-1" class="section level1 hasAnchor">
+<h1><span class="header-section-number">12</span> Site Related Tables<a href="site-related-tables-1.html#site-related-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="SiteImages" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.1</span> SiteImages<a href="site-related-tables-1.html#SiteImages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores hyperlinks to jpeg images of sites.</p>
+<table style="width:98%;">
 <colgroup>
-<col width="100%" />
+<col width="31%" />
+<col width="20%" />
+<col width="8%" />
+<col width="37%" />
 </colgroup>
-<thead>
-<tr class="header">
-<th align="center"><img src="assets/images/Neotoma_magister.jpg" alt="Image of a packrat" /></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td align="center">A packrat of the genus <em>Neotoma</em>. Credit: Alan Cressler, CC BY-SA 2.0 <a href="https://creativecommons.org/licenses/by-sa/2.0" class="uri">https://creativecommons.org/licenses/by-sa/2.0</a>, via Wikimedia Commons</td>
+<td align="left"><strong>SiteImages</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left">SiteImageID</td>
+<td>Long Integer</td>
+<td>PK</td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">SiteID</td>
+<td>Long Integer</td>
+<td>FK</td>
+<td><code class="interpreted-text" role="ref">Sites</code></td>
+</tr>
+<tr class="even">
+<td align="left">ContactID</td>
+<td>Long Integer</td>
+<td>FK</td>
+<td><code class="interpreted-text" role="ref">Contacts</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Caption</td>
+<td>Memo</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">Credit</td>
+<td>Text</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left">Date</td>
+<td>Date/Time</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">SiteImage</td>
+<td>Hyperlink</td>
+<td></td>
+<td> </td>
 </tr>
 </tbody>
 </table>
-<p>Neotoma was called a “Late Neogene Terrestrial Ecosystem Database” in the <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=0622289">original NSF proposal</a>. At the time this proposal was written, the Neogene Period included the Miocene, Pliocene, Pleistocene, and Holocene epochs. However, a proposal before the International Commission on Stratigraphy elevated the Quaternary to a System or Period following the Neogene <span class="citation">(Gibbard et al. <a href="#ref-gibbard2010formal">2010</a>)</span>, terminating the Neogene at the end of Pliocene. To account for the change in nomenclature, numerous names and companion acronyms were considered, but none engendered enthusiastic support. B. Brandon Curry proposed the name <strong>Neotoma</strong>, and this name struck a fancy. <em>Neotoma</em> is the <a href="https://en.wikipedia.org/wiki/Pack_rat">genus for the packrat</a>. Packrats are prodigious collectors of anything in their territory, and moreover they are collectors of fossil data. <strong>Neotoma</strong> packrats collect plant macrofossils and bones, and pollen is preserved in their amberat – hardened, dried urine, which impregnates their middens and preserves them for millennia.</p>
+<dl>
+<dt><strong>SiteImageID (Primary Key)</strong></dt>
+<dd><p>An arbitrary Site Image identification number.</p>
+</dd>
+<dt><strong>SiteID (Foreign Key)</strong></dt>
+<dd><p>Site identification number. Field links to the
+<a href="site-related-tables-1.html#Sites"><code>Sites</code></a> table.</p>
+</dd>
+<dt><strong>ContactID (Foreign Key)</strong></dt>
+<dd><p>Contact identification number for image attribution from the
+<a href="contact-and-individual-related-tables.html#Contacts"><code>Contacts</code></a> table.</p>
+</dd>
+<dt><strong>Caption</strong></dt>
+<dd><p>Caption for the image.</p>
+</dd>
+<dt><strong>Credit</strong></dt>
+<dd><p>Credit for the image. If null, the credit is formed from the
+ContactID.</p>
+</dd>
+<dt><strong>Date</strong></dt>
+<dd><p>Date of photograph or image.</p>
+</dd>
+<dt><strong>SiteImage</strong></dt>
+<dd><p>Hyperlink to a URL for the image.</p>
+</dd>
+</dl>
 </div>
-<div id="rationale" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.2</span> Rationale<a href="introduction.html#rationale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Paleobiological data from the recent geological past have been invaluable for understanding ecological dynamics at timescales inaccessible to direct observation, including ecosystem evolution, contemporary patterns of biodiversity, principles of ecosystem organization, particularly the individualistic response of species to environmental gradients, and the biotic response to climatic change, both gradual and abrupt. Understanding the dynamics of ecological systems requires ecological time series, but many ecological processes operate too slowly to be amenable to experimentation or direct observation. In addition to having ecological significance, fossil data have tremendous importance for climatology and global change research. Fossil floral and faunal data are crucial for climate-model verification and are essential for elucidating climate-vegetation interactions that may partly control climate.</p>
-<p>Basic paleobiological research is site based, and paleobiologists have devoted innumerable hours to identifying, counting, and cataloging fossils from cores, sections, and excavations. These data are typically published in papers describing single sites or small numbers of sites. Often, the data are published graphically, as in a pollen diagram, and the actual data reside on the investigator’s computer or in a file cabinet. These basic data are similar to museum collections, costly to replace, sometimes irreplaceable, and their value does not diminish with time. Also similar to museum collections, the data require cataloging and curation. Whereas physical specimens of large fossils, such as animal bones, are typically accessioned into museums, microfossils, such as pollen, are not accessioned, and the digital data are the primary objects, and their loss is equivalent to losing valuable museum specimens. The integrated database that we propose ensures safe, long-term archiving of these data.</p>
-<p>Large independent databases exist for fossil pollen, plant macrofossils, and mammals: the Global Pollen Database (GPD), the North American Plant Macrofossil Database (NAPMD), and FAUNMAP. In addition, a database of fossil beetles (BEETLE) has been assembled and integrated into Neotoma. These databases, as with others in the Earth and ecosystem sciences, have become essential cyberinfrastructure. Nevertheless, these resources were originally developed as standalone databases in the early 1990’s. GPD and NAPMD were stored in <a href="https://en.wikipedia.org/wiki/Paradox_(database)">Paradox®</a> file formats; FAUNMAP in <a href="https://en.wikipedia.org/wiki/Microsoft_Access">Microsoft Access</a>. Since initial database development, emphasis has been placed on ingest of new and legacy data. However, database and Internet technology have advanced greatly since 1995, and the current relational database software, ingest programs, data retrieval algorithms, output formats, and analysis tools are outdated and minimal. Moreover, the databases are not linked, so that integrated analyses are difficult.</p>
-<p>Although GPD, NAPMD, and FAUNMAP were developed independently, they have much in common. The basic data of all three databases as well as BEETLE are essentially lists of taxa from cores, excavations, or sections, often with quantitative measures of abundance. The three databases include similar metadata. The objective of Neotoma is to build a unified data structure that will incorporate all of these databases. The database will initially incorporate pollen, plant macrofossil, mammal, and beetle data. However, the database designed facilitates the incorporation of all kinds of fossil data.</p>
-<p>Various teams of investigators have developed databases for paleobiological data that have been project or discipline based,
-including the four databases to be integrated in this project. However, long-term maintenance and sustainability have been problematic because of the need to secure continuous funding. Nevertheless, these databases have become the established archives for their disciplines and, new data are continuously contributed. However, because of funding hiatuses, long spells may intervene between times of data contribution and their public availability. For example, the plant macrofossil database has not incorporated any new data since 1999. The number of different databases and disciplines exacerbates the problem, because each database requires a database manager. Consolidation of informatics technology helps address this overhead issue. However, specialists are still essential for management and supervision of data collection and quality control for their disciplines or organismal groups.</p>
-<p>The purposes of Neotoma are:</p>
+<div id="Sites" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.2</span> Sites<a href="site-related-tables-1.html#Sites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Sites table stores information about sites or localities, including
+name, geographic coordinates, and description. Sites generally have an
+areal extent and can be circumscribed by a latitude-longitude box.
+However, site data ingested from legacy databases have included only
+point locations. The lat-long box can be used either to circumscribe the
+areal extent of a site or to provide purposeful imprecision to the site
+location. Site location may be imprecise because of the original
+description was vague, e.g. «a gravel bar 5 miles east of town», or
+because the investigators, land owner, or land management agency may not
+want the exact location made public, perhaps to prevent looting and
+vandalism. In the first case, the lat-long box can be made sufficiently
+large to encompass the true location and in the second case to prevent
+exact location.</p>
+<table style="width:72%;">
+<colgroup>
+<col width="29%" />
+<col width="23%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Sites</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left">SiteID</td>
+<td>Long Integer</td>
+<td>PK</td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">SiteName</td>
+<td>Text</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">LongitudeEast</td>
+<td>Double</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">LatitudeNorth</td>
+<td>Double</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">LongitudeWest</td>
+<td>Double</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">LatitudeSouth</td>
+<td>Double</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">Altitude</td>
+<td>Long Integer</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">Area</td>
+<td>Double</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">SiteDescription</td>
+<td>Memo</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">Notes</td>
+<td>Memo</td>
+<td></td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt><strong>SiteID (Primary Key)</strong></dt>
+<dd><p>An arbitrary Site identification number.</p>
+</dd>
+<dt><strong>SiteName</strong></dt>
+<dd><p>Name of the site. Alternative names, including archaeological site
+numbers, are placed in square brackets, for example:</p>
+<blockquote>
 <ul>
-<li>to facilitate studies of ecosystem development and response to climate change</li>
-<li>to provide the historical context for understanding biodiversity dynamics, including genetic diversity</li>
-<li>to provide the data for climate-model validation</li>
-<li>to provide a safe, long-term, low-cost archive for a wide variety of paleobiological data.</li>
+<li>New #4 <span class="math display">\[Lloyd\&#39;s Rock Hole\]</span></li>
+<li>Modoc Rock Shelter <span class="math display">\[11RA501\]</span></li>
 </ul>
-<p>Site-based studies are invaluable in their own right, and they are the generators of new data. However, much is gained by marshalling data from geographic arrays of sites for synoptic, broad-scale ecosystem studies. In order to carry out such studies efficiently, a queryable database is required. Thus, it is much morethan an archive; it is essential cyberinfrastructure for paleoenvironmental research. The database facilitates integration, synthesis, and understanding, and it promotes information sharing and collaboration. The individual databases have been extensively used for scientific research, with several hundred scientific publications directly based upon data drawn from these databases. This project will enhance those databases and will continue their public access. By integrating these databases and by simplifying the contributor interface, we can reduce the number of people necessary for community-wide database maintenance, and thereby help ensure their long-term sustainability and existence.</p>
-</div>
-<div id="history-of-the-constituent-databases" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.3</span> History of the Constituent Databases<a href="introduction.html#history-of-the-constituent-databases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="global-pollen-database" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.1</span> Global Pollen Database<a href="introduction.html#global-pollen-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In an early effort, the Cooperative Holocene Mapping Project <span class="citation">(COHMAP Members <a href="#ref-Members1988">1988</a>; Wright et al. <a href="#ref-Wright1993c">1993</a>)</span> assembled pollen data in the 1970s and 1980s to test climate models. Although data-model comparison was the principal objective of the COHMAP project, the synoptic analyses of the pollen data, particularly maps showing the constantly shifting ranges of species in response to climate change, were revelatory and led to much ecological insight <span class="citation">(e.g. Webb <a href="#ref-Webb1981">1981</a>, <a href="#ref-Webb1987a">1987</a>, <a href="#ref-Webb1988b">1988</a>)</span>.</p>
-<p>The COHMAP pollen “database” was a set of flat files with a fixed file format for data and for chronologies. FORTRAN programs were written to read these files and to assemble data for particular analyses. Thompson Webb III managed the COHMAP pollen database at Brown University, but as the quantity of data increased, data management became increasingly cumbersome; the data needed to be migrated to a relational database management system. Discussions with E. C. Grimm led to the initiation of the North American Pollen Database (NAPD) in 1990.</p>
-<p>At the same time in , the International Geological Correlation Project IGCP 158 <span class="citation">(Church <a href="#ref-Church1989IGCPP1">1989</a>)</span> was conducting a major collaborative synthesis of paleoecological data, primarily of pollen, making the need for a pollen database painfully obvious. In the forward to the book resulting from this project <span class="citation">(Berglund et al. <a href="#ref-berglund1996palaeoecological">1996</a>)</span>, J.L. de Beaulieu describes the role that the IGCP 158 project had in launching the European Pollen Database <span class="citation">(Huntley and Prentice <a href="#ref-Huntley1993b">1993</a>)</span>. A workshop to develop a European Pollen Database (EPD) was held in in 1. North American representatives also attended, and the organizers of NAPD and EPD commenced a long-standing collaboration to develop compatible databases. NAPD and EPD held several joint workshops and developed the same data structure. Nevertheless, the two databases were independently established, partly because Internet capabilities were not yet sufficient to easily manage a merged database. The pollen databases were developed in Paradox, which at the time was the most powerful RDBMS readily available for the PC platform. NAPD and EPD established two important protocols:</p>
+</blockquote>
+<p>A search of the SiteName field for any of the alternative names or
+for the archaeological site number will find the site. Some
+archaeological sites are known only by their site number.</p>
+<p>Modifiers to site names are placed in parentheses. Authors are added
+for generic sites names, especially for surface samples, that are
+duplicated in the database, for example:</p>
+<blockquote>
 <ul>
-<li>the databases were relational and queryable</li>
-<li>they were publicly available.</li>
+<li>Site 1 (Heusser 1978)</li>
+<li>Site 1 (Delcourt et al. 1983)</li>
+<li>Site 1 (Elliot-Fisk et al. 1982)</li>
+<li>Site 1 (Whitehead and Jackson 1990)</li>
 </ul>
-<p>As the success the NAPD-EPD partnership escalated, working groups initiated pollen databases for other regions, including the Latin American Pollen Database (LAPD) in 1994, the Pollen Database for and the Russian Far East (PDSRFE) in 1995, and the African Pollen Database (APD) in 1996. At its initial organizational workshop, LAPD opted to merge with NAPD, rather than develop a standalone database, and the Global Pollen Database was born. PDSRFE also followed this model. APD developed independently, but uses the table structure of GPD and EPD. Pollen database projects have also been initiated in other regions, and the GPD contains some of these data, including the Indo-Pacific Pollen Database and the Japanese Pollen Database.</p>
-<pre><code>## Warning: Ignoring unknown parameters: binwidth, bins, pad</code></pre>
-<pre><code>## Don&#39;t know how to automatically pick scale for object of type integer64. Defaulting to continuous.</code></pre>
-<pre><code>## Warning: Removed 4349 rows containing missing values (position_stack).</code></pre>
-<div class="figure"><span style="display:block;" id="fig:agedistributions"></span>
-<img src="_main_files/figure-html/agedistributions-1.png" alt="Histogram of sample age distributions in Neotoma for the first 200000 years of samples showing that data is heavily skewed the the present." width="672" />
-<p class="caption">
-Figure 2.1: Sample age distributions in Neotoma for a subset of Neotoma data. Ages are heavily skewed to samples in the last 10,000 years, and moreso to the near-present.
-</p>
-</div>
-<p>The pollen databases contain data from the Holocene, Pleistocene, and Pliocene, although most data are from the last 20,000 years (Fig. <a href="introduction.html#fig:agedistributions">2.1</a>). Included are fossil data, mainly from cores and sections, and modern surface samples, which are essential for calibrating fossil data. NAPD data are not separate from the GPD, but rather the NAPD is the North American subset of GPD. EPD has both public and restricted data — a concession that had to be made early on to assuage some contributors.</p>
-</div>
-<div id="north-american-plant-macrofossil-database" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.2</span> North American Plant Macrofossil Database<a href="introduction.html#north-american-plant-macrofossil-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Plant macrofossils include plant organs generally visible to the naked eye, including seeds, fruits, leaves, needles, wood, bud scales, and megaspores. Synoptic-scale mapping of plant macrofossils from modern assemblages <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>)</span> and fossil assemblages <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>, <a href="#ref-Jackson2000c">2000</a>; Jackson and Booth <a href="#ref-Jackson2002">2002</a>)</span> have shown the utility of plant macrofossils in providing spatially and taxonomically precise reconstructions of past species ranges. Although plant macrofossil records are spatially precise, synoptic networks of high-quality sites can scale up to yield aggregate views of past distributions <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>)</span>. In addition, macrofossils, with their greater taxonomic resolution, augment the pollen data by providing information on which species might have been present, and can resolve issues of long-distance transport <span class="citation">(Birks <a href="#ref-Birks2003">2003</a>)</span>.</p>
-<p>The North American Plant Macrofossil Database (NAPMD) has been directed by S.T. Jackson at the . Highest priority has been placed on data from the last 30,000 years, although some earlier Pleistocene and late Pliocene data are included. The database originated as a research database for selected taxa from Late Quaternary sediments of eastern North America <span class="citation">(Jackson et al. <a href="#ref-Jackson1997">1997</a>)</span>. In 1994, an effort was initiated with NOAA funding to build on this foundation to develop a cooperative, relational database comprising all of , a longer time span, and all plant taxa.</p>
-<p>The structure of NAPMD was adapted from the pollen database and was also stored in a Paradox file format. Although the plant macrofossil database was well served by the data model structure, modifications were made to accommodate different organs from the same species and to deal with the various quantitative measures of abundance. The Plant Macrofossil database also included surface samples, which were not part of the pollen databases at the time, but are useful for the interpretation of fossil data.</p>
-</div>
-<div id="FAUNMAP" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.3</span> FAUNMAP<a href="introduction.html#FAUNMAP" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>R.W. Graham, E.L. Lundelius, Jr., and a group of Regional Collaborators organized a project to develop a database for late Quaternary faunal data from the , which the U.S. NSF funded in 1990. This project had a research agenda, and its seminal paper focused on the individualistic behavior displayed by animal species <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>)</span>.</p>
-<p>Two FAUNMAP databases exist, FAUNMAP I and FAUNMAP II. Both databases were coordinated by R. W. Graham and E. L. Lundelius, Jr. and funded by NSF. Both are relational databases for fossil mammal sites. The data were extracted from peer-reviewed literature, selected theses and dissertations, and selected contract reports for both paleontology and archaeology (all data is currently contained within the Neotoma publications tables). Unpublished collections were not included. Data were originally captured in Paradox but were later migrated to Microsoft Access.</p>
-<p>FAUNMAP I contains data from sites in the continental United States (the lower 48 States) that date between 500 BP and ~40,000 BP. Funding for FAUNMAP I ended in 1994, with the production of two major publications by the FAUNMAP Working Group <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>; Group <a href="#ref-Group1996">1996</a>)</span>, along with publications from individual members and many others who accessed the database on-line. Graham and Lundelius continued the FAUNMAP project, developing FAUNMAP II with funding from NSF beginning in 1998. FAUNMAP II <span class="citation">(Graham and E.L. Lundelius <a href="#ref-faunmapTwo">2010</a>)</span> shares the same structure as FAUNMAP I but expands the spatial coverage to include and and extends the temporal coverage to the Pliocene (5 Ma). In addition, sites published since 1994, when FAUNMAP I was completed, have been added for the contiguous 48 States. In all, FAUNMAP I and II contain more than 5000 fossil-mammal sites with more than 600 mammal species for all of North America north of Mexico that range in age from 0.5 ka to 5 Ma­.</p>
-<p>The detailed structure of the FAUNMAP database is described in FAUNMAP Working Group <span class="citation">(FAUNMAP Working Group <a href="#ref-Group1994">1994</a>)</span>. Sites identified by name and location were subdivided into Analysis Units (AU’s), which varied from site to site depending upon the definitions used in the original publications (e.g., stratigraphic horizons, cultural horizons, excavation levels, biostratigraphic zones). All data (<em>i.e.</em>, taxa identified, and counts of individual specimens) and metadata (sediment types, depositional environments, facies, radiometric and other geochronological dates, modifications of bone) were associated with the individual AUs. This structure – analysis units within sites – allows for information to be extracts at the site level, or at the smallest sample subdivision. The analysis unit permits fine-scale temporal resolution and analysis. Similar to the GPD and NAPMD, FAUNMAP contains archival and research tables. Similar to the plant macrofossil database, FAUNMAP contains a variety of quantitative measures of abundance (<em>e.g.</em>, MNI, NISP), and presence data are more commonly used for analysis.</p>
-</div>
-<div id="BEETLE" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.3.4</span> BEETLE<a href="introduction.html#BEETLE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Many beetles have highly specific ecological and climatic requirements and are valuable indicators of past environments <span class="citation">(Morgan et al. <a href="#ref-morgan1983late">1983</a>; Ashworth, <a href="#ref-ashworth2001aapg">n.d.</a>, <a href="#ref-ashworth2004coleoptera">2004</a>)</span>. Coleoptera is one of the most diverse groups of organisms on Earth, and of the insects, perhaps the most commonly preserved as fossils. Allan Ashworth has assembled a database of fossil beetles from . The data, which were recorded in Excel, contain 5523 individual records of 2567 taxa from 199 sites and 165 publications. Metadata include site name, latitude and longitude, lithology of sediment, absolute age, and geological age. The basic data are similar to plant and mammal databases – lists of taxa from sites. The metadata have not been recorded to the extent of the other databases, especially chronological data, but Ashworth has resolved the taxonomic issues and has assembled the publications, so that the additional metadata can be easily pulled together.</p>
-</div>
-</div>
-<div id="who-will-use-neotoma" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.4</span> Who Will Use Neotoma?<a href="introduction.html#who-will-use-neotoma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The existing databases have been used widely for a variety of studies. Because the databases have been available on-line, precise determination of how many publications have made use of them is difficult. In addition, the databases are widely used for instructional purposes. Below are examples of the kinds of people who have used these databases and who we expect will find the new, integrated database even more useful.</p>
-<ul>
-<li><strong>Paleoecologists</strong> seeking to place a new record into a regional/continental/global context (e.g., Bell and Mead 1998, Czaplewski et al. 1999, Bell and Barnosky 2000, Newby et al. 2000, Futyma and Miller 2001, Gavin et al. 2001, Czaplewski et al. 2002, Schauffler and Jacobson 2002, Camill et al. 2003, Rosenberg et al. 2003, Willard et al. 2003, Pasenko and Schubert 2004, and many others).</li>
-<li><strong>Synoptic paleoecologists</strong> interested in mapping regional to sub-continental to global patterns of vegetation change (e.g., Jackson et al. 1997, Williams et al. 1998, Jackson et al. 2000, Prentice et al. 2000, Thompson and Anderson 2000, Williams et al. 2000, Williams et al. 2001, Williams 2003, Webb et al. 2004, Williams et al. 2004, Asselin and Payette 2005).</li>
-<li><strong>Synoptic paleoclimatologists</strong> building benchmark paleoclimatic reconstructions for GCM evaluation (e.g., Bartlein et al. 1998, Farrera et al. 1999, Guiot et al. 1999, Kohfeld and Harrison 2000, CAPE Project Members 2001, Kageyama et al. 2001, Kaplan et al. 2003).</li>
-<li><strong>Paleontologists</strong> trying to understand the timing, patterns, and causes of extinction events (e.g., Jackson and Weng 1999, Graham 2001, Barnosky et al. 2004, Martínez-Meyer et al. 2004, Wroe et al. 2004).</li>
-<li><p><strong>Evolutionary biologists</strong> mapping the genetic legacies of Quaternary climatic variations (e.g., Petit et al. 1997, Fedorov 1999, Tremblay and Schoen 1999, Hewitt 2000, Comps et al. 2001, Good and Sullivan 2001, Petit et al. 2002, Kropf et al. 2003, Lessa et al. 2003, Petit et al. 2003, Hewitt 2004, Lascoux et al. 2004, Petit et al. 2004, Whorley et al. 2004, Runck and Cook 2005).</p></li>
-<li><strong>Macroecologists</strong> interested in temporal records of species turnover and biodiversity and historical controls on modern patterns of floristic diversity (e.g., Silvertown 1985, Qian and Ricklefs 2000, Brown et al. 2001, Haskell 2001).</li>
-<li><strong>Archeologists</strong> who are studying human subsistence patterns and interactions with their environment (e.g., Grayson 2001, Grayson and Meltzer 2002, Cannon and Meltzer 2004, Grayson in press).</li>
-<li><strong>Natural resource managers</strong> who need to know historical ranges and abundances of plants and animals for designing conservation and management plans (e.g., Graham and Graham 1994, Cole et al. 1998, Noss et al. 2000, Owen et al. 2000, Committee on Ungulate Management in Yellowstone National Park 2002, Burns et al. 2003)</li>
-<li><strong>Scientists</strong> trying to understand the potential response of plants, animals, biomes, ecosystems, and biodiversity to global warming (e.g., Bartlein et al. 1997, Davis et al. 2000, Barnosky et al. 2003, Burns et al. 2003, Kaplan et al. 2003, Schmitz et al. 2003, Jackson and Williams 2004, Martínez-Meyer et al. 2004)</li>
-<li><p><strong>Teachers</strong> who use the databases for teaching purposes and class exercises.</p></li>
+</blockquote>
+<dl>
+<dt>For actual site names duplicated in the database, the name is followed by the 2-letter country code and state or province, for example:</dt>
+<dd><ul>
+<li>(US:)</li>
+<li>(CA:)</li>
+<li>(US:)</li>
+<li>(US:)</li>
 </ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>LongitudeEast</strong></dt>
+<dd><p>East bounding longitude for a site.</p>
+</dd>
+<dt><strong>LatitudeNorth</strong></dt>
+<dd><p>North bounding latitude for a site.</p>
+</dd>
+<dt><strong>LongitudeWest</strong></dt>
+<dd><p>West bounding longitude for a site.</p>
+</dd>
+<dt><strong>LatitudeSouth</strong></dt>
+<dd><p>South bounding latitude for a site.</p>
+</dd>
+<dt><strong>Altitude</strong></dt>
+<dd><p>Altitude of a site in meters.</p>
+</dd>
+<dt><strong>Area</strong></dt>
+<dd><p>Area of a site in hectares.</p>
+</dd>
+<dt><strong>SiteDescription</strong></dt>
+<dd><p>Free form description of a site, including such information as
+physiography and vegetation around the site.</p>
+</dd>
+<dt><strong>Notes</strong></dt>
+<dd><p>Free form notes or comments about the site.</p>
+</dd>
+</dl>
+</div>
+<div id="SiteGeoPolitical" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.3</span> SiteGeoPolitical<a href="site-related-tables-1.html#SiteGeoPolitical" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table lists the GeoPolitical units in which sites occur.</p>
+<table style="width:98%;">
+<colgroup>
+<col width="30%" />
+<col width="16%" />
+<col width="6%" />
+<col width="43%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>SiteGeoPolitical</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left">SiteGeoPoliticalID</td>
+<td>Long Integer</td>
+<td>PK</td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">SiteID</td>
+<td>Long Integer</td>
+<td>FK</td>
+<td><a href="site-related-tables-1.html#Sites"><code>Sites</code></a></td>
+</tr>
+<tr class="even">
+<td align="left">GeoPoliticalID</td>
+<td>Long Integer</td>
+<td>FK</td>
+<td><code class="interpreted-text" role="ref">GeoPoliticalUnits</code></td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt><strong>SiteGeoPoliticalID (Primary Key)</strong></dt>
+<dd><p>An arbitrary Site GeoPolitical identification number.</p>
+</dd>
+<dt><strong>SiteID (Foreign Key)</strong></dt>
+<dd><p>Site identification number. Field links to the
+<a href="site-related-tables-1.html#Sites"><code>Sites</code></a> table.</p>
+</dd>
+<dt><strong>GeoPoliticalID (Foreign Key)</strong></dt>
+<dd><p>GeoPolitical identification number. Field links to the
+<a href="site-related-tables-1.html#GeoPoliticalUnits"><code>GeoPoliticalUnits</code></a> lookup table.</p>
+</dd>
+</dl>
+</div>
+<div id="sql-example-11" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.4</span> SQL Example<a href="site-related-tables-1.html#sql-example-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The query in Example 2.8.1 lists the GeoPoliticalUnits for «», one unit
+to a record. This query lists them in a single record.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">SELECT</span> Sites.SiteName, GeoPoliticalUnits.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb19-2" title="2">GeoPoliticalUnits\_1.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb19-3" title="3">GeoPoliticalUnits\_2.GeoPoliticalName</a>
+<a class="sourceLine" id="cb19-4" title="4"></a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="kw">FROM</span> GeoPoliticalUnits <span class="kw">AS</span> GeoPoliticalUnits\_2 <span class="kw">INNER</span> <span class="kw">JOIN</span></a>
+<a class="sourceLine" id="cb19-6" title="6">(SiteGeoPolitical <span class="kw">AS</span> SiteGeoPolitical\_2 <span class="kw">INNER</span> <span class="kw">JOIN</span> ((SiteGeoPolitical</a>
+<a class="sourceLine" id="cb19-7" title="7"><span class="kw">AS</span> SiteGeoPolitical\_1 <span class="kw">INNER</span> <span class="kw">JOIN</span> (GeoPoliticalUnits <span class="kw">INNER</span> <span class="kw">JOIN</span> (Sites</a>
+<a class="sourceLine" id="cb19-8" title="8"><span class="kw">INNER</span> <span class="kw">JOIN</span> SiteGeoPolitical <span class="kw">ON</span> Sites.SiteID <span class="op">=</span> SiteGeoPolitical.SiteID)</a>
+<a class="sourceLine" id="cb19-9" title="9"><span class="kw">ON</span> GeoPoliticalUnits.GeoPoliticalID <span class="op">=</span> SiteGeoPolitical.GeoPoliticalID)</a>
+<a class="sourceLine" id="cb19-10" title="10"><span class="kw">ON</span> SiteGeoPolitical\_1.SiteID <span class="op">=</span> Sites.SiteID) <span class="kw">INNER</span> <span class="kw">JOIN</span></a>
+<a class="sourceLine" id="cb19-11" title="11">GeoPoliticalUnits <span class="kw">AS</span> GeoPoliticalUnits\_1 <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb19-12" title="12">SiteGeoPolitical\_1.GeoPoliticalID <span class="op">=</span></a>
+<a class="sourceLine" id="cb19-13" title="13">GeoPoliticalUnits\_1.GeoPoliticalID) <span class="kw">ON</span> SiteGeoPolitical\_2.SiteID <span class="op">=</span></a>
+<a class="sourceLine" id="cb19-14" title="14">Sites.SiteID) <span class="kw">ON</span> GeoPoliticalUnits\_2.GeoPoliticalID <span class="op">=</span></a>
+<a class="sourceLine" id="cb19-15" title="15">SiteGeoPolitical\_2.GeoPoliticalID</a>
+<a class="sourceLine" id="cb19-16" title="16"></a>
+<a class="sourceLine" id="cb19-17" title="17"><span class="kw">WHERE</span> (((Sites.SiteName)<span class="op">=</span><span class="ot">&quot;&quot;</span>) <span class="kw">AND</span> ((GeoPoliticalUnits.<span class="fu">Rank</span>)<span class="op">=</span><span class="dv">1</span>) <span class="kw">AND</span></a>
+<a class="sourceLine" id="cb19-18" title="18">((GeoPoliticalUnits\_1.<span class="fu">Rank</span>)<span class="op">=</span><span class="dv">2</span>) <span class="kw">AND</span> ((GeoPoliticalUnits\_2.<span class="fu">Rank</span>)<span class="op">=</span><span class="dv">3</span>));</a></code></pre></div>
+<p>Result:</p>
+<table style="width:99%;">
+<colgroup>
+<col width="10%" />
+<col width="28%" />
+<col width="30%" />
+<col width="30%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>SiteName</strong></td>
+<td align="left"><strong>GeoPoliticalUnits.GeoPoliticalName</strong></td>
+<td align="left"><strong>GeoPoliticalUnits_1.GeoPoliticalName</strong></td>
+<td align="left"><strong>GeoPoliticalUnits_2.GeoPoliticalName</strong></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Hennepin</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sql-example-12" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.5</span> SQL Example<a href="site-related-tables-1.html#sql-example-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The problem with the query above is that if a site has less than three
+GeoPolitical Names, the result will return empty. For example, «» has no
+GeoPoliticalUnit with Rank = 3, and will return an empty result with the
+above query. A solution to this problem is to create and save separate
+queries for the three ranks:</p>
+<p>Query GeoPol1:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">SELECT</span> Sites.SiteName, GeoPoliticalUnits.GeoPoliticalName</a>
+<a class="sourceLine" id="cb20-2" title="2"></a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="kw">FROM</span> Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> (GeoPoliticalUnits <span class="kw">INNER</span> <span class="kw">JOIN</span> SiteGeoPolitical <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb20-4" title="4">GeoPoliticalUnits.GeoPoliticalID <span class="op">=</span> SiteGeoPolitical.GeoPoliticalID) <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb20-5" title="5">Sites.SiteID <span class="op">=</span> SiteGeoPolitical.SiteID</a>
+<a class="sourceLine" id="cb20-6" title="6"></a>
+<a class="sourceLine" id="cb20-7" title="7"><span class="kw">WHERE</span> (((GeoPoliticalUnits.<span class="fu">Rank</span>)<span class="op">=</span><span class="dv">1</span>));</a></code></pre></div>
+<p>Query GeoPol2:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">SELECT</span> Sites.SiteName, GeoPoliticalUnits.GeoPoliticalName</a>
+<a class="sourceLine" id="cb21-2" title="2"></a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="kw">FROM</span> Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> (GeoPoliticalUnits <span class="kw">INNER</span> <span class="kw">JOIN</span> SiteGeoPolitical <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb21-4" title="4">GeoPoliticalUnits.GeoPoliticalID <span class="op">=</span> SiteGeoPolitical.GeoPoliticalID) <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb21-5" title="5">Sites.SiteID <span class="op">=</span> SiteGeoPolitical.SiteID</a>
+<a class="sourceLine" id="cb21-6" title="6"></a>
+<a class="sourceLine" id="cb21-7" title="7"><span class="kw">WHERE</span> (((GeoPoliticalUnits.<span class="fu">Rank</span>)<span class="op">=</span><span class="dv">2</span>));</a></code></pre></div>
+<p>Query GeoPol3:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">SELECT</span> Sites.SiteName, GeoPoliticalUnits.GeoPoliticalName</a>
+<a class="sourceLine" id="cb22-2" title="2"></a>
+<a class="sourceLine" id="cb22-3" title="3"><span class="kw">FROM</span> Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> (GeoPoliticalUnits <span class="kw">INNER</span> <span class="kw">JOIN</span> SiteGeoPolitical <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb22-4" title="4">GeoPoliticalUnits.GeoPoliticalID <span class="op">=</span> SiteGeoPolitical.GeoPoliticalID) <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb22-5" title="5">Sites.SiteID <span class="op">=</span> SiteGeoPolitical.SiteID</a>
+<a class="sourceLine" id="cb22-6" title="6"></a>
+<a class="sourceLine" id="cb22-7" title="7"><span class="kw">WHERE</span> (((GeoPoliticalUnits.<span class="fu">Rank</span>)<span class="op">=</span><span class="dv">3</span>));</a></code></pre></div>
+<p>These three queries can now be combined in a new query with left joins,
+and the GeoPolitical Names will be returned even if there are less than
+three.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">SELECT</span> GeoPol1.SiteName, GeoPol1.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb23-2" title="2">GeoPol2.GeoPoliticalName, GeoPol3.GeoPoliticalName</a>
+<a class="sourceLine" id="cb23-3" title="3"></a>
+<a class="sourceLine" id="cb23-4" title="4"><span class="kw">FROM</span> (GeoPol1 <span class="kw">LEFT</span> <span class="kw">JOIN</span> GeoPol2 <span class="kw">ON</span> GeoPol1.SiteName <span class="op">=</span> GeoPol2.SiteName)</a>
+<a class="sourceLine" id="cb23-5" title="5"><span class="kw">LEFT</span> <span class="kw">JOIN</span> GeoPol3 <span class="kw">ON</span> GeoPol2.SiteName <span class="op">=</span> GeoPol3.SiteName</a>
+<a class="sourceLine" id="cb23-6" title="6"></a>
+<a class="sourceLine" id="cb23-7" title="7"><span class="kw">WHERE</span> (((GeoPol1.SiteName)<span class="op">=</span><span class="ot">&quot;Lofty &quot;</span>));</a></code></pre></div>
+<p>Result:</p>
+<table style="width:98%;">
+<colgroup>
+<col width="13%" />
+<col width="28%" />
+<col width="28%" />
+<col width="28%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>SiteName</strong></td>
+<td align="left"><strong>GeoPol1.GeoPoliticalName</strong></td>
+<td align="left"><strong>GeoPol2.GeoPoliticalName</strong></td>
+<td align="left"><strong>GeoPol3.GeoPoliticalName</strong></td>
+</tr>
+<tr class="even">
+<td align="left">Lofty</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sql-example-13" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.6</span> SQL Example<a href="site-related-tables-1.html#sql-example-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The saved queries from the example above can be linked with tables in a
+more complicated query. This query lists all the pollen sites in the
+adjacent states of «» in the «» and «» in «».</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">SELECT</span> GeoPol1.SiteName, GeoPol1.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb24-2" title="2">GeoPol2.GeoPoliticalName, GeoPol3.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb24-3" title="3">DatasetTypes.DatasetType</a>
+<a class="sourceLine" id="cb24-4" title="4"></a>
+<a class="sourceLine" id="cb24-5" title="5"><span class="kw">FROM</span> (DatasetTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> ((Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> CollectionUnits <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb24-6" title="6">Sites.SiteID <span class="op">=</span> CollectionUnits.SiteID) <span class="kw">INNER</span> <span class="kw">JOIN</span> Datasets <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb24-7" title="7">CollectionUnits.CollectionUnitID <span class="op">=</span> Datasets.CollectionUnitID) <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb24-8" title="8">DatasetTypes.DatasetTypeID <span class="op">=</span> Datasets.DatasetTypeID) <span class="kw">INNER</span> <span class="kw">JOIN</span></a>
+<a class="sourceLine" id="cb24-9" title="9">((GeoPol1 <span class="kw">LEFT</span> <span class="kw">JOIN</span> GeoPol2 <span class="kw">ON</span> GeoPol1.SiteName <span class="op">=</span> GeoPol2.SiteName) <span class="kw">LEFT</span></a>
+<a class="sourceLine" id="cb24-10" title="10"><span class="kw">JOIN</span> GeoPol3 <span class="kw">ON</span> GeoPol2.SiteName <span class="op">=</span> GeoPol3.SiteName) <span class="kw">ON</span> Sites.SiteName <span class="op">=</span></a>
+<a class="sourceLine" id="cb24-11" title="11">GeoPol1.SiteName</a>
+<a class="sourceLine" id="cb24-12" title="12"></a>
+<a class="sourceLine" id="cb24-13" title="13"><span class="kw">GROUP</span> <span class="kw">BY</span> GeoPol1.SiteName, GeoPol1.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb24-14" title="14">GeoPol2.GeoPoliticalName, GeoPol3.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb24-15" title="15">DatasetTypes.DatasetType</a>
+<a class="sourceLine" id="cb24-16" title="16"></a>
+<a class="sourceLine" id="cb24-17" title="17"><span class="kw">HAVING</span> (((GeoPol1.GeoPoliticalName)<span class="op">=</span><span class="ot">&quot;&quot;</span> <span class="kw">Or</span> (GeoPol1.GeoPoliticalName)<span class="op">=</span><span class="ot">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb24-18" title="18"><span class="kw">AND</span> ((GeoPol2.GeoPoliticalName)<span class="op">=</span><span class="ot">&quot;&quot;</span> <span class="kw">Or</span> (GeoPol2.GeoPoliticalName)<span class="op">=</span><span class="ot">&quot;&quot;</span>) <span class="kw">AND</span></a>
+<a class="sourceLine" id="cb24-19" title="19">((DatasetTypes.DatasetType)<span class="op">=</span><span class="ot">&quot;pollen&quot;</span>))</a>
+<a class="sourceLine" id="cb24-20" title="20"></a>
+<a class="sourceLine" id="cb24-21" title="21"><span class="kw">ORDER</span> <span class="kw">BY</span> GeoPol1.GeoPoliticalName, GeoPol2.GeoPoliticalName,</a>
+<a class="sourceLine" id="cb24-22" title="22">GeoPol3.GeoPoliticalName, DatasetTypes.DatasetType;</a></code></pre></div>
+<p>Result:</p>
+<table style="width:98%;">
+<colgroup>
+<col width="11%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+<col width="14%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>SiteName</strong></td>
+<td align="left"><strong>GeoPol1.GeoPoliticalName</strong></td>
+<td align="left"><strong>GeoPol2.GeoPoliticalName</strong></td>
+<td align="left"><strong>GeoPol3.GeoPoliticalName</strong></td>
+<td align="left"><strong>DatasetType</strong></td>
+</tr>
+<tr class="even">
+<td align="left">Sierra Bacha</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"> </td>
+<td align="left">pollen</td>
+</tr>
+<tr class="odd">
+<td align="left">Sierra Bacha 3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"> </td>
+<td align="left">pollen</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Apache</td>
+<td align="left">pollen</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Coconino</td>
+<td align="left">pollen</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Coconino</td>
+<td align="left">pollen</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Coconino</td>
+<td align="left">pollen</td>
+</tr>
+<tr class="even">
+<td align="left">Montezuma Well</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Yavapai</td>
+<td align="left">pollen</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="GeoPoliticalUnits" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.7</span> GeoPoliticalUnits<a href="site-related-tables-1.html#GeoPoliticalUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table of GeoPoliticalUnits. Table is referenced by the
+<a href="site-related-tables-1.html#SiteGeoPolitical"><code>SiteGeoPolitical</code></a> table. These are
+countries and various subdivisions. Countries and subdivisions were
+acquired from the U.S. Central Intelligence Agency World Factbook<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
+and the ISO 3166-1 and ISO 3166-2 databases<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+<p>Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are
+generally countries. There are a few exceptions, including Antarctica
+and island territories, such as , which although a Danish territory, is
+geographically separate and distinct. Rank 2 units are generally
+secondary political divisions with various designations: e.g. states in
+the , provinces in , and regions in . For some countries, the secondary
+divisions are not political but rather distinct geographic entities,
+such as islands. The secondary divisions of some island nations include
+either groups of islands or sections of more highly populated islands;
+however, the actual island on which a site is located is more important
+information. Some countries also have Rank 3 units, e.g. counties in the
+and metropolitan departments in . In addition to purely political units,
+various other administrative regions and geographic entities can be
+contained in this table. Examples of administrative regions are National
+Parks and Forests. It might be quite useful, for example, to have a
+record of all the sites in . These additional units are Rank 4, and they
+can be added to the database as warranted.</p>
+<table style="width:98%;">
+<colgroup>
+<col width="30%" />
+<col width="16%" />
+<col width="7%" />
+<col width="43%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Table:
+GeoPoliticalUnits</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left">GeoPoliticalID</td>
+<td>Long Integer</td>
+<td>PK</td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">GeoPoliticalName</td>
+<td>Text</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">GeoPoliticalUnit</td>
+<td>Text</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td align="left">Rank</td>
+<td>Long Integer</td>
+<td></td>
+<td> </td>
+</tr>
+<tr class="even">
+<td align="left">HigherGeoPoliticalID</td>
+<td>Long Integer</td>
+<td>FK</td>
+<td>GeoPoliticalUnits:GeoPoliticalID</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt><strong>GeoPoliticalID (Primary Key)</strong></dt>
+<dd><p>An arbitrary GeoPolitical identification number.</p>
+</dd>
+<dt><strong>GeoPoliticalName</strong></dt>
+<dd><p>Name of the GeoPolitical Unit, e.g. , .</p>
+</dd>
+<dt><strong>GeoPoliticalUnit</strong></dt>
+<dd><p>The name of the unit, e.g. country, state, county, island,
+governorate, oblast.</p>
+</dd>
+<dt><strong>Rank</strong></dt>
+<dd><p>The rank of the unit.</p>
+</dd>
+<dt><strong>HigherGeoPoliticalID</strong></dt>
+<dd><p>The GeoPoliticalUnit with higher rank, e.g. the country in which a
+state lies.</p>
+</dd>
+</dl>
+</div>
+<div id="sql-example-14" class="section level2 hasAnchor">
+<h2><span class="header-section-number">12.8</span> SQL Example<a href="site-related-tables-1.html#sql-example-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The following query lists all the political subdivisions of in the .</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">SELECT</span> GeoPoliticalUnits\_2.<span class="fu">Rank</span>, GeoPoliticalUnits\_2.GeoPoliticalUnit,</a>
+<a class="sourceLine" id="cb25-2" title="2">GeoPoliticalUnits\_2.GeoPoliticalName</a>
+<a class="sourceLine" id="cb25-3" title="3"></a>
+<a class="sourceLine" id="cb25-4" title="4"><span class="kw">FROM</span> (GeoPoliticalUnits <span class="kw">AS</span> GeoPoliticalUnits\_2 <span class="kw">RIGHT</span> <span class="kw">JOIN</span></a>
+<a class="sourceLine" id="cb25-5" title="5">(GeoPoliticalUnits <span class="kw">AS</span> GeoPoliticalUnits\_1 <span class="kw">RIGHT</span> <span class="kw">JOIN</span> GeoPoliticalUnits</a>
+<a class="sourceLine" id="cb25-6" title="6"><span class="kw">ON</span> GeoPoliticalUnits\_1.HigherGeoPoliticalID <span class="op">=</span></a>
+<a class="sourceLine" id="cb25-7" title="7">GeoPoliticalUnits.GeoPoliticalID) <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb25-8" title="8">GeoPoliticalUnits\_2.HigherGeoPoliticalID <span class="op">=</span></a>
+<a class="sourceLine" id="cb25-9" title="9">GeoPoliticalUnits\_1.GeoPoliticalID) <span class="kw">LEFT</span> <span class="kw">JOIN</span> GeoPoliticalUnits <span class="kw">AS</span></a>
+<a class="sourceLine" id="cb25-10" title="10">GeoPoliticalUnits\_3 <span class="kw">ON</span> GeoPoliticalUnits\_2.GeoPoliticalID <span class="op">=</span></a>
+<a class="sourceLine" id="cb25-11" title="11">GeoPoliticalUnits\_3.HigherGeoPoliticalID</a>
+<a class="sourceLine" id="cb25-12" title="12"></a>
+<a class="sourceLine" id="cb25-13" title="13"><span class="kw">WHERE</span> (((GeoPoliticalUnits.GeoPoliticalName)<span class="op">=</span><span class="ot">&quot;&quot;</span>) <span class="kw">AND</span></a>
+<a class="sourceLine" id="cb25-14" title="14">((GeoPoliticalUnits\_1.GeoPoliticalName)<span class="op">=</span><span class="ot">&quot;&quot;</span>));</a></code></pre></div>
+<p>The first 17 records of the result:</p>
+<table style="width:88%;">
+<colgroup>
+<col width="18%" />
+<col width="34%" />
+<col width="34%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Rank</strong></td>
+<td align="left"><strong>GeoPoliticalUnit</strong></td>
+<td align="left"><strong>GeoPoliticalName</strong></td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Omagh</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">North Down</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Strabane</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Newry and Mourne</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Moyle</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Magherafelt</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">historical county</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">historical county</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">historical county</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">historical county</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">historical county</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Banbridge</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Lisburn</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">historical county</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Ballymoney</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">district</td>
+<td align="left">Carrickfergus</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-ashworth2004coleoptera">
-<p>Ashworth, A. C. 2004. “The Quaternary Period in the United States.” In, edited by A. R. Gillespie, S. C. Porter, and B. F. Atwater. Vol. 1. Developments in Quaternary Science. Amsterdam, The Netherlands: Elsevier.</p>
-</div>
-<div id="ref-ashworth2001aapg">
-<p>Ashworth, Allan C. n.d. “Geological Perspectives of Global Climate Change.” In. Vol. 47. AAPG Studies in Geology. American Association of Petrolium Geologists.</p>
-</div>
-<div id="ref-berglund1996palaeoecological">
-<p>Berglund, Björn E, HJB Birks, M Ralska-Jasiewickzowa, and Herbert E Wright. 1996. <em>Palaeoecological Events During the Last 15 000 Years: Regional Synthesis of Palaeoecological Studies of Lakes and Mires in Europe</em>. Wiley.</p>
-</div>
-<div id="ref-Birks2003">
-<p>Birks, H. H. 2003. “The Importance of Plant Macrofossils in the Reconstruction of Lateglacial Vegetation and Climate: Examples from Scotland, Western Norway, and Minnesota, Usa.” Journal Article. <em>Quaternary Science Reviews</em> 22: 453–73.</p>
-</div>
-<div id="ref-Church1989IGCPP1">
-<p>Church, Michael. 1989. “IGCP Project 158: Paleohydrology of the Temperate Zone During the Last 15 000 Years: Introduction.” <em>Canadian Journal of Earth Sciences</em> 26: 1809–10.</p>
-</div>
-<div id="ref-Members1988">
-<p>COHMAP Members. 1988. “Climatic Changes of the Last 18,000 Years: Observations and Model Simulations.” Journal Article. <em>Science</em> 24: 1043–52.</p>
-</div>
-<div id="ref-Group1994">
-<p>FAUNMAP Working Group. 1994. <em>FAUNMAP: A Database Documenting Late Quaternary Distributions of Mammal Species in the United States</em>. Book. Vols. XXV, No. 1. Scientific Papers. Springfield, IL: Illinois State Museum.</p>
-</div>
-<div id="ref-gibbard2010formal">
-<p>Gibbard, Philip L, Martin J Head, Michael JC Walker, and Subcommission on Quaternary Stratigraphy. 2010. “Formal Ratification of the Quaternary System/Period and the Pleistocene Series/Epoch with a Base at 2.58 Ma.” <em>Journal of Quaternary Science</em> 25 (2): 96–102. <a href="https://doi.org/10.1002/jqs.1338">https://doi.org/10.1002/jqs.1338</a>.</p>
-</div>
-<div id="ref-goring2015neotoma">
-<p>Goring, Simon, Andria Dawson, Gavin Simpson, Karthik Ram, Russ Graham, Eric Grimm, and John Williams. 2015. “Neotoma: A Programmatic Interface to the Neotoma Paleoecological Database.” <em>Open Quaternary</em> 1 (1).</p>
-</div>
-<div id="ref-nsf0622349">
-<p>Graham, Russell. 2006. “Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.” <em>NSF Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622349</a>.</p>
-</div>
-<div id="ref-faunmapTwo">
-<p>Graham, R.W., and Jr. E.L. Lundelius. 2010. “FAUNMAP Ii: New Data for North America with a Temporal Extension for the Blancan, Irvingtonian and Early Rancholabrean.” <a href="https://ucmp.berkeley.edu/faunmap">https://ucmp.berkeley.edu/faunmap</a>.</p>
-</div>
-<div id="ref-nsf0622289">
-<p>Grimm, Eric C. 2006. “Geoinformatics: Collaborative Research - Late Neogene Terrestrial Ecosystem Database.” <em>NSF Award</em>. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289">https://www.nsf.gov/awardsearch/showAward?AWD_ID=0622289</a>.</p>
-</div>
-<div id="ref-Group1996">
-<p>Group, FAUNMAP Working. 1996. “Spatial Response of Mammals to Late Quaternary Environmental Fluctuations.” Journal Article. <em>Science</em> 272: 1601–6.</p>
-</div>
-<div id="ref-Huntley1993b">
-<p>Huntley, B., and I. C. Prentice. 1993. “Holocene Vegetation and Climates of Europe.” Book Section. In <em>Global Climates Since the Last Glacial Maximum</em>, edited by Jr. Wright H. E., J. E. Kutzbach, III Webb T., W. F. Ruddimann, F. A. Street-Perrott, and P. J. Bartlein, 136–68. Minneapolis: University of Minnesota Press.</p>
-</div>
-<div id="ref-Jackson2002">
-<p>Jackson, S. T., and R. K. Booth. 2002. “The Role of Late Holocene Climate Variability in the Expansion of Yellow Birch in the Western Great Lakes Region.” Journal Article. <em>Diversity and Distributions</em> 8 (5): 275–84. <a href="&lt;Go to ISI&gt;://000177738400003">&lt;Go to ISI&gt;://000177738400003</a>.</p>
-</div>
-<div id="ref-Jackson1997">
-<p>Jackson, S. T., J. T. Overpeck, III Webb T., S. E. Keattch, and K. H. Anderson. 1997. “Mapped Plant-Macrofossil and Pollen Records of Late Quaternary Vegetation Change in Eastern North America.” Journal Article. <em>Quaternary Science Reviews</em> 16: 1–70.</p>
-</div>
-<div id="ref-Jackson2000c">
-<p>Jackson, S. T., R. S. Webb, K. H. Anderson, J. T. Overpeck, III Webb T., J. W. Williams, and B. C. S. Hansen. 2000. “Vegetation and Environment in Eastern North America During the Last Glacial Maximum.” Journal Article. <em>Quaternary Science Reviews</em> 19: 489–508.</p>
-</div>
-<div id="ref-morgan1983late">
-<p>Morgan, AV, A Morgan, AC Ashworth, JV Matthews, and SC Porter. 1983. “Late Wisconsin Fossil Beetles in North America.” In <em>Late Quaternary Environments of the United States</em>, 1:354–63. London: Longman.</p>
-</div>
-<div id="ref-Webb1981">
-<p>Webb, III, T. 1981. “The Past 11,000 Years of Vegetational Change in Eastern North America.” Journal Article. <em>Bioscience</em> 31: 501–6.</p>
-</div>
-<div id="ref-Webb1987a">
-<p>Webb, III, T. 1987. “The Appearance and Disappearance of Major Vegetational Assemblages: Long-Term Vegetational Dynamics in Eastern North America.” Journal Article. <em>Vegetatio</em> 69: 177–87.</p>
-</div>
-<div id="ref-Webb1988b">
-<p>Webb, III, T. 1988. “Glacial and Holocene Vegetation History: Eastern North America.” Book Section. In <em>Vegetation History</em>, edited by B. Huntley and III Webb T., 385–414. Dordrecht: Kluwer Academic.</p>
-</div>
-<div id="ref-Wright1993c">
-<p>Wright, Jr., H. E., J. E. Kutzbach, III Webb T., W. F. Ruddiman, F. A. Street-Perrott, and P. J Bartlein. 1993. <em>Global Climates Since the Last Glacial Maximum</em>. Book. Minneapolis: University of Minnesota Press.</p>
-</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p><a href="https://www.cia.gov/library/publications/the-world-factbook/" class="uri">https://www.cia.gov/library/publications/the-world-factbook/</a><a href="site-related-tables-1.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p><a href="http://www.iso.org/iso/country_codes/iso_3166_databases.htm" class="uri">http://www.iso.org/iso/country_codes/iso_3166_databases.htm</a><a href="site-related-tables-1.html#fnref7" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sql-quickly.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sample-related-tables-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taxonomy-related-tables-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

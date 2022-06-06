@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Dataset &amp; Collection Related Tables | Neotoma Paleoecology Manual v2.0</title>
+  <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Dataset &amp; Collection Related Tables | Neotoma Paleoecology Manual v2.0" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Dataset &amp; Collection Related Tables | Neotoma Paleoecology Manual v2.0" />
+  
+  <meta name="twitter:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
+  
+
+<meta name="author" content="Simon Goring" />
+
+
+<meta name="date" content="2022-06-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="contact-and-individual-related-tables.html"/>
+<link rel="next" href="publication-related-tables-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.23/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
+<li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
+<li class="chapter" data-level="2.3.4" data-path="introduction.html"><a href="introduction.html#BEETLE"><i class="fa fa-check"></i><b>2.3.4</b> BEETLE</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a><ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a><ul>
+<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
+<li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
+<li class="chapter" data-level="4.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>4.4</b> Taxa and Ecological Groups</a></li>
+<li class="chapter" data-level="4.5" data-path="database-design-concepts.html"><a href="database-design-concepts.html#chronology"><i class="fa fa-check"></i><b>4.5</b> Chronology</a></li>
+<li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
+<li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a><ul>
+<li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
+<li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
+<li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
+<li class="chapter" data-level="5.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>5.4</b> Sample Related Tables</a></li>
+<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.5</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>6</b> Contact and Individual Related Tables</a><ul>
+<li class="chapter" data-level="6.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>6.1</b> <code>collectors</code></a></li>
+<li class="chapter" data-level="6.2" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Contacts"><i class="fa fa-check"></i><b>6.2</b> <code>contacts</code></a></li>
+<li class="chapter" data-level="6.3" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#ContactStatuses"><i class="fa fa-check"></i><b>6.3</b> <code>contactstatuses</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Dataset &amp; Collection Related Tables</a><ul>
+<li class="chapter" data-level="7.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>7.1</b> AggregateDatasets</a></li>
+<li class="chapter" data-level="7.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>7.2</b> aggregateordertypes</a></li>
+<li class="chapter" data-level="7.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>7.3</b> CollectionTypes</a></li>
+<li class="chapter" data-level="7.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>7.4</b> CollectionUnits</a></li>
+<li class="chapter" data-level="7.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>7.5</b> DatasetPublications</a></li>
+<li class="chapter" data-level="7.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>7.6</b> Datasets</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>7.7</b> SQL Example</a></li>
+<li class="chapter" data-level="7.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>7.8</b> DatasetSubmissions</a></li>
+<li class="chapter" data-level="7.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>7.9</b> DatasetSubmissionTypes</a></li>
+<li class="chapter" data-level="7.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>7.10</b> SQL Example</a></li>
+<li class="chapter" data-level="7.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>7.11</b> DatasetTypes</a></li>
+<li class="chapter" data-level="7.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>7.12</b> DatasetPIs</a></li>
+<li class="chapter" data-level="7.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>7.13</b> DepEnvtTypes</a></li>
+<li class="chapter" data-level="7.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>7.14</b> SQL Example</a></li>
+<li class="chapter" data-level="7.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>7.15</b> SQL Example</a></li>
+<li class="chapter" data-level="7.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>7.16</b> Lithology</a></li>
+<li class="chapter" data-level="7.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Projects"><i class="fa fa-check"></i><b>7.17</b> Projects</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Publication Related Tables</a><ul>
+<li class="chapter" data-level="8.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>8.1</b> publicationauthors</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>8.1.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationeditors"><i class="fa fa-check"></i><b>8.2</b> <code>publicationeditors</code></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Publications.html"><a href="Publications.html"><i class="fa fa-check"></i><b>9</b> Publications</a></li>
+<li class="chapter" data-level="10" data-path="PublicationTypes.html"><a href="PublicationTypes.html"><i class="fa fa-check"></i><b>10</b> PublicationTypes</a><ul>
+<li class="chapter" data-level="10.1" data-path="PublicationTypes.html"><a href="PublicationTypes.html#legacy-publication"><i class="fa fa-check"></i><b>10.1</b> Legacy Publication</a></li>
+<li class="chapter" data-level="10.2" data-path="PublicationTypes.html"><a href="PublicationTypes.html#journal-article"><i class="fa fa-check"></i><b>10.2</b> Journal Article</a></li>
+<li class="chapter" data-level="10.3" data-path="PublicationTypes.html"><a href="PublicationTypes.html#book-chapter"><i class="fa fa-check"></i><b>10.3</b> Book Chapter</a></li>
+<li class="chapter" data-level="10.4" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-book"><i class="fa fa-check"></i><b>10.4</b> Authored Book</a></li>
+<li class="chapter" data-level="10.5" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-book"><i class="fa fa-check"></i><b>10.5</b> Edited Book</a></li>
+<li class="chapter" data-level="10.6" data-path="PublicationTypes.html"><a href="PublicationTypes.html#masters-thesis"><i class="fa fa-check"></i><b>10.6</b> Master’s Thesis</a></li>
+<li class="chapter" data-level="10.7" data-path="PublicationTypes.html"><a href="PublicationTypes.html#doctoral-dissertation"><i class="fa fa-check"></i><b>10.7</b> Doctoral Dissertation</a></li>
+<li class="chapter" data-level="10.8" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-report"><i class="fa fa-check"></i><b>10.8</b> Authored Report</a></li>
+<li class="chapter" data-level="10.9" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-report"><i class="fa fa-check"></i><b>10.9</b> Edited Report</a></li>
+<li class="chapter" data-level="10.10" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-authored-publication"><i class="fa fa-check"></i><b>10.10</b> Other Authored Publication</a></li>
+<li class="chapter" data-level="10.11" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-edited-publication"><i class="fa fa-check"></i><b>10.11</b> Other Edited Publication</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Sample Related Tables</a><ul>
+<li class="chapter" data-level="11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>11.1</b> <code>analysisunits</code></a></li>
+<li class="chapter" data-level="11.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>11.2</b> <code>data</code></a><ul>
+<li class="chapter" data-level="11.2.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>11.2.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>11.3</b> <code>depagents</code></a></li>
+<li class="chapter" data-level="11.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>11.4</b> <code>depagenttypes</code></a></li>
+<li class="chapter" data-level="11.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>11.5</b> <code>sampleages</code></a><ul>
+<li class="chapter" data-level="11.5.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>11.5.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>11.6</b> <code>sampleanalysts</code></a></li>
+<li class="chapter" data-level="11.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>11.7</b> <code>samplekeywords</code></a><ul>
+<li class="chapter" data-level="11.7.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>11.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="11.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>11.8</b> <code>samples</code></a><ul>
+<li class="chapter" data-level="11.8.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>11.8.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="11.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>11.9</b> <code>aggregatesamples</code></a></li>
+<li class="chapter" data-level="11.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>11.10</b> <code>faciestypes</code></a></li>
+<li class="chapter" data-level="11.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>11.11</b> <code>keywords</code></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Site Related Tables</a><ul>
+<li class="chapter" data-level="12.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>12.1</b> SiteImages</a></li>
+<li class="chapter" data-level="12.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>12.2</b> Sites</a></li>
+<li class="chapter" data-level="12.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>12.3</b> SiteGeoPolitical</a></li>
+<li class="chapter" data-level="12.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>12.4</b> SQL Example</a></li>
+<li class="chapter" data-level="12.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>12.5</b> SQL Example</a></li>
+<li class="chapter" data-level="12.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>12.6</b> SQL Example</a></li>
+<li class="chapter" data-level="12.7" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>12.7</b> GeoPoliticalUnits</a></li>
+<li class="chapter" data-level="12.8" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>12.8</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>13</b> Taxonomy Related Tables</a><ul>
+<li class="chapter" data-level="13.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>13.1</b> <code>ecolgroups</code></a><ul>
+<li class="chapter" data-level="13.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>13.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="13.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>13.1.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>13.2</b> <code>ecolgrouptypes</code></a></li>
+<li class="chapter" data-level="13.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>13.3</b> <code>ecolsettypes</code></a></li>
+<li class="chapter" data-level="13.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>13.4</b> <code>synonyms</code></a></li>
+<li class="chapter" data-level="13.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>13.5</b> <code>synonymtypes</code></a><ul>
+<li class="chapter" data-level="13.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>13.5.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>13.6</b> <code>taxa</code></a></li>
+<li class="chapter" data-level="13.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>13.7</b> <code>taxagrouptypes</code></a></li>
+<li class="chapter" data-level="13.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>13.8</b> <code>variables</code></a><ul>
+<li class="chapter" data-level="13.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>13.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="13.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>13.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="13.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>13.8.3</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="13.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>13.9</b> <code>variablecontexts</code></a></li>
+<li class="chapter" data-level="13.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>13.10</b> <code>variableelements</code></a></li>
+<li class="chapter" data-level="13.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>13.11</b> <code>variablemodifications</code></a></li>
+<li class="chapter" data-level="13.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>13.12</b> <code>variableunits</code></a></li>
+<li class="chapter" data-level="13.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>13.13</b> <code>repositoryinstitutions</code></a></li>
+<li class="chapter" data-level="13.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>13.14</b> <code>repositoryspecimens</code></a><ul>
+<li class="chapter" data-level="13.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>13.14.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="13.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>13.15</b> <code>specimendates</code></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>14</b> Chronology &amp; Age Related Tables</a><ul>
+<li class="chapter" data-level="14.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>14.1</b> AgeTypes</a></li>
+<li class="chapter" data-level="14.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>14.2</b> AggregateChronologies</a></li>
+<li class="chapter" data-level="14.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>14.3</b> ChronControls</a></li>
+<li class="chapter" data-level="14.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>14.4</b> ChronControlTypes</a></li>
+<li class="chapter" data-level="14.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>14.5</b> Chronologies</a><ul>
+<li class="chapter" data-level="14.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>14.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="14.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>14.5.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>14.6</b> AggregateSampleAges</a><ul>
+<li class="chapter" data-level="14.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>14.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="14.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>14.6.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="14.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>14.7</b> <code>geochronology</code></a><ul>
+<li class="chapter" data-level="14.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>14.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="14.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>14.8</b> GeochronPublications</a></li>
+<li class="chapter" data-level="14.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>14.9</b> GeochronTypes</a></li>
+<li class="chapter" data-level="14.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>14.10</b> RelativeAgePublications</a></li>
+<li class="chapter" data-level="14.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>14.11</b> RelativeAges</a><ul>
+<li class="chapter" data-level="14.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>14.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="14.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>14.12</b> RadiocarbonCalibration</a></li>
+<li class="chapter" data-level="14.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>14.13</b> RelativeAgeScales</a></li>
+<li class="chapter" data-level="14.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>14.14</b> RelativeAgeUnits</a></li>
+<li class="chapter" data-level="14.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>14.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="14.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>14.16</b> Tephrachronology</a></li>
+<li class="chapter" data-level="14.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>14.17</b> Tephras</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>15</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Neotoma Paleoecology Manual v2.0</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dataset-collection-related-tables-1" class="section level1 hasAnchor">
+<h1><span class="header-section-number">7</span> Dataset &amp; Collection Related Tables<a href="dataset-collection-related-tables-1.html#dataset-collection-related-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="AggregateDatasets" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.1</span> AggregateDatasets<a href="dataset-collection-related-tables-1.html#AggregateDatasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Aggregate Datasets are aggregates of samples of a particular <a href="#datasettypes">datasettype</a>.</p>
+<p>Some examples:</p>
+<blockquote>
+<ul>
+<li>Plant macrofossil samples from a group of packrat middens collected from a particular valley, mountain range, or other similarly defined geographic area. Each midden is from a different Site or Collection Unit, but they are grouped into time series for that area and are published as single dataset.</li>
+<li>Samples collected from 32 cutbanks along several kms of road. Each sample is from a different site, but they form a time series from 0 – 12,510 <sup>14</sup>C yr BP, and pollen, plant macrofossils, and beetles were published and graphed as if from a single site.</li>
+<li>A set of pollen surface samples from particular region or study that were published and analyzed as a single dataset and submitted to the database as a single dataset.</li>
+<li>The examples above are datasets predefined in the database. New aggregate datasets could be assembled for particular studies, for example all the pollen samples for a given time slice for a given geographic region.</li>
+</ul>
+</blockquote>
+<div id="htmlwidget-e13d00261fb665047b59" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e13d00261fb665047b59">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","aggregatedatasetname","aggregateordertypeid","notes","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatedatasets_pkey","","fk_aggregatedatasets_aggregateordertypes","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>aggregatedatasetid (primary key)</code></strong>: An arbitrary Aggregate Dataset identification number.</li>
+<li><strong><code>aggregatedatasetname</code></strong>: Name of Aggregate Dataset.</li>
+<li><strong><code>aggregateordertypeid (foreign key)</code></strong>: Aggregate Order Type identification number. Field links to the <a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><code>AggregateOrderTypes</code></a> lookup table.</li>
+<li><strong><code>notes</code></strong>: Free form notes about the Aggregate Order Type.</li>
+</ul>
+</div>
+<div id="AggregateOrderTypes" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.2</span> aggregateordertypes<a href="dataset-collection-related-tables-1.html#AggregateOrderTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table for Aggregate Order Types. Table is referenced by the
+<a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>AggregateDatasets</code></a> table.</p>
+<div id="htmlwidget-6261d272f75d68fbba82" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6261d272f75d68fbba82">{"x":{"filter":"none","vertical":false,"data":[["aggregateordertypeid","aggregateordertype","notes","recdatecreated","recdatemodified"],["integer","character varying(64)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregateordertypes_pkey","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>aggregateordertypeid (primary key)</code></strong>: An arbitrary Aggregate Order Type identification number.</li>
+<li><strong><code>aggregateordertype</code></strong>: The Aggregate Order Type.</li>
+<li><strong><code>notes</code></strong>: Free form notes or comments about the Aggregate Order Type. The Aggregate Order Types are:
+<ul>
+<li><strong>Latitude</strong>: AggregateDataset samples are ordered by, in order of priority, either (1) <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> GPSLatitude or (2) the mean of <a href="site-related-tables-1.html#Sites"><code>Sites</code></a>.LatitudeNorth and <a href="site-related-tables-1.html#Sites"><code>Sites</code></a> LatitudeSouth.</li>
+<li><strong>Longitude</strong> AggregateDataset samples are ordered by, in order of priority, either (1) <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> GPSLongitude or (2) the mean of <a href="site-related-tables-1.html#Sites"><code>Sites</code></a>.LongitudeWest and <a href="site-related-tables-1.html#Sites"><code>Sites</code></a>.LongitudeEast.</li>
+<li><strong>Altitude</strong> AggregateDataset samples are ordered by <a href="site-related-tables-1.html#Sites"><code>Sites</code></a> Altitude.</li>
+<li><strong>Age</strong> AggregateDataset samples are ordered by <a href="sample-related-tables-1.html#SampleAges"><code>SampleAges</code></a>.Age, where <a href="sample-related-tables-1.html#SampleAges"><code>SampleAges</code></a>.SampleAgeID is from <a href="chronology-age-related-tables-1.html#AggregateSampleAges"><code>AggregateSampleAges</code></a>.SampleAgeID.</li>
+<li><strong>Alphabetical by site name</strong> AggregateDataset samples are ordered alphabetically by <a href="site-related-tables-1.html#Sites"><code>Sites</code></a>.SiteName.</li>
+<li><strong>Alphabetical by collection unit name</strong> AggregateDataset samples are ordered alphabetically by <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a>.CollUnitName.</li>
+<li><strong>Alphabetical by collection units handle</strong> AggregateDataset samples are ordered alphabetically by <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a>.Handle.</li>
+</ul></li>
+</ul>
+</div>
+<div id="CollectionTypes" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.3</span> CollectionTypes<a href="dataset-collection-related-tables-1.html#CollectionTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table is a lookup table of for types of Collection Units, or Collection Types. Table is referenced by the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> table.</p>
+<div id="htmlwidget-4524fe7834a8050cddd5" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4524fe7834a8050cddd5">{"x":{"filter":"none","vertical":false,"data":[["colltypeid","colltype","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["collectiontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><p><strong><code>colltypeid (primary key)</code></strong>: An arbitrary Collection Type identification number.</p></li>
+<li><p><strong><code>colltype</code></strong>: The Collection Type. Types include cores, sections, excavations, and
+animal middens. Collection Units may be modern collections, surface
+float, or isolated specimens. Composite Collections Units include
+different kinds of Analysis Units, for example a modern surface
+sample for ostracodes and an associated water sample.</p></li>
+</ul>
+</div>
+<div id="CollectionUnits" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.4</span> CollectionUnits<a href="dataset-collection-related-tables-1.html#CollectionUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores data for Collection Units.</p>
+<div id="htmlwidget-75289d71c605808e39f3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-75289d71c605808e39f3">{"x":{"filter":"none","vertical":false,"data":[["collectionunitid","handle","siteid","colltypeid","depenvtid","collunitname","colldate","colldevice","gpslatitude","gpslongitude","gpsaltitude","gpserror","waterdepth","substrateid","slopeaspect","slopeangle","location","notes","recdatecreated","recdatemodified"],["integer","character varying(10)","integer","integer","integer","character varying(255)","date","character varying(255)","double precision","double precision","double precision","double precision","double precision","integer","integer","integer","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["collectionunits_pkey","","fk_collectionunits_sites","fk_collectionunits_collectiontypes","fk_collectionunits_depenvttypes","","","","","","","","","fk_collectionunits_rocktypes","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>collectionunitid (primary key)</code></strong>: An arbitrary Collection Unit identification number.</li>
+<li><strong><code>siteid (foreign key)</code></strong>: Site where CollectionUnit was located. Field links to <a href="site-related-tables-1.html#Sites"><code>Sites</code></a> table.</li>
+<li><strong><code>colltypeid (foreign key)</code></strong>: Type of Collection Unit. Field links to the <a href="dataset-collection-related-tables-1.html#CollectionTypes"><code>CollectionTypes</code></a> table.</li>
+<li><strong><code>depenvtid (foreign key)</code></strong>: Depositional environment of the CollectionUnit. Normally, this key refers to the modern environment. For example, the site may be located on a colluvial slope, in which case the Depositional Environment may be Colluvium or Colluvial Fan. However, an excavation may extend into alluvial sediments, which represent a different depositional environment. These are accounted for by the Facies of the AnalysisUnit. Field links to the <a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><code>DepEnvtTypes</code></a> table.</li>
+<li><strong><code>handle</code></strong>: Code name for the Collection Unit. This code may be up to 10 characters, but an effort is made to keep these to 8 characters or less. Data are frequently distributed by Collection Unit, and the Handle is used for file names.</li>
+<li><strong><code>collunitname</code></strong>: Name of the Collection Unit. Examples: Core BPT82A, Structure 9, P4A Test 57. If faunal data are reported from a site or locality without explicit Collection Units, then data are assigned to a single Collection Unit with the name «Locality».</li>
+<li><strong><code>colldate</code></strong>: Date Collection Unit was collected.</li>
+<li><strong><code>colldevice</code></strong>: Device used for obtain Collection Unit. This field applies primarily to cores, for example «Wright square-rod piston corer (5 cm)».</li>
+<li><strong><code>gpslatitude</code></strong>: Precise latitude of the Collection Unit, typically taken with a GPS, although may be precisely measured from a map.</li>
+<li><strong><code>gpslongitude</code></strong>: Precise longitude of the Collection Unit, typically taken with a GPS, although may be precisely measured from a map.</li>
+<li><strong><code>gpsaltitude</code></strong>: Precise altitude of the Collection Unit, typically taken with a GPS or precisely obtained from a map.</li>
+<li><strong><code>gpserror</code></strong>: Error in the horizontal GPS coordinates, if known.</li>
+<li><strong><code>waterdepth</code></strong>: Depth of water at the Collection Unit location. This field applies mainly to Collection Units from lakes.</li>
+<li><strong><code>substrateid (foreign key)</code></strong>: Substrate or rock type on which the Collection Unit lies. Field links to the RockTypes table. This field is especially used for rodent middens.</li>
+<li><strong><code>slopeaspect</code></strong>: For Collection Units on slopes, the horizontal direction to which a slope faces measured in degrees clockwise from north. This field is especially used for rodent middens.</li>
+<li><strong><code>slopeangle</code></strong>: For Collection Units on slopes, the angle of slope from horizontal. The <code>slopeangle</code> field is especially used for rodent middens.</li>
+<li><strong><code>location</code></strong>: Short description of the location of the Collection Unit within the site.</li>
+<li><strong><code>notes</code></strong>: Free form notes or comments about the Collection Unit.</li>
+</ul>
+</div>
+<div id="DatasetPublications" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.5</span> DatasetPublications<a href="dataset-collection-related-tables-1.html#DatasetPublications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table lists the publications for datasets.</p>
+<div id="htmlwidget-8fc40acb525d8413446b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8fc40acb525d8413446b">{"x":{"filter":"none","vertical":false,"data":[["datasetid","publicationid","primarypub","recdatecreated","recdatemodified"],["integer","integer","boolean","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetpublications_pkey, fk_datasetpublications_datasets","datasetpublications_pkey, fk_datasetpublications_publications","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>datasetid (primary key, foreign key)</code></strong>: Dataset identification number. Field links to <a href="dataset-collection-related-tables-1.html#Datasets"><code>Datasets</code></a> table.</li>
+<li><strong><code>publicationid (primary key, foreign key)</code></strong>: Publication identification number. Field links to <a href="Publications.html#Publications"><code>Publications</code></a> table.</li>
+<li><strong><code>primarypub</code></strong>: Is «True» if the publication is the primary publication for the dataset.</li>
+</ul>
+</div>
+<div id="Datasets" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.6</span> Datasets<a href="dataset-collection-related-tables-1.html#Datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores the data for Datasets. A Dataset is the set of samples for a particular data type from a Collection Unit. A Collection Unit may have multiple Datasets for different data types, for example one dataset for pollen and another for plant macrofossils. Every Sample is assigned to a Dataset, and every Dataset is assigned to a Collection Unit. Samples from different Collection Units cannot be assigned to the same Dataset (although they may be assigned to <a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>AggregateDatasets</code></a>).</p>
+<div id="htmlwidget-61a15fd7d23f8c7197d2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-61a15fd7d23f8c7197d2">{"x":{"filter":"none","vertical":false,"data":[["datasetid","collectionunitid","datasettypeid","datasetname","notes","recdatecreated","recdatemodified","embargoid"],["integer","integer","integer","character varying(80)","text","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["datasets_pkey","fk_datasets_collectionunits","fk_datasets_datasettypes","","","","","fk_datasets_embargo"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>datasetid (primary key)</code></strong>: An arbitrary Dataset identification number.</li>
+<li><strong><code>collectionunitid (foreign key)</code></strong>: Collection Unit identification number. Field links to the
+<a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> table.</li>
+<li><strong><code>datasettypeid (foreign key)</code></strong>: Dataset Type identification number. Field links to the
+<a href="dataset-collection-related-tables-1.html#DatasetTypes"><code>DatasetTypes</code></a> lookup table.</li>
+<li><strong><code>datasetname</code></strong>: Optional name for the Dataset.</li>
+<li><strong><code>notes</code></strong>: Free form notes or comments about the Dataset.</li>
+</ul>
+<div id="sql-example-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.6.1</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following query lists the Dataset Types for the site «».</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">SELECT</span> Sites.SiteName, DatasetTypes.DatasetType</a>
+<a class="sourceLine" id="cb9-2" title="2"></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">FROM</span> DatasetTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> ((Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> CollectionUnits <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb9-4" title="4">Sites.SiteID <span class="op">=</span> CollectionUnits.SiteID) <span class="kw">INNER</span> <span class="kw">JOIN</span> Datasets <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb9-5" title="5">CollectionUnits.CollectionUnitID <span class="op">=</span> Datasets.CollectionUnitID) <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb9-6" title="6">DatasetTypes.DatasetTypeID <span class="op">=</span> Datasets.DatasetTypeID</a>
+<a class="sourceLine" id="cb9-7" title="7"></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="kw">WHERE</span> (((Sites.SiteName)<span class="op">=</span><span class="ot">&quot;&quot;</span>));</a></code></pre></div>
+<p>Result:</p>
+<table style="width:53%;">
+<colgroup>
+<col width="23%" />
+<col width="29%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>SiteName</strong></td>
+<td align="left"><strong>DatasetType</strong></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Loss-on-ignition</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">pollen</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">geochronologic</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="sql-example-2" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.7</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This query lists the plant macrofossils identified at site «Bear River No. 3».</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">SELECT</span> Sites.SiteName, Taxa.TaxonName</a>
+<a class="sourceLine" id="cb10-2" title="2"></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="kw">FROM</span> DatasetTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> (Taxa <span class="kw">INNER</span> <span class="kw">JOIN</span> (Variables <span class="kw">INNER</span> <span class="kw">JOIN</span></a>
+<a class="sourceLine" id="cb10-4" title="4">((((Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> CollectionUnits <span class="kw">ON</span> Sites.SiteID <span class="op">=</span></a>
+<a class="sourceLine" id="cb10-5" title="5">CollectionUnits.SiteID) <span class="kw">INNER</span> <span class="kw">JOIN</span> Datasets <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb10-6" title="6">CollectionUnits.CollectionUnitID <span class="op">=</span> Datasets.CollectionUnitID) <span class="kw">INNER</span> <span class="kw">JOIN</span></a>
+<a class="sourceLine" id="cb10-7" title="7">Samples <span class="kw">ON</span> Datasets.DatasetID <span class="op">=</span> Samples.DatasetID) <span class="kw">INNER</span> <span class="kw">JOIN</span> <span class="kw">Data</span> <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb10-8" title="8">Samples.SampleID <span class="op">=</span> <span class="kw">Data</span>.SampleID) <span class="kw">ON</span> Variables.VariableID <span class="op">=</span></a>
+<a class="sourceLine" id="cb10-9" title="9"><span class="kw">Data</span>.VariableID) <span class="kw">ON</span> Taxa.TaxonID <span class="op">=</span> Variables.TaxonID) <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb10-10" title="10">DatasetTypes.DatasetTypeID <span class="op">=</span> Datasets.DatasetTypeID</a>
+<a class="sourceLine" id="cb10-11" title="11"></a>
+<a class="sourceLine" id="cb10-12" title="12"><span class="kw">GROUP</span> <span class="kw">BY</span> Sites.SiteName, DatasetTypes.DatasetType, Taxa.TaxonName</a>
+<a class="sourceLine" id="cb10-13" title="13"></a>
+<a class="sourceLine" id="cb10-14" title="14"><span class="kw">HAVING</span> (((Sites.SiteName)<span class="op">=</span><span class="ot">&quot;Bear River No. 3&quot;</span>) <span class="kw">AND</span></a>
+<a class="sourceLine" id="cb10-15" title="15">((DatasetTypes.DatasetType)<span class="op">=</span><span class="ot">&quot;plant macrofossils&quot;</span>));</a></code></pre></div>
+<p>Result:</p>
+<table style="width:92%;">
+<colgroup>
+<col width="29%" />
+<col width="62%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>SiteName</strong></td>
+<td align="left"><strong>TaxonName</strong></td>
+</tr>
+<tr class="even">
+<td align="left">Bear River No. 3</td>
+<td align="left">Bolboschoenus maritimus subsp. paludosus</td>
+</tr>
+<tr class="odd">
+<td align="left">Bear River No. 3</td>
+<td align="left">Zea mays</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="DatasetSubmissions" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.8</span> DatasetSubmissions<a href="dataset-collection-related-tables-1.html#DatasetSubmissions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Submissions to the database are of Datasets. Submissions may be original
+submissions, resubmissions, compilations from other databases, or
+recompilations. See the description of the
+<a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><code>DatasetSubmissionTypes</code></a> table.</p>
+<div id="htmlwidget-18e90d5d20a2bdefb5f6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-18e90d5d20a2bdefb5f6">{"x":{"filter":"none","vertical":false,"data":[["submissionid","datasetid","databaseid","contactid","submissiontypeid","submissiondate","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissions_pkey","fk_datasetsubmissions_datasets","fk_datasetsubmissions_constituentdatabases","fk_datasetsubmissions_contacts","fk_datasetsubmissions_datasetsubmissiontypes","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>submissionid (primary key)</code></strong>: An arbitrary submission identification number.</li>
+<li><strong><code>datasetid (foreign key)</code></strong>: Dataset identification number. Field links to the
+<a href="dataset-collection-related-tables-1.html#Datasets"><code>Datasets</code></a> table. Datasets may occur
+multiple times in this table (e.g. once for the original compilation
+into a different database and a second time for the recompilation
+into Neotoma).</li>
+<li><strong><code>projectid (foreign key)</code></strong>: Database project responsible for the submission or compilation.</li>
+<li><strong><code>contactid (foreign key)</code></strong>: Contact identification number. Field links to the
+<a href="contact-and-individual-related-tables.html#Contacts"><code>Contacts</code></a> table. The Contact is the
+person who submitted, resubmitted, compiled, or recompiled the data.
+This person is not necessarily the Dataset PI; it is the person who
+submitted the data or compiled the data from the literature.</li>
+<li><strong><code>submissiondate</code></strong>: Date of the submission, resubmission, compilation, or recompilation.</li>
+<li><strong><code>submissiontypeid (foreign key)</code></strong>: Submission Type identification number. Field links to the
+<a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><code>DatasetSubmissionTypes</code></a> table.</li>
+<li><strong><code>notes</code></strong>: Free form notes or comments about the submission.</li>
+</ul>
+</div>
+<div id="DatasetSubmissionTypes" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.9</span> DatasetSubmissionTypes<a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table of Dataset Submission Types. Table is referenced by the
+<a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><code>DatasetSubmissions</code></a> table.</p>
+<div id="htmlwidget-2ddcb9a7193f0d61fce9" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2ddcb9a7193f0d61fce9">{"x":{"filter":"none","vertical":false,"data":[["submissiontypeid","submissiontype","recdatecreated","recdatemodified"],["integer","character varying(80)","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissiontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>submissiontypeid (primary key)</code></strong>: An arbitrary Submission Type identification number.</li>
+<li><p><strong><code>submissiontype</code></strong>: Type of submission. The database has the following types:</p>
+<ul>
+<li>Original submission from data contributor</li>
+<li>Resubmission or revision from data contributor</li>
+<li>Compilation into a flat file database</li>
+<li>Compilation into a another relational database</li>
+<li>Recompilation or revisions to a another relational database</li>
+<li>Compilation into Neotoma from another database</li>
+<li>Recompilation into Neotoma from another database</li>
+<li>Compilation into Neotoma from primary source</li>
+<li>Recompilation into or revisions to Neotoma: The initial
+development of Neotoma involved merging the data from several
+existing databases, including FAUNMAP, the Global Pollen
+Database, and the North American Plant Macrofossil Database.
+Thus original compilation of Datasets was into one of these
+databases, which were then recompiled into Neotoma. The original
+compilation and the recompilation into Neotoma are separate
+submissions.</li>
+</ul></li>
+</ul>
+</div>
+<div id="sql-example-3" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.10</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This query gives a list of Dataset Submissions for the site «Bear River
+No. 3» ordered by date.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">SELECT</span> DatasetTypes.DatasetType, Projects.ProjectName,</a>
+<a class="sourceLine" id="cb11-2" title="2">DatasetSubmissions.SubmissionDate,</a>
+<a class="sourceLine" id="cb11-3" title="3">DatasetSubmissionTypes.SubmissionType, DatasetSubmissions.Notes</a>
+<a class="sourceLine" id="cb11-4" title="4"></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="kw">FROM</span> Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> (Projects <span class="kw">INNER</span> <span class="kw">JOIN</span> (DatasetTypes <span class="kw">INNER</span> <span class="kw">JOIN</span></a>
+<a class="sourceLine" id="cb11-6" title="6">(DatasetSubmissionTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> ((CollectionUnits <span class="kw">INNER</span> <span class="kw">JOIN</span> Datasets</a>
+<a class="sourceLine" id="cb11-7" title="7"><span class="kw">ON</span> CollectionUnits.CollectionUnitID <span class="op">=</span> Datasets.CollectionUnitID) <span class="kw">INNER</span></a>
+<a class="sourceLine" id="cb11-8" title="8"><span class="kw">JOIN</span> DatasetSubmissions <span class="kw">ON</span> Datasets.DatasetID <span class="op">=</span></a>
+<a class="sourceLine" id="cb11-9" title="9">DatasetSubmissions.DatasetID) <span class="kw">ON</span> DatasetSubmissionTypes.SubmissionTypeID</a>
+<a class="sourceLine" id="cb11-10" title="10"><span class="op">=</span> DatasetSubmissions.SubmissionTypeID) <span class="kw">ON</span> DatasetTypes.DatasetTypeID <span class="op">=</span></a>
+<a class="sourceLine" id="cb11-11" title="11">Datasets.DatasetTypeID) <span class="kw">ON</span> Projects.ProjectID <span class="op">=</span></a>
+<a class="sourceLine" id="cb11-12" title="12">DatasetSubmissions.ProjectID) <span class="kw">ON</span> Sites.SiteID <span class="op">=</span> CollectionUnits.SiteID</a>
+<a class="sourceLine" id="cb11-13" title="13"></a>
+<a class="sourceLine" id="cb11-14" title="14"><span class="kw">WHERE</span> (((Sites.SiteName)<span class="op">=</span><span class="ot">&quot;Bear River No. 3&quot;</span>))</a>
+<a class="sourceLine" id="cb11-15" title="15"><span class="kw">ORDER</span> <span class="kw">BY</span> DatasetSubmissions.SubmissionDate;</a></code></pre></div>
+<p>Result:</p>
+<table style="width:98%;">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="20%" />
+<col width="22%" />
+<col width="19%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>DatasetType</strong></td>
+<td align="left"><strong>ProjectName</strong></td>
+<td align="left"><strong>SubmissionDate</strong></td>
+<td align="left"><strong>SubmissionType</strong></td>
+<td align="left"><strong>Notes</strong></td>
+</tr>
+<tr class="even">
+<td align="left">vertebrate fauna</td>
+<td align="left">FAUNMAP</td>
+<td align="left">1/31/1992</td>
+<td align="left">Compilation into a
+another relational
+database</td>
+<td align="left"> </td>
+</tr>
+<tr class="odd">
+<td align="left">vertebrate fauna</td>
+<td align="left">Neotoma</td>
+<td align="left">11/24/2007</td>
+<td align="left">Compilation into
+Neotoma from another
+database</td>
+<td align="left">Compiled from
+FAUNMAP</td>
+</tr>
+<tr class="even">
+<td align="left">mollusks</td>
+<td align="left">Neotoma</td>
+<td align="left">11/25/2007</td>
+<td align="left">Compilation into
+Neotoma from primary
+source</td>
+<td align="left"> </td>
+</tr>
+<tr class="odd">
+<td align="left">plant
+macrofossils</td>
+<td align="left">Neotoma</td>
+<td align="left">11/25/2007</td>
+<td align="left">Compilation into
+Neotoma from primary
+source</td>
+<td align="left"> </td>
+</tr>
+<tr class="even">
+<td align="left">vertebrate fauna</td>
+<td align="left">Neotoma</td>
+<td align="left">11/25/2007</td>
+<td align="left">Recompilation into or
+revisions to Neotoma</td>
+<td align="left">Bison elements,
+fish, and birds
+added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="DatasetTypes" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.11</span> DatasetTypes<a href="dataset-collection-related-tables-1.html#DatasetTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table for Dataset Types. Table is referenced by the <a href="dataset-collection-related-tables-1.html#Datasets"><code>Datasets</code></a> table.</p>
+<div id="htmlwidget-df052b3e719678748acd" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-df052b3e719678748acd">{"x":{"filter":"none","vertical":false,"data":[["submissionid","datasetid","databaseid","contactid","submissiontypeid","submissiondate","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissions_pkey","fk_datasetsubmissions_datasets","fk_datasetsubmissions_constituentdatabases","fk_datasetsubmissions_contacts","fk_datasetsubmissions_datasetsubmissiontypes","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>datasettypeid (primary key)</code></strong>: An arbitrary Dataset Type identification number.</li>
+<li><p><strong><code>datasettype</code></strong>: The Dataset type, including the following:</p>
+<blockquote>
+<ul>
+<li>geochronologic</li>
+<li>loss-on-ignition</li>
+<li>pollen</li>
+<li>plant macrofossils</li>
+<li>vertebrate fauna</li>
+<li>mollusks</li>
+</ul>
+</blockquote></li>
+</ul>
+</div>
+<div id="DatasetPIs" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.12</span> DatasetPIs<a href="dataset-collection-related-tables-1.html#DatasetPIs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table lists the Principle Investigators for Datasets.</p>
+<div id="htmlwidget-6ed119c9b223a865f3a5" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6ed119c9b223a865f3a5">{"x":{"filter":"none","vertical":false,"data":[["datasetid","contactid","piorder","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_datasetpis_datasets","fk_datasetpis_contacts","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>datasetid (primary key, foreign key)</code></strong>: Dataset identification number. Field links to Dataset table.</li>
+<li><strong><code>contactid (primary key, foreign key)</code></strong>: Contact identification number. Field links to
+<a href="contact-and-individual-related-tables.html#Contacts"><code>Contacts</code></a> table.</li>
+<li><strong><code>piorder</code></strong>: Order in which PIs are listed.</li>
+</ul>
+</div>
+<div id="DepEnvtTypes" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.13</span> DepEnvtTypes<a href="dataset-collection-related-tables-1.html#DepEnvtTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table of Depostional Environment Types. Table is referenced by
+the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> table.</p>
+<div id="htmlwidget-fedb6d763268ea9063ae" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fedb6d763268ea9063ae">{"x":{"filter":"none","vertical":false,"data":[["depenvtid","depenvt","depenvthigherid","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["depenvttypes_pkey","","fk_depenvthigherid","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>depenvtid (primary key)</code></strong>: An arbitrary Depositional Environment Type identification number.</li>
+<li><strong><code>depenvt</code></strong>: Depositional Environment.</li>
+<li><strong><code>depenvthigherid</code></strong>: The Depositional Environment Types are hierarchical. DepEnvtHigherID
+is the DepEnvtID of the higher ranked Depositional Environment. See
+following table gives some examples.</li>
+</ul>
+<table style="width:86%;">
+<colgroup>
+<col width="30%" />
+<col width="22%" />
+<col width="33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><blockquote>
+<p><strong>DepEnvtID</strong></p>
+</blockquote></td>
+<td><strong>DepEnvt</strong></td>
+<td><strong>DepEnvtHigherID</strong></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>19</p>
+</blockquote></td>
+<td>Lacustrine</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p>24</p>
+</blockquote></td>
+<td></td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>29</p>
+</blockquote></td>
+<td>Glacial</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p>30</p>
+</blockquote></td>
+<td></td>
+<td>29</td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>33</p>
+</blockquote></td>
+<td></td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p>59</p>
+</blockquote></td>
+<td>Palustrine</td>
+<td>59</td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>61</p>
+</blockquote></td>
+<td>Mire</td>
+<td>59</td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p>62</p>
+</blockquote></td>
+<td>Bog</td>
+<td>61</td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>63</p>
+</blockquote></td>
+<td>Blanket Bog</td>
+<td>62</td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p>64</p>
+</blockquote></td>
+<td>Raised Bog</td>
+<td>62</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sql-example-4" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.14</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This query gives a list of the top level Depostional Environment Types.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">SELECT</span> DepEnvtTypes.DepEnvtID, DepEnvtTypes.DepEnvt,</a>
+<a class="sourceLine" id="cb12-2" title="2">DepEnvtTypes.DepEnvtHigherID</a>
+<a class="sourceLine" id="cb12-3" title="3"></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="kw">FROM</span> DepEnvtTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> DepEnvtTypes <span class="kw">AS</span> DepEnvtTypes\_1 <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb12-5" title="5">(DepEnvtTypes.DepEnvt <span class="op">=</span> DepEnvtTypes\_1.DepEnvt) <span class="kw">AND</span></a>
+<a class="sourceLine" id="cb12-6" title="6">(DepEnvtTypes.DepEnvtHigherID <span class="op">=</span> DepEnvtTypes\_1.DepEnvtID);</a></code></pre></div>
+<p>Result:</p>
+<table style="width:85%;">
+<colgroup>
+<col width="25%" />
+<col width="26%" />
+<col width="33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>DepEnvtID</strong></td>
+<td align="left"><strong>DepEnvt</strong></td>
+<td align="left"><strong>DepEnvtHigherID</strong></td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">Archaeological</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">Biological</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left">16</td>
+<td align="left">Estuarine</td>
+<td align="left">16</td>
+</tr>
+<tr class="odd">
+<td align="left">19</td>
+<td align="left">Lacustrine</td>
+<td align="left">19</td>
+</tr>
+<tr class="even">
+<td align="left">51</td>
+<td align="left">Marine</td>
+<td align="left">51</td>
+</tr>
+<tr class="odd">
+<td align="left">59</td>
+<td align="left">Palustrine</td>
+<td align="left">59</td>
+</tr>
+<tr class="even">
+<td align="left">76</td>
+<td align="left">Riverine</td>
+<td align="left">76</td>
+</tr>
+<tr class="odd">
+<td align="left">93</td>
+<td align="left">Sampler</td>
+<td align="left">93</td>
+</tr>
+<tr class="even">
+<td align="left">99</td>
+<td align="left">Spring</td>
+<td align="left">99</td>
+</tr>
+<tr class="odd">
+<td align="left">103</td>
+<td align="left">Terrestrial</td>
+<td align="left">103</td>
+</tr>
+<tr class="even">
+<td align="left">136</td>
+<td align="left">Other</td>
+<td align="left">136</td>
+</tr>
+<tr class="odd">
+<td align="left">137</td>
+<td align="left">Unknown</td>
+<td align="left">137</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sql-example-5" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.15</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This following query gives a list of the second level «Terrestrial»
+Depositional Environment Types.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">SELECT</span> DepEnvtTypes\_1.DepEnvtID, DepEnvtTypes\_1.DepEnvt,</a>
+<a class="sourceLine" id="cb13-2" title="2">DepEnvtTypes\_1.DepEnvtHigherID</a>
+<a class="sourceLine" id="cb13-3" title="3"></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="kw">FROM</span> DepEnvtTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> DepEnvtTypes <span class="kw">AS</span> DepEnvtTypes\_1 <span class="kw">ON</span></a>
+<a class="sourceLine" id="cb13-5" title="5">DepEnvtTypes.DepEnvtID <span class="op">=</span> DepEnvtTypes\_1.DepEnvtHigherID</a>
+<a class="sourceLine" id="cb13-6" title="6"></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="kw">WHERE</span> (((DepEnvtTypes.DepEnvt)<span class="op">=</span><span class="ot">&quot;Terrestrial&quot;</span>));</a></code></pre></div>
+<p>Result:</p>
+<table style="width:81%;">
+<colgroup>
+<col width="25%" />
+<col width="22%" />
+<col width="33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>DepEnvtID</strong></td>
+<td align="left"><strong>DepEnvt</strong></td>
+<td align="left"><strong>DepEnvtHigherID</strong></td>
+</tr>
+<tr class="even">
+<td align="left">103</td>
+<td align="left">Terrestrial</td>
+<td align="left">103</td>
+</tr>
+<tr class="odd">
+<td align="left">104</td>
+<td align="left">Aeolian</td>
+<td align="left">103</td>
+</tr>
+<tr class="even">
+<td align="left">109</td>
+<td align="left">Cave</td>
+<td align="left">103</td>
+</tr>
+<tr class="odd">
+<td align="left">117</td>
+<td align="left">Glacial</td>
+<td align="left">103</td>
+</tr>
+<tr class="even">
+<td align="left">122</td>
+<td align="left">Gravity</td>
+<td align="left">103</td>
+</tr>
+<tr class="odd">
+<td align="left">127</td>
+<td align="left">Soil</td>
+<td align="left">103</td>
+</tr>
+<tr class="even">
+<td align="left">131</td>
+<td align="left">Volcanic</td>
+<td align="left">103</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="Lithology" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.16</span> Lithology<a href="dataset-collection-related-tables-1.html#Lithology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores the lithologic descriptions of Collection Units.</p>
+<div id="htmlwidget-bf7d452b93991ca4ea9a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bf7d452b93991ca4ea9a">{"x":{"filter":"none","vertical":false,"data":[["lithologyid","collectionunitid","depthtop","depthbottom","lowerboundary","description","recdatecreated","recdatemodified"],["integer","integer","double precision","double precision","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["lithology_pkey","fk_lithology_collectionunits","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>lithologyid (primary key)</code></strong>: An arbitrary identification number for a lithologic unit.</li>
+<li><strong><code>collectionunitid (foreign key)</code></strong>: Collection Unit identification number. Field links to the
+<a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> table.</li>
+<li><strong><code>depthtop</code></strong>: Depth of the top of the lithologic unit in cm.</li>
+<li><strong><code>depthbottom</code></strong>: Depth of the bottom of the lithologic unit in cm.</li>
+<li><strong><code>lowerboundary</code></strong>: Description of the nature of the lower boundary of the lithologic
+unit, e.g. «gradual, over ca. 10 cm».</li>
+<li><p><strong><code>description</code></strong>: Description of the lithologic unit. These can be quite detailed,
+with Munsell color or Troels-Smith descriptions. Some examples:</p>
+<ul>
+<li>interbedded gray silt and peat</li>
+<li>marly fine-detritus copropel</li>
+<li>humified sedge and Sphagnum peat</li>
+<li>sedge peat 5YR 5/4</li>
+<li>gray sandy loam with mammoth and other animal bones</li>
+<li>grey-green gyttja, oxidizing to gray-brown</li>
+<li>Ag 3, Ga 1, medium gray, firm, elastic</li>
+<li>nig3, strf0, elas2, sicc0; Th2 T12 Tb+</li>
+<li>Ld°4, , Dg+, Dh+</li>
+</ul></li>
+</ul>
+</div>
+<div id="Projects" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.17</span> Projects<a href="dataset-collection-related-tables-1.html#Projects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores a list of database projects that have supplied data to
+Neotoma. These include the databases that were merged in the initial
+development of Neotoma as well as other independent projects that
+continue to assemble data for a particular region or data type. Some of
+these projects have developed relational databases, whereas others have
+compiled data in flat files. This table is referenced by the
+<a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><code>DatasetSubmissions</code></a> table.</p>
+<div id="htmlwidget-2126300ab7513a1a0317" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2126300ab7513a1a0317">{"x":{"filter":"none","vertical":false,"data":[[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>projectid (primary key)</code></strong>: An arbitrary Project identification number.</li>
+<li><strong><code>projectname</code></strong>: Name of the Project, e.g. «Cooperative Holocene Mapping Project»,
+«North American Pollen Database», «FAUNMAP».</li>
+<li><strong><code>contactid (foreign key)</code></strong>: Contact person for the project. Field links to the
+<a href="contact-and-individual-related-tables.html#Contacts"><code>Contacts</code></a> table.</li>
+<li><strong><code>url</code></strong>: Web site address for the project.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="contact-and-individual-related-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="publication-related-tables-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"max-depth": 4
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
