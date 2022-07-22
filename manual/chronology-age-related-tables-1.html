@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14 Chronology &amp; Age Related Tables | Neotoma Paleoecology Manual v2.0</title>
+  <title>12 Chronology &amp; Age Related Tables | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14 Chronology &amp; Age Related Tables | Neotoma Paleoecology Manual v2.0" />
+  <meta property="og:title" content="12 Chronology &amp; Age Related Tables | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14 Chronology &amp; Age Related Tables | Neotoma Paleoecology Manual v2.0" />
+  <meta name="twitter:title" content="12 Chronology &amp; Age Related Tables | Neotoma Paleoecology Manual v2.0" />
   
   <meta name="twitter:description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2022-06-06" />
+<meta name="date" content="2022-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -63,25 +64,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -90,9 +92,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -140,10 +142,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a><ul>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
 <li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
 <li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
@@ -151,17 +155,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a><ul>
-<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-query"><i class="fa fa-check"></i><b>3.1.1</b> SQL Query</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
-<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a><ul>
-<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sitedesign"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
 <li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
 <li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
 <li class="chapter" data-level="4.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>4.4</b> Taxa and Ecological Groups</a></li>
@@ -169,150 +177,204 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
 <li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a><ul>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
 <li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
 <li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
 <li class="chapter" data-level="5.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>5.4</b> Sample Related Tables</a></li>
-<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.5</b> Taxonomy Related Tables</a></li>
-<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
-<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
+<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#specimen-related-tables"><i class="fa fa-check"></i><b>5.5</b> Specimen Related Tables</a></li>
+<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.6</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.7</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="5.8" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.8</b> Publication Related Tables</a></li>
+<li class="chapter" data-level="5.9" data-path="neotoma-tables.html"><a href="neotoma-tables.html#supporting-resources"><i class="fa fa-check"></i><b>5.9</b> Supporting Resources</a></li>
+<li class="chapter" data-level="5.10" data-path="neotoma-tables.html"><a href="neotoma-tables.html#isotope-data-management"><i class="fa fa-check"></i><b>5.10</b> Isotope Data Management</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>6</b> Contact and Individual Related Tables</a><ul>
-<li class="chapter" data-level="6.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>6.1</b> <code>collectors</code></a></li>
+<li class="chapter" data-level="6" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>6</b> Contact and Individual Related Tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>6.1</b> <code>collectors</code></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Contacts"><i class="fa fa-check"></i><b>6.2</b> <code>contacts</code></a></li>
 <li class="chapter" data-level="6.3" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#ContactStatuses"><i class="fa fa-check"></i><b>6.3</b> <code>contactstatuses</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Dataset &amp; Collection Related Tables</a><ul>
-<li class="chapter" data-level="7.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>7.1</b> AggregateDatasets</a></li>
-<li class="chapter" data-level="7.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>7.2</b> aggregateordertypes</a></li>
-<li class="chapter" data-level="7.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>7.3</b> CollectionTypes</a></li>
-<li class="chapter" data-level="7.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>7.4</b> CollectionUnits</a></li>
-<li class="chapter" data-level="7.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>7.5</b> DatasetPublications</a></li>
-<li class="chapter" data-level="7.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>7.6</b> Datasets</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Dataset &amp; Collection Related Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#accumulationrates"><i class="fa fa-check"></i><b>7.1</b> <code>accumulationrates</code></a></li>
+<li class="chapter" data-level="7.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>7.2</b> <code>aggregatedatasets</code></a></li>
+<li class="chapter" data-level="7.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>7.3</b> <code>aggregateordertypes</code></a></li>
+<li class="chapter" data-level="7.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>7.4</b> <code>collectiontypes</code></a></li>
+<li class="chapter" data-level="7.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>7.5</b> <code>collectionunits</code></a></li>
+<li class="chapter" data-level="7.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#contextsdatasettypes"><i class="fa fa-check"></i><b>7.6</b> <code>contextsdatasettypes</code></a></li>
+<li class="chapter" data-level="7.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdatabases"><i class="fa fa-check"></i><b>7.7</b> <code>datasetdatabases</code></a></li>
+<li class="chapter" data-level="7.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdoi"><i class="fa fa-check"></i><b>7.8</b> <code>datasetdoi</code></a></li>
+<li class="chapter" data-level="7.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>7.9</b> <code>datasetpis</code></a></li>
+<li class="chapter" data-level="7.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>7.10</b> <code>datasetpublications</code></a></li>
+<li class="chapter" data-level="7.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>7.11</b> <code>datasets</code></a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.11.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>7.11.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>7.7</b> SQL Example</a></li>
-<li class="chapter" data-level="7.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>7.8</b> DatasetSubmissions</a></li>
-<li class="chapter" data-level="7.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>7.9</b> DatasetSubmissionTypes</a></li>
-<li class="chapter" data-level="7.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>7.10</b> SQL Example</a></li>
-<li class="chapter" data-level="7.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>7.11</b> DatasetTypes</a></li>
-<li class="chapter" data-level="7.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>7.12</b> DatasetPIs</a></li>
-<li class="chapter" data-level="7.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>7.13</b> DepEnvtTypes</a></li>
-<li class="chapter" data-level="7.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>7.14</b> SQL Example</a></li>
-<li class="chapter" data-level="7.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>7.15</b> SQL Example</a></li>
-<li class="chapter" data-level="7.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>7.16</b> Lithology</a></li>
-<li class="chapter" data-level="7.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Projects"><i class="fa fa-check"></i><b>7.17</b> Projects</a></li>
+<li class="chapter" data-level="7.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>7.12</b> <code>datasetsubmissions</code></a></li>
+<li class="chapter" data-level="7.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>7.13</b> <code>datasetsubmissiontypes</code></a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>7.13.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Publication Related Tables</a><ul>
-<li class="chapter" data-level="8.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>8.1</b> publicationauthors</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>8.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxagrouptypes"><i class="fa fa-check"></i><b>7.14</b> <code>datasettaxagrouptypes</code></a></li>
+<li class="chapter" data-level="7.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxonnotes"><i class="fa fa-check"></i><b>7.15</b> <code>datasettaxonnotes</code></a></li>
+<li class="chapter" data-level="7.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>7.16</b> <code>datasettypes</code></a></li>
+<li class="chapter" data-level="7.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetvariables"><i class="fa fa-check"></i><b>7.17</b> <code>datasetvariables</code></a></li>
+<li class="chapter" data-level="7.18" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>7.18</b> <code>depenvttypes</code></a>
+<ul>
+<li class="chapter" data-level="7.18.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>7.18.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.18.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>7.18.2</b> SQL Example</a></li>
+<li class="chapter" data-level="7.18.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>7.18.3</b> SQL Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Publication Related Tables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>8.1</b> <code>publicationauthors</code></a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>8.1.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationeditors"><i class="fa fa-check"></i><b>8.2</b> <code>publicationeditors</code></a></li>
+<li class="chapter" data-level="8.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#Publications"><i class="fa fa-check"></i><b>8.3</b> <code>publications</code></a></li>
+<li class="chapter" data-level="8.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#PublicationTypes"><i class="fa fa-check"></i><b>8.4</b> <code>publicationtypes</code></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#legacy"><i class="fa fa-check"></i><b>8.4.1</b> Legacy</a></li>
+<li class="chapter" data-level="8.4.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#journal-article"><i class="fa fa-check"></i><b>8.4.2</b> Journal Article</a></li>
+<li class="chapter" data-level="8.4.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#book-chapter"><i class="fa fa-check"></i><b>8.4.3</b> Book Chapter</a></li>
+<li class="chapter" data-level="8.4.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-book"><i class="fa fa-check"></i><b>8.4.4</b> Authored Book</a></li>
+<li class="chapter" data-level="8.4.5" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-book"><i class="fa fa-check"></i><b>8.4.5</b> Edited Book</a></li>
+<li class="chapter" data-level="8.4.6" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#masters-thesis"><i class="fa fa-check"></i><b>8.4.6</b> Master’s Thesis</a></li>
+<li class="chapter" data-level="8.4.7" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#doctoral-dissertation"><i class="fa fa-check"></i><b>8.4.7</b> Doctoral Dissertation</a></li>
+<li class="chapter" data-level="8.4.8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-report"><i class="fa fa-check"></i><b>8.4.8</b> Authored Report</a></li>
+<li class="chapter" data-level="8.4.9" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-report"><i class="fa fa-check"></i><b>8.4.9</b> Edited Report</a></li>
+<li class="chapter" data-level="8.4.10" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-authored-publication"><i class="fa fa-check"></i><b>8.4.10</b> Other Authored Publication</a></li>
+<li class="chapter" data-level="8.4.11" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-edited-publication"><i class="fa fa-check"></i><b>8.4.11</b> Other Edited Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="Publications.html"><a href="Publications.html"><i class="fa fa-check"></i><b>9</b> Publications</a></li>
-<li class="chapter" data-level="10" data-path="PublicationTypes.html"><a href="PublicationTypes.html"><i class="fa fa-check"></i><b>10</b> PublicationTypes</a><ul>
-<li class="chapter" data-level="10.1" data-path="PublicationTypes.html"><a href="PublicationTypes.html#legacy-publication"><i class="fa fa-check"></i><b>10.1</b> Legacy Publication</a></li>
-<li class="chapter" data-level="10.2" data-path="PublicationTypes.html"><a href="PublicationTypes.html#journal-article"><i class="fa fa-check"></i><b>10.2</b> Journal Article</a></li>
-<li class="chapter" data-level="10.3" data-path="PublicationTypes.html"><a href="PublicationTypes.html#book-chapter"><i class="fa fa-check"></i><b>10.3</b> Book Chapter</a></li>
-<li class="chapter" data-level="10.4" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-book"><i class="fa fa-check"></i><b>10.4</b> Authored Book</a></li>
-<li class="chapter" data-level="10.5" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-book"><i class="fa fa-check"></i><b>10.5</b> Edited Book</a></li>
-<li class="chapter" data-level="10.6" data-path="PublicationTypes.html"><a href="PublicationTypes.html#masters-thesis"><i class="fa fa-check"></i><b>10.6</b> Master’s Thesis</a></li>
-<li class="chapter" data-level="10.7" data-path="PublicationTypes.html"><a href="PublicationTypes.html#doctoral-dissertation"><i class="fa fa-check"></i><b>10.7</b> Doctoral Dissertation</a></li>
-<li class="chapter" data-level="10.8" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-report"><i class="fa fa-check"></i><b>10.8</b> Authored Report</a></li>
-<li class="chapter" data-level="10.9" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-report"><i class="fa fa-check"></i><b>10.9</b> Edited Report</a></li>
-<li class="chapter" data-level="10.10" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-authored-publication"><i class="fa fa-check"></i><b>10.10</b> Other Authored Publication</a></li>
-<li class="chapter" data-level="10.11" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-edited-publication"><i class="fa fa-check"></i><b>10.11</b> Other Edited Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Sample Related Tables</a><ul>
-<li class="chapter" data-level="11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>11.1</b> <code>analysisunits</code></a></li>
-<li class="chapter" data-level="11.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>11.2</b> <code>data</code></a><ul>
-<li class="chapter" data-level="11.2.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>11.2.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>9</b> Sample Related Tables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>9.1</b> <code>aggregatesamples</code></a></li>
+<li class="chapter" data-level="9.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>9.2</b> <code>analysisunits</code></a></li>
+<li class="chapter" data-level="9.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>9.3</b> <code>data</code></a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>9.3.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>11.3</b> <code>depagents</code></a></li>
-<li class="chapter" data-level="11.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>11.4</b> <code>depagenttypes</code></a></li>
-<li class="chapter" data-level="11.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>11.5</b> <code>sampleages</code></a><ul>
-<li class="chapter" data-level="11.5.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>11.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>9.4</b> <code>depagents</code></a></li>
+<li class="chapter" data-level="9.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>9.5</b> <code>depagenttypes</code></a></li>
+<li class="chapter" data-level="9.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>9.6</b> <code>faciestypes</code></a></li>
+<li class="chapter" data-level="9.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>9.7</b> <code>keywords</code></a></li>
+<li class="chapter" data-level="9.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>9.8</b> <code>lithology</code></a></li>
+<li class="chapter" data-level="9.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>9.9</b> <code>sampleages</code></a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>9.9.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>11.6</b> <code>sampleanalysts</code></a></li>
-<li class="chapter" data-level="11.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>11.7</b> <code>samplekeywords</code></a><ul>
-<li class="chapter" data-level="11.7.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>11.7.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>9.10</b> <code>sampleanalysts</code></a></li>
+<li class="chapter" data-level="9.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>9.11</b> <code>samplekeywords</code></a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>9.11.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>11.8</b> <code>samples</code></a><ul>
-<li class="chapter" data-level="11.8.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>11.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.12" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>9.12</b> <code>samples</code></a>
+<ul>
+<li class="chapter" data-level="9.12.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>9.12.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>11.9</b> <code>aggregatesamples</code></a></li>
-<li class="chapter" data-level="11.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>11.10</b> <code>faciestypes</code></a></li>
-<li class="chapter" data-level="11.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>11.11</b> <code>keywords</code></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Site Related Tables</a><ul>
-<li class="chapter" data-level="12.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>12.1</b> SiteImages</a></li>
-<li class="chapter" data-level="12.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>12.2</b> Sites</a></li>
-<li class="chapter" data-level="12.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>12.3</b> SiteGeoPolitical</a></li>
-<li class="chapter" data-level="12.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>12.4</b> SQL Example</a></li>
-<li class="chapter" data-level="12.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>12.5</b> SQL Example</a></li>
-<li class="chapter" data-level="12.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>12.6</b> SQL Example</a></li>
-<li class="chapter" data-level="12.7" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>12.7</b> GeoPoliticalUnits</a></li>
-<li class="chapter" data-level="12.8" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>12.8</b> SQL Example</a></li>
+<li class="chapter" data-level="10" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>10</b> Site Related Tables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>10.1</b> <code>geopoliticalunits</code></a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>10.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.1.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>10.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>13</b> Taxonomy Related Tables</a><ul>
-<li class="chapter" data-level="13.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>13.1</b> <code>ecolgroups</code></a><ul>
-<li class="chapter" data-level="13.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>13.1.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>13.1.2</b> SQL Example</a></li>
+<li class="chapter" data-level="10.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparameters"><i class="fa fa-check"></i><b>10.2</b> <code>lakeparameters</code></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>10.2.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>13.2</b> <code>ecolgrouptypes</code></a></li>
-<li class="chapter" data-level="13.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>13.3</b> <code>ecolsettypes</code></a></li>
-<li class="chapter" data-level="13.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>13.4</b> <code>synonyms</code></a></li>
-<li class="chapter" data-level="13.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>13.5</b> <code>synonymtypes</code></a><ul>
-<li class="chapter" data-level="13.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>13.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparametertypes"><i class="fa fa-check"></i><b>10.3</b> <code>lakeparametertypes</code></a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>10.3.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>13.6</b> <code>taxa</code></a></li>
-<li class="chapter" data-level="13.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>13.7</b> <code>taxagrouptypes</code></a></li>
-<li class="chapter" data-level="13.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>13.8</b> <code>variables</code></a><ul>
-<li class="chapter" data-level="13.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>13.8.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>13.8.2</b> SQL Example</a></li>
-<li class="chapter" data-level="13.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>13.8.3</b> SQL Example</a></li>
+<li class="chapter" data-level="10.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>10.4</b> <code>sitegeopolitical</code></a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>10.4.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>13.9</b> <code>variablecontexts</code></a></li>
-<li class="chapter" data-level="13.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>13.10</b> <code>variableelements</code></a></li>
-<li class="chapter" data-level="13.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>13.11</b> <code>variablemodifications</code></a></li>
-<li class="chapter" data-level="13.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>13.12</b> <code>variableunits</code></a></li>
-<li class="chapter" data-level="13.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>13.13</b> <code>repositoryinstitutions</code></a></li>
-<li class="chapter" data-level="13.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>13.14</b> <code>repositoryspecimens</code></a><ul>
-<li class="chapter" data-level="13.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>13.14.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>10.5</b> <code>siteimages</code></a></li>
+<li class="chapter" data-level="10.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>10.6</b> <code>sites</code></a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>10.6.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>13.15</b> <code>specimendates</code></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>14</b> Chronology &amp; Age Related Tables</a><ul>
-<li class="chapter" data-level="14.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>14.1</b> AgeTypes</a></li>
-<li class="chapter" data-level="14.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>14.2</b> AggregateChronologies</a></li>
-<li class="chapter" data-level="14.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>14.3</b> ChronControls</a></li>
-<li class="chapter" data-level="14.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>14.4</b> ChronControlTypes</a></li>
-<li class="chapter" data-level="14.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>14.5</b> Chronologies</a><ul>
-<li class="chapter" data-level="14.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>14.5.1</b> SQL Example</a></li>
-<li class="chapter" data-level="14.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>14.5.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Taxonomy Related Tables</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>11.1</b> <code>ecolgroups</code></a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>11.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>11.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>14.6</b> AggregateSampleAges</a><ul>
-<li class="chapter" data-level="14.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>14.6.1</b> SQL Example</a></li>
-<li class="chapter" data-level="14.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>14.6.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>11.2</b> <code>ecolgrouptypes</code></a></li>
+<li class="chapter" data-level="11.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>11.3</b> <code>ecolsettypes</code></a></li>
+<li class="chapter" data-level="11.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>11.4</b> <code>synonyms</code></a></li>
+<li class="chapter" data-level="11.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>11.5</b> <code>synonymtypes</code></a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>11.5.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>14.7</b> <code>geochronology</code></a><ul>
-<li class="chapter" data-level="14.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>14.7.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>11.6</b> <code>taxa</code></a></li>
+<li class="chapter" data-level="11.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>11.7</b> <code>taxagrouptypes</code></a></li>
+<li class="chapter" data-level="11.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>11.8</b> <code>variables</code></a>
+<ul>
+<li class="chapter" data-level="11.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>11.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>11.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>11.8.3</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>14.8</b> GeochronPublications</a></li>
-<li class="chapter" data-level="14.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>14.9</b> GeochronTypes</a></li>
-<li class="chapter" data-level="14.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>14.10</b> RelativeAgePublications</a></li>
-<li class="chapter" data-level="14.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>14.11</b> RelativeAges</a><ul>
-<li class="chapter" data-level="14.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>14.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>11.9</b> <code>variablecontexts</code></a></li>
+<li class="chapter" data-level="11.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>11.10</b> <code>variableelements</code></a></li>
+<li class="chapter" data-level="11.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>11.11</b> <code>variablemodifications</code></a></li>
+<li class="chapter" data-level="11.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>11.12</b> <code>variableunits</code></a></li>
+<li class="chapter" data-level="11.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>11.13</b> <code>repositoryinstitutions</code></a></li>
+<li class="chapter" data-level="11.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>11.14</b> <code>repositoryspecimens</code></a>
+<ul>
+<li class="chapter" data-level="11.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>11.14.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>14.12</b> RadiocarbonCalibration</a></li>
-<li class="chapter" data-level="14.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>14.13</b> RelativeAgeScales</a></li>
-<li class="chapter" data-level="14.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>14.14</b> RelativeAgeUnits</a></li>
-<li class="chapter" data-level="14.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>14.15</b> <code>relativechronology</code></a></li>
-<li class="chapter" data-level="14.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>14.16</b> Tephrachronology</a></li>
-<li class="chapter" data-level="14.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>14.17</b> Tephras</a></li>
+<li class="chapter" data-level="11.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>11.15</b> <code>specimendates</code></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>15</b> References</a></li>
+<li class="chapter" data-level="12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Chronology &amp; Age Related Tables</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>12.1</b> <code>agetypes</code></a></li>
+<li class="chapter" data-level="12.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>12.2</b> <code>aggregatechronologies</code></a></li>
+<li class="chapter" data-level="12.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>12.3</b> <code>chroncontrols</code></a></li>
+<li class="chapter" data-level="12.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>12.4</b> <code>chroncontroltypes</code></a></li>
+<li class="chapter" data-level="12.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>12.5</b> <code>chronologies</code></a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>12.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>12.5.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>12.6</b> <code>aggregatesampleages</code></a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-28"><i class="fa fa-check"></i><b>12.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-29"><i class="fa fa-check"></i><b>12.6.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>12.7</b> <code>geochronology</code></a>
+<ul>
+<li class="chapter" data-level="12.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-30"><i class="fa fa-check"></i><b>12.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>12.8</b> <code>geochronpublications</code></a></li>
+<li class="chapter" data-level="12.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>12.9</b> <code>geochrontypes</code></a></li>
+<li class="chapter" data-level="12.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>12.10</b> <code>relativeagepublications</code></a></li>
+<li class="chapter" data-level="12.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>12.11</b> <code>relativeages</code></a>
+<ul>
+<li class="chapter" data-level="12.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-31"><i class="fa fa-check"></i><b>12.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>12.12</b> <code>radiocarboncalibration</code></a></li>
+<li class="chapter" data-level="12.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>12.13</b> <code>relativeagescales</code></a></li>
+<li class="chapter" data-level="12.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>12.14</b> <code>relativeageunits</code></a></li>
+<li class="chapter" data-level="12.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>12.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="12.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>12.16</b> <code>tephrachronology</code></a></li>
+<li class="chapter" data-level="12.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>12.17</b> <code>tephras</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 </ul>
 
       </nav>
@@ -330,15 +392,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chronology-age-related-tables-1" class="section level1 hasAnchor">
-<h1><span class="header-section-number">14</span> Chronology &amp; Age Related Tables<a href="chronology-age-related-tables-1.html#chronology-age-related-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="AgeTypes" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.1</span> AgeTypes<a href="chronology-age-related-tables-1.html#AgeTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="chronology-age-related-tables-1" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">12</span> Chronology &amp; Age Related Tables<a href="chronology-age-related-tables-1.html#chronology-age-related-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="AgeTypes" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> <code>agetypes</code><a href="chronology-age-related-tables-1.html#AgeTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Age Types or units. This table is referenced by the <a href="chronology-age-related-tables-1.html#Chronologies"><code>chronologies</code></a> and <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a> tables.</p>
-<div id="htmlwidget-3bbb62ce21f3d175717b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3bbb62ce21f3d175717b">{"x":{"filter":"none","vertical":false,"data":[["agetypeid","agetype","precedence","shortagetype","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","character varying(32)","timestamp(0) without time zone","timestamp(0) without time zone"],["agetypes_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-40e6444ad48168502c09" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-40e6444ad48168502c09">{"x":{"filter":"none","vertical":false,"data":[["agetypeid","agetype","precedence","shortagetype","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","character varying(32)","timestamp(0) without time zone","timestamp(0) without time zone"],["agetypes_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>agetypeid (primary key)</code></strong>: An arbitrary Age Type identification number.</li>
+<li><strong><code>agetypeid</code> (primary key)</strong>: An arbitrary Age Type identification number.</li>
 <li><strong><code>agetype</code></strong>: Age type or units. Includes the following:
 <ul>
 <li>Calendar years AD/BC</li>
@@ -349,16 +411,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="AggregateChronologies" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.2</span> AggregateChronologies<a href="chronology-age-related-tables-1.html#AggregateChronologies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="AggregateChronologies" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> <code>aggregatechronologies</code><a href="chronology-age-related-tables-1.html#AggregateChronologies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores metadata for Aggregate Chronologies. An Aggregate Chronology refers to an explicit chronology assigned to a sample Aggregate. The individual Aggregate Samples have ages assigned in the <a href="chronology-age-related-tables-1.html#AggregateSampleAges"><code>aggregatesampleages</code></a> table. An Aggregate Chronology would be used, for example, for a set of packrat middens assigned to an <a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>aggregatedatasets</code></a>. The Aggregate Chronology is analagous to the Chronology assigned to samples from a single Collection Unit.</p>
 <p>An Aggregate may have more than one Aggregate Chronology, for example one in radiocarbon years and another in calibrated radiocarbon years. One Aggreagate Chronology per Age Type may be designated the default, which is the Aggregate Chronology currently preferred by the database stewards.</p>
-<div id="htmlwidget-25ba5be7846c4543f2d7" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-25ba5be7846c4543f2d7">{"x":{"filter":"none","vertical":false,"data":[["aggregatechronid","aggregatedatasetid","agetypeid","isdefault","chronologyname","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","boolean","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatechronologies_pkey","fk_aggregatechronologies_aggregatedatasets","fk_aggregatechronologies_agetypes","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-774eaea6079e92e0a91a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-774eaea6079e92e0a91a">{"x":{"filter":"none","vertical":false,"data":[["aggregatechronid","aggregatedatasetid","agetypeid","isdefault","chronologyname","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","boolean","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatechronologies_pkey","fk_aggregatechronologies_aggregatedatasets","fk_aggregatechronologies_agetypes","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>aggregatechronid (primary key)</code></strong>: An arbitrary Aggregate Chronology identification number.</li>
-<li><strong><code>aggregatedatasetid (foreign key)</code></strong>: Dataset to which the Aggregate Chronology applies. Field links to the <a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>aggregatedatasets</code></a> table.</li>
-<li><strong><code>agetypeid (foreign key)</code></strong>: Age type or units. Field links to the <a href="chronology-age-related-tables-1.html#AgeTypes"><code>agetypes</code></a> table.</li>
+<li><strong><code>aggregatechronid</code> (primary key)</strong>: An arbitrary Aggregate Chronology identification number.</li>
+<li><strong><code>aggregatedatasetid</code> (foreign key)</strong>: Dataset to which the Aggregate Chronology applies. Field links to the <a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>aggregatedatasets</code></a> table.</li>
+<li><strong><code>agetypeid</code> (foreign key)</strong>: Age type or units. Field links to the <a href="chronology-age-related-tables-1.html#AgeTypes"><code>agetypes</code></a> table.</li>
 <li><strong><code>isdefault</code></strong>: Indicates whether the Aggregate Chronology is a default or not. Default status is determined by a Neotoma data steward. Aggregate Datasets may have more than one default Aggregate Chronology, but may have only one default Aggregate Chronology per Age Type.</li>
 <li><strong><code>chronologyname</code></strong>: Optional name for the Chronology.</li>
 <li><strong><code>ageboundyounger</code></strong>: The younger reliable age bound for the Aggregate Chronology. Younger ages may be assigned to samples, but are not regarded as reliable. If the entire Chronology is considered reliable, AgeBoundYounger is assigned the youngest sample age rounded down to the nearest 10. Thus, for 72 BP, AgeBoundYounger = 70 BP; for -45 BP, AgeBoundYounger = -50 BP.</li>
@@ -366,16 +428,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong><code>notes</code></strong>: Free form notes or comments about the Aggregate Chronology.</li>
 </ul>
 </div>
-<div id="ChronControls" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.3</span> ChronControls<a href="chronology-age-related-tables-1.html#ChronControls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ChronControls" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> <code>chroncontrols</code><a href="chronology-age-related-tables-1.html#ChronControls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores data for Chronology Controls, which are the age-depth control points used for age models. These controls may be geophysical controls, such as radiocarbon dates, but include many other kinds of age controls, such as biostratigraphic controls, archaeological cultural associations, and volcanic tephras. In the case of radiocarbon dates, a Chronology Control may not simply be the raw radiocarbon date reported by the laboratory, but perhaps a radiocarbon date corrected for an old carbon reservoir, a calibrated radiocarbon date, or an average of several radiocarbon dates from the same level. A common control for
 lake-sediment cores is the age of the top of the core, which may be the year the core was taken or perhaps an estimate of 0 BP if a few cm of surficial sediment were lost.</p>
-<div id="htmlwidget-87e0abe0ab69f6df54ad" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-87e0abe0ab69f6df54ad">{"x":{"filter":"none","vertical":false,"data":[["chroncontrolid","chronologyid","chroncontroltypeid","depth","thickness","age","agelimityounger","agelimitolder","notes","recdatecreated","recdatemodified","analysisunitid","agetypeid"],["integer","integer","integer","double precision","double precision","double precision","double precision","double precision","text","timestamp(0) without time zone","timestamp(0) without time zone","integer","integer"],["chroncontrols_pkey","fk_chroncontrols_chronologies","fk_chroncontrols_chroncontroltypes","","","","","","","","","fk_chroncontrols_analysisunits","fk_chroncontrols_agetypes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b2dd43b04bef34067c90" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b2dd43b04bef34067c90">{"x":{"filter":"none","vertical":false,"data":[["chroncontrolid","chronologyid","chroncontroltypeid","depth","thickness","age","agelimityounger","agelimitolder","notes","recdatecreated","recdatemodified","analysisunitid","agetypeid"],["integer","integer","integer","double precision","double precision","double precision","double precision","double precision","text","timestamp(0) without time zone","timestamp(0) without time zone","integer","integer"],["chroncontrols_pkey","fk_chroncontrols_chronologies","fk_chroncontrols_chroncontroltypes","","","","","","","","","fk_chroncontrols_analysisunits","fk_chroncontrols_agetypes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>chroncontrolid (primary key)</code></strong>: An arbitrary Chronology Control identification number.</li>
-<li><strong><code>chronologyid (foreign key)</code></strong>: Chronology to which the ChronControl belongs. Field links to the Chronolgies table.</li>
-<li><strong><code>chroncontroltypeid (foreign key)</code></strong>: The type of Chronology Control. Field links to the <a href="chronology-age-related-tables-1.html#ChronControlTypes"><code>chroncontroltypes</code></a> table.</li>
+<li><strong><code>chroncontrolid</code> (primary key)</strong>: An arbitrary Chronology Control identification number.</li>
+<li><strong><code>chronologyid</code> (foreign key)</strong>: Chronology to which the ChronControl belongs. Field links to the Chronolgies table.</li>
+<li><strong><code>chroncontroltypeid</code> (foreign key)</strong>: The type of Chronology Control. Field links to the <a href="chronology-age-related-tables-1.html#ChronControlTypes"><code>chroncontroltypes</code></a> table.</li>
 <li><strong><code>depth</code></strong>: Depth of the Chronology Control in cm.</li>
 <li><strong><code>thickness</code></strong>: Thickness of the Chronology Control in cm.</li>
 <li><strong><code>age</code></strong>: Age of the Chronology Control.</li>
@@ -384,111 +446,59 @@ lake-sediment cores is the age of the top of the core, which may be the year the
 <li><strong><code>notes</code></strong>: Free form notes or comments about the Chronology Control.</li>
 </ul>
 </div>
-<div id="ChronControlTypes" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.4</span> ChronControlTypes<a href="chronology-age-related-tables-1.html#ChronControlTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ChronControlTypes" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> <code>chroncontroltypes</code><a href="chronology-age-related-tables-1.html#ChronControlTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Chronology Control Types. This table is referenced by the <a href="chronology-age-related-tables-1.html#ChronControls"><code>chroncontrols</code></a> table.</p>
-<div id="htmlwidget-c9256b44fd2025412ee4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c9256b44fd2025412ee4">{"x":{"filter":"none","vertical":false,"data":[["chroncontroltypeid","chroncontroltype","higherchroncontroltypeid","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["chroncontroltypes_pkey","","fk_higherchroncontroltypeid","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8b03a97232a7af4d514a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8b03a97232a7af4d514a">{"x":{"filter":"none","vertical":false,"data":[["chroncontroltypeid","chroncontroltype","higherchroncontroltypeid","recdatecreated","recdatemodified"],["integer","character varying(64)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["chroncontroltypes_pkey","","fk_higherchroncontroltypeid","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>chroncontroltypeid (primary key)</code></strong>: An arbitrary Chronology Control Type identification number.</li>
-<li><strong><code>chroncontroltype</code></strong>: The type of Chronology Control object. Chronology Controls include
-such geophysical controls as radiocarbon dates, calibrated
-radiocarbon dates, averages of several radiocarbon dates,
-potassium-argon dates, and thermoluminescence dates, as well as
-biostratigraphic controls, sediment stratigraphic contols, volcanic
-tephras, archaeological cultural associations, and any other types
-of age controls. In general these are calibrated or calendar year
-dates Before Present (BP). <strong>Some ChronControlTypes are in Radiocarbon
-Years, so caution must be exercised.</strong></li>
+<li><strong><code>chroncontroltypeid</code> (primary key)</strong>: An arbitrary Chronology Control Type identification number.</li>
+<li><strong><code>chroncontroltype</code></strong>: The type of Chronology Control object. Chronology Controls include such geophysical controls as radiocarbon dates, calibrated radiocarbon dates, averages of several radiocarbon dates, potassium-argon dates, and thermoluminescence dates, as well as biostratigraphic controls, sediment stratigraphic contols, volcanic tephras, archaeological cultural associations, and any other types of age controls. In general these are calibrated or calendar year dates Before Present (BP). <strong>Some ChronControlTypes are in Radiocarbon Years, so caution must be exercised.</strong></li>
 </ul>
 </div>
-<div id="Chronologies" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.5</span> Chronologies<a href="chronology-age-related-tables-1.html#Chronologies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This table stores Chronology data. A Chronology refers to an explicit
-chronology assigned to a Collection Unit. A Chronology has Chronology
-Controls, the actual age-depth control points, which are stored in the
-<a href="chronology-age-related-tables-1.html#ChronControls"><code>chroncontrols</code></a> table. A Chronology is also based on an Age
-Model, which may be a numerical method that fits a curve to a set of
-age-depth control points or may simply be individually dated Analysis
-Units.</p>
-<p>A Collection Unit may have more than one Chronology, for example one in
-radiocarbon years and another in calibrated radiocarbon years. There may
-be a Chronology developed by the original author and another developed
-by a later research project. Chronologies may be stored for archival
-reasons, even though they are now believed to have problems, if they
-were used for an important research project. One Chronology per Age Type
-may be designated the default Chronology, which is the Chronology
-currently preferred by the database stewards.</p>
-<p>Based upon the Chronology, which includes the Age Model and the Chron
-Controls, ages are assigned to individual samples, which are stored in
-the <a href="sample-related-tables-1.html#SampleAges"><code>SampleAges</code></a> table.</p>
-<p>A younger and older age bounds are assigned to the Chronology. Within
-these bounds the Chronology is regarded as reliable. Ages may be
-assigned to samples beyond the reliable age bounds, but these are not
-considered reliable.</p>
-<div id="htmlwidget-4e8d46efd3f25665dfcc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4e8d46efd3f25665dfcc">{"x":{"filter":"none","vertical":false,"data":[["chronologyid","collectionunitid","agetypeid","contactid","isdefault","chronologyname","dateprepared","agemodel","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","boolean","character varying(80)","date","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["chronologies_pkey","fk_chronologies_collectionunits","fk_chronologies_agetypes","fk_chronologies_contacts","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="Chronologies" class="section level2 hasAnchor" number="12.5">
+<h2><span class="header-section-number">12.5</span> <code>chronologies</code><a href="chronology-age-related-tables-1.html#Chronologies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores Chronology data. A Chronology refers to an explicit chronology assigned to a Collection Unit. A Chronology has Chronology Controls, the actual age-depth control points, which are stored in the <a href="chronology-age-related-tables-1.html#ChronControls"><code>chroncontrols</code></a> table. A Chronology is also based on an Age Model, which may be a numerical method that fits a curve to a set of age-depth control points or may simply be individually dated Analysis Units.</p>
+<p>A Collection Unit may have more than one Chronology, for example one in radiocarbon years and another in calibrated radiocarbon years. There may be a Chronology developed by the original author and another developed by a later research project. Chronologies may be stored for archival reasons, even though they are now believed to have problems, if they were used for an important research project. One Chronology per Age Type may be designated the default Chronology, which is the Chronology currently preferred by the database stewards.</p>
+<p>Based upon the Chronology, which includes the Age Model and the Chron Controls, ages are assigned to individual samples, which are stored in the <a href="sample-related-tables-1.html#SampleAges"><code>sampleages</code></a> table.</p>
+<p>A younger and older age bounds are assigned to the Chronology. Within these bounds the Chronology is regarded as reliable. Ages may be assigned to samples beyond the reliable age bounds, but these are not considered reliable.</p>
+<div id="htmlwidget-baffe6cc4ac162db0680" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-baffe6cc4ac162db0680">{"x":{"filter":"none","vertical":false,"data":[["chronologyid","collectionunitid","agetypeid","contactid","isdefault","chronologyname","dateprepared","agemodel","ageboundyounger","ageboundolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","boolean","character varying(80)","date","character varying(80)","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["chronologies_pkey","fk_chronologies_collectionunits","fk_chronologies_agetypes","fk_chronologies_contacts","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>chronologyid (primary key)</code></strong>: An arbitrary Chronology identification number.</li>
-<li><strong><code>collectionunitid (foreign key)</code></strong>: Collection Unit to which the Chronology applies. Field links to the
-<code>collectionunits</code>[#CollectionUnits] table.</li>
-<li><strong><code>agetypeid (foreign key)</code></strong>: Age type or units. Field links to the <code class="interpreted-text" role="ref">AgeTypes</code> table.</li>
-<li><strong><code>contactid (foreign key)</code></strong>: Person who developed the Age Model. Field links to the
-<code>contacts</code>[#Contacts] table.</li>
-<li><strong><code>isdefault</code></strong>: Indicates whether the Chronology is a default chronology or not.
-Default status is determined by a Neotoma data steward. Collection
-Units may have more than one default Chronology, but may have only
-one default Chronology per Age Type. Thus, there may be a default
-radiocarbon year Chronology and a default calibrated radiocarbon
-year Chronology, but only one of each. Default Chronologies may be
-used by the Neotoma web site, or other web sites, for displaying
-default diagrams or time series of data. Default Chronologies may
-also be of considerable use for actual research purposes; however,
-users may of course choose to develop their own chronologies.</li>
+<li><strong><code>chronologyid</code> (primary key)</strong>: An arbitrary Chronology identification number.</li>
+<li><strong><code>collectionunitid</code> (foreign key)</strong>: Collection Unit to which the Chronology applies. Field links to the <code>collectionunits</code>[#CollectionUnits] table.</li>
+<li><strong><code>agetypeid</code> (foreign key)</strong>: Age type or units. Field links to the <code class="interpreted-text" role="ref">AgeTypes</code> table.</li>
+<li><strong><code>contactid</code> (foreign key)</strong>: Person who developed the Age Model. Field links to the <code>contacts</code>[#Contacts] table.</li>
+<li><strong><code>isdefault</code></strong>: Indicates whether the Chronology is a default chronology or not. Default status is determined by a Neotoma data steward. Collection Units may have more than one default Chronology, but may have only one default Chronology per Age Type. Thus, there may be a default radiocarbon year Chronology and a default calibrated radiocarbon year Chronology, but only one of each. Default Chronologies may be used by the Neotoma web site, or other web sites, for displaying default diagrams or time series of data. Default Chronologies may also be of considerable use for actual research purposes; however, users may of course choose to develop their own chronologies.</li>
 <li><strong><code>chronologyname</code></strong>: Optional name for the Chronology. Some examples are:
 <ul>
 <li>COHMAP chron 1 A Chronology assigned by the COHMAP project.</li>
-<li>COHMAP chron 2 An alternative Chronology assigned by the COHMAP
-project</li>
-<li>NAPD 1 A Chronology assigned by the North American Pollen
-Database.</li>
+<li>COHMAP chron 2 An alternative Chronology assigned by the COHMAP project</li>
+<li>NAPD 1 A Chronology assigned by the North American Pollen Database.</li>
 <li>Gajewski 1995 A Chronology assigned by Gajewski (1995).</li>
 </ul></li>
 <li><strong><code>dateprepared</code></strong>: Date that the Chronology was prepared.</li>
-<li><strong><code>agemodel</code></strong>: The age model used for the Chronology. Some examples are: linear
-interpolation, 3<sup>rd</sup> order polynomial, and individually dated
-analysis units.</li>
-<li><strong><code>ageboundyounger</code></strong>: The younger reliable age bound for the Chronology. Younger ages may
-be assigned to samples, but are not regarded as reliable. If the
-entire Chronology is considered reliable, AgeBoundYounger is
-assigned the youngest sample age rounded down to the nearest 10.
-Thus, for 72 BP, AgeBoundYounger = 70 BP; for -45 BP,
-AgeBoundYounger = -50 BP.</li>
-<li><strong><code>ageboundolder</code></strong>: The older reliable age bound for the Chronology. Ages older than
-AgeOlderBound may be assigned to samples, but are not regarded as
-reliable. This situation is particularly true for ages extrapolated
-beyond the oldest Chron Control. . If the entire Chronology is
-considered reliable, AgeBoundOlder is assigned the oldest sample age
-rounded up to the nearest 10. Thus, for 12564 BP, AgeBoundOlder
-is 12570.</li>
+<li><strong><code>agemodel</code></strong>: The age model used for the Chronology. Some examples are: linear interpolation, 3<sup>rd</sup> order polynomial, and individually dated analysis units.</li>
+<li><strong><code>ageboundyounger</code></strong>: The younger reliable age bound for the Chronology. Younger ages may be assigned to samples, but are not regarded as reliable. If the entire Chronology is considered reliable, AgeBoundYounger is assigned the youngest sample age rounded down to the nearest 10. Thus, for 72 BP, AgeBoundYounger = 70 BP; for -45 BP, AgeBoundYounger = -50 BP.</li>
+<li><strong><code>ageboundolder</code></strong>: The older reliable age bound for the Chronology. Ages older than AgeOlderBound may be assigned to samples, but are not regarded as reliable. This situation is particularly true for ages extrapolated beyond the oldest Chron Control. . If the entire Chronology is considered reliable, AgeBoundOlder is assigned the oldest sample age rounded up to the nearest 10. Thus, for 12564 BP, AgeBoundOlder is 12570.</li>
 <li><strong><code>notes</code></strong>: Free form notes or comments about the Chronology.</li>
 </ul>
-<div id="sql-example-22" class="section level3 hasAnchor">
-<h3><span class="header-section-number">14.5.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-22" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sql-example-26" class="section level3 hasAnchor" number="12.5.1">
+<h3><span class="header-section-number">12.5.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-26" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following SQL statement produces a list of Chronologies for a particular site. In this case we are matching on the site name, for “Irvin Lake”, :</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">SELECT</span> st.sitename,</a>
-<a class="sourceLine" id="cb35-2" title="2">       ch.chronologyid,</a>
-<a class="sourceLine" id="cb35-3" title="3">       ch.chronologyname,</a>
-<a class="sourceLine" id="cb35-4" title="4">       ch.isdefault,</a>
-<a class="sourceLine" id="cb35-5" title="5">       <span class="kw">at</span>.agetype</a>
-<a class="sourceLine" id="cb35-6" title="6"><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</a>
-<a class="sourceLine" id="cb35-7" title="7"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</a>
-<a class="sourceLine" id="cb35-8" title="8"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chronologies <span class="kw">AS</span> ch <span class="kw">ON</span> ch.collectionunitid <span class="op">=</span> cu.collectionunitid</a>
-<a class="sourceLine" id="cb35-9" title="9"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.agetypes <span class="kw">AS</span> <span class="kw">at</span> <span class="kw">ON</span> <span class="kw">at</span>.agetypeid <span class="op">=</span> ch.agetypeid</a>
-<a class="sourceLine" id="cb35-10" title="10"><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Irvin Lake&#39;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb46-1"><a href="chronology-age-related-tables-1.html#cb46-1" aria-hidden="true"></a><span class="kw">SELECT</span> st.sitename,</span>
+<span id="cb46-2"><a href="chronology-age-related-tables-1.html#cb46-2" aria-hidden="true"></a>       ch.chronologyid,</span>
+<span id="cb46-3"><a href="chronology-age-related-tables-1.html#cb46-3" aria-hidden="true"></a>       ch.chronologyname,</span>
+<span id="cb46-4"><a href="chronology-age-related-tables-1.html#cb46-4" aria-hidden="true"></a>       ch.isdefault,</span>
+<span id="cb46-5"><a href="chronology-age-related-tables-1.html#cb46-5" aria-hidden="true"></a>       <span class="kw">at</span>.agetype</span>
+<span id="cb46-6"><a href="chronology-age-related-tables-1.html#cb46-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb46-7"><a href="chronology-age-related-tables-1.html#cb46-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb46-8"><a href="chronology-age-related-tables-1.html#cb46-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chronologies <span class="kw">AS</span> ch <span class="kw">ON</span> ch.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb46-9"><a href="chronology-age-related-tables-1.html#cb46-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.agetypes <span class="kw">AS</span> <span class="kw">at</span> <span class="kw">ON</span> <span class="kw">at</span>.agetypeid <span class="op">=</span> ch.agetypeid</span>
+<span id="cb46-10"><a href="chronology-age-related-tables-1.html#cb46-10" aria-hidden="true"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Irvin Lake&#39;</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
-<caption><span id="tab:unnamed-chunk-3">Table 14.1: </span>5 records</caption>
+<caption><span id="tab:unnamed-chunk-3">Table 12.1: </span>5 records</caption>
 <thead>
 <tr class="header">
 <th align="left">sitename</th>
@@ -537,29 +547,29 @@ is 12570.</li>
 </tbody>
 </table>
 </div>
-<p>From this we see that there have been five chronologies generated for Irvin Lake. There are two <a href="chronology-age-related-tables-1.html#AgeTypes">age types</a> represented, <em>Radiocarbon years</em> and <em>Calibrated radiocarbon years BP</em>. There is one default age model for <em>Calibrated radiocarbon years BP</em> and, at the time of this writing, the <code>NAPD 1</code> data model is not defined as the default. This is counter to the general data entry standard, where each age type has a defined default chronology.</p>
+<p>From this we see that there have been five chronologies generated for Irvin Lake. There are two <a href="chronology-age-related-tables-1.html#AgeTypes"><code>agetypes</code></a> represented, <em>Radiocarbon years</em> and <em>Calibrated radiocarbon years BP</em>. There is one default age model for <em>Calibrated radiocarbon years BP</em> and, at the time of this writing, the <code>NAPD 1</code> data model is not defined as the default. This is counter to the general data entry standard, where each age type has a defined default chronology.</p>
 </div>
-<div id="sql-example-23" class="section level3 hasAnchor">
-<h3><span class="header-section-number">14.5.2</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-23" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sql-example-27" class="section level3 hasAnchor" number="12.5.2">
+<h3><span class="header-section-number">12.5.2</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-27" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following statement produces a list of the <a href="chronology-age-related-tables-1.html#ChronControls">chronological controls</a> for the default chronology from <strong>Wolsfeld Lake</strong> in Calibrated radiocarbon years BP. The dates are arranged by depth. It is worth noting that for many records the chroncontrols are not the same as the geochronological records recorded from the site:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">SELECT</span> cc.<span class="fu">depth</span>, </a>
-<a class="sourceLine" id="cb36-2" title="2">       cc.age,</a>
-<a class="sourceLine" id="cb36-3" title="3">       cc.agelimityounger, </a>
-<a class="sourceLine" id="cb36-4" title="4">       cc.agelimitolder,</a>
-<a class="sourceLine" id="cb36-5" title="5">       cct.chroncontroltype</a>
-<a class="sourceLine" id="cb36-6" title="6"><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</a>
-<a class="sourceLine" id="cb36-7" title="7">    <span class="kw">INNER</span> <span class="kw">JOIN</span>   ndb.collectionunits <span class="kw">AS</span> cu  <span class="kw">ON</span>              cu.siteid <span class="op">=</span> st.siteid</a>
-<a class="sourceLine" id="cb36-8" title="8">    <span class="kw">INNER</span> <span class="kw">JOIN</span>      ndb.chronologies <span class="kw">AS</span> ch  <span class="kw">ON</span>    ch.collectionunitid <span class="op">=</span> cu.collectionunitid</a>
-<a class="sourceLine" id="cb36-9" title="9">    <span class="kw">INNER</span> <span class="kw">JOIN</span>          ndb.agetypes <span class="kw">AS</span> <span class="kw">at</span>  <span class="kw">ON</span>           <span class="kw">at</span>.agetypeid <span class="op">=</span> ch.agetypeid</a>
-<a class="sourceLine" id="cb36-10" title="10">    <span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.chroncontrols <span class="kw">AS</span> cc  <span class="kw">ON</span>        cc.chronologyid <span class="op">=</span> ch.chronologyid</a>
-<a class="sourceLine" id="cb36-11" title="11">    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chroncontroltypes <span class="kw">AS</span> cct <span class="kw">ON</span> cct.chroncontroltypeid <span class="op">=</span> cc.chroncontroltypeid</a>
-<a class="sourceLine" id="cb36-12" title="12"><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Wolsfeld Lake&#39;</span></a>
-<a class="sourceLine" id="cb36-13" title="13">  <span class="kw">AND</span> ch.isdefault <span class="kw">IS</span> <span class="kw">TRUE</span></a>
-<a class="sourceLine" id="cb36-14" title="14">  <span class="kw">AND</span> <span class="kw">at</span>.agetype <span class="op">=</span> <span class="st">&#39;Calibrated radiocarbon years BP&#39;</span></a>
-<a class="sourceLine" id="cb36-15" title="15">  <span class="kw">ORDER</span> <span class="kw">BY</span> cc.<span class="fu">depth</span> <span class="kw">ASC</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb47-1"><a href="chronology-age-related-tables-1.html#cb47-1" aria-hidden="true"></a><span class="kw">SELECT</span> cc.<span class="fu">depth</span>, </span>
+<span id="cb47-2"><a href="chronology-age-related-tables-1.html#cb47-2" aria-hidden="true"></a>       cc.age,</span>
+<span id="cb47-3"><a href="chronology-age-related-tables-1.html#cb47-3" aria-hidden="true"></a>       cc.agelimityounger, </span>
+<span id="cb47-4"><a href="chronology-age-related-tables-1.html#cb47-4" aria-hidden="true"></a>       cc.agelimitolder,</span>
+<span id="cb47-5"><a href="chronology-age-related-tables-1.html#cb47-5" aria-hidden="true"></a>       cct.chroncontroltype</span>
+<span id="cb47-6"><a href="chronology-age-related-tables-1.html#cb47-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb47-7"><a href="chronology-age-related-tables-1.html#cb47-7" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span>   ndb.collectionunits <span class="kw">AS</span> cu  <span class="kw">ON</span>              cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb47-8"><a href="chronology-age-related-tables-1.html#cb47-8" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span>      ndb.chronologies <span class="kw">AS</span> ch  <span class="kw">ON</span>    ch.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb47-9"><a href="chronology-age-related-tables-1.html#cb47-9" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span>          ndb.agetypes <span class="kw">AS</span> <span class="kw">at</span>  <span class="kw">ON</span>           <span class="kw">at</span>.agetypeid <span class="op">=</span> ch.agetypeid</span>
+<span id="cb47-10"><a href="chronology-age-related-tables-1.html#cb47-10" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.chroncontrols <span class="kw">AS</span> cc  <span class="kw">ON</span>        cc.chronologyid <span class="op">=</span> ch.chronologyid</span>
+<span id="cb47-11"><a href="chronology-age-related-tables-1.html#cb47-11" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chroncontroltypes <span class="kw">AS</span> cct <span class="kw">ON</span> cct.chroncontroltypeid <span class="op">=</span> cc.chroncontroltypeid</span>
+<span id="cb47-12"><a href="chronology-age-related-tables-1.html#cb47-12" aria-hidden="true"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Wolsfeld Lake&#39;</span></span>
+<span id="cb47-13"><a href="chronology-age-related-tables-1.html#cb47-13" aria-hidden="true"></a>  <span class="kw">AND</span> ch.isdefault <span class="kw">IS</span> <span class="kw">TRUE</span></span>
+<span id="cb47-14"><a href="chronology-age-related-tables-1.html#cb47-14" aria-hidden="true"></a>  <span class="kw">AND</span> <span class="kw">at</span>.agetype <span class="op">=</span> <span class="st">&#39;Calibrated radiocarbon years BP&#39;</span></span>
+<span id="cb47-15"><a href="chronology-age-related-tables-1.html#cb47-15" aria-hidden="true"></a>  <span class="kw">ORDER</span> <span class="kw">BY</span> cc.<span class="fu">depth</span> <span class="kw">ASC</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
-<caption><span id="tab:unnamed-chunk-4">Table 14.2: </span>Displaying records 1 - 10</caption>
+<caption><span id="tab:unnamed-chunk-4">Table 12.2: </span>Displaying records 1 - 10</caption>
 <thead>
 <tr class="header">
 <th align="right">depth</th>
@@ -645,35 +655,32 @@ is 12570.</li>
 </div>
 </div>
 </div>
-<div id="AggregateSampleAges" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.6</span> AggregateSampleAges<a href="chronology-age-related-tables-1.html#AggregateSampleAges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This table stores the links to the ages of samples in an Aggregate
-Dataset. The table is necessary because samples may be from Collection
-Units with multiple chronologies, and this table stores the links to the
-sample ages desired for the Aggregate Dataset.</p>
-<div id="htmlwidget-14f1a3d6bdbe4a8b0511" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-14f1a3d6bdbe4a8b0511">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","aggregatechronid","sampleageid","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatesampleages_pkey, fk_aggregatesampleages_aggregatedatasets","aggregatesampleages_pkey, fk_aggregatesampleages_aggregatechronologies","aggregatesampleages_pkey, fk_aggregatesampleages_sampleages","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="AggregateSampleAges" class="section level2 hasAnchor" number="12.6">
+<h2><span class="header-section-number">12.6</span> <code>aggregatesampleages</code><a href="chronology-age-related-tables-1.html#AggregateSampleAges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores the links to the ages of samples in an Aggregate Dataset. The table is necessary because samples may be from Collection Units with multiple chronologies, and this table stores the links to the sample ages desired for the Aggregate Dataset.</p>
+<div id="htmlwidget-ecf79caa55c467a61a55" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ecf79caa55c467a61a55">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","aggregatechronid","sampleageid","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatesampleages_pkey, fk_aggregatesampleages_aggregatedatasets","aggregatesampleages_pkey, fk_aggregatesampleages_aggregatechronologies","aggregatesampleages_pkey, fk_aggregatesampleages_sampleages","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>aggregatedatasetid (primary key, foreign key)</code></strong>: Aggregate Dataset identification number. Field links to the
+<li><strong><code>aggregatedatasetid</code> (primary key, foreign key)</strong>: Aggregate Dataset identification number. Field links to the
 <code>aggregatedatasets</code>[#AggregateDatasets] table.</li>
-<li><strong><code>aggregatechronid (primary key, foreign key)</code></strong>: Aggregate Chronology identification number Field links to the
+<li><strong><code>aggregatechronid</code> (primary key, foreign key)</strong>: Aggregate Chronology identification number Field links to the
 <code>aggregatechronologies</code>[#AggregateChronologies] table.</li>
-<li><strong><code>sampleageid (primary key, foreign key)</code></strong>: Sample Age ID number. Field links to the
+<li><strong><code>sampleageid</code> (primary key, foreign key)</strong>: Sample Age ID number. Field links to the
 <code>sampleages</code>[#SampleAges] table.</li>
 </ul>
-<div id="sql-example-24" class="section level3 hasAnchor">
-<h3><span class="header-section-number">14.6.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-24" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sql-example-28" class="section level3 hasAnchor" number="12.6.1">
+<h3><span class="header-section-number">12.6.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-28" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following SQL statement produces a list of Sample ID numbers and ages for the Aggregate Dataset at Sierra Bacha:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">SELECT</span> ad.aggregatedatasetname,</a>
-<a class="sourceLine" id="cb37-2" title="2">       sa.age</a>
-<a class="sourceLine" id="cb37-3" title="3"><span class="kw">FROM</span> ndb.aggregatesamples <span class="kw">AS</span> ags</a>
-<a class="sourceLine" id="cb37-4" title="4">    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatedatasets <span class="kw">AS</span> ad <span class="kw">ON</span> ags.aggregatedatasetid <span class="op">=</span> ad.aggregatedatasetid</a>
-<a class="sourceLine" id="cb37-5" title="5">    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sampleages <span class="kw">AS</span> sa <span class="kw">ON</span> sa.sampleid <span class="op">=</span> ags.sampleid</a>
-<a class="sourceLine" id="cb37-6" title="6">    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatesampleages <span class="kw">AS</span> asa <span class="kw">ON</span> asa.sampleageid <span class="op">=</span> sa.sampleageid</a>
-<a class="sourceLine" id="cb37-7" title="7"><span class="kw">WHERE</span> ad.aggregatedatasetname<span class="op">=</span><span class="st">&#39;Sierra Bacha&#39;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb48-1"><a href="chronology-age-related-tables-1.html#cb48-1" aria-hidden="true"></a><span class="kw">SELECT</span> ad.aggregatedatasetname,</span>
+<span id="cb48-2"><a href="chronology-age-related-tables-1.html#cb48-2" aria-hidden="true"></a>       sa.age</span>
+<span id="cb48-3"><a href="chronology-age-related-tables-1.html#cb48-3" aria-hidden="true"></a><span class="kw">FROM</span> ndb.aggregatesamples <span class="kw">AS</span> ags</span>
+<span id="cb48-4"><a href="chronology-age-related-tables-1.html#cb48-4" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatedatasets <span class="kw">AS</span> ad <span class="kw">ON</span> ags.aggregatedatasetid <span class="op">=</span> ad.aggregatedatasetid</span>
+<span id="cb48-5"><a href="chronology-age-related-tables-1.html#cb48-5" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sampleages <span class="kw">AS</span> sa <span class="kw">ON</span> sa.sampleid <span class="op">=</span> ags.sampleid</span>
+<span id="cb48-6"><a href="chronology-age-related-tables-1.html#cb48-6" aria-hidden="true"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatesampleages <span class="kw">AS</span> asa <span class="kw">ON</span> asa.sampleageid <span class="op">=</span> sa.sampleageid</span>
+<span id="cb48-7"><a href="chronology-age-related-tables-1.html#cb48-7" aria-hidden="true"></a><span class="kw">WHERE</span> ad.aggregatedatasetname<span class="op">=</span><span class="st">&#39;Sierra Bacha&#39;</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
-<caption><span id="tab:AggregateDatasets">Table 14.3: </span>9 records</caption>
+<caption><span id="tab:AggregateDatasets">Table 12.3: </span>9 records</caption>
 <thead>
 <tr class="header">
 <th align="left">aggregatedatasetname</th>
@@ -721,23 +728,23 @@ sample ages desired for the Aggregate Dataset.</p>
 </table>
 </div>
 </div>
-<div id="sql-example-25" class="section level3 hasAnchor">
-<h3><span class="header-section-number">14.6.2</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-25" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sql-example-29" class="section level3 hasAnchor" number="12.6.2">
+<h3><span class="header-section-number">12.6.2</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-29" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The AggregateSampleAges table may have multiple <code>sampleageids</code>’s for Aggregate Dataset samples, for example <code>sampleageids</code>s for radiocarbon and calibrated radiocarbon chronologies. In this case, the <a href="chronology-age-related-tables-1.html#Chronologies"><code>chronolgies</code></a> table must be linked into a query to obtain the ages of <a href="sample-related-tables-1.html#AggregateSamples"><code>aggregatesamples</code></a>, and either the AgeTypeID must be specified in the Chronolgies table or the <a href="chronology-age-related-tables-1.html#AgeTypes"><code>agetypes</code></a> table must also be linked with the AgeType specified. The following SQL statement produces a list of Sample ID numbers and «Radiocarbon years BP» ages for the «» Aggregate Dataset: <a href="sample-related-tables-1.html#Samples"><code>samples</code></a>.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">SELECT</span> agd.aggregatedatasetname,</a>
-<a class="sourceLine" id="cb38-2" title="2">       ags.sampleid,</a>
-<a class="sourceLine" id="cb38-3" title="3">       sa.age,</a>
-<a class="sourceLine" id="cb38-4" title="4">       aty.agetype</a>
-<a class="sourceLine" id="cb38-5" title="5"><span class="kw">FROM</span> ndb.aggregatedatasets <span class="kw">AS</span> agd</a>
-<a class="sourceLine" id="cb38-6" title="6"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatesampleages <span class="kw">AS</span> agsa <span class="kw">ON</span> agsa.aggregatedatasetid <span class="op">=</span> agd.aggregatedatasetid</a>
-<a class="sourceLine" id="cb38-7" title="7"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatesamples <span class="kw">AS</span> ags <span class="kw">ON</span> ags.aggregatedatasetid <span class="op">=</span> agd.aggregatedatasetid</a>
-<a class="sourceLine" id="cb38-8" title="8"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sampleages <span class="kw">AS</span> sa <span class="kw">ON</span> sa.sampleid <span class="op">=</span> ags.sampleid <span class="kw">AND</span> sa.sampleageid <span class="op">=</span> agsa.sampleageid</a>
-<a class="sourceLine" id="cb38-9" title="9"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chronologies <span class="kw">AS</span> ch <span class="kw">ON</span> ch.chronologyid <span class="op">=</span> sa.chronologyid</a>
-<a class="sourceLine" id="cb38-10" title="10"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.agetypes <span class="kw">AS</span> aty <span class="kw">ON</span> aty.agetypeid <span class="op">=</span> ch.agetypeid</a>
-<a class="sourceLine" id="cb38-11" title="11"><span class="kw">WHERE</span> agd.aggregatedatasetname <span class="op">=</span> <span class="st">&#39;Roberts Creek&#39;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb49-1"><a href="chronology-age-related-tables-1.html#cb49-1" aria-hidden="true"></a><span class="kw">SELECT</span> agd.aggregatedatasetname,</span>
+<span id="cb49-2"><a href="chronology-age-related-tables-1.html#cb49-2" aria-hidden="true"></a>       ags.sampleid,</span>
+<span id="cb49-3"><a href="chronology-age-related-tables-1.html#cb49-3" aria-hidden="true"></a>       sa.age,</span>
+<span id="cb49-4"><a href="chronology-age-related-tables-1.html#cb49-4" aria-hidden="true"></a>       aty.agetype</span>
+<span id="cb49-5"><a href="chronology-age-related-tables-1.html#cb49-5" aria-hidden="true"></a><span class="kw">FROM</span> ndb.aggregatedatasets <span class="kw">AS</span> agd</span>
+<span id="cb49-6"><a href="chronology-age-related-tables-1.html#cb49-6" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatesampleages <span class="kw">AS</span> agsa <span class="kw">ON</span> agsa.aggregatedatasetid <span class="op">=</span> agd.aggregatedatasetid</span>
+<span id="cb49-7"><a href="chronology-age-related-tables-1.html#cb49-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.aggregatesamples <span class="kw">AS</span> ags <span class="kw">ON</span> ags.aggregatedatasetid <span class="op">=</span> agd.aggregatedatasetid</span>
+<span id="cb49-8"><a href="chronology-age-related-tables-1.html#cb49-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sampleages <span class="kw">AS</span> sa <span class="kw">ON</span> sa.sampleid <span class="op">=</span> ags.sampleid <span class="kw">AND</span> sa.sampleageid <span class="op">=</span> agsa.sampleageid</span>
+<span id="cb49-9"><a href="chronology-age-related-tables-1.html#cb49-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chronologies <span class="kw">AS</span> ch <span class="kw">ON</span> ch.chronologyid <span class="op">=</span> sa.chronologyid</span>
+<span id="cb49-10"><a href="chronology-age-related-tables-1.html#cb49-10" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.agetypes <span class="kw">AS</span> aty <span class="kw">ON</span> aty.agetypeid <span class="op">=</span> ch.agetypeid</span>
+<span id="cb49-11"><a href="chronology-age-related-tables-1.html#cb49-11" aria-hidden="true"></a><span class="kw">WHERE</span> agd.aggregatedatasetname <span class="op">=</span> <span class="st">&#39;Roberts Creek&#39;</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
-<caption><span id="tab:aggregatesampleagessql">Table 14.4: </span>Displaying records 1 - 10</caption>
+<caption><span id="tab:aggregatesampleagessql">Table 12.4: </span>Displaying records 1 - 10</caption>
 <thead>
 <tr class="header">
 <th align="left">aggregatedatasetname</th>
@@ -812,16 +819,16 @@ sample ages desired for the Aggregate Dataset.</p>
 </div>
 </div>
 </div>
-<div id="Geochronology" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.7</span> <code>geochronology</code><a href="chronology-age-related-tables-1.html#Geochronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Geochronology" class="section level2 hasAnchor" number="12.7">
+<h2><span class="header-section-number">12.7</span> <code>geochronology</code><a href="chronology-age-related-tables-1.html#Geochronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores geochronologic data. Geochronologic measurements are from geochronologic samples, which are from Analysis Units, which may have a depth and thickness. Geochronologic measurements may be from the same or different Analysis Units as fossils. In the case of faunal excavations, geochronologic samples are typically from the same Analysis Units as the fossils, and there may be multiple geochronologic samples from a single Analysis Unit. In the case of cores used for microfossil analyses, geochronologic samples are often from separate <a href="sample-related-tables-1.html#AnalysisUnits"><code>analysisunits</code></a>; dated core sections are often thicker than microfossil Analysis Units.</p>
-<div id="htmlwidget-f138eb0bd014846e8338" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f138eb0bd014846e8338">{"x":{"filter":"none","vertical":false,"data":[["geochronid","sampleid","geochrontypeid","agetypeid","age","errorolder","erroryounger","infinite","delta13c","labnumber","materialdated","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","double precision","double precision","double precision","boolean","double precision","character varying(40)","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["geochronology_pkey","fk_geochronology_samples","fk_geochronology_geochrontypes","fk_geochronology_agetypes","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fabf9a044a43a7245933" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fabf9a044a43a7245933">{"x":{"filter":"none","vertical":false,"data":[["geochronid","sampleid","geochrontypeid","agetypeid","age","errorolder","erroryounger","infinite","delta13c","labnumber","materialdated","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","double precision","double precision","double precision","boolean","double precision","character varying(40)","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["geochronology_pkey","fk_geochronology_samples","fk_geochronology_geochrontypes","fk_geochronology_agetypes","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>geochronid (primary key)</code></strong>: An arbitrary Geochronologic identificantion number.</li>
-<li><strong><code>sampleid (foreign key)</code></strong>: Sample identification number. Field links to <a href="sample-related-tables-1.html#Samples"><code>samples</code></a> table.</li>
-<li><strong><code>geochrontypeid (foreign key)**:   identification number for the type of geochronologic analysis, e.g. «carbon-14», **thermoluminescence</code></strong>. Field links to the <a href="chronology-age-related-tables-1.html#GeochronTypes"><code>geochrontypes</code></a> table.</li>
-<li><strong><code>agetypeid (foreign key)</code></strong>: Identification number for the age units, e.g. «Radiocarbon years BP», «Calibrated radiocarbon years BP».</li>
+<li><strong><code>geochronid</code> (primary key)</strong>: An arbitrary Geochronologic identificantion number.</li>
+<li><strong><code>sampleid</code> (foreign key)</strong>: Sample identification number. Field links to <a href="sample-related-tables-1.html#Samples"><code>samples</code></a> table.</li>
+<li><strong><code>geochrontypeid</code> (foreign key)</strong>: identification number for the type of geochronologic analysis, e.g. «carbon-14», <strong>thermoluminescence</strong>. Field links to the <a href="chronology-age-related-tables-1.html#GeochronTypes"><code>geochrontypes</code></a> table.</li>
+<li><strong><code>agetypeid</code> (foreign key)</strong>: Identification number for the age units, e.g. «Radiocarbon years BP», «Calibrated radiocarbon years BP».</li>
 <li><strong><code>age</code></strong>: Reported age value of the geochronologic measurement.</li>
 <li><strong><code>errorolder</code></strong>: The older error limit of the age value. For a date reported with ±1 SD or σ, the ErrorOlder and ErrorYounger values are this value.</li>
 <li><strong><code>erroryounger</code></strong>: The younger error limit of the age value.</li>
@@ -831,101 +838,92 @@ sample ages desired for the Aggregate Dataset.</p>
 <li><strong><code>material dated</code></strong>: Material analyzed for a geochronologic measurement.</li>
 <li><strong><code>notes</code></strong>: Free form notes or comments about the geochronologic measurement.</li>
 </ul>
-<div id="sql-example-26" class="section level3 hasAnchor">
-<h3><span class="header-section-number">14.7.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-26" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sql-example-30" class="section level3 hasAnchor" number="12.7.1">
+<h3><span class="header-section-number">12.7.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-30" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists the geochronologic data for Montezuma Well.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">SELECT</span> AnalysisUnits.<span class="fu">Depth</span>, AnalysisUnits.Thickness, </a>
-<a class="sourceLine" id="cb39-2" title="2">GeochronTypes.GeochronType, Geochronology.Age, Geochronology.ErrorOlder,</a>
-<a class="sourceLine" id="cb39-3" title="3">Geochronology.ErrorYounger, Geochronology.Delta13C,</a>
-<a class="sourceLine" id="cb39-4" title="4">Geochronology.LabNumber, Geochronology.MaterialDated,</a>
-<a class="sourceLine" id="cb39-5" title="5">Geochronology.Notes</a>
-<a class="sourceLine" id="cb39-6" title="6"></a>
-<a class="sourceLine" id="cb39-7" title="7"><span class="kw">FROM</span> GeochronTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> ((((Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> CollectionUnits <span class="kw">ON</span></a>
-<a class="sourceLine" id="cb39-8" title="8">Sites.SiteID <span class="op">=</span> CollectionUnits.SiteID) <span class="kw">INNER</span> <span class="kw">JOIN</span> AnalysisUnits <span class="kw">ON</span></a>
-<a class="sourceLine" id="cb39-9" title="9">CollectionUnits.CollectionUnitID <span class="op">=</span> AnalysisUnits.CollectionUnitID) <span class="kw">INNER</span></a>
-<a class="sourceLine" id="cb39-10" title="10"><span class="kw">JOIN</span> Samples <span class="kw">ON</span> AnalysisUnits.AnalysisUnitID <span class="op">=</span> Samples.AnalysisUnitID)</a>
-<a class="sourceLine" id="cb39-11" title="11"><span class="kw">INNER</span> <span class="kw">JOIN</span> Geochronology <span class="kw">ON</span> Samples.SampleID <span class="op">=</span> Geochronology.SampleID)</a>
-<a class="sourceLine" id="cb39-12" title="12"><span class="kw">ON</span> GeochronTypes.GeochronTypeID <span class="op">=</span> Geochronology.GeochronTypeID</a>
-<a class="sourceLine" id="cb39-13" title="13"></a>
-<a class="sourceLine" id="cb39-14" title="14"><span class="kw">WHERE</span> (((Sites.SiteName)<span class="op">=</span><span class="ot">&quot;Montezuma Well&quot;</span>));</a></code></pre></div>
-<p>Result:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb50-1"><a href="chronology-age-related-tables-1.html#cb50-1" aria-hidden="true"></a><span class="kw">SELECT</span> au.<span class="fu">depth</span>,</span>
+<span id="cb50-2"><a href="chronology-age-related-tables-1.html#cb50-2" aria-hidden="true"></a>       au.thickness, </span>
+<span id="cb50-3"><a href="chronology-age-related-tables-1.html#cb50-3" aria-hidden="true"></a>       gct.geochrontype,</span>
+<span id="cb50-4"><a href="chronology-age-related-tables-1.html#cb50-4" aria-hidden="true"></a>       gc.age,</span>
+<span id="cb50-5"><a href="chronology-age-related-tables-1.html#cb50-5" aria-hidden="true"></a>       gc.errorolder,</span>
+<span id="cb50-6"><a href="chronology-age-related-tables-1.html#cb50-6" aria-hidden="true"></a>       gc.erroryounger,</span>
+<span id="cb50-7"><a href="chronology-age-related-tables-1.html#cb50-7" aria-hidden="true"></a>       gc.delta13c,</span>
+<span id="cb50-8"><a href="chronology-age-related-tables-1.html#cb50-8" aria-hidden="true"></a>       gc.labnumber,</span>
+<span id="cb50-9"><a href="chronology-age-related-tables-1.html#cb50-9" aria-hidden="true"></a>       gc.materialdated,</span>
+<span id="cb50-10"><a href="chronology-age-related-tables-1.html#cb50-10" aria-hidden="true"></a>       gc.notes</span>
+<span id="cb50-11"><a href="chronology-age-related-tables-1.html#cb50-11" aria-hidden="true"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb50-12"><a href="chronology-age-related-tables-1.html#cb50-12" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb50-13"><a href="chronology-age-related-tables-1.html#cb50-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.analysisunits <span class="kw">AS</span> au <span class="kw">ON</span> au.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb50-14"><a href="chronology-age-related-tables-1.html#cb50-14" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span> smp.analysisunitid <span class="op">=</span> au.analysisunitid</span>
+<span id="cb50-15"><a href="chronology-age-related-tables-1.html#cb50-15" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.geochronology <span class="kw">AS</span> gc <span class="kw">on</span> gc.sampleid <span class="op">=</span> smp.sampleid</span>
+<span id="cb50-16"><a href="chronology-age-related-tables-1.html#cb50-16" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.geochrontypes <span class="kw">AS</span> gct <span class="kw">ON</span> gct.geochrontypeid <span class="op">=</span> gc.geochrontypeid</span>
+<span id="cb50-17"><a href="chronology-age-related-tables-1.html#cb50-17" aria-hidden="true"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span><span class="st">&#39;Montezuma Well&#39;</span></span>
+<span id="cb50-18"><a href="chronology-age-related-tables-1.html#cb50-18" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> au.<span class="fu">depth</span>;</span></code></pre></div>
 </div>
 </div>
-<div id="GeochronPublications" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.8</span> GeochronPublications<a href="chronology-age-related-tables-1.html#GeochronPublications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Publications in which Geochronologic measurements are reported. Many
-older radiocarbon dates are reported in the journal <em>Radiocarbon</em>. Dates
-may be reported in multiple publications. The "publication" could be a
-database such as the online Canadian Archaeological Radiocarbon
-Database.</p>
-<div id="htmlwidget-33cc40d52a2e68fed727" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-33cc40d52a2e68fed727">{"x":{"filter":"none","vertical":false,"data":[["geochronid","publicationid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_geochronpublications_geochronology, geochronpublications_pkey","fk_geochronpublications_publications, geochronpublications_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="GeochronPublications" class="section level2 hasAnchor" number="12.8">
+<h2><span class="header-section-number">12.8</span> <code>geochronpublications</code><a href="chronology-age-related-tables-1.html#GeochronPublications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Publications in which Geochronologic measurements are reported. Many older radiocarbon dates are reported in the journal <em>Radiocarbon</em>. Dates may be reported in multiple publications. The <em>publication</em> could be a database such as the online Canadian Archaeological Radiocarbon Database.</p>
+<div id="htmlwidget-507f5f3bfdd8d404ac97" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-507f5f3bfdd8d404ac97">{"x":{"filter":"none","vertical":false,"data":[["geochronid","publicationid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_geochronpublications_geochronology, geochronpublications_pkey","fk_geochronpublications_publications, geochronpublications_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>geochronid (primary key, foreign key)</code></strong>: Geochronologic identification number. Field links to the
+<li><strong><code>geochronid</code> (primary key, foreign key)</strong>: Geochronologic identification number. Field links to the
 <code>geochronology</code>[#Geochronology] table.</li>
-<li><strong><code>publicationid (primary key, foreign key)</code></strong>: Publication identification number. Field links to the
+<li><strong><code>publicationid</code> (primary key, foreign key)</strong>: Publication identification number. Field links to the
 <code>publications</code>[#Publications] table.</li>
 </ul>
 </div>
-<div id="GeochronTypes" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.9</span> GeochronTypes<a href="chronology-age-related-tables-1.html#GeochronTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Lookup table for Geochronology Types. Table is referenced by the
-<code>geochronology</code>[#Geochronology] table.</p>
-<div id="htmlwidget-38ce15449f0421d079c3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-38ce15449f0421d079c3">{"x":{"filter":"none","vertical":false,"data":[["geochrontypeid","geochrontype","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["geochrontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="GeochronTypes" class="section level2 hasAnchor" number="12.9">
+<h2><span class="header-section-number">12.9</span> <code>geochrontypes</code><a href="chronology-age-related-tables-1.html#GeochronTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table for Geochronology Types. The table is referenced by the <code>geochronology</code>[#Geochronology] table.</p>
+<div id="htmlwidget-8c50fcd1d9ed82e09c46" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8c50fcd1d9ed82e09c46">{"x":{"filter":"none","vertical":false,"data":[["geochrontypeid","geochrontype","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["geochrontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>geochrontypeid (primary key)</code></strong>: Geochronology Type identification number.</li>
+<li><strong><code>geochrontypeid</code> (primary key)</strong>: Geochronology Type identification number.</li>
 <li><strong><code>geochrontype</code></strong>: Type of Geochronologic measurement.</li>
 </ul>
 </div>
-<div id="RelativeAgePublications" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.10</span> RelativeAgePublications<a href="chronology-age-related-tables-1.html#RelativeAgePublications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This table stores Publications in which Relative Ages are reported for
-CollectionUnits.</p>
-<div id="htmlwidget-e4fd403ee478f5d272a6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e4fd403ee478f5d272a6">{"x":{"filter":"none","vertical":false,"data":[["relativeageid","publicationid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_relativeagepublications_relativeages, relativeagepublications_pkey","fk_relativeagepublications_publications, relativeagepublications_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="RelativeAgePublications" class="section level2 hasAnchor" number="12.10">
+<h2><span class="header-section-number">12.10</span> <code>relativeagepublications</code><a href="chronology-age-related-tables-1.html#RelativeAgePublications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores Publications in which Relative Ages are reported for <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>collectionunits</code></a>`.</p>
+<div id="htmlwidget-0b22b2232440a4ebf216" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0b22b2232440a4ebf216">{"x":{"filter":"none","vertical":false,"data":[["relativeageid","publicationid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_relativeagepublications_relativeages, relativeagepublications_pkey","fk_relativeagepublications_publications, relativeagepublications_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>relativeageid (primary key, foreign key)</code></strong>: Relative Ages identification number. Field links to the
+<li><strong><code>relativeageid</code> (primary key, foreign key)</strong>: Relative Ages identification number. Field links to the
 <code>relativeages</code>[#RelativeAges] table.</li>
-<li><strong><code>publicationid (primary key, foreign key)</code></strong>: Publication identification number. Field links to
+<li><strong><code>publicationid</code> (primary key, foreign key)</strong>: Publication identification number. Field links to
 <code>publications</code>[#Publications] table.</li>
 </ul>
 </div>
-<div id="RelativeAges" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.11</span> RelativeAges<a href="chronology-age-related-tables-1.html#RelativeAges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Lookup table of RelativeAges. Table is referenced by the
-<code>relativechronology</code>[#RelativeChronology] table.</p>
-<div id="htmlwidget-d907df908ba284a3c225" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d907df908ba284a3c225">{"x":{"filter":"none","vertical":false,"data":[["relativeageid","relativeageunitid","relativeagescaleid","relativeage","c14ageyounger","c14ageolder","calageyounger","calageolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","double precision","double precision","double precision","double precision","text","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeages_pkey","fk_relativeages_relativeageunits","fk_relativeages_relativeagescales","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="RelativeAges" class="section level2 hasAnchor" number="12.11">
+<h2><span class="header-section-number">12.11</span> <code>relativeages</code><a href="chronology-age-related-tables-1.html#RelativeAges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table of RelativeAges. Table is referenced by the <code>relativechronology</code>[#RelativeChronology] table.</p>
+<div id="htmlwidget-27ebee2f8e4d702a07b4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-27ebee2f8e4d702a07b4">{"x":{"filter":"none","vertical":false,"data":[["relativeageid","relativeageunitid","relativeagescaleid","relativeage","c14ageyounger","c14ageolder","calageyounger","calageolder","notes","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","double precision","double precision","double precision","double precision","text","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeages_pkey","fk_relativeages_relativeageunits","fk_relativeages_relativeagescales","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>relativeageid (primary key)</code></strong>: An arbitrary Relative Age identification number.</li>
-<li><strong><code>relativeageunitid (foreign key)</code></strong>: Relative Age Unit (e.g. «Marine isotope stage», «Land mammal age»).
-Field links to the <code>relativeageunits</code>[#RelativeAgeUnits]
-lookup table.</li>
-<li><strong><code>relativeagescaleid (foreign key)</code></strong>: Relative Age Scale (e.g. «Geologic time scale», «Marine isotope
-stages»). Field links to the <code class="interpreted-text" role="ref">RelativeAgeScales</code> lookup table.</li>
-<li><strong><code>relativeage**: relative age (e.g. **rancholabrean</code></strong>, a land mammal age; «MIS 11»,
-marine isotope stage 11).</li>
-<li><strong><code>c14ageyounger</code></strong>: Younger age of the Relative Age unit in <sup>14</sup>C yr B.P. Applies only
-to Relative Age units within the radiocarbon time scale.</li>
-<li><strong><code>c14ageolder</code></strong>: Older age of the Relative Age unit in <sup>14</sup>C yr B.P. Applies only to
-Relative Age units within the radiocarbon time scale.</li>
+<li><strong><code>relativeageid</code> (primary key)</strong>: An arbitrary Relative Age identification number.</li>
+<li><strong><code>relativeageunitid</code> (foreign key)</strong>: Relative Age Unit (e.g. «Marine isotope stage», «Land mammal age»). Field links to the <code>relativeageunits</code>[#RelativeAgeUnits] lookup table.</li>
+<li><strong><code>relativeagescaleid</code> (foreign key)</strong>: Relative Age Scale (e.g. «Geologic time scale», «Marine isotope
+stages»). Field links to the <a href="chronology-age-related-tables-1.html#RelativeAgeScales"><code>RelativeAgeScales</code></a> lookup table.</li>
+<li><strong><code>relativeage</code></strong>: relative age (e.g. <strong><code>rancholabrean</code></strong>, a land mammal age; «MIS 11», marine isotope stage 11).</li>
+<li><strong><code>c14ageyounger</code></strong>: Younger age of the Relative Age unit in <sup>14</sup>C yr B.P. Applies only to Relative Age units within the radiocarbon time scale.</li>
+<li><strong><code>c14ageolder</code></strong>: Older age of the Relative Age unit in <sup>14</sup>C yr B.P. Applies only to Relative Age units within the radiocarbon time scale.</li>
 <li><strong><code>calageyounger</code></strong>: Younger age of the Relative Age unit in calendar years.</li>
 <li><strong><code>calageolder</code></strong>: Older age of the Relative age unit in calendar years.</li>
 <li><strong><code>notes</code></strong>: Free form notes or comments about Relative Age unit.</li>
 </ul>
-<div id="sql-example-27" class="section level3 hasAnchor">
-<h3><span class="header-section-number">14.11.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-27" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sql-example-31" class="section level3 hasAnchor" number="12.11.1">
+<h3><span class="header-section-number">12.11.1</span> SQL Example<a href="chronology-age-related-tables-1.html#sql-example-31" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following query gives the Relative Ages for the «North American land mammal ages». The Relative Age Unit for each of these is «Land mammal age». Commas were added to the ages in the query result to make them more readable.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">SELECT</span> ra.relativeage,</a>
-<a class="sourceLine" id="cb40-2" title="2">       ra.calageyounger,</a>
-<a class="sourceLine" id="cb40-3" title="3">       ra.calageolder</a>
-<a class="sourceLine" id="cb40-4" title="4"><span class="kw">FROM</span> ndb.relativeagescales <span class="kw">AS</span> ras</a>
-<a class="sourceLine" id="cb40-5" title="5"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.relativeages <span class="kw">AS</span> ra <span class="kw">ON</span> ras.relativeagescaleid <span class="op">=</span> ra.relativeagescaleid</a>
-<a class="sourceLine" id="cb40-6" title="6"><span class="kw">WHERE</span> ras.relativeagescale <span class="op">=</span> <span class="st">&#39;North American land mammal ages&#39;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb51-1"><a href="chronology-age-related-tables-1.html#cb51-1" aria-hidden="true"></a><span class="kw">SELECT</span> ra.relativeage,</span>
+<span id="cb51-2"><a href="chronology-age-related-tables-1.html#cb51-2" aria-hidden="true"></a>       ra.calageyounger,</span>
+<span id="cb51-3"><a href="chronology-age-related-tables-1.html#cb51-3" aria-hidden="true"></a>       ra.calageolder</span>
+<span id="cb51-4"><a href="chronology-age-related-tables-1.html#cb51-4" aria-hidden="true"></a><span class="kw">FROM</span> ndb.relativeagescales <span class="kw">AS</span> ras</span>
+<span id="cb51-5"><a href="chronology-age-related-tables-1.html#cb51-5" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.relativeages <span class="kw">AS</span> ra <span class="kw">ON</span> ras.relativeagescaleid <span class="op">=</span> ra.relativeagescaleid</span>
+<span id="cb51-6"><a href="chronology-age-related-tables-1.html#cb51-6" aria-hidden="true"></a><span class="kw">WHERE</span> ras.relativeagescale <span class="op">=</span> <span class="st">&#39;North American land mammal ages&#39;</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
-<caption><span id="tab:relativeagesquery">Table 14.5: </span>Displaying records 1 - 10</caption>
+<caption><span id="tab:relativeagesquery">Table 12.5: </span>Displaying records 1 - 10</caption>
 <thead>
 <tr class="header">
 <th align="left">relativeage</th>
@@ -989,24 +987,24 @@ Relative Age units within the radiocarbon time scale.</li>
 </div>
 </div>
 </div>
-<div id="RadiocarbonCalibration" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.12</span> RadiocarbonCalibration<a href="chronology-age-related-tables-1.html#RadiocarbonCalibration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="RadiocarbonCalibration" class="section level2 hasAnchor" number="12.12">
+<h2><span class="header-section-number">12.12</span> <code>radiocarboncalibration</code><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Radiocarbon calibraton table. This table is intended for quick calibraton of age-model radiocarbon dates. These calibrated dates are for perusal and data exploration only. Please see Section <em>2.5</em> for a full discussion.</p>
-<div id="htmlwidget-db06b7fa3de0c573f7c0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-db06b7fa3de0c573f7c0">{"x":{"filter":"none","vertical":false,"data":[["c14yrbp","calyrbp"],["integer","integer"],["radiocarboncalibration_pkey",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-486eab1f1bd44f558af3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-486eab1f1bd44f558af3">{"x":{"filter":"none","vertical":false,"data":[["c14yrbp","calyrbp"],["integer","integer"],["radiocarboncalibration_pkey",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>c14yrbp</code></strong>: Age in radiocarbon years BP. The range is -100 to 45,000 by 1-year
 increments.</li>
 <li><strong><code>calyrbp</code></strong>: Age in calibrated radiocarbon years BP.</li>
 </ul>
 </div>
-<div id="RelativeAgeScales" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.13</span> RelativeAgeScales<a href="chronology-age-related-tables-1.html#RelativeAgeScales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Lookup table of Relative Age Scales. Table is referenced by the <a href="chronology-age-related-tables-1.html#RelativeAges"><code>RelativeAges</code></a> table.</p>
-<div id="htmlwidget-30191b8a83a8bfdd2ed7" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-30191b8a83a8bfdd2ed7">{"x":{"filter":"none","vertical":false,"data":[["relativeagescaleid","relativeagescale","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeagescales_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="RelativeAgeScales" class="section level2 hasAnchor" number="12.13">
+<h2><span class="header-section-number">12.13</span> <code>relativeagescales</code><a href="chronology-age-related-tables-1.html#RelativeAgeScales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table of Relative Age Scales. Table is referenced by the <a href="chronology-age-related-tables-1.html#RelativeAges"><code>relativeages</code></a> table.</p>
+<div id="htmlwidget-7fb0d0b65bb1df3cebc4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7fb0d0b65bb1df3cebc4">{"x":{"filter":"none","vertical":false,"data":[["relativeagescaleid","relativeagescale","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeagescales_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>relativeagescaleid (primary key)</code></strong>: An arbitrary Relative Age Scale identification number.</li>
+<li><strong><code>relativeagescaleid</code> (primary key)</strong>: An arbitrary Relative Age Scale identification number.</li>
 <li><strong><code>relativeagescale</code></strong>: Relative Age Scale. The table stores the following Relative Age
 <ul>
 <li>Scales:
@@ -1021,101 +1019,102 @@ increments.</li>
 </ul></li>
 </ul>
 </div>
-<div id="RelativeAgeUnits" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.14</span> RelativeAgeUnits<a href="chronology-age-related-tables-1.html#RelativeAgeUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="RelativeAgeUnits" class="section level2 hasAnchor" number="12.14">
+<h2><span class="header-section-number">12.14</span> <code>relativeageunits</code><a href="chronology-age-related-tables-1.html#RelativeAgeUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of RelativeAgeUnits. Table is referenced by the <a href="chronology-age-related-tables-1.html#RelativeAges"><code>relativeages</code></a> table.</p>
-<div id="htmlwidget-20d767abf448a2f35145" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-20d767abf448a2f35145">{"x":{"filter":"none","vertical":false,"data":[["relativeageunitid","relativeageunit","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeageunits_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2d418e4bd208de0fa4bc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2d418e4bd208de0fa4bc">{"x":{"filter":"none","vertical":false,"data":[["relativeageunitid","relativeageunit","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["relativeageunits_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>relativeageunitid (primary key)</code></strong>: An arbitrary Relative Age Unit identification number.</li>
-<li><p><strong><code>relativeageunit</code></strong>: Relative Age Unit. Below are the Relative Age Units for the
-«Geologic time scale» with an example Relative Age.</p>
-<table style="width:78%;">
-<colgroup>
-<col width="38%" />
-<col width="38%" />
-</colgroup>
+<li><strong><code>relativeageunitid</code> (primary key)</strong>: An arbitrary Relative Age Unit identification number.</li>
+<li><strong><code>relativeageunit</code></strong>: Relative Age Unit.</li>
+</ul>
+<div class="sourceCode" id="cb52"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb52-1"><a href="chronology-age-related-tables-1.html#cb52-1" aria-hidden="true"></a><span class="kw">SELECT</span> ras.relativeagescale,</span>
+<span id="cb52-2"><a href="chronology-age-related-tables-1.html#cb52-2" aria-hidden="true"></a>       ra.relativeage, </span>
+<span id="cb52-3"><a href="chronology-age-related-tables-1.html#cb52-3" aria-hidden="true"></a>       rau.relativeageunit </span>
+<span id="cb52-4"><a href="chronology-age-related-tables-1.html#cb52-4" aria-hidden="true"></a><span class="kw">FROM</span> ndb.relativeages <span class="kw">AS</span> ra</span>
+<span id="cb52-5"><a href="chronology-age-related-tables-1.html#cb52-5" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.relativeagescales <span class="kw">AS</span> ras <span class="kw">ON</span> ras.relativeagescaleid <span class="op">=</span> ra.relativeagescaleid</span>
+<span id="cb52-6"><a href="chronology-age-related-tables-1.html#cb52-6" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.relativeageunits <span class="kw">AS</span> rau <span class="kw">ON</span> rau.relativeageunitid <span class="op">=</span> ra.relativeageunitid</span>
+<span id="cb52-7"><a href="chronology-age-related-tables-1.html#cb52-7" aria-hidden="true"></a><span class="kw">WHERE</span> ras.relativeagescale <span class="op">=</span> <span class="st">&#39;Geologic time scale&#39;</span></span>
+<span id="cb52-8"><a href="chronology-age-related-tables-1.html#cb52-8" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:relageunits">Table 12.6: </span>5 records</caption>
+<thead>
+<tr class="header">
+<th align="left">relativeagescale</th>
+<th align="left">relativeage</th>
+<th align="left">relativeageunit</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>Geologic time scale</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="left"><strong>RelativeAgeUnit</strong></td>
-<td><strong>RelativeAge Example</strong></td>
-</tr>
-<tr class="odd">
+<td align="left">Geologic time scale</td>
+<td align="left">Quaternary</td>
 <td align="left">Period</td>
-<td>Quaternary</td>
 </tr>
 <tr class="even">
+<td align="left">Geologic time scale</td>
+<td align="left">Holocene</td>
 <td align="left">Epoch</td>
-<td>Pleistocene</td>
 </tr>
 <tr class="odd">
-<td align="left">Stage</td>
-<td>Middle Pleistocene</td>
+<td align="left">Geologic time scale</td>
+<td align="left">Late Holocene</td>
+<td align="left">Informal stage</td>
 </tr>
 <tr class="even">
+<td align="left">Geologic time scale</td>
+<td align="left">Middle Holocene</td>
 <td align="left">Informal stage</td>
-<td>Middle Holocene</td>
+</tr>
+<tr class="odd">
+<td align="left">Geologic time scale</td>
+<td align="left">Early Holocene</td>
+<td align="left">Informal stage</td>
 </tr>
 </tbody>
-</table></li>
-</ul>
-<p><strong>Period</strong>, <strong>Epoch</strong>, and <strong>Stage</strong> are defined by the International
-Commission on Statigraphy. An «Informal stage» is defined in Neotoma.</p>
+</table>
 </div>
-<div id="RelativeChronology" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.15</span> <code>relativechronology</code><a href="chronology-age-related-tables-1.html#RelativeChronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Period</strong>, <strong>Epoch</strong>, and <strong>Stage</strong> are defined by the International Commission on Statigraphy. An «Informal stage» is defined in Neotoma.</p>
+</div>
+<div id="RelativeChronology" class="section level2 hasAnchor" number="12.15">
+<h2><span class="header-section-number">12.15</span> <code>relativechronology</code><a href="chronology-age-related-tables-1.html#RelativeChronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores relative chronologic data. Relative Ages are assigned to Analysis Units, The Relative Age data along with any possible <code>geochronology</code>[#Geochronology] and <code>Tephrachronology</code>[#Tephrachronology] data are used to create a chronology.</p>
-<div id="htmlwidget-e22c53afe3bd1795afc6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e22c53afe3bd1795afc6">{"x":{"filter":"none","vertical":false,"data":[["relativechronid","analysisunitid","relativeageid","notes","recdatecreated","recdatemodified","chroncontrolid"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["relativechronology_pkey","fk_relativechronology_analysisunits","fk_relativechronology_relativeages","","","","rc_ccid"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2e4594755d352b7ed558" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2e4594755d352b7ed558">{"x":{"filter":"none","vertical":false,"data":[["relativechronid","analysisunitid","relativeageid","notes","recdatecreated","recdatemodified","chroncontrolid"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["relativechronology_pkey","fk_relativechronology_analysisunits","fk_relativechronology_relativeages","","","","rc_ccid"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>relativechronid (primary key)</code></strong>: An arbitrary Relative Chronology identification number.</li>
-<li><strong><code>analysisunitid (foreign key)</code></strong>: Analysis Unit identification number. Field links to the
+<li><strong><code>relativechronid</code> (primary key)</strong>: An arbitrary Relative Chronology identification number.</li>
+<li><strong><code>analysisunitid</code> (foreign key)</strong>: Analysis Unit identification number. Field links to the
 <code>AnalysisUnits</code>[#AnalysisUnits] table.</li>
-<li><strong><code>relativeageid (foreign key)</code></strong>: Relative Age identification number. Field links to the
+<li><strong><code>relativeageid</code> (foreign key)</strong>: Relative Age identification number. Field links to the
 <code>RelativeAges</code>[#RelativeAges] lookup table.</li>
 <li><strong><code>notes</code></strong>: Free form notes or comments.</li>
 </ul>
 </div>
-<div id="Tephrachronology" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.16</span> Tephrachronology<a href="chronology-age-related-tables-1.html#Tephrachronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Tephrachronology" class="section level2 hasAnchor" number="12.16">
+<h2><span class="header-section-number">12.16</span> <code>tephrachronology</code><a href="chronology-age-related-tables-1.html#Tephrachronology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores tephrachronologic data. The table relates Analysis Units with dated tephras in the <a href="chronology-age-related-tables-1.html#Tephras"><code>tephras</code></a> table. These are tephras with established ages that are used form a chronology. The tephras are typically not directly dated at the Site of the Analysis Unit, but have been dated at other sites. A directly dated tephra, <em>e.g.</em> an argon-argon date, belongs in the <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a> table.</p>
-<div id="htmlwidget-18188e743d58a67073a1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-18188e743d58a67073a1">{"x":{"filter":"none","vertical":false,"data":[[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-be825a3f9f41a1c1e5cf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-be825a3f9f41a1c1e5cf">{"x":{"filter":"none","vertical":false,"data":[[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>tephrachronid (primary key)</code></strong> An arbitrary Tephrachronology
-identification number.</li>
-<li><strong><code>analysisunitid (foreign key)</code></strong> Analysis Unit identification number.
-Field links to the <code>AnalysisUnits</code>[#AnalysisUnits] table.
-The tephra may be contained within the AnalysisUnit, especially in
-excavations, or the AnalysisUnit may be assigned specifically to the
-tephra, particulary with cores.</li>
-<li><strong><code>tephraid (foreign key)</code></strong> Tephra identification number. Field links to
-the <code>Tephras</code>[#Tephras] table.</li>
+<li><strong><code>tephrachronid</code> (primary key)</strong> An arbitrary Tephrachronology identification number.</li>
+<li><strong><code>analysisunitid</code> (foreign key)</strong> Analysis Unit identification number. Field links to the <code>AnalysisUnits</code>[#AnalysisUnits] table. The tephra may be contained within the AnalysisUnit, especially in excavations, or the AnalysisUnit may be assigned specifically to the tephra, particulary with cores.</li>
+<li><strong><code>tephraid</code> (foreign key)</strong> Tephra identification number. Field links to the <code>Tephras</code>[#Tephras] table.</li>
 <li><strong><code>notes</code></strong> Free form notes or comments about the tephra.</li>
 </ul>
 </div>
-<div id="Tephras" class="section level2 hasAnchor">
-<h2><span class="header-section-number">14.17</span> Tephras<a href="chronology-age-related-tables-1.html#Tephras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Tephras" class="section level2 hasAnchor" number="12.17">
+<h2><span class="header-section-number">12.17</span> <code>tephras</code><a href="chronology-age-related-tables-1.html#Tephras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tephras lookup table. This table stores recognized tephras with established ages. Referenced by the <a href="chronology-age-related-tables-1.html#Tephrachronology"><code>tephrachronology</code></a> table.</p>
-<div id="htmlwidget-73f3622ad1749d0da1b4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-73f3622ad1749d0da1b4">{"x":{"filter":"none","vertical":false,"data":[["tephraid","eventid","analysisunitid","notes","recdatecreated","recdatemodified"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["tephras_pkey","fk_tephras_events","fk_tephras_analysisunits","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4e20964035f368779781" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4e20964035f368779781">{"x":{"filter":"none","vertical":false,"data":[["tephraid","eventid","analysisunitid","notes","recdatecreated","recdatemodified"],["integer","integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["tephras_pkey","fk_tephras_events","fk_tephras_analysisunits","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
-<li><strong><code>tephraid (primary key)</code></strong>: An arbitrary Tephra identification number.</li>
+<li><strong><code>tephraid</code> (primary key)</strong>: An arbitrary Tephra identification number.</li>
 <li><strong><code>tephraname**: name of the tephra, e.g. **mazama</code></strong>.</li>
-<li><strong><code>c14age</code></strong>: Age of the tephra in <sup>14</sup>C yr BP. For example, Hallett et al. (1997)
-provide an estimate of the age of the Mazama tephra based on
-radiocarbon dating of plant macrofossils in lake sediments encasing
-the tephra.</li>
+<li><strong><code>c14age</code></strong>: Age of the tephra in <sup>14</sup>C yr BP. For example, Hallett et al. (1997) provide an estimate of the age of the Mazama tephra based on radiocarbon dating of plant macrofossils in lake sediments encasing the tephra.</li>
 <li><strong><code>c14ageyounger</code></strong>: Younger age estimate of the tephra in <sup>14</sup>C yr BP.</li>
 <li><strong><code>c14ageolder</code></strong>: Older age estimate of the tephra in <sup>14</sup>C yr BP.</li>
-<li><strong><code>calage</code></strong>: Age of the tephra in cal yr BP, either calibrated radiocarbon years
-or estimated calendar years derived from another dating method. For
-example, Zdanowicz et al. (1999) identified the Mazama tephra in the
-GISP2 ice core and estimated the age from layer counts.</li>
+<li><strong><code>calage</code></strong>: Age of the tephra in cal yr BP, either calibrated radiocarbon years or estimated calendar years derived from another dating method. For example, Zdanowicz et al. (1999) identified the Mazama tephra in the GISP2 ice core and estimated the age from layer counts.</li>
 <li><strong><code>calageyounger</code></strong>: Younger age estimate of the tephra in cal yr BP.</li>
 <li><strong><code>calageolder</code></strong>: Older age estimate of the tephra in cal yr BP.</li>
 <li><strong><code>notes</code></strong>: Free form notes or comments about the tephra.</li>

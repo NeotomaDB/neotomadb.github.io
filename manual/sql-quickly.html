@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 SQL Quickly | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 SQL Quickly | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2022-06-06" />
+<meta name="date" content="2022-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -63,25 +64,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -90,9 +92,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -140,10 +142,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a><ul>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
 <li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
 <li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
@@ -151,17 +155,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a><ul>
-<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-query"><i class="fa fa-check"></i><b>3.1.1</b> SQL Query</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
-<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a><ul>
-<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sitedesign"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
 <li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
 <li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
 <li class="chapter" data-level="4.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>4.4</b> Taxa and Ecological Groups</a></li>
@@ -169,150 +177,204 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
 <li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a><ul>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
 <li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
 <li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
 <li class="chapter" data-level="5.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>5.4</b> Sample Related Tables</a></li>
-<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.5</b> Taxonomy Related Tables</a></li>
-<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
-<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
+<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#specimen-related-tables"><i class="fa fa-check"></i><b>5.5</b> Specimen Related Tables</a></li>
+<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.6</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.7</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="5.8" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.8</b> Publication Related Tables</a></li>
+<li class="chapter" data-level="5.9" data-path="neotoma-tables.html"><a href="neotoma-tables.html#supporting-resources"><i class="fa fa-check"></i><b>5.9</b> Supporting Resources</a></li>
+<li class="chapter" data-level="5.10" data-path="neotoma-tables.html"><a href="neotoma-tables.html#isotope-data-management"><i class="fa fa-check"></i><b>5.10</b> Isotope Data Management</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>6</b> Contact and Individual Related Tables</a><ul>
-<li class="chapter" data-level="6.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>6.1</b> <code>collectors</code></a></li>
+<li class="chapter" data-level="6" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>6</b> Contact and Individual Related Tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>6.1</b> <code>collectors</code></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Contacts"><i class="fa fa-check"></i><b>6.2</b> <code>contacts</code></a></li>
 <li class="chapter" data-level="6.3" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#ContactStatuses"><i class="fa fa-check"></i><b>6.3</b> <code>contactstatuses</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Dataset &amp; Collection Related Tables</a><ul>
-<li class="chapter" data-level="7.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>7.1</b> AggregateDatasets</a></li>
-<li class="chapter" data-level="7.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>7.2</b> aggregateordertypes</a></li>
-<li class="chapter" data-level="7.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>7.3</b> CollectionTypes</a></li>
-<li class="chapter" data-level="7.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>7.4</b> CollectionUnits</a></li>
-<li class="chapter" data-level="7.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>7.5</b> DatasetPublications</a></li>
-<li class="chapter" data-level="7.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>7.6</b> Datasets</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Dataset &amp; Collection Related Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#accumulationrates"><i class="fa fa-check"></i><b>7.1</b> <code>accumulationrates</code></a></li>
+<li class="chapter" data-level="7.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>7.2</b> <code>aggregatedatasets</code></a></li>
+<li class="chapter" data-level="7.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>7.3</b> <code>aggregateordertypes</code></a></li>
+<li class="chapter" data-level="7.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>7.4</b> <code>collectiontypes</code></a></li>
+<li class="chapter" data-level="7.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>7.5</b> <code>collectionunits</code></a></li>
+<li class="chapter" data-level="7.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#contextsdatasettypes"><i class="fa fa-check"></i><b>7.6</b> <code>contextsdatasettypes</code></a></li>
+<li class="chapter" data-level="7.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdatabases"><i class="fa fa-check"></i><b>7.7</b> <code>datasetdatabases</code></a></li>
+<li class="chapter" data-level="7.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdoi"><i class="fa fa-check"></i><b>7.8</b> <code>datasetdoi</code></a></li>
+<li class="chapter" data-level="7.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>7.9</b> <code>datasetpis</code></a></li>
+<li class="chapter" data-level="7.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>7.10</b> <code>datasetpublications</code></a></li>
+<li class="chapter" data-level="7.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>7.11</b> <code>datasets</code></a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.11.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>7.11.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>7.7</b> SQL Example</a></li>
-<li class="chapter" data-level="7.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>7.8</b> DatasetSubmissions</a></li>
-<li class="chapter" data-level="7.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>7.9</b> DatasetSubmissionTypes</a></li>
-<li class="chapter" data-level="7.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>7.10</b> SQL Example</a></li>
-<li class="chapter" data-level="7.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>7.11</b> DatasetTypes</a></li>
-<li class="chapter" data-level="7.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>7.12</b> DatasetPIs</a></li>
-<li class="chapter" data-level="7.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>7.13</b> DepEnvtTypes</a></li>
-<li class="chapter" data-level="7.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>7.14</b> SQL Example</a></li>
-<li class="chapter" data-level="7.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>7.15</b> SQL Example</a></li>
-<li class="chapter" data-level="7.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>7.16</b> Lithology</a></li>
-<li class="chapter" data-level="7.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Projects"><i class="fa fa-check"></i><b>7.17</b> Projects</a></li>
+<li class="chapter" data-level="7.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>7.12</b> <code>datasetsubmissions</code></a></li>
+<li class="chapter" data-level="7.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>7.13</b> <code>datasetsubmissiontypes</code></a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>7.13.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Publication Related Tables</a><ul>
-<li class="chapter" data-level="8.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>8.1</b> publicationauthors</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>8.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxagrouptypes"><i class="fa fa-check"></i><b>7.14</b> <code>datasettaxagrouptypes</code></a></li>
+<li class="chapter" data-level="7.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxonnotes"><i class="fa fa-check"></i><b>7.15</b> <code>datasettaxonnotes</code></a></li>
+<li class="chapter" data-level="7.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>7.16</b> <code>datasettypes</code></a></li>
+<li class="chapter" data-level="7.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetvariables"><i class="fa fa-check"></i><b>7.17</b> <code>datasetvariables</code></a></li>
+<li class="chapter" data-level="7.18" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>7.18</b> <code>depenvttypes</code></a>
+<ul>
+<li class="chapter" data-level="7.18.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>7.18.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.18.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>7.18.2</b> SQL Example</a></li>
+<li class="chapter" data-level="7.18.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>7.18.3</b> SQL Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Publication Related Tables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>8.1</b> <code>publicationauthors</code></a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>8.1.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationeditors"><i class="fa fa-check"></i><b>8.2</b> <code>publicationeditors</code></a></li>
+<li class="chapter" data-level="8.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#Publications"><i class="fa fa-check"></i><b>8.3</b> <code>publications</code></a></li>
+<li class="chapter" data-level="8.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#PublicationTypes"><i class="fa fa-check"></i><b>8.4</b> <code>publicationtypes</code></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#legacy"><i class="fa fa-check"></i><b>8.4.1</b> Legacy</a></li>
+<li class="chapter" data-level="8.4.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#journal-article"><i class="fa fa-check"></i><b>8.4.2</b> Journal Article</a></li>
+<li class="chapter" data-level="8.4.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#book-chapter"><i class="fa fa-check"></i><b>8.4.3</b> Book Chapter</a></li>
+<li class="chapter" data-level="8.4.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-book"><i class="fa fa-check"></i><b>8.4.4</b> Authored Book</a></li>
+<li class="chapter" data-level="8.4.5" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-book"><i class="fa fa-check"></i><b>8.4.5</b> Edited Book</a></li>
+<li class="chapter" data-level="8.4.6" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#masters-thesis"><i class="fa fa-check"></i><b>8.4.6</b> Master’s Thesis</a></li>
+<li class="chapter" data-level="8.4.7" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#doctoral-dissertation"><i class="fa fa-check"></i><b>8.4.7</b> Doctoral Dissertation</a></li>
+<li class="chapter" data-level="8.4.8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-report"><i class="fa fa-check"></i><b>8.4.8</b> Authored Report</a></li>
+<li class="chapter" data-level="8.4.9" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-report"><i class="fa fa-check"></i><b>8.4.9</b> Edited Report</a></li>
+<li class="chapter" data-level="8.4.10" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-authored-publication"><i class="fa fa-check"></i><b>8.4.10</b> Other Authored Publication</a></li>
+<li class="chapter" data-level="8.4.11" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-edited-publication"><i class="fa fa-check"></i><b>8.4.11</b> Other Edited Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="Publications.html"><a href="Publications.html"><i class="fa fa-check"></i><b>9</b> Publications</a></li>
-<li class="chapter" data-level="10" data-path="PublicationTypes.html"><a href="PublicationTypes.html"><i class="fa fa-check"></i><b>10</b> PublicationTypes</a><ul>
-<li class="chapter" data-level="10.1" data-path="PublicationTypes.html"><a href="PublicationTypes.html#legacy-publication"><i class="fa fa-check"></i><b>10.1</b> Legacy Publication</a></li>
-<li class="chapter" data-level="10.2" data-path="PublicationTypes.html"><a href="PublicationTypes.html#journal-article"><i class="fa fa-check"></i><b>10.2</b> Journal Article</a></li>
-<li class="chapter" data-level="10.3" data-path="PublicationTypes.html"><a href="PublicationTypes.html#book-chapter"><i class="fa fa-check"></i><b>10.3</b> Book Chapter</a></li>
-<li class="chapter" data-level="10.4" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-book"><i class="fa fa-check"></i><b>10.4</b> Authored Book</a></li>
-<li class="chapter" data-level="10.5" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-book"><i class="fa fa-check"></i><b>10.5</b> Edited Book</a></li>
-<li class="chapter" data-level="10.6" data-path="PublicationTypes.html"><a href="PublicationTypes.html#masters-thesis"><i class="fa fa-check"></i><b>10.6</b> Master’s Thesis</a></li>
-<li class="chapter" data-level="10.7" data-path="PublicationTypes.html"><a href="PublicationTypes.html#doctoral-dissertation"><i class="fa fa-check"></i><b>10.7</b> Doctoral Dissertation</a></li>
-<li class="chapter" data-level="10.8" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-report"><i class="fa fa-check"></i><b>10.8</b> Authored Report</a></li>
-<li class="chapter" data-level="10.9" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-report"><i class="fa fa-check"></i><b>10.9</b> Edited Report</a></li>
-<li class="chapter" data-level="10.10" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-authored-publication"><i class="fa fa-check"></i><b>10.10</b> Other Authored Publication</a></li>
-<li class="chapter" data-level="10.11" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-edited-publication"><i class="fa fa-check"></i><b>10.11</b> Other Edited Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Sample Related Tables</a><ul>
-<li class="chapter" data-level="11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>11.1</b> <code>analysisunits</code></a></li>
-<li class="chapter" data-level="11.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>11.2</b> <code>data</code></a><ul>
-<li class="chapter" data-level="11.2.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>11.2.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>9</b> Sample Related Tables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>9.1</b> <code>aggregatesamples</code></a></li>
+<li class="chapter" data-level="9.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>9.2</b> <code>analysisunits</code></a></li>
+<li class="chapter" data-level="9.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>9.3</b> <code>data</code></a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>9.3.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>11.3</b> <code>depagents</code></a></li>
-<li class="chapter" data-level="11.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>11.4</b> <code>depagenttypes</code></a></li>
-<li class="chapter" data-level="11.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>11.5</b> <code>sampleages</code></a><ul>
-<li class="chapter" data-level="11.5.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>11.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>9.4</b> <code>depagents</code></a></li>
+<li class="chapter" data-level="9.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>9.5</b> <code>depagenttypes</code></a></li>
+<li class="chapter" data-level="9.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>9.6</b> <code>faciestypes</code></a></li>
+<li class="chapter" data-level="9.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>9.7</b> <code>keywords</code></a></li>
+<li class="chapter" data-level="9.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>9.8</b> <code>lithology</code></a></li>
+<li class="chapter" data-level="9.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>9.9</b> <code>sampleages</code></a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>9.9.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>11.6</b> <code>sampleanalysts</code></a></li>
-<li class="chapter" data-level="11.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>11.7</b> <code>samplekeywords</code></a><ul>
-<li class="chapter" data-level="11.7.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>11.7.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>9.10</b> <code>sampleanalysts</code></a></li>
+<li class="chapter" data-level="9.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>9.11</b> <code>samplekeywords</code></a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>9.11.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>11.8</b> <code>samples</code></a><ul>
-<li class="chapter" data-level="11.8.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>11.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.12" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>9.12</b> <code>samples</code></a>
+<ul>
+<li class="chapter" data-level="9.12.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>9.12.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>11.9</b> <code>aggregatesamples</code></a></li>
-<li class="chapter" data-level="11.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>11.10</b> <code>faciestypes</code></a></li>
-<li class="chapter" data-level="11.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>11.11</b> <code>keywords</code></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Site Related Tables</a><ul>
-<li class="chapter" data-level="12.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>12.1</b> SiteImages</a></li>
-<li class="chapter" data-level="12.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>12.2</b> Sites</a></li>
-<li class="chapter" data-level="12.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>12.3</b> SiteGeoPolitical</a></li>
-<li class="chapter" data-level="12.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>12.4</b> SQL Example</a></li>
-<li class="chapter" data-level="12.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>12.5</b> SQL Example</a></li>
-<li class="chapter" data-level="12.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>12.6</b> SQL Example</a></li>
-<li class="chapter" data-level="12.7" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>12.7</b> GeoPoliticalUnits</a></li>
-<li class="chapter" data-level="12.8" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>12.8</b> SQL Example</a></li>
+<li class="chapter" data-level="10" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>10</b> Site Related Tables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>10.1</b> <code>geopoliticalunits</code></a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>10.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.1.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>10.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>13</b> Taxonomy Related Tables</a><ul>
-<li class="chapter" data-level="13.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>13.1</b> <code>ecolgroups</code></a><ul>
-<li class="chapter" data-level="13.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>13.1.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>13.1.2</b> SQL Example</a></li>
+<li class="chapter" data-level="10.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparameters"><i class="fa fa-check"></i><b>10.2</b> <code>lakeparameters</code></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>10.2.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>13.2</b> <code>ecolgrouptypes</code></a></li>
-<li class="chapter" data-level="13.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>13.3</b> <code>ecolsettypes</code></a></li>
-<li class="chapter" data-level="13.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>13.4</b> <code>synonyms</code></a></li>
-<li class="chapter" data-level="13.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>13.5</b> <code>synonymtypes</code></a><ul>
-<li class="chapter" data-level="13.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>13.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparametertypes"><i class="fa fa-check"></i><b>10.3</b> <code>lakeparametertypes</code></a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>10.3.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>13.6</b> <code>taxa</code></a></li>
-<li class="chapter" data-level="13.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>13.7</b> <code>taxagrouptypes</code></a></li>
-<li class="chapter" data-level="13.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>13.8</b> <code>variables</code></a><ul>
-<li class="chapter" data-level="13.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>13.8.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>13.8.2</b> SQL Example</a></li>
-<li class="chapter" data-level="13.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>13.8.3</b> SQL Example</a></li>
+<li class="chapter" data-level="10.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>10.4</b> <code>sitegeopolitical</code></a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>10.4.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>13.9</b> <code>variablecontexts</code></a></li>
-<li class="chapter" data-level="13.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>13.10</b> <code>variableelements</code></a></li>
-<li class="chapter" data-level="13.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>13.11</b> <code>variablemodifications</code></a></li>
-<li class="chapter" data-level="13.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>13.12</b> <code>variableunits</code></a></li>
-<li class="chapter" data-level="13.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>13.13</b> <code>repositoryinstitutions</code></a></li>
-<li class="chapter" data-level="13.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>13.14</b> <code>repositoryspecimens</code></a><ul>
-<li class="chapter" data-level="13.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>13.14.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>10.5</b> <code>siteimages</code></a></li>
+<li class="chapter" data-level="10.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>10.6</b> <code>sites</code></a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>10.6.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>13.15</b> <code>specimendates</code></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>14</b> Chronology &amp; Age Related Tables</a><ul>
-<li class="chapter" data-level="14.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>14.1</b> AgeTypes</a></li>
-<li class="chapter" data-level="14.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>14.2</b> AggregateChronologies</a></li>
-<li class="chapter" data-level="14.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>14.3</b> ChronControls</a></li>
-<li class="chapter" data-level="14.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>14.4</b> ChronControlTypes</a></li>
-<li class="chapter" data-level="14.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>14.5</b> Chronologies</a><ul>
-<li class="chapter" data-level="14.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>14.5.1</b> SQL Example</a></li>
-<li class="chapter" data-level="14.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>14.5.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Taxonomy Related Tables</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>11.1</b> <code>ecolgroups</code></a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>11.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>11.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>14.6</b> AggregateSampleAges</a><ul>
-<li class="chapter" data-level="14.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>14.6.1</b> SQL Example</a></li>
-<li class="chapter" data-level="14.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>14.6.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>11.2</b> <code>ecolgrouptypes</code></a></li>
+<li class="chapter" data-level="11.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>11.3</b> <code>ecolsettypes</code></a></li>
+<li class="chapter" data-level="11.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>11.4</b> <code>synonyms</code></a></li>
+<li class="chapter" data-level="11.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>11.5</b> <code>synonymtypes</code></a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>11.5.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>14.7</b> <code>geochronology</code></a><ul>
-<li class="chapter" data-level="14.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>14.7.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>11.6</b> <code>taxa</code></a></li>
+<li class="chapter" data-level="11.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>11.7</b> <code>taxagrouptypes</code></a></li>
+<li class="chapter" data-level="11.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>11.8</b> <code>variables</code></a>
+<ul>
+<li class="chapter" data-level="11.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>11.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>11.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>11.8.3</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>14.8</b> GeochronPublications</a></li>
-<li class="chapter" data-level="14.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>14.9</b> GeochronTypes</a></li>
-<li class="chapter" data-level="14.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>14.10</b> RelativeAgePublications</a></li>
-<li class="chapter" data-level="14.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>14.11</b> RelativeAges</a><ul>
-<li class="chapter" data-level="14.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>14.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>11.9</b> <code>variablecontexts</code></a></li>
+<li class="chapter" data-level="11.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>11.10</b> <code>variableelements</code></a></li>
+<li class="chapter" data-level="11.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>11.11</b> <code>variablemodifications</code></a></li>
+<li class="chapter" data-level="11.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>11.12</b> <code>variableunits</code></a></li>
+<li class="chapter" data-level="11.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>11.13</b> <code>repositoryinstitutions</code></a></li>
+<li class="chapter" data-level="11.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>11.14</b> <code>repositoryspecimens</code></a>
+<ul>
+<li class="chapter" data-level="11.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>11.14.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>14.12</b> RadiocarbonCalibration</a></li>
-<li class="chapter" data-level="14.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>14.13</b> RelativeAgeScales</a></li>
-<li class="chapter" data-level="14.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>14.14</b> RelativeAgeUnits</a></li>
-<li class="chapter" data-level="14.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>14.15</b> <code>relativechronology</code></a></li>
-<li class="chapter" data-level="14.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>14.16</b> Tephrachronology</a></li>
-<li class="chapter" data-level="14.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>14.17</b> Tephras</a></li>
+<li class="chapter" data-level="11.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>11.15</b> <code>specimendates</code></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>15</b> References</a></li>
+<li class="chapter" data-level="12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Chronology &amp; Age Related Tables</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>12.1</b> <code>agetypes</code></a></li>
+<li class="chapter" data-level="12.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>12.2</b> <code>aggregatechronologies</code></a></li>
+<li class="chapter" data-level="12.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>12.3</b> <code>chroncontrols</code></a></li>
+<li class="chapter" data-level="12.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>12.4</b> <code>chroncontroltypes</code></a></li>
+<li class="chapter" data-level="12.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>12.5</b> <code>chronologies</code></a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>12.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>12.5.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>12.6</b> <code>aggregatesampleages</code></a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-28"><i class="fa fa-check"></i><b>12.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-29"><i class="fa fa-check"></i><b>12.6.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>12.7</b> <code>geochronology</code></a>
+<ul>
+<li class="chapter" data-level="12.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-30"><i class="fa fa-check"></i><b>12.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>12.8</b> <code>geochronpublications</code></a></li>
+<li class="chapter" data-level="12.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>12.9</b> <code>geochrontypes</code></a></li>
+<li class="chapter" data-level="12.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>12.10</b> <code>relativeagepublications</code></a></li>
+<li class="chapter" data-level="12.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>12.11</b> <code>relativeages</code></a>
+<ul>
+<li class="chapter" data-level="12.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-31"><i class="fa fa-check"></i><b>12.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>12.12</b> <code>radiocarboncalibration</code></a></li>
+<li class="chapter" data-level="12.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>12.13</b> <code>relativeagescales</code></a></li>
+<li class="chapter" data-level="12.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>12.14</b> <code>relativeageunits</code></a></li>
+<li class="chapter" data-level="12.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>12.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="12.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>12.16</b> <code>tephrachronology</code></a></li>
+<li class="chapter" data-level="12.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>12.17</b> <code>tephras</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 </ul>
 
       </nav>
@@ -330,61 +392,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sql-quickly" class="section level1 hasAnchor">
+<div id="sql-quickly" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> SQL Quickly<a href="sql-quickly.html#sql-quickly" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>SQL (Sturctured Query Language) is a standard language for querying and modifying relational databases. There is an official standard for SQL, statements such as <code>SELECT</code> and <code>WHERE</code> are common across most SQL implementations, however, individual vendors do maintain proprietary formatting. Neotoma is implemented using PostgreSQL, which has <a href="https://www.postgresql.org/docs/14/index.html">extensive documentation online</a>. It is beyond the scope of this document to teach SQL, however, we have included a large number of SQL queries along with the documentation to provide templates for queries, and to help the user understand how to directly work with the database. These queries can by typed or copied and pasted into database tools such as <a href="https://www.pgadmin.org/">pgAdmin</a>.</p>
-<p>Throughout the document we will refer to tables using the format <code>ndb.tablename</code>. Here <code>ndb</code> is the schema for most of the data tables within the Neotoma database. There are other schema, including <code>apps</code>, <code>doi</code> and <code>public</code>, but the data tables themselves are kept in the <code>ndb</code> schema. You can see all available data tables in the <code>ndb</code> schema using the <a href="https://open.neotomadb.org/dbschema">Neotoma database schema website</a>.</p>
-<div id="sql-example" class="section level2 hasAnchor">
+<p>SQL (Sturctured Query Language) is a standard language for querying and modifying relational databases. There is an official standard for SQL, which means that statements such as <code>SELECT</code> and <code>WHERE</code> are common across most SQL implementations. While many properties are common, individual vendors do maintain proprietary formatting. Neotoma is implemented using PostgreSQL, which has <a href="https://www.postgresql.org/docs/14/index.html">extensive documentation online</a>. It is beyond the scope of this document to teach SQL, however, we have included a large number of SQL queries along with the documentation to provide templates for queries, and to help the user understand how to directly work with the database. These queries can by typed or copied and pasted into database tools such as <a href="https://www.pgadmin.org/">pgAdmin</a>.</p>
+<p>For the purposes of database development, the Neotoma team uses the following SQL tools:</p>
+<ul>
+<li><a href="https://www.pgadmin.org/">pgAdmin</a></li>
+<li><a href="https://code.visualstudio.com/">VS Code</a></li>
+<li><a href="https://www.postgresql.org/docs/current/app-psql.html">psql</a></li>
+<li><a href="https://schemaspy.org/">SchemaSpy</a></li>
+</ul>
+<p>Throughout the Neotoma Database Manual we will refer to tables using the format <code>schema.tablename</code>. The <code>ndb</code> namespace is the schema for most of the data tables within the Neotoma database, so you will see things like <code>ndb.taxa</code> and <code>ndb.sites</code> frequently. There are other schema, including <code>apps</code>, <code>doi</code> and <code>public</code>, but the data tables themselves are kept in the <code>ndb</code> schema. You can see all available data tables in the <code>ndb</code> schema using the <a href="https://open.neotomadb.org/dbschema">Neotoma database schema website</a>.</p>
+<div id="sql-example" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> SQL Example<a href="sql-quickly.html#sql-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The following SQL example lists the number of sites by the geopolitical unit, where the geopolitical unit is a country. It uses three tables, <code>ndb.sites</code>, which contains <strong>site</strong> information, <code>ndb.geopoliticalunits</code>, which lists all geopolitical units (countries, provinces, towns, etc.), and a <code>JOIN</code> table, which helps to link the <code>ndb.sites</code> table to the <code>ndb.geopoliticalunits</code> table.</p>
 <p>By convention, SQL first defines the output, using the <code>SELECT</code> statement. The <code>FROM</code> block is used to explain how the information is brought together, and the <code>WHERE</code> (and subsequent blocks) are meant to help filter and aggregate data as generated within the <code>FROM</code> block.</p>
-<p>Throughput this document we will use <code>AS</code> statemements to help us write our SQL queries neatly. Using <code>AS</code> helps us create an alias so that we don’t have to write so much in our query. As much as possible we will use the same aliases for tables throughout this guide. For example, <code>FROM ndb.sites AS st</code> is commonly used, where <code>st</code> becomes the alias for the <code>ndb.sites</code> table, and stands in for it elsewhere in the query. Often you will see <code>gpu</code> used for <code>ndb.geopoliticalunits</code>, or <code>tx</code> for <code>ndb.taxa</code>. In Postgres SQL it is not neccessary to use the term <code>AS</code> (we use it here to make the queries clearer for folks just learning how to use SQL), so it’s possible to see things like <code>ndb.sites st</code> in place of <code>ndb.sites AS st</code>. Below is an example where both forms are used:</p>
-<div id="query" class="section level3 tabset hasAnchor">
-<h3><span class="header-section-number">3.1.1</span> Query<a href="sql-quickly.html#query" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="sql-query" class="section level4 hasAnchor">
-<h4><span class="header-section-number">3.1.1.1</span> SQL Query<a href="sql-quickly.html#sql-query" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">SELECT</span></a>
-<a class="sourceLine" id="cb5-2" title="2">  <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> sites,</a>
-<a class="sourceLine" id="cb5-3" title="3">  gpu.geopoliticalname, </a>
-<a class="sourceLine" id="cb5-4" title="4">  gpu.geopoliticalunit</a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="kw">FROM</span></a>
-<a class="sourceLine" id="cb5-6" title="6">  ndb.geopoliticalunits <span class="kw">AS</span> gpu</a>
-<a class="sourceLine" id="cb5-7" title="7">  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span> sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</a>
-<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites st <span class="kw">ON</span> st.siteid <span class="op">=</span> sgp.siteid</a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="kw">WHERE</span> </a>
-<a class="sourceLine" id="cb5-10" title="10">  gpu.geopoliticalunit <span class="op">=</span> <span class="st">&#39;country&#39;</span></a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="kw">GROUP</span> <span class="kw">BY</span></a>
-<a class="sourceLine" id="cb5-12" title="12">  gpu.geopoliticalid</a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="kw">ORDER</span> <span class="kw">BY</span> sites <span class="kw">DESC</span>;</a></code></pre></div>
-</div>
-<div id="output" class="section level4 active hasAnchor">
-<h4><span class="header-section-number">3.1.1.2</span> Output<a href="sql-quickly.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">DT<span class="op">::</span><span class="kw">datatable</span>(geopoliticalsort)</a></code></pre></div>
-<div id="htmlwidget-ef47bb9b02ba03dddd1b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ef47bb9b02ba03dddd1b">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116"],[9693,6717,447,317,242,221,199,151,137,119,108,85,81,69,67,62,61,52,50,44,42,41,41,40,37,35,35,29,27,26,26,25,25,25,23,22,21,21,18,16,16,15,14,12,11,11,11,10,10,10,9,9,8,8,8,8,7,7,7,7,7,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,4,4,4,3,3,3,3,3,3,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],["United States","Canada","France","Russia","United Kingdom","Netherlands","Germany","China","Czech Republic","Switzerland","Spain","Sweden","Italy","Ireland","Poland","Romania","Norway","Australia","Colombia","Austria","Finland","Greece","Turkey","Estonia","Bolivia","South Africa","Argentina","Ukraine","Brazil","Peru","Ecuador","Belarus","Chile","Slovakia","Bulgaria","Mexico","Mongolia","Portugal","Iran","Belgium","Uganda","Japan","Hungary","Latvia","Georgia","Kenya","Tanzania","Israel","Ethiopia","Tunisia","Luxembourg","Cameroon","Burundi","Morocco","Kyrgyzstan","Lithuania","Namibia","Congo, Democratic Republic of the [Zaire]","Nigeria","Madagascar","Guatemala","Senegal","Iceland","Papua New Guinea","Denmark","Egypt","Chad","Venezuela","Indonesia","Kazakhstan","Congo, Republic of the","New Zealand","Oman","Lebanon","Syria","Ghana","Sudan","Fiji","Algeria","Belize","Cyprus","Qatar","Rwanda","Andorra","Dominican Republic","Costa Rica","Croatia","Yemen","Malawi","Gabon","Mauritius","Bahamas","Burkina Faso","Jordan","Slovenia","India","Mauritania","Vanuatu","Panama","Montenegro","Turkmenistan","Niger","Djibouti","Albania","Serbia","Somalia","Bermuda","Pakistan","Cape Verde","Grenada","Uzbekistan","Botswana","Malta","Bosnia and Herzegovina","Cuba","Benin"],["country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>sites<\/th>\n      <th>geopoliticalname<\/th>\n      <th>geopoliticalunit<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Throughput this document we will use <code>AS</code> statemements to help us write our SQL queries neatly, and we will use <code>INNER JOIN</code> calls with <code>ON</code> statements, rather than <code>NATURAL INNER JOIN</code> calls. Using <code>AS</code> helps us create an alias so that we don’t have to write so much in our query. As much as possible we will use the same aliases for tables throughout this guide. For example, <code>FROM ndb.sites AS st</code> is commonly used, where <code>st</code> becomes the alias for the <code>ndb.sites</code> table, and stands in for it elsewhere in the query. Often you will see <code>gpu</code> used for <code>ndb.geopoliticalunits</code>, or <code>tx</code> for <code>ndb.taxa</code>. In Postgres SQL it is not neccessary to use the term <code>AS</code> (we use it here to make the queries clearer for folks just learning how to use SQL), so it’s possible to see things like <code>ndb.sites st</code> in place of <code>ndb.sites AS st</code>.</p>
+<p>The <code>NATURAL INNER JOIN</code> assumes that any columns with common names are used in a <code>JOIN</code>. Because Neotoma enforces naming consistency (in general) between <a href="#table-keys-table-keys">primary and foreign keys</a>, we ought to be able to perform <code>NATURAL</code> joins. However, a trigger on most Neotoma tables adds the columns <code>recdatecreated</code> and <code>recdatemodified</code> to almost all tables. For this reason we make it practice within SQL queries to be explicit about the joining columns.</p>
+<p>The following example show the use of queries with and without <code>AS</code>:</p>
+<div id="sql-query" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> SQL Query<a href="sql-quickly.html#sql-query" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="sql-quickly.html#cb4-1" aria-hidden="true"></a><span class="kw">SELECT</span></span>
+<span id="cb4-2"><a href="sql-quickly.html#cb4-2" aria-hidden="true"></a>  <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> sites,</span>
+<span id="cb4-3"><a href="sql-quickly.html#cb4-3" aria-hidden="true"></a>  gpu.geopoliticalname, </span>
+<span id="cb4-4"><a href="sql-quickly.html#cb4-4" aria-hidden="true"></a>  gpu.geopoliticalunit</span>
+<span id="cb4-5"><a href="sql-quickly.html#cb4-5" aria-hidden="true"></a><span class="kw">FROM</span></span>
+<span id="cb4-6"><a href="sql-quickly.html#cb4-6" aria-hidden="true"></a>  ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb4-7"><a href="sql-quickly.html#cb4-7" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span> sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</span>
+<span id="cb4-8"><a href="sql-quickly.html#cb4-8" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites st <span class="kw">ON</span> st.siteid <span class="op">=</span> sgp.siteid</span>
+<span id="cb4-9"><a href="sql-quickly.html#cb4-9" aria-hidden="true"></a><span class="kw">WHERE</span> </span>
+<span id="cb4-10"><a href="sql-quickly.html#cb4-10" aria-hidden="true"></a>  gpu.geopoliticalunit <span class="op">=</span> <span class="st">&#39;country&#39;</span></span>
+<span id="cb4-11"><a href="sql-quickly.html#cb4-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
+<span id="cb4-12"><a href="sql-quickly.html#cb4-12" aria-hidden="true"></a>  gpu.geopoliticalid</span>
+<span id="cb4-13"><a href="sql-quickly.html#cb4-13" aria-hidden="true"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb4-14"><a href="sql-quickly.html#cb4-14" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> sites <span class="kw">DESC</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="sql-quickly.html#cb5-1" aria-hidden="true"></a>DT<span class="op">::</span><span class="kw">datatable</span>(geopoliticalsort)</span></code></pre></div>
+<div id="htmlwidget-312c0af3d56113c88498" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-312c0af3d56113c88498">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116"],[9702,6775,447,319,275,242,199,157,151,137,120,108,81,72,69,67,63,61,52,51,50,46,44,42,41,41,40,35,35,29,27,26,26,25,25,25,23,22,21,18,17,16,15,14,12,12,12,11,10,10,10,9,9,8,8,8,8,7,7,7,7,7,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,4,4,4,3,3,3,3,3,3,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],["United States","Canada","France","Russia","Netherlands","United Kingdom","Germany","Switzerland","China","Czech Republic","Sweden","Spain","Italy","Portugal","Ireland","Poland","Romania","Norway","Australia","Kyrgyzstan","Colombia","Bolivia","Austria","Finland","Greece","Turkey","Estonia","South Africa","Argentina","Ukraine","Brazil","Peru","Ecuador","Slovakia","Belarus","Chile","Bulgaria","Mexico","Mongolia","Iran","Belgium","Uganda","Japan","Hungary","Latvia","Tanzania","Kenya","Georgia","Ethiopia","Israel","Tunisia","Luxembourg","Cameroon","Morocco","Jordan","Burundi","Lithuania","Guatemala","Congo, Democratic Republic of the [Zaire]","Nigeria","Namibia","Madagascar","Venezuela","Iceland","Papua New Guinea","Denmark","Senegal","Chad","Egypt","Indonesia","Oman","Kazakhstan","Syria","Ghana","Congo, Republic of the","New Zealand","Lebanon","Sudan","Fiji","Algeria","Belize","Andorra","Qatar","Dominican Republic","Rwanda","Cyprus","Mauritius","Gabon","Malawi","Yemen","Bahamas","Croatia","Costa Rica","Albania","Somalia","Panama","Grenada","Uzbekistan","Mauritania","Bermuda","Benin","Burkina Faso","Montenegro","Vanuatu","Djibouti","Bosnia and Herzegovina","Niger","India","Cape Verde","Malta","Serbia","Turkmenistan","Cuba","Botswana","Pakistan","Slovenia"],["country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country","country"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>sites<\/th>\n      <th>geopoliticalname<\/th>\n      <th>geopoliticalunit<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-</div>
-<div id="table-keys" class="section level2 hasAnchor">
+<div id="table-keys" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Table Keys<a href="sql-quickly.html#table-keys" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Within tables there are often Keys. A Key may be a <strong>Primary Key</strong> (PK), which acts as a unique identifier for individual records within a table, or they may be a <strong>Foreign Key</strong> (FK) which refers to a unique identifier in another table. Primary Keys and Foreign Keys are critical to join tables in a SQL query.</p>
 <p>In relational databases such as Neotoma you will often have “entity” tables, that represent explicit things (e.g., people, sites), and then tables that express the relationship between entities using foreign keys. So, for example the table <code>ndb.sitegeopoliticalunits</code> expresses the relationship between <code>ndb.sites</code> and <code>ndb.geopoliticalunits</code>. Both <code>ndb.sites</code> and <code>ndb.geopoliticalunits</code> represent entities; a country is a thing, with properties, as is a site. The <code>ndb.sitegeopoliticalunits</code> defines the relationship betwen these things. It is a table with two columns, one is an FK that refers back to the PK, <code>siteid</code>s, in <code>ndb.sites</code>, and one is an FK for the primary key of the <code>ndb.geopoliticalunits</code>.</p>
 <p>Switching to the <em>SQL Query</em> tab in the above example will show you that we are using the PK for the <code>geopoliticalunits</code>, <code>geopoliticalid</code>. It links the complete information in the <code>ndb.geopoliticalunits</code> table to the <code>ndb.sites</code> table, through a <code>JOIN</code> table, that has two columns, the <code>siteid</code> that is the PK for <code>ndb.sites</code> and the <code>geopoliticalid</code> column, that is the PK for <code>ndb.geopoliticalunits</code>. In this way, <code>siteid</code> is the PK in <code>ndb.sites</code> and an FK in <code>ndb.sitegeopoliticalunits</code>.</p>
 </div>
-<div id="data-types" class="section level2 hasAnchor">
+<div id="data-types" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Data Types<a href="sql-quickly.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Neotoma uses several standard SQL data types. You can find out more about these individual data types in the Postgres <a href="https://www.postgresql.org/docs/current/datatype.html">data type documentation</a>.</p>
-<div id="query-1" class="section level3 tabset hasAnchor">
-<h3><span class="header-section-number">3.3.1</span> Query<a href="sql-quickly.html#query-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="sql-query-1" class="section level4 hasAnchor">
+<div id="query" class="section level3 tabset hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Query<a href="sql-quickly.html#query" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sql-query-1" class="section level4 hasAnchor" number="3.3.1.1">
 <h4><span class="header-section-number">3.3.1.1</span> SQL Query<a href="sql-quickly.html#sql-query-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="data" class="section level4 active hasAnchor">
+<div id="data" class="section level4 active hasAnchor" number="3.3.1.2">
 <h4><span class="header-section-number">3.3.1.2</span> Data<a href="sql-quickly.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">DT<span class="op">::</span><span class="kw">datatable</span>(datatypes)</a></code></pre></div>
-<div id="htmlwidget-6b1d0e07ecea98859196" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6b1d0e07ecea98859196">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9"],["array","date","timestamp without time zone","boolean","character varying","text","integer","bigint","double precision"],[3,12,284,10,150,50,357,4,72]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>datatype<\/th>\n      <th>columns<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="sql-quickly.html#cb6-1" aria-hidden="true"></a>DT<span class="op">::</span><span class="kw">datatable</span>(datatypes)</span></code></pre></div>
+<div id="htmlwidget-171991567eb68bc39c7f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-171991567eb68bc39c7f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9"],["array","bigint","boolean","character varying","date","double precision","integer","text","timestamp without time zone"],[3,4,10,150,12,72,357,50,284]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>datatype<\/th>\n      <th>columns<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 </div>
 </div>

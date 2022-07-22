@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Publication Related Tables | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Publication Related Tables | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2022-06-06" />
+<meta name="date" content="2022-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="dataset-collection-related-tables-1.html"/>
-<link rel="next" href="Publications.html"/>
+<link rel="next" href="sample-related-tables-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -63,25 +64,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -90,9 +92,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -140,10 +142,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Acknowledgements</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#whence-neotoma"><i class="fa fa-check"></i><b>2.1</b> Whence Neotoma</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#rationale"><i class="fa fa-check"></i><b>2.2</b> Rationale</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a><ul>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#history-of-the-constituent-databases"><i class="fa fa-check"></i><b>2.3</b> History of the Constituent Databases</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#global-pollen-database"><i class="fa fa-check"></i><b>2.3.1</b> Global Pollen Database</a></li>
 <li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#north-american-plant-macrofossil-database"><i class="fa fa-check"></i><b>2.3.2</b> North American Plant Macrofossil Database</a></li>
 <li class="chapter" data-level="2.3.3" data-path="introduction.html"><a href="introduction.html#FAUNMAP"><i class="fa fa-check"></i><b>2.3.3</b> FAUNMAP</a></li>
@@ -151,17 +155,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#who-will-use-neotoma"><i class="fa fa-check"></i><b>2.4</b> Who Will Use Neotoma?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a><ul>
-<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.1.1</b> Query</a></li>
+<li class="chapter" data-level="3" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>3</b> SQL Quickly</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>3.1</b> SQL Example</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-query"><i class="fa fa-check"></i><b>3.1.1</b> SQL Query</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>3.2</b> Table Keys</a></li>
-<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query-1"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>3.3</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>3.3.1</b> Query</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a><ul>
-<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sites-collection-units-analysis-units-samples-and-datasets"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="4" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>4</b> Database Design Concepts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sitedesign"><i class="fa fa-check"></i><b>4.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
 <li class="chapter" data-level="4.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>4.2</b> Taxa and Variables</a></li>
 <li class="chapter" data-level="4.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>4.3</b> Taxonomy and Synonymy</a></li>
 <li class="chapter" data-level="4.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>4.4</b> Taxa and Ecological Groups</a></li>
@@ -169,150 +177,204 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>4.6</b> Sediment and Depositional Environments</a></li>
 <li class="chapter" data-level="4.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>4.7</b> Date Fields</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a><ul>
+<li class="chapter" data-level="5" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>5</b> Neotoma Tables</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>5.1</b> Site Related Tables</a></li>
 <li class="chapter" data-level="5.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>5.2</b> Dataset &amp; Collection Related Tables</a></li>
 <li class="chapter" data-level="5.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>5.3</b> Chronology &amp; Age Related Tables</a></li>
 <li class="chapter" data-level="5.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>5.4</b> Sample Related Tables</a></li>
-<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.5</b> Taxonomy Related Tables</a></li>
-<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.6</b> Individual Related Tables</a></li>
-<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.7</b> Publication Related Tables</a></li>
+<li class="chapter" data-level="5.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#specimen-related-tables"><i class="fa fa-check"></i><b>5.5</b> Specimen Related Tables</a></li>
+<li class="chapter" data-level="5.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>5.6</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="5.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>5.7</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="5.8" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>5.8</b> Publication Related Tables</a></li>
+<li class="chapter" data-level="5.9" data-path="neotoma-tables.html"><a href="neotoma-tables.html#supporting-resources"><i class="fa fa-check"></i><b>5.9</b> Supporting Resources</a></li>
+<li class="chapter" data-level="5.10" data-path="neotoma-tables.html"><a href="neotoma-tables.html#isotope-data-management"><i class="fa fa-check"></i><b>5.10</b> Isotope Data Management</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>6</b> Contact and Individual Related Tables</a><ul>
-<li class="chapter" data-level="6.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>6.1</b> <code>collectors</code></a></li>
+<li class="chapter" data-level="6" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>6</b> Contact and Individual Related Tables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>6.1</b> <code>collectors</code></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#sql-example-1"><i class="fa fa-check"></i><b>6.1.1</b> SQL Example</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Contacts"><i class="fa fa-check"></i><b>6.2</b> <code>contacts</code></a></li>
 <li class="chapter" data-level="6.3" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#ContactStatuses"><i class="fa fa-check"></i><b>6.3</b> <code>contactstatuses</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Dataset &amp; Collection Related Tables</a><ul>
-<li class="chapter" data-level="7.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>7.1</b> AggregateDatasets</a></li>
-<li class="chapter" data-level="7.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>7.2</b> aggregateordertypes</a></li>
-<li class="chapter" data-level="7.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>7.3</b> CollectionTypes</a></li>
-<li class="chapter" data-level="7.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>7.4</b> CollectionUnits</a></li>
-<li class="chapter" data-level="7.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>7.5</b> DatasetPublications</a></li>
-<li class="chapter" data-level="7.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>7.6</b> Datasets</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-1"><i class="fa fa-check"></i><b>7.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>7</b> Dataset &amp; Collection Related Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#accumulationrates"><i class="fa fa-check"></i><b>7.1</b> <code>accumulationrates</code></a></li>
+<li class="chapter" data-level="7.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>7.2</b> <code>aggregatedatasets</code></a></li>
+<li class="chapter" data-level="7.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>7.3</b> <code>aggregateordertypes</code></a></li>
+<li class="chapter" data-level="7.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>7.4</b> <code>collectiontypes</code></a></li>
+<li class="chapter" data-level="7.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>7.5</b> <code>collectionunits</code></a></li>
+<li class="chapter" data-level="7.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#contextsdatasettypes"><i class="fa fa-check"></i><b>7.6</b> <code>contextsdatasettypes</code></a></li>
+<li class="chapter" data-level="7.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdatabases"><i class="fa fa-check"></i><b>7.7</b> <code>datasetdatabases</code></a></li>
+<li class="chapter" data-level="7.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdoi"><i class="fa fa-check"></i><b>7.8</b> <code>datasetdoi</code></a></li>
+<li class="chapter" data-level="7.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>7.9</b> <code>datasetpis</code></a></li>
+<li class="chapter" data-level="7.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>7.10</b> <code>datasetpublications</code></a></li>
+<li class="chapter" data-level="7.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>7.11</b> <code>datasets</code></a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>7.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.11.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>7.11.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>7.7</b> SQL Example</a></li>
-<li class="chapter" data-level="7.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>7.8</b> DatasetSubmissions</a></li>
-<li class="chapter" data-level="7.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>7.9</b> DatasetSubmissionTypes</a></li>
-<li class="chapter" data-level="7.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>7.10</b> SQL Example</a></li>
-<li class="chapter" data-level="7.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>7.11</b> DatasetTypes</a></li>
-<li class="chapter" data-level="7.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>7.12</b> DatasetPIs</a></li>
-<li class="chapter" data-level="7.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>7.13</b> DepEnvtTypes</a></li>
-<li class="chapter" data-level="7.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>7.14</b> SQL Example</a></li>
-<li class="chapter" data-level="7.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>7.15</b> SQL Example</a></li>
-<li class="chapter" data-level="7.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>7.16</b> Lithology</a></li>
-<li class="chapter" data-level="7.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Projects"><i class="fa fa-check"></i><b>7.17</b> Projects</a></li>
+<li class="chapter" data-level="7.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>7.12</b> <code>datasetsubmissions</code></a></li>
+<li class="chapter" data-level="7.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>7.13</b> <code>datasetsubmissiontypes</code></a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>7.13.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Publication Related Tables</a><ul>
-<li class="chapter" data-level="8.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>8.1</b> publicationauthors</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>8.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxagrouptypes"><i class="fa fa-check"></i><b>7.14</b> <code>datasettaxagrouptypes</code></a></li>
+<li class="chapter" data-level="7.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxonnotes"><i class="fa fa-check"></i><b>7.15</b> <code>datasettaxonnotes</code></a></li>
+<li class="chapter" data-level="7.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>7.16</b> <code>datasettypes</code></a></li>
+<li class="chapter" data-level="7.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetvariables"><i class="fa fa-check"></i><b>7.17</b> <code>datasetvariables</code></a></li>
+<li class="chapter" data-level="7.18" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>7.18</b> <code>depenvttypes</code></a>
+<ul>
+<li class="chapter" data-level="7.18.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>7.18.1</b> SQL Example</a></li>
+<li class="chapter" data-level="7.18.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>7.18.2</b> SQL Example</a></li>
+<li class="chapter" data-level="7.18.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>7.18.3</b> SQL Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Publication Related Tables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>8.1</b> <code>publicationauthors</code></a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>8.1.1</b> SQL Example</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationeditors"><i class="fa fa-check"></i><b>8.2</b> <code>publicationeditors</code></a></li>
+<li class="chapter" data-level="8.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#Publications"><i class="fa fa-check"></i><b>8.3</b> <code>publications</code></a></li>
+<li class="chapter" data-level="8.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#PublicationTypes"><i class="fa fa-check"></i><b>8.4</b> <code>publicationtypes</code></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#legacy"><i class="fa fa-check"></i><b>8.4.1</b> Legacy</a></li>
+<li class="chapter" data-level="8.4.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#journal-article"><i class="fa fa-check"></i><b>8.4.2</b> Journal Article</a></li>
+<li class="chapter" data-level="8.4.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#book-chapter"><i class="fa fa-check"></i><b>8.4.3</b> Book Chapter</a></li>
+<li class="chapter" data-level="8.4.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-book"><i class="fa fa-check"></i><b>8.4.4</b> Authored Book</a></li>
+<li class="chapter" data-level="8.4.5" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-book"><i class="fa fa-check"></i><b>8.4.5</b> Edited Book</a></li>
+<li class="chapter" data-level="8.4.6" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#masters-thesis"><i class="fa fa-check"></i><b>8.4.6</b> Master’s Thesis</a></li>
+<li class="chapter" data-level="8.4.7" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#doctoral-dissertation"><i class="fa fa-check"></i><b>8.4.7</b> Doctoral Dissertation</a></li>
+<li class="chapter" data-level="8.4.8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-report"><i class="fa fa-check"></i><b>8.4.8</b> Authored Report</a></li>
+<li class="chapter" data-level="8.4.9" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-report"><i class="fa fa-check"></i><b>8.4.9</b> Edited Report</a></li>
+<li class="chapter" data-level="8.4.10" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-authored-publication"><i class="fa fa-check"></i><b>8.4.10</b> Other Authored Publication</a></li>
+<li class="chapter" data-level="8.4.11" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-edited-publication"><i class="fa fa-check"></i><b>8.4.11</b> Other Edited Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="Publications.html"><a href="Publications.html"><i class="fa fa-check"></i><b>9</b> Publications</a></li>
-<li class="chapter" data-level="10" data-path="PublicationTypes.html"><a href="PublicationTypes.html"><i class="fa fa-check"></i><b>10</b> PublicationTypes</a><ul>
-<li class="chapter" data-level="10.1" data-path="PublicationTypes.html"><a href="PublicationTypes.html#legacy-publication"><i class="fa fa-check"></i><b>10.1</b> Legacy Publication</a></li>
-<li class="chapter" data-level="10.2" data-path="PublicationTypes.html"><a href="PublicationTypes.html#journal-article"><i class="fa fa-check"></i><b>10.2</b> Journal Article</a></li>
-<li class="chapter" data-level="10.3" data-path="PublicationTypes.html"><a href="PublicationTypes.html#book-chapter"><i class="fa fa-check"></i><b>10.3</b> Book Chapter</a></li>
-<li class="chapter" data-level="10.4" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-book"><i class="fa fa-check"></i><b>10.4</b> Authored Book</a></li>
-<li class="chapter" data-level="10.5" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-book"><i class="fa fa-check"></i><b>10.5</b> Edited Book</a></li>
-<li class="chapter" data-level="10.6" data-path="PublicationTypes.html"><a href="PublicationTypes.html#masters-thesis"><i class="fa fa-check"></i><b>10.6</b> Master’s Thesis</a></li>
-<li class="chapter" data-level="10.7" data-path="PublicationTypes.html"><a href="PublicationTypes.html#doctoral-dissertation"><i class="fa fa-check"></i><b>10.7</b> Doctoral Dissertation</a></li>
-<li class="chapter" data-level="10.8" data-path="PublicationTypes.html"><a href="PublicationTypes.html#authored-report"><i class="fa fa-check"></i><b>10.8</b> Authored Report</a></li>
-<li class="chapter" data-level="10.9" data-path="PublicationTypes.html"><a href="PublicationTypes.html#edited-report"><i class="fa fa-check"></i><b>10.9</b> Edited Report</a></li>
-<li class="chapter" data-level="10.10" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-authored-publication"><i class="fa fa-check"></i><b>10.10</b> Other Authored Publication</a></li>
-<li class="chapter" data-level="10.11" data-path="PublicationTypes.html"><a href="PublicationTypes.html#other-edited-publication"><i class="fa fa-check"></i><b>10.11</b> Other Edited Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Sample Related Tables</a><ul>
-<li class="chapter" data-level="11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>11.1</b> <code>analysisunits</code></a></li>
-<li class="chapter" data-level="11.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>11.2</b> <code>data</code></a><ul>
-<li class="chapter" data-level="11.2.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>11.2.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>9</b> Sample Related Tables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>9.1</b> <code>aggregatesamples</code></a></li>
+<li class="chapter" data-level="9.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>9.2</b> <code>analysisunits</code></a></li>
+<li class="chapter" data-level="9.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>9.3</b> <code>data</code></a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>9.3.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>11.3</b> <code>depagents</code></a></li>
-<li class="chapter" data-level="11.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>11.4</b> <code>depagenttypes</code></a></li>
-<li class="chapter" data-level="11.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>11.5</b> <code>sampleages</code></a><ul>
-<li class="chapter" data-level="11.5.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>11.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>9.4</b> <code>depagents</code></a></li>
+<li class="chapter" data-level="9.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>9.5</b> <code>depagenttypes</code></a></li>
+<li class="chapter" data-level="9.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>9.6</b> <code>faciestypes</code></a></li>
+<li class="chapter" data-level="9.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>9.7</b> <code>keywords</code></a></li>
+<li class="chapter" data-level="9.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>9.8</b> <code>lithology</code></a></li>
+<li class="chapter" data-level="9.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>9.9</b> <code>sampleages</code></a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>9.9.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>11.6</b> <code>sampleanalysts</code></a></li>
-<li class="chapter" data-level="11.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>11.7</b> <code>samplekeywords</code></a><ul>
-<li class="chapter" data-level="11.7.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>11.7.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>9.10</b> <code>sampleanalysts</code></a></li>
+<li class="chapter" data-level="9.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>9.11</b> <code>samplekeywords</code></a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>9.11.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>11.8</b> <code>samples</code></a><ul>
-<li class="chapter" data-level="11.8.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>11.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="9.12" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>9.12</b> <code>samples</code></a>
+<ul>
+<li class="chapter" data-level="9.12.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>9.12.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>11.9</b> <code>aggregatesamples</code></a></li>
-<li class="chapter" data-level="11.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>11.10</b> <code>faciestypes</code></a></li>
-<li class="chapter" data-level="11.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>11.11</b> <code>keywords</code></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Site Related Tables</a><ul>
-<li class="chapter" data-level="12.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>12.1</b> SiteImages</a></li>
-<li class="chapter" data-level="12.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>12.2</b> Sites</a></li>
-<li class="chapter" data-level="12.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>12.3</b> SiteGeoPolitical</a></li>
-<li class="chapter" data-level="12.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>12.4</b> SQL Example</a></li>
-<li class="chapter" data-level="12.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>12.5</b> SQL Example</a></li>
-<li class="chapter" data-level="12.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>12.6</b> SQL Example</a></li>
-<li class="chapter" data-level="12.7" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>12.7</b> GeoPoliticalUnits</a></li>
-<li class="chapter" data-level="12.8" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>12.8</b> SQL Example</a></li>
+<li class="chapter" data-level="10" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>10</b> Site Related Tables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>10.1</b> <code>geopoliticalunits</code></a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>10.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.1.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>10.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>13</b> Taxonomy Related Tables</a><ul>
-<li class="chapter" data-level="13.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>13.1</b> <code>ecolgroups</code></a><ul>
-<li class="chapter" data-level="13.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>13.1.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>13.1.2</b> SQL Example</a></li>
+<li class="chapter" data-level="10.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparameters"><i class="fa fa-check"></i><b>10.2</b> <code>lakeparameters</code></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>10.2.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>13.2</b> <code>ecolgrouptypes</code></a></li>
-<li class="chapter" data-level="13.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>13.3</b> <code>ecolsettypes</code></a></li>
-<li class="chapter" data-level="13.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>13.4</b> <code>synonyms</code></a></li>
-<li class="chapter" data-level="13.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>13.5</b> <code>synonymtypes</code></a><ul>
-<li class="chapter" data-level="13.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>13.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparametertypes"><i class="fa fa-check"></i><b>10.3</b> <code>lakeparametertypes</code></a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>10.3.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>13.6</b> <code>taxa</code></a></li>
-<li class="chapter" data-level="13.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>13.7</b> <code>taxagrouptypes</code></a></li>
-<li class="chapter" data-level="13.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>13.8</b> <code>variables</code></a><ul>
-<li class="chapter" data-level="13.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>13.8.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>13.8.2</b> SQL Example</a></li>
-<li class="chapter" data-level="13.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>13.8.3</b> SQL Example</a></li>
+<li class="chapter" data-level="10.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>10.4</b> <code>sitegeopolitical</code></a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>10.4.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>13.9</b> <code>variablecontexts</code></a></li>
-<li class="chapter" data-level="13.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>13.10</b> <code>variableelements</code></a></li>
-<li class="chapter" data-level="13.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>13.11</b> <code>variablemodifications</code></a></li>
-<li class="chapter" data-level="13.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>13.12</b> <code>variableunits</code></a></li>
-<li class="chapter" data-level="13.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>13.13</b> <code>repositoryinstitutions</code></a></li>
-<li class="chapter" data-level="13.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>13.14</b> <code>repositoryspecimens</code></a><ul>
-<li class="chapter" data-level="13.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>13.14.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>10.5</b> <code>siteimages</code></a></li>
+<li class="chapter" data-level="10.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>10.6</b> <code>sites</code></a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>10.6.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>13.15</b> <code>specimendates</code></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>14</b> Chronology &amp; Age Related Tables</a><ul>
-<li class="chapter" data-level="14.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>14.1</b> AgeTypes</a></li>
-<li class="chapter" data-level="14.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>14.2</b> AggregateChronologies</a></li>
-<li class="chapter" data-level="14.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>14.3</b> ChronControls</a></li>
-<li class="chapter" data-level="14.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>14.4</b> ChronControlTypes</a></li>
-<li class="chapter" data-level="14.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>14.5</b> Chronologies</a><ul>
-<li class="chapter" data-level="14.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>14.5.1</b> SQL Example</a></li>
-<li class="chapter" data-level="14.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>14.5.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Taxonomy Related Tables</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>11.1</b> <code>ecolgroups</code></a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>11.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>11.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>14.6</b> AggregateSampleAges</a><ul>
-<li class="chapter" data-level="14.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>14.6.1</b> SQL Example</a></li>
-<li class="chapter" data-level="14.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>14.6.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>11.2</b> <code>ecolgrouptypes</code></a></li>
+<li class="chapter" data-level="11.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>11.3</b> <code>ecolsettypes</code></a></li>
+<li class="chapter" data-level="11.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>11.4</b> <code>synonyms</code></a></li>
+<li class="chapter" data-level="11.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>11.5</b> <code>synonymtypes</code></a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>11.5.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>14.7</b> <code>geochronology</code></a><ul>
-<li class="chapter" data-level="14.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>14.7.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>11.6</b> <code>taxa</code></a></li>
+<li class="chapter" data-level="11.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>11.7</b> <code>taxagrouptypes</code></a></li>
+<li class="chapter" data-level="11.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>11.8</b> <code>variables</code></a>
+<ul>
+<li class="chapter" data-level="11.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>11.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>11.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>11.8.3</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>14.8</b> GeochronPublications</a></li>
-<li class="chapter" data-level="14.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>14.9</b> GeochronTypes</a></li>
-<li class="chapter" data-level="14.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>14.10</b> RelativeAgePublications</a></li>
-<li class="chapter" data-level="14.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>14.11</b> RelativeAges</a><ul>
-<li class="chapter" data-level="14.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>14.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>11.9</b> <code>variablecontexts</code></a></li>
+<li class="chapter" data-level="11.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>11.10</b> <code>variableelements</code></a></li>
+<li class="chapter" data-level="11.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>11.11</b> <code>variablemodifications</code></a></li>
+<li class="chapter" data-level="11.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>11.12</b> <code>variableunits</code></a></li>
+<li class="chapter" data-level="11.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>11.13</b> <code>repositoryinstitutions</code></a></li>
+<li class="chapter" data-level="11.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>11.14</b> <code>repositoryspecimens</code></a>
+<ul>
+<li class="chapter" data-level="11.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>11.14.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>14.12</b> RadiocarbonCalibration</a></li>
-<li class="chapter" data-level="14.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>14.13</b> RelativeAgeScales</a></li>
-<li class="chapter" data-level="14.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>14.14</b> RelativeAgeUnits</a></li>
-<li class="chapter" data-level="14.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>14.15</b> <code>relativechronology</code></a></li>
-<li class="chapter" data-level="14.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>14.16</b> Tephrachronology</a></li>
-<li class="chapter" data-level="14.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>14.17</b> Tephras</a></li>
+<li class="chapter" data-level="11.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>11.15</b> <code>specimendates</code></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>15</b> References</a></li>
+<li class="chapter" data-level="12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Chronology &amp; Age Related Tables</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>12.1</b> <code>agetypes</code></a></li>
+<li class="chapter" data-level="12.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>12.2</b> <code>aggregatechronologies</code></a></li>
+<li class="chapter" data-level="12.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>12.3</b> <code>chroncontrols</code></a></li>
+<li class="chapter" data-level="12.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>12.4</b> <code>chroncontroltypes</code></a></li>
+<li class="chapter" data-level="12.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>12.5</b> <code>chronologies</code></a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>12.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>12.5.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>12.6</b> <code>aggregatesampleages</code></a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-28"><i class="fa fa-check"></i><b>12.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-29"><i class="fa fa-check"></i><b>12.6.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>12.7</b> <code>geochronology</code></a>
+<ul>
+<li class="chapter" data-level="12.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-30"><i class="fa fa-check"></i><b>12.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>12.8</b> <code>geochronpublications</code></a></li>
+<li class="chapter" data-level="12.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>12.9</b> <code>geochrontypes</code></a></li>
+<li class="chapter" data-level="12.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>12.10</b> <code>relativeagepublications</code></a></li>
+<li class="chapter" data-level="12.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>12.11</b> <code>relativeages</code></a>
+<ul>
+<li class="chapter" data-level="12.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-31"><i class="fa fa-check"></i><b>12.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>12.12</b> <code>radiocarboncalibration</code></a></li>
+<li class="chapter" data-level="12.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>12.13</b> <code>relativeagescales</code></a></li>
+<li class="chapter" data-level="12.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>12.14</b> <code>relativeageunits</code></a></li>
+<li class="chapter" data-level="12.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>12.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="12.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>12.16</b> <code>tephrachronology</code></a></li>
+<li class="chapter" data-level="12.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>12.17</b> <code>tephras</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 </ul>
 
       </nav>
@@ -330,127 +392,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="publication-related-tables-1" class="section level1 hasAnchor">
+<div id="publication-related-tables-1" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">8</span> Publication Related Tables<a href="publication-related-tables-1.html#publication-related-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="publicationauthors" class="section level2 hasAnchor">
-<h2><span class="header-section-number">8.1</span> publicationauthors<a href="publication-related-tables-1.html#publicationauthors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This table lists authors as their names are given in publications. Only the initials are stored for authors’ given names. The ContactID links to the author’s full name and contact data in the <code class="interpreted-text" role="ref">contacts</code> table. Thus, for a bibliographic entry, Charles Robert Darwin is listed as C. R. Darwin, or as C. Darwin if the publication did not include his middle name. Book editors are also stored in this table if the entire book is cited. However, if a book chapter or section is cited, authors are stored in this table, but the book editors are stored in the <code class="interpreted-text" role="ref">publicationeditors</code> table. Thus, for the following reference, G. C. Frison is stored in the <code class="interpreted-text" role="ref">publicationauthors</code> table.</p>
+<div id="publicationauthors" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> <code>publicationauthors</code><a href="publication-related-tables-1.html#publicationauthors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table lists authors as their names are given in publications. Only the initials are stored for authors’ given names. The ContactID links to the author’s full name and contact data in the <a href="#contacts"><code>contacts</code></a> table. Thus, for a bibliographic entry, Charles Robert Darwin is listed as C. R. Darwin, or as C. Darwin if the publication did not include his middle name. Book editors are also stored in this table if the entire book is cited. However, if a book chapter or section is cited, authors are stored in this table, but the book editors are stored in the <a href="publication-related-tables-1.html#publicationeditors"><code>publicationeditors</code></a> table. Thus, for the following reference, G. C. Frison is stored in the <a href="publication-related-tables-1.html#publicationauthors"><code>publicationauthors</code></a> table.</p>
 <blockquote>
 <p>Frison, G. C., editor. 1996. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA.</p>
 </blockquote>
-<p>Whereas for the following publication, L. S. Cummings is listed in the PublicationAuthors table, and G. C. Frison is listed in the <code class="interpreted-text" role="ref">PublicationEditors</code> table.</p>
+<p>Whereas for the following publication, L. S. Cummings is listed in the PublicationAuthors table, and G. C. Frison is listed in the <a href="#PublicationEditors"><code>publicationeditors</code></a> table.</p>
 <blockquote>
 <p>Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site: stratigraphic pollen and phyrolith analysis. Pages 177-193 in G. C. Frison, editor. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA.</p>
 </blockquote>
-<table style="width:97%;">
-<colgroup>
-<col width="43%" />
-<col width="22%" />
-<col width="9%" />
-<col width="22%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><strong>Table: PublicationAuthors</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="left">AuthorID</td>
-<td>Long Integer</td>
-<td>PK</td>
-<td> </td>
-</tr>
-<tr class="odd">
-<td align="left">PublicationID</td>
-<td>Long Integer</td>
-<td>FK</td>
-<td>Publications</td>
-</tr>
-<tr class="even">
-<td align="left">AuthorOrder</td>
-<td>Long Integer</td>
-<td></td>
-<td> </td>
-</tr>
-<tr class="odd">
-<td align="left">FamilyName</td>
-<td>Text</td>
-<td></td>
-<td> </td>
-</tr>
-<tr class="even">
-<td align="left">Initials</td>
-<td>Text</td>
-<td></td>
-<td> </td>
-</tr>
-<tr class="odd">
-<td align="left">Suffix</td>
-<td>Text</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="left">ContactID</td>
-<td>Long Integer</td>
-<td>FK</td>
-<td>Contacts</td>
-</tr>
-</tbody>
-</table>
-<dl>
-<dt><strong>AuthorID (Primary Key)</strong></dt>
-<dd><p>An arbitrary Author identification number.</p>
-</dd>
-<dt><strong>PublicationID (Foreign Key)</strong></dt>
-<dd><p>Publication identification number. Field links to the <code class="interpreted-text" role="ref">publications</code> table.</p>
-</dd>
-<dt><strong>AuthorOrder</strong></dt>
-<dd><p>Ordinal number for the position in which the author's name appears in the publication’s author list.</p>
-</dd>
-<dt><strong>FamilyName</strong></dt>
-<dd><p>Family name of author</p>
-</dd>
-<dt><strong>Initials</strong></dt>
-<dd><p>Initials of author’s given names</p>
-</dd>
-<dt><strong>Suffix</strong></dt>
-<dd><p>Authors suffix (e.g. «Jr.»)</p>
-</dd>
-<dt><strong>ContactID (Foreign Key)</strong></dt>
-<dd><p>Contact identification number. Field links to the <code class="interpreted-text" role="ref">contacts</code> table.</p>
-</dd>
-</dl>
-<div id="sql-example-6" class="section level3 hasAnchor">
-<h3><span class="header-section-number">8.1.1</span> SQL Example<a href="publication-related-tables-1.html#sql-example-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="htmlwidget-5c264fb43da8fbf92613" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5c264fb43da8fbf92613">{"x":{"filter":"none","vertical":false,"data":[["authorid","publicationid","authororder","familyname","initials","suffix","contactid","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","character varying(8)","character varying(8)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationauthors_pkey","fk_publicationauthors_publications","","","","","fk_publicationauthors_contacts","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>authorid</code> (Primary Key)</strong>: An arbitrary Author identification number.</li>
+<li><strong><code>publicationid</code> (foreign key)</strong>: Publication identification number. Field links to the <a href="#publications"><code>publications</code></a> table.</li>
+<li><strong><code>authororder</code></strong>: Ordinal number for the position in which the author's name appears in the publication’s author list.</li>
+<li><strong><code>familyname</code></strong>: Family name of author</li>
+<li><strong><code>initials</code></strong>: Initials of author’s given names</li>
+<li><strong><code>suffix</code></strong>: Authors suffix (e.g. «Jr.»)</li>
+<li><strong><code>contactid</code> (foreign key)</strong>: Contact identification number. Field links to the <a href="#contacts"><code>contacts</code></a> table.</li>
+</ul>
+<div id="sql-example-8" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> SQL Example<a href="publication-related-tables-1.html#sql-example-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following query lists authors of publications from the province of Ontario, and provides the publicationids as an array, along with a total count of the publications they have authored about sites in the province:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">SELECT</span> ct.contactname, array_agg(<span class="kw">DISTINCT</span> pa.publicationid), <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid)</a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span> sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</a>
-<a class="sourceLine" id="cb14-4" title="4"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> sgp.siteid</a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</a>
-<a class="sourceLine" id="cb14-6" title="6"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetpublications <span class="kw">AS</span> dsp <span class="kw">ON</span> dsp.datasetid <span class="op">=</span> ds.datasetid</a>
-<a class="sourceLine" id="cb14-7" title="7"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> dsp.publicationid</a>
-<a class="sourceLine" id="cb14-8" title="8"><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">AS</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</a>
-<a class="sourceLine" id="cb14-9" title="9"><span class="kw">WHERE</span> gpu.geopoliticalname <span class="op">=</span> <span class="st">&#39;Ontario&#39;</span> <span class="kw">AND</span> gpu.<span class="fu">rank</span> <span class="op">=</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb14-10" title="10"><span class="kw">GROUP</span> <span class="kw">BY</span> ct.contactname</a>
-<a class="sourceLine" id="cb14-11" title="11"><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">DESC</span></a>
-<a class="sourceLine" id="cb14-12" title="12"><span class="kw">LIMIT</span> <span class="dv">10</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb15-1"><a href="publication-related-tables-1.html#cb15-1" aria-hidden="true"></a><span class="kw">SELECT</span> ct.contactname, array_agg(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">AS</span> publications, <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">AS</span> pubcount</span>
+<span id="cb15-2"><a href="publication-related-tables-1.html#cb15-2" aria-hidden="true"></a><span class="kw">FROM</span>         ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb15-3"><a href="publication-related-tables-1.html#cb15-3" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>    ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span>  sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</span>
+<span id="cb15-4"><a href="publication-related-tables-1.html#cb15-4" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.collectionunits <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> sgp.siteid</span>
+<span id="cb15-5"><a href="publication-related-tables-1.html#cb15-5" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.datasets <span class="kw">AS</span>  ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb15-6"><a href="publication-related-tables-1.html#cb15-6" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetpublications <span class="kw">AS</span> dsp <span class="kw">ON</span>       dsp.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb15-7"><a href="publication-related-tables-1.html#cb15-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>  ndb.publicationauthors <span class="kw">AS</span>  pa <span class="kw">ON</span>    pa.publicationid <span class="op">=</span> dsp.publicationid</span>
+<span id="cb15-8"><a href="publication-related-tables-1.html#cb15-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.contacts <span class="kw">AS</span>  ct <span class="kw">ON</span>        ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb15-9"><a href="publication-related-tables-1.html#cb15-9" aria-hidden="true"></a><span class="kw">WHERE</span> gpu.geopoliticalname <span class="op">=</span> <span class="st">&#39;Ontario&#39;</span> </span>
+<span id="cb15-10"><a href="publication-related-tables-1.html#cb15-10" aria-hidden="true"></a>  <span class="kw">AND</span> gpu.<span class="fu">rank</span> <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb15-11"><a href="publication-related-tables-1.html#cb15-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ct.contactname</span>
+<span id="cb15-12"><a href="publication-related-tables-1.html#cb15-12" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">DESC</span></span>
+<span id="cb15-13"><a href="publication-related-tables-1.html#cb15-13" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
 <div class="knitsql-table">
-<table style="width:100%;">
+<table>
 <caption><span id="tab:authnames">Table 8.1: </span>Displaying records 1 - 10</caption>
 <colgroup>
-<col width="15%" />
+<col width="13%" />
 <col width="81%" />
-<col width="3%" />
+<col width="5%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left">contactname</th>
-<th align="left">array_agg</th>
-<th align="right">count</th>
+<th align="left">publications</th>
+<th align="right">pubcount</th>
 </tr>
 </thead>
 <tbody>
@@ -490,18 +483,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">10</td>
 </tr>
 <tr class="even">
-<td align="left">Dixit, Sushil S.</td>
-<td align="left">{9838,9839,9841,9844,9846,9847,9848,9849,9850,9852}</td>
-<td align="right">10</td>
-</tr>
-<tr class="odd">
 <td align="left">Jackson, Lawrence J.</td>
 <td align="left">{280,573,11096,11171,11282,12691,13956,14051,14052,14053}</td>
 <td align="right">10</td>
 </tr>
+<tr class="odd">
+<td align="left">Dixit, Sushil S.</td>
+<td align="left">{9838,9839,9841,9844,9846,9847,9848,9849,9850,9852}</td>
+<td align="right">10</td>
+</tr>
 <tr class="even">
-<td align="left">Harington, Charles Richard</td>
-<td align="left">{2392,7292,10736,11190,11228,13955,14191,14193}</td>
+<td align="left">Churcher, C.S. (Rufus)</td>
+<td align="left">{1640,7928,10247,11142,11143,11443,11585,14132}</td>
 <td align="right">8</td>
 </tr>
 </tbody>
@@ -509,69 +502,1058 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="publicationeditors" class="section level2 hasAnchor">
+<div id="publicationeditors" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> <code>publicationeditors</code><a href="publication-related-tables-1.html#publicationeditors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This table stores the editors of publications for which chapters or sections are the primary bibliographic entries. Chapter authors are stored in the PublicatonAuthors table, where they are linked to the <code class="interpreted-text" role="ref">Contacts</code> table. However, publication editors are not cross-referenced in the <code class="interpreted-text" role="ref">Contacts</code> table, because chapter authors are the principal citation.</p>
-<table style="width:97%;">
+<p>This table stores the editors of publications for which chapters or sections are the primary bibliographic entries. Chapter authors are stored in the PublicatonAuthors table, where they are linked to the <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table. However, publication editors are not cross-referenced in the <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table, because chapter authors are the principal citation.</p>
+<div id="htmlwidget-64a2bef62186c3cbeee7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-64a2bef62186c3cbeee7">{"x":{"filter":"none","vertical":false,"data":[["editorid","publicationid","editororder","familyname","initials","suffix","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","character varying(8)","character varying(8)","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationeditors_pkey","fk_publicationeditors_publications","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>editorid (primary key)</code></strong>: An arbitrary Editor identification number.</li>
+<li><strong><code>publicationid (foreign key)</code></strong>: Publication identification number. Field links to the <a href="publication-related-tables-1.html#Publications"><code>publications</code></a> table.</li>
+<li><strong><code>editororder</code></strong>: Ordinal number for the position in which the editor’s name appears the publication’s author list.</li>
+<li><strong><code>familyname</code></strong>: Family name of editor</li>
+<li><strong><code>initials</code></strong>: Initials of editor’s given names</li>
+<li><strong><code>suffix</code></strong>: Authors suffix (e.g. «Jr.»)</li>
+</ul>
+</div>
+<div id="Publications" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> <code>publications</code><a href="publication-related-tables-1.html#Publications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This table stores publication or bibliographic data. The table is designed with fields for bibliographic data so that bibliographies can be formatted in different styles and potentially exported to bibliographic software such EndNote®. In the constituent databases that were originally merged into Neotoma, bibliographic entries were not parsed into separate fields, but rather were stored as free-form text.</p>
+<p>Because complete parsing of these thousands of legacy bibliographic entries into individual fields would have been prohibitively time consuming, the existing bibliographic data were ingested “as is” with a PubTypeID = Other. However, for legacy publications, the year of publication was added to the Year field, and authors were parsed into the <a href="#PublicationAuthors"><code>publicationauthors</code></a> table and added to the <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table. In addition, some global changes were made. For example, «Pp.» was changed to «Pages», «Ed.» to «Editor», and «Eds.» to «Editors». Also for FAUNMAP entries, abbreviated journal names were changed to fully spelled out names.</p>
+<p>The merged databases used different bibliographic styles, and data entry personnel working on the same database sometimes followed different conventions. Consequently, the current bibliographic entries are not stylistically uniform. Eventually, the legacy bibliographic data will be parsed into separate fields.</p>
+<p>The Publications table has fields to accommodate a number of different types of publications. Some fields contain different kinds of data for different kinds of publications. For example, the BookTitle field stores the titles of books, but stores the journal name for journal articles. The Publisher field stores the name of the publisher for books, but the name of the university for theses and dissertations.</p>
+<p>Authors are stored in the <a href="#PublicationAuthors"><code>publicationauthors</code></a> table. Editors are also stored in the <a href="#PublicationAuthors"><code>publicationauthors</code></a> table if the entire publication is cited. The <a href="#PublicationAuthors"><code>publicationauthors</code></a> table has a ContactID field, which links to the <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table, where full names and contact information is stored for authors and editors. The PubTypeID «Authored Book» or «Edited Book» indicates whether the PublicationAuathors records are authors or editors. If a book chapter or section is the primary bibliographic entry, then the book editors are stored in the <a href="#PublicationEditors"><code>publicationeditors</code></a> table, which does not have a ContactID field.</p>
+<div id="htmlwidget-fdb08293beaeaf3abc79" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fdb08293beaeaf3abc79">{"x":{"filter":"none","vertical":false,"data":[["publicationid","pubtypeid","year","citation","articletitle","journal","volume","issue","pages","citationnumber","doi","booktitle","numvolumes","edition","volumetitle","seriestitle","seriesvolume","publisher","url","city","state","country","originallanguage","notes","recdatecreated","recdatemodified"],["integer","integer","character varying(64)","text","text","text","character varying(16)","character varying(8)","character varying(24)","character varying(24)","character varying(128)","text","character varying(8)","character varying(24)","text","text","character varying(24)","character varying(255)","text","character varying(64)","character varying(64)","character varying(64)","character varying(64)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["publications_pkey","pub_pty","","","","","","","","","","","","","","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><p><strong><code>publicationid (primary key)</code></strong>: An arbitrary Publication identification number.</p></li>
+<li><p><strong><code>pubtypeid (foreign key)</code></strong>: Publication type. Field links to the <a href="publication-related-tables-1.html#PublicationTypes"><code>publicationtypes</code></a> lookup table.</p></li>
+<li><p><strong><code>year</code></strong>: Year of publication.</p></li>
+<li><p><strong><code>citation</code></strong>: The complete citation in a standard style. For Legacy citations inherited from other databases, this field holds the citation as ingested from the other databases.</p></li>
+<li><p><strong><code>articletitle</code></strong>: The title of a journal or book chapter article.</p></li>
+<li><p><strong><code>booktitle</code></strong>: The title of a book or journal</p></li>
+<li><p><strong><code>volume</code></strong>: The volume number of a journal or the volume number of a book in a set. A set of books is comprised of a fixed number of volumes and normally have ISBN numbers, not ISSN numbers. Book sets are often published simultaneously, but not necessarily. For instance, many floras, such as <em>The</em> <em>Flora of North America north of</em> and <em>Flora Europaea</em>, consist of a set number of volumes planned in advance but published over a period of years.</p></li>
+<li><p><strong><code>issue</code></strong>: Journal issue number, normally included only if issues are independently paginated.</p></li>
+<li><p><strong><code>pages</code></strong>: Page numbers for journal or book chapter articles, or the number of pages in theses, dissertations, and reports.</p></li>
+<li><p><strong><code>citationnumber</code></strong>: A citation or article number used in lieu of page numbers fordigital or online publications, typically used in conjunction with the DOI. For example, journals published by the American Geophysical Union since 1999 use citation numbers rather than page numbers.</p></li>
+<li><p><strong><code>doi</code></strong>: Digital Object Identifier. A unique identifier assigned to digital publications. The DOI consists of a prefix and suffix separated by a slash. The portion before the slash stands for the publisher and is assigned by the International DOI Foundation. For example, 10.1029 is the prefix for the American Geophysical Union. The suffix is assigned by the publisher according to their protocols. For example, the DOI 10.1029/2002PA000768 is for an article submitted to <em>Paleoceanography</em> in 2002 and is article number 768 submitted since the system was installed. An example of CitationNumber and DOI:</p>
+<blockquote>
+<p>Barron, J. A., L. Heusser, T. Herbert, and M. Lyle. 2003. High-resolution climatic evolution of coastal northern during the past 16,000 years, Paleoceanography 18(1):<strong>1020</strong>. <a href="DOI:10.1029/2002PA000768" class="uri">DOI:10.1029/2002PA000768</a>.</p>
+</blockquote></li>
+<li><p><strong><code>numvolumes</code></strong>: Number of volumes in a set of books. Used when the entire set is
+referenced. An example of NumVolumes and Edition:</p>
+<blockquote>
+<p>Wilson, D. E., and D. M. Reeder. 2005. Mammal species of the world: a taxonomic and geographic reference. <strong>Third edition. 2 volumes</strong>. The Johns Hopkins University Press, Baltimore, Maryland, USA.</p>
+</blockquote></li>
+<li><p><strong><code>edition</code></strong>: Edition of a publication.</p></li>
+<li><p><strong><code>volumetitle</code></strong>: Title of a book volume in a set. Used if the individual volume is referenced. Example of Volume and VolumeTitle:</p>
+<blockquote>
+<p>Flora of North America Editorial Committee. 2002. Flora of North America north of . <strong>Volume 26</strong>. <strong>Magnoliophyta: Liliidae: Liliales and Orchidales</strong>. Oxford University Press, New York, New York, USA.</p>
+</blockquote></li>
+<li><p><strong><code>seriestitle</code></strong>: Title of a book series. Book series consist of a series of books, typically published at irregular intervals on sometimes related but different topics. The number of volumes in a series is typically open ended. Book series are often assigned ISSN numbers as well as ISBN numbers. However, in contrast to most serials, book series have individual titles and authors or editors. Citation practices for book series vary; sometimes they are cited as books, other times as journals. The default citation for Neotoma includes all information. An example of SeriesTitle and SeriesVolume:</p></li>
+</ul>
+<blockquote>
+<p>Curtis, J. H., and D. A. Hodell. 1993. An isotopic and trace element study of ostracods from , : A 10,500 year record of paleosalinity and paleotemperature changes in the . Pages 135-152 in P. K. Swart, K. C. Lohmann, J. McKensie, and S. Savin, editors. Climate change in continental isotopic records. <strong>Geophysical Monograph 78</strong>. American Geophysical Union, Washington, D.C., USA.</p>
+</blockquote>
+<ul>
+<li><p><strong><code>seriesvolume</code></strong>: Volume number in a series.</p></li>
+<li><p><strong><code>publisher</code></strong>: Publisher, including commercial publishing houses, university presses, government agencies, and non-governmental organizations, generally the owner of the copyright.</p></li>
+<li><p><strong><code>city</code></strong>: City in which the publication was published. The first city if a list is given.</p></li>
+<li><p><strong><code>state</code></strong>: State or province in which the publication was published. Used for the and , not used for many countries.</p></li>
+<li><p><strong><code>country</code></strong>: Country in which the publication was published, generally the complete country name, but «» for the .</p></li>
+<li><p><strong><code>originallanguage</code></strong>: The original language if the publication or bibliographic citation is translated from another language or transliterated from a non-Latin character set. Field not needed for non-translated publications in languages using the Latin character set. In the following example, the ArticleTitle is translated from Russian to English and the BookTitle (journal name) is transliterated from Russian:</p>
+<blockquote>
+<p>Tarasov, P.E. 1991. Late Holocene features of the Kokchetav Highland. Vestnik Moskovskogo Universiteta. Series 5. Geography <strong>6</strong>:54-60 <span class="math display">\[in **Russian**\]</span>.</p>
+</blockquote></li>
+<li><p><strong><code>notes</code></strong>: Free form notes or comments about the publication, which may be added parenthetically to the citation.</p></li>
+</ul>
+</div>
+<div id="PublicationTypes" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> <code>publicationtypes</code><a href="publication-related-tables-1.html#PublicationTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lookup table of publication types. This table is referenced by the <a href="publication-related-tables-1.html#Publications"><code>publications</code></a> table.</p>
+<div id="htmlwidget-33f8d13d826e88d01c21" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-33f8d13d826e88d01c21">{"x":{"filter":"none","vertical":false,"data":[["pubtypeid","pubtype","recdatecreated","recdatemodified"],["integer","character varying(24)","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationtypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><strong><code>pubtypeid</code></strong>: An arbitrary Publication Type identification number.</li>
+<li><strong><code>pubtype</code></strong>: Publication Type. The database has the following types:
+<ul>
+<li>Authored Book: An authored book</li>
+<li>Edited Book: An edited book</li>
+<li>Master’s Thesis: A Master’s thesis</li>
+<li>Doctoral Dissertation: A doctoral dissertation or Ph.D. thesis</li>
+<li>Authored Report: An authored report</li>
+<li>Edited Report: An edited report</li>
+<li>Other Authored: An authored publication not fitting in any other category (e.g. web sites, maps)</li>
+<li>Other Edited: A edited publication not fitting into any other category</li>
+</ul></li>
+</ul>
+<p>Examples of the different Publication Types are given in the following sections. Shown for each Publication Type are the fields in the <a href="publication-related-tables-1.html#Publications"><code>publications</code></a> table that may be filled for that type, with the exception that <code>originallanguage</code> and <code>notes</code> are not shown unless used.</p>
+<div id="legacy" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> Legacy<a href="publication-related-tables-1.html#legacy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Legacy citation ingested from another database and not parsed into separate fields:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb16-1"><a href="publication-related-tables-1.html#cb16-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, ARRAY_AGG(ct.contactname), pub.<span class="dt">year</span>, pub.citation</span>
+<span id="cb16-2"><a href="publication-related-tables-1.html#cb16-2" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb16-3"><a href="publication-related-tables-1.html#cb16-3" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb16-4"><a href="publication-related-tables-1.html#cb16-4" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb16-5"><a href="publication-related-tables-1.html#cb16-5" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb16-6"><a href="publication-related-tables-1.html#cb16-6" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Legacy&#39;</span></span>
+<span id="cb16-7"><a href="publication-related-tables-1.html#cb16-7" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb16-8"><a href="publication-related-tables-1.html#cb16-8" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:legpub">Table 8.2: </span>1 records</caption>
 <colgroup>
-<col width="43%" />
-<col width="22%" />
 <col width="9%" />
-<col width="22%" />
+<col width="13%" />
+<col width="3%" />
+<col width="73%" />
 </colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">array_agg</th>
+<th align="left">year</th>
+<th align="left">citation</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>Table: PublicationEditors</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="left">EditorID
-PublicationID
-EditorOrder
-FamilyName
-Initials
-Suffix</td>
-<td>Long Integer
-Long Integer
-Long Integer
-Text
-Text
-Text</td>
-<td>PK
-FK</td>
-<td> 
-Publications
- 
- 
- 
- </td>
+<td align="right">98</td>
+<td align="left">{“Mott, Robert J.”}</td>
+<td align="left">1976</td>
+<td align="left">Mott, R.J. 1976. A Holocene pollen profile from the Sept-Iles area, Québec. Naturaliste Canadien 103:457-467.</td>
 </tr>
 </tbody>
 </table>
-<dl>
-<dt><strong>EditorID (Primary Key)</strong></dt>
-<dd><p>An arbitrary Editor identification number.</p>
-</dd>
-<dt><strong>PublicationID (Foreign Key)</strong></dt>
-<dd><p>Publication identification number. Field links to the
-<code class="interpreted-text" role="ref">Publications</code> table.</p>
-</dd>
-<dt><strong>EditorOrder</strong></dt>
-<dd><p>Ordinal number for the position in which the editor’s name appears
-in the publication’s author list.</p>
-</dd>
-<dt><strong>FamilyName</strong></dt>
-<dd><p>Family name of editor</p>
-</dd>
-<dt><strong>Initials</strong></dt>
-<dd><p>Initials of editor’s given names</p>
-</dd>
-<dt><strong>Suffix</strong></dt>
-<dd><p>Authors suffix (e.g. «Jr.»)</p>
-</dd>
-</dl>
+</div>
+</div>
+<div id="journal-article" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> Journal Article<a href="publication-related-tables-1.html#journal-article" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Articles published in a journal.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb17-1"><a href="publication-related-tables-1.html#cb17-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb17-2"><a href="publication-related-tables-1.html#cb17-2" aria-hidden="true"></a>       ARRAY_AGG(ct.contactname),</span>
+<span id="cb17-3"><a href="publication-related-tables-1.html#cb17-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb17-4"><a href="publication-related-tables-1.html#cb17-4" aria-hidden="true"></a>       pub.articletitle,</span>
+<span id="cb17-5"><a href="publication-related-tables-1.html#cb17-5" aria-hidden="true"></a>       pub.journal,</span>
+<span id="cb17-6"><a href="publication-related-tables-1.html#cb17-6" aria-hidden="true"></a>       pub.volume,</span>
+<span id="cb17-7"><a href="publication-related-tables-1.html#cb17-7" aria-hidden="true"></a>       pub.issue,</span>
+<span id="cb17-8"><a href="publication-related-tables-1.html#cb17-8" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb17-9"><a href="publication-related-tables-1.html#cb17-9" aria-hidden="true"></a>       pub.doi</span>
+<span id="cb17-10"><a href="publication-related-tables-1.html#cb17-10" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb17-11"><a href="publication-related-tables-1.html#cb17-11" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb17-12"><a href="publication-related-tables-1.html#cb17-12" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb17-13"><a href="publication-related-tables-1.html#cb17-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb17-14"><a href="publication-related-tables-1.html#cb17-14" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Journal Article&#39;</span></span>
+<span id="cb17-15"><a href="publication-related-tables-1.html#cb17-15" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb17-16"><a href="publication-related-tables-1.html#cb17-16" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table style="width:100%;">
+<caption><span id="tab:journalpub">Table 8.3: </span>3 records</caption>
+<colgroup>
+<col width="3%" />
+<col width="29%" />
+<col width="1%" />
+<col width="44%" />
+<col width="9%" />
+<col width="1%" />
+<col width="1%" />
+<col width="2%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">publicationid</th>
+<th align="left">array_agg</th>
+<th align="left">year</th>
+<th align="left">articletitle</th>
+<th align="left">journal</th>
+<th align="left">volume</th>
+<th align="left">issue</th>
+<th align="left">pages</th>
+<th align="left">doi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">{“Outes, Valeria”,“Villarosa, Gustavo”,“Whitlock, Cathy”,“Nanavati, William, P.”}</td>
+<td align="left">2011</td>
+<td align="left">Diatom-inferred wind activity at Lac du Sommet, southern Québec, Canada: A multiproxy paleoclimate reconstruction based on diatoms, chironomids, and pollen for the past 9500 years</td>
+<td align="left">The Holocene</td>
+<td align="left">21</td>
+<td align="left">6</td>
+<td align="left">925-938</td>
+<td align="left">10.1177/0959683611400199</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">{“Janssen, C. Roel”}</td>
+<td align="left">1968</td>
+<td align="left">Myrtle Lake: a late- and post-glacial pollen diagram from northern Minnesota</td>
+<td align="left">Canadian Journal of Botany</td>
+<td align="left">46</td>
+<td align="left">11</td>
+<td align="left">1397-1410</td>
+<td align="left">10.1139/b68-190</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">{“Sirkin, Leslie A.”,“Denny, Charles S.”,“Denny, Charles S.”,“Sirkin, Leslie A.”,“Denny, Charles S.”,“Rubin, Meyer”}</td>
+<td align="left">1977</td>
+<td align="left">Late Pleistocene environment of the central Delmarva Peninsula, Delaware-Maryland</td>
+<td align="left">Geological Society of America Bulletin</td>
+<td align="left">88</td>
+<td align="left">NA</td>
+<td align="left">139-142</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="book-chapter" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> Book Chapter<a href="publication-related-tables-1.html#book-chapter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Chapter or section in an edited book.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb18-1"><a href="publication-related-tables-1.html#cb18-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb18-2"><a href="publication-related-tables-1.html#cb18-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb18-3"><a href="publication-related-tables-1.html#cb18-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb18-4"><a href="publication-related-tables-1.html#cb18-4" aria-hidden="true"></a>       pub.articletitle,</span>
+<span id="cb18-5"><a href="publication-related-tables-1.html#cb18-5" aria-hidden="true"></a>       ARRAY_AGG(pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
+<span id="cb18-6"><a href="publication-related-tables-1.html#cb18-6" aria-hidden="true"></a>       pub.volume,</span>
+<span id="cb18-7"><a href="publication-related-tables-1.html#cb18-7" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb18-8"><a href="publication-related-tables-1.html#cb18-8" aria-hidden="true"></a>       pub.booktitle,</span>
+<span id="cb18-9"><a href="publication-related-tables-1.html#cb18-9" aria-hidden="true"></a>       pub.edition,</span>
+<span id="cb18-10"><a href="publication-related-tables-1.html#cb18-10" aria-hidden="true"></a>       pub.volumetitle,</span>
+<span id="cb18-11"><a href="publication-related-tables-1.html#cb18-11" aria-hidden="true"></a>       pub.seriestitle,</span>
+<span id="cb18-12"><a href="publication-related-tables-1.html#cb18-12" aria-hidden="true"></a>       pub.seriesvolume,</span>
+<span id="cb18-13"><a href="publication-related-tables-1.html#cb18-13" aria-hidden="true"></a>       pub.publisher,</span>
+<span id="cb18-14"><a href="publication-related-tables-1.html#cb18-14" aria-hidden="true"></a>       pub.city,</span>
+<span id="cb18-15"><a href="publication-related-tables-1.html#cb18-15" aria-hidden="true"></a>       pub.state,</span>
+<span id="cb18-16"><a href="publication-related-tables-1.html#cb18-16" aria-hidden="true"></a>       pub.country</span>
+<span id="cb18-17"><a href="publication-related-tables-1.html#cb18-17" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb18-18"><a href="publication-related-tables-1.html#cb18-18" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb18-19"><a href="publication-related-tables-1.html#cb18-19" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb18-20"><a href="publication-related-tables-1.html#cb18-20" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb18-21"><a href="publication-related-tables-1.html#cb18-21" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb18-22"><a href="publication-related-tables-1.html#cb18-22" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Book Chapter&#39;</span></span>
+<span id="cb18-23"><a href="publication-related-tables-1.html#cb18-23" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb18-24"><a href="publication-related-tables-1.html#cb18-24" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:bookchpub">Table 8.4: </span>3 records</caption>
+<colgroup>
+<col width="3%" />
+<col width="6%" />
+<col width="1%" />
+<col width="19%" />
+<col width="12%" />
+<col width="1%" />
+<col width="2%" />
+<col width="10%" />
+<col width="2%" />
+<col width="3%" />
+<col width="5%" />
+<col width="3%" />
+<col width="18%" />
+<col width="3%" />
+<col width="3%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">year</th>
+<th align="left">articletitle</th>
+<th align="left">editors</th>
+<th align="left">volume</th>
+<th align="left">pages</th>
+<th align="left">booktitle</th>
+<th align="left">edition</th>
+<th align="left">volumetitle</th>
+<th align="left">seriestitle</th>
+<th align="left">seriesvolume</th>
+<th align="left">publisher</th>
+<th align="left">city</th>
+<th align="left">state</th>
+<th align="left">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">{“Davis, Margaret B.”}</td>
+<td align="left">1978</td>
+<td align="left">Climatic interpretation of pollen in Quaternary sediments</td>
+<td align="left">{“D., Walker”,“J.C., Guppy”}</td>
+<td align="left">NA</td>
+<td align="left">35-51</td>
+<td align="left">Biology and Quaternary environments</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Australian Academy of Science</td>
+<td align="left">Canberra City</td>
+<td align="left">NA</td>
+<td align="left">Australia</td>
+</tr>
+<tr class="even">
+<td align="right">7</td>
+<td align="left">{“Maher, Louis J., Jr.”}</td>
+<td align="left">1982</td>
+<td align="left">The palynology of Devils Lake, Sauk County, Wisconsin</td>
+<td align="left">{“J.C., Knox”,“L., Clayton”,“D.M., Mickelson”}</td>
+<td align="left">NA</td>
+<td align="left">119-135</td>
+<td align="left">Quaternary History of the Driftless Area</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Field Trip Guide Book</td>
+<td align="left">5</td>
+<td align="left">University of Wisconsin-Extension, Geological and Natural History Survey</td>
+<td align="left">Madison</td>
+<td align="left">Wisconsin</td>
+<td align="left">USA</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="left">{“Whitehead, Donald R.”}</td>
+<td align="left">1967</td>
+<td align="left">Studies of full-glacial vegetation and climate in southeastern United States</td>
+<td align="left">{“E.J., Cushing”,“H.E., Wright”}</td>
+<td align="left">NA</td>
+<td align="left">237-248</td>
+<td align="left">Quaternary Paleoecology</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Yale University Press</td>
+<td align="left">New Haven</td>
+<td align="left">Connecticut</td>
+<td align="left">USA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="authored-book" class="section level3 hasAnchor" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> Authored Book<a href="publication-related-tables-1.html#authored-book" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A book published by a single, or multiple authors.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb19-1"><a href="publication-related-tables-1.html#cb19-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb19-2"><a href="publication-related-tables-1.html#cb19-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb19-3"><a href="publication-related-tables-1.html#cb19-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb19-4"><a href="publication-related-tables-1.html#cb19-4" aria-hidden="true"></a>       pub.volume,</span>
+<span id="cb19-5"><a href="publication-related-tables-1.html#cb19-5" aria-hidden="true"></a>       pub.booktitle,</span>
+<span id="cb19-6"><a href="publication-related-tables-1.html#cb19-6" aria-hidden="true"></a>       pub.edition,</span>
+<span id="cb19-7"><a href="publication-related-tables-1.html#cb19-7" aria-hidden="true"></a>       pub.numvolumes,</span>
+<span id="cb19-8"><a href="publication-related-tables-1.html#cb19-8" aria-hidden="true"></a>       pub.volumetitle,</span>
+<span id="cb19-9"><a href="publication-related-tables-1.html#cb19-9" aria-hidden="true"></a>       pub.seriestitle,</span>
+<span id="cb19-10"><a href="publication-related-tables-1.html#cb19-10" aria-hidden="true"></a>       pub.seriesvolume,</span>
+<span id="cb19-11"><a href="publication-related-tables-1.html#cb19-11" aria-hidden="true"></a>       pub.publisher,</span>
+<span id="cb19-12"><a href="publication-related-tables-1.html#cb19-12" aria-hidden="true"></a>       pub.city,</span>
+<span id="cb19-13"><a href="publication-related-tables-1.html#cb19-13" aria-hidden="true"></a>       pub.state,</span>
+<span id="cb19-14"><a href="publication-related-tables-1.html#cb19-14" aria-hidden="true"></a>       pub.country</span>
+<span id="cb19-15"><a href="publication-related-tables-1.html#cb19-15" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb19-16"><a href="publication-related-tables-1.html#cb19-16" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb19-17"><a href="publication-related-tables-1.html#cb19-17" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb19-18"><a href="publication-related-tables-1.html#cb19-18" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb19-19"><a href="publication-related-tables-1.html#cb19-19" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Authored Book&#39;</span></span>
+<span id="cb19-20"><a href="publication-related-tables-1.html#cb19-20" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb19-21"><a href="publication-related-tables-1.html#cb19-21" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table style="width:100%;">
+<caption><span id="tab:authbookpub">Table 8.5: </span>3 records</caption>
+<colgroup>
+<col width="4%" />
+<col width="11%" />
+<col width="1%" />
+<col width="2%" />
+<col width="30%" />
+<col width="2%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="4%" />
+<col width="23%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">year</th>
+<th align="left">volume</th>
+<th align="left">booktitle</th>
+<th align="left">edition</th>
+<th align="left">numvolumes</th>
+<th align="left">volumetitle</th>
+<th align="left">seriestitle</th>
+<th align="left">seriesvolume</th>
+<th align="left">publisher</th>
+<th align="left">city</th>
+<th align="left">state</th>
+<th align="left">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">66</td>
+<td align="left">{“Miller, Norton G.”}</td>
+<td align="left">1973</td>
+<td align="left">NA</td>
+<td align="left">Late-glacial and postglacial vegetation change in southwestern New York State</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Bulletin</td>
+<td align="left">420</td>
+<td align="left">New York State Museum and Science Service, The State Education Department</td>
+<td align="left">Albany</td>
+<td align="left">New York</td>
+<td align="left">USA</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="left">{“Camfield, M.”,“Mott, Robert J.”}</td>
+<td align="left">1969</td>
+<td align="left">NA</td>
+<td align="left">Palynological studies in the Ottawa area</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Paper</td>
+<td align="left">69-38</td>
+<td align="left">Geological Survey of Canada</td>
+<td align="left">Ottawa</td>
+<td align="left">NA</td>
+<td align="left">Canada</td>
+</tr>
+<tr class="odd">
+<td align="right">74</td>
+<td align="left">{“Mott, Robert J.”}</td>
+<td align="left">1973</td>
+<td align="left">NA</td>
+<td align="left">Palynological studies in central Saskatchewan: pollen stratigraphy from lake sediment sequences</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Paper</td>
+<td align="left">72-49</td>
+<td align="left">Geological Survey of Canada</td>
+<td align="left">Ottawa</td>
+<td align="left">Ontario</td>
+<td align="left">Canada</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="edited-book" class="section level3 hasAnchor" number="8.4.5">
+<h3><span class="header-section-number">8.4.5</span> Edited Book<a href="publication-related-tables-1.html#edited-book" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb20-1"><a href="publication-related-tables-1.html#cb20-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb20-2"><a href="publication-related-tables-1.html#cb20-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb20-3"><a href="publication-related-tables-1.html#cb20-3" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
+<span id="cb20-4"><a href="publication-related-tables-1.html#cb20-4" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb20-5"><a href="publication-related-tables-1.html#cb20-5" aria-hidden="true"></a>       pub.volume,</span>
+<span id="cb20-6"><a href="publication-related-tables-1.html#cb20-6" aria-hidden="true"></a>       pub.booktitle,</span>
+<span id="cb20-7"><a href="publication-related-tables-1.html#cb20-7" aria-hidden="true"></a>       pub.edition,</span>
+<span id="cb20-8"><a href="publication-related-tables-1.html#cb20-8" aria-hidden="true"></a>       pub.numvolumes,</span>
+<span id="cb20-9"><a href="publication-related-tables-1.html#cb20-9" aria-hidden="true"></a>       pub.volumetitle,</span>
+<span id="cb20-10"><a href="publication-related-tables-1.html#cb20-10" aria-hidden="true"></a>       pub.seriestitle,</span>
+<span id="cb20-11"><a href="publication-related-tables-1.html#cb20-11" aria-hidden="true"></a>       pub.seriesvolume,</span>
+<span id="cb20-12"><a href="publication-related-tables-1.html#cb20-12" aria-hidden="true"></a>       pub.publisher,</span>
+<span id="cb20-13"><a href="publication-related-tables-1.html#cb20-13" aria-hidden="true"></a>       pub.city,</span>
+<span id="cb20-14"><a href="publication-related-tables-1.html#cb20-14" aria-hidden="true"></a>       pub.state,</span>
+<span id="cb20-15"><a href="publication-related-tables-1.html#cb20-15" aria-hidden="true"></a>       pub.country</span>
+<span id="cb20-16"><a href="publication-related-tables-1.html#cb20-16" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb20-17"><a href="publication-related-tables-1.html#cb20-17" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb20-18"><a href="publication-related-tables-1.html#cb20-18" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb20-19"><a href="publication-related-tables-1.html#cb20-19" aria-hidden="true"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb20-20"><a href="publication-related-tables-1.html#cb20-20" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb20-21"><a href="publication-related-tables-1.html#cb20-21" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Edited Book&#39;</span></span>
+<span id="cb20-22"><a href="publication-related-tables-1.html#cb20-22" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb20-23"><a href="publication-related-tables-1.html#cb20-23" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:edbookpub">Table 8.6: </span>3 records</caption>
+<colgroup>
+<col width="4%" />
+<col width="13%" />
+<col width="2%" />
+<col width="1%" />
+<col width="2%" />
+<col width="29%" />
+<col width="2%" />
+<col width="3%" />
+<col width="12%" />
+<col width="7%" />
+<col width="3%" />
+<col width="9%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">editors</th>
+<th align="left">year</th>
+<th align="left">volume</th>
+<th align="left">booktitle</th>
+<th align="left">edition</th>
+<th align="left">numvolumes</th>
+<th align="left">volumetitle</th>
+<th align="left">seriestitle</th>
+<th align="left">seriesvolume</th>
+<th align="left">publisher</th>
+<th align="left">city</th>
+<th align="left">state</th>
+<th align="left">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">67</td>
+<td align="left">{“Albert, Lois E.”,“Wyckoff, Don G.”}</td>
+<td align="left">{NULL}</td>
+<td align="left">1981</td>
+<td align="left">NA</td>
+<td align="left">Ferndale Bog and Natural Lake: five thousand years of environmental change in southeastern Oklahoma</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Studies in Oklahoma’s Past</td>
+<td align="left">7</td>
+<td align="left">Oklahoma Archaeological Survey</td>
+<td align="left">Norman</td>
+<td align="left">Oklahoma</td>
+<td align="left">USA</td>
+</tr>
+<tr class="even">
+<td align="right">299</td>
+<td align="left">{“Flora of North America Editorial Committee”}</td>
+<td align="left">{NULL}</td>
+<td align="left">1993</td>
+<td align="left">2</td>
+<td align="left">Flora of North America north of Mexico</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Pteridophytes and Gymnosperms</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Oxford University Press</td>
+<td align="left">New York</td>
+<td align="left">New York</td>
+<td align="left">USA</td>
+</tr>
+<tr class="odd">
+<td align="right">613</td>
+<td align="left">{“Flora of North America Editorial Committee”}</td>
+<td align="left">{NULL}</td>
+<td align="left">1997</td>
+<td align="left">3</td>
+<td align="left">Flora of North America north of Mexico</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Magnoliophyta: Magnoliidae and Hamamelidae</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Oxford University Press</td>
+<td align="left">New York</td>
+<td align="left">New York</td>
+<td align="left">USA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="masters-thesis" class="section level3 hasAnchor" number="8.4.6">
+<h3><span class="header-section-number">8.4.6</span> Master’s Thesis<a href="publication-related-tables-1.html#masters-thesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb21-1"><a href="publication-related-tables-1.html#cb21-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb21-2"><a href="publication-related-tables-1.html#cb21-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb21-3"><a href="publication-related-tables-1.html#cb21-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb21-4"><a href="publication-related-tables-1.html#cb21-4" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb21-5"><a href="publication-related-tables-1.html#cb21-5" aria-hidden="true"></a>       pub.articletitle,</span>
+<span id="cb21-6"><a href="publication-related-tables-1.html#cb21-6" aria-hidden="true"></a>       pub.publisher,</span>
+<span id="cb21-7"><a href="publication-related-tables-1.html#cb21-7" aria-hidden="true"></a>       pub.city,</span>
+<span id="cb21-8"><a href="publication-related-tables-1.html#cb21-8" aria-hidden="true"></a>       pub.state,</span>
+<span id="cb21-9"><a href="publication-related-tables-1.html#cb21-9" aria-hidden="true"></a>       pub.country</span>
+<span id="cb21-10"><a href="publication-related-tables-1.html#cb21-10" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb21-11"><a href="publication-related-tables-1.html#cb21-11" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb21-12"><a href="publication-related-tables-1.html#cb21-12" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb21-13"><a href="publication-related-tables-1.html#cb21-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb21-14"><a href="publication-related-tables-1.html#cb21-14" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Master</span><span class="ch">&#39;&#39;</span><span class="st">s Thesis&#39;</span></span>
+<span id="cb21-15"><a href="publication-related-tables-1.html#cb21-15" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb21-16"><a href="publication-related-tables-1.html#cb21-16" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:mtpub">Table 8.7: </span>3 records</caption>
+<colgroup>
+<col width="6%" />
+<col width="15%" />
+<col width="2%" />
+<col width="2%" />
+<col width="49%" />
+<col width="11%" />
+<col width="4%" />
+<col width="4%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">year</th>
+<th align="left">pages</th>
+<th align="left">articletitle</th>
+<th align="left">publisher</th>
+<th align="left">city</th>
+<th align="left">state</th>
+<th align="left">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">44</td>
+<td align="left">{“Stravers, Loreen K. Stegeman”}</td>
+<td align="left">1981</td>
+<td align="left">NA</td>
+<td align="left">Palynology and deglaciation history of the central Labrador-Ungava Peninsula</td>
+<td align="left">University of Colorado</td>
+<td align="left">Boulder</td>
+<td align="left">Colorado</td>
+<td align="left">USA</td>
+</tr>
+<tr class="even">
+<td align="right">115</td>
+<td align="left">{“Anderson, R. Scott”}</td>
+<td align="left">1979</td>
+<td align="left">NA</td>
+<td align="left">A Holocene record of vegetation and fire at Upper South Branch Pond in northern Maine</td>
+<td align="left">University of Maine</td>
+<td align="left">Orono</td>
+<td align="left">Maine</td>
+<td align="left">USA</td>
+</tr>
+<tr class="odd">
+<td align="right">163</td>
+<td align="left">{“Smith, Everett Newman, Jr.”}</td>
+<td align="left">1984</td>
+<td align="left">NA</td>
+<td align="left">Late-Quaternary vegetational history at Cupola Pond, Ozark National Scenic Riverways, southeastern Missouri</td>
+<td align="left">University of Tennessee</td>
+<td align="left">Knoxville</td>
+<td align="left">Tennessee</td>
+<td align="left">USA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="doctoral-dissertation" class="section level3 hasAnchor" number="8.4.7">
+<h3><span class="header-section-number">8.4.7</span> Doctoral Dissertation<a href="publication-related-tables-1.html#doctoral-dissertation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb22-1"><a href="publication-related-tables-1.html#cb22-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb22-2"><a href="publication-related-tables-1.html#cb22-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb22-3"><a href="publication-related-tables-1.html#cb22-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb22-4"><a href="publication-related-tables-1.html#cb22-4" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb22-5"><a href="publication-related-tables-1.html#cb22-5" aria-hidden="true"></a>       pub.articletitle,</span>
+<span id="cb22-6"><a href="publication-related-tables-1.html#cb22-6" aria-hidden="true"></a>       pub.publisher,</span>
+<span id="cb22-7"><a href="publication-related-tables-1.html#cb22-7" aria-hidden="true"></a>       pub.city,</span>
+<span id="cb22-8"><a href="publication-related-tables-1.html#cb22-8" aria-hidden="true"></a>       pub.state,</span>
+<span id="cb22-9"><a href="publication-related-tables-1.html#cb22-9" aria-hidden="true"></a>       pub.country</span>
+<span id="cb22-10"><a href="publication-related-tables-1.html#cb22-10" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb22-11"><a href="publication-related-tables-1.html#cb22-11" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb22-12"><a href="publication-related-tables-1.html#cb22-12" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb22-13"><a href="publication-related-tables-1.html#cb22-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb22-14"><a href="publication-related-tables-1.html#cb22-14" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Master</span><span class="ch">&#39;&#39;</span><span class="st">s Thesis&#39;</span></span>
+<span id="cb22-15"><a href="publication-related-tables-1.html#cb22-15" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb22-16"><a href="publication-related-tables-1.html#cb22-16" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:ddpub">Table 8.8: </span>3 records</caption>
+<colgroup>
+<col width="6%" />
+<col width="15%" />
+<col width="2%" />
+<col width="2%" />
+<col width="49%" />
+<col width="11%" />
+<col width="4%" />
+<col width="4%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">year</th>
+<th align="left">pages</th>
+<th align="left">articletitle</th>
+<th align="left">publisher</th>
+<th align="left">city</th>
+<th align="left">state</th>
+<th align="left">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">44</td>
+<td align="left">{“Stravers, Loreen K. Stegeman”}</td>
+<td align="left">1981</td>
+<td align="left">NA</td>
+<td align="left">Palynology and deglaciation history of the central Labrador-Ungava Peninsula</td>
+<td align="left">University of Colorado</td>
+<td align="left">Boulder</td>
+<td align="left">Colorado</td>
+<td align="left">USA</td>
+</tr>
+<tr class="even">
+<td align="right">115</td>
+<td align="left">{“Anderson, R. Scott”}</td>
+<td align="left">1979</td>
+<td align="left">NA</td>
+<td align="left">A Holocene record of vegetation and fire at Upper South Branch Pond in northern Maine</td>
+<td align="left">University of Maine</td>
+<td align="left">Orono</td>
+<td align="left">Maine</td>
+<td align="left">USA</td>
+</tr>
+<tr class="odd">
+<td align="right">163</td>
+<td align="left">{“Smith, Everett Newman, Jr.”}</td>
+<td align="left">1984</td>
+<td align="left">NA</td>
+<td align="left">Late-Quaternary vegetational history at Cupola Pond, Ozark National Scenic Riverways, southeastern Missouri</td>
+<td align="left">University of Tennessee</td>
+<td align="left">Knoxville</td>
+<td align="left">Tennessee</td>
+<td align="left">USA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="authored-report" class="section level3 hasAnchor" number="8.4.8">
+<h3><span class="header-section-number">8.4.8</span> Authored Report<a href="publication-related-tables-1.html#authored-report" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="publication-related-tables-1.html#cb23-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb23-2"><a href="publication-related-tables-1.html#cb23-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb23-3"><a href="publication-related-tables-1.html#cb23-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb23-4"><a href="publication-related-tables-1.html#cb23-4" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb23-5"><a href="publication-related-tables-1.html#cb23-5" aria-hidden="true"></a>       pub.articletitle,</span>
+<span id="cb23-6"><a href="publication-related-tables-1.html#cb23-6" aria-hidden="true"></a>       pub.seriestitle,</span>
+<span id="cb23-7"><a href="publication-related-tables-1.html#cb23-7" aria-hidden="true"></a>       pub.seriesvolume,</span>
+<span id="cb23-8"><a href="publication-related-tables-1.html#cb23-8" aria-hidden="true"></a>       pub.publisher,</span>
+<span id="cb23-9"><a href="publication-related-tables-1.html#cb23-9" aria-hidden="true"></a>       pub.city,</span>
+<span id="cb23-10"><a href="publication-related-tables-1.html#cb23-10" aria-hidden="true"></a>       pub.state,</span>
+<span id="cb23-11"><a href="publication-related-tables-1.html#cb23-11" aria-hidden="true"></a>       pub.country</span>
+<span id="cb23-12"><a href="publication-related-tables-1.html#cb23-12" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb23-13"><a href="publication-related-tables-1.html#cb23-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb23-14"><a href="publication-related-tables-1.html#cb23-14" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb23-15"><a href="publication-related-tables-1.html#cb23-15" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb23-16"><a href="publication-related-tables-1.html#cb23-16" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Authored Report&#39;</span></span>
+<span id="cb23-17"><a href="publication-related-tables-1.html#cb23-17" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb23-18"><a href="publication-related-tables-1.html#cb23-18" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table style="width:100%;">
+<caption><span id="tab:authreportpub">Table 8.9: </span>3 records</caption>
+<colgroup>
+<col width="5%" />
+<col width="18%" />
+<col width="1%" />
+<col width="2%" />
+<col width="36%" />
+<col width="4%" />
+<col width="4%" />
+<col width="13%" />
+<col width="5%" />
+<col width="3%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">year</th>
+<th align="left">pages</th>
+<th align="left">articletitle</th>
+<th align="left">seriestitle</th>
+<th align="left">seriesvolume</th>
+<th align="left">publisher</th>
+<th align="left">city</th>
+<th align="left">state</th>
+<th align="left">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">{“International Organization for Standardization”}</td>
+<td align="left">2006</td>
+<td align="left">NA</td>
+<td align="left">Codes for the representation of names of countries and their subdivisions — Part 1: Country codes</td>
+<td align="left">ISO</td>
+<td align="left">3166-1</td>
+<td align="left">NA</td>
+<td align="left">Geneva</td>
+<td align="left">NA</td>
+<td align="left">Switzerland</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">{“United States Central Intelligence Agency”}</td>
+<td align="left">2004</td>
+<td align="left">NA</td>
+<td align="left">CIA World Factbook</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Washington, DC</td>
+<td align="left">NA</td>
+<td align="left">USA</td>
+</tr>
+<tr class="odd">
+<td align="right">280</td>
+<td align="left">{“Jackson, Lawrence J.”,“McAndrews, John H.”}</td>
+<td align="left">1988</td>
+<td align="left">NA</td>
+<td align="left">Age and environment of Late Pleistocene mastodont and mammoth in southern Ontario</td>
+<td align="left">Bulletin</td>
+<td align="left">33</td>
+<td align="left">Buffalo Society of Natural Sciences</td>
+<td align="left">Buffalo</td>
+<td align="left">New York</td>
+<td align="left">USA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="edited-report" class="section level3 hasAnchor" number="8.4.9">
+<h3><span class="header-section-number">8.4.9</span> Edited Report<a href="publication-related-tables-1.html#edited-report" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="publication-related-tables-1.html#cb24-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb24-2"><a href="publication-related-tables-1.html#cb24-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb24-3"><a href="publication-related-tables-1.html#cb24-3" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
+<span id="cb24-4"><a href="publication-related-tables-1.html#cb24-4" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb24-5"><a href="publication-related-tables-1.html#cb24-5" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb24-6"><a href="publication-related-tables-1.html#cb24-6" aria-hidden="true"></a>       pub.articletitle,</span>
+<span id="cb24-7"><a href="publication-related-tables-1.html#cb24-7" aria-hidden="true"></a>       pub.seriestitle,</span>
+<span id="cb24-8"><a href="publication-related-tables-1.html#cb24-8" aria-hidden="true"></a>       pub.seriesvolume,</span>
+<span id="cb24-9"><a href="publication-related-tables-1.html#cb24-9" aria-hidden="true"></a>       pub.publisher,</span>
+<span id="cb24-10"><a href="publication-related-tables-1.html#cb24-10" aria-hidden="true"></a>       pub.city,</span>
+<span id="cb24-11"><a href="publication-related-tables-1.html#cb24-11" aria-hidden="true"></a>       pub.state,</span>
+<span id="cb24-12"><a href="publication-related-tables-1.html#cb24-12" aria-hidden="true"></a>       pub.country</span>
+<span id="cb24-13"><a href="publication-related-tables-1.html#cb24-13" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb24-14"><a href="publication-related-tables-1.html#cb24-14" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb24-15"><a href="publication-related-tables-1.html#cb24-15" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb24-16"><a href="publication-related-tables-1.html#cb24-16" aria-hidden="true"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb24-17"><a href="publication-related-tables-1.html#cb24-17" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb24-18"><a href="publication-related-tables-1.html#cb24-18" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Edited Report&#39;</span></span>
+<span id="cb24-19"><a href="publication-related-tables-1.html#cb24-19" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb24-20"><a href="publication-related-tables-1.html#cb24-20" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:editedreportpub">Table 8.10: </span>3 records</caption>
+<colgroup>
+<col width="4%" />
+<col width="15%" />
+<col width="2%" />
+<col width="1%" />
+<col width="1%" />
+<col width="37%" />
+<col width="5%" />
+<col width="4%" />
+<col width="17%" />
+<col width="2%" />
+<col width="3%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">editors</th>
+<th align="left">year</th>
+<th align="left">pages</th>
+<th align="left">articletitle</th>
+<th align="left">seriestitle</th>
+<th align="left">seriesvolume</th>
+<th align="left">publisher</th>
+<th align="left">city</th>
+<th align="left">state</th>
+<th align="left">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">394</td>
+<td align="left">{“Gajewski, Konrad J.”}</td>
+<td align="left">{NULL}</td>
+<td align="left">1985</td>
+<td align="left">NA</td>
+<td align="left">Late-Holocene pollen data from lakes with varved sediments in northeastern and northcentral United States</td>
+<td align="left">IES Report</td>
+<td align="left">124</td>
+<td align="left">Center for Climatic Research, University of Wisconsin</td>
+<td align="left">Madison</td>
+<td align="left">Wisconsin</td>
+<td align="left">USA</td>
+</tr>
+<tr class="even">
+<td align="right">7290</td>
+<td align="left">{“Saltonstall, Patrick G.”,“Steffian, Amy F.”}</td>
+<td align="left">{NULL}</td>
+<td align="left">2004</td>
+<td align="left">NA</td>
+<td align="left">Settlements of the Ayakulik-Red River Drainage, Kodiak Archipelago, Alaska: Comprehensive Project Report, 2001-2004</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Alutiiq Museum and Archaeological Repository</td>
+<td align="left">Kodiak</td>
+<td align="left">Alaska</td>
+<td align="left">United States</td>
+</tr>
+<tr class="odd">
+<td align="right">8285</td>
+<td align="left">{“Bischoff, James L.”,“Smith, George I.”}</td>
+<td align="left">{NULL}</td>
+<td align="left">1993</td>
+<td align="left">NA</td>
+<td align="left">Core OL-92 from Owens Lake, Southeast California</td>
+<td align="left">Open-File Report</td>
+<td align="left">93-683</td>
+<td align="left">U.S. Geological Survey</td>
+<td align="left">Denver</td>
+<td align="left">Colorado</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="other-authored-publication" class="section level3 hasAnchor" number="8.4.10">
+<h3><span class="header-section-number">8.4.10</span> Other Authored Publication<a href="publication-related-tables-1.html#other-authored-publication" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb25-1"><a href="publication-related-tables-1.html#cb25-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid,</span>
+<span id="cb25-2"><a href="publication-related-tables-1.html#cb25-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb25-3"><a href="publication-related-tables-1.html#cb25-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb25-4"><a href="publication-related-tables-1.html#cb25-4" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb25-5"><a href="publication-related-tables-1.html#cb25-5" aria-hidden="true"></a>       pub.articletitle</span>
+<span id="cb25-6"><a href="publication-related-tables-1.html#cb25-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb25-7"><a href="publication-related-tables-1.html#cb25-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb25-8"><a href="publication-related-tables-1.html#cb25-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb25-9"><a href="publication-related-tables-1.html#cb25-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb25-10"><a href="publication-related-tables-1.html#cb25-10" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Other Authored&#39;</span></span>
+<span id="cb25-11"><a href="publication-related-tables-1.html#cb25-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb25-12"><a href="publication-related-tables-1.html#cb25-12" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:otherauthpub">Table 8.11: </span>3 records</caption>
+<colgroup>
+<col width="3%" />
+<col width="11%" />
+<col width="1%" />
+<col width="1%" />
+<col width="81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">year</th>
+<th align="left">pages</th>
+<th align="left">articletitle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">275</td>
+<td align="left">{“Calkin, Parker E.”,“McAndrews, John H.”}</td>
+<td align="left">1980</td>
+<td align="left">NA</td>
+<td align="left">Geology and paleontology of two late Wisconsin sites in western New York State. Geological Society of America Bulletin 91:295-306.</td>
+</tr>
+<tr class="even">
+<td align="right">1045</td>
+<td align="left">{“Blyakharchuk, Tatyana A.”}</td>
+<td align="left">1988</td>
+<td align="left">NA</td>
+<td align="left">Sopryazhenost’ sporovo-pyl’zevogo i botanicheskogo analisov torfa pri izuchenii leso-bolotnykh landshaftov yuga Zapadnoi Sibiri [Palynological and botanical analyses of peat in the investigation of forest-mire landscapes of the south West Siberia]. Pages 16-18 in Problemy Golocena, Tbilisi.</td>
+</tr>
+<tr class="odd">
+<td align="right">1054</td>
+<td align="left">{“Bottema, Sytze”,“van Zeist, Wim”}</td>
+<td align="left">1981</td>
+<td align="left">NA</td>
+<td align="left">Palynological evidence for the climatic history of the near East: 50,000-6000 BP. Pages 111-132 in Préhistoire du Levant. Colloques Internationaux du CNRS, 598. Editions CNRS</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="other-edited-publication" class="section level3 hasAnchor" number="8.4.11">
+<h3><span class="header-section-number">8.4.11</span> Other Edited Publication<a href="publication-related-tables-1.html#other-edited-publication" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb26-1"><a href="publication-related-tables-1.html#cb26-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid,</span>
+<span id="cb26-2"><a href="publication-related-tables-1.html#cb26-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb26-3"><a href="publication-related-tables-1.html#cb26-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb26-4"><a href="publication-related-tables-1.html#cb26-4" aria-hidden="true"></a>       pub.pages,</span>
+<span id="cb26-5"><a href="publication-related-tables-1.html#cb26-5" aria-hidden="true"></a>       pub.articletitle</span>
+<span id="cb26-6"><a href="publication-related-tables-1.html#cb26-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb26-7"><a href="publication-related-tables-1.html#cb26-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb26-8"><a href="publication-related-tables-1.html#cb26-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb26-9"><a href="publication-related-tables-1.html#cb26-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb26-10"><a href="publication-related-tables-1.html#cb26-10" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Other Edited&#39;</span></span>
+<span id="cb26-11"><a href="publication-related-tables-1.html#cb26-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb26-12"><a href="publication-related-tables-1.html#cb26-12" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:otheredpub">Table 8.12: </span>3 records</caption>
+<colgroup>
+<col width="5%" />
+<col width="41%" />
+<col width="1%" />
+<col width="2%" />
+<col width="49%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">publicationid</th>
+<th align="left">authors</th>
+<th align="left">year</th>
+<th align="left">pages</th>
+<th align="left">articletitle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1230</td>
+<td align="left">{“Mariscal Alvarez, Blanca”}</td>
+<td align="left">1989</td>
+<td align="left">NA</td>
+<td align="left">Comparacion palinologica entre una turbera de la cordillera central y unas turberas de la cordillera cantabrica</td>
+</tr>
+<tr class="even">
+<td align="right">11433</td>
+<td align="left">{“Matthews, John V., Jr.”,“Morlan, Richard E.”,“Sandhu, A.”,“Schweger, Charles E.”,“Westgate, John A.”}</td>
+<td align="left">1995</td>
+<td align="left">NA</td>
+<td align="left">Tephrochronological, palaeomagnetic and palaeoenvironmental studies of Late Cenozoic deposits in the northern Yukon, Canada</td>
+</tr>
+<tr class="odd">
+<td align="right">15893</td>
+<td align="left">{“de Beaulieu, Jacques Louis”}</td>
+<td align="left">1978</td>
+<td align="left">NA</td>
+<td align="left">Analyses polliniques dans les Alpes méridionales françaises</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
 </div>
 </div>
             </section>
@@ -580,7 +1562,7 @@ in the publication’s author list.</p>
         </div>
       </div>
 <a href="dataset-collection-related-tables-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Publications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sample-related-tables-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
