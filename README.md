@@ -24,9 +24,11 @@ This repository is run and compiled using [Jekyll](https://jekyllrb.com/). To ru
 Once Jekyll is installed the site can be run locally using the command:
 
 ```bash
-bundle exec jekyll serve --livereload
+jekyll serve
 ```
 
-This will render the site (by default using port `4000`). The site can be built locally using `jekyll build`.
+This will render the site (by default using port `4000` -- i.e., `http://localhost:4000` on your browser). The site can be built locally using `jekyll build`.
 
-Because `open.neotomadb.org` is connected to the GitHub account as a default URL, all other resources across 
+Because `open.neotomadb.org` is connected to the GitHub account as a default URL, all other resources across the [NeotomaDB organization](https://github.com/NeotomaDB) that have GitHub Pages set up can be accessed by replacing `https://github.com/NeotomaDB/` with `https://open.neotomadb.org/`, so, for example, the State of the Database report, which has a GitHub Pages address at `https://github.com/NeotomaDB/NeotomaSummary/StateoftheDB.html` can be accessed at `https://open.neotomadb.org/NeotomaSummary/StateoftheDB/html`.
+
+![Neotoma webpage following a sucessful build.](/images/openneotomapage.png).

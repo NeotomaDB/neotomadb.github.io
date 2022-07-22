@@ -12,8 +12,9 @@ weight: 1
 
 These are resources for individuals working with paleoecological data.  This site includes links to:
 
+* The most recent [State of the Database](https://open.neotomadb.org/NeotomaSummary/StateoftheDB.html) report including information about recent data contributions, and outstanding issues within the database itself.
 * Database documentation
-  * [Database Schema](/dbschema)
+  * The Neotoma [Database Schema](/dbschema)
   * [Neotoma Postgres Database Manual](/manual)
 * RMarkdown and Jupyter notebooks:
   * [Simple workflows with `neotoma2`](https://open.neotomadb.org/EPD_binder/simple_workflow.html) showing how to search for and download data. This includes stratigraphic plots and plots of proportional change over time.
