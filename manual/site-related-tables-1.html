@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Site Related Tables | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Site Related Tables | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2022-07-22" />
+<meta name="date" content="2022-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,16 +49,15 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.23/datatables.js"></script>
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
@@ -67,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -100,7 +100,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +113,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -401,8 +423,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Each GeoPolitical Unit has a rank. GeoPolitical Units with Rank 1 are generally countries. There are a few exceptions, including Antarctica and island territories, such as , which although a Danish territory, is geographically separate and distinct. Rank 2 units are generally secondary political divisions with various designations: e.g. states in the , provinces in , and regions in . For some countries, the secondary divisions are not political but rather distinct geographic entities, such as islands. The secondary divisions of some island nations include either groups of islands or sections of more highly populated islands; however, the actual island on which a site is located is more important information. Some countries also have Rank 3 units, e.g. counties in the
 and metropolitan departments in . In addition to purely political units, various other administrative regions and geographic entities can be
 contained in this table. Examples of administrative regions are National Parks and Forests. It might be quite useful, for example, to have a record of all the sites in . These additional units are Rank 4, and they can be added to the database as warranted.</p>
-<div id="htmlwidget-4d7328acea57a2f7ca12" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4d7328acea57a2f7ca12">{"x":{"filter":"none","vertical":false,"data":[["geopoliticalid","geopoliticalname","geopoliticalunit","rank","highergeopoliticalid","recdatecreated","recdatemodified"],["integer","character varying(255)","character varying(255)","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["geopoliticalunits_pkey","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-10c65e15ecbb46875290" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-10c65e15ecbb46875290">{"x":{"filter":"none","vertical":false,"data":[["geopoliticalid","geopoliticalname","geopoliticalunit","rank","highergeopoliticalid","recdatecreated","recdatemodified"],["integer","character varying(255)","character varying(255)","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["geopoliticalunits_pkey","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>geopoliticalid</code> (primary key)</strong>: An arbitrary GeoPolitical identification number.</li>
 <li><strong><code>geopoliticalname</code></strong>: Name of the GeoPolitical Unit, e.g. , .</li>
@@ -413,29 +435,29 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="sql-example-13" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> SQL Example<a href="site-related-tables-1.html#sql-example-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists <code>geopoliticalunits</code> for Canada, along with their political unit name (<em>e.g.</em>, “province”), and the rank of that unit. The query uses a <a href="https://www.cybertec-postgresql.com/en/recursive-queries-postgresql/">recursive CTE</a>, which allows us to move through the table’s internal hierarchy. The recursive query first pulls all rows in which the <code>geopoliticalname</code> is ‘Canada’, and then accumulates rows as it queries repeatedly to accumulate rows in which the <code>highergeopoliticalid</code> is contained within the set of <code>geopoliticalid</code> values in the accumulating table.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb31-1"><a href="site-related-tables-1.html#cb31-1" aria-hidden="true"></a><span class="kw">WITH</span> RECURSIVE gpuset <span class="kw">AS</span> (</span>
-<span id="cb31-2"><a href="site-related-tables-1.html#cb31-2" aria-hidden="true"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid,</span>
-<span id="cb31-3"><a href="site-related-tables-1.html#cb31-3" aria-hidden="true"></a>         gpu.geopoliticalname,</span>
-<span id="cb31-4"><a href="site-related-tables-1.html#cb31-4" aria-hidden="true"></a>         gpu.geopoliticalunit,</span>
-<span id="cb31-5"><a href="site-related-tables-1.html#cb31-5" aria-hidden="true"></a>         gpu.<span class="fu">rank</span>,</span>
-<span id="cb31-6"><a href="site-related-tables-1.html#cb31-6" aria-hidden="true"></a>         gpu.highergeopoliticalid</span>
-<span id="cb31-7"><a href="site-related-tables-1.html#cb31-7" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb31-8"><a href="site-related-tables-1.html#cb31-8" aria-hidden="true"></a>  <span class="kw">WHERE</span> geopoliticalname <span class="op">=</span> <span class="st">&#39;Canada&#39;</span></span>
-<span id="cb31-9"><a href="site-related-tables-1.html#cb31-9" aria-hidden="true"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span></span>
-<span id="cb31-10"><a href="site-related-tables-1.html#cb31-10" aria-hidden="true"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid, </span>
-<span id="cb31-11"><a href="site-related-tables-1.html#cb31-11" aria-hidden="true"></a>         gpu.geopoliticalname, </span>
-<span id="cb31-12"><a href="site-related-tables-1.html#cb31-12" aria-hidden="true"></a>         gpu.geopoliticalunit,</span>
-<span id="cb31-13"><a href="site-related-tables-1.html#cb31-13" aria-hidden="true"></a>         gpu.<span class="fu">rank</span>,</span>
-<span id="cb31-14"><a href="site-related-tables-1.html#cb31-14" aria-hidden="true"></a>         gpu.highergeopoliticalid </span>
-<span id="cb31-15"><a href="site-related-tables-1.html#cb31-15" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb31-16"><a href="site-related-tables-1.html#cb31-16" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> gpuset <span class="kw">ON</span> gpu.highergeopoliticalid <span class="op">=</span> gpuset.geopoliticalid</span>
-<span id="cb31-17"><a href="site-related-tables-1.html#cb31-17" aria-hidden="true"></a>)</span>
-<span id="cb31-18"><a href="site-related-tables-1.html#cb31-18" aria-hidden="true"></a><span class="kw">SELECT</span> geopoliticalid, </span>
-<span id="cb31-19"><a href="site-related-tables-1.html#cb31-19" aria-hidden="true"></a>       geopoliticalname,</span>
-<span id="cb31-20"><a href="site-related-tables-1.html#cb31-20" aria-hidden="true"></a>       geopoliticalunit,</span>
-<span id="cb31-21"><a href="site-related-tables-1.html#cb31-21" aria-hidden="true"></a>       <span class="fu">rank</span></span>
-<span id="cb31-22"><a href="site-related-tables-1.html#cb31-22" aria-hidden="true"></a><span class="kw">FROM</span> gpuset</span>
-<span id="cb31-23"><a href="site-related-tables-1.html#cb31-23" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">rank</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb31-1"><a href="site-related-tables-1.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE gpuset <span class="kw">AS</span> (</span>
+<span id="cb31-2"><a href="site-related-tables-1.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid,</span>
+<span id="cb31-3"><a href="site-related-tables-1.html#cb31-3" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalname,</span>
+<span id="cb31-4"><a href="site-related-tables-1.html#cb31-4" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalunit,</span>
+<span id="cb31-5"><a href="site-related-tables-1.html#cb31-5" aria-hidden="true" tabindex="-1"></a>         gpu.<span class="fu">rank</span>,</span>
+<span id="cb31-6"><a href="site-related-tables-1.html#cb31-6" aria-hidden="true" tabindex="-1"></a>         gpu.highergeopoliticalid</span>
+<span id="cb31-7"><a href="site-related-tables-1.html#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb31-8"><a href="site-related-tables-1.html#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> geopoliticalname <span class="op">=</span> <span class="st">&#39;Canada&#39;</span></span>
+<span id="cb31-9"><a href="site-related-tables-1.html#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span></span>
+<span id="cb31-10"><a href="site-related-tables-1.html#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid, </span>
+<span id="cb31-11"><a href="site-related-tables-1.html#cb31-11" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalname, </span>
+<span id="cb31-12"><a href="site-related-tables-1.html#cb31-12" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalunit,</span>
+<span id="cb31-13"><a href="site-related-tables-1.html#cb31-13" aria-hidden="true" tabindex="-1"></a>         gpu.<span class="fu">rank</span>,</span>
+<span id="cb31-14"><a href="site-related-tables-1.html#cb31-14" aria-hidden="true" tabindex="-1"></a>         gpu.highergeopoliticalid </span>
+<span id="cb31-15"><a href="site-related-tables-1.html#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb31-16"><a href="site-related-tables-1.html#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> gpuset <span class="kw">ON</span> gpu.highergeopoliticalid <span class="op">=</span> gpuset.geopoliticalid</span>
+<span id="cb31-17"><a href="site-related-tables-1.html#cb31-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-18"><a href="site-related-tables-1.html#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> geopoliticalid, </span>
+<span id="cb31-19"><a href="site-related-tables-1.html#cb31-19" aria-hidden="true" tabindex="-1"></a>       geopoliticalname,</span>
+<span id="cb31-20"><a href="site-related-tables-1.html#cb31-20" aria-hidden="true" tabindex="-1"></a>       geopoliticalunit,</span>
+<span id="cb31-21"><a href="site-related-tables-1.html#cb31-21" aria-hidden="true" tabindex="-1"></a>       <span class="fu">rank</span></span>
+<span id="cb31-22"><a href="site-related-tables-1.html#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> gpuset</span>
+<span id="cb31-23"><a href="site-related-tables-1.html#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">rank</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:geoPolCanadaSQL">Table 10.1: </span>Displaying records 1 - 10</caption>
@@ -515,35 +537,42 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="sql-example-14" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> SQL Example<a href="site-related-tables-1.html#sql-example-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The above query does not sort or structure the data into any sort of hierarchy or internally ordered list. We can use array operators to aggregate the <code>geopoliticalid</code>s as we move through the hierarchy, so that we add a column <code>gpuhier</code> that is an integer array, containing each of the levels of the hierarchy. This way we can see that <code>geopoliticalid</code> 10018, “Baffin Island” is an island that is contained within Nunavut, which is a territory within Canada.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb32-1"><a href="site-related-tables-1.html#cb32-1" aria-hidden="true"></a><span class="kw">WITH</span> RECURSIVE gpuset <span class="kw">AS</span> (</span>
-<span id="cb32-2"><a href="site-related-tables-1.html#cb32-2" aria-hidden="true"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid,</span>
-<span id="cb32-3"><a href="site-related-tables-1.html#cb32-3" aria-hidden="true"></a>         <span class="dt">ARRAY</span>[gpu.geopoliticalid] <span class="kw">AS</span> gpuhier,</span>
-<span id="cb32-4"><a href="site-related-tables-1.html#cb32-4" aria-hidden="true"></a>         gpu.geopoliticalname,</span>
-<span id="cb32-5"><a href="site-related-tables-1.html#cb32-5" aria-hidden="true"></a>         gpu.geopoliticalunit,</span>
-<span id="cb32-6"><a href="site-related-tables-1.html#cb32-6" aria-hidden="true"></a>         gpu.<span class="fu">rank</span>,</span>
-<span id="cb32-7"><a href="site-related-tables-1.html#cb32-7" aria-hidden="true"></a>         gpu.highergeopoliticalid</span>
-<span id="cb32-8"><a href="site-related-tables-1.html#cb32-8" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb32-9"><a href="site-related-tables-1.html#cb32-9" aria-hidden="true"></a>  <span class="kw">WHERE</span> geopoliticalname <span class="op">=</span> <span class="st">&#39;Canada&#39;</span></span>
-<span id="cb32-10"><a href="site-related-tables-1.html#cb32-10" aria-hidden="true"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span></span>
-<span id="cb32-11"><a href="site-related-tables-1.html#cb32-11" aria-hidden="true"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid, </span>
-<span id="cb32-12"><a href="site-related-tables-1.html#cb32-12" aria-hidden="true"></a>         gpuset.gpuhier <span class="op">||</span> gpu.geopoliticalid,</span>
-<span id="cb32-13"><a href="site-related-tables-1.html#cb32-13" aria-hidden="true"></a>         gpu.geopoliticalname, </span>
-<span id="cb32-14"><a href="site-related-tables-1.html#cb32-14" aria-hidden="true"></a>         gpu.geopoliticalunit,</span>
-<span id="cb32-15"><a href="site-related-tables-1.html#cb32-15" aria-hidden="true"></a>         gpu.<span class="fu">rank</span>,</span>
-<span id="cb32-16"><a href="site-related-tables-1.html#cb32-16" aria-hidden="true"></a>         gpu.highergeopoliticalid </span>
-<span id="cb32-17"><a href="site-related-tables-1.html#cb32-17" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb32-18"><a href="site-related-tables-1.html#cb32-18" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> gpuset <span class="kw">ON</span> gpu.highergeopoliticalid <span class="op">=</span> gpuset.geopoliticalid</span>
-<span id="cb32-19"><a href="site-related-tables-1.html#cb32-19" aria-hidden="true"></a>)</span>
-<span id="cb32-20"><a href="site-related-tables-1.html#cb32-20" aria-hidden="true"></a><span class="kw">SELECT</span> geopoliticalid, </span>
-<span id="cb32-21"><a href="site-related-tables-1.html#cb32-21" aria-hidden="true"></a>       gpuhier,</span>
-<span id="cb32-22"><a href="site-related-tables-1.html#cb32-22" aria-hidden="true"></a>       geopoliticalname,</span>
-<span id="cb32-23"><a href="site-related-tables-1.html#cb32-23" aria-hidden="true"></a>       geopoliticalunit,</span>
-<span id="cb32-24"><a href="site-related-tables-1.html#cb32-24" aria-hidden="true"></a>       <span class="fu">rank</span></span>
-<span id="cb32-25"><a href="site-related-tables-1.html#cb32-25" aria-hidden="true"></a><span class="kw">FROM</span> gpuset</span>
-<span id="cb32-26"><a href="site-related-tables-1.html#cb32-26" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">rank</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb32-1"><a href="site-related-tables-1.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE gpuset <span class="kw">AS</span> (</span>
+<span id="cb32-2"><a href="site-related-tables-1.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid,</span>
+<span id="cb32-3"><a href="site-related-tables-1.html#cb32-3" aria-hidden="true" tabindex="-1"></a>         <span class="dt">ARRAY</span>[gpu.geopoliticalid] <span class="kw">AS</span> gpuhier,</span>
+<span id="cb32-4"><a href="site-related-tables-1.html#cb32-4" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalname,</span>
+<span id="cb32-5"><a href="site-related-tables-1.html#cb32-5" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalunit,</span>
+<span id="cb32-6"><a href="site-related-tables-1.html#cb32-6" aria-hidden="true" tabindex="-1"></a>         gpu.<span class="fu">rank</span>,</span>
+<span id="cb32-7"><a href="site-related-tables-1.html#cb32-7" aria-hidden="true" tabindex="-1"></a>         gpu.highergeopoliticalid</span>
+<span id="cb32-8"><a href="site-related-tables-1.html#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb32-9"><a href="site-related-tables-1.html#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> geopoliticalname <span class="op">=</span> <span class="st">&#39;Canada&#39;</span></span>
+<span id="cb32-10"><a href="site-related-tables-1.html#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span></span>
+<span id="cb32-11"><a href="site-related-tables-1.html#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid, </span>
+<span id="cb32-12"><a href="site-related-tables-1.html#cb32-12" aria-hidden="true" tabindex="-1"></a>         gpuset.gpuhier <span class="op">||</span> gpu.geopoliticalid,</span>
+<span id="cb32-13"><a href="site-related-tables-1.html#cb32-13" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalname, </span>
+<span id="cb32-14"><a href="site-related-tables-1.html#cb32-14" aria-hidden="true" tabindex="-1"></a>         gpu.geopoliticalunit,</span>
+<span id="cb32-15"><a href="site-related-tables-1.html#cb32-15" aria-hidden="true" tabindex="-1"></a>         gpu.<span class="fu">rank</span>,</span>
+<span id="cb32-16"><a href="site-related-tables-1.html#cb32-16" aria-hidden="true" tabindex="-1"></a>         gpu.highergeopoliticalid </span>
+<span id="cb32-17"><a href="site-related-tables-1.html#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb32-18"><a href="site-related-tables-1.html#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> gpuset <span class="kw">ON</span> gpu.highergeopoliticalid <span class="op">=</span> gpuset.geopoliticalid</span>
+<span id="cb32-19"><a href="site-related-tables-1.html#cb32-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-20"><a href="site-related-tables-1.html#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> geopoliticalid, </span>
+<span id="cb32-21"><a href="site-related-tables-1.html#cb32-21" aria-hidden="true" tabindex="-1"></a>       gpuhier,</span>
+<span id="cb32-22"><a href="site-related-tables-1.html#cb32-22" aria-hidden="true" tabindex="-1"></a>       geopoliticalname,</span>
+<span id="cb32-23"><a href="site-related-tables-1.html#cb32-23" aria-hidden="true" tabindex="-1"></a>       geopoliticalunit,</span>
+<span id="cb32-24"><a href="site-related-tables-1.html#cb32-24" aria-hidden="true" tabindex="-1"></a>       <span class="fu">rank</span></span>
+<span id="cb32-25"><a href="site-related-tables-1.html#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> gpuset</span>
+<span id="cb32-26"><a href="site-related-tables-1.html#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">rank</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:geoPolCanadaArraySQL">Table 10.2: </span>Displaying records 1 - 10</caption>
+<colgroup>
+<col width="20%" />
+<col width="13%" />
+<col width="35%" />
+<col width="23%" />
+<col width="6%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">geopoliticalid</th>
@@ -632,8 +661,8 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="lakeparameters" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> <code>lakeparameters</code><a href="site-related-tables-1.html#lakeparameters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Many sites within Neotoma are lacustrine sites (see <a href="#depositionalenvironments"><code>depositionalenvironments</code></a>). These sites often have associated parameters that can define taphonomic properties for particular dataset types. For example, the literature strongly links basin area to the propoertion of regional and local pollen within a site. Thus <code>lakeparameters</code> are critical to understanding the depositional environment and context for many datasets. The <code>lakeparameters</code> table links specific <a href="site-related-tables-1.html#lakeparametertypes"><code>lakeparametertypes</code></a> to <code>siteid</code>, and associated the parameter type with a value.</p>
-<div id="htmlwidget-1921ada6d76a6f669cc4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1921ada6d76a6f669cc4">{"x":{"filter":"none","vertical":false,"data":[["siteid","lakeparameterid","value","recdatecreated","recdatemodified"],["integer","integer","double precision","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_lakeparameters_sites, lakeparameters_pkey","fk_lakeparameters_lakeparametertypes, lakeparameters_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-32b55ae2f924491966c7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-32b55ae2f924491966c7">{"x":{"filter":"none","vertical":false,"data":[["siteid","lakeparameterid","value","recdatecreated","recdatemodified"],["integer","integer","double precision","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_lakeparameters_sites, lakeparameters_pkey","fk_lakeparameters_lakeparametertypes, lakeparameters_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>siteid</code> (foreign key)</strong>: THe <code>siteid</code> to which the parameter is applied.</li>
 <li><strong><code>lakeparameterid</code> (foreign key)</strong>: The parameter associated with the value.</li>
@@ -642,26 +671,33 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="sql-example-15" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> SQL Example<a href="site-related-tables-1.html#sql-example-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We want to get all lake areas for sites with diatom records where the lake size is over 1km<sup>2</sup>. Because some lakes have more than one dataset, we aggregate by <code>siteid</code>, and then aggregate the <code>datasetid</code>s into an array so that each site is in its own row.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb33-1"><a href="site-related-tables-1.html#cb33-1" aria-hidden="true"></a><span class="kw">SELECT</span> st.siteid, </span>
-<span id="cb33-2"><a href="site-related-tables-1.html#cb33-2" aria-hidden="true"></a>       st.sitename,</span>
-<span id="cb33-3"><a href="site-related-tables-1.html#cb33-3" aria-hidden="true"></a>       lpt.lakeparameter,</span>
-<span id="cb33-4"><a href="site-related-tables-1.html#cb33-4" aria-hidden="true"></a>       <span class="fu">ROUND</span>(lp.<span class="fu">value</span>),</span>
-<span id="cb33-5"><a href="site-related-tables-1.html#cb33-5" aria-hidden="true"></a>       ARRAY_AGG(ds.datasetid)</span>
-<span id="cb33-6"><a href="site-related-tables-1.html#cb33-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st </span>
-<span id="cb33-7"><a href="site-related-tables-1.html#cb33-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits    <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb33-8"><a href="site-related-tables-1.html#cb33-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets           <span class="kw">AS</span>  ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb33-9"><a href="site-related-tables-1.html#cb33-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes       <span class="kw">AS</span> dst <span class="kw">ON</span>   dst.datasettypeid <span class="op">=</span> ds.datasettypeid </span>
-<span id="cb33-10"><a href="site-related-tables-1.html#cb33-10" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.lakeparameters     <span class="kw">AS</span>  lp <span class="kw">ON</span>           lp.siteid <span class="op">=</span> st.siteid </span>
-<span id="cb33-11"><a href="site-related-tables-1.html#cb33-11" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.lakeparametertypes <span class="kw">AS</span> lpt <span class="kw">ON</span> lpt.lakeparameterid <span class="op">=</span> lp.lakeparameterid</span>
-<span id="cb33-12"><a href="site-related-tables-1.html#cb33-12" aria-hidden="true"></a><span class="kw">WHERE</span> dst.datasettype <span class="kw">LIKE</span> <span class="st">&#39;diatom%&#39;</span></span>
-<span id="cb33-13"><a href="site-related-tables-1.html#cb33-13" aria-hidden="true"></a><span class="kw">AND</span> lpt.lakeparametershortname <span class="op">=</span> <span class="st">&#39;Lake Area&#39;</span></span>
-<span id="cb33-14"><a href="site-related-tables-1.html#cb33-14" aria-hidden="true"></a><span class="kw">AND</span> lp.<span class="fu">value</span> <span class="op">&gt;</span> <span class="dv">100</span></span>
-<span id="cb33-15"><a href="site-related-tables-1.html#cb33-15" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.siteid, st.sitename, lpt.lakeparameter, lp.<span class="fu">value</span></span>
-<span id="cb33-16"><a href="site-related-tables-1.html#cb33-16" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> lp.<span class="fu">value</span> <span class="kw">DESC</span></span>
-<span id="cb33-17"><a href="site-related-tables-1.html#cb33-17" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">12</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb33-1"><a href="site-related-tables-1.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> st.siteid, </span>
+<span id="cb33-2"><a href="site-related-tables-1.html#cb33-2" aria-hidden="true" tabindex="-1"></a>       st.sitename,</span>
+<span id="cb33-3"><a href="site-related-tables-1.html#cb33-3" aria-hidden="true" tabindex="-1"></a>       lpt.lakeparameter,</span>
+<span id="cb33-4"><a href="site-related-tables-1.html#cb33-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ROUND</span>(lp.<span class="fu">value</span>),</span>
+<span id="cb33-5"><a href="site-related-tables-1.html#cb33-5" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(ds.datasetid)</span>
+<span id="cb33-6"><a href="site-related-tables-1.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st </span>
+<span id="cb33-7"><a href="site-related-tables-1.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits    <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb33-8"><a href="site-related-tables-1.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets           <span class="kw">AS</span>  ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb33-9"><a href="site-related-tables-1.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes       <span class="kw">AS</span> dst <span class="kw">ON</span>   dst.datasettypeid <span class="op">=</span> ds.datasettypeid </span>
+<span id="cb33-10"><a href="site-related-tables-1.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.lakeparameters     <span class="kw">AS</span>  lp <span class="kw">ON</span>           lp.siteid <span class="op">=</span> st.siteid </span>
+<span id="cb33-11"><a href="site-related-tables-1.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.lakeparametertypes <span class="kw">AS</span> lpt <span class="kw">ON</span> lpt.lakeparameterid <span class="op">=</span> lp.lakeparameterid</span>
+<span id="cb33-12"><a href="site-related-tables-1.html#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> dst.datasettype <span class="kw">LIKE</span> <span class="st">&#39;diatom%&#39;</span></span>
+<span id="cb33-13"><a href="site-related-tables-1.html#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="kw">AND</span> lpt.lakeparametershortname <span class="op">=</span> <span class="st">&#39;Lake Area&#39;</span></span>
+<span id="cb33-14"><a href="site-related-tables-1.html#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="kw">AND</span> lp.<span class="fu">value</span> <span class="op">&gt;</span> <span class="dv">100</span></span>
+<span id="cb33-15"><a href="site-related-tables-1.html#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.siteid, st.sitename, lpt.lakeparameter, lp.<span class="fu">value</span></span>
+<span id="cb33-16"><a href="site-related-tables-1.html#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> lp.<span class="fu">value</span> <span class="kw">DESC</span></span>
+<span id="cb33-17"><a href="site-related-tables-1.html#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">12</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:diatomlakeareasSQL">Table 10.3: </span>Displaying records 1 - 10</caption>
+<colgroup>
+<col width="10%" />
+<col width="31%" />
+<col width="26%" />
+<col width="10%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">siteid</th>
@@ -677,7 +713,7 @@ contained in this table. Examples of administrative regions are National Parks a
 <td align="left">Lake Okeechobee</td>
 <td align="left">Surface area (ha)</td>
 <td align="right">167490</td>
-<td align="left">{50409}</td>
+<td align="left">{50409,54846}</td>
 </tr>
 <tr class="even">
 <td align="right">23000</td>
@@ -691,7 +727,7 @@ contained in this table. Examples of administrative regions are National Parks a
 <td align="left">Lake Champlain</td>
 <td align="left">Surface area (ha)</td>
 <td align="right">107360</td>
-<td align="left">{50378}</td>
+<td align="left">{54815,50378}</td>
 </tr>
 <tr class="even">
 <td align="right">13903</td>
@@ -712,7 +748,7 @@ contained in this table. Examples of administrative regions are National Parks a
 <td align="left">Lake Winnebago</td>
 <td align="left">Surface area (ha)</td>
 <td align="right">53989</td>
-<td align="left">{51439}</td>
+<td align="left">{54894,51439}</td>
 </tr>
 <tr class="odd">
 <td align="right">9961</td>
@@ -733,7 +769,7 @@ contained in this table. Examples of administrative regions are National Parks a
 <td align="left">Oneida Lake</td>
 <td align="left">Surface area (ha)</td>
 <td align="right">20700</td>
-<td align="left">{51530}</td>
+<td align="left">{51530,54985}</td>
 </tr>
 <tr class="even">
 <td align="right">924</td>
@@ -750,8 +786,8 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="lakeparametertypes" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> <code>lakeparametertypes</code><a href="site-related-tables-1.html#lakeparametertypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The set of distinct lake parameters currently supported by Neotoma as data objects. These include direct measurements of lake basin parameters (area, perimeter, depth) as well as watershed parameters and proportional land use around watersheds. This list can be modified to include new parameters as needed, however these must be added at the database level (rather than through Tilia or the R package).</p>
-<div id="htmlwidget-404fbf480fabea730a98" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-404fbf480fabea730a98">{"x":{"filter":"none","vertical":false,"data":[["lakeparameterid","lakeparametercode","lakeparametershortname","lakeparameter","recdatecreated","recdatemodified"],["integer","character varying(20)","character varying(40)","character varying(80)","timestamp(0) without time zone","timestamp(0) without time zone"],["lakeparametertypes_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-30b8360d039ddfd3daf5" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-30b8360d039ddfd3daf5">{"x":{"filter":"none","vertical":false,"data":[["lakeparameterid","lakeparametercode","lakeparametershortname","lakeparameter","recdatecreated","recdatemodified"],["integer","character varying(20)","character varying(40)","character varying(80)","timestamp(0) without time zone","timestamp(0) without time zone"],["lakeparametertypes_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>lakeparameterid</code> (primary key)</strong>: Primary key for the lake parameter types.</li>
 <li><strong><code>lakeparametercode</code></strong>: A text string representing a contraction of the full lake parameter name.</li>
@@ -762,36 +798,36 @@ contained in this table. Examples of administrative regions are National Parks a
 <h3><span class="header-section-number">10.3.1</span> SQL Example<a href="site-related-tables-1.html#sql-example-16" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We want to see the coverage of various lake parameters for all records identified as lacustrine within the database. Because depositional environments are stored as a hierarchical table we need to use a <a href="https://www.postgresql.org/docs/current/queries-with.html">recursive CTE</a> to resolve the hierarchy. The CTE <code>dephierarchy</code> resolves to a table with a row for each of the types of lacustrine depositional environment, along with an array of the “path” required to travel from the depositional environment <code>Lacustrine</code> to the particular environment name (<em>e.g.</em>, <em>Nonspecific Floodplain Lake</em>).</p>
 <p>We use the CTE <code>dephierarchy</code> to generate a total count of all sites that are part of the <em>Lacustrine</em> hierarchy and return that as part of the CTE <code>sitecount</code>. Finally, we select each of the different lake parameter types, count the number of sites with those records, and divide that value by the total number of lacustrine-type sites in Neotoma.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb34-1"><a href="site-related-tables-1.html#cb34-1" aria-hidden="true"></a><span class="kw">WITH</span> RECURSIVE dephierarchy <span class="kw">AS</span> (</span>
-<span id="cb34-2"><a href="site-related-tables-1.html#cb34-2" aria-hidden="true"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
-<span id="cb34-3"><a href="site-related-tables-1.html#cb34-3" aria-hidden="true"></a>         de.depenvt,</span>
-<span id="cb34-4"><a href="site-related-tables-1.html#cb34-4" aria-hidden="true"></a>         <span class="dt">ARRAY</span>[de.depenvtid] <span class="kw">AS</span> deagg</span>
-<span id="cb34-5"><a href="site-related-tables-1.html#cb34-5" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de</span>
-<span id="cb34-6"><a href="site-related-tables-1.html#cb34-6" aria-hidden="true"></a>  <span class="kw">WHERE</span> de.depenvt <span class="op">=</span> <span class="st">&#39;Lacustrine&#39;</span></span>
-<span id="cb34-7"><a href="site-related-tables-1.html#cb34-7" aria-hidden="true"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span> </span>
-<span id="cb34-8"><a href="site-related-tables-1.html#cb34-8" aria-hidden="true"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
-<span id="cb34-9"><a href="site-related-tables-1.html#cb34-9" aria-hidden="true"></a>         de.depenvt,</span>
-<span id="cb34-10"><a href="site-related-tables-1.html#cb34-10" aria-hidden="true"></a>         dephierarchy.deagg <span class="op">||</span> de.depenvtid</span>
-<span id="cb34-11"><a href="site-related-tables-1.html#cb34-11" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de </span>
-<span id="cb34-12"><a href="site-related-tables-1.html#cb34-12" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> dephierarchy <span class="kw">ON</span> de.depenvthigherid <span class="op">=</span> dephierarchy.depenvtid</span>
-<span id="cb34-13"><a href="site-related-tables-1.html#cb34-13" aria-hidden="true"></a>  <span class="kw">WHERE</span> <span class="kw">NOT</span> de.depenvtid <span class="op">=</span> dephierarchy.depenvtid</span>
-<span id="cb34-14"><a href="site-related-tables-1.html#cb34-14" aria-hidden="true"></a>),</span>
-<span id="cb34-15"><a href="site-related-tables-1.html#cb34-15" aria-hidden="true"></a>sitecount <span class="kw">AS</span> (</span>
-<span id="cb34-16"><a href="site-related-tables-1.html#cb34-16" aria-hidden="true"></a>       <span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> st.siteid) <span class="kw">AS</span> total</span>
-<span id="cb34-17"><a href="site-related-tables-1.html#cb34-17" aria-hidden="true"></a>       <span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
-<span id="cb34-18"><a href="site-related-tables-1.html#cb34-18" aria-hidden="true"></a>       <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span>    cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb34-19"><a href="site-related-tables-1.html#cb34-19" aria-hidden="true"></a>       <span class="kw">INNER</span> <span class="kw">JOIN</span>        dephierarchy <span class="kw">AS</span> dh <span class="kw">ON</span> dh.depenvtid <span class="op">=</span> cu.depenvtid   </span>
-<span id="cb34-20"><a href="site-related-tables-1.html#cb34-20" aria-hidden="true"></a>)</span>
-<span id="cb34-21"><a href="site-related-tables-1.html#cb34-21" aria-hidden="true"></a><span class="kw">SELECT</span> lpt.lakeparameter, </span>
-<span id="cb34-22"><a href="site-related-tables-1.html#cb34-22" aria-hidden="true"></a>       <span class="fu">ROUND</span>((<span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> st.siteid):<span class="ch">:decimal</span> <span class="op">/</span> (<span class="kw">SELECT</span> total <span class="kw">FROM</span> sitecount):<span class="ch">:decimal</span>) <span class="op">*</span> <span class="dv">100</span>) <span class="kw">AS</span> pct</span>
-<span id="cb34-23"><a href="site-related-tables-1.html#cb34-23" aria-hidden="true"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
-<span id="cb34-24"><a href="site-related-tables-1.html#cb34-24" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.collectionunits <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb34-25"><a href="site-related-tables-1.html#cb34-25" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>        ndb.depenvttypes <span class="kw">AS</span> dev <span class="kw">ON</span>       dev.depenvtid <span class="op">=</span> cu.depenvtid</span>
-<span id="cb34-26"><a href="site-related-tables-1.html#cb34-26" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>      ndb.lakeparameters <span class="kw">AS</span>  lp <span class="kw">ON</span>           lp.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb34-27"><a href="site-related-tables-1.html#cb34-27" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>  ndb.lakeparametertypes <span class="kw">AS</span> lpt <span class="kw">ON</span> lpt.lakeparameterid <span class="op">=</span> lp.lakeparameterid</span>
-<span id="cb34-28"><a href="site-related-tables-1.html#cb34-28" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            dephierarchy <span class="kw">AS</span>  dh <span class="kw">ON</span>        dh.depenvtid <span class="op">=</span> cu.depenvtid</span>
-<span id="cb34-29"><a href="site-related-tables-1.html#cb34-29" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> lpt.lakeparameterid</span>
-<span id="cb34-30"><a href="site-related-tables-1.html#cb34-30" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> pct <span class="kw">DESC</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb34-1"><a href="site-related-tables-1.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE dephierarchy <span class="kw">AS</span> (</span>
+<span id="cb34-2"><a href="site-related-tables-1.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
+<span id="cb34-3"><a href="site-related-tables-1.html#cb34-3" aria-hidden="true" tabindex="-1"></a>         de.depenvt,</span>
+<span id="cb34-4"><a href="site-related-tables-1.html#cb34-4" aria-hidden="true" tabindex="-1"></a>         <span class="dt">ARRAY</span>[de.depenvtid] <span class="kw">AS</span> deagg</span>
+<span id="cb34-5"><a href="site-related-tables-1.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de</span>
+<span id="cb34-6"><a href="site-related-tables-1.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> de.depenvt <span class="op">=</span> <span class="st">&#39;Lacustrine&#39;</span></span>
+<span id="cb34-7"><a href="site-related-tables-1.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span> </span>
+<span id="cb34-8"><a href="site-related-tables-1.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
+<span id="cb34-9"><a href="site-related-tables-1.html#cb34-9" aria-hidden="true" tabindex="-1"></a>         de.depenvt,</span>
+<span id="cb34-10"><a href="site-related-tables-1.html#cb34-10" aria-hidden="true" tabindex="-1"></a>         dephierarchy.deagg <span class="op">||</span> de.depenvtid</span>
+<span id="cb34-11"><a href="site-related-tables-1.html#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de </span>
+<span id="cb34-12"><a href="site-related-tables-1.html#cb34-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> dephierarchy <span class="kw">ON</span> de.depenvthigherid <span class="op">=</span> dephierarchy.depenvtid</span>
+<span id="cb34-13"><a href="site-related-tables-1.html#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> <span class="kw">NOT</span> de.depenvtid <span class="op">=</span> dephierarchy.depenvtid</span>
+<span id="cb34-14"><a href="site-related-tables-1.html#cb34-14" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb34-15"><a href="site-related-tables-1.html#cb34-15" aria-hidden="true" tabindex="-1"></a>sitecount <span class="kw">AS</span> (</span>
+<span id="cb34-16"><a href="site-related-tables-1.html#cb34-16" aria-hidden="true" tabindex="-1"></a>       <span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> st.siteid) <span class="kw">AS</span> total</span>
+<span id="cb34-17"><a href="site-related-tables-1.html#cb34-17" aria-hidden="true" tabindex="-1"></a>       <span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb34-18"><a href="site-related-tables-1.html#cb34-18" aria-hidden="true" tabindex="-1"></a>       <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span>    cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb34-19"><a href="site-related-tables-1.html#cb34-19" aria-hidden="true" tabindex="-1"></a>       <span class="kw">INNER</span> <span class="kw">JOIN</span>        dephierarchy <span class="kw">AS</span> dh <span class="kw">ON</span> dh.depenvtid <span class="op">=</span> cu.depenvtid   </span>
+<span id="cb34-20"><a href="site-related-tables-1.html#cb34-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-21"><a href="site-related-tables-1.html#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> lpt.lakeparameter, </span>
+<span id="cb34-22"><a href="site-related-tables-1.html#cb34-22" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ROUND</span>((<span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> st.siteid):<span class="ch">:decimal</span> <span class="op">/</span> (<span class="kw">SELECT</span> total <span class="kw">FROM</span> sitecount):<span class="ch">:decimal</span>) <span class="op">*</span> <span class="dv">100</span>) <span class="kw">AS</span> pct</span>
+<span id="cb34-23"><a href="site-related-tables-1.html#cb34-23" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb34-24"><a href="site-related-tables-1.html#cb34-24" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.collectionunits <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb34-25"><a href="site-related-tables-1.html#cb34-25" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>        ndb.depenvttypes <span class="kw">AS</span> dev <span class="kw">ON</span>       dev.depenvtid <span class="op">=</span> cu.depenvtid</span>
+<span id="cb34-26"><a href="site-related-tables-1.html#cb34-26" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>      ndb.lakeparameters <span class="kw">AS</span>  lp <span class="kw">ON</span>           lp.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb34-27"><a href="site-related-tables-1.html#cb34-27" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>  ndb.lakeparametertypes <span class="kw">AS</span> lpt <span class="kw">ON</span> lpt.lakeparameterid <span class="op">=</span> lp.lakeparameterid</span>
+<span id="cb34-28"><a href="site-related-tables-1.html#cb34-28" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            dephierarchy <span class="kw">AS</span>  dh <span class="kw">ON</span>        dh.depenvtid <span class="op">=</span> cu.depenvtid</span>
+<span id="cb34-29"><a href="site-related-tables-1.html#cb34-29" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> lpt.lakeparameterid</span>
+<span id="cb34-30"><a href="site-related-tables-1.html#cb34-30" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> pct <span class="kw">DESC</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:depenvreportingSQL">Table 10.4: </span>Displaying records 1 - 10</caption>
@@ -804,11 +840,11 @@ contained in this table. Examples of administrative regions are National Parks a
 <tbody>
 <tr class="odd">
 <td align="left">Surface area (ha)</td>
-<td align="right">27</td>
+<td align="right">26</td>
 </tr>
 <tr class="even">
 <td align="left">Maximum depth (m)</td>
-<td align="right">27</td>
+<td align="right">26</td>
 </tr>
 <tr class="odd">
 <td align="left">Watershed area (ha)</td>
@@ -816,7 +852,7 @@ contained in this table. Examples of administrative regions are National Parks a
 </tr>
 <tr class="even">
 <td align="left">Shoreline length (km)</td>
-<td align="right">17</td>
+<td align="right">16</td>
 </tr>
 <tr class="odd">
 <td align="left">Watershed forest (%)</td>
@@ -850,8 +886,8 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="SiteGeoPolitical" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> <code>sitegeopolitical</code><a href="site-related-tables-1.html#SiteGeoPolitical" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists the GeoPolitical units in which sites occur. A site may appear in the table multiple times, for example, some sites may be listed as being in both “Alsace” and “France”, so be sure to use terms such as <code>DISTINCT</code> or provide some post-processing to your data returns a single instance of each site if you are doing querying across multiple geopolitical ranks.</p>
-<div id="htmlwidget-a66ba03364f437833636" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a66ba03364f437833636">{"x":{"filter":"none","vertical":false,"data":[["sitegeopoliticalid","siteid","geopoliticalid","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["sitegeopolitical_pkey","fk_sitegeopolitical_sites","fk_sitegeopolitical_geopoliticalunits","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f54849cc6f13e3ccad0f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f54849cc6f13e3ccad0f">{"x":{"filter":"none","vertical":false,"data":[["sitegeopoliticalid","siteid","geopoliticalid","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["sitegeopolitical_pkey","fk_sitegeopolitical_sites","fk_sitegeopolitical_geopoliticalunits","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>sitegeopoliticalid</code> (primary key)</strong>: An arbitrary Site GeoPolitical identification number.</li>
 <li><strong><code>siteid</code> (foreign key)</strong>: Site identification number. Field links to the <a href="site-related-tables-1.html#Sites"><code>Sites</code></a> table.</li>
@@ -860,24 +896,24 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="sql-example-17" class="section level3 hasAnchor" number="10.4.1">
 <h3><span class="header-section-number">10.4.1</span> SQL Example<a href="site-related-tables-1.html#sql-example-17" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following query provides a short list of sites at each geopolitical level, for sites in France, using the <code>sitegeopolitical</code> and <code>geopoliticalunits</code>. We make use of the <code>array_agg()</code> aggregator to produce an array of siteids for each geopolitical unit, and we limit the return to a maximum of five elements per unit.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb35-1"><a href="site-related-tables-1.html#cb35-1" aria-hidden="true"></a><span class="kw">WITH</span> RECURSIVE gpuset <span class="kw">AS</span> (</span>
-<span id="cb35-2"><a href="site-related-tables-1.html#cb35-2" aria-hidden="true"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid,</span>
-<span id="cb35-3"><a href="site-related-tables-1.html#cb35-3" aria-hidden="true"></a>         gpu.highergeopoliticalid</span>
-<span id="cb35-4"><a href="site-related-tables-1.html#cb35-4" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb35-5"><a href="site-related-tables-1.html#cb35-5" aria-hidden="true"></a>  <span class="kw">WHERE</span> geopoliticalname <span class="op">=</span> <span class="st">&#39;France&#39;</span></span>
-<span id="cb35-6"><a href="site-related-tables-1.html#cb35-6" aria-hidden="true"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span></span>
-<span id="cb35-7"><a href="site-related-tables-1.html#cb35-7" aria-hidden="true"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid, </span>
-<span id="cb35-8"><a href="site-related-tables-1.html#cb35-8" aria-hidden="true"></a>         gpu.highergeopoliticalid </span>
-<span id="cb35-9"><a href="site-related-tables-1.html#cb35-9" aria-hidden="true"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb35-10"><a href="site-related-tables-1.html#cb35-10" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> gpuset <span class="kw">ON</span> gpu.highergeopoliticalid <span class="op">=</span> gpuset.geopoliticalid</span>
-<span id="cb35-11"><a href="site-related-tables-1.html#cb35-11" aria-hidden="true"></a>)</span>
-<span id="cb35-12"><a href="site-related-tables-1.html#cb35-12" aria-hidden="true"></a><span class="kw">SELECT</span> (array_agg(sgp.siteid))[<span class="dv">1</span><span class="ch">:5</span>],</span>
-<span id="cb35-13"><a href="site-related-tables-1.html#cb35-13" aria-hidden="true"></a>       gpu.geopoliticalname</span>
-<span id="cb35-14"><a href="site-related-tables-1.html#cb35-14" aria-hidden="true"></a><span class="kw">FROM</span> gpuset</span>
-<span id="cb35-15"><a href="site-related-tables-1.html#cb35-15" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>  ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span> gpuset.geopoliticalid <span class="op">=</span> sgp.geopoliticalid</span>
-<span id="cb35-16"><a href="site-related-tables-1.html#cb35-16" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu <span class="kw">ON</span>    gpu.geopoliticalid <span class="op">=</span> sgp.geopoliticalid</span>
-<span id="cb35-17"><a href="site-related-tables-1.html#cb35-17" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> gpu.geopoliticalname</span>
-<span id="cb35-18"><a href="site-related-tables-1.html#cb35-18" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb35-1"><a href="site-related-tables-1.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE gpuset <span class="kw">AS</span> (</span>
+<span id="cb35-2"><a href="site-related-tables-1.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid,</span>
+<span id="cb35-3"><a href="site-related-tables-1.html#cb35-3" aria-hidden="true" tabindex="-1"></a>         gpu.highergeopoliticalid</span>
+<span id="cb35-4"><a href="site-related-tables-1.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb35-5"><a href="site-related-tables-1.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> geopoliticalname <span class="op">=</span> <span class="st">&#39;France&#39;</span></span>
+<span id="cb35-6"><a href="site-related-tables-1.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span></span>
+<span id="cb35-7"><a href="site-related-tables-1.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> gpu.geopoliticalid, </span>
+<span id="cb35-8"><a href="site-related-tables-1.html#cb35-8" aria-hidden="true" tabindex="-1"></a>         gpu.highergeopoliticalid </span>
+<span id="cb35-9"><a href="site-related-tables-1.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb35-10"><a href="site-related-tables-1.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> gpuset <span class="kw">ON</span> gpu.highergeopoliticalid <span class="op">=</span> gpuset.geopoliticalid</span>
+<span id="cb35-11"><a href="site-related-tables-1.html#cb35-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb35-12"><a href="site-related-tables-1.html#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> (array_agg(sgp.siteid))[<span class="dv">1</span><span class="ch">:5</span>],</span>
+<span id="cb35-13"><a href="site-related-tables-1.html#cb35-13" aria-hidden="true" tabindex="-1"></a>       gpu.geopoliticalname</span>
+<span id="cb35-14"><a href="site-related-tables-1.html#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> gpuset</span>
+<span id="cb35-15"><a href="site-related-tables-1.html#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>  ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span> gpuset.geopoliticalid <span class="op">=</span> sgp.geopoliticalid</span>
+<span id="cb35-16"><a href="site-related-tables-1.html#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu <span class="kw">ON</span>    gpu.geopoliticalid <span class="op">=</span> sgp.geopoliticalid</span>
+<span id="cb35-17"><a href="site-related-tables-1.html#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> gpu.geopoliticalname</span>
+<span id="cb35-18"><a href="site-related-tables-1.html#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:geoPolFranceSitesSQL">Table 10.5: </span>Displaying records 1 - 10</caption>
@@ -897,7 +933,7 @@ contained in this table. Examples of administrative regions are National Parks a
 <td align="left">Aisne</td>
 </tr>
 <tr class="odd">
-<td align="left">{27388,2969,3046,3235,3416}</td>
+<td align="left">{2969,3046,3235,3416,27388}</td>
 <td align="left">Alpes-de-Haute-Provence</td>
 </tr>
 <tr class="even">
@@ -917,7 +953,7 @@ contained in this table. Examples of administrative regions are National Parks a
 <td align="left">Aude</td>
 </tr>
 <tr class="even">
-<td align="left">{28418,27341,27338,2972,3048}</td>
+<td align="left">{2972,3048,3049,3050,3122}</td>
 <td align="left">Auvergne</td>
 </tr>
 <tr class="odd">
@@ -936,8 +972,8 @@ contained in this table. Examples of administrative regions are National Parks a
 <div id="SiteImages" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> <code>siteimages</code><a href="site-related-tables-1.html#SiteImages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores hyperlinks to jpeg images of sites. At present there are very few records with stored site images (9 records, as of June 2022), and the links appear to be largely dead. The table is retained since it may provide utility in the future.</p>
-<div id="htmlwidget-f981db9c9213fcdb2071" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f981db9c9213fcdb2071">{"x":{"filter":"none","vertical":false,"data":[["siteimageid","siteid","contactid","caption","credit","date","siteimage","recdatecreated","recdatemodified"],["integer","integer","integer","text","character varying(255)","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["siteimages_pkey","fk_siteimages_sites","fk_siteimages_contacts","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3971e23b0b1263121b39" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3971e23b0b1263121b39">{"x":{"filter":"none","vertical":false,"data":[["siteimageid","siteid","contactid","caption","credit","date","siteimage","recdatecreated","recdatemodified"],["integer","integer","integer","text","character varying(255)","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["siteimages_pkey","fk_siteimages_sites","fk_siteimages_contacts","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>siteimageid</code> (primary key)</strong>: An arbitrary Site Image identification number.</li>
 <li><strong><code>siteid</code> (foreign key)</strong>: Site identification number. Field links to the <a href="site-related-tables-1.html#Sites"><code>Sites</code></a> table.</li>
@@ -952,8 +988,8 @@ contained in this table. Examples of administrative regions are National Parks a
 <h2><span class="header-section-number">10.6</span> <code>sites</code><a href="site-related-tables-1.html#Sites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <code>sites</code> table stores information about the geographic information specific to a sampling location, including the name, geographic bounding box, spatial polygon, and site description. Sites generally have an areal extent and can be circumscribed by a latitude-longitude box (using the <code>latitudenorth</code> and other numeric bounding variables), but the geospatial object is also stored as a PostGIS <code>geog</code> object using a WGS84 projection. Site data ingested from legacy databases may have included only point locations, and additionally, may have been recorded using DMS notation, meaning the decimal expression may appear overly accurate.</p>
 <p>The lat-long box can be used either to circumscribe the areal extent of a site or to provide purposeful imprecision to the site location. Site location may be imprecise because of the original description was vague, e.g. «a gravel bar 5 miles east of town», or because the investigators, land owner, or land management agency may not want the exact location made public, perhaps to prevent looting and vandalism. In the first case, the lat-long box can be made sufficiently large to encompass the true location and in the second case to prevent exact location.</p>
-<div id="htmlwidget-6ebdc64466878472808f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6ebdc64466878472808f">{"x":{"filter":"none","vertical":false,"data":[["siteid","sitename","longitudeeast","latitudenorth","longitudewest","latitudesouth","altitude","area","sitedescription","notes","recdatecreated","recdatemodified","geog"],["integer","character varying(128)","double precision","double precision","double precision","double precision","double precision","double precision","text","text","timestamp(0) without time zone","timestamp(0) without time zone","geography"],["sites_pkey","","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e5d9e8889b5bf5062a1e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e5d9e8889b5bf5062a1e">{"x":{"filter":"none","vertical":false,"data":[["siteid","sitename","longitudeeast","latitudenorth","longitudewest","latitudesouth","altitude","area","sitedescription","notes","recdatecreated","recdatemodified","geog"],["integer","character varying(128)","double precision","double precision","double precision","double precision","double precision","double precision","text","text","timestamp(0) without time zone","timestamp(0) without time zone","geography"],["sites_pkey","","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>siteid</code> (Primary Key)</strong>: An arbitrary Site identification number.</li>
 <li><strong><code>sitename</code></strong>: Name of the site.
@@ -976,20 +1012,20 @@ contained in this table. Examples of administrative regions are National Parks a
 <p>Site names are often repeated, because geographic names are not required to be unique. Here we examine sites with common names and use PostGIS to calculate the minimum distance between sites with similar names.</p>
 <p>First we use a CTE to clean the names of the sites. Given the <code>sitename</code> protocol described above, we remove the terminal bracketed term from all site names using <code>regexp_replace()</code>. We place this into a table called <code>cleannames</code> that contains <code>siteid</code>, the cleaned name and the <code>geog</code> field, the geographic object representing the spatial location of the site. From here, we join the table on itself (as <code>name_one</code> and <code>name_two</code>), linking the two tables by common <code>cleanname</code>. We also apply a <code>WHERE</code> statement that applies the condition <code>name_one.siteid &lt; name_two.siteid</code> that makes sure we’re not calculating self-distance, or calculating distances twice (<em>e.g.</em>, for site (<strong>1 -&gt; 2</strong>) and site (<strong>2 -&gt; 1</strong>)).</p>
 <p>The actual inter-site distance is calculated using the <em>PostGIS</em> function <code>ST_Distance</code>, which returns distance in meters. We convert to km using a combination of rounding and multiplication.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb36-1"><a href="site-related-tables-1.html#cb36-1" aria-hidden="true"></a><span class="kw">WITH</span> cleannames <span class="kw">AS</span> (</span>
-<span id="cb36-2"><a href="site-related-tables-1.html#cb36-2" aria-hidden="true"></a>       <span class="kw">SELECT</span> st.siteid, <span class="fu">regexp_replace</span>(st.sitename, <span class="st">&#39; \(.*$&#39;</span>, <span class="st">&#39;&#39;</span>) <span class="kw">AS</span> cleanname, st.geog</span>
-<span id="cb36-3"><a href="site-related-tables-1.html#cb36-3" aria-hidden="true"></a>       <span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
-<span id="cb36-4"><a href="site-related-tables-1.html#cb36-4" aria-hidden="true"></a>       <span class="kw">WHERE</span> st.sitename <span class="kw">LIKE</span> <span class="st">&#39;%\(%&#39;</span> <span class="kw">ESCAPE</span> <span class="st">&#39;\&#39;</span></span>
-<span id="cb36-5"><a href="site-related-tables-1.html#cb36-5" aria-hidden="true"></a>)</span>
-<span id="cb36-6"><a href="site-related-tables-1.html#cb36-6" aria-hidden="true"></a><span class="kw">SELECT</span> name_one.cleanname,</span>
-<span id="cb36-7"><a href="site-related-tables-1.html#cb36-7" aria-hidden="true"></a>       <span class="fu">ROUND</span>(<span class="fu">MIN</span>(ST_distance(name_one.geog, name_two.geog)) <span class="op">/</span> <span class="dv">100</span>) <span class="op">/</span> <span class="dv">10</span> <span class="kw">AS</span> closest,</span>
-<span id="cb36-8"><a href="site-related-tables-1.html#cb36-8" aria-hidden="true"></a>       <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">+</span> <span class="dv">1</span> <span class="kw">AS</span> sites</span>
-<span id="cb36-9"><a href="site-related-tables-1.html#cb36-9" aria-hidden="true"></a><span class="kw">FROM</span> cleannames <span class="kw">AS</span> name_one</span>
-<span id="cb36-10"><a href="site-related-tables-1.html#cb36-10" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> cleannames <span class="kw">AS</span> name_two <span class="kw">ON</span> name_one.cleanname <span class="op">=</span> name_two.cleanname</span>
-<span id="cb36-11"><a href="site-related-tables-1.html#cb36-11" aria-hidden="true"></a><span class="kw">WHERE</span> name_one.siteid <span class="op">&lt;</span> name_two.siteid</span>
-<span id="cb36-12"><a href="site-related-tables-1.html#cb36-12" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> name_one.cleanname</span>
-<span id="cb36-13"><a href="site-related-tables-1.html#cb36-13" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> sites <span class="kw">DESC</span>, cleanname</span>
-<span id="cb36-14"><a href="site-related-tables-1.html#cb36-14" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">15</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb36-1"><a href="site-related-tables-1.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> cleannames <span class="kw">AS</span> (</span>
+<span id="cb36-2"><a href="site-related-tables-1.html#cb36-2" aria-hidden="true" tabindex="-1"></a>       <span class="kw">SELECT</span> st.siteid, <span class="fu">regexp_replace</span>(st.sitename, <span class="st">&#39; \(.*$&#39;</span>, <span class="st">&#39;&#39;</span>) <span class="kw">AS</span> cleanname, st.geog</span>
+<span id="cb36-3"><a href="site-related-tables-1.html#cb36-3" aria-hidden="true" tabindex="-1"></a>       <span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb36-4"><a href="site-related-tables-1.html#cb36-4" aria-hidden="true" tabindex="-1"></a>       <span class="kw">WHERE</span> st.sitename <span class="kw">LIKE</span> <span class="st">&#39;%\(%&#39;</span> <span class="kw">ESCAPE</span> <span class="st">&#39;\&#39;</span></span>
+<span id="cb36-5"><a href="site-related-tables-1.html#cb36-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb36-6"><a href="site-related-tables-1.html#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name_one.cleanname,</span>
+<span id="cb36-7"><a href="site-related-tables-1.html#cb36-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ROUND</span>(<span class="fu">MIN</span>(ST_distance(name_one.geog, name_two.geog)) <span class="op">/</span> <span class="dv">100</span>) <span class="op">/</span> <span class="dv">10</span> <span class="kw">AS</span> closest,</span>
+<span id="cb36-8"><a href="site-related-tables-1.html#cb36-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">+</span> <span class="dv">1</span> <span class="kw">AS</span> sites</span>
+<span id="cb36-9"><a href="site-related-tables-1.html#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> cleannames <span class="kw">AS</span> name_one</span>
+<span id="cb36-10"><a href="site-related-tables-1.html#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> cleannames <span class="kw">AS</span> name_two <span class="kw">ON</span> name_one.cleanname <span class="op">=</span> name_two.cleanname</span>
+<span id="cb36-11"><a href="site-related-tables-1.html#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> name_one.siteid <span class="op">&lt;</span> name_two.siteid</span>
+<span id="cb36-12"><a href="site-related-tables-1.html#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> name_one.cleanname</span>
+<span id="cb36-13"><a href="site-related-tables-1.html#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> sites <span class="kw">DESC</span>, cleanname</span>
+<span id="cb36-14"><a href="site-related-tables-1.html#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">15</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:dubsitedistanceSQL">Table 10.6: </span>Displaying records 1 - 10</caption>
@@ -1129,7 +1165,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

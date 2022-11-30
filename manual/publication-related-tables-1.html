@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Publication Related Tables | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Publication Related Tables | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2022-07-22" />
+<meta name="date" content="2022-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,16 +49,15 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.23/datatables.js"></script>
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
@@ -67,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -100,7 +100,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +113,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -404,8 +426,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Cummings, L. S. 1996. Paleoenvironmental interpretations for the Mill Iron site: stratigraphic pollen and phyrolith analysis. Pages 177-193 in G. C. Frison, editor. The Mill Iron site. University of New Mexico Press, Albuquerque, New Mexico, USA.</p>
 </blockquote>
-<div id="htmlwidget-5c264fb43da8fbf92613" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5c264fb43da8fbf92613">{"x":{"filter":"none","vertical":false,"data":[["authorid","publicationid","authororder","familyname","initials","suffix","contactid","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","character varying(8)","character varying(8)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationauthors_pkey","fk_publicationauthors_publications","","","","","fk_publicationauthors_contacts","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4e74a5440373f14319dc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4e74a5440373f14319dc">{"x":{"filter":"none","vertical":false,"data":[["authorid","publicationid","authororder","familyname","initials","suffix","contactid","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","character varying(8)","character varying(8)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationauthors_pkey","fk_publicationauthors_publications","","","","","fk_publicationauthors_contacts","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>authorid</code> (Primary Key)</strong>: An arbitrary Author identification number.</li>
 <li><strong><code>publicationid</code> (foreign key)</strong>: Publication identification number. Field links to the <a href="#publications"><code>publications</code></a> table.</li>
@@ -418,19 +440,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sql-example-8" class="section level3 hasAnchor" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> SQL Example<a href="publication-related-tables-1.html#sql-example-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following query lists authors of publications from the province of Ontario, and provides the publicationids as an array, along with a total count of the publications they have authored about sites in the province:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb15-1"><a href="publication-related-tables-1.html#cb15-1" aria-hidden="true"></a><span class="kw">SELECT</span> ct.contactname, array_agg(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">AS</span> publications, <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">AS</span> pubcount</span>
-<span id="cb15-2"><a href="publication-related-tables-1.html#cb15-2" aria-hidden="true"></a><span class="kw">FROM</span>         ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb15-3"><a href="publication-related-tables-1.html#cb15-3" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>    ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span>  sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</span>
-<span id="cb15-4"><a href="publication-related-tables-1.html#cb15-4" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.collectionunits <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> sgp.siteid</span>
-<span id="cb15-5"><a href="publication-related-tables-1.html#cb15-5" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.datasets <span class="kw">AS</span>  ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb15-6"><a href="publication-related-tables-1.html#cb15-6" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetpublications <span class="kw">AS</span> dsp <span class="kw">ON</span>       dsp.datasetid <span class="op">=</span> ds.datasetid</span>
-<span id="cb15-7"><a href="publication-related-tables-1.html#cb15-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>  ndb.publicationauthors <span class="kw">AS</span>  pa <span class="kw">ON</span>    pa.publicationid <span class="op">=</span> dsp.publicationid</span>
-<span id="cb15-8"><a href="publication-related-tables-1.html#cb15-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.contacts <span class="kw">AS</span>  ct <span class="kw">ON</span>        ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb15-9"><a href="publication-related-tables-1.html#cb15-9" aria-hidden="true"></a><span class="kw">WHERE</span> gpu.geopoliticalname <span class="op">=</span> <span class="st">&#39;Ontario&#39;</span> </span>
-<span id="cb15-10"><a href="publication-related-tables-1.html#cb15-10" aria-hidden="true"></a>  <span class="kw">AND</span> gpu.<span class="fu">rank</span> <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb15-11"><a href="publication-related-tables-1.html#cb15-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ct.contactname</span>
-<span id="cb15-12"><a href="publication-related-tables-1.html#cb15-12" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">DESC</span></span>
-<span id="cb15-13"><a href="publication-related-tables-1.html#cb15-13" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb15-1"><a href="publication-related-tables-1.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ct.contactname, array_agg(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">AS</span> publications, <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">AS</span> pubcount</span>
+<span id="cb15-2"><a href="publication-related-tables-1.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>         ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb15-3"><a href="publication-related-tables-1.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>    ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span>  sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</span>
+<span id="cb15-4"><a href="publication-related-tables-1.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.collectionunits <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> sgp.siteid</span>
+<span id="cb15-5"><a href="publication-related-tables-1.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.datasets <span class="kw">AS</span>  ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb15-6"><a href="publication-related-tables-1.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetpublications <span class="kw">AS</span> dsp <span class="kw">ON</span>       dsp.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb15-7"><a href="publication-related-tables-1.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>  ndb.publicationauthors <span class="kw">AS</span>  pa <span class="kw">ON</span>    pa.publicationid <span class="op">=</span> dsp.publicationid</span>
+<span id="cb15-8"><a href="publication-related-tables-1.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.contacts <span class="kw">AS</span>  ct <span class="kw">ON</span>        ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb15-9"><a href="publication-related-tables-1.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> gpu.geopoliticalname <span class="op">=</span> <span class="st">&#39;Ontario&#39;</span> </span>
+<span id="cb15-10"><a href="publication-related-tables-1.html#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> gpu.<span class="fu">rank</span> <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb15-11"><a href="publication-related-tables-1.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ct.contactname</span>
+<span id="cb15-12"><a href="publication-related-tables-1.html#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> pa.publicationid) <span class="kw">DESC</span></span>
+<span id="cb15-13"><a href="publication-related-tables-1.html#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:authnames">Table 8.1: </span>Displaying records 1 - 10</caption>
@@ -505,8 +527,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="publicationeditors" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> <code>publicationeditors</code><a href="publication-related-tables-1.html#publicationeditors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores the editors of publications for which chapters or sections are the primary bibliographic entries. Chapter authors are stored in the PublicatonAuthors table, where they are linked to the <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table. However, publication editors are not cross-referenced in the <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table, because chapter authors are the principal citation.</p>
-<div id="htmlwidget-64a2bef62186c3cbeee7" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-64a2bef62186c3cbeee7">{"x":{"filter":"none","vertical":false,"data":[["editorid","publicationid","editororder","familyname","initials","suffix","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","character varying(8)","character varying(8)","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationeditors_pkey","fk_publicationeditors_publications","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e5f08d7627b5ea161456" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e5f08d7627b5ea161456">{"x":{"filter":"none","vertical":false,"data":[["editorid","publicationid","editororder","familyname","initials","suffix","recdatecreated","recdatemodified"],["integer","integer","integer","character varying(64)","character varying(8)","character varying(8)","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationeditors_pkey","fk_publicationeditors_publications","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>editorid (primary key)</code></strong>: An arbitrary Editor identification number.</li>
 <li><strong><code>publicationid (foreign key)</code></strong>: Publication identification number. Field links to the <a href="publication-related-tables-1.html#Publications"><code>publications</code></a> table.</li>
@@ -523,8 +545,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The merged databases used different bibliographic styles, and data entry personnel working on the same database sometimes followed different conventions. Consequently, the current bibliographic entries are not stylistically uniform. Eventually, the legacy bibliographic data will be parsed into separate fields.</p>
 <p>The Publications table has fields to accommodate a number of different types of publications. Some fields contain different kinds of data for different kinds of publications. For example, the BookTitle field stores the titles of books, but stores the journal name for journal articles. The Publisher field stores the name of the publisher for books, but the name of the university for theses and dissertations.</p>
 <p>Authors are stored in the <a href="#PublicationAuthors"><code>publicationauthors</code></a> table. Editors are also stored in the <a href="#PublicationAuthors"><code>publicationauthors</code></a> table if the entire publication is cited. The <a href="#PublicationAuthors"><code>publicationauthors</code></a> table has a ContactID field, which links to the <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table, where full names and contact information is stored for authors and editors. The PubTypeID «Authored Book» or «Edited Book» indicates whether the PublicationAuathors records are authors or editors. If a book chapter or section is the primary bibliographic entry, then the book editors are stored in the <a href="#PublicationEditors"><code>publicationeditors</code></a> table, which does not have a ContactID field.</p>
-<div id="htmlwidget-fdb08293beaeaf3abc79" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fdb08293beaeaf3abc79">{"x":{"filter":"none","vertical":false,"data":[["publicationid","pubtypeid","year","citation","articletitle","journal","volume","issue","pages","citationnumber","doi","booktitle","numvolumes","edition","volumetitle","seriestitle","seriesvolume","publisher","url","city","state","country","originallanguage","notes","recdatecreated","recdatemodified"],["integer","integer","character varying(64)","text","text","text","character varying(16)","character varying(8)","character varying(24)","character varying(24)","character varying(128)","text","character varying(8)","character varying(24)","text","text","character varying(24)","character varying(255)","text","character varying(64)","character varying(64)","character varying(64)","character varying(64)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["publications_pkey","pub_pty","","","","","","","","","","","","","","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d798ea51448203ee39b2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d798ea51448203ee39b2">{"x":{"filter":"none","vertical":false,"data":[["publicationid","pubtypeid","year","citation","articletitle","journal","volume","issue","pages","citationnumber","doi","booktitle","numvolumes","edition","volumetitle","seriestitle","seriesvolume","publisher","url","city","state","country","originallanguage","notes","recdatecreated","recdatemodified"],["integer","integer","character varying(64)","text","text","text","character varying(16)","character varying(8)","character varying(24)","character varying(24)","character varying(128)","text","character varying(8)","character varying(24)","text","text","character varying(24)","character varying(255)","text","character varying(64)","character varying(64)","character varying(64)","character varying(64)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["publications_pkey","pub_pty","","","","","","","","","","","","","","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><p><strong><code>publicationid (primary key)</code></strong>: An arbitrary Publication identification number.</p></li>
 <li><p><strong><code>pubtypeid (foreign key)</code></strong>: Publication type. Field links to the <a href="publication-related-tables-1.html#PublicationTypes"><code>publicationtypes</code></a> lookup table.</p></li>
@@ -571,8 +593,8 @@ referenced. An example of NumVolumes and Edition:</p>
 <div id="PublicationTypes" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> <code>publicationtypes</code><a href="publication-related-tables-1.html#PublicationTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of publication types. This table is referenced by the <a href="publication-related-tables-1.html#Publications"><code>publications</code></a> table.</p>
-<div id="htmlwidget-33f8d13d826e88d01c21" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-33f8d13d826e88d01c21">{"x":{"filter":"none","vertical":false,"data":[["pubtypeid","pubtype","recdatecreated","recdatemodified"],["integer","character varying(24)","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationtypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fc93d66a8e59241cd6b3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fc93d66a8e59241cd6b3">{"x":{"filter":"none","vertical":false,"data":[["pubtypeid","pubtype","recdatecreated","recdatemodified"],["integer","character varying(24)","timestamp(0) without time zone","timestamp(0) without time zone"],["publicationtypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>pubtypeid</code></strong>: An arbitrary Publication Type identification number.</li>
 <li><strong><code>pubtype</code></strong>: Publication Type. The database has the following types:
@@ -591,14 +613,14 @@ referenced. An example of NumVolumes and Edition:</p>
 <div id="legacy" class="section level3 hasAnchor" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Legacy<a href="publication-related-tables-1.html#legacy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Legacy citation ingested from another database and not parsed into separate fields:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb16-1"><a href="publication-related-tables-1.html#cb16-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, ARRAY_AGG(ct.contactname), pub.<span class="dt">year</span>, pub.citation</span>
-<span id="cb16-2"><a href="publication-related-tables-1.html#cb16-2" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb16-3"><a href="publication-related-tables-1.html#cb16-3" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb16-4"><a href="publication-related-tables-1.html#cb16-4" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb16-5"><a href="publication-related-tables-1.html#cb16-5" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb16-6"><a href="publication-related-tables-1.html#cb16-6" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Legacy&#39;</span></span>
-<span id="cb16-7"><a href="publication-related-tables-1.html#cb16-7" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb16-8"><a href="publication-related-tables-1.html#cb16-8" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb16-1"><a href="publication-related-tables-1.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, ARRAY_AGG(ct.contactname), pub.<span class="dt">year</span>, pub.citation</span>
+<span id="cb16-2"><a href="publication-related-tables-1.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb16-3"><a href="publication-related-tables-1.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb16-4"><a href="publication-related-tables-1.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb16-5"><a href="publication-related-tables-1.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb16-6"><a href="publication-related-tables-1.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Legacy&#39;</span></span>
+<span id="cb16-7"><a href="publication-related-tables-1.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb16-8"><a href="publication-related-tables-1.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:legpub">Table 8.2: </span>1 records</caption>
@@ -630,22 +652,22 @@ referenced. An example of NumVolumes and Edition:</p>
 <div id="journal-article" class="section level3 hasAnchor" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Journal Article<a href="publication-related-tables-1.html#journal-article" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Articles published in a journal.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb17-1"><a href="publication-related-tables-1.html#cb17-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb17-2"><a href="publication-related-tables-1.html#cb17-2" aria-hidden="true"></a>       ARRAY_AGG(ct.contactname),</span>
-<span id="cb17-3"><a href="publication-related-tables-1.html#cb17-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb17-4"><a href="publication-related-tables-1.html#cb17-4" aria-hidden="true"></a>       pub.articletitle,</span>
-<span id="cb17-5"><a href="publication-related-tables-1.html#cb17-5" aria-hidden="true"></a>       pub.journal,</span>
-<span id="cb17-6"><a href="publication-related-tables-1.html#cb17-6" aria-hidden="true"></a>       pub.volume,</span>
-<span id="cb17-7"><a href="publication-related-tables-1.html#cb17-7" aria-hidden="true"></a>       pub.issue,</span>
-<span id="cb17-8"><a href="publication-related-tables-1.html#cb17-8" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb17-9"><a href="publication-related-tables-1.html#cb17-9" aria-hidden="true"></a>       pub.doi</span>
-<span id="cb17-10"><a href="publication-related-tables-1.html#cb17-10" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb17-11"><a href="publication-related-tables-1.html#cb17-11" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb17-12"><a href="publication-related-tables-1.html#cb17-12" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb17-13"><a href="publication-related-tables-1.html#cb17-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb17-14"><a href="publication-related-tables-1.html#cb17-14" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Journal Article&#39;</span></span>
-<span id="cb17-15"><a href="publication-related-tables-1.html#cb17-15" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb17-16"><a href="publication-related-tables-1.html#cb17-16" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb17-1"><a href="publication-related-tables-1.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb17-2"><a href="publication-related-tables-1.html#cb17-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(ct.contactname),</span>
+<span id="cb17-3"><a href="publication-related-tables-1.html#cb17-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb17-4"><a href="publication-related-tables-1.html#cb17-4" aria-hidden="true" tabindex="-1"></a>       pub.articletitle,</span>
+<span id="cb17-5"><a href="publication-related-tables-1.html#cb17-5" aria-hidden="true" tabindex="-1"></a>       pub.journal,</span>
+<span id="cb17-6"><a href="publication-related-tables-1.html#cb17-6" aria-hidden="true" tabindex="-1"></a>       pub.volume,</span>
+<span id="cb17-7"><a href="publication-related-tables-1.html#cb17-7" aria-hidden="true" tabindex="-1"></a>       pub.issue,</span>
+<span id="cb17-8"><a href="publication-related-tables-1.html#cb17-8" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb17-9"><a href="publication-related-tables-1.html#cb17-9" aria-hidden="true" tabindex="-1"></a>       pub.doi</span>
+<span id="cb17-10"><a href="publication-related-tables-1.html#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb17-11"><a href="publication-related-tables-1.html#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb17-12"><a href="publication-related-tables-1.html#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb17-13"><a href="publication-related-tables-1.html#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb17-14"><a href="publication-related-tables-1.html#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Journal Article&#39;</span></span>
+<span id="cb17-15"><a href="publication-related-tables-1.html#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb17-16"><a href="publication-related-tables-1.html#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table style="width:100%;">
 <caption><span id="tab:journalpub">Table 8.3: </span>3 records</caption>
@@ -676,7 +698,7 @@ referenced. An example of NumVolumes and Edition:</p>
 <tbody>
 <tr class="odd">
 <td align="left">4</td>
-<td align="left">{“Outes, Valeria”,“Villarosa, Gustavo”,“Whitlock, Cathy”,“Nanavati, William, P.”}</td>
+<td align="left">{“Whitlock, Cathy”,“Villarosa, Gustavo”,“Nanavati, William, P.”,“Outes, Valeria”}</td>
 <td align="left">2011</td>
 <td align="left">Diatom-inferred wind activity at Lac du Sommet, southern Québec, Canada: A multiproxy paleoclimate reconstruction based on diatoms, chironomids, and pollen for the past 9500 years</td>
 <td align="left">The Holocene</td>
@@ -714,30 +736,30 @@ referenced. An example of NumVolumes and Edition:</p>
 <div id="book-chapter" class="section level3 hasAnchor" number="8.4.3">
 <h3><span class="header-section-number">8.4.3</span> Book Chapter<a href="publication-related-tables-1.html#book-chapter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Chapter or section in an edited book.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb18-1"><a href="publication-related-tables-1.html#cb18-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb18-2"><a href="publication-related-tables-1.html#cb18-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb18-3"><a href="publication-related-tables-1.html#cb18-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb18-4"><a href="publication-related-tables-1.html#cb18-4" aria-hidden="true"></a>       pub.articletitle,</span>
-<span id="cb18-5"><a href="publication-related-tables-1.html#cb18-5" aria-hidden="true"></a>       ARRAY_AGG(pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
-<span id="cb18-6"><a href="publication-related-tables-1.html#cb18-6" aria-hidden="true"></a>       pub.volume,</span>
-<span id="cb18-7"><a href="publication-related-tables-1.html#cb18-7" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb18-8"><a href="publication-related-tables-1.html#cb18-8" aria-hidden="true"></a>       pub.booktitle,</span>
-<span id="cb18-9"><a href="publication-related-tables-1.html#cb18-9" aria-hidden="true"></a>       pub.edition,</span>
-<span id="cb18-10"><a href="publication-related-tables-1.html#cb18-10" aria-hidden="true"></a>       pub.volumetitle,</span>
-<span id="cb18-11"><a href="publication-related-tables-1.html#cb18-11" aria-hidden="true"></a>       pub.seriestitle,</span>
-<span id="cb18-12"><a href="publication-related-tables-1.html#cb18-12" aria-hidden="true"></a>       pub.seriesvolume,</span>
-<span id="cb18-13"><a href="publication-related-tables-1.html#cb18-13" aria-hidden="true"></a>       pub.publisher,</span>
-<span id="cb18-14"><a href="publication-related-tables-1.html#cb18-14" aria-hidden="true"></a>       pub.city,</span>
-<span id="cb18-15"><a href="publication-related-tables-1.html#cb18-15" aria-hidden="true"></a>       pub.state,</span>
-<span id="cb18-16"><a href="publication-related-tables-1.html#cb18-16" aria-hidden="true"></a>       pub.country</span>
-<span id="cb18-17"><a href="publication-related-tables-1.html#cb18-17" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb18-18"><a href="publication-related-tables-1.html#cb18-18" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb18-19"><a href="publication-related-tables-1.html#cb18-19" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb18-20"><a href="publication-related-tables-1.html#cb18-20" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb18-21"><a href="publication-related-tables-1.html#cb18-21" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb18-22"><a href="publication-related-tables-1.html#cb18-22" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Book Chapter&#39;</span></span>
-<span id="cb18-23"><a href="publication-related-tables-1.html#cb18-23" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb18-24"><a href="publication-related-tables-1.html#cb18-24" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb18-1"><a href="publication-related-tables-1.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb18-2"><a href="publication-related-tables-1.html#cb18-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb18-3"><a href="publication-related-tables-1.html#cb18-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb18-4"><a href="publication-related-tables-1.html#cb18-4" aria-hidden="true" tabindex="-1"></a>       pub.articletitle,</span>
+<span id="cb18-5"><a href="publication-related-tables-1.html#cb18-5" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
+<span id="cb18-6"><a href="publication-related-tables-1.html#cb18-6" aria-hidden="true" tabindex="-1"></a>       pub.volume,</span>
+<span id="cb18-7"><a href="publication-related-tables-1.html#cb18-7" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb18-8"><a href="publication-related-tables-1.html#cb18-8" aria-hidden="true" tabindex="-1"></a>       pub.booktitle,</span>
+<span id="cb18-9"><a href="publication-related-tables-1.html#cb18-9" aria-hidden="true" tabindex="-1"></a>       pub.edition,</span>
+<span id="cb18-10"><a href="publication-related-tables-1.html#cb18-10" aria-hidden="true" tabindex="-1"></a>       pub.volumetitle,</span>
+<span id="cb18-11"><a href="publication-related-tables-1.html#cb18-11" aria-hidden="true" tabindex="-1"></a>       pub.seriestitle,</span>
+<span id="cb18-12"><a href="publication-related-tables-1.html#cb18-12" aria-hidden="true" tabindex="-1"></a>       pub.seriesvolume,</span>
+<span id="cb18-13"><a href="publication-related-tables-1.html#cb18-13" aria-hidden="true" tabindex="-1"></a>       pub.publisher,</span>
+<span id="cb18-14"><a href="publication-related-tables-1.html#cb18-14" aria-hidden="true" tabindex="-1"></a>       pub.city,</span>
+<span id="cb18-15"><a href="publication-related-tables-1.html#cb18-15" aria-hidden="true" tabindex="-1"></a>       pub.state,</span>
+<span id="cb18-16"><a href="publication-related-tables-1.html#cb18-16" aria-hidden="true" tabindex="-1"></a>       pub.country</span>
+<span id="cb18-17"><a href="publication-related-tables-1.html#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb18-18"><a href="publication-related-tables-1.html#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb18-19"><a href="publication-related-tables-1.html#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb18-20"><a href="publication-related-tables-1.html#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb18-21"><a href="publication-related-tables-1.html#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb18-22"><a href="publication-related-tables-1.html#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Book Chapter&#39;</span></span>
+<span id="cb18-23"><a href="publication-related-tables-1.html#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb18-24"><a href="publication-related-tables-1.html#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:bookchpub">Table 8.4: </span>3 records</caption>
@@ -841,27 +863,27 @@ referenced. An example of NumVolumes and Edition:</p>
 <div id="authored-book" class="section level3 hasAnchor" number="8.4.4">
 <h3><span class="header-section-number">8.4.4</span> Authored Book<a href="publication-related-tables-1.html#authored-book" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A book published by a single, or multiple authors.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb19-1"><a href="publication-related-tables-1.html#cb19-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb19-2"><a href="publication-related-tables-1.html#cb19-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb19-3"><a href="publication-related-tables-1.html#cb19-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb19-4"><a href="publication-related-tables-1.html#cb19-4" aria-hidden="true"></a>       pub.volume,</span>
-<span id="cb19-5"><a href="publication-related-tables-1.html#cb19-5" aria-hidden="true"></a>       pub.booktitle,</span>
-<span id="cb19-6"><a href="publication-related-tables-1.html#cb19-6" aria-hidden="true"></a>       pub.edition,</span>
-<span id="cb19-7"><a href="publication-related-tables-1.html#cb19-7" aria-hidden="true"></a>       pub.numvolumes,</span>
-<span id="cb19-8"><a href="publication-related-tables-1.html#cb19-8" aria-hidden="true"></a>       pub.volumetitle,</span>
-<span id="cb19-9"><a href="publication-related-tables-1.html#cb19-9" aria-hidden="true"></a>       pub.seriestitle,</span>
-<span id="cb19-10"><a href="publication-related-tables-1.html#cb19-10" aria-hidden="true"></a>       pub.seriesvolume,</span>
-<span id="cb19-11"><a href="publication-related-tables-1.html#cb19-11" aria-hidden="true"></a>       pub.publisher,</span>
-<span id="cb19-12"><a href="publication-related-tables-1.html#cb19-12" aria-hidden="true"></a>       pub.city,</span>
-<span id="cb19-13"><a href="publication-related-tables-1.html#cb19-13" aria-hidden="true"></a>       pub.state,</span>
-<span id="cb19-14"><a href="publication-related-tables-1.html#cb19-14" aria-hidden="true"></a>       pub.country</span>
-<span id="cb19-15"><a href="publication-related-tables-1.html#cb19-15" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb19-16"><a href="publication-related-tables-1.html#cb19-16" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb19-17"><a href="publication-related-tables-1.html#cb19-17" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb19-18"><a href="publication-related-tables-1.html#cb19-18" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb19-19"><a href="publication-related-tables-1.html#cb19-19" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Authored Book&#39;</span></span>
-<span id="cb19-20"><a href="publication-related-tables-1.html#cb19-20" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb19-21"><a href="publication-related-tables-1.html#cb19-21" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb19-1"><a href="publication-related-tables-1.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb19-2"><a href="publication-related-tables-1.html#cb19-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb19-3"><a href="publication-related-tables-1.html#cb19-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb19-4"><a href="publication-related-tables-1.html#cb19-4" aria-hidden="true" tabindex="-1"></a>       pub.volume,</span>
+<span id="cb19-5"><a href="publication-related-tables-1.html#cb19-5" aria-hidden="true" tabindex="-1"></a>       pub.booktitle,</span>
+<span id="cb19-6"><a href="publication-related-tables-1.html#cb19-6" aria-hidden="true" tabindex="-1"></a>       pub.edition,</span>
+<span id="cb19-7"><a href="publication-related-tables-1.html#cb19-7" aria-hidden="true" tabindex="-1"></a>       pub.numvolumes,</span>
+<span id="cb19-8"><a href="publication-related-tables-1.html#cb19-8" aria-hidden="true" tabindex="-1"></a>       pub.volumetitle,</span>
+<span id="cb19-9"><a href="publication-related-tables-1.html#cb19-9" aria-hidden="true" tabindex="-1"></a>       pub.seriestitle,</span>
+<span id="cb19-10"><a href="publication-related-tables-1.html#cb19-10" aria-hidden="true" tabindex="-1"></a>       pub.seriesvolume,</span>
+<span id="cb19-11"><a href="publication-related-tables-1.html#cb19-11" aria-hidden="true" tabindex="-1"></a>       pub.publisher,</span>
+<span id="cb19-12"><a href="publication-related-tables-1.html#cb19-12" aria-hidden="true" tabindex="-1"></a>       pub.city,</span>
+<span id="cb19-13"><a href="publication-related-tables-1.html#cb19-13" aria-hidden="true" tabindex="-1"></a>       pub.state,</span>
+<span id="cb19-14"><a href="publication-related-tables-1.html#cb19-14" aria-hidden="true" tabindex="-1"></a>       pub.country</span>
+<span id="cb19-15"><a href="publication-related-tables-1.html#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb19-16"><a href="publication-related-tables-1.html#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb19-17"><a href="publication-related-tables-1.html#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb19-18"><a href="publication-related-tables-1.html#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb19-19"><a href="publication-related-tables-1.html#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Authored Book&#39;</span></span>
+<span id="cb19-20"><a href="publication-related-tables-1.html#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb19-21"><a href="publication-related-tables-1.html#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table style="width:100%;">
 <caption><span id="tab:authbookpub">Table 8.5: </span>3 records</caption>
@@ -954,29 +976,29 @@ referenced. An example of NumVolumes and Edition:</p>
 </div>
 <div id="edited-book" class="section level3 hasAnchor" number="8.4.5">
 <h3><span class="header-section-number">8.4.5</span> Edited Book<a href="publication-related-tables-1.html#edited-book" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb20-1"><a href="publication-related-tables-1.html#cb20-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb20-2"><a href="publication-related-tables-1.html#cb20-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb20-3"><a href="publication-related-tables-1.html#cb20-3" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
-<span id="cb20-4"><a href="publication-related-tables-1.html#cb20-4" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb20-5"><a href="publication-related-tables-1.html#cb20-5" aria-hidden="true"></a>       pub.volume,</span>
-<span id="cb20-6"><a href="publication-related-tables-1.html#cb20-6" aria-hidden="true"></a>       pub.booktitle,</span>
-<span id="cb20-7"><a href="publication-related-tables-1.html#cb20-7" aria-hidden="true"></a>       pub.edition,</span>
-<span id="cb20-8"><a href="publication-related-tables-1.html#cb20-8" aria-hidden="true"></a>       pub.numvolumes,</span>
-<span id="cb20-9"><a href="publication-related-tables-1.html#cb20-9" aria-hidden="true"></a>       pub.volumetitle,</span>
-<span id="cb20-10"><a href="publication-related-tables-1.html#cb20-10" aria-hidden="true"></a>       pub.seriestitle,</span>
-<span id="cb20-11"><a href="publication-related-tables-1.html#cb20-11" aria-hidden="true"></a>       pub.seriesvolume,</span>
-<span id="cb20-12"><a href="publication-related-tables-1.html#cb20-12" aria-hidden="true"></a>       pub.publisher,</span>
-<span id="cb20-13"><a href="publication-related-tables-1.html#cb20-13" aria-hidden="true"></a>       pub.city,</span>
-<span id="cb20-14"><a href="publication-related-tables-1.html#cb20-14" aria-hidden="true"></a>       pub.state,</span>
-<span id="cb20-15"><a href="publication-related-tables-1.html#cb20-15" aria-hidden="true"></a>       pub.country</span>
-<span id="cb20-16"><a href="publication-related-tables-1.html#cb20-16" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb20-17"><a href="publication-related-tables-1.html#cb20-17" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb20-18"><a href="publication-related-tables-1.html#cb20-18" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb20-19"><a href="publication-related-tables-1.html#cb20-19" aria-hidden="true"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb20-20"><a href="publication-related-tables-1.html#cb20-20" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb20-21"><a href="publication-related-tables-1.html#cb20-21" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Edited Book&#39;</span></span>
-<span id="cb20-22"><a href="publication-related-tables-1.html#cb20-22" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb20-23"><a href="publication-related-tables-1.html#cb20-23" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb20-1"><a href="publication-related-tables-1.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb20-2"><a href="publication-related-tables-1.html#cb20-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb20-3"><a href="publication-related-tables-1.html#cb20-3" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
+<span id="cb20-4"><a href="publication-related-tables-1.html#cb20-4" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb20-5"><a href="publication-related-tables-1.html#cb20-5" aria-hidden="true" tabindex="-1"></a>       pub.volume,</span>
+<span id="cb20-6"><a href="publication-related-tables-1.html#cb20-6" aria-hidden="true" tabindex="-1"></a>       pub.booktitle,</span>
+<span id="cb20-7"><a href="publication-related-tables-1.html#cb20-7" aria-hidden="true" tabindex="-1"></a>       pub.edition,</span>
+<span id="cb20-8"><a href="publication-related-tables-1.html#cb20-8" aria-hidden="true" tabindex="-1"></a>       pub.numvolumes,</span>
+<span id="cb20-9"><a href="publication-related-tables-1.html#cb20-9" aria-hidden="true" tabindex="-1"></a>       pub.volumetitle,</span>
+<span id="cb20-10"><a href="publication-related-tables-1.html#cb20-10" aria-hidden="true" tabindex="-1"></a>       pub.seriestitle,</span>
+<span id="cb20-11"><a href="publication-related-tables-1.html#cb20-11" aria-hidden="true" tabindex="-1"></a>       pub.seriesvolume,</span>
+<span id="cb20-12"><a href="publication-related-tables-1.html#cb20-12" aria-hidden="true" tabindex="-1"></a>       pub.publisher,</span>
+<span id="cb20-13"><a href="publication-related-tables-1.html#cb20-13" aria-hidden="true" tabindex="-1"></a>       pub.city,</span>
+<span id="cb20-14"><a href="publication-related-tables-1.html#cb20-14" aria-hidden="true" tabindex="-1"></a>       pub.state,</span>
+<span id="cb20-15"><a href="publication-related-tables-1.html#cb20-15" aria-hidden="true" tabindex="-1"></a>       pub.country</span>
+<span id="cb20-16"><a href="publication-related-tables-1.html#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb20-17"><a href="publication-related-tables-1.html#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb20-18"><a href="publication-related-tables-1.html#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb20-19"><a href="publication-related-tables-1.html#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb20-20"><a href="publication-related-tables-1.html#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb20-21"><a href="publication-related-tables-1.html#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Edited Book&#39;</span></span>
+<span id="cb20-22"><a href="publication-related-tables-1.html#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb20-23"><a href="publication-related-tables-1.html#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:edbookpub">Table 8.6: </span>3 records</caption>
@@ -1074,22 +1096,22 @@ referenced. An example of NumVolumes and Edition:</p>
 </div>
 <div id="masters-thesis" class="section level3 hasAnchor" number="8.4.6">
 <h3><span class="header-section-number">8.4.6</span> Master’s Thesis<a href="publication-related-tables-1.html#masters-thesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb21-1"><a href="publication-related-tables-1.html#cb21-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb21-2"><a href="publication-related-tables-1.html#cb21-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb21-3"><a href="publication-related-tables-1.html#cb21-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb21-4"><a href="publication-related-tables-1.html#cb21-4" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb21-5"><a href="publication-related-tables-1.html#cb21-5" aria-hidden="true"></a>       pub.articletitle,</span>
-<span id="cb21-6"><a href="publication-related-tables-1.html#cb21-6" aria-hidden="true"></a>       pub.publisher,</span>
-<span id="cb21-7"><a href="publication-related-tables-1.html#cb21-7" aria-hidden="true"></a>       pub.city,</span>
-<span id="cb21-8"><a href="publication-related-tables-1.html#cb21-8" aria-hidden="true"></a>       pub.state,</span>
-<span id="cb21-9"><a href="publication-related-tables-1.html#cb21-9" aria-hidden="true"></a>       pub.country</span>
-<span id="cb21-10"><a href="publication-related-tables-1.html#cb21-10" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb21-11"><a href="publication-related-tables-1.html#cb21-11" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb21-12"><a href="publication-related-tables-1.html#cb21-12" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb21-13"><a href="publication-related-tables-1.html#cb21-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb21-14"><a href="publication-related-tables-1.html#cb21-14" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Master</span><span class="ch">&#39;&#39;</span><span class="st">s Thesis&#39;</span></span>
-<span id="cb21-15"><a href="publication-related-tables-1.html#cb21-15" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb21-16"><a href="publication-related-tables-1.html#cb21-16" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb21-1"><a href="publication-related-tables-1.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb21-2"><a href="publication-related-tables-1.html#cb21-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb21-3"><a href="publication-related-tables-1.html#cb21-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb21-4"><a href="publication-related-tables-1.html#cb21-4" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb21-5"><a href="publication-related-tables-1.html#cb21-5" aria-hidden="true" tabindex="-1"></a>       pub.articletitle,</span>
+<span id="cb21-6"><a href="publication-related-tables-1.html#cb21-6" aria-hidden="true" tabindex="-1"></a>       pub.publisher,</span>
+<span id="cb21-7"><a href="publication-related-tables-1.html#cb21-7" aria-hidden="true" tabindex="-1"></a>       pub.city,</span>
+<span id="cb21-8"><a href="publication-related-tables-1.html#cb21-8" aria-hidden="true" tabindex="-1"></a>       pub.state,</span>
+<span id="cb21-9"><a href="publication-related-tables-1.html#cb21-9" aria-hidden="true" tabindex="-1"></a>       pub.country</span>
+<span id="cb21-10"><a href="publication-related-tables-1.html#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb21-11"><a href="publication-related-tables-1.html#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb21-12"><a href="publication-related-tables-1.html#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb21-13"><a href="publication-related-tables-1.html#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb21-14"><a href="publication-related-tables-1.html#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Master</span><span class="ch">&#39;&#39;</span><span class="st">s Thesis&#39;</span></span>
+<span id="cb21-15"><a href="publication-related-tables-1.html#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb21-16"><a href="publication-related-tables-1.html#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:mtpub">Table 8.7: </span>3 records</caption>
@@ -1157,22 +1179,22 @@ referenced. An example of NumVolumes and Edition:</p>
 </div>
 <div id="doctoral-dissertation" class="section level3 hasAnchor" number="8.4.7">
 <h3><span class="header-section-number">8.4.7</span> Doctoral Dissertation<a href="publication-related-tables-1.html#doctoral-dissertation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb22-1"><a href="publication-related-tables-1.html#cb22-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb22-2"><a href="publication-related-tables-1.html#cb22-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb22-3"><a href="publication-related-tables-1.html#cb22-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb22-4"><a href="publication-related-tables-1.html#cb22-4" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb22-5"><a href="publication-related-tables-1.html#cb22-5" aria-hidden="true"></a>       pub.articletitle,</span>
-<span id="cb22-6"><a href="publication-related-tables-1.html#cb22-6" aria-hidden="true"></a>       pub.publisher,</span>
-<span id="cb22-7"><a href="publication-related-tables-1.html#cb22-7" aria-hidden="true"></a>       pub.city,</span>
-<span id="cb22-8"><a href="publication-related-tables-1.html#cb22-8" aria-hidden="true"></a>       pub.state,</span>
-<span id="cb22-9"><a href="publication-related-tables-1.html#cb22-9" aria-hidden="true"></a>       pub.country</span>
-<span id="cb22-10"><a href="publication-related-tables-1.html#cb22-10" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb22-11"><a href="publication-related-tables-1.html#cb22-11" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb22-12"><a href="publication-related-tables-1.html#cb22-12" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb22-13"><a href="publication-related-tables-1.html#cb22-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb22-14"><a href="publication-related-tables-1.html#cb22-14" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Master</span><span class="ch">&#39;&#39;</span><span class="st">s Thesis&#39;</span></span>
-<span id="cb22-15"><a href="publication-related-tables-1.html#cb22-15" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb22-16"><a href="publication-related-tables-1.html#cb22-16" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb22-1"><a href="publication-related-tables-1.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb22-2"><a href="publication-related-tables-1.html#cb22-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb22-3"><a href="publication-related-tables-1.html#cb22-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb22-4"><a href="publication-related-tables-1.html#cb22-4" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb22-5"><a href="publication-related-tables-1.html#cb22-5" aria-hidden="true" tabindex="-1"></a>       pub.articletitle,</span>
+<span id="cb22-6"><a href="publication-related-tables-1.html#cb22-6" aria-hidden="true" tabindex="-1"></a>       pub.publisher,</span>
+<span id="cb22-7"><a href="publication-related-tables-1.html#cb22-7" aria-hidden="true" tabindex="-1"></a>       pub.city,</span>
+<span id="cb22-8"><a href="publication-related-tables-1.html#cb22-8" aria-hidden="true" tabindex="-1"></a>       pub.state,</span>
+<span id="cb22-9"><a href="publication-related-tables-1.html#cb22-9" aria-hidden="true" tabindex="-1"></a>       pub.country</span>
+<span id="cb22-10"><a href="publication-related-tables-1.html#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb22-11"><a href="publication-related-tables-1.html#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb22-12"><a href="publication-related-tables-1.html#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb22-13"><a href="publication-related-tables-1.html#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb22-14"><a href="publication-related-tables-1.html#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Master</span><span class="ch">&#39;&#39;</span><span class="st">s Thesis&#39;</span></span>
+<span id="cb22-15"><a href="publication-related-tables-1.html#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb22-16"><a href="publication-related-tables-1.html#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:ddpub">Table 8.8: </span>3 records</caption>
@@ -1240,24 +1262,24 @@ referenced. An example of NumVolumes and Edition:</p>
 </div>
 <div id="authored-report" class="section level3 hasAnchor" number="8.4.8">
 <h3><span class="header-section-number">8.4.8</span> Authored Report<a href="publication-related-tables-1.html#authored-report" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="publication-related-tables-1.html#cb23-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb23-2"><a href="publication-related-tables-1.html#cb23-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb23-3"><a href="publication-related-tables-1.html#cb23-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb23-4"><a href="publication-related-tables-1.html#cb23-4" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb23-5"><a href="publication-related-tables-1.html#cb23-5" aria-hidden="true"></a>       pub.articletitle,</span>
-<span id="cb23-6"><a href="publication-related-tables-1.html#cb23-6" aria-hidden="true"></a>       pub.seriestitle,</span>
-<span id="cb23-7"><a href="publication-related-tables-1.html#cb23-7" aria-hidden="true"></a>       pub.seriesvolume,</span>
-<span id="cb23-8"><a href="publication-related-tables-1.html#cb23-8" aria-hidden="true"></a>       pub.publisher,</span>
-<span id="cb23-9"><a href="publication-related-tables-1.html#cb23-9" aria-hidden="true"></a>       pub.city,</span>
-<span id="cb23-10"><a href="publication-related-tables-1.html#cb23-10" aria-hidden="true"></a>       pub.state,</span>
-<span id="cb23-11"><a href="publication-related-tables-1.html#cb23-11" aria-hidden="true"></a>       pub.country</span>
-<span id="cb23-12"><a href="publication-related-tables-1.html#cb23-12" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb23-13"><a href="publication-related-tables-1.html#cb23-13" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb23-14"><a href="publication-related-tables-1.html#cb23-14" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb23-15"><a href="publication-related-tables-1.html#cb23-15" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb23-16"><a href="publication-related-tables-1.html#cb23-16" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Authored Report&#39;</span></span>
-<span id="cb23-17"><a href="publication-related-tables-1.html#cb23-17" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb23-18"><a href="publication-related-tables-1.html#cb23-18" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="publication-related-tables-1.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb23-2"><a href="publication-related-tables-1.html#cb23-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb23-3"><a href="publication-related-tables-1.html#cb23-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb23-4"><a href="publication-related-tables-1.html#cb23-4" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb23-5"><a href="publication-related-tables-1.html#cb23-5" aria-hidden="true" tabindex="-1"></a>       pub.articletitle,</span>
+<span id="cb23-6"><a href="publication-related-tables-1.html#cb23-6" aria-hidden="true" tabindex="-1"></a>       pub.seriestitle,</span>
+<span id="cb23-7"><a href="publication-related-tables-1.html#cb23-7" aria-hidden="true" tabindex="-1"></a>       pub.seriesvolume,</span>
+<span id="cb23-8"><a href="publication-related-tables-1.html#cb23-8" aria-hidden="true" tabindex="-1"></a>       pub.publisher,</span>
+<span id="cb23-9"><a href="publication-related-tables-1.html#cb23-9" aria-hidden="true" tabindex="-1"></a>       pub.city,</span>
+<span id="cb23-10"><a href="publication-related-tables-1.html#cb23-10" aria-hidden="true" tabindex="-1"></a>       pub.state,</span>
+<span id="cb23-11"><a href="publication-related-tables-1.html#cb23-11" aria-hidden="true" tabindex="-1"></a>       pub.country</span>
+<span id="cb23-12"><a href="publication-related-tables-1.html#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb23-13"><a href="publication-related-tables-1.html#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb23-14"><a href="publication-related-tables-1.html#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb23-15"><a href="publication-related-tables-1.html#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb23-16"><a href="publication-related-tables-1.html#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Authored Report&#39;</span></span>
+<span id="cb23-17"><a href="publication-related-tables-1.html#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb23-18"><a href="publication-related-tables-1.html#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table style="width:100%;">
 <caption><span id="tab:authreportpub">Table 8.9: </span>3 records</caption>
@@ -1335,26 +1357,26 @@ referenced. An example of NumVolumes and Edition:</p>
 </div>
 <div id="edited-report" class="section level3 hasAnchor" number="8.4.9">
 <h3><span class="header-section-number">8.4.9</span> Edited Report<a href="publication-related-tables-1.html#edited-report" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="publication-related-tables-1.html#cb24-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid, </span>
-<span id="cb24-2"><a href="publication-related-tables-1.html#cb24-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb24-3"><a href="publication-related-tables-1.html#cb24-3" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
-<span id="cb24-4"><a href="publication-related-tables-1.html#cb24-4" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb24-5"><a href="publication-related-tables-1.html#cb24-5" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb24-6"><a href="publication-related-tables-1.html#cb24-6" aria-hidden="true"></a>       pub.articletitle,</span>
-<span id="cb24-7"><a href="publication-related-tables-1.html#cb24-7" aria-hidden="true"></a>       pub.seriestitle,</span>
-<span id="cb24-8"><a href="publication-related-tables-1.html#cb24-8" aria-hidden="true"></a>       pub.seriesvolume,</span>
-<span id="cb24-9"><a href="publication-related-tables-1.html#cb24-9" aria-hidden="true"></a>       pub.publisher,</span>
-<span id="cb24-10"><a href="publication-related-tables-1.html#cb24-10" aria-hidden="true"></a>       pub.city,</span>
-<span id="cb24-11"><a href="publication-related-tables-1.html#cb24-11" aria-hidden="true"></a>       pub.state,</span>
-<span id="cb24-12"><a href="publication-related-tables-1.html#cb24-12" aria-hidden="true"></a>       pub.country</span>
-<span id="cb24-13"><a href="publication-related-tables-1.html#cb24-13" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb24-14"><a href="publication-related-tables-1.html#cb24-14" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb24-15"><a href="publication-related-tables-1.html#cb24-15" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb24-16"><a href="publication-related-tables-1.html#cb24-16" aria-hidden="true"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb24-17"><a href="publication-related-tables-1.html#cb24-17" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb24-18"><a href="publication-related-tables-1.html#cb24-18" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Edited Report&#39;</span></span>
-<span id="cb24-19"><a href="publication-related-tables-1.html#cb24-19" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb24-20"><a href="publication-related-tables-1.html#cb24-20" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="publication-related-tables-1.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid, </span>
+<span id="cb24-2"><a href="publication-related-tables-1.html#cb24-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb24-3"><a href="publication-related-tables-1.html#cb24-3" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> pe.initials <span class="op">||</span> <span class="st">&#39;, &#39;</span> <span class="op">||</span> pe.familyname) <span class="kw">AS</span> editors,</span>
+<span id="cb24-4"><a href="publication-related-tables-1.html#cb24-4" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb24-5"><a href="publication-related-tables-1.html#cb24-5" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb24-6"><a href="publication-related-tables-1.html#cb24-6" aria-hidden="true" tabindex="-1"></a>       pub.articletitle,</span>
+<span id="cb24-7"><a href="publication-related-tables-1.html#cb24-7" aria-hidden="true" tabindex="-1"></a>       pub.seriestitle,</span>
+<span id="cb24-8"><a href="publication-related-tables-1.html#cb24-8" aria-hidden="true" tabindex="-1"></a>       pub.seriesvolume,</span>
+<span id="cb24-9"><a href="publication-related-tables-1.html#cb24-9" aria-hidden="true" tabindex="-1"></a>       pub.publisher,</span>
+<span id="cb24-10"><a href="publication-related-tables-1.html#cb24-10" aria-hidden="true" tabindex="-1"></a>       pub.city,</span>
+<span id="cb24-11"><a href="publication-related-tables-1.html#cb24-11" aria-hidden="true" tabindex="-1"></a>       pub.state,</span>
+<span id="cb24-12"><a href="publication-related-tables-1.html#cb24-12" aria-hidden="true" tabindex="-1"></a>       pub.country</span>
+<span id="cb24-13"><a href="publication-related-tables-1.html#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb24-14"><a href="publication-related-tables-1.html#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb24-15"><a href="publication-related-tables-1.html#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb24-16"><a href="publication-related-tables-1.html#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> ndb.publicationeditors <span class="kw">AS</span> pe <span class="kw">ON</span> pe.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb24-17"><a href="publication-related-tables-1.html#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb24-18"><a href="publication-related-tables-1.html#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Edited Report&#39;</span></span>
+<span id="cb24-19"><a href="publication-related-tables-1.html#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb24-20"><a href="publication-related-tables-1.html#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:editedreportpub">Table 8.10: </span>3 records</caption>
@@ -1437,18 +1459,18 @@ referenced. An example of NumVolumes and Edition:</p>
 </div>
 <div id="other-authored-publication" class="section level3 hasAnchor" number="8.4.10">
 <h3><span class="header-section-number">8.4.10</span> Other Authored Publication<a href="publication-related-tables-1.html#other-authored-publication" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb25-1"><a href="publication-related-tables-1.html#cb25-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid,</span>
-<span id="cb25-2"><a href="publication-related-tables-1.html#cb25-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb25-3"><a href="publication-related-tables-1.html#cb25-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb25-4"><a href="publication-related-tables-1.html#cb25-4" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb25-5"><a href="publication-related-tables-1.html#cb25-5" aria-hidden="true"></a>       pub.articletitle</span>
-<span id="cb25-6"><a href="publication-related-tables-1.html#cb25-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb25-7"><a href="publication-related-tables-1.html#cb25-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb25-8"><a href="publication-related-tables-1.html#cb25-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb25-9"><a href="publication-related-tables-1.html#cb25-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb25-10"><a href="publication-related-tables-1.html#cb25-10" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Other Authored&#39;</span></span>
-<span id="cb25-11"><a href="publication-related-tables-1.html#cb25-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb25-12"><a href="publication-related-tables-1.html#cb25-12" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb25-1"><a href="publication-related-tables-1.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid,</span>
+<span id="cb25-2"><a href="publication-related-tables-1.html#cb25-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb25-3"><a href="publication-related-tables-1.html#cb25-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb25-4"><a href="publication-related-tables-1.html#cb25-4" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb25-5"><a href="publication-related-tables-1.html#cb25-5" aria-hidden="true" tabindex="-1"></a>       pub.articletitle</span>
+<span id="cb25-6"><a href="publication-related-tables-1.html#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb25-7"><a href="publication-related-tables-1.html#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb25-8"><a href="publication-related-tables-1.html#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb25-9"><a href="publication-related-tables-1.html#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb25-10"><a href="publication-related-tables-1.html#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Other Authored&#39;</span></span>
+<span id="cb25-11"><a href="publication-related-tables-1.html#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb25-12"><a href="publication-related-tables-1.html#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:otherauthpub">Table 8.11: </span>3 records</caption>
@@ -1496,18 +1518,18 @@ referenced. An example of NumVolumes and Edition:</p>
 </div>
 <div id="other-edited-publication" class="section level3 hasAnchor" number="8.4.11">
 <h3><span class="header-section-number">8.4.11</span> Other Edited Publication<a href="publication-related-tables-1.html#other-edited-publication" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb26-1"><a href="publication-related-tables-1.html#cb26-1" aria-hidden="true"></a><span class="kw">SELECT</span> pub.publicationid,</span>
-<span id="cb26-2"><a href="publication-related-tables-1.html#cb26-2" aria-hidden="true"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
-<span id="cb26-3"><a href="publication-related-tables-1.html#cb26-3" aria-hidden="true"></a>       pub.<span class="dt">year</span>,</span>
-<span id="cb26-4"><a href="publication-related-tables-1.html#cb26-4" aria-hidden="true"></a>       pub.pages,</span>
-<span id="cb26-5"><a href="publication-related-tables-1.html#cb26-5" aria-hidden="true"></a>       pub.articletitle</span>
-<span id="cb26-6"><a href="publication-related-tables-1.html#cb26-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
-<span id="cb26-7"><a href="publication-related-tables-1.html#cb26-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
-<span id="cb26-8"><a href="publication-related-tables-1.html#cb26-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb26-9"><a href="publication-related-tables-1.html#cb26-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
-<span id="cb26-10"><a href="publication-related-tables-1.html#cb26-10" aria-hidden="true"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Other Edited&#39;</span></span>
-<span id="cb26-11"><a href="publication-related-tables-1.html#cb26-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
-<span id="cb26-12"><a href="publication-related-tables-1.html#cb26-12" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb26-1"><a href="publication-related-tables-1.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pub.publicationid,</span>
+<span id="cb26-2"><a href="publication-related-tables-1.html#cb26-2" aria-hidden="true" tabindex="-1"></a>       ARRAY_AGG(<span class="kw">DISTINCT</span> ct.contactname) <span class="kw">AS</span> authors,</span>
+<span id="cb26-3"><a href="publication-related-tables-1.html#cb26-3" aria-hidden="true" tabindex="-1"></a>       pub.<span class="dt">year</span>,</span>
+<span id="cb26-4"><a href="publication-related-tables-1.html#cb26-4" aria-hidden="true" tabindex="-1"></a>       pub.pages,</span>
+<span id="cb26-5"><a href="publication-related-tables-1.html#cb26-5" aria-hidden="true" tabindex="-1"></a>       pub.articletitle</span>
+<span id="cb26-6"><a href="publication-related-tables-1.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.publications <span class="kw">AS</span> pub</span>
+<span id="cb26-7"><a href="publication-related-tables-1.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationtypes <span class="kw">AS</span> pt <span class="kw">ON</span> pt.pubtypeid <span class="op">=</span> pub.pubtypeid </span>
+<span id="cb26-8"><a href="publication-related-tables-1.html#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publicationauthors <span class="kw">AS</span> pa <span class="kw">ON</span> pa.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb26-9"><a href="publication-related-tables-1.html#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">as</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> pa.contactid</span>
+<span id="cb26-10"><a href="publication-related-tables-1.html#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pt.pubtype <span class="op">=</span> <span class="st">&#39;Other Edited&#39;</span></span>
+<span id="cb26-11"><a href="publication-related-tables-1.html#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> pub.publicationid</span>
+<span id="cb26-12"><a href="publication-related-tables-1.html#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">3</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:otheredpub">Table 8.12: </span>3 records</caption>
@@ -1620,7 +1642,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

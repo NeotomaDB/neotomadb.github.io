@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Sample Related Tables | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Sample Related Tables | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2022-07-22" />
+<meta name="date" content="2022-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,16 +49,15 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.23/datatables.js"></script>
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
@@ -67,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -100,7 +100,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +113,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -397,8 +419,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="AggregateSamples" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> <code>aggregatesamples</code><a href="sample-related-tables-1.html#AggregateSamples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores the samples in Aggregate Datasets.</p>
-<div id="htmlwidget-af45c731101c6565d29f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-af45c731101c6565d29f">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","sampleid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatesamples_pkey, fk_aggregatesamples_aggregatedatasets","aggregatesamples_pkey, fk_aggregatesamples_samples","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-68de4a2f1068ea6d11e4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-68de4a2f1068ea6d11e4">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","sampleid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatesamples_pkey, fk_aggregatesamples_aggregatedatasets","aggregatesamples_pkey, fk_aggregatesamples_samples","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>aggregatedatasetid (primary key, foreign key)</code></strong>: An arbitrary Aggregate Dataset identification number. Field links to the <a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>AggregateDatasets</code></a> table.</li>
 <li><strong><code>sampleid (primary key, foreign key)</code></strong>: Sample ID number. Field links to the <a href="sample-related-tables-1.html#Samples"><code>Samples</code></a> table.</li>
@@ -407,8 +429,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="AnalysisUnits" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> <code>analysisunits</code><a href="sample-related-tables-1.html#AnalysisUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores the data for Analysis Units.</p>
-<div id="htmlwidget-d56b954a272d06f6860b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d56b954a272d06f6860b">{"x":{"filter":"none","vertical":false,"data":[["analysisunitid","collectionunitid","analysisunitname","depth","thickness","faciesid","mixed","igsn","notes","recdatecreated","recdatemodified"],["integer","integer","character varying(80)","double precision","double precision","integer","boolean","character varying(40)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["analysisunits_pkey","fk_analysisunits_collectionunits","","","","fk_analysisunits_faciestypes","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-54854d322a541cdd38d2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-54854d322a541cdd38d2">{"x":{"filter":"none","vertical":false,"data":[["analysisunitid","collectionunitid","analysisunitname","depth","thickness","faciesid","mixed","igsn","notes","recdatecreated","recdatemodified"],["integer","integer","character varying(80)","double precision","double precision","integer","boolean","character varying(40)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["analysisunits_pkey","fk_analysisunits_collectionunits","","","","fk_analysisunits_faciestypes","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>analysisunitid (primary key)</code></strong>: An arbitrary Analysis Unit identification number.</li>
 <li><strong><code>collectionunitid (foreign key)</code></strong>: Collection Unit ID number. Field links to <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> table. Every Analysis Unit belongs to a Collection Unit.</li>
@@ -424,8 +446,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="Data" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">9.3</span> <code>data</code><a href="sample-related-tables-1.html#Data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The primary data table in the database. Each occurrence of a Variable in a sample comprises a record in the Data table.</p>
-<div id="htmlwidget-f1defa1e39d8091fe535" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f1defa1e39d8091fe535">{"x":{"filter":"none","vertical":false,"data":[["dataid","sampleid","variableid","value","recdatecreated","recdatemodified"],["integer","integer","integer","double precision","timestamp(0) without time zone","timestamp(0) without time zone"],["data_pkey","fk_data_samples","fk_data_variables","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ff522b71ff53472f5379" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ff522b71ff53472f5379">{"x":{"filter":"none","vertical":false,"data":[["dataid","sampleid","variableid","value","recdatecreated","recdatemodified"],["integer","integer","integer","double precision","timestamp(0) without time zone","timestamp(0) without time zone"],["data_pkey","fk_data_samples","fk_data_variables","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>sampleid (primary key, foreign key)</code></strong>: Sample identification number. Field links to <a href="sample-related-tables-1.html#Samples"><code>Samples</code></a> table.</li>
 <li><strong><code>variableid (primary key, foreign key)</code></strong>: Variable identification number. Field links to <a href="taxonomy-related-tables-1.html#Variables"><code>Variables</code></a> table.</li>
@@ -434,21 +456,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sql-example-9" class="section level3 hasAnchor" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> SQL Example<a href="sample-related-tables-1.html#sql-example-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following SQL example gives a list of vertebrate taxa by Analysis Unit for all sites. Also listed are Variable Measurement Units and Values.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="sample-related-tables-1.html#cb27-1" aria-hidden="true"></a><span class="kw">SELECT</span></span>
-<span id="cb27-2"><a href="sample-related-tables-1.html#cb27-2" aria-hidden="true"></a>  au.analysisunitname,</span>
-<span id="cb27-3"><a href="sample-related-tables-1.html#cb27-3" aria-hidden="true"></a>  tx.taxonname,</span>
-<span id="cb27-4"><a href="sample-related-tables-1.html#cb27-4" aria-hidden="true"></a>  vu.variableunits,</span>
-<span id="cb27-5"><a href="sample-related-tables-1.html#cb27-5" aria-hidden="true"></a>  <span class="kw">data</span>.<span class="fu">value</span></span>
-<span id="cb27-6"><a href="sample-related-tables-1.html#cb27-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.datasettypes <span class="kw">AS</span> dst</span>
-<span id="cb27-7"><a href="sample-related-tables-1.html#cb27-7" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.datasettypeid <span class="op">=</span> dst.datasettypeid</span>
-<span id="cb27-8"><a href="sample-related-tables-1.html#cb27-8" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span> smp.datasetid <span class="op">=</span> ds.datasetid</span>
-<span id="cb27-9"><a href="sample-related-tables-1.html#cb27-9" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.<span class="kw">data</span> <span class="kw">AS</span> <span class="kw">data</span> <span class="kw">ON</span> smp.sampleid <span class="op">=</span> <span class="kw">data</span>.sampleid</span>
-<span id="cb27-10"><a href="sample-related-tables-1.html#cb27-10" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables <span class="kw">AS</span> var <span class="kw">ON</span> var.variableid <span class="op">=</span> <span class="kw">data</span>.variableid</span>
-<span id="cb27-11"><a href="sample-related-tables-1.html#cb27-11" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.analysisunits <span class="kw">AS</span> au <span class="kw">ON</span> au.analysisunitid <span class="op">=</span> smp.analysisunitid</span>
-<span id="cb27-12"><a href="sample-related-tables-1.html#cb27-12" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.taxa <span class="kw">AS</span> tx <span class="kw">ON</span> tx.taxonid <span class="op">=</span> var.taxonid</span>
-<span id="cb27-13"><a href="sample-related-tables-1.html#cb27-13" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableunits <span class="kw">AS</span> vu <span class="kw">ON</span> vu.variableunitsid <span class="op">=</span> var.variableunitsid</span>
-<span id="cb27-14"><a href="sample-related-tables-1.html#cb27-14" aria-hidden="true"></a><span class="kw">WHERE</span> dst.datasettype <span class="op">=</span> <span class="st">&#39;vertebrate fauna&#39;</span></span>
-<span id="cb27-15"><a href="sample-related-tables-1.html#cb27-15" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="sample-related-tables-1.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb27-2"><a href="sample-related-tables-1.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  au.analysisunitname,</span>
+<span id="cb27-3"><a href="sample-related-tables-1.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  tx.taxonname,</span>
+<span id="cb27-4"><a href="sample-related-tables-1.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  vu.variableunits,</span>
+<span id="cb27-5"><a href="sample-related-tables-1.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">data</span>.<span class="fu">value</span></span>
+<span id="cb27-6"><a href="sample-related-tables-1.html#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.datasettypes <span class="kw">AS</span> dst</span>
+<span id="cb27-7"><a href="sample-related-tables-1.html#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.datasettypeid <span class="op">=</span> dst.datasettypeid</span>
+<span id="cb27-8"><a href="sample-related-tables-1.html#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span> smp.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb27-9"><a href="sample-related-tables-1.html#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.<span class="kw">data</span> <span class="kw">AS</span> <span class="kw">data</span> <span class="kw">ON</span> smp.sampleid <span class="op">=</span> <span class="kw">data</span>.sampleid</span>
+<span id="cb27-10"><a href="sample-related-tables-1.html#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables <span class="kw">AS</span> var <span class="kw">ON</span> var.variableid <span class="op">=</span> <span class="kw">data</span>.variableid</span>
+<span id="cb27-11"><a href="sample-related-tables-1.html#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.analysisunits <span class="kw">AS</span> au <span class="kw">ON</span> au.analysisunitid <span class="op">=</span> smp.analysisunitid</span>
+<span id="cb27-12"><a href="sample-related-tables-1.html#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.taxa <span class="kw">AS</span> tx <span class="kw">ON</span> tx.taxonid <span class="op">=</span> var.taxonid</span>
+<span id="cb27-13"><a href="sample-related-tables-1.html#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableunits <span class="kw">AS</span> vu <span class="kw">ON</span> vu.variableunitsid <span class="op">=</span> var.variableunitsid</span>
+<span id="cb27-14"><a href="sample-related-tables-1.html#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> dst.datasettype <span class="op">=</span> <span class="st">&#39;vertebrate fauna&#39;</span></span>
+<span id="cb27-15"><a href="sample-related-tables-1.html#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:vertTaxaAU">Table 9.1: </span>5 records</caption>
@@ -499,8 +521,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="DepAgents" class="section level2 hasAnchor" number="9.4">
 <h2><span class="header-section-number">9.4</span> <code>depagents</code><a href="sample-related-tables-1.html#DepAgents" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Deposition Agents for Analysis Units. Individual Analysis Units may be listed multiple times with different Deposition Agents.</p>
-<div id="htmlwidget-95cf98f707025dfaf808" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-95cf98f707025dfaf808">{"x":{"filter":"none","vertical":false,"data":[["analysisunitid","depagentid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["depagents_pkey, fk_depagents_analysisunits","depagents_pkey, fk_depagents_depagenttypes","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-508d7e0d1e858e08d67e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-508d7e0d1e858e08d67e">{"x":{"filter":"none","vertical":false,"data":[["analysisunitid","depagentid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["depagents_pkey, fk_depagents_analysisunits","depagents_pkey, fk_depagents_depagenttypes","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>analysisunitid (primary key)</code></strong>: Analysis Unit identification number. Field links to <a href="sample-related-tables-1.html#AnalysisUnits"><code>AnalysisUnits</code></a> table.</li>
 <li><strong><code>depagentid</code></strong>: Deposition Agent identification number. Field links to <a href="sample-related-tables-1.html#DepAgentTypes"><code>DepAgentTypes</code></a> table.</li>
@@ -509,8 +531,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="DepAgentTypes" class="section level2 hasAnchor" number="9.5">
 <h2><span class="header-section-number">9.5</span> <code>depagenttypes</code><a href="sample-related-tables-1.html#DepAgentTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Depositional Agents. Table is referenced by the <a href="sample-related-tables-1.html#DepAgents"><code>DepAgents</code></a> table.</p>
-<div id="htmlwidget-f7c09eb31a4c922227cc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f7c09eb31a4c922227cc">{"x":{"filter":"none","vertical":false,"data":[["depagentid","depagent","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["depagenttypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7fb6c047ae306c9ccf1b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7fb6c047ae306c9ccf1b">{"x":{"filter":"none","vertical":false,"data":[["depagentid","depagent","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["depagenttypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>depagentid (primary key)</code></strong>: An arbitrary Depositional Agent identification number.</li>
 <li><strong><code>depagent</code></strong>: Depostional Agent.</li>
@@ -519,8 +541,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="FaciesTypes" class="section level2 hasAnchor" number="9.6">
 <h2><span class="header-section-number">9.6</span> <code>faciestypes</code><a href="sample-related-tables-1.html#FaciesTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Facies Types. Table is referenced by the <a href="sample-related-tables-1.html#AnalysisUnits"><code>AnalysisUnits</code></a> table.</p>
-<div id="htmlwidget-5be65fdef2a531ba7d1b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5be65fdef2a531ba7d1b">{"x":{"filter":"none","vertical":false,"data":[["faciesid","facies","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["faciestypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5c081126715a57ade2ba" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5c081126715a57ade2ba">{"x":{"filter":"none","vertical":false,"data":[["faciesid","facies","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["faciestypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>faciesid (primary key)</code></strong>: An arbitrary Facies identification number.</li>
 <li><strong><code>facies</code></strong>: Short Facies description.</li>
@@ -529,8 +551,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="Keywords" class="section level2 hasAnchor" number="9.7">
 <h2><span class="header-section-number">9.7</span> <code>keywords</code><a href="sample-related-tables-1.html#Keywords" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of keywords referenced by the <a href="sample-related-tables-1.html#SampleKeywords"><code>samplekeywords</code></a> table. The table provides a means to identify samples sharing a common attribute. For example, the keyword “<em>modern sample</em>” identifies modern surface samples in the database. These samples include individual surface samples, as well as core tops. Although not implemented, a “pre-European settlement” keyword would be a means to identify samples just predating European settlement.</p>
-<div id="htmlwidget-94159e79aeaad9a7afb3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-94159e79aeaad9a7afb3">{"x":{"filter":"none","vertical":false,"data":[["keywordid","keyword","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["keywords_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-64c42482f4d8ff6ad10a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-64c42482f4d8ff6ad10a">{"x":{"filter":"none","vertical":false,"data":[["keywordid","keyword","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["keywords_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>keywordid (primary key)</code></strong>: An arbitrary Keyword identification number.</li>
 <li><strong><code>keyword</code></strong>: A keyword for identifying samples sharing a common attribute.</li>
@@ -539,8 +561,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="Lithology" class="section level2 hasAnchor" number="9.8">
 <h2><span class="header-section-number">9.8</span> <code>lithology</code><a href="sample-related-tables-1.html#Lithology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores the lithologic descriptions of Collection Units.</p>
-<div id="htmlwidget-c68ec42e5a050d7ab02d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c68ec42e5a050d7ab02d">{"x":{"filter":"none","vertical":false,"data":[["lithologyid","collectionunitid","depthtop","depthbottom","lowerboundary","description","recdatecreated","recdatemodified"],["integer","integer","double precision","double precision","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["lithology_pkey","fk_lithology_collectionunits","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9b305bff9dbe2ef0911e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9b305bff9dbe2ef0911e">{"x":{"filter":"none","vertical":false,"data":[["lithologyid","collectionunitid","depthtop","depthbottom","lowerboundary","description","recdatecreated","recdatemodified"],["integer","integer","double precision","double precision","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["lithology_pkey","fk_lithology_collectionunits","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>lithologyid (primary key)</code></strong>: An arbitrary identification number for a lithologic unit.</li>
 <li><strong><code>collectionunitid (foreign key)</code></strong>: Collection Unit identification number. Field links to the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>CollectionUnits</code></a> table.</li>
@@ -564,8 +586,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="SampleAges" class="section level2 hasAnchor" number="9.9">
 <h2><span class="header-section-number">9.9</span> <code>sampleages</code><a href="sample-related-tables-1.html#SampleAges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores sample ages. Ages are assigned to a Chronology. Because there may be more than one Chronology for a Collection Unit, samples may be assigned different ages for different Chronologies. A simple example is one sample age in radiocarbon years and another in calibrated radiocarbon years. The age units are an attribute of the Chronology.</p>
-<div id="htmlwidget-8c783d9d7116f047a963" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8c783d9d7116f047a963">{"x":{"filter":"none","vertical":false,"data":[["sampleageid","sampleid","chronologyid","age","ageyounger","ageolder","recdatecreated","recdatemodified"],["integer","integer","integer","double precision","double precision","double precision","timestamp(0) without time zone","timestamp(0) without time zone"],["sampleages_pkey","fk_sampleages_samples","fk_sampleages_chronologies","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4cb0bfbc6bebf33f7fc2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4cb0bfbc6bebf33f7fc2">{"x":{"filter":"none","vertical":false,"data":[["sampleageid","sampleid","chronologyid","age","ageyounger","ageolder","recdatecreated","recdatemodified"],["integer","integer","integer","double precision","double precision","double precision","timestamp(0) without time zone","timestamp(0) without time zone"],["sampleages_pkey","fk_sampleages_samples","fk_sampleages_chronologies","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>sampleageid (primary key)</code></strong>: An arbitrary Sample Age identification number.</li>
 <li><strong><code>sampleid (foreign key)</code></strong>: Sample identification number. Field links to the <a href="sample-related-tables-1.html#Samples"><code>Samples</code></a> table.</li>
@@ -577,19 +599,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sql-example-10" class="section level3 hasAnchor" number="9.9.1">
 <h3><span class="header-section-number">9.9.1</span> SQL Example<a href="sample-related-tables-1.html#sql-example-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists the Sample Ages for the default Chronologies for Muskox Lake. The CollectionUnit.Handle indicates that there is only one Collection Unit from this site. There are two default Chronologies, one in «Radiocarbon years BP» and the other in «Calibrated radiocarbon years BP».</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb28-1"><a href="sample-related-tables-1.html#cb28-1" aria-hidden="true"></a><span class="kw">SELECT</span></span>
-<span id="cb28-2"><a href="sample-related-tables-1.html#cb28-2" aria-hidden="true"></a>   st.sitename,</span>
-<span id="cb28-3"><a href="sample-related-tables-1.html#cb28-3" aria-hidden="true"></a>   cu.handle,</span>
-<span id="cb28-4"><a href="sample-related-tables-1.html#cb28-4" aria-hidden="true"></a>   array_agg(sa.age),</span>
-<span id="cb28-5"><a href="sample-related-tables-1.html#cb28-5" aria-hidden="true"></a>   <span class="kw">at</span>.agetype</span>
-<span id="cb28-6"><a href="sample-related-tables-1.html#cb28-6" aria-hidden="true"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
-<span id="cb28-7"><a href="sample-related-tables-1.html#cb28-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb28-8"><a href="sample-related-tables-1.html#cb28-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chronologies <span class="kw">AS</span> ch <span class="kw">ON</span> ch.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb28-9"><a href="sample-related-tables-1.html#cb28-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sampleages <span class="kw">AS</span> sa <span class="kw">ON</span> sa.chronologyid <span class="op">=</span> ch.chronologyid</span>
-<span id="cb28-10"><a href="sample-related-tables-1.html#cb28-10" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.agetypes <span class="kw">AS</span> <span class="kw">at</span> <span class="kw">ON</span> <span class="kw">at</span>.agetypeid <span class="op">=</span> ch.agetypeid</span>
-<span id="cb28-11"><a href="sample-related-tables-1.html#cb28-11" aria-hidden="true"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Muskox Lake&#39;</span></span>
-<span id="cb28-12"><a href="sample-related-tables-1.html#cb28-12" aria-hidden="true"></a>  <span class="kw">AND</span> ch.isdefault <span class="op">=</span> <span class="kw">TRUE</span></span>
-<span id="cb28-13"><a href="sample-related-tables-1.html#cb28-13" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.sitename, cu.handle, <span class="kw">at</span>.agetype;</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb28-1"><a href="sample-related-tables-1.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb28-2"><a href="sample-related-tables-1.html#cb28-2" aria-hidden="true" tabindex="-1"></a>   st.sitename,</span>
+<span id="cb28-3"><a href="sample-related-tables-1.html#cb28-3" aria-hidden="true" tabindex="-1"></a>   cu.handle,</span>
+<span id="cb28-4"><a href="sample-related-tables-1.html#cb28-4" aria-hidden="true" tabindex="-1"></a>   array_agg(sa.age),</span>
+<span id="cb28-5"><a href="sample-related-tables-1.html#cb28-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">at</span>.agetype</span>
+<span id="cb28-6"><a href="sample-related-tables-1.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb28-7"><a href="sample-related-tables-1.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb28-8"><a href="sample-related-tables-1.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.chronologies <span class="kw">AS</span> ch <span class="kw">ON</span> ch.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb28-9"><a href="sample-related-tables-1.html#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sampleages <span class="kw">AS</span> sa <span class="kw">ON</span> sa.chronologyid <span class="op">=</span> ch.chronologyid</span>
+<span id="cb28-10"><a href="sample-related-tables-1.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.agetypes <span class="kw">AS</span> <span class="kw">at</span> <span class="kw">ON</span> <span class="kw">at</span>.agetypeid <span class="op">=</span> ch.agetypeid</span>
+<span id="cb28-11"><a href="sample-related-tables-1.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Muskox Lake&#39;</span></span>
+<span id="cb28-12"><a href="sample-related-tables-1.html#cb28-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> ch.isdefault <span class="op">=</span> <span class="kw">TRUE</span></span>
+<span id="cb28-13"><a href="sample-related-tables-1.html#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.sitename, cu.handle, <span class="kw">at</span>.agetype;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:sampAgesChron">Table 9.2: </span>2 records</caption>
@@ -628,8 +650,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="SampleAnalysts" class="section level2 hasAnchor" number="9.10">
 <h2><span class="header-section-number">9.10</span> <code>sampleanalysts</code><a href="sample-related-tables-1.html#SampleAnalysts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists the Sample Analysts.</p>
-<div id="htmlwidget-395e7ed387b77141ed9f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-395e7ed387b77141ed9f">{"x":{"filter":"none","vertical":false,"data":[["analystid","sampleid","contactid","analystorder","recdatecreated","recdatemodified"],["integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["sampleanalysts_pkey","fk_sampleanalysts_samples","fk_sampleanalysts_contacts","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-551cf6def198a03350e4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-551cf6def198a03350e4">{"x":{"filter":"none","vertical":false,"data":[["analystid","sampleid","contactid","analystorder","recdatecreated","recdatemodified"],["integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["sampleanalysts_pkey","fk_sampleanalysts_samples","fk_sampleanalysts_contacts","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>analystid (primary key)</code></strong>: An arbitrary Sample Analyst identification number.</li>
 <li><strong><code>sampleid (foreign key)</code></strong>: Sample identification number. Field links to the <a href="sample-related-tables-1.html#Samples"><code>Samples</code></a> table.</li>
@@ -640,8 +662,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="SampleKeywords" class="section level2 hasAnchor" number="9.11">
 <h2><span class="header-section-number">9.11</span> <code>samplekeywords</code><a href="sample-related-tables-1.html#SampleKeywords" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table links keywords to samples. For example, it identifies modern pollen surface samples.</p>
-<div id="htmlwidget-26c49138478c1675fb80" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-26c49138478c1675fb80">{"x":{"filter":"none","vertical":false,"data":[["sampleid","keywordid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_samplekeywords_samples, samplekeywords_pkey","fk_samplekeywords_keywords, samplekeywords_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-83cf2314a53837e77f22" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-83cf2314a53837e77f22">{"x":{"filter":"none","vertical":false,"data":[["sampleid","keywordid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_samplekeywords_samples, samplekeywords_pkey","fk_samplekeywords_keywords, samplekeywords_pkey","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>sampleid (primary key, foreign key)</code></strong>: Sample identification number. Field links to the <a href="sample-related-tables-1.html#Samples"><code>Samples</code></a> table.</li>
 <li><strong><code>keywordid (primary key, foreign key)</code></strong>: Keyword identification number. Field links to the <a href="sample-related-tables-1.html#Keywords"><code>Keywords</code></a> lookup table.</li>
@@ -649,30 +671,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sql-example-11" class="section level3 hasAnchor" number="9.11.1">
 <h3><span class="header-section-number">9.11.1</span> SQL Example<a href="sample-related-tables-1.html#sql-example-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query provides a list of modern pollen surface samples from the United States. We listed the site name, collection type, the contact person, and the depositional environment from which the sample was obtained. We link sites and geopoliticalunits using the <a href="#sitegeopolitical"><code>sitegeopolitical</code></a> table, then we link to the samples to find samples with the <em>modern</em> keyword.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb29-1"><a href="sample-related-tables-1.html#cb29-1" aria-hidden="true"></a><span class="kw">SELECT</span> smp.sampleid,</span>
-<span id="cb29-2"><a href="sample-related-tables-1.html#cb29-2" aria-hidden="true"></a>  st.sitename,</span>
-<span id="cb29-3"><a href="sample-related-tables-1.html#cb29-3" aria-hidden="true"></a>  cut.colltype,</span>
-<span id="cb29-4"><a href="sample-related-tables-1.html#cb29-4" aria-hidden="true"></a>  ct.contactname,</span>
-<span id="cb29-5"><a href="sample-related-tables-1.html#cb29-5" aria-hidden="true"></a>  dpv.depenvt,</span>
-<span id="cb29-6"><a href="sample-related-tables-1.html#cb29-6" aria-hidden="true"></a>  kw.keyword</span>
-<span id="cb29-7"><a href="sample-related-tables-1.html#cb29-7" aria-hidden="true"></a><span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
-<span id="cb29-8"><a href="sample-related-tables-1.html#cb29-8" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span> sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</span>
-<span id="cb29-9"><a href="sample-related-tables-1.html#cb29-9" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites <span class="kw">AS</span> st <span class="kw">ON</span> st.siteid <span class="op">=</span> sgp.siteid</span>
-<span id="cb29-10"><a href="sample-related-tables-1.html#cb29-10" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb29-11"><a href="sample-related-tables-1.html#cb29-11" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectiontypes <span class="kw">AS</span> cut <span class="kw">ON</span> cut.colltypeid <span class="op">=</span> cu.colltypeid</span>
-<span id="cb29-12"><a href="sample-related-tables-1.html#cb29-12" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.depenvttypes <span class="kw">AS</span> dpv <span class="kw">ON</span> dpv.depenvtid <span class="op">=</span> cu.depenvtid</span>
-<span id="cb29-13"><a href="sample-related-tables-1.html#cb29-13" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb29-14"><a href="sample-related-tables-1.html#cb29-14" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
-<span id="cb29-15"><a href="sample-related-tables-1.html#cb29-15" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span> smp.datasetid <span class="op">=</span> ds.datasetid</span>
-<span id="cb29-16"><a href="sample-related-tables-1.html#cb29-16" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samplekeywords <span class="kw">AS</span> skw <span class="kw">ON</span> skw.sampleid <span class="op">=</span> smp.sampleid</span>
-<span id="cb29-17"><a href="sample-related-tables-1.html#cb29-17" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.keywords <span class="kw">AS</span> kw <span class="kw">ON</span> kw.keywordid <span class="op">=</span> skw.keywordid</span>
-<span id="cb29-18"><a href="sample-related-tables-1.html#cb29-18" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetpis <span class="kw">AS</span> dspi <span class="kw">ON</span> dspi.datasetid <span class="op">=</span> ds.datasetid</span>
-<span id="cb29-19"><a href="sample-related-tables-1.html#cb29-19" aria-hidden="true"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">AS</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> dspi.contactid</span>
-<span id="cb29-20"><a href="sample-related-tables-1.html#cb29-20" aria-hidden="true"></a><span class="kw">WHERE</span>  dst.datasettype <span class="op">=</span> <span class="st">&#39;pollen&#39;</span> </span>
-<span id="cb29-21"><a href="sample-related-tables-1.html#cb29-21" aria-hidden="true"></a>  <span class="kw">AND</span> kw.keyword <span class="op">=</span> <span class="st">&#39;modern&#39;</span></span>
-<span id="cb29-22"><a href="sample-related-tables-1.html#cb29-22" aria-hidden="true"></a>  <span class="kw">AND</span> gpu.geopoliticalname <span class="op">=</span> <span class="st">&#39;United States&#39;</span></span>
-<span id="cb29-23"><a href="sample-related-tables-1.html#cb29-23" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> cu.colltypeid</span>
-<span id="cb29-24"><a href="sample-related-tables-1.html#cb29-24" aria-hidden="true"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb29-1"><a href="sample-related-tables-1.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> smp.sampleid,</span>
+<span id="cb29-2"><a href="sample-related-tables-1.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  st.sitename,</span>
+<span id="cb29-3"><a href="sample-related-tables-1.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  cut.colltype,</span>
+<span id="cb29-4"><a href="sample-related-tables-1.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  ct.contactname,</span>
+<span id="cb29-5"><a href="sample-related-tables-1.html#cb29-5" aria-hidden="true" tabindex="-1"></a>  dpv.depenvt,</span>
+<span id="cb29-6"><a href="sample-related-tables-1.html#cb29-6" aria-hidden="true" tabindex="-1"></a>  kw.keyword</span>
+<span id="cb29-7"><a href="sample-related-tables-1.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.geopoliticalunits <span class="kw">AS</span> gpu</span>
+<span id="cb29-8"><a href="sample-related-tables-1.html#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sitegeopolitical <span class="kw">AS</span> sgp <span class="kw">ON</span> sgp.geopoliticalid <span class="op">=</span> gpu.geopoliticalid</span>
+<span id="cb29-9"><a href="sample-related-tables-1.html#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites <span class="kw">AS</span> st <span class="kw">ON</span> st.siteid <span class="op">=</span> sgp.siteid</span>
+<span id="cb29-10"><a href="sample-related-tables-1.html#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb29-11"><a href="sample-related-tables-1.html#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectiontypes <span class="kw">AS</span> cut <span class="kw">ON</span> cut.colltypeid <span class="op">=</span> cu.colltypeid</span>
+<span id="cb29-12"><a href="sample-related-tables-1.html#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.depenvttypes <span class="kw">AS</span> dpv <span class="kw">ON</span> dpv.depenvtid <span class="op">=</span> cu.depenvtid</span>
+<span id="cb29-13"><a href="sample-related-tables-1.html#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb29-14"><a href="sample-related-tables-1.html#cb29-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
+<span id="cb29-15"><a href="sample-related-tables-1.html#cb29-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span> smp.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb29-16"><a href="sample-related-tables-1.html#cb29-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samplekeywords <span class="kw">AS</span> skw <span class="kw">ON</span> skw.sampleid <span class="op">=</span> smp.sampleid</span>
+<span id="cb29-17"><a href="sample-related-tables-1.html#cb29-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.keywords <span class="kw">AS</span> kw <span class="kw">ON</span> kw.keywordid <span class="op">=</span> skw.keywordid</span>
+<span id="cb29-18"><a href="sample-related-tables-1.html#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetpis <span class="kw">AS</span> dspi <span class="kw">ON</span> dspi.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb29-19"><a href="sample-related-tables-1.html#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.contacts <span class="kw">AS</span> ct <span class="kw">ON</span> ct.contactid <span class="op">=</span> dspi.contactid</span>
+<span id="cb29-20"><a href="sample-related-tables-1.html#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  dst.datasettype <span class="op">=</span> <span class="st">&#39;pollen&#39;</span> </span>
+<span id="cb29-21"><a href="sample-related-tables-1.html#cb29-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> kw.keyword <span class="op">=</span> <span class="st">&#39;modern&#39;</span></span>
+<span id="cb29-22"><a href="sample-related-tables-1.html#cb29-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> gpu.geopoliticalname <span class="op">=</span> <span class="st">&#39;United States&#39;</span></span>
+<span id="cb29-23"><a href="sample-related-tables-1.html#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> cu.colltypeid</span>
+<span id="cb29-24"><a href="sample-related-tables-1.html#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:geopolmodern">Table 9.3: </span>Displaying records 1 - 10</caption>
@@ -783,8 +805,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="Samples" class="section level2 hasAnchor" number="9.12">
 <h2><span class="header-section-number">9.12</span> <code>samples</code><a href="sample-related-tables-1.html#Samples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores sample data. Samples are the link between <a href="#analysisunits-analysisunits"><code>analysisunit</code>s</a> (which belong to the <a href="#collectionunits"><code>collectionunit</code></a>) and a <a href="#datasets"><code>dataset</code></a> of a particular <a href="#datasettypes"><code>datasettype</code></a>. Thus, there can be multiple samples from the same analysis unit, one for each datasettype within the collection unit. For example one sample in an analysis unit at a collection unit might belong to a pollen dataset, the other to a plant macrofossil dataset.</p>
-<div id="htmlwidget-1a764a1033fe23a31144" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1a764a1033fe23a31144">{"x":{"filter":"none","vertical":false,"data":[["sampleid","analysisunitid","datasetid","samplename","analysisdate","labnumber","preparationmethod","notes","recdatecreated","recdatemodified","sampledate","taxonid"],["integer","integer","integer","character varying(80)","date","character varying(40)","text","text","timestamp(0) without time zone","timestamp(0) without time zone","date","integer"],["samples_pkey","fk_samples_analysisunits","fk_samples_datasets","","","","","","","","","fk_samples_taxa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-696dc6203d87fe22d9b0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-696dc6203d87fe22d9b0">{"x":{"filter":"none","vertical":false,"data":[["sampleid","analysisunitid","datasetid","samplename","analysisdate","labnumber","preparationmethod","notes","recdatecreated","recdatemodified","sampledate","taxonid"],["integer","integer","integer","character varying(80)","date","character varying(40)","text","text","timestamp(0) without time zone","timestamp(0) without time zone","date","integer"],["samples_pkey","fk_samples_analysisunits","fk_samples_datasets","","","","","","","","","fk_samples_taxa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>sampleid (primary key)</code></strong>: An arbitrary Sample identification number.</li>
 <li><strong><code>analysisunitid (foreign key)</code></strong>: Analysis Unit identification number. Field links to the <a href="sample-related-tables-1.html#AnalysisUnits"><code>AnalysisUnits</code></a> table.</li>
@@ -798,21 +820,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sql-example-12" class="section level3 hasAnchor" number="9.12.1">
 <h3><span class="header-section-number">9.12.1</span> SQL Example<a href="sample-related-tables-1.html#sql-example-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query provides a list of samples from the site <em>Canaleja</em>. The collection unit name, analysis unit name, dataset type, and preparation methods are listed.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb30-1"><a href="sample-related-tables-1.html#cb30-1" aria-hidden="true"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> cu.collunitname,</span>
-<span id="cb30-2"><a href="sample-related-tables-1.html#cb30-2" aria-hidden="true"></a>  au.analysisunitname,</span>
-<span id="cb30-3"><a href="sample-related-tables-1.html#cb30-3" aria-hidden="true"></a>  dst.datasettype,</span>
-<span id="cb30-4"><a href="sample-related-tables-1.html#cb30-4" aria-hidden="true"></a>  smp.preparationmethod</span>
-<span id="cb30-5"><a href="sample-related-tables-1.html#cb30-5" aria-hidden="true"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
-<span id="cb30-6"><a href="sample-related-tables-1.html#cb30-6" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb30-7"><a href="sample-related-tables-1.html#cb30-7" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.analysisunits <span class="kw">AS</span> au <span class="kw">ON</span> au.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb30-8"><a href="sample-related-tables-1.html#cb30-8" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb30-9"><a href="sample-related-tables-1.html#cb30-9" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
-<span id="cb30-10"><a href="sample-related-tables-1.html#cb30-10" aria-hidden="true"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span> smp.analysisunitid <span class="op">=</span> au.analysisunitid</span>
-<span id="cb30-11"><a href="sample-related-tables-1.html#cb30-11" aria-hidden="true"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Canaleja&#39;</span> <span class="kw">AND</span> dst.datasettype <span class="op">=</span> <span class="st">&#39;pollen&#39;</span></span>
-<span id="cb30-12"><a href="sample-related-tables-1.html#cb30-12" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> cu.collunitname, au.analysisunitname</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb30-1"><a href="sample-related-tables-1.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> cu.collunitname,</span>
+<span id="cb30-2"><a href="sample-related-tables-1.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  au.analysisunitname,</span>
+<span id="cb30-3"><a href="sample-related-tables-1.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  dst.datasettype,</span>
+<span id="cb30-4"><a href="sample-related-tables-1.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  smp.preparationmethod</span>
+<span id="cb30-5"><a href="sample-related-tables-1.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb30-6"><a href="sample-related-tables-1.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb30-7"><a href="sample-related-tables-1.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.analysisunits <span class="kw">AS</span> au <span class="kw">ON</span> au.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb30-8"><a href="sample-related-tables-1.html#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb30-9"><a href="sample-related-tables-1.html#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
+<span id="cb30-10"><a href="sample-related-tables-1.html#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span> smp.analysisunitid <span class="op">=</span> au.analysisunitid</span>
+<span id="cb30-11"><a href="sample-related-tables-1.html#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Canaleja&#39;</span> <span class="kw">AND</span> dst.datasettype <span class="op">=</span> <span class="st">&#39;pollen&#39;</span></span>
+<span id="cb30-12"><a href="sample-related-tables-1.html#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> cu.collunitname, au.analysisunitname</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:prepmethods">Table 9.4: </span>7 records</caption>
+<colgroup>
+<col width="15%" />
+<col width="20%" />
+<col width="14%" />
+<col width="50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">collunitname</th>
@@ -935,7 +963,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
