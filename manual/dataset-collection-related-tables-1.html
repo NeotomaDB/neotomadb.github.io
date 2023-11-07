@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2023-02-08" />
+<meta name="date" content="2023-11-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,20 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.26/datatables.js"></script>
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -179,8 +193,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html"><i class="fa fa-check"></i><b>3</b> Working with the Raw Data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-r"><i class="fa fa-check"></i><b>3.1</b> Using R</a></li>
-<li class="chapter" data-level="3.2" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-the-database-locally"><i class="fa fa-check"></i><b>3.2</b> Using the Database Locally</a></li>
+<li class="chapter" data-level="3.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-the-database-locally"><i class="fa fa-check"></i><b>3.1</b> Using the Database Locally</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-r"><i class="fa fa-check"></i><b>3.2</b> Using R</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#searching-for-sites"><i class="fa fa-check"></i><b>3.2.1</b> Searching for Sites</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>4</b> SQL Quickly</a>
 <ul>
@@ -424,8 +441,8 @@ div.csl-indent {
 <div id="accumulationrates" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> <code>accumulationrates</code><a href="dataset-collection-related-tables-1.html#accumulationrates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table represents estimated accumulation rates based on particular chronologies associated with collectionunits. Units are defined within the table. Accumulation rates play an important role in understanding surficial and depositional processes <span class="citation">(<a href="#ref-Bennett2016" role="doc-biblioref">Bennett and Buck 2016</a>)</span>, and can be critical for defining relevant priors for Bayesian chronologies <span class="citation">(<a href="#ref-Goring2012" role="doc-biblioref">S. Goring et al. 2012</a>)</span>. While accumulation rates can be calculated on-the-fly, Neotoma also stores accumulation rates when reported, however, at present only 11 chronologies have reported accumulation rates.</p>
-<div id="htmlwidget-b24c9afaf1ee6403b47b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b24c9afaf1ee6403b47b">{"x":{"filter":"none","vertical":false,"data":[["analysisunitid","chronologyid","accumulationrate","variableunitsid","recdatecreated","recdatemodified"],["integer","integer","double precision","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["accumulationrates_pkey, fk_accumulationrates_analysisunits","accumulationrates_pkey, fk_accumulationrates_chronologies","","fk_accumulationrates_variableunits","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ab4fb12111ebe0669755" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ab4fb12111ebe0669755">{"x":{"filter":"none","vertical":false,"data":[["analysisunitid","chronologyid","accumulationrate","variableunitsid","recdatecreated","recdatemodified"],["integer","integer","double precision","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["accumulationrates_pkey, fk_accumulationrates_analysisunits","accumulationrates_pkey, fk_accumulationrates_chronologies","","fk_accumulationrates_variableunits","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>analysisunitid</code> (foreign key)</strong>: The identifier for the associated analysis unit.</li>
 <li><strong><code>chronologyid</code> (foreign key)</strong></li>
@@ -443,8 +460,8 @@ div.csl-indent {
 <li>A set of pollen surface samples from particular region or study that were published and analyzed as a single dataset and submitted to the database as a single dataset.</li>
 </ul>
 <p>The examples above are datasets predefined in the database. New aggregate datasets could be assembled for particular studies, for example all the pollen samples for a given time slice for a given geographic region.</p>
-<div id="htmlwidget-ed53a0546419779797cf" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ed53a0546419779797cf">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","aggregatedatasetname","aggregateordertypeid","notes","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatedatasets_pkey","","fk_aggregatedatasets_aggregateordertypes","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a3d9469a0d980d66e080" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a3d9469a0d980d66e080">{"x":{"filter":"none","vertical":false,"data":[["aggregatedatasetid","aggregatedatasetname","aggregateordertypeid","notes","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregatedatasets_pkey","","fk_aggregatedatasets_aggregateordertypes","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>aggregatedatasetid</code> (primary key)</strong>: An arbitrary Aggregate Dataset identification number.</li>
 <li><strong><code>aggregatedatasetname</code></strong>: Name of Aggregate Dataset.</li>
@@ -456,8 +473,8 @@ div.csl-indent {
 <h2><span class="header-section-number">8.3</span> <code>aggregateordertypes</code><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table for Aggregate Order Types. Table is referenced by the
 <a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>aggregatedatasets</code></a> table.</p>
-<div id="htmlwidget-ebdc2bef3c15cd0b807d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ebdc2bef3c15cd0b807d">{"x":{"filter":"none","vertical":false,"data":[["aggregateordertypeid","aggregateordertype","notes","recdatecreated","recdatemodified"],["integer","character varying(64)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregateordertypes_pkey","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fe8c013dc94b23fd4747" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fe8c013dc94b23fd4747">{"x":{"filter":"none","vertical":false,"data":[["aggregateordertypeid","aggregateordertype","notes","recdatecreated","recdatemodified"],["integer","character varying(64)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["aggregateordertypes_pkey","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>aggregateordertypeid</code> (primary key)</strong>: An arbitrary Aggregate Order Type identification number.</li>
 <li><strong><code>aggregateordertype</code></strong>: The Aggregate Order Type.</li>
@@ -476,8 +493,8 @@ div.csl-indent {
 <div id="CollectionTypes" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> <code>collectiontypes</code><a href="dataset-collection-related-tables-1.html#CollectionTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table is a lookup table of for types of Collection Units, or Collection Types. Table is referenced by the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>collectionunits</code></a> table.</p>
-<div id="htmlwidget-f726740c633024f56ab2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f726740c633024f56ab2">{"x":{"filter":"none","vertical":false,"data":[["colltypeid","colltype","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["collectiontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-839bd7762fae9a3d40f7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-839bd7762fae9a3d40f7">{"x":{"filter":"none","vertical":false,"data":[["colltypeid","colltype","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["collectiontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><p><strong><code>colltypeid</code> (primary key)</strong>: An arbitrary Collection Type identification number.</p></li>
 <li><p><strong><code>colltype</code></strong>: The Collection Type. Types include cores, sections, excavations, and
@@ -490,8 +507,8 @@ sample for ostracodes and an associated water sample.</p></li>
 <div id="CollectionUnits" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> <code>collectionunits</code><a href="dataset-collection-related-tables-1.html#CollectionUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores data for Collection Units.</p>
-<div id="htmlwidget-6cc4ac824c4bf0ac76e0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6cc4ac824c4bf0ac76e0">{"x":{"filter":"none","vertical":false,"data":[["collectionunitid","handle","siteid","colltypeid","depenvtid","collunitname","colldate","colldevice","gpslatitude","gpslongitude","gpsaltitude","gpserror","waterdepth","substrateid","slopeaspect","slopeangle","location","notes","recdatecreated","recdatemodified"],["integer","character varying(10)","integer","integer","integer","character varying(255)","date","character varying(255)","double precision","double precision","double precision","double precision","double precision","integer","integer","integer","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["collectionunits_pkey","","fk_collectionunits_sites","fk_collectionunits_collectiontypes","fk_collectionunits_depenvttypes","","","","","","","","","fk_collectionunits_rocktypes","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d1e2c2adf060395b66e9" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d1e2c2adf060395b66e9">{"x":{"filter":"none","vertical":false,"data":[["collectionunitid","handle","siteid","colltypeid","depenvtid","collunitname","colldate","colldevice","gpslatitude","gpslongitude","gpsaltitude","gpserror","waterdepth","substrateid","slopeaspect","slopeangle","location","notes","recdatecreated","recdatemodified"],["integer","character varying(10)","integer","integer","integer","character varying(255)","date","character varying(255)","double precision","double precision","double precision","double precision","double precision","integer","integer","integer","character varying(255)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["collectionunits_pkey","","fk_collectionunits_sites","fk_collectionunits_collectiontypes","fk_collectionunits_depenvttypes","","","","","","","","","fk_collectionunits_rocktypes","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>collectionunitid</code> (primary key)</strong>: An arbitrary Collection Unit identification number.</li>
 <li><strong><code>siteid</code> (foreign key)</strong>: Site where CollectionUnit was located. Field links to <a href="site-related-tables-1.html#Sites"><code>sites</code></a> table.</li>
@@ -516,8 +533,8 @@ sample for ostracodes and an associated water sample.</p></li>
 <div id="contextsdatasettypes" class="section level2 hasAnchor" number="8.6">
 <h2><span class="header-section-number">8.6</span> <code>contextsdatasettypes</code><a href="dataset-collection-related-tables-1.html#contextsdatasettypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Reporting for the set of variable contexts associated with each datasettype. This table is used to relate dataset type to variable context to provide users with a custom set of terms when entering and uploading data for a particular datasettype. For example, <em>Neotoma Pollen:broken</em> is not available for geochronologic datasets.</p>
-<div id="htmlwidget-1bc21aafaf759c566e0f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1bc21aafaf759c566e0f">{"x":{"filter":"none","vertical":false,"data":[["datasettypeid","variablecontextid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["contextsdatasettypes_pkey, fk_contextsdatasettypes_datasettypes","contextsdatasettypes_pkey, fk_contextsdatasettypes_variablecontexts","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bfa2fa205096815bf17c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bfa2fa205096815bf17c">{"x":{"filter":"none","vertical":false,"data":[["datasettypeid","variablecontextid","recdatecreated","recdatemodified"],["integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["contextsdatasettypes_pkey, fk_contextsdatasettypes_datasettypes","contextsdatasettypes_pkey, fk_contextsdatasettypes_variablecontexts","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>datasettypeid</code> (foreign key)</strong>: Link to the datasettype for a particular variable.</li>
 <li><strong><code>variablecontextid</code> (foreign key)</strong>: Link to the variable context type.</li>
@@ -534,8 +551,8 @@ sample for ostracodes and an associated water sample.</p></li>
 <div id="DatasetPIs" class="section level2 hasAnchor" number="8.9">
 <h2><span class="header-section-number">8.9</span> <code>datasetpis</code><a href="dataset-collection-related-tables-1.html#DatasetPIs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists the Principle Investigators for Datasets.</p>
-<div id="htmlwidget-061452901da219868647" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-061452901da219868647">{"x":{"filter":"none","vertical":false,"data":[["datasetid","contactid","piorder","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_datasetpis_datasets","fk_datasetpis_contacts","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f1556f8c40a0dcd42c91" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f1556f8c40a0dcd42c91">{"x":{"filter":"none","vertical":false,"data":[["datasetid","contactid","piorder","recdatecreated","recdatemodified"],["integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_datasetpis_datasets","fk_datasetpis_contacts","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>datasetid</code> (primary key, foreign key)</strong>: Dataset identification number. Field links to Dataset table.</li>
 <li><strong><code>contactid</code> (primary key, foreign key)</strong>: Contact identification number. Field links to
@@ -546,8 +563,8 @@ sample for ostracodes and an associated water sample.</p></li>
 <div id="DatasetPublications" class="section level2 hasAnchor" number="8.10">
 <h2><span class="header-section-number">8.10</span> <code>datasetpublications</code><a href="dataset-collection-related-tables-1.html#DatasetPublications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists the publications for datasets.</p>
-<div id="htmlwidget-0a88131b7e84dcb4603a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0a88131b7e84dcb4603a">{"x":{"filter":"none","vertical":false,"data":[["datasetid","publicationid","primarypub","recdatecreated","recdatemodified"],["integer","integer","boolean","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetpublications_pkey, fk_datasetpublications_datasets","datasetpublications_pkey, fk_datasetpublications_publications","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a8ccf5404d3eafd27c41" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a8ccf5404d3eafd27c41">{"x":{"filter":"none","vertical":false,"data":[["datasetid","publicationid","primarypub","recdatecreated","recdatemodified"],["integer","integer","boolean","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetpublications_pkey, fk_datasetpublications_datasets","datasetpublications_pkey, fk_datasetpublications_publications","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>datasetid</code> (primary key, foreign key)</strong>: Dataset identification number. Field links to <a href="dataset-collection-related-tables-1.html#Datasets"><code>datasets</code></a> table.</li>
 <li><strong><code>publicationid</code> (primary key, foreign key)</strong>: Publication identification number. Field links to <a href="publication-related-tables-1.html#Publications"><code>publications</code></a> table.</li>
@@ -557,8 +574,8 @@ sample for ostracodes and an associated water sample.</p></li>
 <div id="Datasets" class="section level2 hasAnchor" number="8.11">
 <h2><span class="header-section-number">8.11</span> <code>datasets</code><a href="dataset-collection-related-tables-1.html#Datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table stores the data for Datasets. A Dataset is the set of samples for a particular data type from a Collection Unit. A Collection Unit may have multiple Datasets for different data types, for example one dataset for pollen and another for plant macrofossils. Every Sample is assigned to a Dataset, and every Dataset is assigned to a Collection Unit. Samples from different Collection Units cannot be assigned to the same Dataset (although they may be assigned to <a href="dataset-collection-related-tables-1.html#AggregateDatasets"><code>aggregatedatasets</code></a>).</p>
-<div id="htmlwidget-581ae9de7e04e77e9abb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-581ae9de7e04e77e9abb">{"x":{"filter":"none","vertical":false,"data":[["datasetid","collectionunitid","datasettypeid","datasetname","notes","recdatecreated","recdatemodified","embargoid"],["integer","integer","integer","character varying(80)","text","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["datasets_pkey","fk_datasets_collectionunits","fk_datasets_datasettypes","","","","","fk_datasets_embargo"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7a7d3c9236bf59e9d919" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7a7d3c9236bf59e9d919">{"x":{"filter":"none","vertical":false,"data":[["datasetid","collectionunitid","datasettypeid","datasetname","notes","recdatecreated","recdatemodified","embargoid"],["integer","integer","integer","character varying(80)","text","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["datasets_pkey","fk_datasets_collectionunits","fk_datasets_datasettypes","","","","","fk_datasets_embargo"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>datasetid</code> (primary key)</strong>: An arbitrary Dataset identification number.</li>
 <li><strong><code>collectionunitid</code> (foreign key)</strong>: Collection Unit identification number. Field links to the
@@ -571,12 +588,12 @@ sample for ostracodes and an associated water sample.</p></li>
 <div id="sql-example-2" class="section level3 hasAnchor" number="8.11.1">
 <h3><span class="header-section-number">8.11.1</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following query lists the Dataset Types for the site <strong>Vaifanaura’amo’ora</strong>. Note the kind of apostrophe used here. Strings with single quotes can be escaped using <code>''</code> a double single quote. Here we are using an ASCII apostrophe character.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb11-1"><a href="dataset-collection-related-tables-1.html#cb11-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">SELECT</span> dst.datasettype</span>
-<span id="cb11-2"><a href="dataset-collection-related-tables-1.html#cb11-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st </span>
-<span id="cb11-3"><a href="dataset-collection-related-tables-1.html#cb11-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid </span>
-<span id="cb11-4"><a href="dataset-collection-related-tables-1.html#cb11-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb11-5"><a href="dataset-collection-related-tables-1.html#cb11-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
-<span id="cb11-6"><a href="dataset-collection-related-tables-1.html#cb11-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Vaifanaura’amo’ora&#39;</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb21-1"><a href="dataset-collection-related-tables-1.html#cb21-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">SELECT</span> dst.datasettype</span>
+<span id="cb21-2"><a href="dataset-collection-related-tables-1.html#cb21-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st </span>
+<span id="cb21-3"><a href="dataset-collection-related-tables-1.html#cb21-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.siteid <span class="op">=</span> st.siteid </span>
+<span id="cb21-4"><a href="dataset-collection-related-tables-1.html#cb21-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb21-5"><a href="dataset-collection-related-tables-1.html#cb21-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
+<span id="cb21-6"><a href="dataset-collection-related-tables-1.html#cb21-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Vaifanaura’amo’ora&#39;</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:datasettypesbysitename">Table 8.1: </span>Displaying records 1 - 10</caption>
@@ -623,23 +640,23 @@ sample for ostracodes and an associated water sample.</p></li>
 <div id="sql-example-3" class="section level3 hasAnchor" number="8.11.2">
 <h3><span class="header-section-number">8.11.2</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists the plant macrofossil taxa located at sites in Neotoma with a defined <em>plant macrofossil</em> dataset type. We have to apply a second filter to ensure we are only returning taxa that fit within the vascular plant taxonomic group.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb12-1"><a href="dataset-collection-related-tables-1.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> st.sitename,</span>
-<span id="cb12-2"><a href="dataset-collection-related-tables-1.html#cb12-2" aria-hidden="true" tabindex="-1"></a>       st.siteid,</span>
-<span id="cb12-3"><a href="dataset-collection-related-tables-1.html#cb12-3" aria-hidden="true" tabindex="-1"></a>       ds.datasetid,</span>
-<span id="cb12-4"><a href="dataset-collection-related-tables-1.html#cb12-4" aria-hidden="true" tabindex="-1"></a>       array_agg(<span class="kw">DISTINCT</span> tx.taxonname)</span>
-<span id="cb12-5"><a href="dataset-collection-related-tables-1.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st </span>
-<span id="cb12-6"><a href="dataset-collection-related-tables-1.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb12-7"><a href="dataset-collection-related-tables-1.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>        ndb.datasets <span class="kw">AS</span>  ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid </span>
-<span id="cb12-8"><a href="dataset-collection-related-tables-1.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>    ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span>   dst.datasettypeid <span class="op">=</span> ds.datasettypeid </span>
-<span id="cb12-9"><a href="dataset-collection-related-tables-1.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span>       smp.datasetid <span class="op">=</span> ds.datasetid</span>
-<span id="cb12-10"><a href="dataset-collection-related-tables-1.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.<span class="kw">data</span> <span class="kw">AS</span>  dt <span class="kw">ON</span>         dt.sampleid <span class="op">=</span> smp.sampleid </span>
-<span id="cb12-11"><a href="dataset-collection-related-tables-1.html#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>       ndb.variables <span class="kw">AS</span> var <span class="kw">ON</span>      var.variableid <span class="op">=</span> dt.variableid</span>
-<span id="cb12-12"><a href="dataset-collection-related-tables-1.html#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.taxa <span class="kw">AS</span>  tx <span class="kw">ON</span>         var.taxonid <span class="op">=</span> tx.taxonid</span>
-<span id="cb12-13"><a href="dataset-collection-related-tables-1.html#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> st.sitename <span class="kw">LIKE</span> <span class="st">&#39;%Lake%&#39;</span> <span class="kw">AND</span> </span>
-<span id="cb12-14"><a href="dataset-collection-related-tables-1.html#cb12-14" aria-hidden="true" tabindex="-1"></a>      dst.datasettype <span class="op">=</span> <span class="st">&#39;plant macrofossil&#39;</span> </span>
-<span id="cb12-15"><a href="dataset-collection-related-tables-1.html#cb12-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">AND</span> tx.taxagroupid <span class="op">=</span> <span class="st">&#39;VPL&#39;</span></span>
-<span id="cb12-16"><a href="dataset-collection-related-tables-1.html#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.siteid, st.sitename, ds.datasetid</span>
-<span id="cb12-17"><a href="dataset-collection-related-tables-1.html#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb22-1"><a href="dataset-collection-related-tables-1.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> st.sitename,</span>
+<span id="cb22-2"><a href="dataset-collection-related-tables-1.html#cb22-2" aria-hidden="true" tabindex="-1"></a>       st.siteid,</span>
+<span id="cb22-3"><a href="dataset-collection-related-tables-1.html#cb22-3" aria-hidden="true" tabindex="-1"></a>       ds.datasetid,</span>
+<span id="cb22-4"><a href="dataset-collection-related-tables-1.html#cb22-4" aria-hidden="true" tabindex="-1"></a>       array_agg(<span class="kw">DISTINCT</span> tx.taxonname)</span>
+<span id="cb22-5"><a href="dataset-collection-related-tables-1.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st </span>
+<span id="cb22-6"><a href="dataset-collection-related-tables-1.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span>  cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb22-7"><a href="dataset-collection-related-tables-1.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>        ndb.datasets <span class="kw">AS</span>  ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid </span>
+<span id="cb22-8"><a href="dataset-collection-related-tables-1.html#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>    ndb.datasettypes <span class="kw">AS</span> dst <span class="kw">ON</span>   dst.datasettypeid <span class="op">=</span> ds.datasettypeid </span>
+<span id="cb22-9"><a href="dataset-collection-related-tables-1.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.samples <span class="kw">AS</span> smp <span class="kw">ON</span>       smp.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb22-10"><a href="dataset-collection-related-tables-1.html#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.<span class="kw">data</span> <span class="kw">AS</span>  dt <span class="kw">ON</span>         dt.sampleid <span class="op">=</span> smp.sampleid </span>
+<span id="cb22-11"><a href="dataset-collection-related-tables-1.html#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>       ndb.variables <span class="kw">AS</span> var <span class="kw">ON</span>      var.variableid <span class="op">=</span> dt.variableid</span>
+<span id="cb22-12"><a href="dataset-collection-related-tables-1.html#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>            ndb.taxa <span class="kw">AS</span>  tx <span class="kw">ON</span>         var.taxonid <span class="op">=</span> tx.taxonid</span>
+<span id="cb22-13"><a href="dataset-collection-related-tables-1.html#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> st.sitename <span class="kw">LIKE</span> <span class="st">&#39;%Lake%&#39;</span> <span class="kw">AND</span> </span>
+<span id="cb22-14"><a href="dataset-collection-related-tables-1.html#cb22-14" aria-hidden="true" tabindex="-1"></a>      dst.datasettype <span class="op">=</span> <span class="st">&#39;plant macrofossil&#39;</span> </span>
+<span id="cb22-15"><a href="dataset-collection-related-tables-1.html#cb22-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">AND</span> tx.taxagroupid <span class="op">=</span> <span class="st">&#39;VPL&#39;</span></span>
+<span id="cb22-16"><a href="dataset-collection-related-tables-1.html#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.siteid, st.sitename, ds.datasetid</span>
+<span id="cb22-17"><a href="dataset-collection-related-tables-1.html#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:planttaxasitename">Table 8.2: </span>5 records</caption>
@@ -699,8 +716,8 @@ sample for ostracodes and an associated water sample.</p></li>
 submissions, resubmissions, compilations from other databases, or
 recompilations. See the description of the
 <a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><code>datasetsubmissiontypes</code></a> table.</p>
-<div id="htmlwidget-6a9e9044ca27f34194d5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6a9e9044ca27f34194d5">{"x":{"filter":"none","vertical":false,"data":[["submissionid","datasetid","databaseid","contactid","submissiontypeid","submissiondate","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissions_pkey","fk_datasetsubmissions_datasets","fk_datasetsubmissions_constituentdatabases","fk_datasetsubmissions_contacts","fk_datasetsubmissions_datasetsubmissiontypes","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8d74364a7e0aaa486bbc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8d74364a7e0aaa486bbc">{"x":{"filter":"none","vertical":false,"data":[["submissionid","datasetid","databaseid","contactid","submissiontypeid","submissiondate","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissions_pkey","fk_datasetsubmissions_datasets","fk_datasetsubmissions_constituentdatabases","fk_datasetsubmissions_contacts","fk_datasetsubmissions_datasetsubmissiontypes","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>submissionid</code> (primary key)</strong>: An arbitrary submission identification number.</li>
 <li><strong><code>datasetid</code> (foreign key)</strong>: Dataset identification number. Field links to the <a href="dataset-collection-related-tables-1.html#Datasets"><code>datasets</code></a> table. Datasets may occur
@@ -715,8 +732,8 @@ multiple times in this table (e.g. once for the original compilation into a dif
 <div id="DatasetSubmissionTypes" class="section level2 hasAnchor" number="8.13">
 <h2><span class="header-section-number">8.13</span> <code>datasetsubmissiontypes</code><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Dataset Submission Types. Table is referenced by the <a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><code>datasetsubmissions</code></a> table.</p>
-<div id="htmlwidget-acbe834ea0306ecf966c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-acbe834ea0306ecf966c">{"x":{"filter":"none","vertical":false,"data":[["submissiontypeid","submissiontype","recdatecreated","recdatemodified"],["integer","character varying(80)","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissiontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5d066a7dc15748455935" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5d066a7dc15748455935">{"x":{"filter":"none","vertical":false,"data":[["submissiontypeid","submissiontype","recdatecreated","recdatemodified"],["integer","character varying(80)","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissiontypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>submissiontypeid</code> (primary key)</strong>: An arbitrary Submission Type identification number.</li>
 <li><strong><code>submissiontype</code></strong>: Type of submission. The database has the following types:
@@ -735,21 +752,21 @@ multiple times in this table (e.g. once for the original compilation into a dif
 <div id="sql-example-4" class="section level3 hasAnchor" number="8.13.1">
 <h3><span class="header-section-number">8.13.1</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query gives a list of Dataset Submissions for the site «Bear River No. 3» ordered by date.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb13-1"><a href="dataset-collection-related-tables-1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> DatasetTypes.DatasetType, Projects.ProjectName,</span>
-<span id="cb13-2"><a href="dataset-collection-related-tables-1.html#cb13-2" aria-hidden="true" tabindex="-1"></a>DatasetSubmissions.SubmissionDate,</span>
-<span id="cb13-3"><a href="dataset-collection-related-tables-1.html#cb13-3" aria-hidden="true" tabindex="-1"></a>DatasetSubmissionTypes.SubmissionType, DatasetSubmissions.Notes</span>
-<span id="cb13-4"><a href="dataset-collection-related-tables-1.html#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="dataset-collection-related-tables-1.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> (Projects <span class="kw">INNER</span> <span class="kw">JOIN</span> (DatasetTypes <span class="kw">INNER</span> <span class="kw">JOIN</span></span>
-<span id="cb13-6"><a href="dataset-collection-related-tables-1.html#cb13-6" aria-hidden="true" tabindex="-1"></a>(DatasetSubmissionTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> ((CollectionUnits <span class="kw">INNER</span> <span class="kw">JOIN</span> Datasets</span>
-<span id="cb13-7"><a href="dataset-collection-related-tables-1.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> CollectionUnits.CollectionUnitID <span class="op">=</span> Datasets.CollectionUnitID) <span class="kw">INNER</span></span>
-<span id="cb13-8"><a href="dataset-collection-related-tables-1.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> DatasetSubmissions <span class="kw">ON</span> Datasets.DatasetID <span class="op">=</span></span>
-<span id="cb13-9"><a href="dataset-collection-related-tables-1.html#cb13-9" aria-hidden="true" tabindex="-1"></a>DatasetSubmissions.DatasetID) <span class="kw">ON</span> DatasetSubmissionTypes.SubmissionTypeID</span>
-<span id="cb13-10"><a href="dataset-collection-related-tables-1.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="op">=</span> DatasetSubmissions.SubmissionTypeID) <span class="kw">ON</span> DatasetTypes.DatasetTypeID <span class="op">=</span></span>
-<span id="cb13-11"><a href="dataset-collection-related-tables-1.html#cb13-11" aria-hidden="true" tabindex="-1"></a>Datasets.DatasetTypeID) <span class="kw">ON</span> Projects.ProjectID <span class="op">=</span></span>
-<span id="cb13-12"><a href="dataset-collection-related-tables-1.html#cb13-12" aria-hidden="true" tabindex="-1"></a>DatasetSubmissions.ProjectID) <span class="kw">ON</span> Sites.SiteID <span class="op">=</span> CollectionUnits.SiteID</span>
-<span id="cb13-13"><a href="dataset-collection-related-tables-1.html#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="dataset-collection-related-tables-1.html#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (((Sites.SiteName)<span class="op">=</span><span class="ot">&quot;Bear River No. 3&quot;</span>))</span>
-<span id="cb13-15"><a href="dataset-collection-related-tables-1.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> DatasetSubmissions.SubmissionDate;</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="dataset-collection-related-tables-1.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> DatasetTypes.DatasetType, Projects.ProjectName,</span>
+<span id="cb23-2"><a href="dataset-collection-related-tables-1.html#cb23-2" aria-hidden="true" tabindex="-1"></a>DatasetSubmissions.SubmissionDate,</span>
+<span id="cb23-3"><a href="dataset-collection-related-tables-1.html#cb23-3" aria-hidden="true" tabindex="-1"></a>DatasetSubmissionTypes.SubmissionType, DatasetSubmissions.Notes</span>
+<span id="cb23-4"><a href="dataset-collection-related-tables-1.html#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="dataset-collection-related-tables-1.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Sites <span class="kw">INNER</span> <span class="kw">JOIN</span> (Projects <span class="kw">INNER</span> <span class="kw">JOIN</span> (DatasetTypes <span class="kw">INNER</span> <span class="kw">JOIN</span></span>
+<span id="cb23-6"><a href="dataset-collection-related-tables-1.html#cb23-6" aria-hidden="true" tabindex="-1"></a>(DatasetSubmissionTypes <span class="kw">INNER</span> <span class="kw">JOIN</span> ((CollectionUnits <span class="kw">INNER</span> <span class="kw">JOIN</span> Datasets</span>
+<span id="cb23-7"><a href="dataset-collection-related-tables-1.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> CollectionUnits.CollectionUnitID <span class="op">=</span> Datasets.CollectionUnitID) <span class="kw">INNER</span></span>
+<span id="cb23-8"><a href="dataset-collection-related-tables-1.html#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> DatasetSubmissions <span class="kw">ON</span> Datasets.DatasetID <span class="op">=</span></span>
+<span id="cb23-9"><a href="dataset-collection-related-tables-1.html#cb23-9" aria-hidden="true" tabindex="-1"></a>DatasetSubmissions.DatasetID) <span class="kw">ON</span> DatasetSubmissionTypes.SubmissionTypeID</span>
+<span id="cb23-10"><a href="dataset-collection-related-tables-1.html#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="op">=</span> DatasetSubmissions.SubmissionTypeID) <span class="kw">ON</span> DatasetTypes.DatasetTypeID <span class="op">=</span></span>
+<span id="cb23-11"><a href="dataset-collection-related-tables-1.html#cb23-11" aria-hidden="true" tabindex="-1"></a>Datasets.DatasetTypeID) <span class="kw">ON</span> Projects.ProjectID <span class="op">=</span></span>
+<span id="cb23-12"><a href="dataset-collection-related-tables-1.html#cb23-12" aria-hidden="true" tabindex="-1"></a>DatasetSubmissions.ProjectID) <span class="kw">ON</span> Sites.SiteID <span class="op">=</span> CollectionUnits.SiteID</span>
+<span id="cb23-13"><a href="dataset-collection-related-tables-1.html#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="dataset-collection-related-tables-1.html#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (((Sites.SiteName)<span class="op">=</span><span class="ot">&quot;Bear River No. 3&quot;</span>))</span>
+<span id="cb23-15"><a href="dataset-collection-related-tables-1.html#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> DatasetSubmissions.SubmissionDate;</span></code></pre></div>
 </div>
 </div>
 <div id="datasettaxagrouptypes" class="section level2 hasAnchor" number="8.14">
@@ -763,8 +780,8 @@ multiple times in this table (e.g. once for the original compilation into a dif
 <div id="DatasetTypes" class="section level2 hasAnchor" number="8.16">
 <h2><span class="header-section-number">8.16</span> <code>datasettypes</code><a href="dataset-collection-related-tables-1.html#DatasetTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table for Dataset Types. Table is referenced by the <a href="dataset-collection-related-tables-1.html#Datasets"><code>datasets</code></a> table.</p>
-<div id="htmlwidget-4a58d178251d2a16673e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4a58d178251d2a16673e">{"x":{"filter":"none","vertical":false,"data":[["submissionid","datasetid","databaseid","contactid","submissiontypeid","submissiondate","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissions_pkey","fk_datasetsubmissions_datasets","fk_datasetsubmissions_constituentdatabases","fk_datasetsubmissions_contacts","fk_datasetsubmissions_datasetsubmissiontypes","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1cff0cdc4869317e12fc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1cff0cdc4869317e12fc">{"x":{"filter":"none","vertical":false,"data":[["submissionid","datasetid","databaseid","contactid","submissiontypeid","submissiondate","notes","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["datasetsubmissions_pkey","fk_datasetsubmissions_datasets","fk_datasetsubmissions_constituentdatabases","fk_datasetsubmissions_contacts","fk_datasetsubmissions_datasetsubmissiontypes","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>datasettypeid</code> (primary key)</strong>: An arbitrary Dataset Type identification number.</li>
 <li><strong><code>datasettype</code></strong>: The Dataset type, including the following:
@@ -786,8 +803,8 @@ multiple times in this table (e.g. once for the original compilation into a dif
 <h2><span class="header-section-number">8.18</span> <code>depenvttypes</code><a href="dataset-collection-related-tables-1.html#DepEnvtTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Depostional Environment Types. Table is referenced by
 the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>collectionunits</code></a> table.</p>
-<div id="htmlwidget-d75f8b78b99c22e69ee5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d75f8b78b99c22e69ee5">{"x":{"filter":"none","vertical":false,"data":[["depenvtid","depenvt","depenvthigherid","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["depenvttypes_pkey","","fk_depenvthigherid","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-105d2159f527abe09313" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-105d2159f527abe09313">{"x":{"filter":"none","vertical":false,"data":[["depenvtid","depenvt","depenvthigherid","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["depenvttypes_pkey","","fk_depenvthigherid","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>depenvtid</code> (primary key)</strong>: An arbitrary Depositional Environment Type identification number.</li>
 <li><strong><code>depenvt</code></strong>: Depositional Environment.</li>
@@ -796,9 +813,9 @@ the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>col
 <div id="sql-example-5" class="section level3 hasAnchor" number="8.18.1">
 <h3><span class="header-section-number">8.18.1</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query gives a list of the top level depostional environment types.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb14-1"><a href="dataset-collection-related-tables-1.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> dt.depenvtid, dt.depenvt</span>
-<span id="cb14-2"><a href="dataset-collection-related-tables-1.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> dt</span>
-<span id="cb14-3"><a href="dataset-collection-related-tables-1.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> dt.depenvtid <span class="op">=</span> dt.depenvthigherid;</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="dataset-collection-related-tables-1.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> dt.depenvtid, dt.depenvt</span>
+<span id="cb24-2"><a href="dataset-collection-related-tables-1.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> dt</span>
+<span id="cb24-3"><a href="dataset-collection-related-tables-1.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> dt.depenvtid <span class="op">=</span> dt.depenvthigherid;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:deptypetoplevel">Table 8.3: </span>Displaying records 1 - 10</caption>
@@ -856,21 +873,21 @@ the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>col
 <div id="sql-example-6" class="section level3 hasAnchor" number="8.18.2">
 <h3><span class="header-section-number">8.18.2</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query uses a recursive CTE to provide a list of all the types of <em>Sampler</em> in Neotoma. The array in <code>deagg</code> represents the hierarchy of the sampler. So, for example, we see that the <em>Gosling Trap</em> is considered a form of <em>Pollen Trap (Terrestrial)</em>, which is a form of <em>Pollen Trap</em>.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb15-1"><a href="dataset-collection-related-tables-1.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE dephierarchy <span class="kw">AS</span> (</span>
-<span id="cb15-2"><a href="dataset-collection-related-tables-1.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
-<span id="cb15-3"><a href="dataset-collection-related-tables-1.html#cb15-3" aria-hidden="true" tabindex="-1"></a>         de.depenvt,</span>
-<span id="cb15-4"><a href="dataset-collection-related-tables-1.html#cb15-4" aria-hidden="true" tabindex="-1"></a>         <span class="dt">ARRAY</span>[de.depenvtid] <span class="kw">AS</span> deagg</span>
-<span id="cb15-5"><a href="dataset-collection-related-tables-1.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de</span>
-<span id="cb15-6"><a href="dataset-collection-related-tables-1.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> de.depenvt <span class="op">=</span> <span class="st">&#39;Sampler&#39;</span></span>
-<span id="cb15-7"><a href="dataset-collection-related-tables-1.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span> </span>
-<span id="cb15-8"><a href="dataset-collection-related-tables-1.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
-<span id="cb15-9"><a href="dataset-collection-related-tables-1.html#cb15-9" aria-hidden="true" tabindex="-1"></a>         de.depenvt,</span>
-<span id="cb15-10"><a href="dataset-collection-related-tables-1.html#cb15-10" aria-hidden="true" tabindex="-1"></a>         dephierarchy.deagg <span class="op">||</span> de.depenvtid</span>
-<span id="cb15-11"><a href="dataset-collection-related-tables-1.html#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de </span>
-<span id="cb15-12"><a href="dataset-collection-related-tables-1.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> dephierarchy <span class="kw">ON</span> de.depenvthigherid <span class="op">=</span> dephierarchy.depenvtid</span>
-<span id="cb15-13"><a href="dataset-collection-related-tables-1.html#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> <span class="kw">NOT</span> de.depenvtid <span class="op">=</span> dephierarchy.depenvtid</span>
-<span id="cb15-14"><a href="dataset-collection-related-tables-1.html#cb15-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb15-15"><a href="dataset-collection-related-tables-1.html#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> dephierarchy;</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb25-1"><a href="dataset-collection-related-tables-1.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE dephierarchy <span class="kw">AS</span> (</span>
+<span id="cb25-2"><a href="dataset-collection-related-tables-1.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
+<span id="cb25-3"><a href="dataset-collection-related-tables-1.html#cb25-3" aria-hidden="true" tabindex="-1"></a>         de.depenvt,</span>
+<span id="cb25-4"><a href="dataset-collection-related-tables-1.html#cb25-4" aria-hidden="true" tabindex="-1"></a>         <span class="dt">ARRAY</span>[de.depenvtid] <span class="kw">AS</span> deagg</span>
+<span id="cb25-5"><a href="dataset-collection-related-tables-1.html#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de</span>
+<span id="cb25-6"><a href="dataset-collection-related-tables-1.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> de.depenvt <span class="op">=</span> <span class="st">&#39;Sampler&#39;</span></span>
+<span id="cb25-7"><a href="dataset-collection-related-tables-1.html#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">UNION</span> <span class="kw">ALL</span> </span>
+<span id="cb25-8"><a href="dataset-collection-related-tables-1.html#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> de.depenvtid,</span>
+<span id="cb25-9"><a href="dataset-collection-related-tables-1.html#cb25-9" aria-hidden="true" tabindex="-1"></a>         de.depenvt,</span>
+<span id="cb25-10"><a href="dataset-collection-related-tables-1.html#cb25-10" aria-hidden="true" tabindex="-1"></a>         dephierarchy.deagg <span class="op">||</span> de.depenvtid</span>
+<span id="cb25-11"><a href="dataset-collection-related-tables-1.html#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de </span>
+<span id="cb25-12"><a href="dataset-collection-related-tables-1.html#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> dephierarchy <span class="kw">ON</span> de.depenvthigherid <span class="op">=</span> dephierarchy.depenvtid</span>
+<span id="cb25-13"><a href="dataset-collection-related-tables-1.html#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> <span class="kw">NOT</span> de.depenvtid <span class="op">=</span> dephierarchy.depenvtid</span>
+<span id="cb25-14"><a href="dataset-collection-related-tables-1.html#cb25-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-15"><a href="dataset-collection-related-tables-1.html#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> dephierarchy;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:deptypesamplers">Table 8.4: </span>9 records</caption>
@@ -934,22 +951,22 @@ the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>col
 <div id="sql-example-7" class="section level3 hasAnchor" number="8.18.3">
 <h3><span class="header-section-number">8.18.3</span> SQL Example<a href="dataset-collection-related-tables-1.html#sql-example-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query uses a recursive CTE to list every depositional environment and the top level environment to which it relates:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb16-1"><a href="dataset-collection-related-tables-1.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE dephierarchy <span class="kw">AS</span> </span>
-<span id="cb16-2"><a href="dataset-collection-related-tables-1.html#cb16-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">SELECT</span> de.depenvtid,</span>
-<span id="cb16-3"><a href="dataset-collection-related-tables-1.html#cb16-3" aria-hidden="true" tabindex="-1"></a>        de.depenvt,</span>
-<span id="cb16-4"><a href="dataset-collection-related-tables-1.html#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">ARRAY</span>[de.depenvt:<span class="ch">:varchar</span>] <span class="kw">AS</span> deagg </span>
-<span id="cb16-5"><a href="dataset-collection-related-tables-1.html#cb16-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de </span>
-<span id="cb16-6"><a href="dataset-collection-related-tables-1.html#cb16-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">UNION</span> <span class="kw">ALL</span> </span>
-<span id="cb16-7"><a href="dataset-collection-related-tables-1.html#cb16-7" aria-hidden="true" tabindex="-1"></a> <span class="kw">SELECT</span> de.depenvtid, </span>
-<span id="cb16-8"><a href="dataset-collection-related-tables-1.html#cb16-8" aria-hidden="true" tabindex="-1"></a>        de.depenvt, </span>
-<span id="cb16-9"><a href="dataset-collection-related-tables-1.html#cb16-9" aria-hidden="true" tabindex="-1"></a>        dephierarchy.deagg <span class="op">||</span> de.depenvt </span>
-<span id="cb16-10"><a href="dataset-collection-related-tables-1.html#cb16-10" aria-hidden="true" tabindex="-1"></a> <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de  </span>
-<span id="cb16-11"><a href="dataset-collection-related-tables-1.html#cb16-11" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> dephierarchy <span class="kw">ON</span> de.depenvthigherid <span class="op">=</span> dephierarchy.depenvtid</span>
-<span id="cb16-12"><a href="dataset-collection-related-tables-1.html#cb16-12" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> <span class="kw">NOT</span> de.depenvtid <span class="op">=</span> dephierarchy.depenvtid)</span>
-<span id="cb16-13"><a href="dataset-collection-related-tables-1.html#cb16-13" aria-hidden="true" tabindex="-1"></a> <span class="kw">SELECT</span> depenvtid, </span>
-<span id="cb16-14"><a href="dataset-collection-related-tables-1.html#cb16-14" aria-hidden="true" tabindex="-1"></a>        depenvt,</span>
-<span id="cb16-15"><a href="dataset-collection-related-tables-1.html#cb16-15" aria-hidden="true" tabindex="-1"></a>        deagg[<span class="dv">1</span>] <span class="kw">FROM</span> dephierarchy </span>
-<span id="cb16-16"><a href="dataset-collection-related-tables-1.html#cb16-16" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> dephierarchy.deagg[<span class="dv">1</span>] <span class="op">=</span> <span class="kw">ANY</span>(<span class="kw">SELECT</span> depenvt <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> det <span class="kw">WHERE</span> det.depenvthigherid <span class="op">=</span> det.depenvtid);</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb26-1"><a href="dataset-collection-related-tables-1.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> RECURSIVE dephierarchy <span class="kw">AS</span> </span>
+<span id="cb26-2"><a href="dataset-collection-related-tables-1.html#cb26-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">SELECT</span> de.depenvtid,</span>
+<span id="cb26-3"><a href="dataset-collection-related-tables-1.html#cb26-3" aria-hidden="true" tabindex="-1"></a>        de.depenvt,</span>
+<span id="cb26-4"><a href="dataset-collection-related-tables-1.html#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">ARRAY</span>[de.depenvt:<span class="ch">:varchar</span>] <span class="kw">AS</span> deagg </span>
+<span id="cb26-5"><a href="dataset-collection-related-tables-1.html#cb26-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de </span>
+<span id="cb26-6"><a href="dataset-collection-related-tables-1.html#cb26-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">UNION</span> <span class="kw">ALL</span> </span>
+<span id="cb26-7"><a href="dataset-collection-related-tables-1.html#cb26-7" aria-hidden="true" tabindex="-1"></a> <span class="kw">SELECT</span> de.depenvtid, </span>
+<span id="cb26-8"><a href="dataset-collection-related-tables-1.html#cb26-8" aria-hidden="true" tabindex="-1"></a>        de.depenvt, </span>
+<span id="cb26-9"><a href="dataset-collection-related-tables-1.html#cb26-9" aria-hidden="true" tabindex="-1"></a>        dephierarchy.deagg <span class="op">||</span> de.depenvt </span>
+<span id="cb26-10"><a href="dataset-collection-related-tables-1.html#cb26-10" aria-hidden="true" tabindex="-1"></a> <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> de  </span>
+<span id="cb26-11"><a href="dataset-collection-related-tables-1.html#cb26-11" aria-hidden="true" tabindex="-1"></a> <span class="kw">INNER</span> <span class="kw">JOIN</span> dephierarchy <span class="kw">ON</span> de.depenvthigherid <span class="op">=</span> dephierarchy.depenvtid</span>
+<span id="cb26-12"><a href="dataset-collection-related-tables-1.html#cb26-12" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> <span class="kw">NOT</span> de.depenvtid <span class="op">=</span> dephierarchy.depenvtid)</span>
+<span id="cb26-13"><a href="dataset-collection-related-tables-1.html#cb26-13" aria-hidden="true" tabindex="-1"></a> <span class="kw">SELECT</span> depenvtid, </span>
+<span id="cb26-14"><a href="dataset-collection-related-tables-1.html#cb26-14" aria-hidden="true" tabindex="-1"></a>        depenvt,</span>
+<span id="cb26-15"><a href="dataset-collection-related-tables-1.html#cb26-15" aria-hidden="true" tabindex="-1"></a>        deagg[<span class="dv">1</span>] <span class="kw">FROM</span> dephierarchy </span>
+<span id="cb26-16"><a href="dataset-collection-related-tables-1.html#cb26-16" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> dephierarchy.deagg[<span class="dv">1</span>] <span class="op">=</span> <span class="kw">ANY</span>(<span class="kw">SELECT</span> depenvt <span class="kw">FROM</span> ndb.depenvttypes <span class="kw">AS</span> det <span class="kw">WHERE</span> det.depenvthigherid <span class="op">=</span> det.depenvtid);</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:deptypetoplevels">Table 8.5: </span>Displaying records 1 - 10</caption>

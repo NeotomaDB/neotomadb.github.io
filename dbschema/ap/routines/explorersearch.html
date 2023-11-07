@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>explorersearch</h1><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Parameters</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Mode</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>_taxonids</td>
+                                    <td>ARRAY</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_elemtypeids</td>
+                                    <td>ARRAY</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_taphtypeids</td>
+                                    <td>ARRAY</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_depenvids</td>
+                                    <td>ARRAY</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_abundpct</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_datasettypeid</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_keywordid</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_coords</td>
+                                    <td>character varying</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_gpid</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_altmin</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_altmax</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_coltypeid</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_dbid</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_sitename</td>
+                                    <td>character varying</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_contactid</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_ageold</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_ageyoung</td>
+                                    <td>integer</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_agedocontain</td>
+                                    <td>boolean</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_agedirectdate</td>
+                                    <td>boolean</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_subdate</td>
+                                    <td>date</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>_debug</td>
+                                    <td>boolean</td>
+                                    <td>IN</td>
+                                </tr>
+                                <tr>
+                                    <td>datasetid</td>
+                                    <td>integer</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>datasettype</td>
+                                    <td>character varying</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>databasename</td>
+                                    <td>character varying</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>minage</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>maxage</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>ageyoungest</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>ageoldest</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>siteid</td>
+                                    <td>integer</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>sitename</td>
+                                    <td>character varying</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>sitedescription</td>
+                                    <td>text</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>notes</td>
+                                    <td>text</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>collunithandle</td>
+                                    <td>character varying</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>collunitname</td>
+                                    <td>character varying</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>latitudenorth</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>latitudesouth</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>longitudeeast</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                <tr>
+                                    <td>longitudewest</td>
+                                    <td>double precision</td>
+                                    <td>OUT</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-code-o"></i>
+                            <h3 id="RoutineDefinition" class="box-title">Definition</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">&#10;DECLARE thesql varchar;&#10;        paramlist varchar;&#10;        doAbund boolean := false;&#10;        doElem boolean := false;&#10;        doTaph boolean := false;&#10;        doDepEnv boolean := false;&#10;        noTaxa boolean := false;&#10;        sumGroupId int := NULL;&#10;        poly geography := NULL;&#10;        cteBase varchar;&#10;        cteBaseSelect varchar;&#10;        cteBaseFrom varchar;&#10;        cteBaseWhere varchar;&#10;        cteAges varchar;&#10;        cteAgesSelect varchar;&#10;        cteAgesFrom varchar;&#10;        cteAgesWhere varchar;&#10;        cteDs varchar;&#10;        cteDsSelect varchar;&#10;        cteDsFrom varchar;&#10;        cteDsWhere varchar;&#10;    debugLenTaxonids integer;&#10;    debugIsPoly boolean;&#10;BEGIN&#10;    IF array_length(_depenvids,1) &gt; 0 THEN&#10;      doDepEnv := true;&#10;    END IF;&#10;&#10;&#10;    debugLenTaxonids := array_length(_taxonids,1);&#10;&#10;    RAISE NOTICE &#39;_taxonids length is %&#39;, debugLenTaxonids;&#10;&#10;    IF array_length(_taxonids,1) &lt; 1 OR _taxonids is null THEN&#10;      noTaxa := true;&#10;      RAISE NOTICE &#39;noTaxa is %&#39;, noTaxa;&#10;&#10;    END IF;&#10;&#10;&#10;    IF ( (array_length(_elemtypeids,1) &gt; 0 OR _elemtypeids IS NOT NULL) AND noTaxa = false ) THEN&#10;        doElem := true;&#10;    RAISE NOTICE &#39;doElem is %&#39;, doElem;&#10;    END IF;&#10;&#10;    IF ( (array_length(_taphtypeids,1) &gt; 0 OR _taphtypeids IS NOT NULL )AND noTaxa = false ) THEN&#10;        doTaph := true;&#10;    RAISE NOTICE &#39;doTaph is %&#39;, doTaph;&#10;    END IF;&#10;&#10;    IF ( _abundpct IS NOT NULL AND noTaxa = false ) THEN&#10;    RAISE NOTICE &#39;_abundpct is % and noTaxa is %&#39;, doTaph, noTaxa;&#10;        BEGIN&#10;            -- get SumGroupID of the first (or only) taxon id&#10;            sumGroupId := (&#10;                SELECT  sg.sumgroupid&#10;                FROM    ndb.ecolgroups eg&#10;                        JOIN ap.pollensumgroups sg ON eg.ecolgroupid = sg.ecolgroupid&#10;                WHERE&#10;                    eg.taxonid IN (_taxonids[1])&#10;                );&#10;            IF sumGroupId &gt; 0 THEN&#10;                doAbund := true;&#10;            END IF;&#10;        END;&#10;    END IF;&#10;&#10;    RAISE NOTICE &#39;_agedirectdate is % and noTaxa is %&#39;, _agedirectdate, noTaxa;&#10;    -- START building standard base CTE, skip if noTaxa = true&#10;    IF ( (_agedirectdate = false OR _agedirectdate IS NULL) AND noTaxa = false ) THEN&#10;        BEGIN&#10;            cteBase := &#39;WITH base AS (&#39;;&#10;            cteBaseSelect := &#39;&#10;                SELECT s.sampleid, s.datasetid &#39;;&#10;            cteBaseFrom := &#39;&#10;                FROM ndb.samples s&#10;                JOIN ndb.data d ON s.sampleid = d.sampleid&#10;                JOIN ndb.variables v ON d.variableid = v.variableid &#39;;&#10;            cteBaseWhere := &#39;&#10;                WHERE&#39;;&#10;&#10;            IF doAbund = true THEN&#10;              BEGIN&#10;                cteBaseSelect := cteBaseSelect || &#39;,&#10;                    v.taxonid,&#10;                    (CASE WHEN (SUM(d.value) OVER(PARTITION BY s.sampleid)) IS NOT NULL AND &#10;               (SUM(d.value) OVER(PARTITION BY s.sampleid)) &lt;&gt;0 THEN&#10;                  (CAST(d.value / SUM(d.value) OVER (PARTITION BY s.sampleid) * 100 AS DECIMAL(5,2))) &#10;               ELSE&#10;                  NULL END&#10;                ) AS abundance&#39;;&#10;                cteBaseFrom := cteBaseFrom || &#39;&#10;                    JOIN ndb.taxa t ON v.taxonid = t.taxonid&#10;                    JOIN ndb.ecolgroups e ON t.taxonid = e.taxonid&#10;                    JOIN ap.pollensumgroups sg ON e.ecolgroupid = sg.ecolgroupid&#39;;&#10;                cteBaseWhere := cteBaseWhere || &#39;&#10;                    sg.sumgroupid = &#39; || sumGroupId;&#10;              END;&#10;            ELSE&#10;              BEGIN&#10;                --cteBaseWhere := cteBaseWhere || &#39; 1 = 1&#39;;&#10;                cteBaseWhere := cteBaseWhere || &#39;&#10;                    v.taxonid IN (&#39; || array_to_string( _taxonids ,&#39;,&#39;) || &#39;)&#39;;&#10;                IF doElem = true THEN&#10;                  BEGIN&#10;                    cteBaseFrom := cteBaseFrom || &#39;&#10;                        JOIN ndb.variableelements ve ON v.variableelementid = ve.variableelementid&#39;;&#10;                    cteBaseWhere = cteBaseWhere || &#39;&#10;                        AND ve.elementtypeid IN (array_to_string(_elemTypeIds,&#39;&#39;,&#39;&#39;))&#39;;&#10;                  END;&#10;                END IF;&#10;                IF doTaph = true THEN&#10;                  BEGIN&#10;                    cteBaseFrom := cteBaseFrom || &#39;&#10;                        JOIN ndb.summarydatataphonomy ta ON ta.dataid = d.dataid&#39;;&#10;                    cteBaseWhere := cteBaseWhere || &#39;&#10;                        AND ta.taphonomictypeid IN (array_to_string(_taphTypeIds,&#39;&#39;,&#39;&#39;))&#39;;&#10;                  END;&#10;                END IF;&#10;              END;&#10;            END IF;&#10;&#10;            IF _keywordid IS NOT NULL THEN&#10;              BEGIN&#10;                cteBaseFrom := cteBaseFrom || &#39;&#10;                    JOIN ndb.samplekeywords k on s.sampleid = k.sampleid&#39;;&#10;                cteBaseWhere := cteBaseWhere || &#39;&#10;                    AND k.keywordid = _keywordid&#39;;&#10;              END;&#10;            END IF;&#10;&#10;            cteBase := cteBase || cteBaseSelect || cteBaseFrom || cteBaseWhere || &#39;&#10;                )&#39;;&#10;        END;&#10;    END IF;&#10;    -- END building base CTE&#10;&#10;    -- START building standard ages CTE&#10;    IF ( (_agedirectdate = false OR _agedirectdate IS NULL) AND noTaxa = false ) THEN&#10;      BEGIN&#10;        cteAges := &#39;,&#10;            ages AS (&#39;;&#10;        cteAgesSelect := &#39;&#10;            SELECT&#10;              base.datasetid,&#10;              MIN(sa.age) AS minage,&#10;              MAX(sa.age) AS maxage,&#10;              MIN(sa.ageyounger) AS ageyoungest,&#10;              MAX(sa.ageolder) AS ageoldest&#39;;&#10;        cteAgesFrom := &#39;&#10;            FROM&#10;              base&#39;;&#10;        cteAgesWhere := &#39;&#10;            WHERE&#10;              1=1&#39;;&#10;&#10;        IF doAbund THEN&#10;          cteAgesWhere := cteAgesWhere || &#39;&#10;              AND base.abundance &gt; &#39; || _abundpct ||&#10;              &#39; AND base.taxonid IN (&#39; || array_to_string( _taxonids ,&#39;,&#39;) || &#39;)&#39;;&#10;        END IF;&#10;&#10;        IF NOT (_ageold IS NULL AND _ageyoung IS NULL  AND noTaxa = false) THEN&#10;            BEGIN&#10;                cteAgesFrom := cteAgesFrom || &#39;&#10;                    JOIN da.vsampagesstd sa ON base.sampleid = sa.sampleid&#39;;&#10;&#10;                IF _ageold IS NULL THEN&#10;                  _ageold := 10000000;&#10;                END IF;&#10;&#10;                IF _ageyoung IS NULL THEN&#10;                  _ageyoung := -250;&#10;                END IF;&#10;&#10;                IF _agedocontain = true THEN&#10;                  cteAgesWhere := cteAgesWhere || &#39;&#10;                      AND (&#10;                        (&#39; || _ageyoung || &#39;&lt;= sa.age AND sa.age &lt;= &#39; || _ageold || &#39;) OR&#10;                        (&#39; || _ageyoung || &#39;&lt;= sa.ageyounger AND sa.ageolder &lt;= &#39; || _ageold || &#39;)&#10;                      )&#39;;&#10;                ELSE&#10;                  cteAgesWhere := cteAgesWhere || &#39;&#10;                      AND (&#10;                        (&#39; || _ageyoung || &#39; &lt;= sa.age AND sa.age &lt;= &#39; || _ageold || &#39;) OR&#10;                        NOT (sa.ageolder &lt; &#39; || _ageyoung || &#39; OR &#39; || _ageold || &#39;&lt; sa.ageyounger)&#10;                      )&#39;;&#10;                END IF;&#10;            END;&#10;        ELSE&#10;            cteAgesFrom := cteAgesFrom || &#39; LEFT JOIN da.vsampagesstd sa ON base.sampleid = sa.sampleid&#39;;&#10;        END IF;&#10;&#10;        cteAges := cteAges || cteAgesSelect || cteAgesFrom || cteAgesWhere || &#39; GROUP BY base.datasetid)&#39;;&#10;      END;&#10;    END IF;&#10;    -- END building ages CTE&#10;&#10;    -- START alternative combined base/ages CTE for directly dated specimens&#10;    IF ( _agedirectdate = true and noTaxa = false ) THEN&#10;      BEGIN&#10;        cteBase := &#39;&#39;;&#10;&#10;        IF _ageold IS NULL THEN&#10;            _ageold := 10000000;&#10;        END IF;&#10;&#10;        IF _ageyoung IS NULL THEN&#10;            _ageyoung := -250;&#10;        END IF;&#10;&#10;        cteAges := &#39;&#10;            WITH ages AS (&#10;                SELECT&#10;                  s.datasetid,&#10;                  MIN(c.calage) AS minage,&#10;                  MAX(c.calage) AS maxage,&#10;                  MIN(c.calageyounger) AS ageyoungest,&#10;                  MAX(c.calageolder) AS ageoldest&#10;                FROM&#10;                  ndb.samples s&#10;                  JOIN ndb.specimendates sd ON s.sampleid = sd.sampleid&#10;                  JOIN ndb.specimendatescal c ON sd.specimendateid = c.specimendateid&#10;                WHERE&#10;                  sd.taxonid IN (&#39; || array_to_string( _taxonids ,&#39;,&#39;) || &#39;)&#10;        &#39;;&#10;&#10;        IF doElem = true THEN&#10;            cteAges := cteAges || &#39;&#10;                AND sd.elementtypeid IN (array_to_string(&#39; || _elemtypeids || &#39;,&#39;&#39;,&#39;&#39;))&#39;;&#10;        END IF;&#10;&#10;        IF _agedocontain = false THEN&#10;            cteAges := cteAges || &#39;&#10;            AND NOT (c.calageolder &lt; &#39; || _ageyoung || &#39; OR &#39; || _ageold || &#39; &lt; c.calageyounger)&#39;;&#10;        ELSE&#10;            cteAges := cteAges || &#39;&#10;            AND NOT (&#39; || _ageyoung || &#39; &lt;= c.calageyounger AND c.calageolder &lt;= &#39; || _ageold || &#39; )&#39;;&#10;        END IF;&#10;&#10;        cteAges := cteAges || &#39;&#10;            GROUP BY s.datasetid&#10;            )&#39;;&#10;        END;&#10;    END IF;&#10;    -- END alternative ages CTE for directly dated specimens&#10;&#10;    -- START building ds (dataset) CTE&#10;&#10;&#10;    IF noTaxa = true THEN&#10;      BEGIN&#10;        cteBase := &#39;&#39;;&#10;        cteAges := &#39;&#39;;&#10;        cteDs := &#39;       WITH &#39;;&#10;      END;&#10;    ELSE&#10;      cteDs := &#39;,&#10;      &#39;;&#10;    END IF;&#10;&#10;    cteDs := cteDs || &#39;ds AS (&#39;;&#10;&#10;    cteDsSelect := &#39;&#10;        SELECT&#10;          ds.datasetid,&#10;          ds.datasettypeid,&#10;          ds.recdatecreated,&#10;          cu.colltypeid,&#10;          cu.depenvtid,&#10;          cu.handle,&#10;          cu.collunitname,&#10;          s.siteid,&#10;          s.sitename,&#10;          s.sitedescription,&#10;          s.notes,&#10;          s.altitude,&#10;          s.geog,&#10;          s.latitudenorth,&#10;          s.latitudesouth,&#10;          s.longitudeeast,&#10;          s.longitudewest,&#10;          ages.ageoldest,&#10;          ages.ageyoungest,&#10;          ages.maxage,&#10;          ages.minage &#39;;&#10;&#10;    cteDsFrom := &#39;&#10;          join ndb.collectionunits cu on ds.collectionunitid = cu.collectionunitid&#10;          join ndb.sites s on cu.siteid = s.siteid&#39;;&#10;&#10;    IF noTaxa = true THEN&#10;      BEGIN&#10;        cteBase := &#39;&#39;;&#10;        cteAges := &#39;&#39;;&#10;&#10;        cteDsFrom := &#39;&#10;            FROM&#10;              ndb.datasets ds&#39; || cteDsFrom ;&#10;&#10;        IF NOT (_ageold IS NULL AND _ageyoung IS NULL) THEN&#10;          cteDsFrom := cteDsFrom || &#39;&#10;            JOIN da.vbestdatasetages ages ON ds.datasetid = ages.datasetid&#39;;&#10;        ELSE&#10;          cteDsFrom := cteDsFrom || &#39;&#10;            LEFT JOIN da.vbestdatasetages ages ON ds.datasetid = ages.datasetid &#39;;&#10;        END IF;&#10;      END;&#10;    ELSE&#10;      BEGIN&#10;        cteDsFrom := &#39;&#10;            FROM&#10;              ages&#10;              JOIN ndb.datasets ds ON ages.datasetid = ds.datasetid &#39; || cteDsFrom;&#10;      END;&#10;    END IF;&#10;&#10;    cteDsWhere := &#39;&#10;        WHERE&#10;          1=1 &#39;;&#10;&#10;    IF _sitename IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND s.sitename ILIKE &#39;&#39;%&#39; || _sitename || &#39;%&#39;&#39;&#39; ;&#10;    END IF;&#10;&#10;    IF _subdate IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND ds.recdatecreated &gt;= &#39;&#39;%&#39; || _subdate || &#39;%&#39;&#39;&#39;;&#10;    END IF;&#10;&#10;    IF _gpid IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND EXISTS (SELECT *&#10;                      FROM   ndb.sitegeopolitical gp&#10;                      WHERE  gp.siteid = s.siteid&#10;                      AND    gp.geopoliticalid = &#39; || _gpid || &#39; )&#39;;&#10;    END IF;&#10;&#10;    IF doDepEnv = true THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND cu.depenvtid IN (array_to_string(&#39; || depEnvIds || &#39;,&#39;&#39;,&#39;&#39;))&#39;;&#10;    END IF;&#10;&#10;    IF _coltypeid IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND cu.CollTypeID = &#39; || _coltypeid;&#10;    END IF;&#10;&#10;    IF _altmin IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND s.Altitude &gt;= &#39; || _altmin;&#10;    END IF;&#10;&#10;    IF _altmax IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND s.Altitude &lt;= &#39; || _altmax;&#10;    END IF;&#10;&#10;    IF _dbid IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND EXISTS (SELECT *&#10;                      FROM   ndb.datasetdatabases db&#10;                      WHERE  db.datasetid = ds.datasetid&#10;                      AND    db.databaseid = &#39; || _dbid || &#39; )&#39;;&#10;    END IF;&#10;&#10;    IF _contactid IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND EXISTS (SELECT *&#10;                      FROM   ap.datasetpisauthors p&#10;                      WHERE  p.datasetid = ds.datasetid&#10;                      AND    p.contactid = &#39; || _contactid || &#39; )&#39;;&#10;    END IF;&#10;&#10;    IF _keywordid IS NOT NULL AND noTaxa = true THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND EXISTS (SELECT k.datasetid, k.keywordid&#10;                      FROM   ap.datasetkeywords k&#10;                      WHERE  k.datasetid = ds.datasetid&#10;                      AND    k.keywordid = &#39; || _keywordid || &#39; )&#39;;&#10;    END IF;&#10;&#10;    IF _datasettypeid IS NOT NULL THEN&#10;      cteDsWhere := cteDsWhere || &#39;&#10;          AND ds.datasettypeid = &#39; || _datasettypeid;&#10;    END IF;&#10;&#10;    IF noTaxa = true AND NOT (_ageold IS NULL AND _ageyoung IS NULL) THEN&#10;      BEGIN&#10;        IF _ageold IS NULL THEN&#10;          _ageold := 10000000;&#10;        END IF;&#10;        IF _ageyoung IS NULL THEN&#10;          _ageyoung := -250;&#10;        END IF;&#10;        IF _agedocontain = true THEN&#10;          cteDsWhere := cteDsWhere || &#39;&#10;              AND (&#10;                ( &#39; || _ageyoung || &#39; &lt;= ages.ageyoungest AND &#39; || _ageold || &#39; &gt;= ages.ageoldest) OR&#10;                ( &#39; || _ageyoung || &#39; &lt;= ages.minage AND &#39; || _ageold || &#39; &gt;= ages.maxage)&#10;              )&#39;;&#10;        ELSE&#10;            cteDsWhere := cteDsWhere || &#39;&#10;              AND (&#10;                (&#39; || _ageyoung || &#39; &lt;= ages.ageyoungest AND ages.ageoldest &lt;= &#39; || _ageold || &#39; ) OR&#10;               NOT (ages.maxage &lt; &#39; || _ageyoung || &#39; OR &#39; || _ageold || &#39; &lt; ages.minage)&#10;              )&#39;;&#10;        END IF;&#10;      END;&#10;    END IF;&#10;&#10;--todo review postgis syntax ---&#10;&#10;    RAISE NOTICE &#39;_coords value %&#39;, _coords;&#10;    IF _coords IS NOT NULL THEN&#10;      BEGIN&#10;        poly := ST_GeogFromText(_coords)::geography;&#10;&#10;        cteDsWhere := format( &#39;%s&#39; || &#39;&#10;          AND ST_Intersects(s.geog,&#39; || &#39;%L&#39; || &#39;) = true&#39;, cteDsWhere, poly);&#10;      END;&#10;    END IF;&#10;&#10;    cteDs := cteDs || cteDsSelect || cteDsFrom || cteDsWhere || &#39;&#10;      )&#39;;&#10;    -- END building ds (dataset) CTE&#10;    --call CTEs&#10;&#10;&#10;    thesql := format(&#10;        &#39;%s&#39; || &#39;%s&#39; || &#39;%s&#39; ||&#10;          &#39; SELECT&#10;            ds.datasetid,&#10;            dt.datasettype,&#10;            cdb.databasename,&#10;            ds.minage,&#10;            ds.maxage,&#10;            ds.ageyoungest,&#10;            ds.ageoldest,&#10;            ds.siteid,&#10;            ds.sitename,&#10;            ds.sitedescription,&#10;            ds.notes,&#10;            ds.handle as collunithandle,&#10;            ds.collunitname,&#10;            ds.latitudenorth,&#10;            ds.latitudesouth,&#10;            ds.longitudeeast,&#10;            ds.longitudewest&#10;          from&#10;            ds&#10;            join ndb.datasettypes dt on ds.datasettypeid = dt.datasettypeid&#10;            left join (ndb.datasetdatabases dd join ndb.constituentdatabases cdb on dd.databaseid = cdb.databaseid) on ds.datasetid = dd.datasetid&#10;        &#39;&#10;        , cteBase, cteAges, cteDs);&#10;&#10;RAISE NOTICE &#39;%&#39;, thesql;&#10;&#10;    RETURN QUERY EXECUTE thesql;&#10;&#10;&#10;&#10;END;&#10;</textarea>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="routine.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

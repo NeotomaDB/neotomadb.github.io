@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2023-02-08" />
+<meta name="date" content="2023-11-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,20 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.26/datatables.js"></script>
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -179,8 +193,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html"><i class="fa fa-check"></i><b>3</b> Working with the Raw Data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-r"><i class="fa fa-check"></i><b>3.1</b> Using R</a></li>
-<li class="chapter" data-level="3.2" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-the-database-locally"><i class="fa fa-check"></i><b>3.2</b> Using the Database Locally</a></li>
+<li class="chapter" data-level="3.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-the-database-locally"><i class="fa fa-check"></i><b>3.1</b> Using the Database Locally</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-r"><i class="fa fa-check"></i><b>3.2</b> Using R</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#searching-for-sites"><i class="fa fa-check"></i><b>3.2.1</b> Searching for Sites</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>4</b> SQL Quickly</a>
 <ul>
@@ -425,8 +442,8 @@ div.csl-indent {
 <h2><span class="header-section-number">12.1</span> <code>ecolgroups</code><a href="taxonomy-related-tables-1.html#ecolgroups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ecological groups represent a method for organizing or representing taxa within particular ecological settings defined within the <a href="taxonomy-related-tables-1.html#EcolSetTypes"><code>ecolsetname</code></a> table. Some taxa have a single associated ecological group, others are associated with multiple groups. The taxon <em>Abies</em>, a tree genus, has only a single taxon group (<em>TRSH</em>, trees and shrubs), while the taxon <em>cf. Larix</em>, also a tree genus, is associated with <em>TRSH</em> group as well as the ecological group <em>UNID</em>. <em>UNID</em> represents unidentified taxa, since the term <code>cf</code>, as indicated in the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table means that the identified pollen resemble, but is not neccessarily <em>Larix</em>.</p>
 <p>This table is the JOIN table between the <a href="taxonomy-related-tables-1.html#EcolGroupTypes"><code>ecolgrouptypes</code></a> which contain the full descriptive name of the ecological groups, and the taxa and ecological setting within which the taxa are found, with respect to the samples.</p>
-<div id="htmlwidget-3ab7fd8a829a475450fd" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3ab7fd8a829a475450fd">{"x":{"filter":"none","vertical":false,"data":[["taxonid","ecolsetid","ecolgroupid","recdatecreated","recdatemodified"],["integer","integer","character varying(4)","timestamp(0) without time zone","timestamp(0) without time zone"],["ecolgroups_pkey, fk_ecolgroups_taxa","ecolgroups_pkey, fk_ecolgroups_ecolsettypes","fk_ecolgroups_ecolgrouptypes","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4f0d7877b1b095da1490" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4f0d7877b1b095da1490">{"x":{"filter":"none","vertical":false,"data":[["taxonid","ecolsetid","ecolgroupid","recdatecreated","recdatemodified"],["integer","integer","character varying(4)","timestamp(0) without time zone","timestamp(0) without time zone"],["ecolgroups_pkey, fk_ecolgroups_taxa","ecolgroups_pkey, fk_ecolgroups_ecolsettypes","fk_ecolgroups_ecolgrouptypes","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>taxonid (primary key, foreign key)</code></strong>: Taxon identification number. The field links to the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table.</li>
 <li><strong><code>ecolsetid (primary key, foreign key)</code></strong>: Ecological Set identification number. Field links to the <a href="taxonomy-related-tables-1.html#EcolSetTypes"><code>ecolsettypes</code></a> table.</li>
@@ -435,19 +452,19 @@ div.csl-indent {
 <div id="sql-example-19" class="section level3 hasAnchor" number="12.1.1">
 <h3><span class="header-section-number">12.1.1</span> SQL Example<a href="taxonomy-related-tables-1.html#sql-example-19" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following query produces a list of the Ecological Groups for all vascular plants (VPL) within the database.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb39-1"><a href="taxonomy-related-tables-1.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span></span>
-<span id="cb39-2"><a href="taxonomy-related-tables-1.html#cb39-2" aria-hidden="true" tabindex="-1"></a>   tx.taxagroupid,</span>
-<span id="cb39-3"><a href="taxonomy-related-tables-1.html#cb39-3" aria-hidden="true" tabindex="-1"></a>   eg.ecolgroupid,</span>
-<span id="cb39-4"><a href="taxonomy-related-tables-1.html#cb39-4" aria-hidden="true" tabindex="-1"></a>   est.ecolsetname,</span>
-<span id="cb39-5"><a href="taxonomy-related-tables-1.html#cb39-5" aria-hidden="true" tabindex="-1"></a>   egt.ecolgroup</span>
-<span id="cb39-6"><a href="taxonomy-related-tables-1.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.ecolgroups <span class="kw">AS</span> eg</span>
-<span id="cb39-7"><a href="taxonomy-related-tables-1.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>   ndb.ecolsettypes <span class="kw">AS</span> est <span class="kw">ON</span>   est.ecolsetid <span class="op">=</span> eg.ecolsetid</span>
-<span id="cb39-8"><a href="taxonomy-related-tables-1.html#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.ecolgrouptypes <span class="kw">AS</span> egt <span class="kw">ON</span> egt.ecolgroupid <span class="op">=</span> eg.ecolgroupid</span>
-<span id="cb39-9"><a href="taxonomy-related-tables-1.html#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>           ndb.taxa <span class="kw">AS</span> tx  <span class="kw">ON</span>      tx.taxonid <span class="op">=</span> eg.taxonid</span>
-<span id="cb39-10"><a href="taxonomy-related-tables-1.html#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb39-11"><a href="taxonomy-related-tables-1.html#cb39-11" aria-hidden="true" tabindex="-1"></a>   tx.taxagroupid <span class="op">=</span> <span class="st">&#39;VPL&#39;</span></span>
-<span id="cb39-12"><a href="taxonomy-related-tables-1.html#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
-<span id="cb39-13"><a href="taxonomy-related-tables-1.html#cb39-13" aria-hidden="true" tabindex="-1"></a>   tx.taxagroupid, eg.ecolgroupid, est.ecolsetname, egt.ecolgroup;</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb49-1"><a href="taxonomy-related-tables-1.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span></span>
+<span id="cb49-2"><a href="taxonomy-related-tables-1.html#cb49-2" aria-hidden="true" tabindex="-1"></a>   tx.taxagroupid,</span>
+<span id="cb49-3"><a href="taxonomy-related-tables-1.html#cb49-3" aria-hidden="true" tabindex="-1"></a>   eg.ecolgroupid,</span>
+<span id="cb49-4"><a href="taxonomy-related-tables-1.html#cb49-4" aria-hidden="true" tabindex="-1"></a>   est.ecolsetname,</span>
+<span id="cb49-5"><a href="taxonomy-related-tables-1.html#cb49-5" aria-hidden="true" tabindex="-1"></a>   egt.ecolgroup</span>
+<span id="cb49-6"><a href="taxonomy-related-tables-1.html#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.ecolgroups <span class="kw">AS</span> eg</span>
+<span id="cb49-7"><a href="taxonomy-related-tables-1.html#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>   ndb.ecolsettypes <span class="kw">AS</span> est <span class="kw">ON</span>   est.ecolsetid <span class="op">=</span> eg.ecolsetid</span>
+<span id="cb49-8"><a href="taxonomy-related-tables-1.html#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.ecolgrouptypes <span class="kw">AS</span> egt <span class="kw">ON</span> egt.ecolgroupid <span class="op">=</span> eg.ecolgroupid</span>
+<span id="cb49-9"><a href="taxonomy-related-tables-1.html#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>           ndb.taxa <span class="kw">AS</span> tx  <span class="kw">ON</span>      tx.taxonid <span class="op">=</span> eg.taxonid</span>
+<span id="cb49-10"><a href="taxonomy-related-tables-1.html#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb49-11"><a href="taxonomy-related-tables-1.html#cb49-11" aria-hidden="true" tabindex="-1"></a>   tx.taxagroupid <span class="op">=</span> <span class="st">&#39;VPL&#39;</span></span>
+<span id="cb49-12"><a href="taxonomy-related-tables-1.html#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
+<span id="cb49-13"><a href="taxonomy-related-tables-1.html#cb49-13" aria-hidden="true" tabindex="-1"></a>   tx.taxagroupid, eg.ecolgroupid, est.ecolsetname, egt.ecolgroup;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:ecolgroupSQL">Table 12.1: </span>Displaying records 1 - 10</caption>
@@ -533,14 +550,14 @@ div.csl-indent {
 <div id="sql-example-20" class="section level3 hasAnchor" number="12.1.2">
 <h3><span class="header-section-number">12.1.2</span> SQL Example<a href="taxonomy-related-tables-1.html#sql-example-20" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists all the taxa in the Ecological Group <em>Sirenia</em>.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb40-1"><a href="taxonomy-related-tables-1.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb40-2"><a href="taxonomy-related-tables-1.html#cb40-2" aria-hidden="true" tabindex="-1"></a>   egt.ecolgroup,</span>
-<span id="cb40-3"><a href="taxonomy-related-tables-1.html#cb40-3" aria-hidden="true" tabindex="-1"></a>   tx.taxonname</span>
-<span id="cb40-4"><a href="taxonomy-related-tables-1.html#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
-<span id="cb40-5"><a href="taxonomy-related-tables-1.html#cb40-5" aria-hidden="true" tabindex="-1"></a>   ndb.taxa <span class="kw">AS</span> tx</span>
-<span id="cb40-6"><a href="taxonomy-related-tables-1.html#cb40-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.ecolgroups <span class="kw">AS</span>  eg <span class="kw">ON</span>      tx.taxonid <span class="op">=</span> eg.taxonid</span>
-<span id="cb40-7"><a href="taxonomy-related-tables-1.html#cb40-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.ecolgrouptypes <span class="kw">AS</span> egt <span class="kw">ON</span> egt.ecolgroupid <span class="op">=</span> eg.ecolgroupid</span>
-<span id="cb40-8"><a href="taxonomy-related-tables-1.html#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> egt.ecolgroup <span class="op">=</span> <span class="st">&#39;Sirenia&#39;</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb50-1"><a href="taxonomy-related-tables-1.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb50-2"><a href="taxonomy-related-tables-1.html#cb50-2" aria-hidden="true" tabindex="-1"></a>   egt.ecolgroup,</span>
+<span id="cb50-3"><a href="taxonomy-related-tables-1.html#cb50-3" aria-hidden="true" tabindex="-1"></a>   tx.taxonname</span>
+<span id="cb50-4"><a href="taxonomy-related-tables-1.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb50-5"><a href="taxonomy-related-tables-1.html#cb50-5" aria-hidden="true" tabindex="-1"></a>   ndb.taxa <span class="kw">AS</span> tx</span>
+<span id="cb50-6"><a href="taxonomy-related-tables-1.html#cb50-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.ecolgroups <span class="kw">AS</span>  eg <span class="kw">ON</span>      tx.taxonid <span class="op">=</span> eg.taxonid</span>
+<span id="cb50-7"><a href="taxonomy-related-tables-1.html#cb50-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.ecolgrouptypes <span class="kw">AS</span> egt <span class="kw">ON</span> egt.ecolgroupid <span class="op">=</span> eg.ecolgroupid</span>
+<span id="cb50-8"><a href="taxonomy-related-tables-1.html#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> egt.ecolgroup <span class="op">=</span> <span class="st">&#39;Sirenia&#39;</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:SireniaGroups">Table 12.2: </span>9 records</caption>
@@ -595,8 +612,8 @@ div.csl-indent {
 <div id="EcolGroupTypes" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> <code>ecolgrouptypes</code><a href="taxonomy-related-tables-1.html#EcolGroupTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Ecological Group Types. The table is referenced by the <a href="#EcolGroups"><code>ecolgroups</code></a> table.</p>
-<div id="htmlwidget-37f4961e662c638e1974" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-37f4961e662c638e1974">{"x":{"filter":"none","vertical":false,"data":[["ecolgroupid","ecolgroup","recdatecreated","recdatemodified"],["character varying(4)","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["ecolgrouptypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-17287318f26c1862d913" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-17287318f26c1862d913">{"x":{"filter":"none","vertical":false,"data":[["ecolgroupid","ecolgroup","recdatecreated","recdatemodified"],["character varying(4)","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["ecolgrouptypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>ecolgroupid (primary key)</code></strong>: An arbitrary Ecological Group identification number.</li>
 <li><strong><code>ecolgroup</code></strong>: Ecological Group.</li>
@@ -605,8 +622,8 @@ div.csl-indent {
 <div id="EcolSetTypes" class="section level2 hasAnchor" number="12.3">
 <h2><span class="header-section-number">12.3</span> <code>ecolsettypes</code><a href="taxonomy-related-tables-1.html#EcolSetTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Ecological Set Types. The table is referenced by the <a href="#EcolGroups"><code>ecolgroups</code></a> table.</p>
-<div id="htmlwidget-df90b6a22244fcbef0b4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-df90b6a22244fcbef0b4">{"x":{"filter":"none","vertical":false,"data":[["ecolsetid","ecolsetname","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["ecolsettypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f637bc5a4ea8596b9030" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f637bc5a4ea8596b9030">{"x":{"filter":"none","vertical":false,"data":[["ecolsetid","ecolsetname","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["ecolsettypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>ecolsetid (primary key)</code></strong>: An arbitrary Ecological Set identification number.</li>
 <li><strong><code>ecolsetname</code></strong>: The Ecological Set name.</li>
@@ -615,8 +632,8 @@ div.csl-indent {
 <div id="Synonyms" class="section level2 hasAnchor" number="12.4">
 <h2><span class="header-section-number">12.4</span> <code>synonyms</code><a href="taxonomy-related-tables-1.html#Synonyms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists common synonyms for taxa in the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table. No effort has been made to provide a complete taxonomic synonymy, but rather to list synonyms commonly used in recent literature.</p>
-<div id="htmlwidget-da776ec7edc1cd7a93ff" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-da776ec7edc1cd7a93ff">{"x":{"filter":"none","vertical":false,"data":[["synonymid","invalidtaxonid","validtaxonid","synonymtypeid","recdatecreated","recdatemodified"],["integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["synonyms_pkey","fk_synonyms_invalidtaxa","fk_synonyms_validtaxa","fk_synonyms_synonymtypes","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-326e37438d7ea8799bb6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-326e37438d7ea8799bb6">{"x":{"filter":"none","vertical":false,"data":[["synonymid","invalidtaxonid","validtaxonid","synonymtypeid","recdatecreated","recdatemodified"],["integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["synonyms_pkey","fk_synonyms_invalidtaxa","fk_synonyms_validtaxa","fk_synonyms_synonymtypes","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>synonymid (primary key)</code></strong>: An arbitrary synonym identification number.</li>
 <li><strong><code>synonymname</code></strong>: Name of the synonym.</li>
@@ -629,8 +646,8 @@ div.csl-indent {
 <div id="SynonymTypes" class="section level2 hasAnchor" number="12.5">
 <h2><span class="header-section-number">12.5</span> <code>synonymtypes</code><a href="taxonomy-related-tables-1.html#SynonymTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Synonym Types. Table is referenced by the <a href="taxonomy-related-tables-1.html#Synonyms"><code>synonyms</code></a> table.</p>
-<div id="htmlwidget-4bb5103bad1d03658eb3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4bb5103bad1d03658eb3">{"x":{"filter":"none","vertical":false,"data":[["synonymtypeid","synonymtype","recdatecreated","recdatemodified"],["integer","character varying(255)","timestamp(0) without time zone","timestamp(0) without time zone"],["synonymtypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f1b6e1bb947773c5a165" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f1b6e1bb947773c5a165">{"x":{"filter":"none","vertical":false,"data":[["synonymtypeid","synonymtype","recdatecreated","recdatemodified"],["integer","character varying(255)","timestamp(0) without time zone","timestamp(0) without time zone"],["synonymtypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>synonymtypeid (primary key)</code></strong>: An arbitrary Synonym Type identification number.</li>
 <li><strong><code>synonymtype</code></strong>: Synonym type. Below are some examples:
@@ -653,16 +670,16 @@ div.csl-indent {
 <div id="sql-example-21" class="section level3 hasAnchor" number="12.5.1">
 <h3><span class="header-section-number">12.5.1</span> SQL Example<a href="taxonomy-related-tables-1.html#sql-example-21" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query provides the preferred synonym in the database for <em>Bison alleni</em> along with the published authority for the synonymy and the notes in the database on the rationale for the synonymy. The notes indicate some potential problems with this synonymy.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb41-1"><a href="taxonomy-related-tables-1.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
-<span id="cb41-2"><a href="taxonomy-related-tables-1.html#cb41-2" aria-hidden="true" tabindex="-1"></a>    syntx.taxonname <span class="kw">AS</span> preferred,</span>
-<span id="cb41-3"><a href="taxonomy-related-tables-1.html#cb41-3" aria-hidden="true" tabindex="-1"></a>       tx.taxonname <span class="kw">AS</span> original,</span>
-<span id="cb41-4"><a href="taxonomy-related-tables-1.html#cb41-4" aria-hidden="true" tabindex="-1"></a>       pub.citation <span class="kw">AS</span> publication,</span>
-<span id="cb41-5"><a href="taxonomy-related-tables-1.html#cb41-5" aria-hidden="true" tabindex="-1"></a>          syn.notes <span class="kw">AS</span> synonymnotes</span>
-<span id="cb41-6"><a href="taxonomy-related-tables-1.html#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.taxa <span class="kw">AS</span> tx</span>
-<span id="cb41-7"><a href="taxonomy-related-tables-1.html#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.synonymy <span class="kw">AS</span> syn   <span class="kw">ON</span>       syn.taxonid <span class="op">=</span> tx.taxonid</span>
-<span id="cb41-8"><a href="taxonomy-related-tables-1.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.taxa <span class="kw">AS</span> syntx <span class="kw">ON</span>    syn.reftaxonid <span class="op">=</span> syntx.taxonid</span>
-<span id="cb41-9"><a href="taxonomy-related-tables-1.html#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publications <span class="kw">AS</span> pub   <span class="kw">ON</span> syn.publicationid <span class="op">=</span> pub.publicationid</span>
-<span id="cb41-10"><a href="taxonomy-related-tables-1.html#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> syntx.taxonname <span class="op">=</span> <span class="st">&#39;Bison alleni&#39;</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb51-1"><a href="taxonomy-related-tables-1.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb51-2"><a href="taxonomy-related-tables-1.html#cb51-2" aria-hidden="true" tabindex="-1"></a>    syntx.taxonname <span class="kw">AS</span> preferred,</span>
+<span id="cb51-3"><a href="taxonomy-related-tables-1.html#cb51-3" aria-hidden="true" tabindex="-1"></a>       tx.taxonname <span class="kw">AS</span> original,</span>
+<span id="cb51-4"><a href="taxonomy-related-tables-1.html#cb51-4" aria-hidden="true" tabindex="-1"></a>       pub.citation <span class="kw">AS</span> publication,</span>
+<span id="cb51-5"><a href="taxonomy-related-tables-1.html#cb51-5" aria-hidden="true" tabindex="-1"></a>          syn.notes <span class="kw">AS</span> synonymnotes</span>
+<span id="cb51-6"><a href="taxonomy-related-tables-1.html#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.taxa <span class="kw">AS</span> tx</span>
+<span id="cb51-7"><a href="taxonomy-related-tables-1.html#cb51-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span>     ndb.synonymy <span class="kw">AS</span> syn   <span class="kw">ON</span>       syn.taxonid <span class="op">=</span> tx.taxonid</span>
+<span id="cb51-8"><a href="taxonomy-related-tables-1.html#cb51-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.taxa <span class="kw">AS</span> syntx <span class="kw">ON</span>    syn.reftaxonid <span class="op">=</span> syntx.taxonid</span>
+<span id="cb51-9"><a href="taxonomy-related-tables-1.html#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.publications <span class="kw">AS</span> pub   <span class="kw">ON</span> syn.publicationid <span class="op">=</span> pub.publicationid</span>
+<span id="cb51-10"><a href="taxonomy-related-tables-1.html#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> syntx.taxonname <span class="op">=</span> <span class="st">&#39;Bison alleni&#39;</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:BisonTaxonExample">Table 12.3: </span>5 records</caption>
@@ -719,8 +736,8 @@ div.csl-indent {
 <div id="Taxa" class="section level2 hasAnchor" number="12.6">
 <h2><span class="header-section-number">12.6</span> <code>taxa</code><a href="taxonomy-related-tables-1.html#Taxa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists all taxa in the database. Most taxa are biological taxa; however, some are biometric measures and some are physical parameters.</p>
-<div id="htmlwidget-8867864ff69f6c0458f6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8867864ff69f6c0458f6">{"x":{"filter":"none","vertical":false,"data":[["taxonid","taxoncode","taxonname","author","valid","highertaxonid","extinct","taxagroupid","publicationid","validatorid","validatedate","notes","recdatecreated","recdatemodified"],["integer","character varying(64)","character varying(120)","character varying(128)","boolean","integer","boolean","character varying(3)","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["taxa_pkey","","","","","fk_highertaxonid","","fk_taxagroupid","fk_publicationid","fk_validatorid","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-51a825695b0a65f795df" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-51a825695b0a65f795df">{"x":{"filter":"none","vertical":false,"data":[["taxonid","taxoncode","taxonname","author","valid","highertaxonid","extinct","taxagroupid","publicationid","validatorid","validatedate","notes","recdatecreated","recdatemodified"],["integer","character varying(64)","text","character varying(128)","boolean","integer","boolean","character varying(3)","integer","integer","date","text","timestamp(0) without time zone","timestamp(0) without time zone"],["taxa_pkey","","","","","fk_highertaxonid","","fk_taxagroupid","fk_publicationid","fk_validatorid","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>taxonid (primary key)</code></strong>: An arbitrary Taxon identification number.</li>
 <li><strong><code>taxoncode</code></strong>: A code for the Taxon. These codes are useful for other software or output for which the complete name is too long. Because of the very large number of taxa, codes can be duplicated for different Taxa Groups. In general, these various Taxa Groups are analyzed separately, and no duplication will occur within a dataset. However, if Taxa Groups are combined, unique codes can be generated by prefixing with the TaxaGroupID, For example, <strong>VPL:Cle</strong> (<em>Clethra</em>) and <strong>MAM:Cle</strong> (<em>Clethrionomys</em>). A set of conventions has been established for codes. In some cases conventions differ depending on whether the organism is covered by rules of botanical nomenclature (BN) or zoological nomenclature (ZN).
@@ -774,14 +791,14 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <div id="TaxaGroupTypes" class="section level2 hasAnchor" number="12.7">
 <h2><span class="header-section-number">12.7</span> <code>taxagrouptypes</code><a href="taxonomy-related-tables-1.html#TaxaGroupTypes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table for Taxa Group Types. This table is referenced by the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table.</p>
-<div id="htmlwidget-63beca05edde0079a208" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-63beca05edde0079a208">{"x":{"filter":"none","vertical":false,"data":[["taxagroupid","taxagroup","recdatecreated","recdatemodified"],["character varying(3)","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["taxagrouptypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-70d80aba6b8219f0cc2b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-70d80aba6b8219f0cc2b">{"x":{"filter":"none","vertical":false,"data":[["taxagroupid","taxagroup","recdatecreated","recdatemodified"],["character varying(3)","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["taxagrouptypes_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>taxagroupid (primary key)</code></strong>: A three-letter Taxa Group code.</li>
 <li><strong><code>taxagroup</code></strong>: The taxa group. Below are some examples:</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb42-1"><a href="taxonomy-related-tables-1.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> ndb.taxagrouptypes</span>
-<span id="cb42-2"><a href="taxonomy-related-tables-1.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb52-1"><a href="taxonomy-related-tables-1.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> ndb.taxagrouptypes</span>
+<span id="cb52-2"><a href="taxonomy-related-tables-1.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:taxonGroups">Table 12.4: </span>5 records</caption>
@@ -837,8 +854,8 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <div id="Variables" class="section level2 hasAnchor" number="12.8">
 <h2><span class="header-section-number">12.8</span> <code>variables</code><a href="taxonomy-related-tables-1.html#Variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists <strong>variables</strong>, which always consist of a <em>taxon</em> (linked by a <strong>taxonid</strong>) and units of measurement. Variables can also have <a href="taxonomy-related-tables-1.html#VariableElements">variable elements</a>, <a href="taxonomy-related-tables-1.html#VariableContexts">variable contexts</a>, and <a href="taxonomy-related-tables-1.html#VariableModifications">variable modifications</a>. Thus, the same taxon with different measurement units (e.g. present/absent, NISP, MNI) are different Variables.</p>
-<div id="htmlwidget-67ef942134872c15d615" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-67ef942134872c15d615">{"x":{"filter":"none","vertical":false,"data":[["variableid","taxonid","variableelementid","variableunitsid","variablecontextid","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["variables_pkey","fk_variables_taxa","fk_variables_variableelements","fk_variables_variableunits","fk_variables_variablecontexts","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0df93c468e66ab22c0f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0df93c468e66ab22c0f0">{"x":{"filter":"none","vertical":false,"data":[["variableid","taxonid","variableelementid","variableunitsid","variablecontextid","recdatecreated","recdatemodified"],["integer","integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["variables_pkey","fk_variables_taxa","fk_variables_variableelements","fk_variables_variableunits","fk_variables_variablecontexts","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>variableid (primary key)</code></strong>: An arbitrary Variable identification number.</li>
 <li><strong><code>taxonid (foreign key)</code></strong>: Taxon identification number. Field links to the <a href="taxonomy-related-tables-1.html#Taxa"><code>Taxa</code></a> table.</li>
@@ -850,19 +867,19 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <div id="sql-example-22" class="section level3 hasAnchor" number="12.8.1">
 <h3><span class="header-section-number">12.8.1</span> SQL Example<a href="taxonomy-related-tables-1.html#sql-example-22" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists the different variables expressions for <em>Zea mays</em> with elements and measurement units:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb43-1"><a href="taxonomy-related-tables-1.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
-<span id="cb43-2"><a href="taxonomy-related-tables-1.html#cb43-2" aria-hidden="true" tabindex="-1"></a>    tx.taxonname,</span>
-<span id="cb43-3"><a href="taxonomy-related-tables-1.html#cb43-3" aria-hidden="true" tabindex="-1"></a>    ve.variableelement,</span>
-<span id="cb43-4"><a href="taxonomy-related-tables-1.html#cb43-4" aria-hidden="true" tabindex="-1"></a>    vu.variableunits</span>
-<span id="cb43-5"><a href="taxonomy-related-tables-1.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
-<span id="cb43-6"><a href="taxonomy-related-tables-1.html#cb43-6" aria-hidden="true" tabindex="-1"></a>               ndb.taxa             <span class="kw">AS</span> tx</span>
-<span id="cb43-7"><a href="taxonomy-related-tables-1.html#cb43-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables        <span class="kw">AS</span> var <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
-<span id="cb43-8"><a href="taxonomy-related-tables-1.html#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableunits    <span class="kw">AS</span> vu  <span class="kw">ON</span>   vu.variableunitsid <span class="op">=</span> var.variableunitsid</span>
-<span id="cb43-9"><a href="taxonomy-related-tables-1.html#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableelements <span class="kw">AS</span> ve  <span class="kw">ON</span> ve.variableelementid <span class="op">=</span> var.variableelementid</span>
-<span id="cb43-10"><a href="taxonomy-related-tables-1.html#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> tx.taxonname <span class="op">=</span> <span class="st">&#39;Zea mays&#39;</span></span>
-<span id="cb43-11"><a href="taxonomy-related-tables-1.html#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> tx.taxonname, </span>
-<span id="cb43-12"><a href="taxonomy-related-tables-1.html#cb43-12" aria-hidden="true" tabindex="-1"></a>         ve.variableelement,</span>
-<span id="cb43-13"><a href="taxonomy-related-tables-1.html#cb43-13" aria-hidden="true" tabindex="-1"></a>         vu.variableunits;</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb53-1"><a href="taxonomy-related-tables-1.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb53-2"><a href="taxonomy-related-tables-1.html#cb53-2" aria-hidden="true" tabindex="-1"></a>    tx.taxonname,</span>
+<span id="cb53-3"><a href="taxonomy-related-tables-1.html#cb53-3" aria-hidden="true" tabindex="-1"></a>    ve.variableelement,</span>
+<span id="cb53-4"><a href="taxonomy-related-tables-1.html#cb53-4" aria-hidden="true" tabindex="-1"></a>    vu.variableunits</span>
+<span id="cb53-5"><a href="taxonomy-related-tables-1.html#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
+<span id="cb53-6"><a href="taxonomy-related-tables-1.html#cb53-6" aria-hidden="true" tabindex="-1"></a>               ndb.taxa             <span class="kw">AS</span> tx</span>
+<span id="cb53-7"><a href="taxonomy-related-tables-1.html#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables        <span class="kw">AS</span> var <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
+<span id="cb53-8"><a href="taxonomy-related-tables-1.html#cb53-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableunits    <span class="kw">AS</span> vu  <span class="kw">ON</span>   vu.variableunitsid <span class="op">=</span> var.variableunitsid</span>
+<span id="cb53-9"><a href="taxonomy-related-tables-1.html#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableelements <span class="kw">AS</span> ve  <span class="kw">ON</span> ve.variableelementid <span class="op">=</span> var.variableelementid</span>
+<span id="cb53-10"><a href="taxonomy-related-tables-1.html#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> tx.taxonname <span class="op">=</span> <span class="st">&#39;Zea mays&#39;</span></span>
+<span id="cb53-11"><a href="taxonomy-related-tables-1.html#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> tx.taxonname, </span>
+<span id="cb53-12"><a href="taxonomy-related-tables-1.html#cb53-12" aria-hidden="true" tabindex="-1"></a>         ve.variableelement,</span>
+<span id="cb53-13"><a href="taxonomy-related-tables-1.html#cb53-13" aria-hidden="true" tabindex="-1"></a>         vu.variableunits;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:getMeasurements">Table 12.5: </span>5 records</caption>
@@ -906,21 +923,21 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <div id="sql-example-23" class="section level3 hasAnchor" number="12.8.2">
 <h3><span class="header-section-number">12.8.2</span> SQL Example<a href="taxonomy-related-tables-1.html#sql-example-23" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists all sites with <em>Zea mays</em> pollen by designating the VariableElement as <em>pollen</em>. This helps disambiguate sites where we may find plant macrofossil samples, or perhaps environmental DNA. Similarly, we may search for charcoal with size constraints (<code>variableelement='&gt;100 µm'</code>).</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb44-1"><a href="taxonomy-related-tables-1.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> tx.taxonname, </span>
-<span id="cb44-2"><a href="taxonomy-related-tables-1.html#cb44-2" aria-hidden="true" tabindex="-1"></a>       ve.variableelement, </span>
-<span id="cb44-3"><a href="taxonomy-related-tables-1.html#cb44-3" aria-hidden="true" tabindex="-1"></a>       st.sitename</span>
-<span id="cb44-4"><a href="taxonomy-related-tables-1.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
-<span id="cb44-5"><a href="taxonomy-related-tables-1.html#cb44-5" aria-hidden="true" tabindex="-1"></a>    ndb.taxa <span class="kw">AS</span> tx</span>
-<span id="cb44-6"><a href="taxonomy-related-tables-1.html#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables        <span class="kw">AS</span> var <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
-<span id="cb44-7"><a href="taxonomy-related-tables-1.html#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableelements <span class="kw">AS</span> ve  <span class="kw">ON</span> ve.variableelementid <span class="op">=</span> var.variableelementid</span>
-<span id="cb44-8"><a href="taxonomy-related-tables-1.html#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.<span class="kw">data</span>             <span class="kw">AS</span> dt  <span class="kw">ON</span> var.variableid <span class="op">=</span> dt.variableid</span>
-<span id="cb44-9"><a href="taxonomy-related-tables-1.html#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples          <span class="kw">AS</span> smp <span class="kw">ON</span> smp.sampleid <span class="op">=</span> dt.sampleid</span>
-<span id="cb44-10"><a href="taxonomy-related-tables-1.html#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets         <span class="kw">AS</span> ds  <span class="kw">ON</span> ds.datasetid <span class="op">=</span> smp.datasetid</span>
-<span id="cb44-11"><a href="taxonomy-related-tables-1.html#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits  <span class="kw">AS</span> cu  <span class="kw">ON</span> cu.collectionunitid <span class="op">=</span> ds.collectionunitid</span>
-<span id="cb44-12"><a href="taxonomy-related-tables-1.html#cb44-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites            <span class="kw">AS</span> st  <span class="kw">ON</span> st.siteid <span class="op">=</span> cu.siteid</span>
-<span id="cb44-13"><a href="taxonomy-related-tables-1.html#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> tx.taxonname <span class="op">=</span> <span class="st">&#39;Zea mays&#39;</span></span>
-<span id="cb44-14"><a href="taxonomy-related-tables-1.html#cb44-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> ve.variableelement <span class="op">=</span> <span class="st">&#39;pollen&#39;</span></span>
-<span id="cb44-15"><a href="taxonomy-related-tables-1.html#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb54-1"><a href="taxonomy-related-tables-1.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> tx.taxonname, </span>
+<span id="cb54-2"><a href="taxonomy-related-tables-1.html#cb54-2" aria-hidden="true" tabindex="-1"></a>       ve.variableelement, </span>
+<span id="cb54-3"><a href="taxonomy-related-tables-1.html#cb54-3" aria-hidden="true" tabindex="-1"></a>       st.sitename</span>
+<span id="cb54-4"><a href="taxonomy-related-tables-1.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
+<span id="cb54-5"><a href="taxonomy-related-tables-1.html#cb54-5" aria-hidden="true" tabindex="-1"></a>    ndb.taxa <span class="kw">AS</span> tx</span>
+<span id="cb54-6"><a href="taxonomy-related-tables-1.html#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables        <span class="kw">AS</span> var <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
+<span id="cb54-7"><a href="taxonomy-related-tables-1.html#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variableelements <span class="kw">AS</span> ve  <span class="kw">ON</span> ve.variableelementid <span class="op">=</span> var.variableelementid</span>
+<span id="cb54-8"><a href="taxonomy-related-tables-1.html#cb54-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.<span class="kw">data</span>             <span class="kw">AS</span> dt  <span class="kw">ON</span> var.variableid <span class="op">=</span> dt.variableid</span>
+<span id="cb54-9"><a href="taxonomy-related-tables-1.html#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples          <span class="kw">AS</span> smp <span class="kw">ON</span> smp.sampleid <span class="op">=</span> dt.sampleid</span>
+<span id="cb54-10"><a href="taxonomy-related-tables-1.html#cb54-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets         <span class="kw">AS</span> ds  <span class="kw">ON</span> ds.datasetid <span class="op">=</span> smp.datasetid</span>
+<span id="cb54-11"><a href="taxonomy-related-tables-1.html#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits  <span class="kw">AS</span> cu  <span class="kw">ON</span> cu.collectionunitid <span class="op">=</span> ds.collectionunitid</span>
+<span id="cb54-12"><a href="taxonomy-related-tables-1.html#cb54-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites            <span class="kw">AS</span> st  <span class="kw">ON</span> st.siteid <span class="op">=</span> cu.siteid</span>
+<span id="cb54-13"><a href="taxonomy-related-tables-1.html#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> tx.taxonname <span class="op">=</span> <span class="st">&#39;Zea mays&#39;</span></span>
+<span id="cb54-14"><a href="taxonomy-related-tables-1.html#cb54-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> ve.variableelement <span class="op">=</span> <span class="st">&#39;pollen&#39;</span></span>
+<span id="cb54-15"><a href="taxonomy-related-tables-1.html#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:zeaPollenSites">Table 12.6: </span>Displaying records 1 - 10</caption>
@@ -950,57 +967,57 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <tr class="even">
 <td align="left">Zea mays</td>
 <td align="left">pollen</td>
-<td align="left">Oudon</td>
+<td align="left">Lago di Fimon</td>
 </tr>
 <tr class="odd">
+<td align="left">Zea mays</td>
+<td align="left">pollen</td>
+<td align="left">Oudon</td>
+</tr>
+<tr class="even">
 <td align="left">Zea mays</td>
 <td align="left">pollen</td>
 <td align="left">Mauntschas</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Zea mays</td>
 <td align="left">pollen</td>
 <td align="left">Trikhonis 5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Zea mays</td>
 <td align="left">pollen</td>
 <td align="left">Tourbière de Lanoraie STJEAN</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Zea mays</td>
 <td align="left">pollen</td>
 <td align="left">Pantano de Genagra</td>
 </tr>
-<tr class="odd">
-<td align="left">Zea mays</td>
-<td align="left">pollen</td>
-<td align="left">McDonough Lake</td>
-</tr>
 <tr class="even">
 <td align="left">Zea mays</td>
 <td align="left">pollen</td>
-<td align="left">Litzelsee</td>
+<td align="left">McDonough Lake</td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>We can obtain a similar result if we search instead for all records from pollen datasets, as below. However, it may be the case that pollen is observed and recorded in datasets that are not, strictly speaking, pollen datasets.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb45-1"><a href="taxonomy-related-tables-1.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> tx.taxonname, </span>
-<span id="cb45-2"><a href="taxonomy-related-tables-1.html#cb45-2" aria-hidden="true" tabindex="-1"></a>       dst.datasettype, </span>
-<span id="cb45-3"><a href="taxonomy-related-tables-1.html#cb45-3" aria-hidden="true" tabindex="-1"></a>       st.sitename</span>
-<span id="cb45-4"><a href="taxonomy-related-tables-1.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
-<span id="cb45-5"><a href="taxonomy-related-tables-1.html#cb45-5" aria-hidden="true" tabindex="-1"></a>    ndb.taxa <span class="kw">AS</span> tx</span>
-<span id="cb45-6"><a href="taxonomy-related-tables-1.html#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables        <span class="kw">AS</span> var <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
-<span id="cb45-7"><a href="taxonomy-related-tables-1.html#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.<span class="kw">data</span>             <span class="kw">AS</span> dt  <span class="kw">ON</span> var.variableid <span class="op">=</span> dt.variableid</span>
-<span id="cb45-8"><a href="taxonomy-related-tables-1.html#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples          <span class="kw">AS</span> smp <span class="kw">ON</span> smp.sampleid <span class="op">=</span> dt.sampleid</span>
-<span id="cb45-9"><a href="taxonomy-related-tables-1.html#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets         <span class="kw">AS</span> ds  <span class="kw">ON</span> ds.datasetid <span class="op">=</span> smp.datasetid</span>
-<span id="cb45-10"><a href="taxonomy-related-tables-1.html#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes     <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
-<span id="cb45-11"><a href="taxonomy-related-tables-1.html#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits  <span class="kw">AS</span> cu  <span class="kw">ON</span> cu.collectionunitid <span class="op">=</span> ds.collectionunitid</span>
-<span id="cb45-12"><a href="taxonomy-related-tables-1.html#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites            <span class="kw">AS</span> st  <span class="kw">ON</span> st.siteid <span class="op">=</span> cu.siteid</span>
-<span id="cb45-13"><a href="taxonomy-related-tables-1.html#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> tx.taxonname <span class="op">=</span> <span class="st">&#39;Zea mays&#39;</span></span>
-<span id="cb45-14"><a href="taxonomy-related-tables-1.html#cb45-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> dst.datasettype <span class="op">=</span> <span class="st">&#39;pollen&#39;</span></span>
-<span id="cb45-15"><a href="taxonomy-related-tables-1.html#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb55-1"><a href="taxonomy-related-tables-1.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> tx.taxonname, </span>
+<span id="cb55-2"><a href="taxonomy-related-tables-1.html#cb55-2" aria-hidden="true" tabindex="-1"></a>       dst.datasettype, </span>
+<span id="cb55-3"><a href="taxonomy-related-tables-1.html#cb55-3" aria-hidden="true" tabindex="-1"></a>       st.sitename</span>
+<span id="cb55-4"><a href="taxonomy-related-tables-1.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
+<span id="cb55-5"><a href="taxonomy-related-tables-1.html#cb55-5" aria-hidden="true" tabindex="-1"></a>    ndb.taxa <span class="kw">AS</span> tx</span>
+<span id="cb55-6"><a href="taxonomy-related-tables-1.html#cb55-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.variables        <span class="kw">AS</span> var <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
+<span id="cb55-7"><a href="taxonomy-related-tables-1.html#cb55-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.<span class="kw">data</span>             <span class="kw">AS</span> dt  <span class="kw">ON</span> var.variableid <span class="op">=</span> dt.variableid</span>
+<span id="cb55-8"><a href="taxonomy-related-tables-1.html#cb55-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.samples          <span class="kw">AS</span> smp <span class="kw">ON</span> smp.sampleid <span class="op">=</span> dt.sampleid</span>
+<span id="cb55-9"><a href="taxonomy-related-tables-1.html#cb55-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets         <span class="kw">AS</span> ds  <span class="kw">ON</span> ds.datasetid <span class="op">=</span> smp.datasetid</span>
+<span id="cb55-10"><a href="taxonomy-related-tables-1.html#cb55-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasettypes     <span class="kw">AS</span> dst <span class="kw">ON</span> dst.datasettypeid <span class="op">=</span> ds.datasettypeid</span>
+<span id="cb55-11"><a href="taxonomy-related-tables-1.html#cb55-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits  <span class="kw">AS</span> cu  <span class="kw">ON</span> cu.collectionunitid <span class="op">=</span> ds.collectionunitid</span>
+<span id="cb55-12"><a href="taxonomy-related-tables-1.html#cb55-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.sites            <span class="kw">AS</span> st  <span class="kw">ON</span> st.siteid <span class="op">=</span> cu.siteid</span>
+<span id="cb55-13"><a href="taxonomy-related-tables-1.html#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> tx.taxonname <span class="op">=</span> <span class="st">&#39;Zea mays&#39;</span></span>
+<span id="cb55-14"><a href="taxonomy-related-tables-1.html#cb55-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> dst.datasettype <span class="op">=</span> <span class="st">&#39;pollen&#39;</span></span>
+<span id="cb55-15"><a href="taxonomy-related-tables-1.html#cb55-15" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:ZeapollenByDataset">Table 12.7: </span>Displaying records 1 - 10</caption>
@@ -1069,19 +1086,19 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <div id="sql-example-24" class="section level3 hasAnchor" number="12.8.3">
 <h3><span class="header-section-number">12.8.3</span> SQL Example<a href="taxonomy-related-tables-1.html#sql-example-24" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This example gives a list of all sites with samples that have been ascribed some form of taphonomic change.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb46-1"><a href="taxonomy-related-tables-1.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> tx.taxonname, </span>
-<span id="cb46-2"><a href="taxonomy-related-tables-1.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  tt.taphonomictype,</span>
-<span id="cb46-3"><a href="taxonomy-related-tables-1.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  st.sitename</span>
-<span id="cb46-4"><a href="taxonomy-related-tables-1.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>         ndb.taphonomictypes <span class="kw">AS</span> tt</span>
-<span id="cb46-5"><a href="taxonomy-related-tables-1.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.specimentaphonomy <span class="kw">AS</span> spet <span class="kw">ON</span> spet.taphonomictypeid <span class="op">=</span> tt.taphonomictypeid</span>
-<span id="cb46-6"><a href="taxonomy-related-tables-1.html#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.specimens <span class="kw">AS</span> spe  <span class="kw">ON</span>       spe.specimenid <span class="op">=</span> spet.specimenid</span>
-<span id="cb46-7"><a href="taxonomy-related-tables-1.html#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>              ndb.<span class="kw">data</span> <span class="kw">AS</span> dt   <span class="kw">ON</span>            dt.dataid <span class="op">=</span> spe.dataid</span>
-<span id="cb46-8"><a href="taxonomy-related-tables-1.html#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.variables <span class="kw">AS</span> var  <span class="kw">ON</span>       var.variableid <span class="op">=</span> dt.variableid</span>
-<span id="cb46-9"><a href="taxonomy-related-tables-1.html#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>              ndb.taxa <span class="kw">AS</span> tx   <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
-<span id="cb46-10"><a href="taxonomy-related-tables-1.html#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>           ndb.samples <span class="kw">AS</span> smp  <span class="kw">ON</span>         smp.sampleid <span class="op">=</span> dt.sampleid</span>
-<span id="cb46-11"><a href="taxonomy-related-tables-1.html#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>          ndb.datasets <span class="kw">AS</span> ds   <span class="kw">ON</span>         ds.datasetid <span class="op">=</span> smp.datasetid</span>
-<span id="cb46-12"><a href="taxonomy-related-tables-1.html#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>   ndb.collectionunits <span class="kw">AS</span> cu   <span class="kw">ON</span>  cu.collectionunitid <span class="op">=</span> ds.collectionunitid</span>
-<span id="cb46-13"><a href="taxonomy-related-tables-1.html#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>             ndb.sites <span class="kw">AS</span> st   <span class="kw">ON</span>            st.siteid <span class="op">=</span> cu.siteid;</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb56-1"><a href="taxonomy-related-tables-1.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> tx.taxonname, </span>
+<span id="cb56-2"><a href="taxonomy-related-tables-1.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  tt.taphonomictype,</span>
+<span id="cb56-3"><a href="taxonomy-related-tables-1.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  st.sitename</span>
+<span id="cb56-4"><a href="taxonomy-related-tables-1.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>         ndb.taphonomictypes <span class="kw">AS</span> tt</span>
+<span id="cb56-5"><a href="taxonomy-related-tables-1.html#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.specimentaphonomy <span class="kw">AS</span> spet <span class="kw">ON</span> spet.taphonomictypeid <span class="op">=</span> tt.taphonomictypeid</span>
+<span id="cb56-6"><a href="taxonomy-related-tables-1.html#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.specimens <span class="kw">AS</span> spe  <span class="kw">ON</span>       spe.specimenid <span class="op">=</span> spet.specimenid</span>
+<span id="cb56-7"><a href="taxonomy-related-tables-1.html#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>              ndb.<span class="kw">data</span> <span class="kw">AS</span> dt   <span class="kw">ON</span>            dt.dataid <span class="op">=</span> spe.dataid</span>
+<span id="cb56-8"><a href="taxonomy-related-tables-1.html#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>         ndb.variables <span class="kw">AS</span> var  <span class="kw">ON</span>       var.variableid <span class="op">=</span> dt.variableid</span>
+<span id="cb56-9"><a href="taxonomy-related-tables-1.html#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>              ndb.taxa <span class="kw">AS</span> tx   <span class="kw">ON</span>          var.taxonid <span class="op">=</span> tx.taxonid</span>
+<span id="cb56-10"><a href="taxonomy-related-tables-1.html#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>           ndb.samples <span class="kw">AS</span> smp  <span class="kw">ON</span>         smp.sampleid <span class="op">=</span> dt.sampleid</span>
+<span id="cb56-11"><a href="taxonomy-related-tables-1.html#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>          ndb.datasets <span class="kw">AS</span> ds   <span class="kw">ON</span>         ds.datasetid <span class="op">=</span> smp.datasetid</span>
+<span id="cb56-12"><a href="taxonomy-related-tables-1.html#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>   ndb.collectionunits <span class="kw">AS</span> cu   <span class="kw">ON</span>  cu.collectionunitid <span class="op">=</span> ds.collectionunitid</span>
+<span id="cb56-13"><a href="taxonomy-related-tables-1.html#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>             ndb.sites <span class="kw">AS</span> st   <span class="kw">ON</span>            st.siteid <span class="op">=</span> cu.siteid;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:bisonButchering">Table 12.8: </span>Displaying records 1 - 10</caption>
@@ -1119,28 +1136,28 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <td align="left">Belaya Gora Horned Lark</td>
 </tr>
 <tr class="even">
-<td align="left">Homo sapiens</td>
-<td align="left">fragment</td>
-<td align="left">Saunaktuk [NgTn-1]</td>
-</tr>
-<tr class="odd">
 <td align="left">Leporidae</td>
 <td align="left">thermally altered</td>
 <td align="left">Atkinson site [DiMe-27]</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Mammalia</td>
 <td align="left">burned</td>
 <td align="left">Blaine site [39CU1144]</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Mammalia</td>
 <td align="left">fragment</td>
 <td align="left">Blaine site [39CU1144]</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Mammalia (medium)</td>
 <td align="left">burned</td>
+<td align="left">Atkinson site [DiMe-27]</td>
+</tr>
+<tr class="even">
+<td align="left">Mammalia (small)</td>
+<td align="left">thermally altered</td>
 <td align="left">Atkinson site [DiMe-27]</td>
 </tr>
 </tbody>
@@ -1151,8 +1168,8 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <div id="VariableContexts" class="section level2 hasAnchor" number="12.9">
 <h2><span class="header-section-number">12.9</span> <code>variablecontexts</code><a href="taxonomy-related-tables-1.html#VariableContexts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Variable Contexts lookup table. Table is referenced by the <a href="taxonomy-related-tables-1.html#Variables">variables</a> table.</p>
-<div id="htmlwidget-17863e0d999968a684ff" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-17863e0d999968a684ff">{"x":{"filter":"none","vertical":false,"data":[["variablecontextid","variablecontext","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["variablecontexts_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-036b41fa4747442bf55e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-036b41fa4747442bf55e">{"x":{"filter":"none","vertical":false,"data":[["variablecontextid","variablecontext","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["variablecontexts_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>variablecontextid (primary key)</code></strong>: An arbitrary Variable Context identification number.</li>
 <li><strong><code>variablecontext</code></strong>: Depositional context. Examples are:
@@ -1169,8 +1186,8 @@ In FAUNMAP, the uncertainty is recorded in a separate field from the taxon name,
 <h2><span class="header-section-number">12.10</span> <code>variableelements</code><a href="taxonomy-related-tables-1.html#VariableElements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Variable Elements. Table is referenced by the
 <a href="taxonomy-related-tables-1.html#Variables">variables</a> table.</p>
-<div id="htmlwidget-62a81ebaeaf2301f5afd" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-62a81ebaeaf2301f5afd">{"x":{"filter":"none","vertical":false,"data":[["variableelementid","variableelement","elementtypeid","symmetryid","portionid","maturityid","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["variableelements_pkey","","fk_variableelements_elementtypes","fk_variableelements_elementsymmetries","fk_variableelements_elementportions","fk_variableelements_elementmaturities","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-356976d7516f91b2833d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-356976d7516f91b2833d">{"x":{"filter":"none","vertical":false,"data":[["variableelementid","variableelement","elementtypeid","symmetryid","portionid","maturityid","recdatecreated","recdatemodified"],["integer","character varying(255)","integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["variableelements_pkey","","fk_variableelements_elementtypes","fk_variableelements_elementsymmetries","fk_variableelements_elementportions","fk_variableelements_elementmaturities","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>variableelementid (primary key)</code></strong> An arbitrary Variable Element
 identification number.</li>
@@ -1180,8 +1197,8 @@ identification number.</li>
 <div id="VariableModifications" class="section level2 hasAnchor" number="12.11">
 <h2><span class="header-section-number">12.11</span> <code>variablemodifications</code><a href="taxonomy-related-tables-1.html#VariableModifications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Variable Modifications. Table is referenced by the <a href="taxonomy-related-tables-1.html#Variables">variables</a> table.</p>
-<div id="htmlwidget-1e712a124f1aaeafebc1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1e712a124f1aaeafebc1">{"x":{"filter":"none","vertical":false,"data":[[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-754397073681391ce501" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-754397073681391ce501">{"x":{"filter":"none","vertical":false,"data":[[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>variablemodificationid (primary key)</code></strong>: An arbitrary Variable Modification identification number.</li>
 <li><strong><code>variablemodification</code></strong>: Modification to a specimen. Examples of modifications to bones include <em>carnivore gnawed</em>, <em>rodent gnawed</em>, <em>burned</em>, <em>human butchering</em>. Modifications to pollen grains include various preservation states, e.g. <em>1/2 grains</em>, <em>degraded</em>, <em>corroded</em>, <em>broken</em>. Most Variables do not have a modification assigned.</li>
@@ -1190,8 +1207,8 @@ identification number.</li>
 <div id="VariableUnits" class="section level2 hasAnchor" number="12.12">
 <h2><span class="header-section-number">12.12</span> <code>variableunits</code><a href="taxonomy-related-tables-1.html#VariableUnits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Variable Units. Table is referenced by the <a href="taxonomy-related-tables-1.html#Variables">variables</a> table.</p>
-<div id="htmlwidget-3074c656231aa4a2f1df" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3074c656231aa4a2f1df">{"x":{"filter":"none","vertical":false,"data":[["variableunitsid","variableunits","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["variableunits_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fac192219ce1fcbe6e49" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fac192219ce1fcbe6e49">{"x":{"filter":"none","vertical":false,"data":[["variableunitsid","variableunits","recdatecreated","recdatemodified"],["integer","character varying(64)","timestamp(0) without time zone","timestamp(0) without time zone"],["variableunits_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>variableunitsid (primary key)</code></strong>: An arbitrary Variable Units identification number.</li>
 <li><strong><code>variableunit</code></strong>: The units of measurement. For fauna, these are <em>present/absent</em>, <em>NISP</em> (Number of Individual Specimens), and <em>MNI</em> (Minimum Number of Individals). For pollen, these are <em>NISP</em> (pollen counts) and <em>percent</em>. Units for plant macrofossils include <em>present/abesnt</em> and <em>NISP</em>, as well as a number of quantitative concentration measurements and semi-quantitative abundance measurements such as <em>1-5 scale</em>. Examples of charcoal measurement units are <em>fragments/ml</em> and <em>µm^2/ml</em>.</li>
@@ -1200,8 +1217,8 @@ identification number.</li>
 <div id="RepositoryInstitutions" class="section level2 hasAnchor" number="12.13">
 <h2><span class="header-section-number">12.13</span> <code>repositoryinstitutions</code><a href="taxonomy-related-tables-1.html#RepositoryInstitutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A lookup table of institutions that are repositories for fossil specimens. Table is referenced by the <a href="taxonomy-related-tables-1.html#RepositorySpecimens"><code>repositoryspecimens</code></a> table.</p>
-<div id="htmlwidget-8252744852522fe0a62f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8252744852522fe0a62f">{"x":{"filter":"none","vertical":false,"data":[["repositoryid","acronym","repository","notes","recdatecreated","recdatemodified"],["integer","character varying(64)","character varying(128)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["repositoryinstitutions_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c76cf3589640e0ef6e21" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c76cf3589640e0ef6e21">{"x":{"filter":"none","vertical":false,"data":[["repositoryid","acronym","repository","notes","recdatecreated","recdatemodified"],["integer","character varying(64)","character varying(128)","text","timestamp(0) without time zone","timestamp(0) without time zone"],["repositoryinstitutions_pkey","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>repositoryid (primarykey)</code></strong>: An arbitrary Repository identification number. Repositories include museums, university departments, and various governmental agencies.</li>
 <li><strong><code>acronym</code></strong>: A unique acronym for the repository. Many repositories have well-established acronyms (e.g. AMNH = of Natural History); however, there is no official list. Various acronyms have been used for some institutions, and in some cases the same acronym has been used for different institutions. Consequently, the database acronym may differ from the acronym used in some publications. For example, <em>CMNH</em> has been used for the Carnegie Museum of Natural History, the Cleveland Museum of Natural History, and the Cincinnati Museum of Natural History. In Neotoma, two of these institutions were assigned different acronyms, ones that have been used for them in other publications: CM – Carnegie Museum of Natural History, CLM – Cleveland Museum of Natural History.</li>
@@ -1212,8 +1229,8 @@ identification number.</li>
 <div id="RepositorySpecimens" class="section level2 hasAnchor" number="12.14">
 <h2><span class="header-section-number">12.14</span> <code>repositoryspecimens</code><a href="taxonomy-related-tables-1.html#RepositorySpecimens" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table lists the repositories in which fossil specimens have been accessioned or reposited. The specimens in Neotoma are linked to the <a href="#Dataset"><code>dataset</code></a>, the collection of specimens of a single <a href="#DatasetType"><code>datasettype</code></a> within a <a href="#collectionunit"><code>collectionunit</code></a>. When specimens from a single <code>dataset</code> have been reposited at several institutions, there will be multiple records for that <code>dataset</code> in the <code>repositoryspecimens</code> table.</p>
-<div id="htmlwidget-a36835f41111b519bd16" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a36835f41111b519bd16">{"x":{"filter":"none","vertical":false,"data":[["datasetid","repositoryid","notes","recdatecreated","recdatemodified"],["integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_repositoryspecimens_datasets, repositoryspecimens_pkey","fk_repositoryspecimens_repositoryinstitutions, repositoryspecimens_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bd37577194bffab49bb0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bd37577194bffab49bb0">{"x":{"filter":"none","vertical":false,"data":[["datasetid","repositoryid","notes","recdatecreated","recdatemodified"],["integer","integer","text","timestamp(0) without time zone","timestamp(0) without time zone"],["fk_repositoryspecimens_datasets, repositoryspecimens_pkey","fk_repositoryspecimens_repositoryinstitutions, repositoryspecimens_pkey","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>datasetid (primary key, foreign key)</code></strong>: Dataset identification number. Field links to the <a href="dataset-collection-related-tables-1.html#Datasets"><code>datasets</code></a> table.</li>
 <li><strong><code>repositoryid (primary key, foreign key)</code></strong>: Repository identification number. Field links to the <a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><code>repositoryinstitutions</code></a> lookup table.</li>
@@ -1222,19 +1239,19 @@ identification number.</li>
 <div id="sql-example-25" class="section level3 hasAnchor" number="12.14.1">
 <h3><span class="header-section-number">12.14.1</span> SQL Example<a href="taxonomy-related-tables-1.html#sql-example-25" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This query lists the physical sample repositories for all specimens from the Kimmswick site, and gives us the number of speciments at each repository institution.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb47-1"><a href="taxonomy-related-tables-1.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> st.sitename, </span>
-<span id="cb47-2"><a href="taxonomy-related-tables-1.html#cb47-2" aria-hidden="true" tabindex="-1"></a>  cu.collunitname,</span>
-<span id="cb47-3"><a href="taxonomy-related-tables-1.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> specimens,</span>
-<span id="cb47-4"><a href="taxonomy-related-tables-1.html#cb47-4" aria-hidden="true" tabindex="-1"></a>  ri.repository</span>
-<span id="cb47-5"><a href="taxonomy-related-tables-1.html#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
-<span id="cb47-6"><a href="taxonomy-related-tables-1.html#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>        ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
-<span id="cb47-7"><a href="taxonomy-related-tables-1.html#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>               ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb47-8"><a href="taxonomy-related-tables-1.html#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>    ndb.repositoryspecimens <span class="kw">AS</span> rs <span class="kw">ON</span>        rs.datasetid <span class="op">=</span> ds.datasetid</span>
-<span id="cb47-9"><a href="taxonomy-related-tables-1.html#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.repositoryinstitutions <span class="kw">AS</span> ri <span class="kw">ON</span>     ri.repositoryid <span class="op">=</span> rs.repositoryid</span>
-<span id="cb47-10"><a href="taxonomy-related-tables-1.html#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Kimmswick&#39;</span></span>
-<span id="cb47-11"><a href="taxonomy-related-tables-1.html#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.sitename,</span>
-<span id="cb47-12"><a href="taxonomy-related-tables-1.html#cb47-12" aria-hidden="true" tabindex="-1"></a>         cu.collunitname,</span>
-<span id="cb47-13"><a href="taxonomy-related-tables-1.html#cb47-13" aria-hidden="true" tabindex="-1"></a>         ri.repository;</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb57-1"><a href="taxonomy-related-tables-1.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> st.sitename, </span>
+<span id="cb57-2"><a href="taxonomy-related-tables-1.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  cu.collunitname,</span>
+<span id="cb57-3"><a href="taxonomy-related-tables-1.html#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> specimens,</span>
+<span id="cb57-4"><a href="taxonomy-related-tables-1.html#cb57-4" aria-hidden="true" tabindex="-1"></a>  ri.repository</span>
+<span id="cb57-5"><a href="taxonomy-related-tables-1.html#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.sites <span class="kw">AS</span> st</span>
+<span id="cb57-6"><a href="taxonomy-related-tables-1.html#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>        ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span>           cu.siteid <span class="op">=</span> st.siteid</span>
+<span id="cb57-7"><a href="taxonomy-related-tables-1.html#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>               ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb57-8"><a href="taxonomy-related-tables-1.html#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span>    ndb.repositoryspecimens <span class="kw">AS</span> rs <span class="kw">ON</span>        rs.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb57-9"><a href="taxonomy-related-tables-1.html#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.repositoryinstitutions <span class="kw">AS</span> ri <span class="kw">ON</span>     ri.repositoryid <span class="op">=</span> rs.repositoryid</span>
+<span id="cb57-10"><a href="taxonomy-related-tables-1.html#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> st.sitename <span class="op">=</span> <span class="st">&#39;Kimmswick&#39;</span></span>
+<span id="cb57-11"><a href="taxonomy-related-tables-1.html#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> st.sitename,</span>
+<span id="cb57-12"><a href="taxonomy-related-tables-1.html#cb57-12" aria-hidden="true" tabindex="-1"></a>         cu.collunitname,</span>
+<span id="cb57-13"><a href="taxonomy-related-tables-1.html#cb57-13" aria-hidden="true" tabindex="-1"></a>         ri.repository;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:repoSpecimenQuery">Table 12.9: </span>2 records</caption>
@@ -1273,8 +1290,8 @@ identification number.</li>
 <div id="SpecimenDates" class="section level2 hasAnchor" number="12.15">
 <h2><span class="header-section-number">12.15</span> <code>specimendates</code><a href="taxonomy-related-tables-1.html#SpecimenDates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This table enables queries for dated specimens of indivual taxa. Although the <code>materialdated</code> field in the <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a> table may list the taxa dated, this protocol is not enforced, and the field is not linked to the <a href="taxonomy-related-tables-1.html#Taxa"><code>taxa</code></a> table.</p>
-<div id="htmlwidget-37afc3f0d307252553a6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-37afc3f0d307252553a6">{"x":{"filter":"none","vertical":false,"data":[["specimendateid","geochronid","taxonid","fractionid","sampleid","notes","elementtypeid","recdatecreated","recdatemodified","specimenid"],["integer","integer","integer","integer","integer","text","integer","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["specimendates_pkey","sd_gcid","sd_txid","sd_fcid","sd_smpid","","sd_etyid","","","fk_specimendates_specimens"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-02ba765a221a2bfb19ad" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-02ba765a221a2bfb19ad">{"x":{"filter":"none","vertical":false,"data":[["specimendateid","geochronid","taxonid","fractionid","sampleid","notes","elementtypeid","recdatecreated","recdatemodified","specimenid"],["integer","integer","integer","integer","integer","text","integer","timestamp(0) without time zone","timestamp(0) without time zone","integer"],["specimendates_pkey","sd_gcid","sd_txid","sd_fcid","sd_smpid","","sd_etyid","","","fk_specimendates_specimens"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>specimendateid</code> (primary key)</strong>: An arbitrary specicimen date ID.</li>
 <li><strong><code>geochronid</code> (foreign key)</strong>: Geochronologic identification number. Field links to the <a href="chronology-age-related-tables-1.html#Geochronology"><code>geochronology</code></a> table.</li>

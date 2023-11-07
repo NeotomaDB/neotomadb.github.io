@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>taxa - neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>taxa</h1><p><span id="recordNumber">46322</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>This table lists all taxa in the database. Most taxa are biological taxa; however, some are biometric measures and some are physical parameters.</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="taxonid">taxonid</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;ndb.seq_taxa_taxonid&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="datasettaxonnotes.taxonid references taxa.taxonid via fk_datasettaxonnotes_taxa"><a href='datasettaxonnotes.html'>datasettaxonnotes</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_datasettaxonnotes_taxa<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="ecolgroups.taxonid references taxa.taxonid via fk_ecolgroups_taxa"><a href='ecolgroups.html'>ecolgroups</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_ecolgroups_taxa<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="externaltaxa.taxonid references taxa.taxonid via fk_externaltaxa_taxa"><a href='externaltaxa.html'>externaltaxa</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_externaltaxa_taxa<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="formtaxa.affinityid references taxa.taxonid via fk_formtaxa_taxa1"><a href='formtaxa.html'>formtaxa</a><span class='relatedKey'>.affinityid</span></td>
+                                                <td class="constraint detail">fk_formtaxa_taxa1<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="formtaxa.taxonid references taxa.taxonid via fk_formtaxa_taxa"><a href='formtaxa.html'>formtaxa</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_formtaxa_taxa<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="isostratdata.taxonid references taxa.taxonid via fk_isostratdata_taxa"><a href='isostratdata.html'>isostratdata</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_isostratdata_taxa<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="samples.taxonid references taxa.taxonid via fk_samples_taxa"><a href='samples.html'>samples</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_samples_taxa<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="specimendates.taxonid references taxa.taxonid via sd_txid"><a href='specimendates.html'>specimendates</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">sd_txid<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="synonyms.invalidtaxonid references taxa.taxonid via fk_synonyms_invalidtaxa"><a href='synonyms.html'>synonyms</a><span class='relatedKey'>.invalidtaxonid</span></td>
+                                                <td class="constraint detail">fk_synonyms_invalidtaxa<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="synonyms.validtaxonid references taxa.taxonid via fk_synonyms_validtaxa"><a href='synonyms.html'>synonyms</a><span class='relatedKey'>.validtaxonid</span></td>
+                                                <td class="constraint detail">fk_synonyms_validtaxa<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="synonymy.reftaxonid references taxa.taxonid via fk_synonymy_taxa2"><a href='synonymy.html'>synonymy</a><span class='relatedKey'>.reftaxonid</span></td>
+                                                <td class="constraint detail">fk_synonymy_taxa2<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="synonymy.taxonid references taxa.taxonid via fk_synonymy_taxa1"><a href='synonymy.html'>synonymy</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_synonymy_taxa1<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="taxa.highertaxonid references taxa.taxonid via fk_highertaxonid"><a href='taxa.html'>taxa</a><span class='relatedKey'>.highertaxonid</span></td>
+                                                <td class="constraint detail">fk_highertaxonid<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="taxaalthierarchy.highertaxonid references taxa.taxonid via fk_taxaalthierarchy_taxa1"><a href='taxaalthierarchy.html'>taxaalthierarchy</a><span class='relatedKey'>.highertaxonid</span></td>
+                                                <td class="constraint detail">fk_taxaalthierarchy_taxa1<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="taxaalthierarchy.taxonid references taxa.taxonid via fk_taxaalthierarchy_taxa"><a href='taxaalthierarchy.html'>taxaalthierarchy</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_taxaalthierarchy_taxa<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="taxonpaths.taxonid references taxa.taxonid via taxonpaths_taxonid_fkey"><a href='taxonpaths.html'>taxonpaths</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">taxonpaths_taxonid_fkey<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="variables.taxonid references taxa.taxonid via fk_variables_taxa"><a href='variables.html'>variables</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_variables_taxa<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>An arbitrary Taxon identification number.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="taxoncode">taxoncode</span></td>
+                                    <td>varchar</td>
+                                    <td>64</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>A code for the Taxon. These codes are useful for other software or output for which the complete name is too long. Because of the very large number of taxa, codes can be duplicated for different Taxa Groups. In general, these various Taxa Groups are analyzed separately, and no duplication will occur within a dataset. However, if Taxa Groups are combined, unique codes can be generated by prefixing with the TaxaGroupID, For example:<br />
+*VPL:Cle Clethra<br />
+*MAM:Cle Clethrionomys<br />
+A set of conventions has been established for codes. In some cases conventions differ depending on whether the organism is covered by rules of botanical nomenclature (BN) or zoological nomenclature (ZN).<br />
+*Genus – Three-letter code, first letter capitalized, generally the first three unless already used.<br />
+**Ace Acer<br />
+**Cle Clethrionomys<br />
+*Subgenus – The genus code plus a two-letter subgenus code, first letter capitalized, separated by a period.<br />
+**Pin.Pi Pinus subg. Pinus<br />
+**Syn.Mi Synaptomys (Mictomys)<br />
+*Species – The genus code plus a two-letter, lower-case species code, separated by a period.<br />
+**Ace.sa Acer saccharum<br />
+**Ace.sc Acer saccharinum<br />
+**Cle.ga Clethrionomys gapperi<br />
+*Subspecies or variety – The species code a two-letter, lower-case subspecies code, separated by a period.<br />
+**Aln.vi.si Alnus viridis subsp. Sinuata<br />
+**Bis.bi.an Bison bison antiquus<br />
+*Family – Six-letter code, first letter capitalized, consisting of three letters followed by «eae» (BN) or «dae» (ZN).<br />
+**Roseae Rosaceae<br />
+**Bovdae Bovidae<br />
+*Subfamily or tribe – (BN) Family code plus two-letter subfamily code, first letter capitalized, separated by a priod. (ZN) Six-letter code, first letter capitalized, consisting of three letters followed by «nae».<br />
+**Asteae.As Asteraceae subf. Asteroideae<br />
+**Asteae.Cy Asteraceae tribe Cynarea<br />
+**Arvnae Arvicolinae<br />
+*Order – (BN) Six-letter code, first letter capitalized, consisting of three letters followed by «les». (ZN) Six-letter code, first letter capitalized, consisting of three letters, followed by the last three letters of the order name, unless the order name is ≤6 letters long, in which case the code = the order name. Zoological orders do not have a common ending.<br />
+**Ercles Ericales<br />
+**Artyla Artiodactyla<br />
+**Rodtia Rodentia<br />
+*Taxonomic levels higher than order – Six-letter code, first letter capitalized, consisting of three letters, followed by the last three letters of the order name, unless the order name is ≤6 letters long, in which case the code = the order name..<br />
+**Magida Magnoliopsida<br />
+**Magyta Magnoliophyta<br />
+**Mamlia Mammalia<br />
+*Types – The conventional taxon code followed by «-type».<br />
+**Aln.in-t Alnus incana-type<br />
+**Amb-t Ambrosia-type<br />
+*cf. – «cf. » is placed in the proper position.<br />
+**Odc.cf.he Odocoileus cf. O. hemionus<br />
+**cf.Odc.he cf. Odocoileus hemionus<br />
+**cf.Odc cf. Odocoileus<br />
+*aff. – «aff. » is abbreviated to «af. ».<br />
+**af.Can.di aff. Canis dirus<br />
+*? – «?» is placed in the proper position.<br />
+**?Pro.lo ?Procyon lotor<br />
+*Alternative names – A slash is placed between the conventional abbreviations for the alternative taxa.<br />
+**Ost/Cpn Ostrya/Carpinus<br />
+**Mstdae/Mepdae Mustelidae/Mephitidae<br />
+*Undifferentiated taxa – (BN) «.ud» is added to the code. (ZN) «.sp » is added to the code.<br />
+**Aln.ud Alnus undiff.<br />
+**Roseae.ud Rosaceae undiff.<br />
+**Mms.sp Mammuthus sp.<br />
+**Taydae.sp Tayassuidae sp<br />
+*Parenthetic modifiers – The conventional taxon code with an appropriate abbreviation for the modifier separated by periods. Multiple modifiers also separated by periods. *Abbreviations for pollen morphological modifiers follow Iversen and Troels-Smith (1950).<br />
+**Raneae.C3 Ranunculaceae (tricolpate)<br />
+**Raneae.Cperi Ranunculaceae (pericolpate)<br />
+**Pineae.ves.ud Pinaceae (vesiculate) undiff.<br />
+**Myteae.Csyn.psi Myrtaceae (syncolpate, psilate)<br />
+**Bet.&gt;20µ Betula (&gt;20 µm)<br />
+*Non-biological taxa – Use appropriate abbreviations.<br />
+**bulk.dens Bulk density<br />
+**LOI Loss-on-ignition<br />
+**Bet.pol.diam Betula mean pollen-grain diameter</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="taxonname">taxonname</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Name of the taxon. Most TaxonNames are biological taxa; however, some are biometric measures and some are physical parameters. In addition, some biological taxa may have parenthetic non-Latin modifers, e.g. «Betula (&gt;20 µm)» for Betula pollen grains &gt;20 µm in diameter. In general, the names used in Neotoma are those used by the original investigator. In particular, identifications are not changed, although Dataset notes can be added to the database regarding particular identifications. However, some corrections and synonymizations are made. These include:<br />
+*Misspellings are corrected.<br />
+*Nomenclatural, homotypic, or objective synonyms may be applied. Because these synonyms unambiguously refer to the same taxon, no change in identification is implied. For example, the old family name for the grasses «Gramineae» is changed to «Poaceae».<br />
+*Taxonomic, heterotypic, or subjective synonyms may be applied if the change does not effectively assign the specimen to a different taxon. Although two names may have been based on different type specimens, if further research has shown that these are in fact the same taxon, the name is changed to the accepted name. These synonymizations should not cause confusion. However, uncritical synonymization, although taxonomically correct, can result in loss of information, and should be avoided. For example, although a number of recent studies have shown that the Taxodiaceae should be merged with the Cupressaceae, simply synonymizing Taxodiaceae with Cupressaceae may expand the universe of taxa beyond that implied by the original investigator. For example, a palynologist in the southeastern United States may have used «Taxodiaceae» to imply «Taxodium», which is the only genus of the family that has occurred in the region since the Pliocene, but used the the family name because, palynologically, Taxodiuim cannot be differentiated from other Taxodiaceae. However, well preserved Taxodium pollen grains can be differentiated from the other Cupressaceous genera in the region, Juniperus and Chamaecyperus. Thus, the appropriate synonymization for «Taxodiaceae» in this region would be «Taxodium» or «Taxodium-type», which would retain the original taxonomic precision. On the other hand, the old «TCT» shorthand for «Taxodiaceae/Cupressaceae/Taxaceae» now becomes «Cupressaceae/Taxaceae» with no loss of information.<br />
+*For alternative taxonomic designations, the order may be changed. For example, «Ostrya/Carpinus» would be substituted for «Carpinus/Ostrya».</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="author">author</span></td>
+                                    <td>varchar</td>
+                                    <td>128</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Author(s) of the name. Neither the pollen database nor FAUNMAP stored author names, so these do not currently exist in Neotoma for plant and mammal names. These databases follow standard taxonomic references (e.g. Flora of North America, Flora Europaea, Wilson and Reeder&rsquo;s Mammal Species of the World), which, of course, do cite the original authors. However, for beetles, the standard practice is to cite original author names; therefore, this field was added to Neotoma.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="valid">valid</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="highertaxonid">highertaxonid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="taxa.highertaxonid references taxa.taxonid via fk_highertaxonid"><a href='taxa.html'>taxa</a><span class='relatedKey'>.taxonid</span></td>
+                                                <td class="constraint detail">fk_highertaxonid<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>The TaxonID of the next higher taxonomic rank, for example, the HigherTaxonID for «Bison» is the TaxonID for «Bovidae». For «cf.&rsquo;s» and «-types», the next higher rank may be much higher owing to the uncertainty of the identification; the HigherTaxonID for «cf. Bison bison» is the TaxonId for «Mammalia». The HigherTaxonID implements the taxonomic hierarchy in Neotoma.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="extinct">extinct</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>True if the taxon is extinct, False if extant.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="taxagroupid">taxagroupid</span></td>
+                                    <td>varchar</td>
+                                    <td>3</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="taxa.taxagroupid references taxagrouptypes.taxagroupid via fk_taxagroupid"><a href='taxagrouptypes.html'>taxagrouptypes</a><span class='relatedKey'>.taxagroupid</span></td>
+                                                <td class="constraint detail">fk_taxagroupid<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>The TaxaGroupID facilitates rapid extraction of taxa groups that are typically grouped together for analysis. Some of these groups contain taxa in different classes or phyla. For example, vascular plants include the Spermatophyta and Pteridophyta; the herps include Reptilia and Amphibia; the testate amoebae include taxa from different phyla. Field links to the TaxaGroupTypes table.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="publicationid">publicationid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="taxa.publicationid references publications.publicationid via fk_publicationid"><a href='publications.html'>publications</a><span class='relatedKey'>.publicationid</span></td>
+                                                <td class="constraint detail">fk_publicationid<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Publication identification number. Field links to the Publications table.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="validatorid">validatorid</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="taxa.validatorid references contacts.contactid via fk_validatorid"><a href='contacts.html'>contacts</a><span class='relatedKey'>.contactid</span></td>
+                                                <td class="constraint detail">fk_validatorid<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="validatedate">validatedate</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="notes">notes</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Free form notes or comments about the Taxon.</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatecreated">recdatecreated</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>timezone(&#39;UTC&#39;::text, now())</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="recdatemodified">recdatemodified</span></td>
+                                    <td>timestamp</td>
+                                    <td>22</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> taxa_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>taxonid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>ix_taxagroupid_taxa</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>taxagroupid</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>ix_taxonname_taxa</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>taxonname</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>taxonames_idx</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>taxonname</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>taxonname_btree</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>taxonname</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="601,5,811,181">
+<area shape="rect" id="node2" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="9,1592,191,1768">
+<area shape="rect" id="node3" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="239,1287,545,1767">
+<area shape="rect" id="node7" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="7,1909,193,2056">
+<area shape="rect" id="node13" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="5,1457,195,1575">
+<area shape="rect" id="node4" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="615,199,797,375">
+<area shape="rect" id="node5" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="615,392,797,568">
+<area shape="rect" id="node6" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="593,1821,819,2027">
+<area shape="rect" id="node8" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="615,585,797,761">
+<area shape="rect" id="node9" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="603,815,809,1020">
+<area shape="rect" id="node10" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="867,689,1052,983">
+<area shape="rect" id="node11" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="615,1037,797,1243">
+<area shape="rect" id="node12" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="611,2044,801,2308">
+<area shape="rect" id="node14" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="589,1260,823,1412">
+<area shape="rect" id="node15" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="627,1429,785,1552">
+<area shape="rect" id="node16" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="609,1569,803,1804">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="oneDegreeImg" data="../diagrams/tables/taxa.1degree.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1137,948,1347,1036">
+<area shape="rect" id="node2" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="863,647,1069,852">
+<area shape="rect" id="node15" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="564,633,740,721">
+<area shape="rect" id="node22" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="499,2032,805,2512">
+<area shape="rect" id="node51" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="564,528,740,616">
+<area shape="rect" id="node3" href="../../tables/calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="1679,2819,1880,2907">
+<area shape="rect" id="node4" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="258,1913,443,2060">
+<area shape="rect" id="node45" href="../../tables/publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,1945,203,2033">
+<area shape="rect" id="node5" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="879,163,1053,251">
+<area shape="rect" id="node6" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="260,452,441,628">
+<area shape="rect" id="node11" href="../../tables/contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="8,484,200,572">
+<area shape="rect" id="node7" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="574,279,730,367">
+<area shape="rect" id="node8" href="../../tables/constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="537,173,767,261">
+<area shape="rect" id="node9" href="../../tables/contactreferences.html" target="_top" title="contactreferences" alt="" coords="549,1337,755,1425">
+<area shape="rect" id="node10" href="../../tables/externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="247,1511,455,1599">
+<area shape="rect" id="node12" href="../../tables/data.html" target="_top" title="data" alt="" coords="1144,1195,1340,1283">
+<area shape="rect" id="node13" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="869,1593,1063,1828">
+<area shape="rect" id="node63" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="553,3128,751,3216">
+<area shape="rect" id="node64" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="554,1232,750,1320">
+<area shape="rect" id="node65" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="567,1127,737,1215">
+<area shape="rect" id="node14" href="../../tables/dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="871,436,1061,524">
+<area shape="rect" id="node16" href="../../tables/datasetpis.html" target="_top" title="datasetpis" alt="" coords="884,541,1048,629">
+<area shape="rect" id="node17" href="../../tables/datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="857,1013,1075,1101">
+<area shape="rect" id="node18" href="../../tables/datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="855,295,1077,383">
+<area shape="rect" id="node19" href="../../tables/datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="531,2812,773,2900">
+<area shape="rect" id="node20" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="256,2863,445,2980">
+<area shape="rect" id="node21" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="861,1119,1071,1295">
+<area shape="rect" id="node23" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1145,1300,1339,1388">
+<area shape="rect" id="node24" href="../../tables/datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1423,437,1613,525">
+<area shape="rect" id="node25" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="875,3472,1057,3648">
+<area shape="rect" id="node26" href="../../tables/ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="557,3585,747,3673">
+<area shape="rect" id="node27" href="../../tables/ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="567,3480,737,3568">
+<area shape="rect" id="node28" href="../../tables/elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="519,2917,785,3005">
+<area shape="rect" id="node29" href="../../tables/elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="545,3023,759,3111">
+<area shape="rect" id="node30" href="../../tables/elementtypes.html" target="_top" title="elementtypes" alt="" coords="264,3407,437,3495">
+<area shape="rect" id="node31" href="../../tables/eventpublications.html" target="_top" title="eventpublications" alt="" coords="549,1725,755,1813">
+<area shape="rect" id="node32" href="../../tables/externalpublications.html" target="_top" title="externalpublications" alt="" coords="541,1584,763,1672">
+<area shape="rect" id="node33" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="875,1881,1057,2057">
+<area shape="rect" id="node34" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="853,2287,1079,2492">
+<area shape="rect" id="node35" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1149,843,1335,931">
+<area shape="rect" id="node36" href="../../tables/geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1401,1415,1635,1503">
+<area shape="rect" id="node37" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1135,1405,1349,1493">
+<area shape="rect" id="node38" href="../../tables/isometadata.html" target="_top" title="isometadata" alt="" coords="1435,1056,1601,1144">
+<area shape="rect" id="node39" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1152,1511,1332,1599">
+<area shape="rect" id="node40" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="1156,1616,1328,1704">
+<area shape="rect" id="node41" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="1427,2225,1609,2401">
+<area shape="rect" id="node42" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1127,1721,1357,1809">
+<area shape="rect" id="node43" href="../../tables/publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="545,1443,759,1531">
+<area shape="rect" id="node44" href="../../tables/publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="548,1831,756,1919">
+<area shape="rect" id="node46" href="../../tables/publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="535,2529,769,2617">
+<area shape="rect" id="node47" href="../../tables/relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="531,2635,773,2723">
+<area shape="rect" id="node48" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1154,209,1330,297">
+<area shape="rect" id="node49" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1147,453,1337,541">
+<area shape="rect" id="node50" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1143,649,1341,737">
+<area shape="rect" id="node52" href="../../tables/siteimages.html" target="_top" title="siteimages" alt="" coords="574,739,730,827">
+<area shape="rect" id="node53" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1687,1927,1872,2220">
+<area shape="rect" id="node54" href="../../tables/fractiondated.html" target="_top" title="fractiondated" alt="" coords="1431,1979,1605,2067">
+<area shape="rect" id="node55" href="../../tables/specimens.html" target="_top" title="specimens" alt="" coords="1438,2120,1598,2208">
+<area shape="rect" id="node56" href="../../tables/specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="1924,2375,2129,2463">
+<area shape="rect" id="node57" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="875,2679,1057,2884">
+<area shape="rect" id="node58" href="../../tables/synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="561,3339,743,3427">
+<area shape="rect" id="node59" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="871,1312,1061,1576">
+<area shape="rect" id="node60" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="849,2509,1083,2661">
+<area shape="rect" id="node61" href="../../tables/taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="537,3233,767,3321">
+<area shape="rect" id="node62" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="887,2111,1045,2233">
+<area shape="rect" id="node66" href="../../../ti/tables/stewards.html" target="_top" title="ti.stewards" alt="" coords="573,844,731,932">
+<area shape="rect" id="node67" href="../../../ti/tables/stewardupdates.html" target="_top" title="ti.stewardupdates" alt="" coords="549,949,755,1037">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="twodegreesDegreeImg" data="../diagrams/tables/taxa.2degrees.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="601,5,811,181">
+<area shape="rect" id="node2" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="9,1592,191,1768">
+<area shape="rect" id="node3" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="239,1287,545,1767">
+<area shape="rect" id="node7" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="7,1909,193,2056">
+<area shape="rect" id="node13" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="5,1457,195,1575">
+<area shape="rect" id="node4" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="615,199,797,375">
+<area shape="rect" id="node5" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="615,392,797,568">
+<area shape="rect" id="node6" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="593,1821,819,2027">
+<area shape="rect" id="node8" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="615,585,797,761">
+<area shape="rect" id="node9" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="603,815,809,1020">
+<area shape="rect" id="node10" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="867,689,1052,983">
+<area shape="rect" id="node11" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="615,1037,797,1243">
+<area shape="rect" id="node12" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="611,2044,801,2308">
+<area shape="rect" id="node14" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="589,1260,823,1412">
+<area shape="rect" id="node15" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="627,1429,785,1552">
+<area shape="rect" id="node16" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="609,1569,803,1804">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="oneimpliedDegreeImg" data="../diagrams/tables/taxa.implied1degrees.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1137,748,1347,836">
+<area shape="rect" id="node2" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="863,659,1069,864">
+<area shape="rect" id="node15" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="564,659,740,747">
+<area shape="rect" id="node22" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="499,1952,805,2432">
+<area shape="rect" id="node53" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="564,553,740,641">
+<area shape="rect" id="node3" href="../../tables/calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="1679,2736,1880,2824">
+<area shape="rect" id="node4" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="258,1820,443,1967">
+<area shape="rect" id="node46" href="../../tables/publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="5,1852,203,1940">
+<area shape="rect" id="node5" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="879,21,1053,109">
+<area shape="rect" id="node6" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="260,372,441,548">
+<area shape="rect" id="node11" href="../../tables/contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="8,404,200,492">
+<area shape="rect" id="node7" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="574,448,730,536">
+<area shape="rect" id="node8" href="../../tables/constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="537,57,767,145">
+<area shape="rect" id="node9" href="../../tables/contactreferences.html" target="_top" title="contactreferences" alt="" coords="549,1047,755,1135">
+<area shape="rect" id="node10" href="../../tables/externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="247,1220,455,1308">
+<area shape="rect" id="node12" href="../../tables/data.html" target="_top" title="data" alt="" coords="1144,971,1340,1059">
+<area shape="rect" id="node13" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="869,1871,1063,2105">
+<area shape="rect" id="node65" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="553,3129,751,3217">
+<area shape="rect" id="node66" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="554,1717,750,1805">
+<area shape="rect" id="node67" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="567,1612,737,1700">
+<area shape="rect" id="node14" href="../../tables/dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="871,448,1061,536">
+<area shape="rect" id="node16" href="../../tables/datasetpis.html" target="_top" title="datasetpis" alt="" coords="884,553,1048,641">
+<area shape="rect" id="node17" href="../../tables/datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="857,1061,1075,1149">
+<area shape="rect" id="node18" href="../../tables/datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="855,127,1077,215">
+<area shape="rect" id="node19" href="../../tables/datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="531,2813,773,2901">
+<area shape="rect" id="node20" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="256,2864,445,2981">
+<area shape="rect" id="node21" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="861,1167,1071,1343">
+<area shape="rect" id="node23" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1145,1599,1339,1687">
+<area shape="rect" id="node24" href="../../tables/datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1423,791,1613,879">
+<area shape="rect" id="node25" href="../../tables/dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1155,889,1329,953">
+<area shape="rect" id="node26" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="875,3485,1057,3661">
+<area shape="rect" id="node27" href="../../tables/ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="557,3623,747,3711">
+<area shape="rect" id="node28" href="../../tables/ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="567,3517,737,3605">
+<area shape="rect" id="node29" href="../../tables/elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="519,2919,785,3007">
+<area shape="rect" id="node30" href="../../tables/elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="545,3024,759,3112">
+<area shape="rect" id="node31" href="../../tables/elementtypes.html" target="_top" title="elementtypes" alt="" coords="264,3408,437,3496">
+<area shape="rect" id="node32" href="../../tables/eventpublications.html" target="_top" title="eventpublications" alt="" coords="549,1507,755,1595">
+<area shape="rect" id="node33" href="../../tables/externalpublications.html" target="_top" title="externalpublications" alt="" coords="541,1293,763,1381">
+<area shape="rect" id="node34" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="875,1677,1057,1853">
+<area shape="rect" id="node35" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="853,2335,1079,2540">
+<area shape="rect" id="node36" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1149,537,1335,625">
+<area shape="rect" id="node37" href="../../tables/geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1401,1216,1635,1304">
+<area shape="rect" id="node38" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1135,1076,1349,1164">
+<area shape="rect" id="node39" href="../../tables/isometadata.html" target="_top" title="isometadata" alt="" coords="1435,255,1601,343">
+<area shape="rect" id="node40" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1152,1181,1332,1269">
+<area shape="rect" id="node41" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="1156,1287,1328,1375">
+<area shape="rect" id="node42" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="1427,2300,1609,2476">
+<area shape="rect" id="node43" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1127,1873,1357,1961">
+<area shape="rect" id="node44" href="../../tables/publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="545,1152,759,1240">
+<area shape="rect" id="node45" href="../../tables/publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="548,1823,756,1911">
+<area shape="rect" id="node47" href="../../tables/publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="535,2449,769,2537">
+<area shape="rect" id="node48" href="../../tables/pubtsv.html" target="_top" title="pubtsv" alt="" coords="589,2555,715,2619">
+<area shape="rect" id="node49" href="../../tables/relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="531,2636,773,2724">
+<area shape="rect" id="node50" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1154,145,1330,233">
+<area shape="rect" id="node51" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1147,421,1337,509">
+<area shape="rect" id="node52" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1143,643,1341,731">
+<area shape="rect" id="node54" href="../../tables/siteimages.html" target="_top" title="siteimages" alt="" coords="574,800,730,888">
+<area shape="rect" id="node55" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1687,2107,1872,2400">
+<area shape="rect" id="node56" href="../../tables/fractiondated.html" target="_top" title="fractiondated" alt="" coords="1431,2159,1605,2247">
+<area shape="rect" id="node57" href="../../tables/specimens.html" target="_top" title="specimens" alt="" coords="1438,2987,1598,3075">
+<area shape="rect" id="node58" href="../../tables/specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="1924,2423,2129,2511">
+<area shape="rect" id="node59" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="875,2557,1057,2763">
+<area shape="rect" id="node60" href="../../tables/synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="561,3235,743,3323">
+<area shape="rect" id="node61" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="871,1396,1061,1660">
+<area shape="rect" id="node62" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="849,2780,1083,2932">
+<area shape="rect" id="node63" href="../../tables/taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="537,3340,767,3428">
+<area shape="rect" id="node64" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="887,2159,1045,2281">
+<area shape="rect" id="node68" href="../../../ti/tables/stewards.html" target="_top" title="ti.stewards" alt="" coords="573,905,731,993">
+<area shape="rect" id="node69" href="../../../ti/tables/stewardupdates.html" target="_top" title="ti.stewardupdates" alt="" coords="549,271,755,359">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="twoimpliedDegreeImg" data="../diagrams/tables/taxa.implied2degrees.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

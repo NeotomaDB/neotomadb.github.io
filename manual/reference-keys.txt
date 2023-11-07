@@ -37,8 +37,8 @@ tab:zeaPollenSites
 tab:ZeapollenByDataset
 tab:bisonButchering
 tab:repoSpecimenQuery
-tab:unnamed-chunk-3
 tab:unnamed-chunk-4
+tab:unnamed-chunk-5
 tab:AggregateDatasets
 tab:aggregatesampleagessql
 tab:relativeagesquery
@@ -54,8 +54,15 @@ FAUNMAP
 BEETLE
 who-will-use-neotoma
 working-with-the-raw-data
-using-r
 using-the-database-locally
+using-r
+searching-for-sites
+site-names-sitenamelago
+code
+result
+location-locc
+code-1
+result-1
 sql-quickly
 sql-example
 sql-query

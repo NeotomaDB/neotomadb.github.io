@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="neotoma" schema="da" type="PostgreSQL - 9.6.24">
+   <tables>
+      <table name="contacts" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT c.contactid,&#10;    c.aliasid,&#10;    c.contactname,&#10;    cs.contactstatus,&#10;    c.familyname,&#10;    c.leadinginitials,&#10;    c.givennames,&#10;    c.suffix,&#10;    c.title,&#10;    c.phone,&#10;    c.fax,&#10;    c.email,&#10;    c.url,&#10;    c.address,&#10;    c.notes&#10;   FROM (ndb.contacts c&#10;     JOIN ndb.contactstatuses cs ON ((c.contactstatusid = cs.contactstatusid)));">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="contactid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="aliasid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="contactname" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="contactstatus" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="familyname" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="leadinginitials" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="givennames" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="suffix" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="title" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="phone" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="fax" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="email" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="url" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="address" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="notes" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+      </table>
+      <table name="datasetbytaxonname" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT DISTINCT samples.datasetid,&#10;    taxa.taxonname&#10;   FROM (((ndb.data&#10;     JOIN ndb.samples ON ((data.sampleid = samples.sampleid)))&#10;     JOIN ndb.variables ON ((data.variableid = variables.variableid)))&#10;     JOIN ndb.taxa ON ((variables.taxonid = taxa.taxonid)));">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="taxonname" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+      </table>
+      <table name="datasets" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT d.datasetid,&#10;    ddoi.doi,&#10;    d.datasetname,&#10;    cu.collectionunitid,&#10;    cu.handle AS collunithandle,&#10;    cu.collunitname,&#10;    dst.datasettype,&#10;    ct.colltype,&#10;    s.siteid,&#10;    s.altitude,&#10;    s.latitudesouth,&#10;    s.longitudewest,&#10;    s.latitudenorth,&#10;    s.longitudeeast,&#10;    dpi.contactid,&#10;    dsa.minage,&#10;    dsa.maxage,&#10;    dsa.ageyoungest,&#10;    dsa.ageoldest,&#10;    constituentdatabases.databasename,&#10;    s.geog&#10;   FROM (((((((((ndb.datasets d&#10;     JOIN ndb.datasettypes dst ON ((d.datasettypeid = dst.datasettypeid)))&#10;     LEFT JOIN ndb.datasetdatabases ON ((datasetdatabases.datasetid = d.datasetid)))&#10;     LEFT JOIN ndb.constituentdatabases ON ((constituentdatabases.databaseid = datasetdatabases.databaseid)))&#10;     JOIN ndb.collectionunits cu ON ((d.collectionunitid = cu.collectionunitid)))&#10;     LEFT JOIN ndb.collectiontypes ct ON ((cu.colltypeid = ct.colltypeid)))&#10;     JOIN ndb.sites s ON ((cu.siteid = s.siteid)))&#10;     LEFT JOIN ndb.datasetdoi ddoi ON ((d.datasetid = ddoi.datasetid)))&#10;     LEFT JOIN ndb.datasetpis dpi ON ((d.datasetid = dpi.datasetid)))&#10;     LEFT JOIN da.vbestdatasetages dsa ON ((d.datasetid = dsa.datasetid)));">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="doi" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="datasetname" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="collectionunitid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="collunithandle" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="collunitname" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="datasettype" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="colltype" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="siteid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="9" name="altitude" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="10" name="latitudesouth" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="11" name="longitudewest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="12" name="latitudenorth" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="13" name="longitudeeast" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="contactid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="15" name="minage" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="16" name="maxage" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="17" name="ageyoungest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="18" name="ageoldest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="databasename" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="geog" nullable="true" remarks="" size="2147483647" type="geography" typeCode="1111"/>
+      </table>
+      <table name="datasets_last" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT DISTINCT d.datasetid,&#10;    d.datasetname,&#10;    cu.collectionunitid,&#10;    cu.handle AS collunithandle,&#10;    cu.collunitname,&#10;    dst.datasettype,&#10;    ct.colltype,&#10;    s.siteid,&#10;    s.altitude,&#10;    s.latitudesouth,&#10;    s.longitudewest,&#10;    s.latitudenorth,&#10;    s.longitudeeast,&#10;    dpi.contactid,&#10;    dsa.minage,&#10;    dsa.maxage,&#10;    dsa.ageyoungest,&#10;    dsa.ageoldest,&#10;    constituentdatabases.databasename&#10;   FROM ((((((((ndb.datasets d&#10;     JOIN ndb.datasettypes dst ON ((d.datasettypeid = dst.datasettypeid)))&#10;     LEFT JOIN ndb.datasetdatabases ON ((datasetdatabases.datasetid = d.datasetid)))&#10;     LEFT JOIN ndb.constituentdatabases ON ((constituentdatabases.databaseid = datasetdatabases.databaseid)))&#10;     JOIN ndb.collectionunits cu ON ((d.collectionunitid = cu.collectionunitid)))&#10;     LEFT JOIN ndb.collectiontypes ct ON ((cu.colltypeid = ct.colltypeid)))&#10;     JOIN ndb.sites s ON ((cu.siteid = s.siteid)))&#10;     LEFT JOIN ndb.datasetpis dpi ON ((d.datasetid = dpi.datasetid)))&#10;     LEFT JOIN da.vbestdatasetages dsa ON ((d.datasetid = dsa.datasetid)));">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="datasetname" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="collectionunitid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="collunithandle" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="collunitname" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="datasettype" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="colltype" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="siteid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="8" name="altitude" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="9" name="latitudesouth" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="10" name="longitudewest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="11" name="latitudenorth" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="12" name="longitudeeast" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="contactid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="14" name="minage" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="15" name="maxage" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="16" name="ageyoungest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="17" name="ageoldest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="databasename" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+      </table>
+      <table name="geopoliticalunits" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT DISTINCT sgp.geopoliticalid,&#10;    gpu.geopoliticalname,&#10;    gpu.rank,&#10;    gpu.highergeopoliticalid&#10;   FROM (ndb.sitegeopolitical sgp&#10;     JOIN ndb.geopoliticalunits gpu ON ((gpu.geopoliticalid = sgp.geopoliticalid)))&#10;  ORDER BY gpu.geopoliticalname;">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="geopoliticalid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="geopoliticalname" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="rank" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="highergeopoliticalid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+      </table>
+      <table name="publications" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT DISTINCT pt.pubtype,&#10;    p.citation,&#10;    p.year,&#10;    p.publicationid,&#10;    c.familyname,&#10;    dp.datasetid,&#10;    c.contactid&#10;   FROM ((((ndb.publications p&#10;     LEFT JOIN ndb.publicationauthors pa ON ((p.publicationid = pa.publicationid)))&#10;     LEFT JOIN ndb.publicationtypes pt ON ((p.pubtypeid = pt.pubtypeid)))&#10;     LEFT JOIN ndb.contacts c ON ((pa.contactid = c.contactid)))&#10;     LEFT JOIN ndb.datasetpublications dp ON ((p.publicationid = dp.publicationid)));">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="pubtype" nullable="true" remarks="" size="24" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="citation" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="year" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="publicationid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="familyname" nullable="true" remarks="" size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="contactid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+      </table>
+      <table name="tsampagesstd" numRows="100217" remarks="" schema="da" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="sampleid" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="1" name="age" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="2" name="ageolder" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="3" name="ageyounger" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+      </table>
+      <table name="vbestdatasetages" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT samples.datasetid,&#10;    min(vsampagesstd.age) AS minage,&#10;    max(vsampagesstd.age) AS maxage,&#10;    min(vsampagesstd.ageyounger) AS ageyoungest,&#10;    max(vsampagesstd.ageolder) AS ageoldest&#10;   FROM (ndb.samples&#10;     JOIN da.vsampagesstd ON ((samples.sampleid = vsampagesstd.sampleid)))&#10;  GROUP BY samples.datasetid;">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="1" name="minage" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="2" name="maxage" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="3" name="ageyoungest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="4" name="ageoldest" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+      </table>
+      <table name="vbestsampleages" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" WITH chrons AS (&#10;         SELECT chronologies.collectionunitid,&#10;            chronologies.chronologyid,&#10;            chronologies.isdefault,&#10;            agetypes.precedence,&#10;            row_number() OVER (PARTITION BY chronologies.collectionunitid ORDER BY chronologies.collectionunitid, agetypes.precedence, chronologies.isdefault DESC) AS row_number&#10;           FROM (ndb.chronologies&#10;             JOIN ndb.agetypes ON ((chronologies.agetypeid = agetypes.agetypeid)))&#10;        ), bestchrons AS (&#10;         SELECT chrons.collectionunitid,&#10;            chrons.chronologyid,&#10;            chrons.precedence&#10;           FROM chrons&#10;          WHERE (chrons.row_number = 1)&#10;        ), bestsampages AS (&#10;         SELECT sampleages.sampleid,&#10;            s.datasetid,&#10;            sampleages.age,&#10;            sampleages.ageolder,&#10;            sampleages.ageyounger,&#10;            bestchrons.precedence&#10;           FROM ((ndb.sampleages&#10;             JOIN bestchrons ON ((sampleages.chronologyid = bestchrons.chronologyid)))&#10;             LEFT JOIN ndb.samples s ON ((sampleages.sampleid = s.sampleid)))&#10;        )&#10; SELECT bestsampages.sampleid,&#10;    bestsampages.datasetid,&#10;    bestsampages.age,&#10;    bestsampages.ageolder,&#10;    bestsampages.ageyounger&#10;   FROM bestsampages&#10;  WHERE (bestsampages.precedence &lt;&gt; 4)&#10;UNION ALL&#10; SELECT sa.sampleid,&#10;    s.datasetid,&#10;    rc1.calyrbp AS age,&#10;    rc2.calyrbp AS ageolder,&#10;    rc3.calyrbp AS ageyounger&#10;   FROM ((((bestsampages sa&#10;     LEFT JOIN ndb.radiocarboncalibration rc1 ON ((sa.age = (rc1.c14yrbp)::double precision)))&#10;     LEFT JOIN ndb.radiocarboncalibration rc2 ON ((sa.ageolder = (rc2.c14yrbp)::double precision)))&#10;     LEFT JOIN ndb.radiocarboncalibration rc3 ON ((sa.ageyounger = (rc3.c14yrbp)::double precision)))&#10;     LEFT JOIN ndb.samples s ON ((sa.sampleid = s.sampleid)))&#10;  WHERE (sa.precedence = 4);">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="sampleid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="2" name="age" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="3" name="ageolder" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="4" name="ageyounger" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+      </table>
+      <table name="vcubestchron" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" WITH qsort AS (&#10;         SELECT chronologies.collectionunitid,&#10;            chronologies.chronologyid,&#10;            chronologies.isdefault,&#10;            agetypes.precedence,&#10;            row_number() OVER (PARTITION BY chronologies.collectionunitid ORDER BY chronologies.collectionunitid, agetypes.precedence, chronologies.isdefault DESC) AS row_number&#10;           FROM (ndb.chronologies&#10;             JOIN ndb.agetypes ON ((chronologies.agetypeid = agetypes.agetypeid)))&#10;        )&#10; SELECT qsort.collectionunitid,&#10;    qsort.chronologyid,&#10;    qsort.precedence&#10;   FROM qsort&#10;  WHERE (qsort.row_number = 1);">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="collectionunitid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="chronologyid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="precedence" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+      </table>
+      <table name="vsampagesstd" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" WITH bestsampages AS (&#10;         SELECT s.sampleid,&#10;            s.age,&#10;            s.ageolder,&#10;            s.ageyounger,&#10;            v.precedence&#10;           FROM (ndb.sampleages s&#10;             JOIN da.vcubestchron v ON ((s.chronologyid = v.chronologyid)))&#10;        )&#10; SELECT bestsampages.sampleid,&#10;    bestsampages.age,&#10;    bestsampages.ageolder,&#10;    bestsampages.ageyounger&#10;   FROM bestsampages&#10;  WHERE (bestsampages.precedence &lt;&gt; 4)&#10;UNION ALL&#10; SELECT sa.sampleid,&#10;    rc1.calyrbp AS age,&#10;    rc2.calyrbp AS ageolder,&#10;    rc3.calyrbp AS ageyounger&#10;   FROM (((bestsampages sa&#10;     LEFT JOIN ndb.radiocarboncalibration rc1 ON ((sa.age = (rc1.c14yrbp)::double precision)))&#10;     LEFT JOIN ndb.radiocarboncalibration rc2 ON ((sa.ageolder = (rc2.c14yrbp)::double precision)))&#10;     LEFT JOIN ndb.radiocarboncalibration rc3 ON ((sa.ageyounger = (rc3.c14yrbp)::double precision)))&#10;  WHERE (sa.precedence = 4);">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="sampleid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="1" name="age" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="2" name="ageolder" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="3" name="ageyounger" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+      </table>
+   </tables>
+   <routines>
+      <routine dataAccess="MODIFIES" deterministic="false" name="chronologybyid" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
+         <comment/>
+         <definition language="SQL"><![CDATA[
+
+  SELECT json_agg(json_build_object('AgeYoungest', ccr.agelimityounger,
+                                            'Age', ccr.age,
+                                    'ControlType', ccrt.chroncontroltype,
+                  'ChronControlID', ccr.chroncontrolid,
+                  'Depth', ccr.depth,
+                  'AgeOldest', ccr.agelimitolder,
+                  'Thickness', ccr.thickness)) AS controls,
+        chr.isdefault AS Default,
+        chr.chronologyname AS ChronologyName,
+        aty.agetype AS AgeType,
+        chr.agemodel AS AgeModel,
+        chr.ageboundolder AS AgeOlder,
+        chr.chronologyid AS ChronologyID,
+        chr.ageboundyounger AS AgeYounger,
+        json_agg(DISTINCT jsonb_build_object('DatasetType', dst.datasettype,
+                                     'DatasetID', ds.datasetid)) AS datasets,
+        chr.notes AS Notes,
+        chr.dateprepared AS DatePrepared
+  FROM ndb.chronologies AS chr
+  INNER JOIN ndb.agetypes AS aty ON chr.agetypeid = aty.agetypeid
+  LEFT JOIN ndb.chroncontrols AS ccr ON chr.chronologyid = ccr.chronologyid
+  LEFT JOIN ndb.chroncontroltypes AS ccrt ON ccr.chroncontroltypeid = ccrt.chroncontroltypeid
+  LEFT JOIN ndb.datasets AS ds ON  ds.collectionunitid = chr.collectionunitid
+  LEFT JOIN ndb.datasettypes AS dst ON dst.datasettypeid = ds.datasettypeid
+  WHERE chr.chronologyid = _chronid
+  GROUP BY chr.isdefault,
+        chr.chronologyname,
+        aty.agetype,
+        chr.ageboundolder,
+        chr.ageboundyounger,
+		    chr.agemodel,
+        chr.notes,
+	      chr.chronologyid,
+        chr.dateprepared
+]]></definition>
+      </routine>
+      <routine dataAccess="MODIFIES" deterministic="false" name="datasetbyid" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
+         <comment/>
+         <definition language="SQL"><![CDATA[
+    SELECT ndb.datasets.datasetid, ndb.datasettypes.datasettype
+    FROM ndb.chronologies INNER JOIN ndb.collectionunits ON ndb.chronologies.collectionunitid = ndb.collectionunits.collectionunitid INNER JOIN
+    ndb.datasets ON ndb.collectionunits.collectionunitid = ndb.datasets.collectionunitid INNER JOIN
+    ndb.datasettypes ON ndb.datasets.datasettypeid = ndb.datasettypes.datasettypeid INNER JOIN
+    ndb.sampleages ON ndb.chronologies.chronologyid = ndb.sampleages.chronologyid INNER JOIN
+    ndb.samples ON ndb.sampleages.sampleid = ndb.samples.sampleid AND ndb.datasets.datasetid = ndb.samples.datasetid
+    WHERE ndb.sampleages.chronologyid = _dataid
+    GROUP BY ndb.datasets.datasetid, ndb.datasettypes.datasettype;
+]]></definition>
+      </routine>
+   </routines>
+</database>

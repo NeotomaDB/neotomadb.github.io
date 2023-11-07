@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>neotoma Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neotoma</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="978,1756,1187,1932">
+<area shape="rect" id="node11" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="646,1229,838,1405">
+<area shape="rect" id="node22" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="644,1531,840,1795">
+<area shape="rect" id="node146" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="651,1976,833,2093">
+<area shape="rect" id="node2" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="346,1547,527,1664">
+<area shape="rect" id="node3" href="../../tables/aggregatechronologies.html" target="_top" title="aggregatechronologies" alt="" coords="1326,196,1569,372">
+<area shape="rect" id="node4" href="../../tables/aggregatedatasets.html" target="_top" title="aggregatedatasets" alt="" coords="964,5,1201,152">
+<area shape="rect" id="node5" href="../../tables/aggregateordertypes.html" target="_top" title="aggregateordertypes" alt="" coords="629,23,855,140">
+<area shape="rect" id="node6" href="../../tables/aggregatesampleages.html" target="_top" title="aggregatesampleages" alt="" coords="1659,167,1893,343">
+<area shape="rect" id="node115" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1357,1860,1538,2124">
+<area shape="rect" id="node7" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1343,1051,1552,1197">
+<area shape="rect" id="node118" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="979,3433,1186,3639">
+<area shape="rect" id="node8" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1333,1437,1562,1584">
+<area shape="rect" id="node9" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="950,1985,1215,2132">
+<area shape="rect" id="node10" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="969,169,1197,316">
+<area shape="rect" id="node98" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="646,181,838,357">
+<area shape="rect" id="node24" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="345,1811,529,2045">
+<area shape="rect" id="node67" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="346,891,527,1008">
+<area shape="rect" id="node12" href="../../tables/calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="982,4917,1183,5064">
+<area shape="rect" id="node102" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="344,4713,529,4860">
+<area shape="rect" id="node13" href="../../tables/calibrationprograms.html" target="_top" title="calibrationprograms" alt="" coords="971,6892,1194,7009">
+<area shape="rect" id="node14" href="../../tables/chroncontrolaccuracydirections.html" target="_top" title="chroncontrolaccuracydirections" alt="" coords="930,868,1235,985">
+<area shape="rect" id="node15" href="../../tables/chroncontrolaccuracydistributions.html" target="_top" title="chroncontrolaccuracydistributions" alt="" coords="919,1003,1246,1120">
+<area shape="rect" id="node16" href="../../tables/chroncontrolaccuracyranks.html" target="_top" title="chroncontrolaccuracyranks" alt="" coords="946,733,1219,851">
+<area shape="rect" id="node17" href="../../tables/chroncontrolprecisionranks.html" target="_top" title="chroncontrolprecisionranks" alt="" coords="945,1137,1221,1255">
+<area shape="rect" id="node18" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1333,769,1562,1033">
+<area shape="rect" id="node19" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="981,1380,1185,1703">
+<area shape="rect" id="node21" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="309,1383,565,1529">
+<area shape="rect" id="node20" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1335,4888,1559,5064">
+<area shape="rect" id="node28" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="346,3268,527,3444">
+<area shape="rect" id="node23" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="43,1740,230,1857">
+<area shape="rect" id="node46" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="45,1899,228,2045">
+<area shape="rect" id="node114" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="43,2087,231,2233">
+<area shape="rect" id="node121" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="46,1413,227,1589">
+<area shape="rect" id="node25" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="651,2304,833,2480">
+<area shape="rect" id="node26" href="../../tables/constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="627,2973,857,3120">
+<area shape="rect" id="node27" href="../../tables/contactreferences.html" target="_top" title="contactreferences" alt="" coords="639,5036,845,5183">
+<area shape="rect" id="node64" href="../../tables/externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="333,5571,541,5688">
+<area shape="rect" id="node29" href="../../tables/contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="41,3297,233,3415">
+<area shape="rect" id="node30" href="../../tables/contextsdatasettypes.html" target="_top" title="contextsdatasettypes" alt="" coords="968,7063,1197,7209">
+<area shape="rect" id="node41" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="346,6641,527,6759">
+<area shape="rect" id="node143" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="644,7092,840,7209">
+<area shape="rect" id="node31" href="../../tables/data.html" target="_top" title="data" alt="" coords="1349,4623,1545,4799">
+<area shape="rect" id="node145" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="985,6101,1180,6336">
+<area shape="rect" id="node32" href="../../tables/dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="988,3269,1177,3416">
+<area shape="rect" id="node36" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="651,3991,833,4196">
+<area shape="rect" id="node33" href="../../tables/datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="981,2941,1184,3088">
+<area shape="rect" id="node34" href="../../tables/datasetpis.html" target="_top" title="datasetpis" alt="" coords="992,3105,1173,3252">
+<area shape="rect" id="node35" href="../../tables/datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="974,4171,1191,4317">
+<area shape="rect" id="node59" href="../../tables/embargo.html" target="_top" title="embargo" alt="" coords="358,4079,515,4196">
+<area shape="rect" id="node37" href="../../tables/datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="972,2653,1193,2888">
+<area shape="rect" id="node38" href="../../tables/datasetsubmissiontypes.html" target="_top" title="datasetsubmissiontypes" alt="" coords="617,3137,867,3255">
+<area shape="rect" id="node39" href="../../tables/datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="621,6928,863,7075">
+<area shape="rect" id="node139" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="342,6867,531,6984">
+<area shape="rect" id="node40" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="978,4335,1187,4511">
+<area shape="rect" id="node136" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="651,5224,833,5488">
+<area shape="rect" id="node42" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1350,5744,1545,5920">
+<area shape="rect" id="node43" href="../../tables/datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1681,3212,1871,3388">
+<area shape="rect" id="node44" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="992,533,1173,680">
+<area shape="rect" id="node45" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="650,575,834,692">
+<area shape="rect" id="node47" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="992,7469,1173,7645">
+<area shape="rect" id="node48" href="../../tables/ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="647,7984,837,8101">
+<area shape="rect" id="node49" href="../../tables/ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="651,7849,833,7967">
+<area shape="rect" id="node50" href="../../tables/elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="609,6735,875,6911">
+<area shape="rect" id="node51" href="../../tables/elementmaturities.html" target="_top" title="elementmaturities" alt="" coords="334,8259,539,8405">
+<area shape="rect" id="node52" href="../../tables/elementportions.html" target="_top" title="elementportions" alt="" coords="339,8095,534,8241">
+<area shape="rect" id="node53" href="../../tables/elementsymmetries.html" target="_top" title="elementsymmetries" alt="" coords="328,7931,545,8077">
+<area shape="rect" id="node54" href="../../tables/elementtaxagroupmaturities.html" target="_top" title="elementtaxagroupmaturities" alt="" coords="941,7991,1224,8137">
+<area shape="rect" id="node56" href="../../tables/elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="635,7404,849,7580">
+<area shape="rect" id="node55" href="../../tables/elementtaxagroupportions.html" target="_top" title="elementtaxagroupportions" alt="" coords="949,7827,1216,7973">
+<area shape="rect" id="node58" href="../../tables/elementtypes.html" target="_top" title="elementtypes" alt="" coords="346,7328,527,7475">
+<area shape="rect" id="node57" href="../../tables/elementtaxagroupsymmetries.html" target="_top" title="elementtaxagroupsymmetries" alt="" coords="936,7663,1229,7809">
+<area shape="rect" id="node60" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1347,1215,1547,1420">
+<area shape="rect" id="node62" href="../../tables/events.html" target="_top" title="events" alt="" coords="992,369,1173,516">
+<area shape="rect" id="node61" href="../../tables/eventpublications.html" target="_top" title="eventpublications" alt="" coords="1345,2589,1550,2736">
+<area shape="rect" id="node63" href="../../tables/eventtypes.html" target="_top" title="eventtypes" alt="" coords="640,375,844,521">
+<area shape="rect" id="node65" href="../../tables/externalpublications.html" target="_top" title="externalpublications" alt="" coords="631,5541,853,5688">
+<area shape="rect" id="node66" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="992,5908,1173,6084">
+<area shape="rect" id="node68" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="970,5293,1195,5499">
+<area shape="rect" id="node69" href="../../tables/fractiondated.html" target="_top" title="fractiondated" alt="" coords="1685,3620,1867,3737">
+<area shape="rect" id="node70" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1673,2055,1879,2201">
+<area shape="rect" id="node71" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1354,2188,1541,2423">
+<area shape="rect" id="node73" href="../../tables/geochrontypes.html" target="_top" title="geochrontypes" alt="" coords="990,2155,1175,2272">
+<area shape="rect" id="node72" href="../../tables/geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1659,2595,1893,2741">
+<area shape="rect" id="node74" href="../../tables/geopaths.html" target="_top" title="geopaths" alt="" coords="363,1025,511,1148">
+<area shape="rect" id="node75" href="../../tables/geopoliticalunits.html" target="_top" title="geopoliticalunits" alt="" coords="31,1140,242,1316">
+<area shape="rect" id="node76" href="../../tables/isobiomarkerbandtypes.html" target="_top" title="isobiomarkerbandtypes" alt="" coords="2218,4449,2465,4596">
+<area shape="rect" id="node77" href="../../tables/isobiomarkertypes.html" target="_top" title="isobiomarkertypes" alt="" coords="1955,4479,2166,4596">
+<area shape="rect" id="node78" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1309,6064,1585,6269">
+<area shape="rect" id="node79" href="../../tables/isoinstrumentationtypes.html" target="_top" title="isoinstrumentationtypes" alt="" coords="955,6353,1210,6471">
+<area shape="rect" id="node84" href="../../tables/isosampleintrosystemtypes.html" target="_top" title="isosampleintrosystemtypes" alt="" coords="945,6488,1221,6605">
+<area shape="rect" id="node80" href="../../tables/isomatanalsubstrate.html" target="_top" title="isomatanalsubstrate" alt="" coords="1665,6733,1887,6880">
+<area shape="rect" id="node81" href="../../tables/isomaterialanalyzedtypes.html" target="_top" title="isomaterialanalyzedtypes" alt="" coords="1319,6680,1576,6797">
+<area shape="rect" id="node92" href="../../tables/isosubstratetypes.html" target="_top" title="isosubstratetypes" alt="" coords="1345,6815,1550,6932">
+<area shape="rect" id="node82" href="../../tables/isometadata.html" target="_top" title="isometadata" alt="" coords="1677,5587,1875,5821">
+<area shape="rect" id="node83" href="../../tables/isopretreatmenttypes.html" target="_top" title="isopretreatmenttypes" alt="" coords="1323,4488,1572,4605">
+<area shape="rect" id="node85" href="../../tables/isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="1651,4541,1901,4717">
+<area shape="rect" id="node86" href="../../tables/isoscaletypes.html" target="_top" title="isoscaletypes" alt="" coords="992,6757,1173,6875">
+<area shape="rect" id="node87" href="../../tables/isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="1961,4924,2160,5100">
+<area shape="rect" id="node126" href="../../tables/specimens.html" target="_top" title="specimens" alt="" coords="1683,8027,1869,8379">
+<area shape="rect" id="node88" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1349,5444,1546,5591">
+<area shape="rect" id="node89" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="1357,6287,1538,6463">
+<area shape="rect" id="node90" href="../../tables/isostandardtypes.html" target="_top" title="isostandardtypes" alt="" coords="977,6623,1189,6740">
+<area shape="rect" id="node91" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="1685,5153,1867,5329">
+<area shape="rect" id="node93" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1332,6480,1563,6627">
+<area shape="rect" id="node94" href="../../tables/keywords.html" target="_top" title="keywords" alt="" coords="992,3820,1173,3937">
+<area shape="rect" id="node95" href="../../tables/lakeparameters.html" target="_top" title="lakeparameters" alt="" coords="343,727,531,873">
+<area shape="rect" id="node96" href="../../tables/lakeparametertypes.html" target="_top" title="lakeparametertypes" alt="" coords="9,756,265,873">
+<area shape="rect" id="node97" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="651,1812,833,1959">
+<area shape="rect" id="node99" href="../../tables/lithostratunits.html" target="_top" title="lithostratunits" alt="" coords="346,211,527,328">
+<area shape="rect" id="node100" href="../../tables/publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="635,4289,849,4465">
+<area shape="rect" id="node101" href="../../tables/publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="638,4872,846,5019">
+<area shape="rect" id="node104" href="../../tables/publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="38,4743,235,4860">
+<area shape="rect" id="node103" href="../../tables/publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="625,4636,859,4783">
+<area shape="rect" id="node105" href="../../tables/radiocarbon.html" target="_top" title="radiocarbon" alt="" coords="2229,4285,2453,4432">
+<area shape="rect" id="node106" href="../../tables/radiocarbonmethods.html" target="_top" title="radiocarbonmethods" alt="" coords="1947,4315,2174,4432">
+<area shape="rect" id="node107" href="../../tables/relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="1326,2892,1569,3039">
+<area shape="rect" id="node108" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="985,2289,1180,2465">
+<area shape="rect" id="node109" href="../../tables/relativeagescales.html" target="_top" title="relativeagescales" alt="" coords="641,2632,843,2749">
+<area shape="rect" id="node110" href="../../tables/relativeageunits.html" target="_top" title="relativeageunits" alt="" coords="646,2497,838,2615">
+<area shape="rect" id="node111" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1341,1637,1553,1843">
+<area shape="rect" id="node112" href="../../tables/repositoryinstitutions.html" target="_top" title="repositoryinstitutions" alt="" coords="1331,8433,1563,8551">
+<area shape="rect" id="node113" href="../../tables/repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="1662,7113,1890,7260">
+<area shape="rect" id="node116" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1353,3335,1542,3511">
+<area shape="rect" id="node117" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1349,3791,1546,3937">
+<area shape="rect" id="node119" href="../../tables/sitegeopolitical.html" target="_top" title="sitegeopolitical" alt="" coords="343,1165,530,1341">
+<area shape="rect" id="node120" href="../../tables/siteimages.html" target="_top" title="siteimages" alt="" coords="651,2111,833,2287">
+<area shape="rect" id="node122" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1968,4613,2153,4907">
+<area shape="rect" id="node123" href="../../tables/specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2231,5019,2452,5224">
+<area shape="rect" id="node124" href="../../tables/specimendomesticstatustypes.html" target="_top" title="specimendomesticstatustypes" alt="" coords="1301,8568,1594,8685">
+<area shape="rect" id="node125" href="../../tables/specimengenbank.html" target="_top" title="specimengenbank" alt="" coords="1957,8027,2165,8149">
+<area shape="rect" id="node127" href="../../tables/specimensextypes.html" target="_top" title="specimensextypes" alt="" coords="1343,8299,1552,8416">
+<area shape="rect" id="node128" href="../../tables/specimentaphonomy.html" target="_top" title="specimentaphonomy" alt="" coords="1947,7737,2174,7884">
+<area shape="rect" id="node135" href="../../tables/taphonomictypes.html" target="_top" title="taphonomictypes" alt="" coords="1339,7233,1556,7380">
+<area shape="rect" id="node129" href="../../tables/summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="1649,6320,1903,6467">
+<area shape="rect" id="node130" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="992,5685,1173,5891">
+<area shape="rect" id="node131" href="../../tables/synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="651,5876,833,5993">
+<area shape="rect" id="node132" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="988,4636,1177,4900">
+<area shape="rect" id="node133" href="../../tables/taphonomicsystems.html" target="_top" title="taphonomicsystems" alt="" coords="972,7263,1193,7380">
+<area shape="rect" id="node134" href="../../tables/taphonomicsystemsdatasettypes.html" target="_top" title="taphonomicsystemsdatasettypes" alt="" coords="1290,6995,1605,7141">
+<area shape="rect" id="node137" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="966,5516,1199,5668">
+<area shape="rect" id="node138" href="../../tables/taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="618,5741,866,5859">
+<area shape="rect" id="node140" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="1003,5153,1162,5276">
+<area shape="rect" id="node141" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1357,459,1538,635">
+<area shape="rect" id="node142" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="980,3656,1185,3803">
+<area shape="rect" id="node144" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="643,7597,841,7832">
+<area shape="rect" id="node147" href="../../../ti/tables/stewarddatabases.html" target="_top" title="ti.stewarddatabases" alt="" coords="973,2519,1193,2636">
+<area shape="rect" id="node148" href="../../../ti/tables/stewards.html" target="_top" title="ti.stewards" alt="" coords="651,2839,833,2956">
+<area shape="rect" id="node149" href="../../../ti/tables/stewardupdates.html" target="_top" title="ti.stewardupdates" alt="" coords="639,3380,845,3497">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="compactDegreeImg" data="diagrams/summary/relationships.real.compact.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="978,2567,1187,2807">
+<area shape="rect" id="node11" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="646,1781,838,2168">
+<area shape="rect" id="node22" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="644,2449,840,2895">
+<area shape="rect" id="node146" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="651,2912,833,3093">
+<area shape="rect" id="node2" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="346,2373,527,2613">
+<area shape="rect" id="node3" href="../../tables/aggregatechronologies.html" target="_top" title="aggregatechronologies" alt="" coords="1326,144,1569,501">
+<area shape="rect" id="node4" href="../../tables/aggregatedatasets.html" target="_top" title="aggregatedatasets" alt="" coords="964,5,1201,245">
+<area shape="rect" id="node5" href="../../tables/aggregateordertypes.html" target="_top" title="aggregateordertypes" alt="" coords="629,64,855,275">
+<area shape="rect" id="node6" href="../../tables/aggregatesampleages.html" target="_top" title="aggregatesampleages" alt="" coords="1659,115,1893,325">
+<area shape="rect" id="node115" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1357,2655,1538,2953">
+<area shape="rect" id="node7" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1343,544,1552,725">
+<area shape="rect" id="node118" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="979,5095,1186,5511">
+<area shape="rect" id="node8" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1333,1956,1562,2167">
+<area shape="rect" id="node9" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="950,2824,1215,3093">
+<area shape="rect" id="node10" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="969,732,1197,913">
+<area shape="rect" id="node98" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="646,561,838,801">
+<area shape="rect" id="node24" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="345,3485,529,4136">
+<area shape="rect" id="node67" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="346,1695,527,1876">
+<area shape="rect" id="node12" href="../../tables/calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="982,9791,1183,10001">
+<area shape="rect" id="node102" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="344,7617,529,8444">
+<area shape="rect" id="node13" href="../../tables/calibrationprograms.html" target="_top" title="calibrationprograms" alt="" coords="971,10687,1194,10897">
+<area shape="rect" id="node14" href="../../tables/chroncontrolaccuracydirections.html" target="_top" title="chroncontrolaccuracydirections" alt="" coords="930,1400,1235,1581">
+<area shape="rect" id="node15" href="../../tables/chroncontrolaccuracydistributions.html" target="_top" title="chroncontrolaccuracydistributions" alt="" coords="919,1599,1246,1780">
+<area shape="rect" id="node16" href="../../tables/chroncontrolaccuracyranks.html" target="_top" title="chroncontrolaccuracyranks" alt="" coords="946,1201,1219,1383">
+<area shape="rect" id="node17" href="../../tables/chroncontrolprecisionranks.html" target="_top" title="chroncontrolprecisionranks" alt="" coords="945,1797,1221,1979">
+<area shape="rect" id="node18" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1333,1481,1562,1809">
+<area shape="rect" id="node19" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="981,2068,1185,2513">
+<area shape="rect" id="node21" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="309,2145,565,2356">
+<area shape="rect" id="node20" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1335,9645,1559,9856">
+<area shape="rect" id="node28" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="346,4987,527,5549">
+<area shape="rect" id="node23" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="43,3535,230,3716">
+<area shape="rect" id="node46" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="45,3757,228,3968">
+<area shape="rect" id="node114" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="43,4009,231,4249">
+<area shape="rect" id="node121" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="46,3072,227,3517">
+<area shape="rect" id="node25" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="651,3772,833,4012">
+<area shape="rect" id="node26" href="../../tables/constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="627,4065,857,4305">
+<area shape="rect" id="node27" href="../../tables/contactreferences.html" target="_top" title="contactreferences" alt="" coords="639,6227,845,6379">
+<area shape="rect" id="node64" href="../../tables/externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="333,6701,541,6941">
+<area shape="rect" id="node29" href="../../tables/contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="41,5075,233,5285">
+<area shape="rect" id="node30" href="../../tables/contextsdatasettypes.html" target="_top" title="contextsdatasettypes" alt="" coords="968,6637,1197,6819">
+<area shape="rect" id="node41" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="346,6115,527,6296">
+<area shape="rect" id="node143" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="644,7576,840,7757">
+<area shape="rect" id="node31" href="../../tables/data.html" target="_top" title="data" alt="" coords="1349,5861,1545,6101">
+<area shape="rect" id="node145" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="985,7725,1180,7995">
+<area shape="rect" id="node32" href="../../tables/dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="988,4896,1177,5077">
+<area shape="rect" id="node36" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="651,5767,833,6065">
+<area shape="rect" id="node33" href="../../tables/datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="981,4065,1184,4247">
+<area shape="rect" id="node34" href="../../tables/datasetpis.html" target="_top" title="datasetpis" alt="" coords="992,4668,1173,4879">
+<area shape="rect" id="node35" href="../../tables/datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="974,5979,1191,6189">
+<area shape="rect" id="node59" href="../../tables/embargo.html" target="_top" title="embargo" alt="" coords="358,5945,515,6097">
+<area shape="rect" id="node37" href="../../tables/datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="972,3720,1193,4048">
+<area shape="rect" id="node38" href="../../tables/datasetsubmissiontypes.html" target="_top" title="datasetsubmissiontypes" alt="" coords="617,4359,867,4540">
+<area shape="rect" id="node39" href="../../tables/datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="621,6777,863,6959">
+<area shape="rect" id="node139" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="342,7153,531,7335">
+<area shape="rect" id="node40" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="978,6207,1187,6476">
+<area shape="rect" id="node136" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="651,7835,833,8309">
+<area shape="rect" id="node42" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1350,6191,1545,6401">
+<area shape="rect" id="node43" href="../../tables/datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1681,3877,1871,4147">
+<area shape="rect" id="node44" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="992,931,1173,1112">
+<area shape="rect" id="node45" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="650,960,834,1141">
+<area shape="rect" id="node47" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="992,11065,1173,11276">
+<area shape="rect" id="node48" href="../../tables/ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="647,11293,837,11475">
+<area shape="rect" id="node49" href="../../tables/ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="651,11095,833,11276">
+<area shape="rect" id="node50" href="../../tables/elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="609,6976,875,7187">
+<area shape="rect" id="node51" href="../../tables/elementmaturities.html" target="_top" title="elementmaturities" alt="" coords="334,11019,539,11200">
+<area shape="rect" id="node52" href="../../tables/elementportions.html" target="_top" title="elementportions" alt="" coords="339,10820,534,11001">
+<area shape="rect" id="node53" href="../../tables/elementsymmetries.html" target="_top" title="elementsymmetries" alt="" coords="328,10621,545,10803">
+<area shape="rect" id="node54" href="../../tables/elementtaxagroupmaturities.html" target="_top" title="elementtaxagroupmaturities" alt="" coords="941,10488,1224,10669">
+<area shape="rect" id="node56" href="../../tables/elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="635,10264,849,10475">
+<area shape="rect" id="node55" href="../../tables/elementtaxagroupportions.html" target="_top" title="elementtaxagroupportions" alt="" coords="949,10289,1216,10471">
+<area shape="rect" id="node58" href="../../tables/elementtypes.html" target="_top" title="elementtypes" alt="" coords="346,10323,527,10504">
+<area shape="rect" id="node57" href="../../tables/elementtaxagroupsymmetries.html" target="_top" title="elementtaxagroupsymmetries" alt="" coords="936,10091,1229,10272">
+<area shape="rect" id="node60" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1347,1096,1547,1365">
+<area shape="rect" id="node62" href="../../tables/events.html" target="_top" title="events" alt="" coords="992,299,1173,715">
+<area shape="rect" id="node61" href="../../tables/eventpublications.html" target="_top" title="eventpublications" alt="" coords="1345,4004,1550,4185">
+<area shape="rect" id="node63" href="../../tables/eventtypes.html" target="_top" title="eventtypes" alt="" coords="640,309,844,520">
+<area shape="rect" id="node65" href="../../tables/externalpublications.html" target="_top" title="externalpublications" alt="" coords="631,7204,853,7415">
+<area shape="rect" id="node66" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="992,7468,1173,7708">
+<area shape="rect" id="node68" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="970,8416,1195,8685">
+<area shape="rect" id="node69" href="../../tables/fractiondated.html" target="_top" title="fractiondated" alt="" coords="1685,4936,1867,5117">
+<area shape="rect" id="node70" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1673,2577,1879,2759">
+<area shape="rect" id="node71" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1354,2971,1541,3445">
+<area shape="rect" id="node73" href="../../tables/geochrontypes.html" target="_top" title="geochrontypes" alt="" coords="990,3147,1175,3328">
+<area shape="rect" id="node72" href="../../tables/geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1659,3135,1893,3316">
+<area shape="rect" id="node74" href="../../tables/geopaths.html" target="_top" title="geopaths" alt="" coords="363,1555,511,1677">
+<area shape="rect" id="node75" href="../../tables/geopoliticalunits.html" target="_top" title="geopoliticalunits" alt="" coords="31,1768,242,2037">
+<area shape="rect" id="node76" href="../../tables/isobiomarkerbandtypes.html" target="_top" title="isobiomarkerbandtypes" alt="" coords="2218,7913,2465,8124">
+<area shape="rect" id="node77" href="../../tables/isobiomarkertypes.html" target="_top" title="isobiomarkertypes" alt="" coords="1955,7943,2166,8124">
+<area shape="rect" id="node78" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1309,7608,1585,7965">
+<area shape="rect" id="node79" href="../../tables/isoinstrumentationtypes.html" target="_top" title="isoinstrumentationtypes" alt="" coords="955,8960,1210,9141">
+<area shape="rect" id="node84" href="../../tables/isosampleintrosystemtypes.html" target="_top" title="isosampleintrosystemtypes" alt="" coords="945,9159,1221,9340">
+<area shape="rect" id="node80" href="../../tables/isomatanalsubstrate.html" target="_top" title="isomatanalsubstrate" alt="" coords="1665,6884,1887,7065">
+<area shape="rect" id="node81" href="../../tables/isomaterialanalyzedtypes.html" target="_top" title="isomaterialanalyzedtypes" alt="" coords="1319,6676,1576,6857">
+<area shape="rect" id="node92" href="../../tables/isosubstratetypes.html" target="_top" title="isosubstratetypes" alt="" coords="1345,7132,1550,7313">
+<area shape="rect" id="node82" href="../../tables/isometadata.html" target="_top" title="isometadata" alt="" coords="1677,6411,1875,6856">
+<area shape="rect" id="node83" href="../../tables/isopretreatmenttypes.html" target="_top" title="isopretreatmenttypes" alt="" coords="1323,4708,1572,4919">
+<area shape="rect" id="node85" href="../../tables/isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="1651,4679,1901,4919">
+<area shape="rect" id="node86" href="../../tables/isoscaletypes.html" target="_top" title="isoscaletypes" alt="" coords="992,9357,1173,9568">
+<area shape="rect" id="node87" href="../../tables/isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="1961,9957,2160,10197">
+<area shape="rect" id="node126" href="../../tables/specimens.html" target="_top" title="specimens" alt="" coords="1683,10823,1869,11385">
+<area shape="rect" id="node88" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1349,6419,1546,6659">
+<area shape="rect" id="node89" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="1357,6875,1538,7115">
+<area shape="rect" id="node90" href="../../tables/isostandardtypes.html" target="_top" title="isostandardtypes" alt="" coords="977,6836,1189,7047">
+<area shape="rect" id="node91" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="1685,9487,1867,9727">
+<area shape="rect" id="node93" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1332,8803,1563,8984">
+<area shape="rect" id="node94" href="../../tables/keywords.html" target="_top" title="keywords" alt="" coords="992,5564,1173,5745">
+<area shape="rect" id="node95" href="../../tables/lakeparameters.html" target="_top" title="lakeparameters" alt="" coords="343,4176,531,4387">
+<area shape="rect" id="node96" href="../../tables/lakeparametertypes.html" target="_top" title="lakeparametertypes" alt="" coords="9,4267,265,4507">
+<area shape="rect" id="node97" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="651,3456,833,3755">
+<area shape="rect" id="node99" href="../../tables/lithostratunits.html" target="_top" title="lithostratunits" alt="" coords="346,591,527,801">
+<area shape="rect" id="node100" href="../../tables/publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="635,6396,849,6724">
+<area shape="rect" id="node101" href="../../tables/publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="638,8643,846,8941">
+<area shape="rect" id="node104" href="../../tables/publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="38,7647,235,7828">
+<area shape="rect" id="node103" href="../../tables/publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="625,8327,859,8625">
+<area shape="rect" id="node105" href="../../tables/radiocarbon.html" target="_top" title="radiocarbon" alt="" coords="2229,7480,2453,7896">
+<area shape="rect" id="node106" href="../../tables/radiocarbonmethods.html" target="_top" title="radiocarbonmethods" alt="" coords="1947,7509,2174,7691">
+<area shape="rect" id="node107" href="../../tables/relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="1326,5627,1569,5808">
+<area shape="rect" id="node108" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="985,4264,1180,4651">
+<area shape="rect" id="node109" href="../../tables/relativeagescales.html" target="_top" title="relativeagescales" alt="" coords="641,4756,843,4937">
+<area shape="rect" id="node110" href="../../tables/relativeageunits.html" target="_top" title="relativeageunits" alt="" coords="646,4557,838,4739">
+<area shape="rect" id="node111" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1341,2184,1553,2453">
+<area shape="rect" id="node112" href="../../tables/repositoryinstitutions.html" target="_top" title="repositoryinstitutions" alt="" coords="1331,11456,1563,11696">
+<area shape="rect" id="node113" href="../../tables/repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="1662,11415,1890,11625">
+<area shape="rect" id="node116" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1353,5171,1542,5411">
+<area shape="rect" id="node117" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1349,5428,1546,5609">
+<area shape="rect" id="node119" href="../../tables/sitegeopolitical.html" target="_top" title="sitegeopolitical" alt="" coords="343,1893,530,2104">
+<area shape="rect" id="node120" href="../../tables/siteimages.html" target="_top" title="siteimages" alt="" coords="651,3111,833,3439">
+<area shape="rect" id="node122" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1968,8141,2153,8499">
+<area shape="rect" id="node123" href="../../tables/specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2231,9687,2452,10044">
+<area shape="rect" id="node124" href="../../tables/specimendomesticstatustypes.html" target="_top" title="specimendomesticstatustypes" alt="" coords="1301,11257,1594,11439">
+<area shape="rect" id="node125" href="../../tables/specimengenbank.html" target="_top" title="specimengenbank" alt="" coords="1957,10823,2165,10945">
+<area shape="rect" id="node127" href="../../tables/specimensextypes.html" target="_top" title="specimensextypes" alt="" coords="1343,11059,1552,11240">
+<area shape="rect" id="node128" href="../../tables/specimentaphonomy.html" target="_top" title="specimentaphonomy" alt="" coords="1947,10311,2174,10492">
+<area shape="rect" id="node135" href="../../tables/taphonomictypes.html" target="_top" title="taphonomictypes" alt="" coords="1339,7983,1556,8223">
+<area shape="rect" id="node129" href="../../tables/summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="1649,7519,1903,7700">
+<area shape="rect" id="node130" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="992,8703,1173,8943">
+<area shape="rect" id="node131" href="../../tables/synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="651,8995,833,9176">
+<area shape="rect" id="node132" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="988,7064,1177,7451">
+<area shape="rect" id="node133" href="../../tables/taphonomicsystems.html" target="_top" title="taphonomicsystems" alt="" coords="972,8012,1193,8223">
+<area shape="rect" id="node134" href="../../tables/taphonomicsystemsdatasettypes.html" target="_top" title="taphonomicsystemsdatasettypes" alt="" coords="1290,7369,1605,7551">
+<area shape="rect" id="node137" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="966,9621,1199,9773">
+<area shape="rect" id="node138" href="../../tables/taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="618,9621,866,9773">
+<area shape="rect" id="node140" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="1003,8276,1162,8399">
+<area shape="rect" id="node141" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1357,793,1538,1033">
+<area shape="rect" id="node142" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="980,3381,1185,3563">
+<area shape="rect" id="node144" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="643,10571,841,10869">
+<area shape="rect" id="node147" href="../../../ti/tables/stewarddatabases.html" target="_top" title="ti.stewarddatabases" alt="" coords="973,3580,1193,3703">
+<area shape="rect" id="node148" href="../../../ti/tables/stewards.html" target="_top" title="ti.stewards" alt="" coords="651,5063,833,5332">
+<area shape="rect" id="node149" href="../../../ti/tables/stewardupdates.html" target="_top" title="ti.stewardupdates" alt="" coords="639,5349,845,5677">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="largeDegreeImg" data="diagrams/summary/relationships.real.large.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="978,2120,1187,2296">
+<area shape="rect" id="node11" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="646,1196,838,1372">
+<area shape="rect" id="node22" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="644,1901,840,2165">
+<area shape="rect" id="node152" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="651,6329,833,6447">
+<area shape="rect" id="node2" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="346,1925,527,2043">
+<area shape="rect" id="node3" href="../../tables/aggregatechronologies.html" target="_top" title="aggregatechronologies" alt="" coords="1326,1757,1569,1933">
+<area shape="rect" id="node4" href="../../tables/aggregatedatasets.html" target="_top" title="aggregatedatasets" alt="" coords="964,1655,1201,1801">
+<area shape="rect" id="node5" href="../../tables/aggregateordertypes.html" target="_top" title="aggregateordertypes" alt="" coords="629,1461,855,1579">
+<area shape="rect" id="node6" href="../../tables/aggregatesampleages.html" target="_top" title="aggregatesampleages" alt="" coords="1659,1728,1893,1904">
+<area shape="rect" id="node121" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1357,2279,1538,2543">
+<area shape="rect" id="node7" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1343,1951,1552,2097">
+<area shape="rect" id="node124" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="979,3811,1186,4016">
+<area shape="rect" id="node8" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1333,2947,1562,3093">
+<area shape="rect" id="node9" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="950,6189,1215,6336">
+<area shape="rect" id="node10" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="969,169,1197,316">
+<area shape="rect" id="node103" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="646,103,838,279">
+<area shape="rect" id="node24" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="345,2248,529,2483">
+<area shape="rect" id="node71" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="346,1285,527,1403">
+<area shape="rect" id="node12" href="../../tables/calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="982,7009,1183,7156">
+<area shape="rect" id="node107" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="344,5019,529,5165">
+<area shape="rect" id="node13" href="../../tables/calibrationprograms.html" target="_top" title="calibrationprograms" alt="" coords="971,7944,1194,8061">
+<area shape="rect" id="node14" href="../../tables/chroncontrolaccuracydirections.html" target="_top" title="chroncontrolaccuracydirections" alt="" coords="930,704,1235,821">
+<area shape="rect" id="node15" href="../../tables/chroncontrolaccuracydistributions.html" target="_top" title="chroncontrolaccuracydistributions" alt="" coords="919,839,1246,956">
+<area shape="rect" id="node16" href="../../tables/chroncontrolaccuracyranks.html" target="_top" title="chroncontrolaccuracyranks" alt="" coords="946,569,1219,687">
+<area shape="rect" id="node17" href="../../tables/chroncontrolprecisionranks.html" target="_top" title="chroncontrolprecisionranks" alt="" coords="945,973,1221,1091">
+<area shape="rect" id="node18" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1333,721,1562,985">
+<area shape="rect" id="node19" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="981,1144,1185,1467">
+<area shape="rect" id="node21" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="309,557,565,704">
+<area shape="rect" id="node20" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1335,6937,1559,7113">
+<area shape="rect" id="node28" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="346,3405,527,3581">
+<area shape="rect" id="node23" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="43,2177,230,2295">
+<area shape="rect" id="node46" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="45,2336,228,2483">
+<area shape="rect" id="node120" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="43,2524,231,2671">
+<area shape="rect" id="node127" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="46,1915,227,2091">
+<area shape="rect" id="node25" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="651,2612,833,2788">
+<area shape="rect" id="node26" href="../../tables/constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="627,3111,857,3257">
+<area shape="rect" id="node27" href="../../tables/contactreferences.html" target="_top" title="contactreferences" alt="" coords="639,4609,845,4756">
+<area shape="rect" id="node68" href="../../tables/externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="333,5976,541,6093">
+<area shape="rect" id="node29" href="../../tables/contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="41,3435,233,3552">
+<area shape="rect" id="node30" href="../../tables/contextsdatasettypes.html" target="_top" title="contextsdatasettypes" alt="" coords="968,7472,1197,7619">
+<area shape="rect" id="node41" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="346,7221,527,7339">
+<area shape="rect" id="node149" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="644,7108,840,7225">
+<area shape="rect" id="node31" href="../../tables/data.html" target="_top" title="data" alt="" coords="1349,4783,1545,4959">
+<area shape="rect" id="node151" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="985,6353,1180,6588">
+<area shape="rect" id="node32" href="../../tables/dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="988,3483,1177,3629">
+<area shape="rect" id="node36" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="651,4144,833,4349">
+<area shape="rect" id="node33" href="../../tables/datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="981,3175,1184,3321">
+<area shape="rect" id="node34" href="../../tables/datasetpis.html" target="_top" title="datasetpis" alt="" coords="992,3647,1173,3793">
+<area shape="rect" id="node35" href="../../tables/datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="974,4724,1191,4871">
+<area shape="rect" id="node63" href="../../tables/embargo.html" target="_top" title="embargo" alt="" coords="358,4232,515,4349">
+<area shape="rect" id="node37" href="../../tables/datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="972,2923,1193,3157">
+<area shape="rect" id="node38" href="../../tables/datasetsubmissiontypes.html" target="_top" title="datasetsubmissiontypes" alt="" coords="617,3311,867,3428">
+<area shape="rect" id="node39" href="../../tables/datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="621,7508,863,7655">
+<area shape="rect" id="node145" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="342,7456,531,7573">
+<area shape="rect" id="node40" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="978,4144,1187,4320">
+<area shape="rect" id="node142" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="651,5213,833,5477">
+<area shape="rect" id="node42" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1350,5012,1545,5188">
+<area shape="rect" id="node43" href="../../tables/datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1681,3449,1871,3625">
+<area shape="rect" id="node44" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="992,333,1173,480">
+<area shape="rect" id="node45" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="650,460,834,577">
+<area shape="rect" id="node47" href="../../tables/dsageranges.html" target="_top" title="dsageranges" alt="" coords="999,2375,1167,2497">
+<area shape="rect" id="node48" href="../../tables/dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1360,4375,1535,4527">
+<area shape="rect" id="node49" href="../../tables/dslinks.html" target="_top" title="dslinks" alt="" coords="995,2648,1170,2771">
+<area shape="rect" id="node50" href="../../tables/dssampdata.html" target="_top" title="dssampdata" alt="" coords="1001,4033,1164,4127">
+<area shape="rect" id="node51" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="992,8115,1173,8291">
+<area shape="rect" id="node52" href="../../tables/ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="647,8461,837,8579">
+<area shape="rect" id="node53" href="../../tables/ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="651,8327,833,8444">
+<area shape="rect" id="node54" href="../../tables/elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="609,7315,875,7491">
+<area shape="rect" id="node55" href="../../tables/elementmaturities.html" target="_top" title="elementmaturities" alt="" coords="334,8731,539,8877">
+<area shape="rect" id="node56" href="../../tables/elementportions.html" target="_top" title="elementportions" alt="" coords="339,8556,534,8703">
+<area shape="rect" id="node57" href="../../tables/elementsymmetries.html" target="_top" title="elementsymmetries" alt="" coords="328,7999,545,8145">
+<area shape="rect" id="node58" href="../../tables/elementtaxagroupmaturities.html" target="_top" title="elementtaxagroupmaturities" alt="" coords="941,8472,1224,8619">
+<area shape="rect" id="node60" href="../../tables/elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="635,7780,849,7956">
+<area shape="rect" id="node59" href="../../tables/elementtaxagroupportions.html" target="_top" title="elementtaxagroupportions" alt="" coords="949,8308,1216,8455">
+<area shape="rect" id="node62" href="../../tables/elementtypes.html" target="_top" title="elementtypes" alt="" coords="346,7704,527,7851">
+<area shape="rect" id="node61" href="../../tables/elementtaxagroupsymmetries.html" target="_top" title="elementtaxagroupsymmetries" alt="" coords="936,7780,1229,7927">
+<area shape="rect" id="node64" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1347,464,1547,669">
+<area shape="rect" id="node66" href="../../tables/events.html" target="_top" title="events" alt="" coords="992,5,1173,152">
+<area shape="rect" id="node65" href="../../tables/eventpublications.html" target="_top" title="eventpublications" alt="" coords="1345,1269,1550,1416">
+<area shape="rect" id="node67" href="../../tables/eventtypes.html" target="_top" title="eventtypes" alt="" coords="640,296,844,443">
+<area shape="rect" id="node69" href="../../tables/externalpublications.html" target="_top" title="externalpublications" alt="" coords="631,5947,853,6093">
+<area shape="rect" id="node70" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="992,5996,1173,6172">
+<area shape="rect" id="node72" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="970,5381,1195,5587">
+<area shape="rect" id="node73" href="../../tables/fractiondated.html" target="_top" title="fractiondated" alt="" coords="1685,4623,1867,4740">
+<area shape="rect" id="node74" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1673,1417,1879,1564">
+<area shape="rect" id="node75" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1354,1469,1541,1704">
+<area shape="rect" id="node77" href="../../tables/geochrontypes.html" target="_top" title="geochrontypes" alt="" coords="990,1484,1175,1601">
+<area shape="rect" id="node76" href="../../tables/geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1659,2612,1893,2759">
+<area shape="rect" id="node78" href="../../tables/geopaths.html" target="_top" title="geopaths" alt="" coords="363,1481,511,1604">
+<area shape="rect" id="node80" href="../../tables/geopoliticalunits.html" target="_top" title="geopoliticalunits" alt="" coords="31,1621,242,1797">
+<area shape="rect" id="node79" href="../../tables/geopoldepth.html" target="_top" title="geopoldepth" alt="" coords="343,1621,531,1715">
+<area shape="rect" id="node81" href="../../tables/isobiomarkerbandtypes.html" target="_top" title="isobiomarkerbandtypes" alt="" coords="2218,4436,2465,4583">
+<area shape="rect" id="node82" href="../../tables/isobiomarkertypes.html" target="_top" title="isobiomarkertypes" alt="" coords="1955,4465,2166,4583">
+<area shape="rect" id="node83" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1309,6696,1585,6901">
+<area shape="rect" id="node84" href="../../tables/isoinstrumentationtypes.html" target="_top" title="isoinstrumentationtypes" alt="" coords="955,6875,1210,6992">
+<area shape="rect" id="node89" href="../../tables/isosampleintrosystemtypes.html" target="_top" title="isosampleintrosystemtypes" alt="" coords="945,7337,1221,7455">
+<area shape="rect" id="node85" href="../../tables/isomatanalsubstrate.html" target="_top" title="isomatanalsubstrate" alt="" coords="1665,7573,1887,7720">
+<area shape="rect" id="node86" href="../../tables/isomaterialanalyzedtypes.html" target="_top" title="isomaterialanalyzedtypes" alt="" coords="1319,7403,1576,7520">
+<area shape="rect" id="node97" href="../../tables/isosubstratetypes.html" target="_top" title="isosubstratetypes" alt="" coords="1345,7573,1550,7691">
+<area shape="rect" id="node87" href="../../tables/isometadata.html" target="_top" title="isometadata" alt="" coords="1677,6087,1875,6321">
+<area shape="rect" id="node88" href="../../tables/isopretreatmenttypes.html" target="_top" title="isopretreatmenttypes" alt="" coords="1323,4648,1572,4765">
+<area shape="rect" id="node90" href="../../tables/isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="1651,4793,1901,4969">
+<area shape="rect" id="node91" href="../../tables/isoscaletypes.html" target="_top" title="isoscaletypes" alt="" coords="992,6740,1173,6857">
+<area shape="rect" id="node92" href="../../tables/isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="1961,7424,2160,7600">
+<area shape="rect" id="node132" href="../../tables/specimens.html" target="_top" title="specimens" alt="" coords="1683,7948,1869,8300">
+<area shape="rect" id="node93" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1349,5701,1546,5848">
+<area shape="rect" id="node94" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="1357,6324,1538,6500">
+<area shape="rect" id="node95" href="../../tables/isostandardtypes.html" target="_top" title="isostandardtypes" alt="" coords="977,6605,1189,6723">
+<area shape="rect" id="node96" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="1685,5136,1867,5312">
+<area shape="rect" id="node98" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1332,6523,1563,6669">
+<area shape="rect" id="node99" href="../../tables/keywords.html" target="_top" title="keywords" alt="" coords="992,4337,1173,4455">
+<area shape="rect" id="node100" href="../../tables/lakeparameters.html" target="_top" title="lakeparameters" alt="" coords="343,1121,531,1268">
+<area shape="rect" id="node101" href="../../tables/lakeparametertypes.html" target="_top" title="lakeparametertypes" alt="" coords="9,1151,265,1268">
+<area shape="rect" id="node102" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="651,2219,833,2365">
+<area shape="rect" id="node104" href="../../tables/lithostratunits.html" target="_top" title="lithostratunits" alt="" coords="346,132,527,249">
+<area shape="rect" id="node105" href="../../tables/publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="635,3661,849,3837">
+<area shape="rect" id="node106" href="../../tables/publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="638,4825,846,4972">
+<area shape="rect" id="node109" href="../../tables/publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="38,5048,235,5165">
+<area shape="rect" id="node108" href="../../tables/publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="625,4989,859,5136">
+<area shape="rect" id="node110" href="../../tables/pubtsv.html" target="_top" title="pubtsv" alt="" coords="665,5531,819,5624">
+<area shape="rect" id="node111" href="../../tables/radiocarbon.html" target="_top" title="radiocarbon" alt="" coords="2229,4272,2453,4419">
+<area shape="rect" id="node112" href="../../tables/radiocarbonmethods.html" target="_top" title="radiocarbonmethods" alt="" coords="1947,4301,2174,4419">
+<area shape="rect" id="node113" href="../../tables/relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="1326,2115,1569,2261">
+<area shape="rect" id="node114" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="985,1855,1180,2031">
+<area shape="rect" id="node115" href="../../tables/relativeagescales.html" target="_top" title="relativeagescales" alt="" coords="641,1767,843,1884">
+<area shape="rect" id="node116" href="../../tables/relativeageunits.html" target="_top" title="relativeageunits" alt="" coords="646,1632,838,1749">
+<area shape="rect" id="node117" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1341,1047,1553,1252">
+<area shape="rect" id="node118" href="../../tables/repositoryinstitutions.html" target="_top" title="repositoryinstitutions" alt="" coords="1331,7708,1563,7825">
+<area shape="rect" id="node119" href="../../tables/repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="1662,7371,1890,7517">
+<area shape="rect" id="node122" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1353,3615,1542,3791">
+<area shape="rect" id="node123" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1349,4211,1546,4357">
+<area shape="rect" id="node125" href="../../tables/sitegeopolitical.html" target="_top" title="sitegeopolitical" alt="" coords="343,1732,530,1908">
+<area shape="rect" id="node126" href="../../tables/siteimages.html" target="_top" title="siteimages" alt="" coords="651,2419,833,2595">
+<area shape="rect" id="node128" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1968,4600,2153,4893">
+<area shape="rect" id="node129" href="../../tables/specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2231,7032,2452,7237">
+<area shape="rect" id="node130" href="../../tables/specimendomesticstatustypes.html" target="_top" title="specimendomesticstatustypes" alt="" coords="1301,8977,1594,9095">
+<area shape="rect" id="node131" href="../../tables/specimengenbank.html" target="_top" title="specimengenbank" alt="" coords="1957,7948,2165,8071">
+<area shape="rect" id="node133" href="../../tables/specimensextypes.html" target="_top" title="specimensextypes" alt="" coords="1343,8843,1552,8960">
+<area shape="rect" id="node134" href="../../tables/specimentaphonomy.html" target="_top" title="specimentaphonomy" alt="" coords="1947,8168,2174,8315">
+<area shape="rect" id="node141" href="../../tables/taphonomictypes.html" target="_top" title="taphonomictypes" alt="" coords="1339,8277,1556,8424">
+<area shape="rect" id="node135" href="../../tables/summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="1649,7204,1903,7351">
+<area shape="rect" id="node136" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="992,5773,1173,5979">
+<area shape="rect" id="node137" href="../../tables/synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="651,5776,833,5893">
+<area shape="rect" id="node138" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="988,4888,1177,5152">
+<area shape="rect" id="node139" href="../../tables/taphonomicsystems.html" target="_top" title="taphonomicsystems" alt="" coords="972,8636,1193,8753">
+<area shape="rect" id="node140" href="../../tables/taphonomicsystemsdatasettypes.html" target="_top" title="taphonomicsystemsdatasettypes" alt="" coords="1290,7879,1605,8025">
+<area shape="rect" id="node143" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="966,5604,1199,5756">
+<area shape="rect" id="node144" href="../../tables/taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="618,5641,866,5759">
+<area shape="rect" id="node146" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="1003,5241,1162,5364">
+<area shape="rect" id="node147" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1357,124,1538,300">
+<area shape="rect" id="node148" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="980,7173,1185,7320">
+<area shape="rect" id="node150" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="643,8075,841,8309">
+<area shape="rect" id="node153" href="../../../ti/tables/stewarddatabases.html" target="_top" title="ti.stewarddatabases" alt="" coords="973,2788,1193,2905">
+<area shape="rect" id="node154" href="../../../ti/tables/stewards.html" target="_top" title="ti.stewards" alt="" coords="651,2940,833,3057">
+<area shape="rect" id="node155" href="../../../ti/tables/stewardupdates.html" target="_top" title="ti.stewardupdates" alt="" coords="639,2805,845,2923">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="compactimpliedDegreeImg" data="diagrams/summary/relationships.implied.compact.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="978,2603,1187,2843">
+<area shape="rect" id="node11" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="646,1856,838,2243">
+<area shape="rect" id="node22" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="644,2368,840,2813">
+<area shape="rect" id="node152" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="651,2831,833,3012">
+<area shape="rect" id="node2" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="346,2427,527,2667">
+<area shape="rect" id="node3" href="../../tables/aggregatechronologies.html" target="_top" title="aggregatechronologies" alt="" coords="1326,144,1569,501">
+<area shape="rect" id="node4" href="../../tables/aggregatedatasets.html" target="_top" title="aggregatedatasets" alt="" coords="964,5,1201,245">
+<area shape="rect" id="node5" href="../../tables/aggregateordertypes.html" target="_top" title="aggregateordertypes" alt="" coords="629,35,855,245">
+<area shape="rect" id="node6" href="../../tables/aggregatesampleages.html" target="_top" title="aggregatesampleages" alt="" coords="1659,115,1893,325">
+<area shape="rect" id="node121" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1357,2767,1538,3065">
+<area shape="rect" id="node7" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1343,2245,1552,2427">
+<area shape="rect" id="node124" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="979,5252,1186,5668">
+<area shape="rect" id="node8" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1333,2017,1562,2228">
+<area shape="rect" id="node9" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="950,2860,1215,3129">
+<area shape="rect" id="node10" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="969,732,1197,913">
+<area shape="rect" id="node103" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="646,619,838,859">
+<area shape="rect" id="node24" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="345,3883,529,4533">
+<area shape="rect" id="node71" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="346,1404,527,1585">
+<area shape="rect" id="node12" href="../../tables/calibrationcurves.html" target="_top" title="calibrationcurves" alt="" coords="982,7103,1183,7313">
+<area shape="rect" id="node107" href="../../tables/publications.html" target="_top" title="publications" alt="" coords="344,7195,529,8021">
+<area shape="rect" id="node13" href="../../tables/calibrationprograms.html" target="_top" title="calibrationprograms" alt="" coords="971,10292,1194,10503">
+<area shape="rect" id="node14" href="../../tables/chroncontrolaccuracydirections.html" target="_top" title="chroncontrolaccuracydirections" alt="" coords="930,1364,1235,1545">
+<area shape="rect" id="node15" href="../../tables/chroncontrolaccuracydistributions.html" target="_top" title="chroncontrolaccuracydistributions" alt="" coords="919,1563,1246,1744">
+<area shape="rect" id="node16" href="../../tables/chroncontrolaccuracyranks.html" target="_top" title="chroncontrolaccuracyranks" alt="" coords="946,1165,1219,1347">
+<area shape="rect" id="node17" href="../../tables/chroncontrolprecisionranks.html" target="_top" title="chroncontrolprecisionranks" alt="" coords="945,1761,1221,1943">
+<area shape="rect" id="node18" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1333,1385,1562,1713">
+<area shape="rect" id="node19" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="981,2068,1185,2513">
+<area shape="rect" id="node21" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="309,1767,565,1977">
+<area shape="rect" id="node20" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1335,7953,1559,8164">
+<area shape="rect" id="node28" href="../../tables/contacts.html" target="_top" title="contacts" alt="" coords="346,5520,527,6083">
+<area shape="rect" id="node23" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="43,3879,230,4060">
+<area shape="rect" id="node46" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="45,4101,228,4312">
+<area shape="rect" id="node120" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="43,4353,231,4593">
+<area shape="rect" id="node127" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="46,3159,227,3604">
+<area shape="rect" id="node25" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="651,4160,833,4400">
+<area shape="rect" id="node26" href="../../tables/constituentdatabases.html" target="_top" title="constituentdatabases" alt="" coords="627,4417,857,4657">
+<area shape="rect" id="node27" href="../../tables/contactreferences.html" target="_top" title="contactreferences" alt="" coords="639,7307,845,7459">
+<area shape="rect" id="node68" href="../../tables/externaldatabases.html" target="_top" title="externaldatabases" alt="" coords="333,8777,541,9017">
+<area shape="rect" id="node29" href="../../tables/contactstatuses.html" target="_top" title="contactstatuses" alt="" coords="41,5608,233,5819">
+<area shape="rect" id="node30" href="../../tables/contextsdatasettypes.html" target="_top" title="contextsdatasettypes" alt="" coords="968,10057,1197,10239">
+<area shape="rect" id="node41" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="346,9881,527,10063">
+<area shape="rect" id="node149" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="644,9840,840,10021">
+<area shape="rect" id="node31" href="../../tables/data.html" target="_top" title="data" alt="" coords="1349,7432,1545,7672">
+<area shape="rect" id="node151" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="985,9145,1180,9415">
+<area shape="rect" id="node32" href="../../tables/dataprocessors.html" target="_top" title="dataprocessors" alt="" coords="988,4825,1177,5007">
+<area shape="rect" id="node36" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="651,5721,833,6020">
+<area shape="rect" id="node33" href="../../tables/datasetdatabases.html" target="_top" title="datasetdatabases" alt="" coords="981,4555,1184,4736">
+<area shape="rect" id="node34" href="../../tables/datasetpis.html" target="_top" title="datasetpis" alt="" coords="992,5024,1173,5235">
+<area shape="rect" id="node35" href="../../tables/datasetpublications.html" target="_top" title="datasetpublications" alt="" coords="974,6875,1191,7085">
+<area shape="rect" id="node63" href="../../tables/embargo.html" target="_top" title="embargo" alt="" coords="358,6100,515,6252">
+<area shape="rect" id="node37" href="../../tables/datasetsubmissions.html" target="_top" title="datasetsubmissions" alt="" coords="972,4011,1193,4339">
+<area shape="rect" id="node38" href="../../tables/datasetsubmissiontypes.html" target="_top" title="datasetsubmissiontypes" alt="" coords="617,4997,867,5179">
+<area shape="rect" id="node39" href="../../tables/datasettaxagrouptypes.html" target="_top" title="datasettaxagrouptypes" alt="" coords="621,10075,863,10256">
+<area shape="rect" id="node145" href="../../tables/taxagrouptypes.html" target="_top" title="taxagrouptypes" alt="" coords="342,10251,531,10432">
+<area shape="rect" id="node40" href="../../tables/datasettaxonnotes.html" target="_top" title="datasettaxonnotes" alt="" coords="978,6065,1187,6335">
+<area shape="rect" id="node142" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="651,8057,833,8532">
+<area shape="rect" id="node42" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="1350,7725,1545,7936">
+<area shape="rect" id="node43" href="../../tables/datataxonnotes.html" target="_top" title="datataxonnotes" alt="" coords="1681,4809,1871,5079">
+<area shape="rect" id="node44" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="992,931,1173,1112">
+<area shape="rect" id="node45" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="650,1104,834,1285">
+<area shape="rect" id="node47" href="../../tables/dsageranges.html" target="_top" title="dsageranges" alt="" coords="999,3551,1167,3708">
+<area shape="rect" id="node48" href="../../tables/dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1360,6583,1535,6740">
+<area shape="rect" id="node49" href="../../tables/dslinks.html" target="_top" title="dslinks" alt="" coords="995,3725,1170,3853">
+<area shape="rect" id="node50" href="../../tables/dssampdata.html" target="_top" title="dssampdata" alt="" coords="1001,5920,1164,6048">
+<area shape="rect" id="node51" href="../../tables/ecolgroups.html" target="_top" title="ecolgroups" alt="" coords="992,11580,1173,11791">
+<area shape="rect" id="node52" href="../../tables/ecolgrouptypes.html" target="_top" title="ecolgrouptypes" alt="" coords="647,11779,837,11960">
+<area shape="rect" id="node53" href="../../tables/ecolsettypes.html" target="_top" title="ecolsettypes" alt="" coords="651,11580,833,11761">
+<area shape="rect" id="node54" href="../../tables/elementdatasettaxagroups.html" target="_top" title="elementdatasettaxagroups" alt="" coords="609,10273,875,10484">
+<area shape="rect" id="node55" href="../../tables/elementmaturities.html" target="_top" title="elementmaturities" alt="" coords="334,11631,539,11812">
+<area shape="rect" id="node56" href="../../tables/elementportions.html" target="_top" title="elementportions" alt="" coords="339,11432,534,11613">
+<area shape="rect" id="node57" href="../../tables/elementsymmetries.html" target="_top" title="elementsymmetries" alt="" coords="328,11233,545,11415">
+<area shape="rect" id="node58" href="../../tables/elementtaxagroupmaturities.html" target="_top" title="elementtaxagroupmaturities" alt="" coords="941,11253,1224,11435">
+<area shape="rect" id="node60" href="../../tables/elementtaxagroups.html" target="_top" title="elementtaxagroups" alt="" coords="635,10856,849,11067">
+<area shape="rect" id="node59" href="../../tables/elementtaxagroupportions.html" target="_top" title="elementtaxagroupportions" alt="" coords="949,11055,1216,11236">
+<area shape="rect" id="node62" href="../../tables/elementtypes.html" target="_top" title="elementtypes" alt="" coords="346,10780,527,10961">
+<area shape="rect" id="node61" href="../../tables/elementtaxagroupsymmetries.html" target="_top" title="elementtaxagroupsymmetries" alt="" coords="936,10856,1229,11037">
+<area shape="rect" id="node64" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1347,1731,1547,2000">
+<area shape="rect" id="node66" href="../../tables/events.html" target="_top" title="events" alt="" coords="992,299,1173,715">
+<area shape="rect" id="node65" href="../../tables/eventpublications.html" target="_top" title="eventpublications" alt="" coords="1345,3504,1550,3685">
+<area shape="rect" id="node67" href="../../tables/eventtypes.html" target="_top" title="eventtypes" alt="" coords="640,876,844,1087">
+<area shape="rect" id="node69" href="../../tables/externalpublications.html" target="_top" title="externalpublications" alt="" coords="631,8748,853,8959">
+<area shape="rect" id="node70" href="../../tables/externaltaxa.html" target="_top" title="externaltaxa" alt="" coords="992,8888,1173,9128">
+<area shape="rect" id="node72" href="../../tables/formtaxa.html" target="_top" title="formtaxa" alt="" coords="970,7735,1195,8004">
+<area shape="rect" id="node73" href="../../tables/fractiondated.html" target="_top" title="fractiondated" alt="" coords="1685,5252,1867,5433">
+<area shape="rect" id="node74" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1673,3927,1879,4108">
+<area shape="rect" id="node75" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1354,4063,1541,4537">
+<area shape="rect" id="node77" href="../../tables/geochrontypes.html" target="_top" title="geochrontypes" alt="" coords="990,4356,1175,4537">
+<area shape="rect" id="node76" href="../../tables/geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="1659,4417,1893,4599">
+<area shape="rect" id="node78" href="../../tables/geopaths.html" target="_top" title="geopaths" alt="" coords="363,1603,511,1725">
+<area shape="rect" id="node80" href="../../tables/geopoliticalunits.html" target="_top" title="geopoliticalunits" alt="" coords="31,1995,242,2264">
+<area shape="rect" id="node79" href="../../tables/geopoldepth.html" target="_top" title="geopoldepth" alt="" coords="343,1995,531,2181">
+<area shape="rect" id="node81" href="../../tables/isobiomarkerbandtypes.html" target="_top" title="isobiomarkerbandtypes" alt="" coords="2218,6557,2465,6768">
+<area shape="rect" id="node82" href="../../tables/isobiomarkertypes.html" target="_top" title="isobiomarkertypes" alt="" coords="1955,6587,2166,6768">
+<area shape="rect" id="node83" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="1309,9148,1585,9505">
+<area shape="rect" id="node84" href="../../tables/isoinstrumentationtypes.html" target="_top" title="isoinstrumentationtypes" alt="" coords="955,9432,1210,9613">
+<area shape="rect" id="node89" href="../../tables/isosampleintrosystemtypes.html" target="_top" title="isosampleintrosystemtypes" alt="" coords="945,9631,1221,9812">
+<area shape="rect" id="node85" href="../../tables/isomatanalsubstrate.html" target="_top" title="isomatanalsubstrate" alt="" coords="1665,10585,1887,10767">
+<area shape="rect" id="node86" href="../../tables/isomaterialanalyzedtypes.html" target="_top" title="isomaterialanalyzedtypes" alt="" coords="1319,10387,1576,10568">
+<area shape="rect" id="node97" href="../../tables/isosubstratetypes.html" target="_top" title="isosubstratetypes" alt="" coords="1345,10585,1550,10767">
+<area shape="rect" id="node87" href="../../tables/isometadata.html" target="_top" title="isometadata" alt="" coords="1677,10123,1875,10568">
+<area shape="rect" id="node88" href="../../tables/isopretreatmenttypes.html" target="_top" title="isopretreatmenttypes" alt="" coords="1323,7204,1572,7415">
+<area shape="rect" id="node90" href="../../tables/isosamplepretreatments.html" target="_top" title="isosamplepretreatments" alt="" coords="1651,7319,1901,7559">
+<area shape="rect" id="node91" href="../../tables/isoscaletypes.html" target="_top" title="isoscaletypes" alt="" coords="992,9829,1173,10040">
+<area shape="rect" id="node92" href="../../tables/isospecimendata.html" target="_top" title="isospecimendata" alt="" coords="1961,8612,2160,8852">
+<area shape="rect" id="node132" href="../../tables/specimens.html" target="_top" title="specimens" alt="" coords="1683,11324,1869,11887">
+<area shape="rect" id="node93" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="1349,8227,1546,8467">
+<area shape="rect" id="node94" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="1357,8484,1538,8724">
+<area shape="rect" id="node95" href="../../tables/isostandardtypes.html" target="_top" title="isostandardtypes" alt="" coords="977,8484,1189,8695">
+<area shape="rect" id="node96" href="../../tables/isostratdata.html" target="_top" title="isostratdata" alt="" coords="1685,8753,1867,8993">
+<area shape="rect" id="node98" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="1332,9585,1563,9767">
+<area shape="rect" id="node99" href="../../tables/keywords.html" target="_top" title="keywords" alt="" coords="992,6424,1173,6605">
+<area shape="rect" id="node100" href="../../tables/lakeparameters.html" target="_top" title="lakeparameters" alt="" coords="343,3503,531,3713">
+<area shape="rect" id="node101" href="../../tables/lakeparametertypes.html" target="_top" title="lakeparametertypes" alt="" coords="9,3621,265,3861">
+<area shape="rect" id="node102" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="651,3808,833,4107">
+<area shape="rect" id="node104" href="../../tables/lithostratunits.html" target="_top" title="lithostratunits" alt="" coords="346,648,527,859">
+<area shape="rect" id="node105" href="../../tables/publicationauthors.html" target="_top" title="publicationauthors" alt="" coords="635,6109,849,6437">
+<area shape="rect" id="node106" href="../../tables/publicationeditors.html" target="_top" title="publicationeditors" alt="" coords="638,7548,846,7847">
+<area shape="rect" id="node109" href="../../tables/publicationtypes.html" target="_top" title="publicationtypes" alt="" coords="38,7224,235,7405">
+<area shape="rect" id="node108" href="../../tables/publicationtranslators.html" target="_top" title="publicationtranslators" alt="" coords="625,6803,859,7101">
+<area shape="rect" id="node110" href="../../tables/pubtsv.html" target="_top" title="pubtsv" alt="" coords="665,7119,819,7217">
+<area shape="rect" id="node111" href="../../tables/radiocarbon.html" target="_top" title="radiocarbon" alt="" coords="2229,6124,2453,6540">
+<area shape="rect" id="node112" href="../../tables/radiocarbonmethods.html" target="_top" title="radiocarbonmethods" alt="" coords="1947,6153,2174,6335">
+<area shape="rect" id="node113" href="../../tables/relativeagepublications.html" target="_top" title="relativeagepublications" alt="" coords="1326,4555,1569,4736">
+<area shape="rect" id="node114" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="985,3147,1180,3533">
+<area shape="rect" id="node115" href="../../tables/relativeagescales.html" target="_top" title="relativeagescales" alt="" coords="641,3609,843,3791">
+<area shape="rect" id="node116" href="../../tables/relativeageunits.html" target="_top" title="relativeageunits" alt="" coords="646,3029,838,3211">
+<area shape="rect" id="node117" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1341,2444,1553,2713">
+<area shape="rect" id="node118" href="../../tables/repositoryinstitutions.html" target="_top" title="repositoryinstitutions" alt="" coords="1331,11815,1563,12055">
+<area shape="rect" id="node119" href="../../tables/repositoryspecimens.html" target="_top" title="repositoryspecimens" alt="" coords="1662,10957,1890,11168">
+<area shape="rect" id="node122" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1353,4991,1542,5231">
+<area shape="rect" id="node123" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1349,5487,1546,5668">
+<area shape="rect" id="node125" href="../../tables/sitegeopolitical.html" target="_top" title="sitegeopolitical" alt="" coords="343,2199,530,2409">
+<area shape="rect" id="node126" href="../../tables/siteimages.html" target="_top" title="siteimages" alt="" coords="651,3264,833,3592">
+<area shape="rect" id="node128" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1968,6785,2153,7143">
+<area shape="rect" id="node129" href="../../tables/specimendatescal.html" target="_top" title="specimendatescal" alt="" coords="2231,6973,2452,7331">
+<area shape="rect" id="node130" href="../../tables/specimendomesticstatustypes.html" target="_top" title="specimendomesticstatustypes" alt="" coords="1301,12072,1594,12253">
+<area shape="rect" id="node131" href="../../tables/specimengenbank.html" target="_top" title="specimengenbank" alt="" coords="1957,11324,2165,11447">
+<area shape="rect" id="node133" href="../../tables/specimensextypes.html" target="_top" title="specimensextypes" alt="" coords="1343,11616,1552,11797">
+<area shape="rect" id="node134" href="../../tables/specimentaphonomy.html" target="_top" title="specimentaphonomy" alt="" coords="1947,10572,2174,10753">
+<area shape="rect" id="node141" href="../../tables/taphonomictypes.html" target="_top" title="taphonomictypes" alt="" coords="1339,10129,1556,10369">
+<area shape="rect" id="node135" href="../../tables/summarydatataphonomy.html" target="_top" title="summarydatataphonomy" alt="" coords="1649,9888,1903,10069">
+<area shape="rect" id="node136" href="../../tables/synonyms.html" target="_top" title="synonyms" alt="" coords="992,8227,1173,8467">
+<area shape="rect" id="node137" href="../../tables/synonymtypes.html" target="_top" title="synonymtypes" alt="" coords="651,8549,833,8731">
+<area shape="rect" id="node138" href="../../tables/synonymy.html" target="_top" title="synonymy" alt="" coords="988,7331,1177,7717">
+<area shape="rect" id="node139" href="../../tables/taphonomicsystems.html" target="_top" title="taphonomicsystems" alt="" coords="972,10556,1193,10767">
+<area shape="rect" id="node140" href="../../tables/taphonomicsystemsdatasettypes.html" target="_top" title="taphonomicsystemsdatasettypes" alt="" coords="1290,9931,1605,10112">
+<area shape="rect" id="node143" href="../../tables/taxaalthierarchy.html" target="_top" title="taxaalthierarchy" alt="" coords="966,8021,1199,8173">
+<area shape="rect" id="node144" href="../../tables/taxaalthierarchytypes.html" target="_top" title="taxaalthierarchytypes" alt="" coords="618,7864,866,8016">
+<area shape="rect" id="node146" href="../../tables/taxonpaths.html" target="_top" title="taxonpaths" alt="" coords="1003,8712,1162,8835">
+<area shape="rect" id="node147" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1357,775,1538,1015">
+<area shape="rect" id="node148" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="980,5721,1185,5903">
+<area shape="rect" id="node150" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="643,11084,841,11383">
+<area shape="rect" id="node153" href="../../../ti/tables/stewarddatabases.html" target="_top" title="ti.stewarddatabases" alt="" coords="973,3871,1193,3993">
+<area shape="rect" id="node154" href="../../../ti/tables/stewards.html" target="_top" title="ti.stewards" alt="" coords="651,4675,833,4944">
+<area shape="rect" id="node155" href="../../../ti/tables/stewardupdates.html" target="_top" title="ti.stewardupdates" alt="" coords="639,5196,845,5524">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="largeimpliedDegreeImg" data="diagrams/summary/relationships.implied.large.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

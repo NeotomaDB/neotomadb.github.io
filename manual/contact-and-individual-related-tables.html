@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2023-02-08" />
+<meta name="date" content="2023-11-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,20 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.26/datatables.js"></script>
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -179,8 +193,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html"><i class="fa fa-check"></i><b>3</b> Working with the Raw Data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-r"><i class="fa fa-check"></i><b>3.1</b> Using R</a></li>
-<li class="chapter" data-level="3.2" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-the-database-locally"><i class="fa fa-check"></i><b>3.2</b> Using the Database Locally</a></li>
+<li class="chapter" data-level="3.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-the-database-locally"><i class="fa fa-check"></i><b>3.1</b> Using the Database Locally</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-r"><i class="fa fa-check"></i><b>3.2</b> Using R</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#searching-for-sites"><i class="fa fa-check"></i><b>3.2.1</b> Searching for Sites</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>4</b> SQL Quickly</a>
 <ul>
@@ -424,8 +441,8 @@ div.csl-indent {
 <div id="Collectors" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> <code>collectors</code><a href="contact-and-individual-related-tables.html#Collectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <code>collectors</code> table lists the people who were responsible for collecting a particular collection unit. This is part of the complete set of individuals who collect, analyze, publish and process the data for contribution to Neotoma. Other related tables include <a href="#PublicationAuthors"><code>publicationsauthors</code></a>, <a href="sample-related-tables-1.html#SampleAnalysts"><code>sampleanalysts</code></a>, and <a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><code>datasetsubmissions</code></a>.</p>
-<div id="htmlwidget-d0b625a74dbc672b180d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d0b625a74dbc672b180d">{"x":{"filter":"none","vertical":false,"data":[["collectorid","collectionunitid","contactid","collectororder","recdatecreated","recdatemodified"],["integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["collectors_pkey","fk_collectors_collectionunits","fk_collectors_contacts","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-32029e8a62aacce0c7da" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-32029e8a62aacce0c7da">{"x":{"filter":"none","vertical":false,"data":[["collectorid","collectionunitid","contactid","collectororder","recdatecreated","recdatemodified"],["integer","integer","integer","integer","timestamp(0) without time zone","timestamp(0) without time zone"],["collectors_pkey","fk_collectors_collectionunits","fk_collectors_contacts","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>collectorid</code> (primary key)</strong>: An arbitrary Collector identification number.</li>
 <li><strong><code>collectionunitid</code> (foreign key)</strong>]: The <code>collectionunitid</code> for the record that was collected. Field links to the <a href="dataset-collection-related-tables-1.html#CollectionUnits"><code>collectionunits</code></a> table.</li>
@@ -435,18 +452,18 @@ div.csl-indent {
 <div id="sql-example-1" class="section level3 hasAnchor" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> SQL Example<a href="contact-and-individual-related-tables.html#sql-example-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We want to see the top contributors for each constitutent database, so we calculate the sum of each appearance of a contributor/database, and then return the <code>COUNT(*)</code>. The <code>DISTINCT ON</code> pattern allows us to select a single instance of the field <code>db.databasename</code>, that has been ordered by the descending <code>COUNT(*)</code> per individual, and database. This then ensures we have the top <code>collectionunit</code> collector for each constituent database.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="contact-and-individual-related-tables.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> <span class="kw">ON</span> (db.databasename)</span>
-<span id="cb10-2"><a href="contact-and-individual-related-tables.html#cb10-2" aria-hidden="true" tabindex="-1"></a>       ct.contactname, </span>
-<span id="cb10-3"><a href="contact-and-individual-related-tables.html#cb10-3" aria-hidden="true" tabindex="-1"></a>       db.databasename,</span>
-<span id="cb10-4"><a href="contact-and-individual-related-tables.html#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb10-5"><a href="contact-and-individual-related-tables.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.contacts <span class="kw">AS</span> ct</span>
-<span id="cb10-6"><a href="contact-and-individual-related-tables.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectors <span class="kw">AS</span> co <span class="kw">ON</span> co.contactid <span class="op">=</span> ct.contactid</span>
-<span id="cb10-7"><a href="contact-and-individual-related-tables.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.collectionunitid <span class="op">=</span> co.collectionunitid</span>
-<span id="cb10-8"><a href="contact-and-individual-related-tables.html#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
-<span id="cb10-9"><a href="contact-and-individual-related-tables.html#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetdatabases <span class="kw">AS</span> dsdb <span class="kw">ON</span> dsdb.datasetid <span class="op">=</span> ds.datasetid</span>
-<span id="cb10-10"><a href="contact-and-individual-related-tables.html#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.constituentdatabases <span class="kw">AS</span> db <span class="kw">ON</span> db.databaseid <span class="op">=</span> dsdb.databaseid</span>
-<span id="cb10-11"><a href="contact-and-individual-related-tables.html#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> db.databasename, ct.contactname</span>
-<span id="cb10-12"><a href="contact-and-individual-related-tables.html#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> db.databasename, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">DESC</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb20-1"><a href="contact-and-individual-related-tables.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> <span class="kw">ON</span> (db.databasename)</span>
+<span id="cb20-2"><a href="contact-and-individual-related-tables.html#cb20-2" aria-hidden="true" tabindex="-1"></a>       ct.contactname, </span>
+<span id="cb20-3"><a href="contact-and-individual-related-tables.html#cb20-3" aria-hidden="true" tabindex="-1"></a>       db.databasename,</span>
+<span id="cb20-4"><a href="contact-and-individual-related-tables.html#cb20-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb20-5"><a href="contact-and-individual-related-tables.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> ndb.contacts <span class="kw">AS</span> ct</span>
+<span id="cb20-6"><a href="contact-and-individual-related-tables.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectors <span class="kw">AS</span> co <span class="kw">ON</span> co.contactid <span class="op">=</span> ct.contactid</span>
+<span id="cb20-7"><a href="contact-and-individual-related-tables.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.collectionunits <span class="kw">AS</span> cu <span class="kw">ON</span> cu.collectionunitid <span class="op">=</span> co.collectionunitid</span>
+<span id="cb20-8"><a href="contact-and-individual-related-tables.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasets <span class="kw">AS</span> ds <span class="kw">ON</span> ds.collectionunitid <span class="op">=</span> cu.collectionunitid</span>
+<span id="cb20-9"><a href="contact-and-individual-related-tables.html#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.datasetdatabases <span class="kw">AS</span> dsdb <span class="kw">ON</span> dsdb.datasetid <span class="op">=</span> ds.datasetid</span>
+<span id="cb20-10"><a href="contact-and-individual-related-tables.html#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> ndb.constituentdatabases <span class="kw">AS</span> db <span class="kw">ON</span> db.databaseid <span class="op">=</span> dsdb.databaseid</span>
+<span id="cb20-11"><a href="contact-and-individual-related-tables.html#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> db.databasename, ct.contactname</span>
+<span id="cb20-12"><a href="contact-and-individual-related-tables.html#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> db.databasename, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">DESC</span>;</span></code></pre></div>
 <div class="knitsql-table">
 <table>
 <caption><span id="tab:topcontribdb">Table 7.1: </span>Displaying records 1 - 10</caption>
@@ -481,7 +498,7 @@ div.csl-indent {
 <tr class="even">
 <td align="left">Tinner, Willy</td>
 <td align="left">Alpine Palynological Database</td>
-<td align="right">123</td>
+<td align="right">153</td>
 </tr>
 <tr class="odd">
 <td align="left">Delorme, Denis</td>
@@ -489,7 +506,7 @@ div.csl-indent {
 <td align="right">9024</td>
 </tr>
 <tr class="even">
-<td align="left">Zhao, Yan</td>
+<td align="left">Wang, Ninglian</td>
 <td align="left">Chinese Pollen Database</td>
 <td align="right">3</td>
 </tr>
@@ -530,8 +547,8 @@ through Foreign Keys in the following tables:
 * <a href="#PublicationAuthors"><code>PublicationAuthors</code></a>,
 * <a href="sample-related-tables-1.html#SampleAnalysts"><code>SampleAnalysts</code></a>, and
 * <a href="site-related-tables-1.html#SiteImages"><code>SiteImages</code></a> tables.</p>
-<div id="htmlwidget-b0967fe0069a31344989" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b0967fe0069a31344989">{"x":{"filter":"none","vertical":false,"data":[["contactid","aliasid","contactname","contactstatusid","familyname","leadinginitials","givennames","suffix","title","phone","fax","email","url","address","notes","recdatecreated","recdatemodified"],["integer","integer","character varying(80)","integer","character varying(80)","character varying(16)","character varying(80)","character varying(16)","character varying(16)","character varying(64)","character varying(64)","character varying(64)","character varying(255)","text","text","timestamp(0) without time zone","timestamp(0) without time zone"],["contacts_pkey","","","fk_contacts_contactstatuses","","","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-284734471491f4ef87aa" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-284734471491f4ef87aa">{"x":{"filter":"none","vertical":false,"data":[["contactid","aliasid","contactname","contactstatusid","familyname","leadinginitials","givennames","suffix","title","phone","fax","email","url","address","notes","recdatecreated","recdatemodified"],["integer","integer","character varying(80)","integer","character varying(80)","character varying(16)","character varying(80)","character varying(16)","character varying(16)","character varying(64)","character varying(64)","character varying(64)","character varying(255)","text","text","timestamp(0) without time zone","timestamp(0) without time zone"],["contacts_pkey","","","fk_contacts_contactstatuses","","","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>contactid (primary key)</code></strong>: An arbitrary <code>contactid</code> number.</li>
 <li><strong><code>aliasid (foreign key)</code></strong>: The <code>contactid</code> of a person’s current name. If the <code>aliasid</code> is different from the <code>contactid</code>, the <code>contactid</code> refers to the person’s former name. For example, if J. L. Bouvier became J. B. Kennedy, the <code>contactid</code> for J. B. Kennedy is the <code>aliasid</code> for J. L. Bouvier.</li>
@@ -554,8 +571,8 @@ through Foreign Keys in the following tables:
 <h2><span class="header-section-number">7.3</span> <code>contactstatuses</code><a href="contact-and-individual-related-tables.html#ContactStatuses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lookup table of Contact Statuses. Table is referenced by the
 <a href="contact-and-individual-related-tables.html#Contacts"><code>contacts</code></a> table.</p>
-<div id="htmlwidget-3ffe340c3b52648498cb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3ffe340c3b52648498cb">{"x":{"filter":"none","vertical":false,"data":[["contactstatusid","contactstatus","statusdescription","recdatecreated","recdatemodified"],["integer","character varying(16)","character varying(255)","timestamp(0) without time zone","timestamp(0) without time zone"],["contactstatuses_pkey","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-aee45547ea0768b2ee37" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aee45547ea0768b2ee37">{"x":{"filter":"none","vertical":false,"data":[["contactstatusid","contactstatus","statusdescription","recdatecreated","recdatemodified"],["integer","character varying(16)","character varying(255)","timestamp(0) without time zone","timestamp(0) without time zone"],["contactstatuses_pkey","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>column<\/th>\n      <th>data_type<\/th>\n      <th>constraint<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"ltip","columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><strong><code>contactstatusid (primary key)</code></strong>: An arbitrary Contact Status identification number.</li>
 <li><strong><code>contactstatus</code></strong>: Status of person, organization, or project.</li>
