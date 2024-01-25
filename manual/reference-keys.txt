@@ -79,6 +79,8 @@ taxa-and-ecological-groups
 chronology
 sediment-and-depositional-environments
 date-fields
+anatomy-of-a-neotoma-dataset
+the-minimum-object
 neotoma-tables
 site-related-tables
 dataset-collection-related-tables
@@ -214,4 +216,16 @@ RelativeAgeUnits
 RelativeChronology
 Tephrachronology
 Tephras
+views-and-materialized-views
+about-views-briefly
+neotoma-views
+schema-ap
+schema-da
+schema-db
+schema-ndb
+schema-ti
+schema-ts
+neotoma-materialized-views
+schema-ap-1
+geopolnames
 references

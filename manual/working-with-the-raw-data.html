@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Working with the Raw Data | Neotoma Paleoecology Manual v2.0</title>
   <meta name="description" content="The manual for the Neotoma Paleoecology Database, including SQL and R code examples." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Working with the Raw Data | Neotoma Paleoecology Manual v2.0" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Goring" />
 
 
-<meta name="date" content="2023-11-07" />
+<meta name="date" content="2024-01-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,8 +31,8 @@
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="sql-quickly.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link rel="next" href="using-r.html"/>
+<script src="libs/jquery-3.6.1/jquery-3.6.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,7 +52,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
@@ -60,7 +60,7 @@
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-1.13.0/leaflet-providers_1.13.0.js"></script>
 <script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
 <link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
@@ -68,10 +68,10 @@
 <script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
 <script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.26/datatables.js"></script>
-<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.29/datatables.js"></script>
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
@@ -142,6 +142,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -194,231 +198,262 @@ div.csl-indent {
 <li class="chapter" data-level="3" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html"><i class="fa fa-check"></i><b>3</b> Working with the Raw Data</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-the-database-locally"><i class="fa fa-check"></i><b>3.1</b> Using the Database Locally</a></li>
-<li class="chapter" data-level="3.2" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#using-r"><i class="fa fa-check"></i><b>3.2</b> Using R</a>
+</ul></li>
+<li class="chapter" data-level="4" data-path="using-r.html"><a href="using-r.html"><i class="fa fa-check"></i><b>4</b> Using R</a></li>
+<li class="chapter" data-level="5" data-path="searching-for-sites.html"><a href="searching-for-sites.html"><i class="fa fa-check"></i><b>5</b> Searching for Sites</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="working-with-the-raw-data.html"><a href="working-with-the-raw-data.html#searching-for-sites"><i class="fa fa-check"></i><b>3.2.1</b> Searching for Sites</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>4</b> SQL Quickly</a>
+<li class="chapter" data-level="5.1" data-path="searching-for-sites.html"><a href="searching-for-sites.html#site-names-sitenamelago"><i class="fa fa-check"></i><b>5.1</b> Site names: <code>sitename="%Lago%"</code></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>4.1</b> SQL Example</a>
+<li class="chapter" data-level="5.1.1" data-path="searching-for-sites.html"><a href="searching-for-sites.html#code"><i class="fa fa-check"></i><b>5.1.1</b> Code</a></li>
+<li class="chapter" data-level="5.1.2" data-path="searching-for-sites.html"><a href="searching-for-sites.html#result"><i class="fa fa-check"></i><b>5.1.2</b> 3.1.1.2. Result</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="searching-for-sites.html"><a href="searching-for-sites.html#location-locc"><i class="fa fa-check"></i><b>5.2</b> 3.1.2. Location: <code>loc=c()</code></a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-query"><i class="fa fa-check"></i><b>4.1.1</b> SQL Query</a></li>
+<li class="chapter" data-level="5.2.1" data-path="searching-for-sites.html"><a href="searching-for-sites.html#code-1"><i class="fa fa-check"></i><b>5.2.1</b> 3.1.2.1. Code</a></li>
+<li class="chapter" data-level="5.2.2" data-path="searching-for-sites.html"><a href="searching-for-sites.html#result-1"><i class="fa fa-check"></i><b>5.2.2</b> 3.1.2.2. Result</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>4.2</b> Table Keys</a></li>
-<li class="chapter" data-level="4.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>4.3</b> Data Types</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sql-quickly.html"><a href="sql-quickly.html"><i class="fa fa-check"></i><b>6</b> SQL Quickly</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>4.3.1</b> Query</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>5</b> Database Design Concepts</a>
+<li class="chapter" data-level="6.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-example"><i class="fa fa-check"></i><b>6.1</b> SQL Example</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sitedesign"><i class="fa fa-check"></i><b>5.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
-<li class="chapter" data-level="5.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>5.2</b> Taxa and Variables</a></li>
-<li class="chapter" data-level="5.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>5.3</b> Taxonomy and Synonymy</a></li>
-<li class="chapter" data-level="5.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>5.4</b> Taxa and Ecological Groups</a></li>
-<li class="chapter" data-level="5.5" data-path="database-design-concepts.html"><a href="database-design-concepts.html#chronology"><i class="fa fa-check"></i><b>5.5</b> Chronology</a></li>
-<li class="chapter" data-level="5.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>5.6</b> Sediment and Depositional Environments</a></li>
-<li class="chapter" data-level="5.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>5.7</b> Date Fields</a></li>
+<li class="chapter" data-level="6.1.1" data-path="sql-quickly.html"><a href="sql-quickly.html#sql-query"><i class="fa fa-check"></i><b>6.1.1</b> SQL Query</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>6</b> Neotoma Tables</a>
+<li class="chapter" data-level="6.2" data-path="sql-quickly.html"><a href="sql-quickly.html#table-keys"><i class="fa fa-check"></i><b>6.2</b> Table Keys</a></li>
+<li class="chapter" data-level="6.3" data-path="sql-quickly.html"><a href="sql-quickly.html#data-types"><i class="fa fa-check"></i><b>6.3</b> Data Types</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>6.1</b> Site Related Tables</a></li>
-<li class="chapter" data-level="6.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>6.2</b> Dataset &amp; Collection Related Tables</a></li>
-<li class="chapter" data-level="6.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>6.3</b> Chronology &amp; Age Related Tables</a></li>
-<li class="chapter" data-level="6.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>6.4</b> Sample Related Tables</a></li>
-<li class="chapter" data-level="6.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#specimen-related-tables"><i class="fa fa-check"></i><b>6.5</b> Specimen Related Tables</a></li>
-<li class="chapter" data-level="6.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>6.6</b> Taxonomy Related Tables</a></li>
-<li class="chapter" data-level="6.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>6.7</b> Individual Related Tables</a></li>
-<li class="chapter" data-level="6.8" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>6.8</b> Publication Related Tables</a></li>
-<li class="chapter" data-level="6.9" data-path="neotoma-tables.html"><a href="neotoma-tables.html#supporting-resources"><i class="fa fa-check"></i><b>6.9</b> Supporting Resources</a></li>
-<li class="chapter" data-level="6.10" data-path="neotoma-tables.html"><a href="neotoma-tables.html#isotope-data-management"><i class="fa fa-check"></i><b>6.10</b> Isotope Data Management</a></li>
+<li class="chapter" data-level="6.3.1" data-path="sql-quickly.html"><a href="sql-quickly.html#query"><i class="fa fa-check"></i><b>6.3.1</b> Query</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>7</b> Contact and Individual Related Tables</a>
+</ul></li>
+<li class="chapter" data-level="7" data-path="database-design-concepts.html"><a href="database-design-concepts.html"><i class="fa fa-check"></i><b>7</b> Database Design Concepts</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>7.1</b> <code>collectors</code></a>
+<li class="chapter" data-level="7.1" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sitedesign"><i class="fa fa-check"></i><b>7.1</b> Sites, Collection Units, Analysis Units, Samples, and Datasets</a></li>
+<li class="chapter" data-level="7.2" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-variables"><i class="fa fa-check"></i><b>7.2</b> Taxa and Variables</a></li>
+<li class="chapter" data-level="7.3" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxonomy-and-synonymy"><i class="fa fa-check"></i><b>7.3</b> Taxonomy and Synonymy</a></li>
+<li class="chapter" data-level="7.4" data-path="database-design-concepts.html"><a href="database-design-concepts.html#taxa-and-ecological-groups"><i class="fa fa-check"></i><b>7.4</b> Taxa and Ecological Groups</a></li>
+<li class="chapter" data-level="7.5" data-path="database-design-concepts.html"><a href="database-design-concepts.html#chronology"><i class="fa fa-check"></i><b>7.5</b> Chronology</a></li>
+<li class="chapter" data-level="7.6" data-path="database-design-concepts.html"><a href="database-design-concepts.html#sediment-and-depositional-environments"><i class="fa fa-check"></i><b>7.6</b> Sediment and Depositional Environments</a></li>
+<li class="chapter" data-level="7.7" data-path="database-design-concepts.html"><a href="database-design-concepts.html#date-fields"><i class="fa fa-check"></i><b>7.7</b> Date Fields</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="anatomy-of-a-neotoma-dataset.html"><a href="anatomy-of-a-neotoma-dataset.html"><i class="fa fa-check"></i><b>8</b> Anatomy of a Neotoma Dataset</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#sql-example-1"><i class="fa fa-check"></i><b>7.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="8.1" data-path="anatomy-of-a-neotoma-dataset.html"><a href="anatomy-of-a-neotoma-dataset.html#the-minimum-object"><i class="fa fa-check"></i><b>8.1</b> The Minimum Object</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Contacts"><i class="fa fa-check"></i><b>7.2</b> <code>contacts</code></a></li>
-<li class="chapter" data-level="7.3" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#ContactStatuses"><i class="fa fa-check"></i><b>7.3</b> <code>contactstatuses</code></a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>8</b> Dataset &amp; Collection Related Tables</a>
+<li class="chapter" data-level="9" data-path="neotoma-tables.html"><a href="neotoma-tables.html"><i class="fa fa-check"></i><b>9</b> Neotoma Tables</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#accumulationrates"><i class="fa fa-check"></i><b>8.1</b> <code>accumulationrates</code></a></li>
-<li class="chapter" data-level="8.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>8.2</b> <code>aggregatedatasets</code></a></li>
-<li class="chapter" data-level="8.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>8.3</b> <code>aggregateordertypes</code></a></li>
-<li class="chapter" data-level="8.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>8.4</b> <code>collectiontypes</code></a></li>
-<li class="chapter" data-level="8.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>8.5</b> <code>collectionunits</code></a></li>
-<li class="chapter" data-level="8.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#contextsdatasettypes"><i class="fa fa-check"></i><b>8.6</b> <code>contextsdatasettypes</code></a></li>
-<li class="chapter" data-level="8.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdatabases"><i class="fa fa-check"></i><b>8.7</b> <code>datasetdatabases</code></a></li>
-<li class="chapter" data-level="8.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdoi"><i class="fa fa-check"></i><b>8.8</b> <code>datasetdoi</code></a></li>
-<li class="chapter" data-level="8.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>8.9</b> <code>datasetpis</code></a></li>
-<li class="chapter" data-level="8.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>8.10</b> <code>datasetpublications</code></a></li>
-<li class="chapter" data-level="8.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>8.11</b> <code>datasets</code></a>
+<li class="chapter" data-level="9.1" data-path="neotoma-tables.html"><a href="neotoma-tables.html#site-related-tables"><i class="fa fa-check"></i><b>9.1</b> Site Related Tables</a></li>
+<li class="chapter" data-level="9.2" data-path="neotoma-tables.html"><a href="neotoma-tables.html#dataset-collection-related-tables"><i class="fa fa-check"></i><b>9.2</b> Dataset &amp; Collection Related Tables</a></li>
+<li class="chapter" data-level="9.3" data-path="neotoma-tables.html"><a href="neotoma-tables.html#chronology-age-related-tables"><i class="fa fa-check"></i><b>9.3</b> Chronology &amp; Age Related Tables</a></li>
+<li class="chapter" data-level="9.4" data-path="neotoma-tables.html"><a href="neotoma-tables.html#sample-related-tables"><i class="fa fa-check"></i><b>9.4</b> Sample Related Tables</a></li>
+<li class="chapter" data-level="9.5" data-path="neotoma-tables.html"><a href="neotoma-tables.html#specimen-related-tables"><i class="fa fa-check"></i><b>9.5</b> Specimen Related Tables</a></li>
+<li class="chapter" data-level="9.6" data-path="neotoma-tables.html"><a href="neotoma-tables.html#taxonomy-related-tables"><i class="fa fa-check"></i><b>9.6</b> Taxonomy Related Tables</a></li>
+<li class="chapter" data-level="9.7" data-path="neotoma-tables.html"><a href="neotoma-tables.html#individual-related-tables"><i class="fa fa-check"></i><b>9.7</b> Individual Related Tables</a></li>
+<li class="chapter" data-level="9.8" data-path="neotoma-tables.html"><a href="neotoma-tables.html#publication-related-tables"><i class="fa fa-check"></i><b>9.8</b> Publication Related Tables</a></li>
+<li class="chapter" data-level="9.9" data-path="neotoma-tables.html"><a href="neotoma-tables.html#supporting-resources"><i class="fa fa-check"></i><b>9.9</b> Supporting Resources</a></li>
+<li class="chapter" data-level="9.10" data-path="neotoma-tables.html"><a href="neotoma-tables.html#isotope-data-management"><i class="fa fa-check"></i><b>9.10</b> Isotope Data Management</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html"><i class="fa fa-check"></i><b>10</b> Contact and Individual Related Tables</a>
 <ul>
-<li class="chapter" data-level="8.11.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>8.11.1</b> SQL Example</a></li>
-<li class="chapter" data-level="8.11.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>8.11.2</b> SQL Example</a></li>
-</ul></li>
-<li class="chapter" data-level="8.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>8.12</b> <code>datasetsubmissions</code></a></li>
-<li class="chapter" data-level="8.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>8.13</b> <code>datasetsubmissiontypes</code></a>
+<li class="chapter" data-level="10.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Collectors"><i class="fa fa-check"></i><b>10.1</b> <code>collectors</code></a>
 <ul>
-<li class="chapter" data-level="8.13.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>8.13.1</b> SQL Example</a></li>
+<li class="chapter" data-level="10.1.1" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#sql-example-1"><i class="fa fa-check"></i><b>10.1.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="8.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxagrouptypes"><i class="fa fa-check"></i><b>8.14</b> <code>datasettaxagrouptypes</code></a></li>
-<li class="chapter" data-level="8.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxonnotes"><i class="fa fa-check"></i><b>8.15</b> <code>datasettaxonnotes</code></a></li>
-<li class="chapter" data-level="8.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>8.16</b> <code>datasettypes</code></a></li>
-<li class="chapter" data-level="8.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetvariables"><i class="fa fa-check"></i><b>8.17</b> <code>datasetvariables</code></a></li>
-<li class="chapter" data-level="8.18" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>8.18</b> <code>depenvttypes</code></a>
+<li class="chapter" data-level="10.2" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#Contacts"><i class="fa fa-check"></i><b>10.2</b> <code>contacts</code></a></li>
+<li class="chapter" data-level="10.3" data-path="contact-and-individual-related-tables.html"><a href="contact-and-individual-related-tables.html#ContactStatuses"><i class="fa fa-check"></i><b>10.3</b> <code>contactstatuses</code></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Dataset &amp; Collection Related Tables</a>
 <ul>
-<li class="chapter" data-level="8.18.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>8.18.1</b> SQL Example</a></li>
-<li class="chapter" data-level="8.18.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>8.18.2</b> SQL Example</a></li>
-<li class="chapter" data-level="8.18.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>8.18.3</b> SQL Example</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>9</b> Publication Related Tables</a>
+<li class="chapter" data-level="11.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#accumulationrates"><i class="fa fa-check"></i><b>11.1</b> <code>accumulationrates</code></a></li>
+<li class="chapter" data-level="11.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateDatasets"><i class="fa fa-check"></i><b>11.2</b> <code>aggregatedatasets</code></a></li>
+<li class="chapter" data-level="11.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#AggregateOrderTypes"><i class="fa fa-check"></i><b>11.3</b> <code>aggregateordertypes</code></a></li>
+<li class="chapter" data-level="11.4" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionTypes"><i class="fa fa-check"></i><b>11.4</b> <code>collectiontypes</code></a></li>
+<li class="chapter" data-level="11.5" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#CollectionUnits"><i class="fa fa-check"></i><b>11.5</b> <code>collectionunits</code></a></li>
+<li class="chapter" data-level="11.6" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#contextsdatasettypes"><i class="fa fa-check"></i><b>11.6</b> <code>contextsdatasettypes</code></a></li>
+<li class="chapter" data-level="11.7" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdatabases"><i class="fa fa-check"></i><b>11.7</b> <code>datasetdatabases</code></a></li>
+<li class="chapter" data-level="11.8" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetdoi"><i class="fa fa-check"></i><b>11.8</b> <code>datasetdoi</code></a></li>
+<li class="chapter" data-level="11.9" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPIs"><i class="fa fa-check"></i><b>11.9</b> <code>datasetpis</code></a></li>
+<li class="chapter" data-level="11.10" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetPublications"><i class="fa fa-check"></i><b>11.10</b> <code>datasetpublications</code></a></li>
+<li class="chapter" data-level="11.11" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#Datasets"><i class="fa fa-check"></i><b>11.11</b> <code>datasets</code></a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>9.1</b> <code>publicationauthors</code></a>
+<li class="chapter" data-level="11.11.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-2"><i class="fa fa-check"></i><b>11.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.11.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-3"><i class="fa fa-check"></i><b>11.11.2</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="11.12" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissions"><i class="fa fa-check"></i><b>11.12</b> <code>datasetsubmissions</code></a></li>
+<li class="chapter" data-level="11.13" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetSubmissionTypes"><i class="fa fa-check"></i><b>11.13</b> <code>datasetsubmissiontypes</code></a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>9.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.13.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-4"><i class="fa fa-check"></i><b>11.13.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationeditors"><i class="fa fa-check"></i><b>9.2</b> <code>publicationeditors</code></a></li>
-<li class="chapter" data-level="9.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#Publications"><i class="fa fa-check"></i><b>9.3</b> <code>publications</code></a></li>
-<li class="chapter" data-level="9.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#PublicationTypes"><i class="fa fa-check"></i><b>9.4</b> <code>publicationtypes</code></a>
+<li class="chapter" data-level="11.14" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxagrouptypes"><i class="fa fa-check"></i><b>11.14</b> <code>datasettaxagrouptypes</code></a></li>
+<li class="chapter" data-level="11.15" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasettaxonnotes"><i class="fa fa-check"></i><b>11.15</b> <code>datasettaxonnotes</code></a></li>
+<li class="chapter" data-level="11.16" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DatasetTypes"><i class="fa fa-check"></i><b>11.16</b> <code>datasettypes</code></a></li>
+<li class="chapter" data-level="11.17" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#datasetvariables"><i class="fa fa-check"></i><b>11.17</b> <code>datasetvariables</code></a></li>
+<li class="chapter" data-level="11.18" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#DepEnvtTypes"><i class="fa fa-check"></i><b>11.18</b> <code>depenvttypes</code></a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#legacy"><i class="fa fa-check"></i><b>9.4.1</b> Legacy</a></li>
-<li class="chapter" data-level="9.4.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#journal-article"><i class="fa fa-check"></i><b>9.4.2</b> Journal Article</a></li>
-<li class="chapter" data-level="9.4.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#book-chapter"><i class="fa fa-check"></i><b>9.4.3</b> Book Chapter</a></li>
-<li class="chapter" data-level="9.4.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-book"><i class="fa fa-check"></i><b>9.4.4</b> Authored Book</a></li>
-<li class="chapter" data-level="9.4.5" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-book"><i class="fa fa-check"></i><b>9.4.5</b> Edited Book</a></li>
-<li class="chapter" data-level="9.4.6" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#masters-thesis"><i class="fa fa-check"></i><b>9.4.6</b> Master’s Thesis</a></li>
-<li class="chapter" data-level="9.4.7" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#doctoral-dissertation"><i class="fa fa-check"></i><b>9.4.7</b> Doctoral Dissertation</a></li>
-<li class="chapter" data-level="9.4.8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-report"><i class="fa fa-check"></i><b>9.4.8</b> Authored Report</a></li>
-<li class="chapter" data-level="9.4.9" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-report"><i class="fa fa-check"></i><b>9.4.9</b> Edited Report</a></li>
-<li class="chapter" data-level="9.4.10" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-authored-publication"><i class="fa fa-check"></i><b>9.4.10</b> Other Authored Publication</a></li>
-<li class="chapter" data-level="9.4.11" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-edited-publication"><i class="fa fa-check"></i><b>9.4.11</b> Other Edited Publication</a></li>
+<li class="chapter" data-level="11.18.1" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-5"><i class="fa fa-check"></i><b>11.18.1</b> SQL Example</a></li>
+<li class="chapter" data-level="11.18.2" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-6"><i class="fa fa-check"></i><b>11.18.2</b> SQL Example</a></li>
+<li class="chapter" data-level="11.18.3" data-path="dataset-collection-related-tables-1.html"><a href="dataset-collection-related-tables-1.html#sql-example-7"><i class="fa fa-check"></i><b>11.18.3</b> SQL Example</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>10</b> Sample Related Tables</a>
+<li class="chapter" data-level="12" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Publication Related Tables</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>10.1</b> <code>aggregatesamples</code></a></li>
-<li class="chapter" data-level="10.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>10.2</b> <code>analysisunits</code></a></li>
-<li class="chapter" data-level="10.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>10.3</b> <code>data</code></a>
+<li class="chapter" data-level="12.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationauthors"><i class="fa fa-check"></i><b>12.1</b> <code>publicationauthors</code></a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>10.3.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.1.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#sql-example-8"><i class="fa fa-check"></i><b>12.1.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>10.4</b> <code>depagents</code></a></li>
-<li class="chapter" data-level="10.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>10.5</b> <code>depagenttypes</code></a></li>
-<li class="chapter" data-level="10.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>10.6</b> <code>faciestypes</code></a></li>
-<li class="chapter" data-level="10.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>10.7</b> <code>keywords</code></a></li>
-<li class="chapter" data-level="10.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>10.8</b> <code>lithology</code></a></li>
-<li class="chapter" data-level="10.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>10.9</b> <code>sampleages</code></a>
+<li class="chapter" data-level="12.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#publicationeditors"><i class="fa fa-check"></i><b>12.2</b> <code>publicationeditors</code></a></li>
+<li class="chapter" data-level="12.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#Publications"><i class="fa fa-check"></i><b>12.3</b> <code>publications</code></a></li>
+<li class="chapter" data-level="12.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#PublicationTypes"><i class="fa fa-check"></i><b>12.4</b> <code>publicationtypes</code></a>
 <ul>
-<li class="chapter" data-level="10.9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>10.9.1</b> SQL Example</a></li>
+<li class="chapter" data-level="12.4.1" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#legacy"><i class="fa fa-check"></i><b>12.4.1</b> Legacy</a></li>
+<li class="chapter" data-level="12.4.2" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#journal-article"><i class="fa fa-check"></i><b>12.4.2</b> Journal Article</a></li>
+<li class="chapter" data-level="12.4.3" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#book-chapter"><i class="fa fa-check"></i><b>12.4.3</b> Book Chapter</a></li>
+<li class="chapter" data-level="12.4.4" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-book"><i class="fa fa-check"></i><b>12.4.4</b> Authored Book</a></li>
+<li class="chapter" data-level="12.4.5" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-book"><i class="fa fa-check"></i><b>12.4.5</b> Edited Book</a></li>
+<li class="chapter" data-level="12.4.6" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#masters-thesis"><i class="fa fa-check"></i><b>12.4.6</b> Master’s Thesis</a></li>
+<li class="chapter" data-level="12.4.7" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#doctoral-dissertation"><i class="fa fa-check"></i><b>12.4.7</b> Doctoral Dissertation</a></li>
+<li class="chapter" data-level="12.4.8" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#authored-report"><i class="fa fa-check"></i><b>12.4.8</b> Authored Report</a></li>
+<li class="chapter" data-level="12.4.9" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#edited-report"><i class="fa fa-check"></i><b>12.4.9</b> Edited Report</a></li>
+<li class="chapter" data-level="12.4.10" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-authored-publication"><i class="fa fa-check"></i><b>12.4.10</b> Other Authored Publication</a></li>
+<li class="chapter" data-level="12.4.11" data-path="publication-related-tables-1.html"><a href="publication-related-tables-1.html#other-edited-publication"><i class="fa fa-check"></i><b>12.4.11</b> Other Edited Publication</a></li>
 </ul></li>
-<li class="chapter" data-level="10.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>10.10</b> <code>sampleanalysts</code></a></li>
-<li class="chapter" data-level="10.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>10.11</b> <code>samplekeywords</code></a>
+</ul></li>
+<li class="chapter" data-level="13" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html"><i class="fa fa-check"></i><b>13</b> Sample Related Tables</a>
 <ul>
-<li class="chapter" data-level="10.11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>10.11.1</b> SQL Example</a></li>
-</ul></li>
-<li class="chapter" data-level="10.12" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>10.12</b> <code>samples</code></a>
+<li class="chapter" data-level="13.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AggregateSamples"><i class="fa fa-check"></i><b>13.1</b> <code>aggregatesamples</code></a></li>
+<li class="chapter" data-level="13.2" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#AnalysisUnits"><i class="fa fa-check"></i><b>13.2</b> <code>analysisunits</code></a></li>
+<li class="chapter" data-level="13.3" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Data"><i class="fa fa-check"></i><b>13.3</b> <code>data</code></a>
 <ul>
-<li class="chapter" data-level="10.12.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>10.12.1</b> SQL Example</a></li>
+<li class="chapter" data-level="13.3.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-9"><i class="fa fa-check"></i><b>13.3.1</b> SQL Example</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>11</b> Site Related Tables</a>
+<li class="chapter" data-level="13.4" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgents"><i class="fa fa-check"></i><b>13.4</b> <code>depagents</code></a></li>
+<li class="chapter" data-level="13.5" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#DepAgentTypes"><i class="fa fa-check"></i><b>13.5</b> <code>depagenttypes</code></a></li>
+<li class="chapter" data-level="13.6" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#FaciesTypes"><i class="fa fa-check"></i><b>13.6</b> <code>faciestypes</code></a></li>
+<li class="chapter" data-level="13.7" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Keywords"><i class="fa fa-check"></i><b>13.7</b> <code>keywords</code></a></li>
+<li class="chapter" data-level="13.8" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Lithology"><i class="fa fa-check"></i><b>13.8</b> <code>lithology</code></a></li>
+<li class="chapter" data-level="13.9" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAges"><i class="fa fa-check"></i><b>13.9</b> <code>sampleages</code></a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>11.1</b> <code>geopoliticalunits</code></a>
+<li class="chapter" data-level="13.9.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-10"><i class="fa fa-check"></i><b>13.9.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="13.10" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleAnalysts"><i class="fa fa-check"></i><b>13.10</b> <code>sampleanalysts</code></a></li>
+<li class="chapter" data-level="13.11" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#SampleKeywords"><i class="fa fa-check"></i><b>13.11</b> <code>samplekeywords</code></a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>11.1.1</b> SQL Example</a></li>
-<li class="chapter" data-level="11.1.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>11.1.2</b> SQL Example</a></li>
+<li class="chapter" data-level="13.11.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-11"><i class="fa fa-check"></i><b>13.11.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparameters"><i class="fa fa-check"></i><b>11.2</b> <code>lakeparameters</code></a>
+<li class="chapter" data-level="13.12" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#Samples"><i class="fa fa-check"></i><b>13.12</b> <code>samples</code></a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>11.2.1</b> SQL Example</a></li>
+<li class="chapter" data-level="13.12.1" data-path="sample-related-tables-1.html"><a href="sample-related-tables-1.html#sql-example-12"><i class="fa fa-check"></i><b>13.12.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparametertypes"><i class="fa fa-check"></i><b>11.3</b> <code>lakeparametertypes</code></a>
+</ul></li>
+<li class="chapter" data-level="14" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html"><i class="fa fa-check"></i><b>14</b> Site Related Tables</a>
 <ul>
-<li class="chapter" data-level="11.3.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>11.3.1</b> SQL Example</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>11.4</b> <code>sitegeopolitical</code></a>
+<li class="chapter" data-level="14.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#GeoPoliticalUnits"><i class="fa fa-check"></i><b>14.1</b> <code>geopoliticalunits</code></a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>11.4.1</b> SQL Example</a></li>
+<li class="chapter" data-level="14.1.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-13"><i class="fa fa-check"></i><b>14.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="14.1.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-14"><i class="fa fa-check"></i><b>14.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>11.5</b> <code>siteimages</code></a></li>
-<li class="chapter" data-level="11.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>11.6</b> <code>sites</code></a>
+<li class="chapter" data-level="14.2" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparameters"><i class="fa fa-check"></i><b>14.2</b> <code>lakeparameters</code></a>
 <ul>
-<li class="chapter" data-level="11.6.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>11.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="14.2.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-15"><i class="fa fa-check"></i><b>14.2.1</b> SQL Example</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>12</b> Taxonomy Related Tables</a>
+<li class="chapter" data-level="14.3" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#lakeparametertypes"><i class="fa fa-check"></i><b>14.3</b> <code>lakeparametertypes</code></a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>12.1</b> <code>ecolgroups</code></a>
+<li class="chapter" data-level="14.3.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-16"><i class="fa fa-check"></i><b>14.3.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteGeoPolitical"><i class="fa fa-check"></i><b>14.4</b> <code>sitegeopolitical</code></a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>12.1.1</b> SQL Example</a></li>
-<li class="chapter" data-level="12.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>12.1.2</b> SQL Example</a></li>
+<li class="chapter" data-level="14.4.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-17"><i class="fa fa-check"></i><b>14.4.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>12.2</b> <code>ecolgrouptypes</code></a></li>
-<li class="chapter" data-level="12.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>12.3</b> <code>ecolsettypes</code></a></li>
-<li class="chapter" data-level="12.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>12.4</b> <code>synonyms</code></a></li>
-<li class="chapter" data-level="12.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>12.5</b> <code>synonymtypes</code></a>
+<li class="chapter" data-level="14.5" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#SiteImages"><i class="fa fa-check"></i><b>14.5</b> <code>siteimages</code></a></li>
+<li class="chapter" data-level="14.6" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#Sites"><i class="fa fa-check"></i><b>14.6</b> <code>sites</code></a>
 <ul>
-<li class="chapter" data-level="12.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>12.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="14.6.1" data-path="site-related-tables-1.html"><a href="site-related-tables-1.html#sql-example-18"><i class="fa fa-check"></i><b>14.6.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>12.6</b> <code>taxa</code></a></li>
-<li class="chapter" data-level="12.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>12.7</b> <code>taxagrouptypes</code></a></li>
-<li class="chapter" data-level="12.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>12.8</b> <code>variables</code></a>
+</ul></li>
+<li class="chapter" data-level="15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html"><i class="fa fa-check"></i><b>15</b> Taxonomy Related Tables</a>
 <ul>
-<li class="chapter" data-level="12.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>12.8.1</b> SQL Example</a></li>
-<li class="chapter" data-level="12.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>12.8.2</b> SQL Example</a></li>
-<li class="chapter" data-level="12.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>12.8.3</b> SQL Example</a></li>
-</ul></li>
-<li class="chapter" data-level="12.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>12.9</b> <code>variablecontexts</code></a></li>
-<li class="chapter" data-level="12.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>12.10</b> <code>variableelements</code></a></li>
-<li class="chapter" data-level="12.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>12.11</b> <code>variablemodifications</code></a></li>
-<li class="chapter" data-level="12.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>12.12</b> <code>variableunits</code></a></li>
-<li class="chapter" data-level="12.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>12.13</b> <code>repositoryinstitutions</code></a></li>
-<li class="chapter" data-level="12.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>12.14</b> <code>repositoryspecimens</code></a>
+<li class="chapter" data-level="15.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#ecolgroups"><i class="fa fa-check"></i><b>15.1</b> <code>ecolgroups</code></a>
 <ul>
-<li class="chapter" data-level="12.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>12.14.1</b> SQL Example</a></li>
+<li class="chapter" data-level="15.1.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-19"><i class="fa fa-check"></i><b>15.1.1</b> SQL Example</a></li>
+<li class="chapter" data-level="15.1.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-20"><i class="fa fa-check"></i><b>15.1.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="12.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>12.15</b> <code>specimendates</code></a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>13</b> Chronology &amp; Age Related Tables</a>
+<li class="chapter" data-level="15.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolGroupTypes"><i class="fa fa-check"></i><b>15.2</b> <code>ecolgrouptypes</code></a></li>
+<li class="chapter" data-level="15.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#EcolSetTypes"><i class="fa fa-check"></i><b>15.3</b> <code>ecolsettypes</code></a></li>
+<li class="chapter" data-level="15.4" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Synonyms"><i class="fa fa-check"></i><b>15.4</b> <code>synonyms</code></a></li>
+<li class="chapter" data-level="15.5" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SynonymTypes"><i class="fa fa-check"></i><b>15.5</b> <code>synonymtypes</code></a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>13.1</b> <code>agetypes</code></a></li>
-<li class="chapter" data-level="13.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>13.2</b> <code>aggregatechronologies</code></a></li>
-<li class="chapter" data-level="13.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>13.3</b> <code>chroncontrols</code></a></li>
-<li class="chapter" data-level="13.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>13.4</b> <code>chroncontroltypes</code></a></li>
-<li class="chapter" data-level="13.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>13.5</b> <code>chronologies</code></a>
+<li class="chapter" data-level="15.5.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-21"><i class="fa fa-check"></i><b>15.5.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="15.6" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Taxa"><i class="fa fa-check"></i><b>15.6</b> <code>taxa</code></a></li>
+<li class="chapter" data-level="15.7" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#TaxaGroupTypes"><i class="fa fa-check"></i><b>15.7</b> <code>taxagrouptypes</code></a></li>
+<li class="chapter" data-level="15.8" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#Variables"><i class="fa fa-check"></i><b>15.8</b> <code>variables</code></a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>13.5.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>13.5.2</b> SQL Example</a></li>
+<li class="chapter" data-level="15.8.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-22"><i class="fa fa-check"></i><b>15.8.1</b> SQL Example</a></li>
+<li class="chapter" data-level="15.8.2" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-23"><i class="fa fa-check"></i><b>15.8.2</b> SQL Example</a></li>
+<li class="chapter" data-level="15.8.3" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-24"><i class="fa fa-check"></i><b>15.8.3</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>13.6</b> <code>aggregatesampleages</code></a>
+<li class="chapter" data-level="15.9" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableContexts"><i class="fa fa-check"></i><b>15.9</b> <code>variablecontexts</code></a></li>
+<li class="chapter" data-level="15.10" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableElements"><i class="fa fa-check"></i><b>15.10</b> <code>variableelements</code></a></li>
+<li class="chapter" data-level="15.11" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableModifications"><i class="fa fa-check"></i><b>15.11</b> <code>variablemodifications</code></a></li>
+<li class="chapter" data-level="15.12" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#VariableUnits"><i class="fa fa-check"></i><b>15.12</b> <code>variableunits</code></a></li>
+<li class="chapter" data-level="15.13" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositoryInstitutions"><i class="fa fa-check"></i><b>15.13</b> <code>repositoryinstitutions</code></a></li>
+<li class="chapter" data-level="15.14" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#RepositorySpecimens"><i class="fa fa-check"></i><b>15.14</b> <code>repositoryspecimens</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-28"><i class="fa fa-check"></i><b>13.6.1</b> SQL Example</a></li>
-<li class="chapter" data-level="13.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-29"><i class="fa fa-check"></i><b>13.6.2</b> SQL Example</a></li>
+<li class="chapter" data-level="15.14.1" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#sql-example-25"><i class="fa fa-check"></i><b>15.14.1</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>13.7</b> <code>geochronology</code></a>
+<li class="chapter" data-level="15.15" data-path="taxonomy-related-tables-1.html"><a href="taxonomy-related-tables-1.html#SpecimenDates"><i class="fa fa-check"></i><b>15.15</b> <code>specimendates</code></a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html"><i class="fa fa-check"></i><b>16</b> Chronology &amp; Age Related Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-30"><i class="fa fa-check"></i><b>13.7.1</b> SQL Example</a></li>
-</ul></li>
-<li class="chapter" data-level="13.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>13.8</b> <code>geochronpublications</code></a></li>
-<li class="chapter" data-level="13.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>13.9</b> <code>geochrontypes</code></a></li>
-<li class="chapter" data-level="13.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>13.10</b> <code>relativeagepublications</code></a></li>
-<li class="chapter" data-level="13.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>13.11</b> <code>relativeages</code></a>
+<li class="chapter" data-level="16.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AgeTypes"><i class="fa fa-check"></i><b>16.1</b> <code>agetypes</code></a></li>
+<li class="chapter" data-level="16.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateChronologies"><i class="fa fa-check"></i><b>16.2</b> <code>aggregatechronologies</code></a></li>
+<li class="chapter" data-level="16.3" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControls"><i class="fa fa-check"></i><b>16.3</b> <code>chroncontrols</code></a></li>
+<li class="chapter" data-level="16.4" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#ChronControlTypes"><i class="fa fa-check"></i><b>16.4</b> <code>chroncontroltypes</code></a></li>
+<li class="chapter" data-level="16.5" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Chronologies"><i class="fa fa-check"></i><b>16.5</b> <code>chronologies</code></a>
 <ul>
-<li class="chapter" data-level="13.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-31"><i class="fa fa-check"></i><b>13.11.1</b> SQL Example</a></li>
+<li class="chapter" data-level="16.5.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-26"><i class="fa fa-check"></i><b>16.5.1</b> SQL Example</a></li>
+<li class="chapter" data-level="16.5.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-27"><i class="fa fa-check"></i><b>16.5.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="13.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>13.12</b> <code>radiocarboncalibration</code></a></li>
-<li class="chapter" data-level="13.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>13.13</b> <code>relativeagescales</code></a></li>
-<li class="chapter" data-level="13.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>13.14</b> <code>relativeageunits</code></a></li>
-<li class="chapter" data-level="13.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>13.15</b> <code>relativechronology</code></a></li>
-<li class="chapter" data-level="13.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>13.16</b> <code>tephrachronology</code></a></li>
-<li class="chapter" data-level="13.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>13.17</b> <code>tephras</code></a></li>
+<li class="chapter" data-level="16.6" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#AggregateSampleAges"><i class="fa fa-check"></i><b>16.6</b> <code>aggregatesampleages</code></a>
+<ul>
+<li class="chapter" data-level="16.6.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-28"><i class="fa fa-check"></i><b>16.6.1</b> SQL Example</a></li>
+<li class="chapter" data-level="16.6.2" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-29"><i class="fa fa-check"></i><b>16.6.2</b> SQL Example</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>14</b> References</a></li>
+<li class="chapter" data-level="16.7" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Geochronology"><i class="fa fa-check"></i><b>16.7</b> <code>geochronology</code></a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-30"><i class="fa fa-check"></i><b>16.7.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronPublications"><i class="fa fa-check"></i><b>16.8</b> <code>geochronpublications</code></a></li>
+<li class="chapter" data-level="16.9" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#GeochronTypes"><i class="fa fa-check"></i><b>16.9</b> <code>geochrontypes</code></a></li>
+<li class="chapter" data-level="16.10" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgePublications"><i class="fa fa-check"></i><b>16.10</b> <code>relativeagepublications</code></a></li>
+<li class="chapter" data-level="16.11" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAges"><i class="fa fa-check"></i><b>16.11</b> <code>relativeages</code></a>
+<ul>
+<li class="chapter" data-level="16.11.1" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#sql-example-31"><i class="fa fa-check"></i><b>16.11.1</b> SQL Example</a></li>
+</ul></li>
+<li class="chapter" data-level="16.12" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RadiocarbonCalibration"><i class="fa fa-check"></i><b>16.12</b> <code>radiocarboncalibration</code></a></li>
+<li class="chapter" data-level="16.13" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeScales"><i class="fa fa-check"></i><b>16.13</b> <code>relativeagescales</code></a></li>
+<li class="chapter" data-level="16.14" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeAgeUnits"><i class="fa fa-check"></i><b>16.14</b> <code>relativeageunits</code></a></li>
+<li class="chapter" data-level="16.15" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#RelativeChronology"><i class="fa fa-check"></i><b>16.15</b> <code>relativechronology</code></a></li>
+<li class="chapter" data-level="16.16" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephrachronology"><i class="fa fa-check"></i><b>16.16</b> <code>tephrachronology</code></a></li>
+<li class="chapter" data-level="16.17" data-path="chronology-age-related-tables-1.html"><a href="chronology-age-related-tables-1.html#Tephras"><i class="fa fa-check"></i><b>16.17</b> <code>tephras</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html"><i class="fa fa-check"></i><b>17</b> Views and Materialized Views</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#about-views-briefly"><i class="fa fa-check"></i><b>17.1</b> About Views (Briefly)</a></li>
+<li class="chapter" data-level="17.2" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#neotoma-views"><i class="fa fa-check"></i><b>17.2</b> Neotoma Views</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#schema-ap"><i class="fa fa-check"></i><b>17.2.1</b> Schema <code>ap</code></a></li>
+<li class="chapter" data-level="17.2.2" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#schema-da"><i class="fa fa-check"></i><b>17.2.2</b> Schema <code>da</code></a></li>
+<li class="chapter" data-level="17.2.3" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#schema-db"><i class="fa fa-check"></i><b>17.2.3</b> Schema ‘db’</a></li>
+<li class="chapter" data-level="17.2.4" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#schema-ndb"><i class="fa fa-check"></i><b>17.2.4</b> Schema <code>ndb</code></a></li>
+<li class="chapter" data-level="17.2.5" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#schema-ti"><i class="fa fa-check"></i><b>17.2.5</b> Schema <code>ti</code></a></li>
+<li class="chapter" data-level="17.2.6" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#schema-ts"><i class="fa fa-check"></i><b>17.2.6</b> Schema <code>ts</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#neotoma-materialized-views"><i class="fa fa-check"></i><b>17.3</b> Neotoma Materialized Views</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="views-and-materialized-views.html"><a href="views-and-materialized-views.html#schema-ap-1"><i class="fa fa-check"></i><b>17.3.1</b> Schema <code>ap</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>18</b> References</a></li>
 </ul>
 
       </nav>
@@ -451,167 +486,6 @@ div.csl-indent {
 </div>
 
 </div>
-<div id="using-r" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Using R<a href="working-with-the-raw-data.html#using-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <a href="https://github.com/NeotomaDB/neotoma2"><code>neotoma2</code> R package</a> provides a set of functions to download and work with data from Neotoma within the R programming environment. The package has been designed for users who wish to work with multiple sites or datasets, and supports users who wish to add their own data into Neotoma.</p>
-<p>The functions in the R package act as <em>wrappers</em> for the API calls, and also provide some secondary services to help the data work efficiently in the R environment. For example, a user who wishes to search for all sites named ‘Marion Lake’ using R simply uses the <code>get_sites()</code> function:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="working-with-the-raw-data.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(neotoma2)</span></code></pre></div>
-<pre><code>## Warning: multiple methods tables found for &#39;crop&#39;</code></pre>
-<pre><code>## Warning: multiple methods tables found for &#39;extend&#39;</code></pre>
-<pre><code>## 
-## Attaching package: &#39;neotoma2&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:jsonlite&#39;:
-## 
-##     toJSON</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     filter</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="working-with-the-raw-data.html#cb11-1" aria-hidden="true" tabindex="-1"></a>marion <span class="ot">&lt;-</span> <span class="fu">get_sites</span>(<span class="at">sitename =</span> <span class="st">&quot;Marion Lake&quot;</span>)</span>
-<span id="cb11-2"><a href="working-with-the-raw-data.html#cb11-2" aria-hidden="true" tabindex="-1"></a>marion</span></code></pre></div>
-<pre><code>##  siteid    sitename      lat      long altitude
-##    1649 Marion Lake 49.30833 -122.5472      305
-##   13416 Marion Lake 44.55609 -121.8648     1259</code></pre>
-<p>The following sections will detail several workflows using the R package. To help the end user we have created an instance of RStudio that is available from the browser, with all packages installed. You can access this version of RStudio from the <a href="https://mybinder.org/v2/gh/NeotomaDB/Current_Workshop/main?urlpath=rstudio">myBinder link</a>:</p>
-<p><a href="https://mybinder.org/v2/gh/NeotomaDB/Current_Workshop/main?urlpath=rstudio"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" /></a></p>
-<p>While many of our examples are drawn directly from existing workshop materials, you may find more complete details about using the R package on the GitHub page for the package, or in one or more of our posted workshops:</p>
-<ul>
-<li>European Pollen Database Workshop (May 22, 2022 – <a href="">https://open.neotomadb.org/EPD_binder/simple_workflow.html</a>)</li>
-<li>AMQUA Pollen Workshop (May 22, 2022 – <a href="">https://open.neotomadb.org/Workshops/AMQUA-June2022/simple_workflow.html</a>)</li>
-<li>IAL/IPA Diatom Workshop (November 2022 – SPANISH [<a href="https://open.neotomadb.org/Workshops/IAL_IPA-November2022/simple_workflow_ES.html" class="uri">https://open.neotomadb.org/Workshops/IAL_IPA-November2022/simple_workflow_ES.html</a>])</li>
-</ul>
-<p>Other workshop materials are available within the <a href="https://github.com/NeotomaDB/Workshops">Neotoma Workshops GitHub repository</a>. Some workshops are highly specialized, and some contain links to cloud-based versions of RStudio so that users can work on the problems and workflows under standardized conditions.</p>
-
-<div id="searching-for-sites" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Searching for Sites<a href="working-with-the-raw-data.html#searching-for-sites" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>There are several ways to find sites in <code>neotoma2</code> using the R package. We think of <code>sites</code> as being primarily spatial objects. <code>sites</code> have names, locations, and are found within the context of geopolitical units. Within the API and in the package, the site itself does not have associated information about taxa, dataset types or ages. The site is the container into which we add that information. So, when we search for sites we can search by:</p>
-<table>
-<colgroup>
-<col width="45%" />
-<col width="55%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>sitename</td>
-<td>A valid site name (case insensitive) using <code>%</code> as a wildcard.</td>
-</tr>
-<tr class="even">
-<td>siteid</td>
-<td>A unique numeric site id from the Neotoma Database</td>
-</tr>
-<tr class="odd">
-<td>loc</td>
-<td>A bounding box vector, geoJSON or WKT string.</td>
-</tr>
-<tr class="even">
-<td>altmin</td>
-<td>Lower altitude bound for sites.</td>
-</tr>
-<tr class="odd">
-<td>altmax</td>
-<td>Upper altitude bound for site locations.</td>
-</tr>
-<tr class="even">
-<td>database</td>
-<td>The constituent database from which the records are pulled.</td>
-</tr>
-<tr class="odd">
-<td>datasettype</td>
-<td>The kind of dataset (see <code>get_tables(datasettypes)</code>)</td>
-</tr>
-<tr class="even">
-<td>datasetid</td>
-<td>Unique numeric dataset identifier in Neotoma</td>
-</tr>
-<tr class="odd">
-<td>doi</td>
-<td>A valid dataset DOI in Neotoma</td>
-</tr>
-<tr class="even">
-<td>gpid</td>
-<td>A unique numeric identifier, or text string identifying a geopolitical unit in Neotoma</td>
-</tr>
-<tr class="odd">
-<td>keywords</td>
-<td>Unique sample keywords for records in Neotoma.</td>
-</tr>
-<tr class="even">
-<td>contacts</td>
-<td>A name or numeric id for individuals associuated with sites.</td>
-</tr>
-<tr class="odd">
-<td>taxa</td>
-<td>Unique numeric identifiers or taxon names associated with sites.</td>
-</tr>
-</tbody>
-</table>
-<p>All sites in Neotoma contain one or more datasets. It’s worth noting that the results of these search parameters may be slightly unexpected. For example, searching for sites by sitename, latitude, or altitude will return all of the datasets for the particular site. Searching for terms such as datasettype, datasetid or taxa will return the site, but the only datasets returned will be those matching the dataset-specific search terms. We’ll see this later.</p>
-<div id="site-names-sitenamelago" class="section level4 hasAnchor" number="3.2.1.1">
-<h4><span class="header-section-number">3.2.1.1</span> Site names: <code>sitename="%Lago%"</code><a href="working-with-the-raw-data.html#site-names-sitenamelago" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We may know exactly what site we’re looking for (“Lago Grande di Monticchio”), or have an approximate guess for the site name (for example, we know it’s something like “Lago Grande”, or “Grande Lago Grande”, but we’re not sure how it was entered specifically), or we may want to search all sites that have a specific term, for example, <em>Lago</em>.</p>
-<p>We use the general format: <code>get_sites(sitename="%Lago%")</code> for searching by name.</p>
-<p>PostgreSQL (and the API) uses the percent sign as a wildcard. So <code>"%Lago%"</code> would pick up <a href="https://data.neotomadb.org/26607">“Lago Grande di Monticchio”</a> for us (and picks up “Lago di Martignano” and “Lago Padule”). Note that the search query is also case insensitive, so you could simply write <code>"%LAGO%"</code>.</p>
-<div id="code" class="section level5 hasAnchor" number="3.2.1.1.1">
-<h5><span class="header-section-number">3.2.1.1.1</span> Code<a href="working-with-the-raw-data.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="working-with-the-raw-data.html#cb13-1" aria-hidden="true" tabindex="-1"></a>lac_sites <span class="ot">&lt;-</span> neotoma2<span class="sc">::</span><span class="fu">get_sites</span>(<span class="at">sitename =</span> <span class="st">&quot;%Lago %&quot;</span>)</span>
-<span id="cb13-2"><a href="working-with-the-raw-data.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotLeaflet</span>(lac_sites)</span></code></pre></div>
-</div>
-<div id="result" class="section level5 hasAnchor" number="3.2.1.1.2">
-<h5><span class="header-section-number">3.2.1.1.2</span> 3.1.1.2. Result<a href="working-with-the-raw-data.html#result" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div id="htmlwidget-f81070d0d35b8eeb6e85" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f81070d0d35b8eeb6e85">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.TerrainBackground",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[-3.16667,18.66667,43.041046,-41.05833,-17.95,-41.25,42.78333,42.112862,40.93049,44.29861,-42.491774,-41.511176,-43.437558,-48.941316,-21.510544,-16.28412,-15.737202,45.851976,45.897506,44.245914,44.173266,45.053196,42.987498,40.83667,45.06597],[-44.98333,-95,-6.139342,-71.51667,-42.21667,-71.46667,-2.98333,12.316776,15.604298,10.21472,-71.4018,-71.508316,-71.562236,-71.257034,-68.013352,-68.72699,-70.754838,8.893812,8.825766,7.097786,10.817828,7.39077,10.892302,14.07306,7.38727],10,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":true,"riseOffset":250,"stroke":true,"color":"#03F","weight":5,"opacity.1":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,["<b>Lago do Aquiri<\/b><br><b>Description:<\/b> Natural lake, sometimes flooded by river. Physiography: soft rolling area with flood plains. Surrounding vegetation: anthropog. palm forest, swamp savanna.<br><a href=http://apps.neotomadb.org/explorer/?siteids=211>Explorer Link<\/a>","<b>Lago Catemaco<\/b><br><b>Description:<\/b> Volcanic lake. Physiography: Sierra de los Tuxtlas. Surrounding vegetation: agricultural, remnant forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=340>Explorer Link<\/a>","<b>Lago de Ajo<\/b><br><b>Description:<\/b> Lake dammed in 1915 for hydroelectric. Physiography: On limestone at the head of the valley. Surrounding vegetation: Pasture, Quercus scrub, Fagus woodland.<br><a href=http://apps.neotomadb.org/explorer/?siteids=1537>Explorer Link<\/a>","<b>Lago Moreno<\/b><br><b>Description:<\/b> Small lake near Lago Nahuel Huapi. Physiography: glaciated region of southern Andes. Surrounding vegetation: Nothofagus dombeyi/Austrocedrus forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=1538>Explorer Link<\/a>","<b>Lago do Pires<\/b><br><b>Description:<\/b> Natural lake surrounded by small mounten. Physiography: foothill area. Surrounding vegetation: farm land.<br><a href=http://apps.neotomadb.org/explorer/?siteids=1575>Explorer Link<\/a>","<b>Lago Mascardi-Gutierrez<\/b><br><b>Description:<\/b> Bog. Physiography: sediments deposited in morainedamed lake. Surrounding vegetation: Mixed Nothfagus dombeyi-Austrocedrus chi.<br><a href=http://apps.neotomadb.org/explorer/?siteids=1655>Explorer Link<\/a>","<b>Lago de Arreo<\/b><br><b>Description:<\/b> Lake. Physiography: valley of Erbre Rio Ebro. Surrounding vegetation: Quercus forest, agriculture.<br><a href=http://apps.neotomadb.org/explorer/?siteids=2984>Explorer Link<\/a>","<b>Lago di Martignano<\/b><br><b>Description:<\/b> Maar lake. Physiography: One of a number of explosive craters. Surrounding vegetation: Arable and pastoral agriculture and wood.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3276>Explorer Link<\/a>","<b>Lago Grande di Monticchio<\/b><br><b>Description:<\/b> Lake. Physiography: explosion crater. Surrounding vegetation: Fagus sylvatica, Quercus cerris, Ilex.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3295>Explorer Link<\/a>","<b>Lago Padule<\/b><br><b>Description:<\/b> Lake. Surrounding vegetation: Fagus, Abies, Picea, Taxus.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3337>Explorer Link<\/a>","<b>Lago Mosquito<\/b><br><b>Description:<\/b> Located in a glacial valley near the terminal Pleistocene moraines, but dammed by aluvial fans emanating from tributary valleys. Located within the transition from open Austrocedrus chilensis woodland to steppe.<br><a href=http://apps.neotomadb.org/explorer/?siteids=10059>Explorer Link<\/a>","<b>Lago Huala Hué<\/b><br><b>Description:<\/b> Lake dammed by a glacial delta associated with late-Pleistocene meltwater from ice complexes from the north. Surrounding vegetation Nothofagus dombeyi-Austrocedrus forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=10060>Explorer Link<\/a>","<b>Lago Theobald<\/b><br><b>Description:<\/b> Glacial scour lake. Modern vegetation mixture of Nothofagus, Austrocedrus, and steppe taxa.<br><a href=http://apps.neotomadb.org/explorer/?siteids=10071>Explorer Link<\/a>","<b>Lago Cardiel<\/b><br><b>Description:<\/b> The lake lies in an endorheic basin on the Patagonian Plateau between the Andean Cordillera and the Atlantic coast. Present-day vegetation is Patagonian steppe-scrub, with patches of tall shrubs in the valley bottoms (Schinus patagonicus, Berberis empetrifolia, Lycium chilense and Verbena tridens). Exposed mud flats around the lake margin are covered by dense growth of Amaranthaceae and other weedy taxa, some of European origin. Subantarctic Nothofagus antarctica woodland and Nothofagus pumilio forest grow on the higher-elevation mountains about 50 km to the northwest beyond the lake catchment.<br><a href=http://apps.neotomadb.org/explorer/?siteids=11932>Explorer Link<\/a>","<b>Lago Canapa<\/b><br><b>Description:<\/b> NA<br><a href=http://apps.neotomadb.org/explorer/?siteids=13461>Explorer Link<\/a>","<b>Lago Huiñaimarca - Lake Titicaca [Lago Menor][Lago Pequeno][Lago Winaymarca]<\/b><br><b>Description:<\/b> Southern basin of Lake Titicaca.  The western part of the South basin is in Peru.  The eastern portion in Bolivia.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14104>Explorer Link<\/a>","<b>Lago Lagunillas<\/b><br><b>Description:<\/b> Currently has dammed outlets and active outflow, but may have been a closed-basin lake in the past.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14151>Explorer Link<\/a>","<b>Lago di Bévera<\/b><br><b>Description:<\/b> Lake. Physiography: Valley. Surrounding vegetation: Cultivated fields and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14529>Explorer Link<\/a>","<b>Lago di Ganna<\/b><br><b>Description:<\/b> Lake. Physiography: Valley. Surrounding vegetation: Forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14536>Explorer Link<\/a>","<b>Lago delle Fate<\/b><br><b>Description:<\/b> Peat bog. Physiography: Valley composed by migmatite. Surrounding vegetation: N. strictae pastures. Vegetation formation: Subalpine climate.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14539>Explorer Link<\/a>","<b>Lago Pratignano<\/b><br><b>Description:<\/b> Bog with central part of open water. Surrounding vegetation: Fagus woodland, Abies pltn, pasture.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14548>Explorer Link<\/a>","<b>Lago Piccolo di Avigliana<\/b><br><b>Description:<\/b> Lake. Physiography: Moraine dammed lake. Surrounding vegetation: Tree and shrubs.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14613>Explorer Link<\/a>","<b>Lago dell'Accesa<\/b><br><b>Description:<\/b> Lake. Physiography: Karstic origin. Surrounding vegetation: Cultivated fields and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14644>Explorer Link<\/a>","<b>Lago d'Averno<\/b><br><b>Description:<\/b> Lake. Physiography: Volcanic crater. Surrounding vegetation: Bog and cultivated fields.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15697>Explorer Link<\/a>","<b>Lago Grande di Avigliana<\/b><br><b>Description:<\/b> Lake. Physiography: Hydrohological system of 4 basins. Surrounding vegetation: Tree and shrub.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15702>Explorer Link<\/a>"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-48.941316,45.897506],"lng":[-95,15.604298]}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div id="location-locc" class="section level4 tabset hasAnchor" number="3.2.1.2">
-<h4><span class="header-section-number">3.2.1.2</span> 3.1.2. Location: <code>loc=c()</code><a href="working-with-the-raw-data.html#location-locc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The original <code>neotoma</code> package used a bounding box for locations, structured as a vector of latitude and longitude values: <code>c(xmin, ymin, xmax, ymax)</code>. The <code>neotoma2</code> R package supports both this simple bounding box, but also more complex spatial objects, using the <a href="https://r-spatial.github.io/sf/"><code>sf</code> package</a>. Using the <code>sf</code> package allows us to more easily work with raster and polygon data in R, and to select sites from more complex spatial objects. The <code>loc</code> parameter works with the simple vector, <a href="https://arthur-e.github.io/Wicket/sandbox-gmaps3.html">WKT</a>, <a href="http://geojson.io/#map=2/20.0/0.0">geoJSON</a> objects and native <code>sf</code> objects in R.</p>
-<p>As an example of searching for sites using a location, we’ve created a rough representation of Italy as a polygon. To work with this spatial object in R we also transformed the <code>geoJSON</code> element to an object for the <code>sf</code> package. There are many other tools to work with spatial objects in R. Regardless of how you get the data into R, <code>neotoma2</code> works with almost all objects in the <code>sf</code> package.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="working-with-the-raw-data.html#cb14-1" aria-hidden="true" tabindex="-1"></a>geoJSON <span class="ot">&lt;-</span> <span class="st">&#39;{&quot;coordinates&quot;:</span></span>
-<span id="cb14-2"><a href="working-with-the-raw-data.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="st">  [[</span></span>
-<span id="cb14-3"><a href="working-with-the-raw-data.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">      [8.22, 44.13],</span></span>
-<span id="cb14-4"><a href="working-with-the-raw-data.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st">      [12.44, 41.72],</span></span>
-<span id="cb14-5"><a href="working-with-the-raw-data.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">      [15.86, 37.82],</span></span>
-<span id="cb14-6"><a href="working-with-the-raw-data.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st">      [18.61, 39.99],</span></span>
-<span id="cb14-7"><a href="working-with-the-raw-data.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="st">      [12.20, 45.39],</span></span>
-<span id="cb14-8"><a href="working-with-the-raw-data.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">      [13.62, 45.86],</span></span>
-<span id="cb14-9"><a href="working-with-the-raw-data.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">      [13.45, 46.46],</span></span>
-<span id="cb14-10"><a href="working-with-the-raw-data.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">      [12.21, 47.11],</span></span>
-<span id="cb14-11"><a href="working-with-the-raw-data.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">      [10.41, 46.69],</span></span>
-<span id="cb14-12"><a href="working-with-the-raw-data.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">      [6.99, 45.97],</span></span>
-<span id="cb14-13"><a href="working-with-the-raw-data.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">      [6.87, 44.34],</span></span>
-<span id="cb14-14"><a href="working-with-the-raw-data.html#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">      [8.22, 44.13]</span></span>
-<span id="cb14-15"><a href="working-with-the-raw-data.html#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="st">      ]],</span></span>
-<span id="cb14-16"><a href="working-with-the-raw-data.html#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="st">  &quot;type&quot;:&quot;Polygon&quot;}&#39;</span></span>
-<span id="cb14-17"><a href="working-with-the-raw-data.html#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-18"><a href="working-with-the-raw-data.html#cb14-18" aria-hidden="true" tabindex="-1"></a>italy_sf <span class="ot">&lt;-</span> geojsonsf<span class="sc">::</span><span class="fu">geojson_sf</span>(geoJSON)</span>
-<span id="cb14-19"><a href="working-with-the-raw-data.html#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-20"><a href="working-with-the-raw-data.html#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Note here we use the `all_data` flag to capture all the sites within the polygon.</span></span>
-<span id="cb14-21"><a href="working-with-the-raw-data.html#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="co"># We&#39;re using `all_data` here because we know that the site information is relatively small</span></span>
-<span id="cb14-22"><a href="working-with-the-raw-data.html#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># for Italy. If we were working in a new area or with a new search we would limit the</span></span>
-<span id="cb14-23"><a href="working-with-the-raw-data.html#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># search size.</span></span>
-<span id="cb14-24"><a href="working-with-the-raw-data.html#cb14-24" aria-hidden="true" tabindex="-1"></a>italy_sites <span class="ot">&lt;-</span> neotoma2<span class="sc">::</span><span class="fu">get_sites</span>(<span class="at">loc =</span> italy_sf, <span class="at">all_data =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>You can always simply <code>plot()</code> the <code>sites</code> objects, but you will lose some of the geographic context. The <code>plotLeaflet()</code> function returns a <code>leaflet()</code> map, and allows you to further customize it, or add additional spatial data (like our original bounding polygon, <code>sa_sf</code>, which works directly with the R <code>leaflet</code> package):</p>
-<div id="code-1" class="section level5 hasAnchor" number="3.2.1.2.1">
-<h5><span class="header-section-number">3.2.1.2.1</span> 3.1.2.1. Code<a href="working-with-the-raw-data.html#code-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="working-with-the-raw-data.html#cb15-1" aria-hidden="true" tabindex="-1"></a>neotoma2<span class="sc">::</span><span class="fu">plotLeaflet</span>(italy_sites) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="working-with-the-raw-data.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  leaflet<span class="sc">::</span><span class="fu">addPolygons</span>(<span class="at">map =</span> ., </span>
-<span id="cb15-3"><a href="working-with-the-raw-data.html#cb15-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data =</span> italy_sf, </span>
-<span id="cb15-4"><a href="working-with-the-raw-data.html#cb15-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
-</div>
-<div id="result-1" class="section level5 hasAnchor" number="3.2.1.2.2">
-<h5><span class="header-section-number">3.2.1.2.2</span> 3.1.2.2. Result<a href="working-with-the-raw-data.html#result-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div id="htmlwidget-dd545ecf316c633b851d" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dd545ecf316c633b851d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.TerrainBackground",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[43.019604,45.5,42.112862,40.93049,44.15556,44.29861,45.68554,46.62639,46.54389,45.851976,46.04722,45.99528,45.897506,45.99167,44.173266,45.89722,45.8025,45.80097,45.86334,45.90778,45.81694,45.825866,45.824862,45.80803,45.52611,45.52972,46.017064,46.51889,45.053196,40.75028,40.75722,42.987498,40.76139,46.644508,46.637822,46.665744,46.66611,45.876916,40.83667,46.469994,46.759926,45.06597,45.90944,45.99083,45.98333,46.01167,46.15919,46.05152,43.83784,42.98787,44.1199,44.32009,45.99663,46.49394,46.46994,44.75194,45.82802,46.4078,46.61469,46.4703,46.4753,46.4972,46.4053,46.4575,46.10237,42.47556,39.54889,45.92936,44.35922,44.35922,41.75,41.71667,41.89167,41.83056,42.13,46.45194,45.41722,45.48583,45.04806,45.81417,45.46222,45.45917,46.4057,46.00538,46.00489,46.00131,45.98733,45.98219,40.00889,46.10472,45.55,45.46667,46.18056],[12.87552,12.25,12.316776,15.604298,10.78,10.21472,7.69021,10.25972,10.43472,8.893812,11.11889,10.82917,8.825766,8.97194,10.817828,7.69167,7.60972,7.61012,7.788702,7.84167,7.28611,7.645884,7.644858,8.395546,10.50333,10.49972,11.041072,10.18306,7.39077,14.48278,14.45361,10.892302,14.47139,11.491498,11.457572,11.43161,11.45833,10.765276,14.07306,10.336228,11.680222,7.38727,8.95389,7.70694,7.76194,7.79111,8.74872,8.94329,10.3308,10.89516,10.67378,10.83865,8.92794,9.84504,9.80624,12.75,9.26482,9.7027,10.34647,9.8201,9.8197,9.8694,9.69,9.8561,12.40049,12.84722,16.02222,7.87514,10.12311,10.12311,12.66667,12.7,12.75972,12.275,12.32194,9.75,8.03556,7.88389,7.39361,8.73944,7.79556,7.77361,9.68,7.77524,7.78621,7.78134,7.77958,7.7809,16.22444,8.96528,10.48333,11.53333,8.63972],10,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":true,"riseOffset":250,"stroke":true,"color":"#03F","weight":5,"opacity.1":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,["<b>Colfiorito<\/b><br><b>Description:<\/b> Swamp. Physiography: flat marsh.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3064>Explorer Link<\/a>","<b>Venice<\/b><br><b>Description:<\/b> Adriatic floodplain and lagoon. Surrounding vegetation: marshes.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3135>Explorer Link<\/a>","<b>Lago di Martignano<\/b><br><b>Description:<\/b> Maar lake. Physiography: One of a number of explosive craters. Surrounding vegetation: Arable and pastoral agriculture and wood.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3276>Explorer Link<\/a>","<b>Lago Grande di Monticchio<\/b><br><b>Description:<\/b> Lake. Physiography: explosion crater. Surrounding vegetation: Fagus sylvatica, Quercus cerris, Ilex.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3295>Explorer Link<\/a>","<b>Ospitale<\/b><br><b>Description:<\/b> Circular bog of about 75-100m diameter. Surrounding vegetation: Abies, Fagus, Pinus, Ulex, Ericaceae.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3330>Explorer Link<\/a>","<b>Lago Padule<\/b><br><b>Description:<\/b> Lake. Surrounding vegetation: Fagus, Abies, Picea, Taxus.<br><a href=http://apps.neotomadb.org/explorer/?siteids=3337>Explorer Link<\/a>","<b>Lac de Villa<\/b><br><b>Description:<\/b> Lake.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14513>Explorer Link<\/a>","<b>Juf Plan<\/b><br><b>Description:<\/b> Plateau with marsh. Physiography: Valley in mountain.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14515>Explorer Link<\/a>","<b>Umbrail<\/b><br><b>Description:<\/b> Spring-mire. Physiography: Valley. Surrounding vegetation: Treeless.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14521>Explorer Link<\/a>","<b>Lago di Bévera<\/b><br><b>Description:<\/b> Lake. Physiography: Valley. Surrounding vegetation: Cultivated fields and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14529>Explorer Link<\/a>","<b>Fersina<\/b><br><b>Description:<\/b> Alluvial fan. Physiography: Fersina river. Surrounding vegetation: Cultivated fields and urban area.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14532>Explorer Link<\/a>","<b>Fiavè<\/b><br><b>Description:<\/b> Bog. Physiography: Bog in ancient lake of glacial origin. Surrounding vegetation: Cultivated fields and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14535>Explorer Link<\/a>","<b>Lago di Ganna<\/b><br><b>Description:<\/b> Lake. Physiography: Valley. Surrounding vegetation: Forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14536>Explorer Link<\/a>","<b>Lake Lugano<\/b><br><b>Description:<\/b> Lake. Physiography: Basin. Surrounding vegetation: Forests.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14537>Explorer Link<\/a>","<b>Lago Pratignano<\/b><br><b>Description:<\/b> Bog with central part of open water. Surrounding vegetation: Fagus woodland, Abies pltn, pasture.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14548>Explorer Link<\/a>","<b>Pian di Verra superiore<\/b><br><b>Description:<\/b> Surrounding vegetation: Juncus, Carex, Salix helv.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14592>Explorer Link<\/a>","<b>Lac de Lod<\/b><br><b>Description:<\/b> Lake. Surrounding vegetation: Meadow.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14594>Explorer Link<\/a>","<b>Tourbière de Loditor<\/b><br><b>Description:<\/b> Peat bog. Surrounding vegetation: Chrysantemum, Festuca, Poa.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14595>Explorer Link<\/a>","<b>Tourbière de Santa Anna<\/b><br><b>Description:<\/b> Peat bog. Surrounding vegetation: Picea abies, Pinus cembra, Larix decidua.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14596>Explorer Link<\/a>","<b>Tourbière Lo Cret<\/b><br><b>Description:<\/b> Peat. Surrounding vegetation: Larix d., Alnus viridis, Rhododendron f.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14597>Explorer Link<\/a>","<b>Tourbière de Pilaz<\/b><br><b>Description:<\/b> Peat bog. Surrounding vegetation: Larix d., Picea a., Calluna vulgaris.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14598>Explorer Link<\/a>","<b>Lac de Champlong<\/b><br><b>Description:<\/b> Lake. Surrounding vegetation: Sedum, Trifolium a., Saxifraga.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14599>Explorer Link<\/a>","<b>Tourbière de Champlong<\/b><br><b>Description:<\/b> Peat. Surrounding vegetation: Carex, Potentilla, Larix d.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14600>Explorer Link<\/a>","<b>Ortasee<\/b><br><b>Description:<\/b> Lake.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14606>Explorer Link<\/a>","<b>Saltarino sotto<\/b><br><b>Description:<\/b> Former lake of Lake Garda. Physiography: Plain. Surrounding vegetation: Cultivated fields and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14608>Explorer Link<\/a>","<b>Saltarino sopra<\/b><br><b>Description:<\/b> Former lake of Lake Garda. Physiography: Plain. Surrounding vegetation: Cultivated fields and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14609>Explorer Link<\/a>","<b>Bondone<\/b><br><b>Description:<\/b> Physiography: Mountain. Surrounding vegetation: Forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14610>Explorer Link<\/a>","<b>Trepalle Livigno<\/b><br><b>Description:<\/b> Spring-mire. Physiography: Grassland. Surrounding vegetation: Treeless.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14612>Explorer Link<\/a>","<b>Lago Piccolo di Avigliana<\/b><br><b>Description:<\/b> Lake. Physiography: Moraine dammed lake. Surrounding vegetation: Tree and shrubs.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14613>Explorer Link<\/a>","<b>Pompeii<\/b><br><b>Description:<\/b> Formal garden. Physiography: Plain. Surrounding vegetation: Cultivated fields and urban area.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14622>Explorer Link<\/a>","<b>Oplontis<\/b><br><b>Description:<\/b> Garden of Villa of Poppaea. Physiography: Plain. Surrounding vegetation: Urban area.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14623>Explorer Link<\/a>","<b>Lago dell'Accesa<\/b><br><b>Description:<\/b> Lake. Physiography: Karstic origin. Surrounding vegetation: Cultivated fields and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=14644>Explorer Link<\/a>","<b>Boscoreale<\/b><br><b>Description:<\/b> Archeological site. Physiography: Garden. Surrounding vegetation: Urban area.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15676>Explorer Link<\/a>","<b>Rinderplatz<\/b><br><b>Description:<\/b> Open area in raised bog with Pinus mugo. Physiography: Shallow depression in upland plain. Surrounding vegetation: Few trees. Vegetation formation: Picea forest with Pinus cembra and Larix.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15689>Explorer Link<\/a>","<b>Dura-Moor<\/b><br><b>Description:<\/b> Circular Cyperaceae mire. Physiography: Filled-in small lake on upland plain. Surrounding vegetation: Few Pinus cembra, Juniperus,dwarf shrubs. Vegetation formation: Picea, Pinus cembra, Larix.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15690>Explorer Link<\/a>","<b>Schwarzsee<\/b><br><b>Description:<\/b> Partly filled-in lake. Physiography: Upland plain. Surrounding vegetation: Pinus mugo; less P. cembra, Larix, Picea. Vegetation formation: Picea, Pinus cembra, Larix.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15691>Explorer Link<\/a>","<b>Malschötscher Hotter<\/b><br><b>Description:<\/b> Saddle-mire on watershed. Physiography: Watershed between 2 valleys;upland plain. Surrounding vegetation: Few trees. Vegetation formation: Picea, Pinus cembra, Larix.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15693>Explorer Link<\/a>","<b>Ledrosee<\/b><br><b>Description:<\/b> Lake. Surrounding vegetation: Forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15696>Explorer Link<\/a>","<b>Lago d'Averno<\/b><br><b>Description:<\/b> Lake. Physiography: Volcanic crater. Surrounding vegetation: Bog and cultivated fields.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15697>Explorer Link<\/a>","<b>Dossaccio Bormio<\/b><br><b>Description:<\/b> Raised bog,+Pinus+Betula,60/100x150/200m.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15698>Explorer Link<\/a>","<b>Sommersüss<\/b><br><b>Description:<\/b> Mire without ef- or affluent; disturbed. Physiography: Plateau with ground moraine. Vegetation formation: Inner-alp. Pinus forests & dry graslands.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15701>Explorer Link<\/a>","<b>Lago Grande di Avigliana<\/b><br><b>Description:<\/b> Lake. Physiography: Hydrohological system of 4 basins. Surrounding vegetation: Tree and shrub.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15702>Explorer Link<\/a>","<b>Monte San Giorgio<\/b><br><b>Description:<\/b> San Giorgio mount. Physiography: Hill. Surrounding vegetation: Forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15743>Explorer Link<\/a>","<b>Schwarzsee VS<\/b><br><b>Description:<\/b> Lake. Physiography: Mountain. Surrounding vegetation: Alpine vegetation.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15753>Explorer Link<\/a>","<b>Riffelsee<\/b><br><b>Description:<\/b> Lake. Physiography: Mountain. Surrounding vegetation: Alpine vegetation.<br><a href=http://apps.neotomadb.org/explorer/?siteids=15754>Explorer Link<\/a>","<b>Grindjisee<\/b><br><b>Description:<\/b> Lake. Physiography: Mountain. Surrounding vegetation: Forest in downhill of lake (nothing up).<br><a href=http://apps.neotomadb.org/explorer/?siteids=15755>Explorer Link<\/a>","<b>Balladrum<\/b><br><b>Description:<\/b> Mire covered with Carex acutiformis. Castanea sativa stands on the adjacent slopes.<br><a href=http://apps.neotomadb.org/explorer/?siteids=23873>Explorer Link<\/a>","<b>Lago di Origlio<\/b><br><b>Description:<\/b> Minor inlet on the east and an outlet on the north. Vegetation dominated by Castanea sativa stands. Potential natural vegetation: mixed deciduous forest<br><a href=http://apps.neotomadb.org/explorer/?siteids=23901>Explorer Link<\/a>","<b>Lago di Massaciuccoli<\/b><br><b>Description:<\/b> Lake originated as a retrodunal basin after the last sea transgression. Seaward it is bordered by a coastal sandy belt and eastward it is surrounded by Mesozoic limestone hills and alluvial fans of glacial origin. There are four inlets and one outlet. The vegetation around the lake is dominated by Phragmites australis and Cyperaceae. The surrounding hills are covered with meso-Mediterranean mixed deciduous and evergreen Quercus forests<br><a href=http://apps.neotomadb.org/explorer/?siteids=23938>Explorer Link<\/a>","<b>Lago dell'Accesa<\/b><br><b>Description:<\/b> Lake fed by subaquatic springs on its western shore. Only one outlet on the east shore. Surrounded by hills covered with mixed evergreen/deciduous woodland.<br><a href=http://apps.neotomadb.org/explorer/?siteids=23939>Explorer Link<\/a>","<b>Lago del Greppo<\/b><br><b>Description:<\/b> Small and shallow pond on the northern slopes of Monte Poggione. Fen on the SW shore of the pond. No evident inlet or outlet. Probably originated from a landslide although glacial origin cannot be discarded. The lake is surrounded by woods dominated by Fagus sylvatica, Abies alba and Picea abies, with Acer pseudoplatanus, Sorbus aucuparia, Sorbus aria, Laburnum alpinum and Vaccinium myrtillus.<br><a href=http://apps.neotomadb.org/explorer/?siteids=23952>Explorer Link<\/a>","<b>Pavullo nel Frignano<\/b><br><b>Description:<\/b> The site is currently a swamp but it was a lake in the past. On the surrounding hills: Quercus pubescens, Sorbus torminalis, Acer monspessulanum, Acer campestre, and Fraxinus ornus. On shady and cooler sites, Quercus pubescens is mixed with Quercus cerris, Ostrya carpinifolia, Fagus sylvatica and Castanea sativa.<br><a href=http://apps.neotomadb.org/explorer/?siteids=23953>Explorer Link<\/a>","<b>Lago di Muzzano<\/b><br><b>Description:<\/b> No permanent inlet (two temporary streams) and one minor outlet to Lago di Lugano. Castanea sativa stands with other broadleaved trees such as Quercus petraea, Q. pubescens, Alnus glutinosa, Fraxinus excelsior, Betula pendula, Fagus sylvatica and Tilia cordata<br><a href=http://apps.neotomadb.org/explorer/?siteids=24044>Explorer Link<\/a>","<b>Lej da San Murezzan (Lake Saint Moritz)<\/b><br><b>Description:<\/b> Subalpine Larix decidua-Pinus cembra forests, with abundant Picea abies and Pinus mugo susbp. uncinata. Connected with other lakes by the River Inn.<br><a href=http://apps.neotomadb.org/explorer/?siteids=24047>Explorer Link<\/a>","<b>Lej da Champfèr<\/b><br><b>Description:<\/b> Inlet and outlet: River Inn. Lake of mixed origin: tectonic and glacial. The main tree species in the area are Larix decidua, Pinus cembra, Picea abies and Pinus mugo subsp. uncinata.<br><a href=http://apps.neotomadb.org/explorer/?siteids=24783>Explorer Link<\/a>","<b>Adriatic Sea 108MAY90<\/b><br><b>Description:<\/b> Coastal, delta. Physiography: Po delta.<br><a href=http://apps.neotomadb.org/explorer/?siteids=26122>Explorer Link<\/a>","<b>Lago del Segrino<\/b><br><b>Description:<\/b> Long and narrow groundwater and rain fed lake without inlet streams. Vegetation dominated by Fraxinus ornus, Ostrya carpinifolia, Tilia cordata, Ulmus glabra, Fraxinus excelsior, Quercus petraea and Quercus pubescens<br><a href=http://apps.neotomadb.org/explorer/?siteids=26643>Explorer Link<\/a>","<b>Inn Fen<\/b><br><b>Description:<\/b> Peaty meadow along the river Inn, dominated by sedges and with scattered Alnus incana and Salix.<br><a href=http://apps.neotomadb.org/explorer/?siteids=26904>Explorer Link<\/a>","<b>Fuldera-Palü Lunga<\/b><br><b>Description:<\/b> Mire on a slope covered with Picea abies forests with sparse Larix decidua, Pinus mugo subsp. uncinata and Pinus cembra<br><a href=http://apps.neotomadb.org/explorer/?siteids=26905>Explorer Link<\/a>","<b>Lej Nair<\/b><br><b>Description:<\/b> Peatland adjacent to small lake at or close to the valley bottom. Surrounded by managed natural subalpine forest. Lej Nair mire is a calcareous sloping fen with very rich vegetation  (e.g. Campylium stellatum).<br><a href=http://apps.neotomadb.org/explorer/?siteids=26906>Explorer Link<\/a>","<b>Lej Marsch<\/b><br><b>Description:<\/b> Peatland adjacent to small lake at or close to the valley bottom. Surrounded by managed natural subalpine forest. Floating Sphagnum mats near the lakeshore and more stable peat closer to the surrounding upland forest, and sampling was done in transects along this gradient.<br><a href=http://apps.neotomadb.org/explorer/?siteids=26907>Explorer Link<\/a>","<b>Lej de Staz<\/b><br><b>Description:<\/b> Peatland adjacent to small lake at or close to the valley bottom. Surrounded by managed natural subalpine forest. Floating Sphagnum mats near the lakeshore and more stable peat closer to the surrounding upland forest, and sampling was done in transects along this gradient.<br><a href=http://apps.neotomadb.org/explorer/?siteids=26908>Explorer Link<\/a>","<b>Maloja Mire<\/b><br><b>Description:<\/b> Maloja mire lies on the side of the valley bottom and is surrounded by non-natural (planted) Pinus mugo forest. This oligotrophic poor fen is dominated by Sphagnum fallax, Carex rostrata, and Eriophorum angustifolium.<br><a href=http://apps.neotomadb.org/explorer/?siteids=26909>Explorer Link<\/a>","<b>Mauntschas<\/b><br><b>Description:<\/b> Sphagnum mire at the valley bottom surrounded by natural (but managed) subalpine forest. This mire includes a broad range of peatland habitat types such as minerotrophic transitional mire, sloping fen, and mountain-pine bog. Locally, the floristic composition indicates the influence of calcium-rich spring water (e.g. Primula farinosa), whereas other places seem ombrotrophic with hummocks of Sphagnum fuscum with Oxycoccus sp. and Andromeda polifolia. Some higher and therefore drier parts of the mire are dominated by S. fuscum and are covered by mountain-pine forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=26910>Explorer Link<\/a>","<b>Palughetto<\/b><br><b>Description:<\/b> The Palughetto mire is located on the northern edge of the Cansiglio Plateau. It was originally an intra-morainic lake. Fagus sylvatica and Abies alba forests around the site, alongside historical Picea abies plantations.<br><a href=http://apps.neotomadb.org/explorer/?siteids=27026>Explorer Link<\/a>","<b>Lago Lungo<\/b><br><b>Description:<\/b> Lake. Physiography: basin drained by Velino river. Surrounding vegetation: agriculture and forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=27565>Explorer Link<\/a>","<b>Lago Trifoglietti<\/b><br><b>Description:<\/b> Lake. Physiography: mountain. Surrounding vegetation: forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=27569>Explorer Link<\/a>","<b>Colle Gnifetti<\/b><br><b>Description:<\/b> Ice cores from the Monte Rosa massif covering the entire glacier thickness of 82 m (CG03) and 75 m (CG15). Chronology is based on annual layer counting.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28025>Explorer Link<\/a>","<b>Lago Verdarolo<\/b><br><b>Description:<\/b> Small and shallow glacial lake. No inlet and only one small outlet on the north shore. Dominant bedrock in the catchment: sandstone and limestone. Young, closed and almost monospecific beech forests around the lake.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28061>Explorer Link<\/a>","<b>Lago Verdarolo<\/b><br><b>Description:<\/b> Small and shallow glacial lake. No inlet and only one small outlet on the north shore. Dominant bedrock in the catchment: sandstone and limestone. Young, closed and almost monospecific beech forests around the lake.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28094>Explorer Link<\/a>","<b>Lago Albano<\/b><br><b>Description:<\/b> Lake. Physiography: crater origin in Albano Hills. Surrounding vegetation: evergreen woodland Orno-Quercetum ilicis.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28117>Explorer Link<\/a>","<b>Lago di Nemi<\/b><br><b>Description:<\/b> Lake. Physiography: crater origin. Surrounding vegetation: evergreen woodland Orno-Quercetum ilicis.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28121>Explorer Link<\/a>","<b>Valle di Castiglione<\/b><br><b>Description:<\/b> Ancient lake drained in the XIX century. Physiography: volcanic crater.\r\nSurrounding vegetation: mixed deciduous oak forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28123>Explorer Link<\/a>","<b>Lingua d'Oca<\/b><br><b>Description:<\/b> Marsh. Physiography: Tiber delta. Surrounding vegetation: agriculture.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28124>Explorer Link<\/a>","<b>Lago di Stracciaccapa<\/b><br><b>Description:<\/b> Drained lake. Physiography: cratere. Surrounding vegetation: Quercus,Ligustrum,Buglossoides,Lonicera.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28153>Explorer Link<\/a>","<b>Lej da la Tscheppa<\/b><br><b>Description:<\/b> Lake. Physiography: dead-ice hollow in Upper Engadine valley. Surrounding vegetation: alpine.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28259>Explorer Link<\/a>","<b>Lago di Viverone<\/b><br><b>Description:<\/b> Lake. Physiography: moraine. Surrounding vegetation: cultivated fields and poplar.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28261>Explorer Link<\/a>","<b>Lago di Sirio<\/b><br><b>Description:<\/b> Lake. Physiography: valley. Surrounding vegetation: forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28262>Explorer Link<\/a>","<b>Torbiera di Trana<\/b><br><b>Description:<\/b> Bog in south of Lago Piccolo d'Avigliana. Physiography: plain with 2 grabens. Surrounding vegetation: forest and cultivated fields.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28263>Explorer Link<\/a>","<b>Lago di Biandronno<\/b><br><b>Description:<\/b> Lake. Physiography: valley. Surrounding vegetation: forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28264>Explorer Link<\/a>","<b>Lago di Alice<\/b><br><b>Description:<\/b> Small lake drained by a natual stream. Physiography: valley. Surrounding vegetation: forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28265>Explorer Link<\/a>","<b>Torbiera di Alice<\/b><br><b>Description:<\/b> Peat bog. Physiography: valley. Surrounding vegetation: forest.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28266>Explorer Link<\/a>","<b>Maloja Riegel<\/b><br><b>Description:<\/b> NA<br><a href=http://apps.neotomadb.org/explorer/?siteids=28334>Explorer Link<\/a>","<b>Swiss Trap Z1<\/b><br><b>Description:<\/b> NA<br><a href=http://apps.neotomadb.org/explorer/?siteids=28842>Explorer Link<\/a>","<b>Swiss Trap Z2<\/b><br><b>Description:<\/b> NA<br><a href=http://apps.neotomadb.org/explorer/?siteids=28843>Explorer Link<\/a>","<b>Swiss Trap Z3<\/b><br><b>Description:<\/b> NA<br><a href=http://apps.neotomadb.org/explorer/?siteids=28844>Explorer Link<\/a>","<b>Swiss Trap Z4<\/b><br><b>Description:<\/b> NA<br><a href=http://apps.neotomadb.org/explorer/?siteids=28845>Explorer Link<\/a>","<b>Swiss Trap Z5<\/b><br><b>Description:<\/b> NA<br><a href=http://apps.neotomadb.org/explorer/?siteids=28846>Explorer Link<\/a>","<b>Lago del Pesce<\/b><br><b>Description:<\/b> Lago del Pesce is a mountain pond in the Pollino National Park (Basilicata, Italy). The site is partially surrounded by a dense European beech (Fagus sylvatica L.) forest that is interrupted toward the east by a grassland with scattered trees. There is no riparian forest along the lakeshore. The water body and the forest edge are separated by a band of Cyperaceae. The geological substrate is mainly composed of flysch.<br><a href=http://apps.neotomadb.org/explorer/?siteids=28940>Explorer Link<\/a>","<b>Gola di Lago<\/b><br><b>Description:<\/b> Minerotrophic peatland, with two permanent streams entering and one main stream draining the mire from south to north. \r\n\r\nThe vegetation within the mire is mainly composed of Trichophorum cespitosum and Carex elata. Gola di Lago is situated in the montane belt of the Southern Swiss Alps, which is dominated by Fagus sylvatica and co-dominated by Abies alba. Locally, Betula pendula stands dominate the surroundings of\r\nthe mire together with scattered F. sylvatica. Pure sweet chestnut (Castanea sativa) forests and mixed oak-sweet chestnut forests comprising e.g. Corylus avellana, Fraxinus excelsior, Tilia and Ulmus occur in the colline \r\nbelt, just below the site.<br><a href=http://apps.neotomadb.org/explorer/?siteids=29207>Explorer Link<\/a>","<b>Lago Lucone<\/b><br><b>Description:<\/b> Lake drained in 1459 CE to reclaim land for cultivation. Major inlet feed with springs located at the foothills of Monte Soffiano. Artificial outlet (Rio Seriola) tributary of Rio Borgognini, which eventually flows into Lago di Garda.\r\n\r\nMarshy area with Alnus glutinosa carrs. Mixed oak forests (Quercus robur, Q. pubescens, Ostrya carpinifolia) on the moraines that surround the lake. Quercus cerris and Castanea sativa on acidic soils.<br><a href=http://apps.neotomadb.org/explorer/?siteids=30465>Explorer Link<\/a>","<b>Lago di Fimon<\/b><br><b>Description:<\/b> Located in a depression on the northern side of the Berici Hills. Cretaceous-Miocene carbonatic and volcanic bedrock. Outlet of the lake dammed by alluvial sediments. Several minor inlet streams and one artificial outlet (Canale Debba). Mixed deciduous forest (Quercus pubescens, Ostrya carpinifolia, Fraxinus ornus, Celtis australis) on calcareous soils. On silty acidic soils, Quercus petraea, Castanea sativa and Acer pseudoplatanus occur.<br><a href=http://apps.neotomadb.org/explorer/?siteids=30466>Explorer Link<\/a>","<b>Segna<\/b><br><b>Description:<\/b> Mire located in the montane belt with dominance of Fagus sylvatica forests. Local vegetation: Molinia coerulea, Sphagnum sp. Calluna vulgaris, Picea abies and Juniperus communis.<br><a href=http://apps.neotomadb.org/explorer/?siteids=30467>Explorer Link<\/a>"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolygons","args":[[[[{"lng":[8.22,12.44,15.86,18.61,12.2,13.62,13.45,12.21,10.41,6.99,6.87,8.22],"lat":[44.13,41.72,37.82,39.99,45.39,45.86,46.46,47.11,46.69,45.97,44.34,44.13]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"green","weight":5,"opacity":0.5,"fill":true,"fillColor":"green","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.82,47.11],"lng":[6.87,18.61]}},"evals":[],"jsHooks":[]}</script>
-
-</div>
-</div>
-</div>
-</div>
 </div>
             </section>
 
@@ -619,7 +493,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sql-quickly.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="using-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
