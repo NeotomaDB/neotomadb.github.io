@@ -114,12 +114,12 @@
 <text text-anchor="start" x="30.5" y="-32.2" font-family="Helvetica,sans-Serif" font-size="11.00">geopol</text>
 <polygon fill="none" stroke="black" points="125.5,-24 125.5,-46 249.5,-46 249.5,-24 125.5,-24"/>
 <text text-anchor="start" x="128.5" y="-32.2" font-family="Helvetica,sans-Serif" font-size="11.00">_int4[10]</text>
-<polygon fill="#ffffff" stroke="transparent" points="10.5,-6 10.5,-24 45.5,-24 45.5,-6 10.5,-6"/>
-<polygon fill="none" stroke="black" points="10.5,-6 10.5,-24 45.5,-24 45.5,-6 10.5,-6"/>
+<polygon fill="#ffffff" stroke="transparent" points="10.5,-6 10.5,-24 42.5,-24 42.5,-6 10.5,-6"/>
+<polygon fill="none" stroke="black" points="10.5,-6 10.5,-24 42.5,-24 42.5,-6 10.5,-6"/>
 <text text-anchor="start" x="13.5" y="-12.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 0</text>
-<polygon fill="#ffffff" stroke="transparent" points="45.5,-6 45.5,-24 125.5,-24 125.5,-6 45.5,-6"/>
-<polygon fill="none" stroke="black" points="45.5,-6 45.5,-24 125.5,-24 125.5,-6 45.5,-6"/>
-<text text-anchor="start" x="62.5" y="-12.2" font-family="Helvetica,sans-Serif" font-size="11.00">55,391 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="42.5,-6 42.5,-24 125.5,-24 125.5,-6 42.5,-6"/>
+<polygon fill="none" stroke="black" points="42.5,-6 42.5,-24 125.5,-24 125.5,-6 42.5,-6"/>
+<text text-anchor="start" x="56.5" y="-12.2" font-family="Helvetica,sans-Serif" font-size="11.00">260,448 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="125.5,-6 125.5,-24 249.5,-24 249.5,-6 125.5,-6"/>
 <polygon fill="none" stroke="black" points="125.5,-6 125.5,-24 249.5,-24 249.5,-6 125.5,-6"/>
 <text text-anchor="start" x="230.5" y="-12.2" font-family="Helvetica,sans-Serif" font-size="11.00">0 &gt;</text>

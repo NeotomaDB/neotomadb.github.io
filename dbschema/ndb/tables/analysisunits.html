@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>analysisunits</h1><p><span id="recordNumber">449200</span> rows</p><br />
+                    <h1>analysisunits</h1><p><span id="recordNumber">486580</span> rows</p><br />
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <i class="fa fa-file-text-o"></i>
@@ -147,6 +147,10 @@
                                             <tr>
                                                 <td title="eventchronology.analysisunitid references analysisunits.analysisunitid via evc_alu"><a href='eventchronology.html'>eventchronology</a><span class='relatedKey'>.analysisunitid</span></td>
                                                 <td class="constraint detail">evc_alu<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="leadmodels.analysisunitid references analysisunits.analysisunitid via leadmodels_analysisunitid_fkey"><a href='leadmodels.html'>leadmodels</a><span class='relatedKey'>.analysisunitid</span></td>
+                                                <td class="constraint detail">leadmodels_analysisunitid_fkey<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                             <tr>
                                                 <td title="relativechronology.analysisunitid references analysisunits.analysisunitid via fk_relativechronology_analysisunits"><a href='relativechronology.html'>relativechronology</a><span class='relatedKey'>.analysisunitid</span></td>
@@ -414,124 +418,130 @@
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="605,5,814,181">
-<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="233,560,551,952">
-<area shape="rect" id="node5" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,524,189,759">
-<area shape="rect" id="node6" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="7,776,188,893">
+<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="233,731,551,1123">
+<area shape="rect" id="node5" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,695,189,929">
+<area shape="rect" id="node6" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="7,947,188,1064">
 <area shape="rect" id="node3" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="595,199,824,345">
 <area shape="rect" id="node4" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="595,363,823,509">
 <area shape="rect" id="node7" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="607,727,811,1049">
 <area shape="rect" id="node8" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="619,563,800,709">
 <area shape="rect" id="node9" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="874,548,1074,753">
-<area shape="rect" id="node10" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="868,884,1080,1089">
-<area shape="rect" id="node11" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="606,1103,813,1308">
-<area shape="rect" id="node12" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="619,1325,800,1501">
+<area shape="rect" id="node10" href="../../tables/leadmodels.html" target="_top" title="leadmodels" alt="" coords="601,1067,817,1213">
+<area shape="rect" id="node11" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="868,967,1080,1172">
+<area shape="rect" id="node12" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="606,1267,813,1472">
+<area shape="rect" id="node13" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="619,1489,800,1665">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="oneDegreeImg" data="../diagrams/tables/analysisunits.1degree.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="853,1264,1063,1440">
-<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="464,1185,781,1577">
-<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="536,831,709,919">
-<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="537,1595,708,1683">
-<area shape="rect" id="node11" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="236,567,420,801">
-<area shape="rect" id="node12" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="237,1335,419,1452">
-<area shape="rect" id="node15" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="256,831,400,919">
-<area shape="rect" id="node5" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1145,264,1354,352">
-<area shape="rect" id="node6" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="855,365,1061,571">
-<area shape="rect" id="node24" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="535,569,711,657">
-<area shape="rect" id="node37" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="535,359,711,447">
-<area shape="rect" id="node7" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1135,1793,1364,1940">
-<area shape="rect" id="node8" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="825,1963,1091,2051">
-<area shape="rect" id="node9" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="844,1635,1072,1781">
-<area shape="rect" id="node10" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="551,1700,695,1788">
-<area shape="rect" id="node18" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,591,192,679">
-<area shape="rect" id="node19" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="11,696,186,784">
-<area shape="rect" id="node20" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="21,485,177,573">
-<area shape="rect" id="node21" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="24,801,173,889">
-<area shape="rect" id="node13" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1144,1085,1355,1173">
-<area shape="rect" id="node14" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="856,888,1060,1211">
-<area shape="rect" id="node16" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="518,949,727,1037">
-<area shape="rect" id="node17" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1137,944,1361,1032">
-<area shape="rect" id="node22" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="545,253,701,341">
-<area shape="rect" id="node23" href="../../tables/data.html" target="_top" title="data" alt="" coords="1151,405,1347,493">
-<area shape="rect" id="node25" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="867,1799,1049,1945">
-<area shape="rect" id="node26" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="531,1831,715,1919">
-<area shape="rect" id="node27" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1149,1191,1349,1396">
-<area shape="rect" id="node28" href="../../tables/events.html" target="_top" title="events" alt="" coords="884,1457,1032,1545">
-<area shape="rect" id="node29" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1408,761,1613,849">
-<area shape="rect" id="node30" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1156,511,1343,599">
-<area shape="rect" id="node31" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="545,464,701,552">
-<area shape="rect" id="node32" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1143,721,1355,927">
-<area shape="rect" id="node33" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="875,783,1041,871">
-<area shape="rect" id="node34" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1161,616,1337,704">
-<area shape="rect" id="node35" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1155,53,1344,141">
-<area shape="rect" id="node36" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1151,159,1348,247">
-<area shape="rect" id="node38" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1418,332,1603,420">
-<area shape="rect" id="node39" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1159,1444,1340,1620">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="853,892,1063,1068">
+<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="464,1184,781,1576">
+<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="536,552,709,640">
+<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="537,1079,708,1167">
+<area shape="rect" id="node11" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="236,760,420,995">
+<area shape="rect" id="node12" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="237,1333,419,1451">
+<area shape="rect" id="node15" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="256,479,400,567">
+<area shape="rect" id="node5" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1145,815,1354,903">
+<area shape="rect" id="node6" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="855,599,1061,804">
+<area shape="rect" id="node24" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="535,657,711,745">
+<area shape="rect" id="node39" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="535,973,711,1061">
+<area shape="rect" id="node7" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1135,1179,1364,1325">
+<area shape="rect" id="node8" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="825,1263,1091,1351">
+<area shape="rect" id="node9" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="844,1545,1072,1692">
+<area shape="rect" id="node10" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="551,1593,695,1681">
+<area shape="rect" id="node18" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,783,192,871">
+<area shape="rect" id="node19" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="11,888,186,976">
+<area shape="rect" id="node20" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="21,677,177,765">
+<area shape="rect" id="node21" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="24,993,173,1081">
+<area shape="rect" id="node13" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1144,5,1355,93">
+<area shape="rect" id="node14" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="856,176,1060,499">
+<area shape="rect" id="node16" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="518,237,727,325">
+<area shape="rect" id="node17" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1137,111,1361,199">
+<area shape="rect" id="node22" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="545,868,701,956">
+<area shape="rect" id="node23" href="../../tables/data.html" target="_top" title="data" alt="" coords="1151,499,1347,587">
+<area shape="rect" id="node25" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="867,1709,1049,1856">
+<area shape="rect" id="node26" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="531,1741,715,1829">
+<area shape="rect" id="node27" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1149,1343,1349,1548">
+<area shape="rect" id="node28" href="../../tables/events.html" target="_top" title="events" alt="" coords="884,1404,1032,1492">
+<area shape="rect" id="node29" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1408,216,1613,304">
+<area shape="rect" id="node30" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1156,252,1343,340">
+<area shape="rect" id="node31" href="../../tables/leadmodels.html" target="_top" title="leadmodels" alt="" coords="850,1873,1066,2020">
+<area shape="rect" id="node32" href="../../tables/leadmodelbasis.html" target="_top" title="leadmodelbasis" alt="" coords="528,1876,717,1964">
+<area shape="rect" id="node33" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="545,763,701,851">
+<area shape="rect" id="node34" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1143,956,1355,1161">
+<area shape="rect" id="node35" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="875,1121,1041,1209">
+<area shape="rect" id="node36" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1161,357,1337,445">
+<area shape="rect" id="node37" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1155,604,1344,692">
+<area shape="rect" id="node38" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1151,709,1348,797">
+<area shape="rect" id="node40" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1418,425,1603,513">
+<area shape="rect" id="node41" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1159,1565,1340,1741">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="twodegreesDegreeImg" data="../diagrams/tables/analysisunits.2degrees.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>
                                     <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
 <area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="605,5,814,181">
-<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="233,560,551,952">
-<area shape="rect" id="node5" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,524,189,759">
-<area shape="rect" id="node6" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="7,776,188,893">
+<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="233,731,551,1123">
+<area shape="rect" id="node5" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="5,695,189,929">
+<area shape="rect" id="node6" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="7,947,188,1064">
 <area shape="rect" id="node3" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="595,199,824,345">
 <area shape="rect" id="node4" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="595,363,823,509">
 <area shape="rect" id="node7" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="607,727,811,1049">
 <area shape="rect" id="node8" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="619,563,800,709">
 <area shape="rect" id="node9" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="874,548,1074,753">
-<area shape="rect" id="node10" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="868,884,1080,1089">
-<area shape="rect" id="node11" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="606,1103,813,1308">
-<area shape="rect" id="node12" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="619,1325,800,1501">
+<area shape="rect" id="node10" href="../../tables/leadmodels.html" target="_top" title="leadmodels" alt="" coords="601,1067,817,1213">
+<area shape="rect" id="node11" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="868,967,1080,1172">
+<area shape="rect" id="node12" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="606,1267,813,1472">
+<area shape="rect" id="node13" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="619,1489,800,1665">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="oneimpliedDegreeImg" data="../diagrams/tables/analysisunits.implied1degrees.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>
                                     <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="853,827,1063,1003">
-<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="464,1149,781,1541">
-<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="536,851,709,939">
-<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="537,729,708,817">
-<area shape="rect" id="node11" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="236,420,420,655">
-<area shape="rect" id="node12" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="237,1299,419,1416">
-<area shape="rect" id="node15" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="256,851,400,939">
-<area shape="rect" id="node5" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1145,192,1354,280">
-<area shape="rect" id="node6" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="855,400,1061,605">
-<area shape="rect" id="node24" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="535,264,711,352">
-<area shape="rect" id="node39" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="535,580,711,668">
-<area shape="rect" id="node7" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1135,864,1364,1011">
-<area shape="rect" id="node8" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="825,721,1091,809">
-<area shape="rect" id="node9" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="844,1020,1072,1167">
-<area shape="rect" id="node10" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="551,1044,695,1132">
-<area shape="rect" id="node18" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,444,192,532">
-<area shape="rect" id="node19" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="11,549,186,637">
-<area shape="rect" id="node20" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="21,339,177,427">
-<area shape="rect" id="node21" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="24,655,173,743">
-<area shape="rect" id="node13" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1144,1776,1355,1864">
-<area shape="rect" id="node14" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="856,1703,1060,2025">
-<area shape="rect" id="node16" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="518,1764,727,1852">
-<area shape="rect" id="node17" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1137,1881,1361,1969">
-<area shape="rect" id="node22" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="545,369,701,457">
-<area shape="rect" id="node23" href="../../tables/data.html" target="_top" title="data" alt="" coords="1151,297,1347,385">
-<area shape="rect" id="node25" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="867,1433,1049,1580">
-<area shape="rect" id="node26" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="531,1559,715,1647">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="853,751,1063,927">
+<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="464,1025,781,1417">
+<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="536,728,709,816">
+<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="537,881,708,969">
+<area shape="rect" id="node11" href="../../tables/collectionunits.html" target="_top" title="collectionunits" alt="" coords="236,452,420,687">
+<area shape="rect" id="node12" href="../../tables/faciestypes.html" target="_top" title="faciestypes" alt="" coords="237,1175,419,1292">
+<area shape="rect" id="node15" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="256,728,400,816">
+<area shape="rect" id="node5" href="../../tables/aggregatesamples.html" target="_top" title="aggregatesamples" alt="" coords="1145,87,1354,175">
+<area shape="rect" id="node6" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="855,407,1061,612">
+<area shape="rect" id="node24" href="../../tables/datasets.html" target="_top" title="datasets" alt="" coords="535,363,711,451">
+<area shape="rect" id="node41" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="535,573,711,661">
+<area shape="rect" id="node7" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="1135,896,1364,1043">
+<area shape="rect" id="node8" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="825,980,1091,1068">
+<area shape="rect" id="node9" href="../../tables/analysisunitlithostrat.html" target="_top" title="analysisunitlithostrat" alt="" coords="844,1299,1072,1445">
+<area shape="rect" id="node10" href="../../tables/lithostrat.html" target="_top" title="lithostrat" alt="" coords="551,1435,695,1523">
+<area shape="rect" id="node18" href="../../tables/collectiontypes.html" target="_top" title="collectiontypes" alt="" coords="5,476,192,564">
+<area shape="rect" id="node19" href="../../tables/depenvttypes.html" target="_top" title="depenvttypes" alt="" coords="11,581,186,669">
+<area shape="rect" id="node20" href="../../tables/sites.html" target="_top" title="sites" alt="" coords="21,371,177,459">
+<area shape="rect" id="node21" href="../../tables/rocktypes.html" target="_top" title="rocktypes" alt="" coords="24,687,173,775">
+<area shape="rect" id="node13" href="../../tables/chroncontrolranks.html" target="_top" title="chroncontrolranks" alt="" coords="1144,1972,1355,2060">
+<area shape="rect" id="node14" href="../../tables/chroncontrols.html" target="_top" title="chroncontrols" alt="" coords="856,1896,1060,2219">
+<area shape="rect" id="node16" href="../../tables/chroncontroltypes.html" target="_top" title="chroncontroltypes" alt="" coords="518,1957,727,2045">
+<area shape="rect" id="node17" href="../../tables/chroncontrolscal14c.html" target="_top" title="chroncontrolscal14c" alt="" coords="1137,1831,1361,1919">
+<area shape="rect" id="node22" href="../../tables/collectors.html" target="_top" title="collectors" alt="" coords="545,468,701,556">
+<area shape="rect" id="node23" href="../../tables/data.html" target="_top" title="data" alt="" coords="1151,192,1347,280">
+<area shape="rect" id="node25" href="../../tables/depagents.html" target="_top" title="depagents" alt="" coords="867,1463,1049,1609">
+<area shape="rect" id="node26" href="../../tables/depagenttypes.html" target="_top" title="depagenttypes" alt="" coords="531,1540,715,1628">
 <area shape="rect" id="node27" href="../../tables/dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="1162,5,1337,69">
-<area shape="rect" id="node28" href="../../tables/dslinks.html" target="_top" title="dslinks" alt="" coords="894,199,1022,263">
-<area shape="rect" id="node29" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1149,1295,1349,1500">
-<area shape="rect" id="node30" href="../../tables/events.html" target="_top" title="events" alt="" coords="884,1256,1032,1344">
-<area shape="rect" id="node31" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1408,1211,1613,1299">
+<area shape="rect" id="node28" href="../../tables/dslinks.html" target="_top" title="dslinks" alt="" coords="894,289,1022,353">
+<area shape="rect" id="node29" href="../../tables/eventchronology.html" target="_top" title="eventchronology" alt="" coords="1149,1060,1349,1265">
+<area shape="rect" id="node30" href="../../tables/events.html" target="_top" title="events" alt="" coords="884,1121,1032,1209">
+<area shape="rect" id="node31" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="1408,1308,1613,1396">
 <area shape="rect" id="node32" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="1156,685,1343,773">
-<area shape="rect" id="node33" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="545,475,701,563">
-<area shape="rect" id="node34" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1143,1517,1355,1723">
-<area shape="rect" id="node35" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="875,1597,1041,1685">
-<area shape="rect" id="node36" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1161,87,1337,175">
-<area shape="rect" id="node37" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1155,403,1344,491">
-<area shape="rect" id="node38" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1151,508,1348,596">
-<area shape="rect" id="node40" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1418,612,1603,700">
-<area shape="rect" id="node41" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1159,1101,1340,1277">
+<area shape="rect" id="node33" href="../../tables/leadmodels.html" target="_top" title="leadmodels" alt="" coords="850,1627,1066,1773">
+<area shape="rect" id="node34" href="../../tables/leadmodelbasis.html" target="_top" title="leadmodelbasis" alt="" coords="528,1645,717,1733">
+<area shape="rect" id="node35" href="../../tables/lithology.html" target="_top" title="lithology" alt="" coords="545,221,701,309">
+<area shape="rect" id="node36" href="../../tables/relativechronology.html" target="_top" title="relativechronology" alt="" coords="1143,1608,1355,1813">
+<area shape="rect" id="node37" href="../../tables/relativeages.html" target="_top" title="relativeages" alt="" coords="875,1791,1041,1879">
+<area shape="rect" id="node38" href="../../tables/sampleages.html" target="_top" title="sampleages" alt="" coords="1161,544,1337,632">
+<area shape="rect" id="node39" href="../../tables/sampleanalysts.html" target="_top" title="sampleanalysts" alt="" coords="1155,297,1344,385">
+<area shape="rect" id="node40" href="../../tables/samplekeywords.html" target="_top" title="samplekeywords" alt="" coords="1151,403,1348,491">
+<area shape="rect" id="node42" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="1418,612,1603,700">
+<area shape="rect" id="node43" href="../../tables/tephras.html" target="_top" title="tephras" alt="" coords="1159,1283,1340,1459">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="twoimpliedDegreeImg" data="../diagrams/tables/analysisunits.implied2degrees.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>

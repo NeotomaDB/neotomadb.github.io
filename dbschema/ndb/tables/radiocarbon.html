@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>radiocarbon</h1><p><span id="recordNumber">31854</span> rows</p><br />
+                    <h1>radiocarbon</h1><p><span id="recordNumber">32234</span> rows</p><br />
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -115,6 +115,10 @@
                                     </td>
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="radiocarbon.geochronid references geochronology.geochronid via fk_geochrons_geochronid"><a href='geochronology.html'>geochronology</a><span class='relatedKey'>.geochronid</span></td>
+                                                <td class="constraint detail">fk_geochrons_geochronid<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
                                         </table>
                                     </td>
                                     <td></td>
@@ -358,14 +362,30 @@
                                 <h5>Close relationships within degrees of separation</h5>
                                 <ul class="nav nav-tabs pull-left ui-sortable-handle">
                                     <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
                                 </ul>
                                 <div class="tab-content no-padding">
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="../../tables/radiocarbon.html" target="_top" title="radiocarbon" alt="" coords="276,5,604,427">
-<area shape="rect" id="node2" href="../../tables/radiocarbonmethods.html" target="_top" title="radiocarbonmethods" alt="" coords="5,37,232,155">
+<area shape="rect" id="node1" href="../../tables/radiocarbon.html" target="_top" title="radiocarbon" alt="" coords="276,115,604,536">
+<area shape="rect" id="node2" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="25,5,212,240">
+<area shape="rect" id="node3" href="../../tables/radiocarbonmethods.html" target="_top" title="radiocarbonmethods" alt="" coords="5,257,232,375">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="oneDegreeImg" data="../diagrams/tables/radiocarbon.1degree.svg" class="diagram" border="0" align="left"></object></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="../../tables/geochroncontrols.html" target="_top" title="geochroncontrols" alt="" coords="567,111,772,199">
+<area shape="rect" id="node2" href="../../tables/geochronology.html" target="_top" title="geochronology" alt="" coords="255,105,441,340">
+<area shape="rect" id="node3" href="../../tables/agetypes.html" target="_top" title="agetypes" alt="" coords="26,261,170,349">
+<area shape="rect" id="node4" href="../../tables/geochrontypes.html" target="_top" title="geochrontypes" alt="" coords="5,156,191,244">
+<area shape="rect" id="node5" href="../../tables/samples.html" target="_top" title="samples" alt="" coords="10,29,186,117">
+<area shape="rect" id="node6" href="../../tables/geochronpublications.html" target="_top" title="geochronpublications" alt="" coords="553,216,786,304">
+<area shape="rect" id="node7" href="../../tables/radiocarbon.html" target="_top" title="radiocarbon" alt="" coords="505,323,833,744">
+<area shape="rect" id="node8" href="../../tables/radiocarbonmethods.html" target="_top" title="radiocarbonmethods" alt="" coords="235,357,461,475">
+<area shape="rect" id="node9" href="../../tables/specimendates.html" target="_top" title="specimendates" alt="" coords="577,5,762,93">
+</map>
+                                        <a name='diagram'><object type="image/svg+xml" id="twodegreesDegreeImg" data="../diagrams/tables/radiocarbon.2degrees.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>
                                 </div>
                             </div>

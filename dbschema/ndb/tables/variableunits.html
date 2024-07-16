@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>variableunits</h1><p><span id="recordNumber">209</span> rows</p><br />
+                    <h1>variableunits</h1><p><span id="recordNumber">212</span> rows</p><br />
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <i class="fa fa-file-text-o"></i>
@@ -131,6 +131,10 @@
                                             <tr>
                                                 <td title="analysisunitaltdepthscales.variableunitsid references variableunits.variableunitsid via fk_analysisunitaltdepths_variableunits"><a href='analysisunitaltdepthscales.html'>analysisunitaltdepthscales</a><span class='relatedKey'>.variableunitsid</span></td>
                                                 <td class="constraint detail">fk_analysisunitaltdepths_variableunits<span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="datauncertainties.uncertaintyunitid references variableunits.variableunitsid via datauncertainties_uncertaintyunitid_fkey"><a href='datauncertainties.html'>datauncertainties</a><span class='relatedKey'>.uncertaintyunitid</span></td>
+                                                <td class="constraint detail">datauncertainties_uncertaintyunitid_fkey<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                             <tr>
                                                 <td title="unitsdatasettypes.variableunitsid references variableunits.variableunitsid via fk_unitsdatasettypes_variableunits"><a href='unitsdatasettypes.html'>unitsdatasettypes</a><span class='relatedKey'>.variableunitsid</span></td>
@@ -255,67 +259,73 @@
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="363,5,572,181">
-<area shape="rect" id="node2" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,308,291,495">
+<area shape="rect" id="node2" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,389,291,576">
 <area shape="rect" id="node3" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="335,199,600,345">
-<area shape="rect" id="node4" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,363,570,509">
-<area shape="rect" id="node5" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,527,565,761">
+<area shape="rect" id="node4" href="../../tables/datauncertainties.html" target="_top" title="datauncertainties" alt="" coords="367,363,568,539">
+<area shape="rect" id="node5" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,556,570,703">
+<area shape="rect" id="node6" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,720,565,955">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="oneDegreeImg" data="../diagrams/tables/variableunits.1degree.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="655,368,864,544">
-<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="379,333,555,421">
-<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="381,439,554,527">
-<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,340,291,527">
-<area shape="rect" id="node5" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="645,217,874,305">
-<area shape="rect" id="node6" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="335,169,600,316">
-<area shape="rect" id="node7" href="../../tables/data.html" target="_top" title="data" alt="" coords="661,561,857,649">
-<area shape="rect" id="node8" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,769,565,1004">
-<area shape="rect" id="node16" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="60,725,236,813">
-<area shape="rect" id="node17" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="50,936,246,1024">
-<area shape="rect" id="node18" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="49,831,247,919">
-<area shape="rect" id="node9" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="662,667,857,755">
-<area shape="rect" id="node10" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="653,772,866,860">
-<area shape="rect" id="node11" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="669,877,849,965">
-<area shape="rect" id="node12" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="673,983,845,1071">
-<area shape="rect" id="node13" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="644,1088,875,1176">
-<area shape="rect" id="node14" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,5,570,152">
-<area shape="rect" id="node15" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="63,8,233,96">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="655,872,864,1048">
+<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="375,837,559,925">
+<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="381,943,554,1031">
+<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,700,291,887">
+<area shape="rect" id="node5" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="645,721,874,809">
+<area shape="rect" id="node6" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="335,673,600,820">
+<area shape="rect" id="node7" href="../../tables/data.html" target="_top" title="data" alt="" coords="661,216,857,304">
+<area shape="rect" id="node8" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,319,565,553">
+<area shape="rect" id="node18" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="60,275,236,363">
+<area shape="rect" id="node19" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="50,485,246,573">
+<area shape="rect" id="node20" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="49,380,247,468">
+<area shape="rect" id="node9" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="662,321,857,409">
+<area shape="rect" id="node10" href="../../tables/datauncertainties.html" target="_top" title="datauncertainties" alt="" coords="919,568,1120,744">
+<area shape="rect" id="node11" href="../../tables/uncertaintybases.html" target="_top" title="uncertaintybases" alt="" coords="659,1065,860,1153">
+<area shape="rect" id="node12" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="653,427,866,515">
+<area shape="rect" id="node13" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="669,532,849,620">
+<area shape="rect" id="node14" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="673,5,845,93">
+<area shape="rect" id="node15" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="644,111,875,199">
+<area shape="rect" id="node16" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,1084,570,1231">
+<area shape="rect" id="node17" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="63,1087,233,1175">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="twodegreesDegreeImg" data="../diagrams/tables/variableunits.2degrees.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>
                                     <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
 <area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="363,5,572,181">
-<area shape="rect" id="node2" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,308,291,495">
+<area shape="rect" id="node2" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,389,291,576">
 <area shape="rect" id="node3" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="335,199,600,345">
-<area shape="rect" id="node4" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,363,570,509">
-<area shape="rect" id="node5" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,527,565,761">
+<area shape="rect" id="node4" href="../../tables/datauncertainties.html" target="_top" title="datauncertainties" alt="" coords="367,363,568,539">
+<area shape="rect" id="node5" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,556,570,703">
+<area shape="rect" id="node6" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,720,565,955">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="oneimpliedDegreeImg" data="../diagrams/tables/variableunits.implied1degrees.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>
                                     <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
-<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="655,368,864,544">
-<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="379,333,555,421">
-<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="381,439,554,527">
-<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,328,291,515">
-<area shape="rect" id="node5" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="645,217,874,305">
-<area shape="rect" id="node6" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="335,169,600,316">
-<area shape="rect" id="node7" href="../../tables/data.html" target="_top" title="data" alt="" coords="661,1169,857,1257">
-<area shape="rect" id="node8" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,797,565,1032">
-<area shape="rect" id="node17" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="60,753,236,841">
-<area shape="rect" id="node18" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="50,964,246,1052">
-<area shape="rect" id="node19" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="49,859,247,947">
-<area shape="rect" id="node9" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="662,561,857,649">
-<area shape="rect" id="node10" href="../../tables/dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="672,667,847,731">
-<area shape="rect" id="node11" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="653,748,866,836">
-<area shape="rect" id="node12" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="669,853,849,941">
-<area shape="rect" id="node13" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="673,959,845,1047">
-<area shape="rect" id="node14" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="644,1064,875,1152">
-<area shape="rect" id="node15" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,5,570,152">
-<area shape="rect" id="node16" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="63,8,233,96">
+<area shape="rect" id="node1" href="../../tables/accumulationrates.html" target="_top" title="accumulationrates" alt="" coords="655,953,864,1129">
+<area shape="rect" id="node2" href="../../tables/analysisunits.html" target="_top" title="analysisunits" alt="" coords="375,919,559,1007">
+<area shape="rect" id="node3" href="../../tables/chronologies.html" target="_top" title="chronologies" alt="" coords="381,1024,554,1112">
+<area shape="rect" id="node4" href="../../tables/variableunits.html" target="_top" title="variableunits" alt="" coords="5,781,291,968">
+<area shape="rect" id="node5" href="../../tables/analysisunitaltdepths.html" target="_top" title="analysisunitaltdepths" alt="" coords="645,803,874,891">
+<area shape="rect" id="node6" href="../../tables/analysisunitaltdepthscales.html" target="_top" title="analysisunitaltdepthscales" alt="" coords="335,755,600,901">
+<area shape="rect" id="node7" href="../../tables/data.html" target="_top" title="data" alt="" coords="661,111,857,199">
+<area shape="rect" id="node8" href="../../tables/variables.html" target="_top" title="variables" alt="" coords="370,359,565,593">
+<area shape="rect" id="node19" href="../../tables/taxa.html" target="_top" title="taxa" alt="" coords="60,315,236,403">
+<area shape="rect" id="node20" href="../../tables/variablecontexts.html" target="_top" title="variablecontexts" alt="" coords="50,525,246,613">
+<area shape="rect" id="node21" href="../../tables/variableelements.html" target="_top" title="variableelements" alt="" coords="49,420,247,508">
+<area shape="rect" id="node9" href="../../tables/datasetvariables.html" target="_top" title="datasetvariables" alt="" coords="662,216,857,304">
+<area shape="rect" id="node10" href="../../tables/datauncertainties.html" target="_top" title="datauncertainties" alt="" coords="919,649,1120,825">
+<area shape="rect" id="node11" href="../../tables/uncertaintybases.html" target="_top" title="uncertaintybases" alt="" coords="659,1147,860,1235">
+<area shape="rect" id="node12" href="../../tables/dsdatasample.html" target="_top" title="dsdatasample" alt="" coords="672,321,847,385">
+<area shape="rect" id="node13" href="../../tables/isoinstrumentation.html" target="_top" title="isoinstrumentation" alt="" coords="653,403,866,491">
+<area shape="rect" id="node14" href="../../tables/isosrmetadata.html" target="_top" title="isosrmetadata" alt="" coords="669,508,849,596">
+<area shape="rect" id="node15" href="../../tables/isostandards.html" target="_top" title="isostandards" alt="" coords="673,613,845,701">
+<area shape="rect" id="node16" href="../../tables/isovariablescaletypes.html" target="_top" title="isovariablescaletypes" alt="" coords="644,5,875,93">
+<area shape="rect" id="node17" href="../../tables/unitsdatasettypes.html" target="_top" title="unitsdatasettypes" alt="" coords="365,1165,570,1312">
+<area shape="rect" id="node18" href="../../tables/datasettypes.html" target="_top" title="datasettypes" alt="" coords="63,1168,233,1256">
 </map>
                                         <a name='diagram'><object type="image/svg+xml" id="twoimpliedDegreeImg" data="../diagrams/tables/variableunits.implied2degrees.svg" class="diagram" border="0" align="left"></object></a>
                                     </div>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="neotoma" schema="ap" type="PostgreSQL - 9.6.24">
+<database name="neotoma" schema="ap" type="PostgreSQL - 15.5">
    <sequences>
-      <sequence increment="1" name="gadm_410_fid_seq" startValue="1"/>
+      <sequence increment="1" name="faunranges_gid_seq" startValue="1"/>
+      <sequence increment="1" name="gadm_objectid_seq" startValue="1"/>
+      <sequence increment="1" name="globalmammals_fid_seq" startValue="1"/>
+      <sequence increment="1" name="hydrolakes_objectid_seq" startValue="1"/>
+      <sequence increment="1" name="icesheets_gid_seq" startValue="1"/>
    </sequences>
    <tables>
       <table name="datasetkeywords" numRows="0" remarks="" schema="ap" type="VIEW" viewSql=" SELECT DISTINCT s.datasetid,&#10;    k.keywordid&#10;   FROM (ndb.samples s&#10;     JOIN ndb.samplekeywords k ON ((s.sampleid = k.sampleid)));">
@@ -12,8 +16,8 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="contactid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
       </table>
-      <table name="faunranges" remarks="" schema="ap" type="TABLE">
-         <column autoUpdated="false" defaultValue="nextval('ap.faunranges_gid_seq'::regclass)" digits="0" id="0" name="gid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+      <table name="faunranges" numRows="191" remarks="" schema="ap" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('ap.faunranges_gid_seq'::regclass)" digits="0" id="0" name="gid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="spid" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sciname" nullable="true" remarks="" size="254" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
@@ -28,79 +32,132 @@
             <column ascending="true" name="sciname"/>
          </index>
       </table>
-      <table name="gadm_410" numRows="356508" remarks="" schema="ap" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('ap.gadm_410_fid_seq'::regclass)" digits="0" id="0" name="fid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
-            <child column="fid" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="ap" table="sitegadm"/>
-         </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="uid" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="gid_0" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="name_0" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+      <table name="gadm" numRows="356508" remarks="" schema="ap" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('ap.gadm_objectid_seq'::regclass)" digits="0" id="0" name="objectid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="uid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="gid_0" nullable="true" remarks="" size="3" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="name_0" nullable="true" remarks="" size="44" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="varname_0" nullable="true" remarks="" size="29" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="gid_1" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="name_1" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="varname_1" nullable="true" remarks="" size="82" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="gid_1" nullable="true" remarks="" size="8" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="name_1" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="varname_1" nullable="true" remarks="" size="129" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="nl_name_1" nullable="true" remarks="" size="87" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="iso_1" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="iso_1" nullable="true" remarks="" size="8" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="hasc_1" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="cc_1" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="type_1" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="engtype_1" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="cc_1" nullable="true" remarks="" size="9" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="type_1" nullable="true" remarks="" size="37" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="engtype_1" nullable="true" remarks="" size="37" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="validfr_1" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="gid_2" nullable="true" remarks="" size="12" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="name_2" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="varname_2" nullable="true" remarks="" size="39" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="name_2" nullable="true" remarks="" size="51" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="varname_2" nullable="true" remarks="" size="116" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="nl_name_2" nullable="true" remarks="" size="75" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="hasc_2" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="cc_2" nullable="true" remarks="" size="12" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="type_2" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="engtype_2" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="type_2" nullable="true" remarks="" size="43" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="engtype_2" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="validfr_2" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="gid_3" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="name_3" nullable="true" remarks="" size="38" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="varname_3" nullable="true" remarks="" size="44" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="name_3" nullable="true" remarks="" size="64" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="varname_3" nullable="true" remarks="" size="54" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="27" name="nl_name_3" nullable="true" remarks="" size="56" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="hasc_3" nullable="true" remarks="" size="27" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="cc_3" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="30" name="type_3" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="engtype_3" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="cc_3" nullable="true" remarks="" size="9" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="30" name="type_3" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="engtype_3" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="validfr_3" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="gid_4" nullable="true" remarks="" size="18" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="34" name="name_4" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="35" name="varname_4" nullable="true" remarks="" size="35" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="34" name="name_4" nullable="true" remarks="" size="98" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="35" name="varname_4" nullable="true" remarks="" size="54" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="36" name="cc_4" nullable="true" remarks="" size="12" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="37" name="type_4" nullable="true" remarks="" size="29" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="38" name="engtype_4" nullable="true" remarks="" size="29" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="39" name="validfr_4" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="39" name="validfr_4" nullable="true" remarks="" size="7" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="40" name="gid_5" nullable="true" remarks="" size="19" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="41" name="name_5" nullable="true" remarks="" size="34" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="42" name="cc_5" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="41" name="name_5" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="42" name="cc_5" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="43" name="type_5" nullable="true" remarks="" size="22" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="44" name="engtype_5" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="44" name="engtype_5" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="45" name="governedby" nullable="true" remarks="" size="17" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="46" name="sovereign" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="47" name="disputedby" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="48" name="region" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="49" name="varregion" nullable="true" remarks="" size="48" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="50" name="country" nullable="true" remarks="" size="32" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="51" name="continent" nullable="true" remarks="" size="13" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="52" name="subcont" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="53" name="compoundname" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="54" name="ts_compoundname" nullable="true" remarks="" size="2147483647" type="tsvector" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="55" name="geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
-         <primaryKey column="fid" sequenceNumberInPK="1"/>
-         <index name="gadm_410_pkey" unique="true">
-            <column ascending="true" name="fid"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="47" name="disputedby" nullable="true" remarks="" size="57" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="48" name="region" nullable="true" remarks="" size="36" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="49" name="varregion" nullable="true" remarks="" size="56" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="50" name="country" nullable="true" remarks="" size="60" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="51" name="continent" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="52" name="subcont" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="53" name="shape_length" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="54" name="shape_area" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="55" name="shape" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
+         <primaryKey column="objectid" sequenceNumberInPK="1"/>
+         <index name="gadm_pkey" unique="true">
+            <column ascending="true" name="objectid"/>
          </index>
-         <index name="gadm_geom_gix" unique="false">
-            <column ascending="true" name="geom"/>
+         <index name="gadm_shape_geom_idx" unique="false">
+            <column ascending="true" name="shape"/>
          </index>
       </table>
       <table name="geopolnames" numRows="0" remarks="" schema="ap" type="VIEW" viewSql=" SELECT DISTINCT sq.siteid,&#10;    array_agg(sq.geopoliticalname) AS names&#10;   FROM ( SELECT DISTINCT p.siteid,&#10;            gpu.geopoliticalname,&#10;            gpu.rank&#10;           FROM (ndb.geopoliticalunits gpu&#10;             JOIN ( SELECT p_1.siteid,&#10;                    unnest(p_1.geopol) AS unnest&#10;                   FROM ap.querytable p_1) p ON ((p.unnest = gpu.geopoliticalid)))&#10;          ORDER BY p.siteid, gpu.rank) sq&#10;  GROUP BY sq.siteid;">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="siteid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="names" nullable="true" remarks="" size="2147483647" type="_varchar" typeCode="2003"/>
       </table>
-      <table name="icesheets" remarks="" schema="ap" type="TABLE">
-         <column autoUpdated="false" defaultValue="nextval('ap.icesheets_gid_seq'::regclass)" digits="0" id="0" name="gid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+      <table name="globalmammals" numRows="6022" remarks="" schema="ap" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('ap.globalmammals_fid_seq'::regclass)" digits="0" id="0" name="fid" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="fid" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="ap" table="sitegadm"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sciname" nullable="true" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="order" nullable="true" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="family" nullable="true" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="author" nullable="true" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="5" name="year" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="citation" nullable="true" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="rec_source" nullable="true" remarks="" size="2147483647" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
+         <primaryKey column="fid" sequenceNumberInPK="1"/>
+         <index name="globalmammals_pkey" unique="true">
+            <column ascending="true" name="fid"/>
+         </index>
+         <index name="globalmammals_geom_geom_idx" unique="false">
+            <column ascending="true" name="geom"/>
+         </index>
+      </table>
+      <table name="hydrolakes" numRows="1427688" remarks="" schema="ap" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('ap.hydrolakes_objectid_seq'::regclass)" digits="0" id="0" name="objectid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="hylak_id" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="lake_name" nullable="true" remarks="" size="40" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="country" nullable="true" remarks="" size="35" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="continent" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="poly_src" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="lake_type" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="grand_id" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="8" name="lake_area" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="9" name="shore_len" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="10" name="shore_dev" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="11" name="vol_total" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="12" name="vol_res" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="vol_src" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="14" name="depth_avg" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="15" name="dis_avg" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="16" name="res_time" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="elevation" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="18" name="slope_100" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="8" id="19" name="wshd_area" nullable="true" remarks="" size="8" type="float4" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="20" name="pour_long" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="21" name="pour_lat" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="22" name="shape_length" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="23" name="shape_area" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="shape" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
+         <primaryKey column="objectid" sequenceNumberInPK="1"/>
+         <index name="hydrolakes_pkey" unique="true">
+            <column ascending="true" name="objectid"/>
+         </index>
+         <index name="gist_lakes_2geog" unique="false"/>
+         <index name="hydrolakes_shape_geom_idx" unique="false">
+            <column ascending="true" name="shape"/>
+         </index>
+      </table>
+      <table name="icesheets" numRows="6738" remarks="" schema="ap" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('ap.icesheets_gid_seq'::regclass)" digits="0" id="0" name="gid" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="area_km2" nullable="true" remarks="" size="131089" type="numeric" typeCode="2"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="age" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
@@ -142,7 +199,7 @@
          <column autoUpdated="false" defaultValue="null" digits="17" id="13" name="seed" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
          <column autoUpdated="false" defaultValue="null" digits="17" id="14" name="total" nullable="false" remarks="" size="17" type="float8" typeCode="8"/>
       </table>
-      <table name="querytable" numRows="55391" remarks="" schema="ap" type="TABLE">
+      <table name="querytable" numRows="260448" remarks="" schema="ap" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="siteid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sitename" nullable="true" remarks="" size="128" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="datasetid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
@@ -216,10 +273,10 @@
       <table name="sitegadm" numRows="19878" remarks="" schema="ap" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="siteid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fid" nullable="true" remarks="" size="10" type="int4" typeCode="4">
-            <parent column="fid" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="ap" table="gadm_410"/>
+            <parent column="fid" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="ap" table="globalmammals"/>
          </column>
       </table>
-      <table name="summaries" numRows="1888" remarks="" schema="ap" type="TABLE">
+      <table name="summaries" numRows="2011" remarks="" schema="ap" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="dbdate" nullable="false" remarks="" size="13" type="date" typeCode="91"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="sites" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="datasets" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
@@ -237,897 +294,4 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="datasettypeids" nullable="true" remarks="" size="2147483647" type="jsonb" typeCode="1111"/>
       </table>
    </tables>
-   <routines>
-      <routine dataAccess="MODIFIES" deterministic="false" name="collectionunitobject" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment><![CDATA[Create the JSON object used to return relevant collectionunit metadata from a single collection unit id.]]></comment>
-         <definition language="SQL"><![CDATA[
-        SELECT clu.collectionunitid,
-        jsonb_build_object('site', (SELECT site FROM ap.siteobject(clu.siteid)),
-                        'collectionunit', json_build_array(jsonb_build_object('collectionunitid', clu.collectionunitid,
-                   'depositionalenvironment', dvt.depenvt,
-                            'collectionunit', clu.collunitname,
-                                    'handle', clu.handle,
-                              'collunittype', cts.colltype,
-                                  'colldate', clu.colldate,
-                                'waterdepth', clu.waterdepth,
-                                     'notes', clu.notes,
-                          'collectiondevice', clu.colldevice,
-                                  'location', clu.location,
-                               'gpslocation', json_build_object('latitude', clu.gpslatitude, 
-                                                               'longitude', clu.gpslongitude, 
-                                                             'gpsaltitude', clu.gpsaltitude, 
-                                                                'gpserror', clu.gpserror),
-                            'collectors', json_agg(DISTINCT jsonb_build_object('contactid', cnt.contactid,
-                                        'contactname', cnt.contactname,
-                                        'familyname', cnt.familyname,
-                                        'firstname', cnt.givennames,
-                                        'initials', cnt.leadinginitials))))) AS collectionunit
-    FROM
-    ndb.collectionunits AS clu
-    LEFT JOIN ndb.depenvttypes AS dvt ON dvt.depenvtid = clu.depenvtid
-    LEFT JOIN ndb.collectiontypes AS cts ON cts.colltypeid = clu.colltypeid
-    LEFT OUTER JOIN ndb.collectors AS col ON col.collectionunitid = clu.collectionunitid 
-    LEFT JOIN ndb.contacts AS cnt ON cnt.contactid = col.contactid
-    WHERE clu.collectionunitid = _collectionunitid
-    GROUP BY clu.collectionunitid, dvt.depenvt, cts.colltype;
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="datasetobject" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment><![CDATA[Create the JSON object used to return relevant dataset metadata from a single datasetid.]]></comment>
-         <definition language="SQL"><![CDATA[
-    SELECT dts.datasetid,
-        jsonb_build_object('datasetid', dts.datasetid,
-                       'datasettype', dst.datasettype,
-                       'datasetnotes', dts.notes,
-                       'database', cstdb.databasename,
-                       'doi', json_agg(DISTINCT doi.doi),
-                       'datasetpublications', json_agg(DISTINCT jsonb_build_object('publicationid', pub.publicationid,
-                                                                         'citation', pub.citation)),
-                       'datasetpi', json_agg(DISTINCT jsonb_build_object('contactid', cnt.contactid,
-                                                            'contactname', cnt.contactname,
-                                                            'familyname', cnt.familyname,
-                                                            'firstname', cnt.givennames,
-                                                            'initials', cnt.leadinginitials)),
-                        'datasetprocessors', json_agg(DISTINCT jsonb_build_object('contactid', cntp.contactid,
-                                                            'contactname', cntp.contactname,
-                                                            'familyname', cntp.familyname,
-                                                            'firstname', cntp.givennames,
-                                                            'initials', cntp.leadinginitials)),
-                             'agerange', json_agg(DISTINCT jsonb_build_object('ageyoung', agerange.younger,
-                                                           'ageold', agerange.older,
-                                                           'units', agetypes.agetype)),
-                            'repository', json_agg(DISTINCT ri.repository))
-                             AS dataset
-    FROM
-        ndb.datasets             AS dts
-   LEFT OUTER JOIN ndb.datasettypes         AS dst      ON dst.datasettypeid = dts.datasettypeid
-    LEFT OUTER JOIN ndb.datasetdoi           AS doi      ON dts.datasetid = doi.datasetid
-   LEFT OUTER JOIN ndb.datasetdatabases     AS dsdb     ON dsdb.datasetid = dts.datasetid
-    LEFT OUTER JOIN ndb.datasetpublications AS dtpub ON dtpub.datasetid = dts.datasetid
-    LEFT OUTER JOIN ndb.publications AS pub ON pub.publicationid = dtpub.publicationid
-   LEFT OUTER JOIN ndb.datasetpis           AS dspi     ON dspi.datasetid = dts.datasetid
-    LEFT OUTER JOIN ndb.dataprocessors       AS dspr     ON dspr.datasetid = dts.datasetid
-    LEFT OUTER JOIN ndb.contacts             AS cntp      ON cntp.contactid = dspi.contactid
-   LEFT OUTER JOIN ndb.contacts             AS cnt      ON cnt.contactid = dspi.contactid
-   LEFT OUTER JOIN ndb.dsageranges          AS agerange ON dts.datasetid = agerange.datasetid
-   LEFT OUTER JOIN ndb.agetypes             AS agetypes ON agetypes.agetypeid = agerange.agetypeid
-   LEFT OUTER JOIN ndb.constituentdatabases AS cstdb    ON dsdb.databaseid = cstdb.databaseid
-    LEFT OUTER JOIN ndb.repositoryspecimens AS rpspec ON rpspec.datasetid = dts.datasetid
-    LEFT OUTER JOIN ndb.repositoryinstitutions AS ri ON ri.repositoryid = rpspec.repositoryid
-    WHERE dts.datasetid = _datasetid
-    GROUP BY
-        dts.datasetid,
-      dst.datasettype,
-      dts.notes,
-      cstdb.databasename
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="explorersearch" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="PLPGSQL"><![CDATA[
-DECLARE thesql varchar;
-        paramlist varchar;
-        doAbund boolean := false;
-        doElem boolean := false;
-        doTaph boolean := false;
-        doDepEnv boolean := false;
-        noTaxa boolean := false;
-        sumGroupId int := NULL;
-        poly geography := NULL;
-        cteBase varchar;
-        cteBaseSelect varchar;
-        cteBaseFrom varchar;
-        cteBaseWhere varchar;
-        cteAges varchar;
-        cteAgesSelect varchar;
-        cteAgesFrom varchar;
-        cteAgesWhere varchar;
-        cteDs varchar;
-        cteDsSelect varchar;
-        cteDsFrom varchar;
-        cteDsWhere varchar;
-    debugLenTaxonids integer;
-    debugIsPoly boolean;
-BEGIN
-    IF array_length(_depenvids,1) > 0 THEN
-      doDepEnv := true;
-    END IF;
-
-
-    debugLenTaxonids := array_length(_taxonids,1);
-
-    RAISE NOTICE '_taxonids length is %', debugLenTaxonids;
-
-    IF array_length(_taxonids,1) < 1 OR _taxonids is null THEN
-      noTaxa := true;
-      RAISE NOTICE 'noTaxa is %', noTaxa;
-
-    END IF;
-
-
-    IF ( (array_length(_elemtypeids,1) > 0 OR _elemtypeids IS NOT NULL) AND noTaxa = false ) THEN
-        doElem := true;
-    RAISE NOTICE 'doElem is %', doElem;
-    END IF;
-
-    IF ( (array_length(_taphtypeids,1) > 0 OR _taphtypeids IS NOT NULL )AND noTaxa = false ) THEN
-        doTaph := true;
-    RAISE NOTICE 'doTaph is %', doTaph;
-    END IF;
-
-    IF ( _abundpct IS NOT NULL AND noTaxa = false ) THEN
-    RAISE NOTICE '_abundpct is % and noTaxa is %', doTaph, noTaxa;
-        BEGIN
-            -- get SumGroupID of the first (or only) taxon id
-            sumGroupId := (
-                SELECT  sg.sumgroupid
-                FROM    ndb.ecolgroups eg
-                        JOIN ap.pollensumgroups sg ON eg.ecolgroupid = sg.ecolgroupid
-                WHERE
-                    eg.taxonid IN (_taxonids[1])
-                );
-            IF sumGroupId > 0 THEN
-                doAbund := true;
-            END IF;
-        END;
-    END IF;
-
-    RAISE NOTICE '_agedirectdate is % and noTaxa is %', _agedirectdate, noTaxa;
-    -- START building standard base CTE, skip if noTaxa = true
-    IF ( (_agedirectdate = false OR _agedirectdate IS NULL) AND noTaxa = false ) THEN
-        BEGIN
-            cteBase := 'WITH base AS (';
-            cteBaseSelect := '
-                SELECT s.sampleid, s.datasetid ';
-            cteBaseFrom := '
-                FROM ndb.samples s
-                JOIN ndb.data d ON s.sampleid = d.sampleid
-                JOIN ndb.variables v ON d.variableid = v.variableid ';
-            cteBaseWhere := '
-                WHERE';
-
-            IF doAbund = true THEN
-              BEGIN
-                cteBaseSelect := cteBaseSelect || ',
-                    v.taxonid,
-                    (CASE WHEN (SUM(d.value) OVER(PARTITION BY s.sampleid)) IS NOT NULL AND 
-               (SUM(d.value) OVER(PARTITION BY s.sampleid)) <>0 THEN
-                  (CAST(d.value / SUM(d.value) OVER (PARTITION BY s.sampleid) * 100 AS DECIMAL(5,2))) 
-               ELSE
-                  NULL END
-                ) AS abundance';
-                cteBaseFrom := cteBaseFrom || '
-                    JOIN ndb.taxa t ON v.taxonid = t.taxonid
-                    JOIN ndb.ecolgroups e ON t.taxonid = e.taxonid
-                    JOIN ap.pollensumgroups sg ON e.ecolgroupid = sg.ecolgroupid';
-                cteBaseWhere := cteBaseWhere || '
-                    sg.sumgroupid = ' || sumGroupId;
-              END;
-            ELSE
-              BEGIN
-                --cteBaseWhere := cteBaseWhere || ' 1 = 1';
-                cteBaseWhere := cteBaseWhere || '
-                    v.taxonid IN (' || array_to_string( _taxonids ,',') || ')';
-                IF doElem = true THEN
-                  BEGIN
-                    cteBaseFrom := cteBaseFrom || '
-                        JOIN ndb.variableelements ve ON v.variableelementid = ve.variableelementid';
-                    cteBaseWhere = cteBaseWhere || '
-                        AND ve.elementtypeid IN (array_to_string(_elemTypeIds,'',''))';
-                  END;
-                END IF;
-                IF doTaph = true THEN
-                  BEGIN
-                    cteBaseFrom := cteBaseFrom || '
-                        JOIN ndb.summarydatataphonomy ta ON ta.dataid = d.dataid';
-                    cteBaseWhere := cteBaseWhere || '
-                        AND ta.taphonomictypeid IN (array_to_string(_taphTypeIds,'',''))';
-                  END;
-                END IF;
-              END;
-            END IF;
-
-            IF _keywordid IS NOT NULL THEN
-              BEGIN
-                cteBaseFrom := cteBaseFrom || '
-                    JOIN ndb.samplekeywords k on s.sampleid = k.sampleid';
-                cteBaseWhere := cteBaseWhere || '
-                    AND k.keywordid = _keywordid';
-              END;
-            END IF;
-
-            cteBase := cteBase || cteBaseSelect || cteBaseFrom || cteBaseWhere || '
-                )';
-        END;
-    END IF;
-    -- END building base CTE
-
-    -- START building standard ages CTE
-    IF ( (_agedirectdate = false OR _agedirectdate IS NULL) AND noTaxa = false ) THEN
-      BEGIN
-        cteAges := ',
-            ages AS (';
-        cteAgesSelect := '
-            SELECT
-              base.datasetid,
-              MIN(sa.age) AS minage,
-              MAX(sa.age) AS maxage,
-              MIN(sa.ageyounger) AS ageyoungest,
-              MAX(sa.ageolder) AS ageoldest';
-        cteAgesFrom := '
-            FROM
-              base';
-        cteAgesWhere := '
-            WHERE
-              1=1';
-
-        IF doAbund THEN
-          cteAgesWhere := cteAgesWhere || '
-              AND base.abundance > ' || _abundpct ||
-              ' AND base.taxonid IN (' || array_to_string( _taxonids ,',') || ')';
-        END IF;
-
-        IF NOT (_ageold IS NULL AND _ageyoung IS NULL  AND noTaxa = false) THEN
-            BEGIN
-                cteAgesFrom := cteAgesFrom || '
-                    JOIN da.vsampagesstd sa ON base.sampleid = sa.sampleid';
-
-                IF _ageold IS NULL THEN
-                  _ageold := 10000000;
-                END IF;
-
-                IF _ageyoung IS NULL THEN
-                  _ageyoung := -250;
-                END IF;
-
-                IF _agedocontain = true THEN
-                  cteAgesWhere := cteAgesWhere || '
-                      AND (
-                        (' || _ageyoung || '<= sa.age AND sa.age <= ' || _ageold || ') OR
-                        (' || _ageyoung || '<= sa.ageyounger AND sa.ageolder <= ' || _ageold || ')
-                      )';
-                ELSE
-                  cteAgesWhere := cteAgesWhere || '
-                      AND (
-                        (' || _ageyoung || ' <= sa.age AND sa.age <= ' || _ageold || ') OR
-                        NOT (sa.ageolder < ' || _ageyoung || ' OR ' || _ageold || '< sa.ageyounger)
-                      )';
-                END IF;
-            END;
-        ELSE
-            cteAgesFrom := cteAgesFrom || ' LEFT JOIN da.vsampagesstd sa ON base.sampleid = sa.sampleid';
-        END IF;
-
-        cteAges := cteAges || cteAgesSelect || cteAgesFrom || cteAgesWhere || ' GROUP BY base.datasetid)';
-      END;
-    END IF;
-    -- END building ages CTE
-
-    -- START alternative combined base/ages CTE for directly dated specimens
-    IF ( _agedirectdate = true and noTaxa = false ) THEN
-      BEGIN
-        cteBase := '';
-
-        IF _ageold IS NULL THEN
-            _ageold := 10000000;
-        END IF;
-
-        IF _ageyoung IS NULL THEN
-            _ageyoung := -250;
-        END IF;
-
-        cteAges := '
-            WITH ages AS (
-                SELECT
-                  s.datasetid,
-                  MIN(c.calage) AS minage,
-                  MAX(c.calage) AS maxage,
-                  MIN(c.calageyounger) AS ageyoungest,
-                  MAX(c.calageolder) AS ageoldest
-                FROM
-                  ndb.samples s
-                  JOIN ndb.specimendates sd ON s.sampleid = sd.sampleid
-                  JOIN ndb.specimendatescal c ON sd.specimendateid = c.specimendateid
-                WHERE
-                  sd.taxonid IN (' || array_to_string( _taxonids ,',') || ')
-        ';
-
-        IF doElem = true THEN
-            cteAges := cteAges || '
-                AND sd.elementtypeid IN (array_to_string(' || _elemtypeids || ','',''))';
-        END IF;
-
-        IF _agedocontain = false THEN
-            cteAges := cteAges || '
-            AND NOT (c.calageolder < ' || _ageyoung || ' OR ' || _ageold || ' < c.calageyounger)';
-        ELSE
-            cteAges := cteAges || '
-            AND NOT (' || _ageyoung || ' <= c.calageyounger AND c.calageolder <= ' || _ageold || ' )';
-        END IF;
-
-        cteAges := cteAges || '
-            GROUP BY s.datasetid
-            )';
-        END;
-    END IF;
-    -- END alternative ages CTE for directly dated specimens
-
-    -- START building ds (dataset) CTE
-
-
-    IF noTaxa = true THEN
-      BEGIN
-        cteBase := '';
-        cteAges := '';
-        cteDs := '       WITH ';
-      END;
-    ELSE
-      cteDs := ',
-      ';
-    END IF;
-
-    cteDs := cteDs || 'ds AS (';
-
-    cteDsSelect := '
-        SELECT
-          ds.datasetid,
-          ds.datasettypeid,
-          ds.recdatecreated,
-          cu.colltypeid,
-          cu.depenvtid,
-          cu.handle,
-          cu.collunitname,
-          s.siteid,
-          s.sitename,
-          s.sitedescription,
-          s.notes,
-          s.altitude,
-          s.geog,
-          s.latitudenorth,
-          s.latitudesouth,
-          s.longitudeeast,
-          s.longitudewest,
-          ages.ageoldest,
-          ages.ageyoungest,
-          ages.maxage,
-          ages.minage ';
-
-    cteDsFrom := '
-          join ndb.collectionunits cu on ds.collectionunitid = cu.collectionunitid
-          join ndb.sites s on cu.siteid = s.siteid';
-
-    IF noTaxa = true THEN
-      BEGIN
-        cteBase := '';
-        cteAges := '';
-
-        cteDsFrom := '
-            FROM
-              ndb.datasets ds' || cteDsFrom ;
-
-        IF NOT (_ageold IS NULL AND _ageyoung IS NULL) THEN
-          cteDsFrom := cteDsFrom || '
-            JOIN da.vbestdatasetages ages ON ds.datasetid = ages.datasetid';
-        ELSE
-          cteDsFrom := cteDsFrom || '
-            LEFT JOIN da.vbestdatasetages ages ON ds.datasetid = ages.datasetid ';
-        END IF;
-      END;
-    ELSE
-      BEGIN
-        cteDsFrom := '
-            FROM
-              ages
-              JOIN ndb.datasets ds ON ages.datasetid = ds.datasetid ' || cteDsFrom;
-      END;
-    END IF;
-
-    cteDsWhere := '
-        WHERE
-          1=1 ';
-
-    IF _sitename IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND s.sitename ILIKE ''%' || _sitename || '%''' ;
-    END IF;
-
-    IF _subdate IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND ds.recdatecreated >= ''%' || _subdate || '%''';
-    END IF;
-
-    IF _gpid IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND EXISTS (SELECT *
-                      FROM   ndb.sitegeopolitical gp
-                      WHERE  gp.siteid = s.siteid
-                      AND    gp.geopoliticalid = ' || _gpid || ' )';
-    END IF;
-
-    IF doDepEnv = true THEN
-      cteDsWhere := cteDsWhere || '
-          AND cu.depenvtid IN (array_to_string(' || depEnvIds || ','',''))';
-    END IF;
-
-    IF _coltypeid IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND cu.CollTypeID = ' || _coltypeid;
-    END IF;
-
-    IF _altmin IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND s.Altitude >= ' || _altmin;
-    END IF;
-
-    IF _altmax IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND s.Altitude <= ' || _altmax;
-    END IF;
-
-    IF _dbid IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND EXISTS (SELECT *
-                      FROM   ndb.datasetdatabases db
-                      WHERE  db.datasetid = ds.datasetid
-                      AND    db.databaseid = ' || _dbid || ' )';
-    END IF;
-
-    IF _contactid IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND EXISTS (SELECT *
-                      FROM   ap.datasetpisauthors p
-                      WHERE  p.datasetid = ds.datasetid
-                      AND    p.contactid = ' || _contactid || ' )';
-    END IF;
-
-    IF _keywordid IS NOT NULL AND noTaxa = true THEN
-      cteDsWhere := cteDsWhere || '
-          AND EXISTS (SELECT k.datasetid, k.keywordid
-                      FROM   ap.datasetkeywords k
-                      WHERE  k.datasetid = ds.datasetid
-                      AND    k.keywordid = ' || _keywordid || ' )';
-    END IF;
-
-    IF _datasettypeid IS NOT NULL THEN
-      cteDsWhere := cteDsWhere || '
-          AND ds.datasettypeid = ' || _datasettypeid;
-    END IF;
-
-    IF noTaxa = true AND NOT (_ageold IS NULL AND _ageyoung IS NULL) THEN
-      BEGIN
-        IF _ageold IS NULL THEN
-          _ageold := 10000000;
-        END IF;
-        IF _ageyoung IS NULL THEN
-          _ageyoung := -250;
-        END IF;
-        IF _agedocontain = true THEN
-          cteDsWhere := cteDsWhere || '
-              AND (
-                ( ' || _ageyoung || ' <= ages.ageyoungest AND ' || _ageold || ' >= ages.ageoldest) OR
-                ( ' || _ageyoung || ' <= ages.minage AND ' || _ageold || ' >= ages.maxage)
-              )';
-        ELSE
-            cteDsWhere := cteDsWhere || '
-              AND (
-                (' || _ageyoung || ' <= ages.ageyoungest AND ages.ageoldest <= ' || _ageold || ' ) OR
-               NOT (ages.maxage < ' || _ageyoung || ' OR ' || _ageold || ' < ages.minage)
-              )';
-        END IF;
-      END;
-    END IF;
-
---todo review postgis syntax ---
-
-    RAISE NOTICE '_coords value %', _coords;
-    IF _coords IS NOT NULL THEN
-      BEGIN
-        poly := ST_GeogFromText(_coords)::geography;
-
-        cteDsWhere := format( '%s' || '
-          AND ST_Intersects(s.geog,' || '%L' || ') = true', cteDsWhere, poly);
-      END;
-    END IF;
-
-    cteDs := cteDs || cteDsSelect || cteDsFrom || cteDsWhere || '
-      )';
-    -- END building ds (dataset) CTE
-    --call CTEs
-
-
-    thesql := format(
-        '%s' || '%s' || '%s' ||
-          ' SELECT
-            ds.datasetid,
-            dt.datasettype,
-            cdb.databasename,
-            ds.minage,
-            ds.maxage,
-            ds.ageyoungest,
-            ds.ageoldest,
-            ds.siteid,
-            ds.sitename,
-            ds.sitedescription,
-            ds.notes,
-            ds.handle as collunithandle,
-            ds.collunitname,
-            ds.latitudenorth,
-            ds.latitudesouth,
-            ds.longitudeeast,
-            ds.longitudewest
-          from
-            ds
-            join ndb.datasettypes dt on ds.datasettypeid = dt.datasettypeid
-            left join (ndb.datasetdatabases dd join ndb.constituentdatabases cdb on dd.databaseid = cdb.databaseid) on ds.datasetid = dd.datasetid
-        '
-        , cteBase, cteAges, cteDs);
-
-RAISE NOTICE '%', thesql;
-
-    RETURN QUERY EXECUTE thesql;
-
-
-
-END;
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getauthors" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-    
-With _authortable AS (
-
-    select distinct pa.contactid, c.contactname
-    from ndb.publicationauthors as pa inner join
-    ndb.contacts as c on c.contactid = pa.contactid
-),
-
-_contactaliases AS (
-    select c.contactid, c.contactname
-    from ndb.contacts as c
-    where c.contactid != c.aliasid and c.aliasid > 0 and c.aliasid in (select contactid from _authortable)
-)
-
-Select * from _authortable
-
-	union all
-	
-select * from _contactaliases
-	
-	
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getcollectiontypes" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-SELECT colltypeid, colltype FROM ndb.collectiontypes
-ORDER BY colltype
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getdatasettypes" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-SELECT ndb.datasettypes.datasettype, ndb.datasets.datasettypeid
-FROM ndb.datasets INNER JOIN
-ndb.datasettypes ON ndb.datasettypes.datasettypeid = ndb.datasets.datasettypeid
-GROUP BY ndb.datasettypes.datasettype, ndb.datasets.datasettypeid
-ORDER BY ndb.datasettypes.datasettype
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getdeptenvtypes" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-
-    WITH
-    nodes AS (
-        select det.depenvtid, det.depenvthigherid, det.depenvt
-        from ndb.depenvttypes as det 
-        where det.depenvthigherid = _depenvtid and det.depenvtid != _depenvtid
-    ),
-    -- site info needed by the web application
-    children as (
-        select det.depenvthigherid, count(det.depenvtid)::integer as "children"
-        from ndb.depenvttypes as det 
-        where det.depenvthigherid in (select depenvtid from nodes)
-        group by depenvthigherid
-    )
-
-    select n.depenvtid, n.depenvt, c.children
-    from nodes as n left join
-    children as c on n.depenvtid = c.depenvthigherid
-
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getdeptenvtypesroot" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-WITH
-nodes AS (
-	SELECT det.depenvtid, det.depenvt
-	FROM ndb.depenvttypes AS det 
-	WHERE det.depenvthigherid = det.depenvtid
-),
-children AS (
-	SELECT det.depenvthigherid, COUNT(det.depenvtid) AS children
-	FROM ndb.depenvttypes AS det 
-	WHERE det.depenvthigherid IN (SELECT depenvtid FROM nodes)
-	GROUP BY depenvthigherid
-)
-
-SELECT n.depenvtid, n.depenvt, c.children
-FROM nodes AS n LEFT JOIN
-children AS c ON N.DEPENVTID = C.DEPENVTHIGHERID;
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getelementtypes" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-    select et.elementtypeid, et.elementtype
-    from ndb.elementtypes as et inner join
-    ndb.elementtaxagroups as etg on etg.elementtypeid = et.elementtypeid
-    where etg.taxagroupid = _taxagroupid
-    order by elementtype
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getelementtypesbytaxonid" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-    select     distinct et.elementtypeid, et.elementtype
-from         ndb.taxa inner join
-                      ndb.variables on ndb.taxa.taxonid = ndb.variables.taxonid inner join
-                      ndb.data on ndb.variables.variableid = ndb.data.variableid left outer join
-                      ndb.variableelements on ndb.variables.variableelementid = ndb.variableelements.variableelementid inner join
-                      ndb.elementtypes as et on ndb.variableelements.elementtypeid = et.elementtypeid
-where     (ndb.taxa.taxonid = _taxonid)
-order by elementtype
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getgeochrondatasetbyassociateddatasetid" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-    select     ndb.geochronology.sampleid, ndb.geochrontypes.geochrontype, ndb.agetypes.agetype, ndb.analysisunits.depth, 
-                      ndb.analysisunits.thickness, ndb.geochronology.age, ndb.geochronology.errorolder, ndb.geochronology.erroryounger, 
-                      ndb.geochronology.infinite, ndb.geochronology.delta13c, ndb.geochronology.labnumber, ndb.geochronology.materialdated, ndb.geochronology.notes
-    from         ndb.geochronology inner join
-                      ndb.samples on ndb.geochronology.sampleid = ndb.samples.sampleid inner join
-                      ndb.datasets on ndb.samples.datasetid = ndb.datasets.datasetid inner join
-                      ndb.geochrontypes on ndb.geochronology.geochrontypeid = ndb.geochrontypes.geochrontypeid inner join
-                      ndb.agetypes on ndb.geochronology.agetypeid = ndb.agetypes.agetypeid inner join
-                      ndb.analysisunits on ndb.samples.analysisunitid = ndb.analysisunits.analysisunitid
-    where     (ndb.datasets.datasetid = _datasetid  and (ndb.datasets.datasettypeid = 1));
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getkeywords" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-SELECT keywordid, keyword FROM ndb.keywords
-ORDER BY keyword
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="getpeople" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-WITH auth_pi AS (
-(SELECT DISTINCT dpi.contactid, c.contactname
-FROM ndb.datasetpis AS dpi INNER JOIN
-ndb.contacts AS c ON c.contactid = dpi.contactid)
-UNION
-(SELECT DISTINCT pa.contactid, c.contactname
-FROM ndb.publicationauthors AS pa INNER JOIN
-ndb.contacts AS c ON c.contactid = pa.contactid)
-), alia AS (
-SELECT c.contactid, c.contactname
-FROM ndb.contacts AS c
-WHERE c.contactid != c.aliasid AND c.aliasid > 0 AND c.aliasid IN (SELECT contactid FROM auth_pi)
-)
-SELECT * FROM (SELECT * FROM auth_pi) AS q UNION (SELECT * FROM alia);
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="gettaphonomicsystems" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-SELECT ts.taphonomicsystemid, ts.taphonomicsystem
-FROM ndb.taphonomicsystems AS ts INNER JOIN
-ndb.taphonomicsystemsdatasettypes AS tsdt ON tsdt.taphonomicsystemid = ts.taphonomicsystemid
-WHERE tsdt.datasettypeid = $1
-ORDER BY taphonomicsystem
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="gettaphonomictypes" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-    select tt.taphonomictypeid, tt.taphonomictype
-    from ndb.taphonomictypes as tt
-    where tt.taphonomicsystemid = _taphonomicsystemid
-    order by taphonomictype
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="gettaxagrouptypes" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-SELECT t.taxagroupid, tgt.taxagroup
-FROM ndb.variables AS v INNER JOIN
-ndb.taxa AS t ON t.taxonid = v.taxonid INNER JOIN
-ndb.taxagrouptypes AS tgt ON tgt.taxagroupid = t.taxagroupid
-WHERE t.taxagroupid NOT IN('AMB','UPA','GCH','BIM','LAB','LOI','CHR', 'CHM','SED','WCH')
-GROUP BY t.taxagroupid, tgt.taxagroup
-ORDER BY tgt.taxagroup
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="sample" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
- SELECT
-   ds.datasetid,
-   jsonb_build_object('sampleid', dsd.sampleid,
-         'keywords', array_agg(DISTINCT ky.keyword),
-      'depth', anu.depth,
-        'datum', jsonb_agg(DISTINCT jsonb_build_object('value', dt.value,
-           'variablename', tx.taxonname,
-                'taxonid', tx.taxonid,
-             'taxongroup', txg.taxagroup,
-         'ecologicalgroup', ecg.ecolgroupid,
-                'element', ve.variableelement,
-             'elementtype', vt.elementtype,
-               'symmetry', vs.symmetry,
-                'context', vc.variablecontext,
-           'units', vru.variableunits)),
-        'sampleanalyst', json_agg(DISTINCT jsonb_build_object('contactid', cnt.contactid,
-                       'contactname', cnt.contactname,
-                       'familyname', cnt.familyname,
-                       'firstname', cnt.givennames,
-                       'initials', cnt.leadinginitials)),
-        'ages', jsonb_agg(
-         DISTINCT jsonb_build_object('chronologyid', ch.chronologyid,
-               'chronologyname', ch.chronologyname,
-               'agetype', cht.agetype,
-               'age', sma.age,
-               'ageyounger', sma.ageyounger,
-               'ageolder', sma.ageolder))) AS sampledata
- FROM
-  ndb.datasets AS ds
-          LEFT OUTER JOIN ndb.dsdatasample AS dsd   ON dsd.datasetid = ds.datasetid
-                  LEFT OUTER JOIN ndb.data AS dt    ON dt.dataid = dsd.dataid
-             LEFT OUTER JOIN ndb.variables AS var   ON var.variableid = dsd.variableid
-                  LEFT OUTER JOIN ndb.taxa AS tx    ON tx.taxonid = var.taxonid
-     LEFT OUTER JOIN ndb.taxagrouptypes AS txg   ON txg.taxagroupid = tx.taxagroupid
-            LEFT OUTER JOIN ndb.ecolgroups AS ecg   ON ecg.taxonid = tx.taxonid
-         LEFT OUTER JOIN ndb.variableunits AS vru   ON vru.variableunitsid = var.variableunitsid
-               LEFT OUTER JOIN ndb.samples AS smp   ON smp.sampleid = dsd.sampleid
-     LEFT OUTER JOIN ndb.sampleanalysts AS san   ON san.sampleid = smp.sampleid
-                 LEFT JOIN ndb.contacts AS cnt   ON cnt.contactid = san.contactid
-         LEFT OUTER JOIN ndb.analysisunits AS anu   ON anu.analysisunitid = smp.analysisunitid
-            LEFT JOIN ndb.variableelements AS ve    ON ve.variableelementid = var.variableelementid
-  LEFT OUTER JOIN ndb.elementsymmetries AS vs    ON vs.symmetryid = ve.symmetryid
-       LEFT OUTER JOIN ndb.elementtypes AS vt    ON vt.elementtypeid = ve.elementtypeid
-            LEFT JOIN ndb.variablecontexts AS vc    ON vc.variablecontextid = var.variablecontextid
-            LEFT OUTER JOIN ndb.sampleages AS sma   ON sma.sampleid = smp.sampleid
-          LEFT OUTER JOIN ndb.chronologies AS ch    ON sma.chronologyid = ch.chronologyid
-              LEFT OUTER JOIN ndb.agetypes AS cht   ON cht.agetypeid = ch.agetypeid
-        LEFT OUTER JOIN ndb.samplekeywords AS smpky ON smpky.sampleid = smp.sampleid
-              LEFT OUTER JOIN ndb.keywords AS ky    ON ky.keywordid = smpky.keywordid
- WHERE
-   ds.datasetid = _datasetid
- GROUP BY ds.datasetid,
-     dsd.sampleid,
-     anu.depth,
-     anu.thickness
-    ORDER BY anu.depth ASC;
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="searchsitename" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-
-    SELECT     
-            s.siteid,  
-			s.geog as "geog", 
-			ndb.datasets.datasetid, 
-			ndb.datasettypes.datasettype, 
-			ndb.collectionunits.handle as "collunithandle", 
-			ndb.collectionunits.collunitname, 
-			ndb.constituentdatabases.databasename,
-			s.sitename, 
-			s.sitedescription, 
-			s.longitudeeast, 
-			s.latitudenorth, 
-            s.longitudewest, 
-			s.latitudesouth, 
-			null::integer as minage, 
-			null::integer as maxage, 
-			ch.ageboundyounger as ageyoungest, 
-			ch.ageboundolder as ageoldest, 
-			at.precedence
-    FROM         
-            ndb.datasets inner join
-            ndb.datasettypes on ndb.datasettypes.datasettypeid = ndb.datasets.datasettypeid left join
-            ndb.datasetdatabases on ndb.datasetdatabases.datasetid = ndb.datasets.datasetid left join
-            ndb.constituentdatabases on ndb.constituentdatabases.databaseid = ndb.datasetdatabases.databaseid inner join
-            ndb.collectionunits on ndb.datasets.collectionunitid = ndb.collectionunits.collectionunitid inner join
-            ndb.sites as s on ndb.collectionunits.siteid = s.siteid left join
-            ndb.chronologies as ch on ch.collectionunitid = ndb.collectionunits.collectionunitid left join
-            ndb.agetypes as at on at.agetypeid = ch.agetypeid
-
-     where  s.sitename like _sitename
-     order by siteid, datasetid, precedence;
-
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="sitelink" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-   SELECT sts.siteid,
-    jsonb_build_object('collectionunitid', clu.collectionunitid,
-                      'collectionunit', clu.collunitname,
-                      'handle', clu.handle,
-                      'collectionunittype', cts.colltype,
-                      'datasets', json_agg(json_build_object('datasetid', dts.datasetid,
-                                                             'datasettype', dst.datasettype))) AS collectionunit
-  FROM
-   ndb.datasets AS dts
-    LEFT JOIN ndb.collectionunits AS clu ON clu.collectionunitid = dts.collectionunitid
-    LEFT JOIN ndb.sites AS sts ON sts.siteid = clu.siteid
-    LEFT JOIN ndb.datasettypes AS dst ON dst.datasettypeid = dts.datasettypeid
-    LEFT OUTER JOIN ndb.collectiontypes as cts ON clu.colltypeid = cts.colltypeid
-      WHERE sts.siteid = _siteid
-  GROUP BY sts.siteid, clu.collectionunitid, cts.colltype
- ]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="siteobject" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-    SELECT sts.siteid,
-        jsonb_build_object(  'siteid', sts.siteid,
-                           'sitename', sts.sitename,
-                    'sitedescription', sts.sitedescription,
-                          'geography', ST_AsGeoJSON(sts.geog,5,2),
-                               'area', sts.area,
-                           'altitude', sts.altitude,
-                              'notes', sts.notes,
-                       'geopolitical', gpn.names) AS site
-    FROM
-    ndb.sites AS sts
-    LEFT JOIN ap.geopolnames AS gpn ON gpn.siteid = sts.siteid
-    WHERE sts.siteid = _siteid
-    GROUP BY sts.siteid, sts.sitename, sts.sitedescription, ST_AsGeoJSON(sts.geog,5,2), 
-   sts.area, sts.altitude, sts.notes, gpn.names;
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="updategpsites" returnType="trigger" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="PLPGSQL"><![CDATA[
-BEGIN
-REFRESH MATERIALIZED VIEW CONCURRENTLY ap.geopolnames;
-RETURN NULL;
-END ]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="updatequery" returnType="trigger" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="PLPGSQL"><![CDATA[
-BEGIN
-REFRESH MATERIALIZED VIEW CONCURRENTLY ap.querytable;
-RETURN NULL;
-END ]]></definition>
-      </routine>
-   </routines>
 </database>

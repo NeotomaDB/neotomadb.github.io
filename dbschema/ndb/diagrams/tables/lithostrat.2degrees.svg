@@ -43,31 +43,31 @@
 <g id="node2" class="node">
 <title>analysisunits</title>
 <g id="a_node2"><a xlink:href="../../tables/analysisunits.html" xlink:title="analysisunits" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="222,-252 222,-310 338,-310 338,-252 222,-252"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="222,-288 222,-310 338,-310 338,-288 222,-288"/>
-<polygon fill="none" stroke="black" points="222,-288 222,-310 338,-310 338,-288 222,-288"/>
-<text text-anchor="start" x="227" y="-297.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">analysisunits</text>
-<text text-anchor="start" x="303" y="-296.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="222,-270 222,-288 338,-288 338,-270 222,-270"/>
-<text text-anchor="start" x="225" y="-276.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="222,-252 222,-270 244,-270 244,-252 222,-252"/>
-<polygon fill="none" stroke="black" points="222,-252 222,-270 244,-270 244,-252 222,-252"/>
-<text text-anchor="start" x="225" y="-258.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
-<polygon fill="#ffffff" stroke="transparent" points="244,-252 244,-270 316,-270 316,-252 244,-252"/>
-<polygon fill="none" stroke="black" points="244,-252 244,-270 316,-270 316,-252 244,-252"/>
-<text text-anchor="start" x="247" y="-258.2" font-family="Helvetica,sans-Serif" font-size="11.00">449,200 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="316,-252 316,-270 338,-270 338,-252 316,-252"/>
-<polygon fill="none" stroke="black" points="316,-252 316,-270 338,-270 338,-252 316,-252"/>
-<text text-anchor="start" x="319" y="-258.2" font-family="Helvetica,sans-Serif" font-size="11.00">9 &gt;</text>
+<polygon fill="#ffffff" stroke="transparent" points="219,-252 219,-310 341,-310 341,-252 219,-252"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="219,-288 219,-310 341,-310 341,-288 219,-288"/>
+<polygon fill="none" stroke="black" points="219,-288 219,-310 341,-310 341,-288 219,-288"/>
+<text text-anchor="start" x="224" y="-297.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">analysisunits</text>
+<text text-anchor="start" x="306" y="-296.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="219,-270 219,-288 341,-288 341,-270 219,-270"/>
+<text text-anchor="start" x="222" y="-276.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="219,-252 219,-270 241,-270 241,-252 219,-252"/>
+<polygon fill="none" stroke="black" points="219,-252 219,-270 241,-270 241,-252 219,-252"/>
+<text text-anchor="start" x="222" y="-258.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
+<polygon fill="#ffffff" stroke="transparent" points="241,-252 241,-270 313,-270 313,-252 241,-252"/>
+<polygon fill="none" stroke="black" points="241,-252 241,-270 313,-270 313,-252 241,-252"/>
+<text text-anchor="start" x="244" y="-258.2" font-family="Helvetica,sans-Serif" font-size="11.00">486,580 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="313,-252 313,-270 341,-270 341,-252 313,-252"/>
+<polygon fill="none" stroke="black" points="313,-252 313,-270 341,-270 341,-252 313,-252"/>
+<text text-anchor="start" x="316" y="-258.2" font-family="Helvetica,sans-Serif" font-size="11.00">10 &gt;</text>
 </a>
 </g>
 </g>
 <!-- analysisunitlithostrat&#45;&gt;analysisunits -->
 <g id="edge1" class="edge">
 <title>analysisunitlithostrat:w&#45;&gt;analysisunits:e</title>
-<path fill="none" stroke="black" d="M416.92,-240.62C385.39,-248.1 378.37,-279 339,-279"/>
-<polygon fill="black" stroke="black" points="423.55,-239.88 431.9,-242.58 427.52,-239.44 431.5,-239 431.5,-239 431.5,-239 427.52,-239.44 431.1,-235.42 423.55,-239.88 423.55,-239.88"/>
-<ellipse fill="none" stroke="black" cx="420.37" cy="-240.24" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M416.93,-240.72C386.7,-248.38 380.12,-279 342,-279"/>
+<polygon fill="black" stroke="black" points="423.56,-239.94 431.92,-242.58 427.53,-239.47 431.5,-239 431.5,-239 431.5,-239 427.53,-239.47 431.08,-235.42 423.56,-239.94 423.56,-239.94"/>
+<ellipse fill="none" stroke="black" cx="420.38" cy="-240.31" rx="3.2" ry="3.2"/>
 </g>
 <!-- lithostrat -->
 <g id="node3" class="node">

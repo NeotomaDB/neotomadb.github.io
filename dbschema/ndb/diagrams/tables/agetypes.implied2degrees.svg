@@ -37,29 +37,29 @@
 <g id="node2" class="node">
 <title>analysisunits</title>
 <g id="a_node2"><a xlink:href="../../tables/analysisunits.html" xlink:title="analysisunits" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="220,-781 220,-839 336,-839 336,-781 220,-781"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="220,-817 220,-839 336,-839 336,-817 220,-817"/>
-<polygon fill="none" stroke="black" points="220,-817 220,-839 336,-839 336,-817 220,-817"/>
-<text text-anchor="start" x="225" y="-826.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">analysisunits</text>
-<text text-anchor="start" x="301" y="-825.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="220,-799 220,-817 336,-817 336,-799 220,-799"/>
-<text text-anchor="start" x="223" y="-805.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="220,-781 220,-799 242,-799 242,-781 220,-781"/>
-<polygon fill="none" stroke="black" points="220,-781 220,-799 242,-799 242,-781 220,-781"/>
-<text text-anchor="start" x="223" y="-787.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
-<polygon fill="#ffffff" stroke="transparent" points="242,-781 242,-799 314,-799 314,-781 242,-781"/>
-<polygon fill="none" stroke="black" points="242,-781 242,-799 314,-799 314,-781 242,-781"/>
-<text text-anchor="start" x="245" y="-787.2" font-family="Helvetica,sans-Serif" font-size="11.00">449,200 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="314,-781 314,-799 336,-799 336,-781 314,-781"/>
-<polygon fill="none" stroke="black" points="314,-781 314,-799 336,-799 336,-781 314,-781"/>
-<text text-anchor="start" x="317" y="-787.2" font-family="Helvetica,sans-Serif" font-size="11.00">9 &gt;</text>
+<polygon fill="#ffffff" stroke="transparent" points="217,-781 217,-839 339,-839 339,-781 217,-781"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="217,-817 217,-839 339,-839 339,-817 217,-817"/>
+<polygon fill="none" stroke="black" points="217,-817 217,-839 339,-839 339,-817 217,-817"/>
+<text text-anchor="start" x="222" y="-826.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">analysisunits</text>
+<text text-anchor="start" x="304" y="-825.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="217,-799 217,-817 339,-817 339,-799 217,-799"/>
+<text text-anchor="start" x="220" y="-805.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="217,-781 217,-799 239,-799 239,-781 217,-781"/>
+<polygon fill="none" stroke="black" points="217,-781 217,-799 239,-799 239,-781 217,-781"/>
+<text text-anchor="start" x="220" y="-787.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
+<polygon fill="#ffffff" stroke="transparent" points="239,-781 239,-799 311,-799 311,-781 239,-781"/>
+<polygon fill="none" stroke="black" points="239,-781 239,-799 311,-799 311,-781 239,-781"/>
+<text text-anchor="start" x="242" y="-787.2" font-family="Helvetica,sans-Serif" font-size="11.00">486,580 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="311,-781 311,-799 339,-799 339,-781 311,-781"/>
+<polygon fill="none" stroke="black" points="311,-781 311,-799 339,-799 339,-781 311,-781"/>
+<text text-anchor="start" x="314" y="-787.2" font-family="Helvetica,sans-Serif" font-size="11.00">10 &gt;</text>
 </a>
 </g>
 </g>
 <!-- accumulationrates&#45;&gt;analysisunits -->
 <g id="edge1" class="edge">
 <title>accumulationrates:w&#45;&gt;analysisunits:e</title>
-<path fill="none" stroke="black" d="M613.33,-795.28C600.4,-797.73 593.12,-803.02 575,-805 469.84,-816.47 442.79,-808 337,-808"/>
+<path fill="none" stroke="black" d="M613.33,-795.28C600.4,-797.72 593.12,-803.02 575,-805 471.16,-816.33 444.45,-808 340,-808"/>
 <polygon fill="black" stroke="black" points="620.03,-794.69 628.31,-797.59 624.02,-794.35 628,-794 628,-794 628,-794 624.02,-794.35 627.69,-790.41 620.03,-794.69 620.03,-794.69"/>
 <ellipse fill="none" stroke="black" cx="616.84" cy="-794.97" rx="3.2" ry="3.2"/>
 </g>
@@ -97,7 +97,7 @@
 <text text-anchor="start" x="434.5" y="-587.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
 <polygon fill="#ffffff" stroke="transparent" points="463.5,-581 463.5,-599 534.5,-599 534.5,-581 463.5,-581"/>
 <polygon fill="none" stroke="black" points="463.5,-581 463.5,-599 534.5,-599 534.5,-581 463.5,-581"/>
-<text text-anchor="start" x="471.5" y="-587.2" font-family="Helvetica,sans-Serif" font-size="11.00">31,133 rows</text>
+<text text-anchor="start" x="471.5" y="-587.2" font-family="Helvetica,sans-Serif" font-size="11.00">32,182 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="534.5,-581 534.5,-599 562.5,-599 562.5,-581 534.5,-581"/>
 <polygon fill="none" stroke="black" points="534.5,-581 534.5,-599 562.5,-599 562.5,-581 534.5,-581"/>
 <text text-anchor="start" x="543.5" y="-587.2" font-family="Helvetica,sans-Serif" font-size="11.00">3 &gt;</text>
@@ -127,7 +127,7 @@
 <text text-anchor="start" x="11" y="-700.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 4</text>
 <polygon fill="#ffffff" stroke="transparent" points="36,-694 36,-712 105,-712 105,-694 36,-694"/>
 <polygon fill="none" stroke="black" points="36,-694 36,-712 105,-712 105,-694 36,-694"/>
-<text text-anchor="start" x="42" y="-700.2" font-family="Helvetica,sans-Serif" font-size="11.00">32,827 rows</text>
+<text text-anchor="start" x="42" y="-700.2" font-family="Helvetica,sans-Serif" font-size="11.00">33,980 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="105,-694 105,-712 130,-712 130,-694 105,-694"/>
 <polygon fill="none" stroke="black" points="105,-694 105,-712 130,-712 130,-694 105,-694"/>
 <text text-anchor="start" x="111" y="-700.2" font-family="Helvetica,sans-Serif" font-size="11.00">5 &gt;</text>
@@ -137,9 +137,9 @@
 <!-- analysisunits&#45;&gt;collectionunits -->
 <g id="edge8" class="edge">
 <title>analysisunits:w&#45;&gt;collectionunits:e</title>
-<path fill="none" stroke="black" d="M204.46,-805.49C167.68,-791.23 180.41,-721 131,-721"/>
-<polygon fill="black" stroke="black" points="211.12,-806.64 218.39,-811.55 215.06,-807.32 219,-808 219,-808 219,-808 215.06,-807.32 219.61,-804.45 211.12,-806.64 211.12,-806.64"/>
-<ellipse fill="none" stroke="black" cx="207.96" cy="-806.09" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M201.76,-805.49C165.84,-791.23 179.57,-721 131,-721"/>
+<polygon fill="black" stroke="black" points="208.12,-806.61 215.38,-811.55 212.06,-807.31 216,-808 216,-808 216,-808 212.06,-807.31 216.62,-804.45 208.12,-806.61 208.12,-806.61"/>
+<ellipse fill="none" stroke="black" cx="204.97" cy="-806.06" rx="3.2" ry="3.2"/>
 </g>
 <!-- agetypes -->
 <g id="node5" class="node">
@@ -218,7 +218,7 @@
 <text text-anchor="start" x="223" y="-645.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 1</text>
 <polygon fill="#ffffff" stroke="transparent" points="242,-639 242,-657 308,-657 308,-639 242,-639"/>
 <polygon fill="none" stroke="black" points="242,-639 242,-657 308,-657 308,-639 242,-639"/>
-<text text-anchor="start" x="245" y="-645.2" font-family="Helvetica,sans-Serif" font-size="11.00">13,247 rows</text>
+<text text-anchor="start" x="245" y="-645.2" font-family="Helvetica,sans-Serif" font-size="11.00">13,549 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="308,-639 308,-657 336,-657 336,-639 308,-639"/>
 <polygon fill="none" stroke="black" points="308,-639 308,-657 336,-657 336,-639 308,-639"/>
 <text text-anchor="start" x="311" y="-645.2" font-family="Helvetica,sans-Serif" font-size="11.00">17 &gt;</text>
@@ -342,38 +342,38 @@
 <g id="node8" class="node">
 <title>sampleages</title>
 <g id="a_node8"><a xlink:href="../../tables/sampleages.html" xlink:title="sampleages" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="641,-403 641,-461 757,-461 757,-403 641,-403"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="641,-439 641,-461 757,-461 757,-439 641,-439"/>
-<polygon fill="none" stroke="black" points="641,-439 641,-461 757,-461 757,-439 641,-439"/>
-<text text-anchor="start" x="646" y="-448.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">sampleages</text>
-<text text-anchor="start" x="722" y="-447.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="641,-421 641,-439 757,-439 757,-421 641,-421"/>
-<text text-anchor="start" x="644" y="-427.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="641,-403 641,-421 663,-421 663,-403 641,-403"/>
-<polygon fill="none" stroke="black" points="641,-403 641,-421 663,-421 663,-403 641,-403"/>
-<text text-anchor="start" x="644" y="-409.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
-<polygon fill="#ffffff" stroke="transparent" points="663,-403 663,-421 735,-421 735,-403 663,-403"/>
-<polygon fill="none" stroke="black" points="663,-403 663,-421 735,-421 735,-403 663,-403"/>
-<text text-anchor="start" x="666" y="-409.2" font-family="Helvetica,sans-Serif" font-size="11.00">591,749 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="735,-403 735,-421 757,-421 757,-403 735,-403"/>
-<polygon fill="none" stroke="black" points="735,-403 735,-421 757,-421 757,-403 735,-403"/>
-<text text-anchor="start" x="738" y="-409.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
+<polygon fill="#ffffff" stroke="transparent" points="641,-402 641,-460 757,-460 757,-402 641,-402"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="641,-438 641,-460 757,-460 757,-438 641,-438"/>
+<polygon fill="none" stroke="black" points="641,-438 641,-460 757,-460 757,-438 641,-438"/>
+<text text-anchor="start" x="646" y="-447.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">sampleages</text>
+<text text-anchor="start" x="722" y="-446.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="641,-420 641,-438 757,-438 757,-420 641,-420"/>
+<text text-anchor="start" x="644" y="-426.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="641,-402 641,-420 663,-420 663,-402 641,-402"/>
+<polygon fill="none" stroke="black" points="641,-402 641,-420 663,-420 663,-402 641,-402"/>
+<text text-anchor="start" x="644" y="-408.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
+<polygon fill="#ffffff" stroke="transparent" points="663,-402 663,-420 735,-420 735,-402 663,-402"/>
+<polygon fill="none" stroke="black" points="663,-402 663,-420 735,-420 735,-402 663,-402"/>
+<text text-anchor="start" x="666" y="-408.2" font-family="Helvetica,sans-Serif" font-size="11.00">616,120 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="735,-402 735,-420 757,-420 757,-402 735,-402"/>
+<polygon fill="none" stroke="black" points="735,-402 735,-420 757,-420 757,-402 735,-402"/>
+<text text-anchor="start" x="738" y="-408.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
 </a>
 </g>
 </g>
 <!-- aggregatesampleages&#45;&gt;sampleages -->
 <g id="edge7" class="edge">
 <title>aggregatesampleages:w&#45;&gt;sampleages:e</title>
-<path fill="none" stroke="black" d="M817.18,-190.96C788.96,-220.95 808.26,-355.45 790,-393 780.49,-412.55 779.74,-430 758,-430"/>
-<polygon fill="black" stroke="black" points="823.2,-188.27 831.97,-188.29 826.85,-186.63 830.5,-185 830.5,-185 830.5,-185 826.85,-186.63 829.03,-181.71 823.2,-188.27 823.2,-188.27"/>
-<ellipse fill="none" stroke="black" cx="820.28" cy="-189.57" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M817.23,-190.93C789.11,-220.78 808.2,-354.63 790,-392 780.48,-411.55 779.74,-429 758,-429"/>
+<polygon fill="black" stroke="black" points="823.2,-188.26 831.97,-188.29 826.85,-186.63 830.5,-185 830.5,-185 830.5,-185 826.85,-186.63 829.03,-181.71 823.2,-188.26 823.2,-188.26"/>
+<ellipse fill="none" stroke="black" cx="820.27" cy="-189.57" rx="3.2" ry="3.2"/>
 </g>
 <!-- sampleages&#45;&gt;chronologies -->
-<g id="edge31" class="edge">
+<g id="edge32" class="edge">
 <title>sampleages:w&#45;&gt;chronologies:e</title>
-<path fill="none" stroke="black" d="M626.42,-434.84C578.31,-474.02 628.79,-738 563.5,-738"/>
-<polygon fill="black" stroke="black" points="632.46,-432.68 641.21,-433.39 636.23,-431.34 640,-430 640,-430 640,-430 636.23,-431.34 638.79,-426.61 632.46,-432.68 632.46,-432.68"/>
-<ellipse fill="none" stroke="black" cx="629.45" cy="-433.76" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M626.38,-433.85C578.16,-473.17 628.99,-738 563.5,-738"/>
+<polygon fill="black" stroke="black" points="632.46,-431.69 641.21,-432.39 636.23,-430.34 640,-429 640,-429 640,-429 636.23,-430.34 638.79,-425.61 632.46,-431.69 632.46,-431.69"/>
+<ellipse fill="none" stroke="black" cx="629.45" cy="-432.76" rx="3.2" ry="3.2"/>
 </g>
 <!-- samples -->
 <g id="node21" class="node">
@@ -391,7 +391,7 @@
 <text text-anchor="start" x="441.5" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
 <polygon fill="#ffffff" stroke="transparent" points="460.5,-423 460.5,-441 532.5,-441 532.5,-423 460.5,-423"/>
 <polygon fill="none" stroke="black" points="460.5,-423 460.5,-441 532.5,-441 532.5,-423 460.5,-423"/>
-<text text-anchor="start" x="463.5" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">506,105 rows</text>
+<text text-anchor="start" x="463.5" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">541,654 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="532.5,-423 532.5,-441 554.5,-441 554.5,-423 532.5,-423"/>
 <polygon fill="none" stroke="black" points="532.5,-423 532.5,-441 554.5,-441 554.5,-423 532.5,-423"/>
 <text text-anchor="start" x="535.5" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">7 &gt;</text>
@@ -399,32 +399,32 @@
 </g>
 </g>
 <!-- sampleages&#45;&gt;samples -->
-<g id="edge32" class="edge">
+<g id="edge33" class="edge">
 <title>sampleages:w&#45;&gt;samples:e</title>
-<path fill="none" stroke="black" d="M625.4,-431.08C598.73,-435.23 588.67,-450 555.5,-450"/>
-<polygon fill="black" stroke="black" points="632.02,-430.59 640.26,-433.59 636.01,-430.29 640,-430 640,-430 640,-430 636.01,-430.29 639.74,-426.41 632.02,-430.59 632.02,-430.59"/>
-<ellipse fill="none" stroke="black" cx="628.83" cy="-430.82" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M625.37,-430.13C598.68,-434.49 588.76,-450 555.5,-450"/>
+<polygon fill="black" stroke="black" points="632.02,-429.62 640.28,-432.59 636.01,-429.31 640,-429 640,-429 640,-429 636.01,-429.31 639.72,-425.41 632.02,-429.62 632.02,-429.62"/>
+<ellipse fill="none" stroke="black" cx="628.83" cy="-429.86" rx="3.2" ry="3.2"/>
 </g>
 <!-- chroncontrolranks -->
 <g id="node10" class="node">
 <title>chroncontrolranks</title>
 <g id="a_node10"><a xlink:href="../../tables/chroncontrolranks.html" xlink:title="chroncontrolranks" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="839.5,-609 839.5,-667 981.5,-667 981.5,-609 839.5,-609"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="839.5,-645 839.5,-667 981.5,-667 981.5,-645 839.5,-645"/>
-<polygon fill="none" stroke="black" points="839.5,-645 839.5,-667 981.5,-667 981.5,-645 839.5,-645"/>
-<text text-anchor="start" x="844.5" y="-654.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">chroncontrolranks</text>
-<text text-anchor="start" x="946.5" y="-653.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="839.5,-627 839.5,-645 981.5,-645 981.5,-627 839.5,-627"/>
-<text text-anchor="start" x="842.5" y="-633.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="839.5,-609 839.5,-627 895.5,-627 895.5,-609 839.5,-609"/>
-<polygon fill="none" stroke="black" points="839.5,-609 839.5,-627 895.5,-627 895.5,-609 839.5,-609"/>
-<text text-anchor="start" x="842.5" y="-615.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 5</text>
-<polygon fill="#ffffff" stroke="transparent" points="895.5,-609 895.5,-627 951.5,-627 951.5,-609 895.5,-609"/>
-<polygon fill="none" stroke="black" points="895.5,-609 895.5,-627 951.5,-627 951.5,-609 895.5,-609"/>
-<text text-anchor="start" x="915.5" y="-615.2" font-family="Helvetica,sans-Serif" font-size="11.00">0 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="951.5,-609 951.5,-627 981.5,-627 981.5,-609 951.5,-609"/>
-<polygon fill="none" stroke="black" points="951.5,-609 951.5,-627 981.5,-627 981.5,-609 951.5,-609"/>
-<text text-anchor="start" x="971.5" y="-615.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+<polygon fill="#ffffff" stroke="transparent" points="839.5,-688 839.5,-746 981.5,-746 981.5,-688 839.5,-688"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="839.5,-724 839.5,-746 981.5,-746 981.5,-724 839.5,-724"/>
+<polygon fill="none" stroke="black" points="839.5,-724 839.5,-746 981.5,-746 981.5,-724 839.5,-724"/>
+<text text-anchor="start" x="844.5" y="-733.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">chroncontrolranks</text>
+<text text-anchor="start" x="946.5" y="-732.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="839.5,-706 839.5,-724 981.5,-724 981.5,-706 839.5,-706"/>
+<text text-anchor="start" x="842.5" y="-712.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="839.5,-688 839.5,-706 895.5,-706 895.5,-688 839.5,-688"/>
+<polygon fill="none" stroke="black" points="839.5,-688 839.5,-706 895.5,-706 895.5,-688 839.5,-688"/>
+<text text-anchor="start" x="842.5" y="-694.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 5</text>
+<polygon fill="#ffffff" stroke="transparent" points="895.5,-688 895.5,-706 951.5,-706 951.5,-688 895.5,-688"/>
+<polygon fill="none" stroke="black" points="895.5,-688 895.5,-706 951.5,-706 951.5,-688 895.5,-688"/>
+<text text-anchor="start" x="915.5" y="-694.2" font-family="Helvetica,sans-Serif" font-size="11.00">0 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="951.5,-688 951.5,-706 981.5,-706 981.5,-688 951.5,-688"/>
+<polygon fill="none" stroke="black" points="951.5,-688 951.5,-706 981.5,-706 981.5,-688 951.5,-688"/>
+<text text-anchor="start" x="971.5" y="-694.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
 </a>
 </g>
 </g>
@@ -468,7 +468,7 @@
 <text text-anchor="start" x="634" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 4</text>
 <polygon fill="#ffffff" stroke="transparent" points="663,-512 663,-530 740,-530 740,-512 663,-512"/>
 <polygon fill="none" stroke="black" points="663,-512 663,-530 740,-530 740,-512 663,-512"/>
-<text text-anchor="start" x="671" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00">100,724 rows</text>
+<text text-anchor="start" x="671" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00">103,140 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="740,-512 740,-530 768,-530 768,-512 740,-512"/>
 <polygon fill="none" stroke="black" points="740,-512 740,-530 768,-530 768,-512 740,-512"/>
 <text text-anchor="start" x="749" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00">5 &gt;</text>
@@ -478,14 +478,14 @@
 <!-- chroncontrolranks&#45;&gt;chroncontrols -->
 <g id="edge9" class="edge">
 <title>chroncontrolranks:w&#45;&gt;chroncontrols:e</title>
-<path fill="none" stroke="black" d="M824.17,-639.31C797,-654.05 809.34,-713 769,-713"/>
-<polygon fill="black" stroke="black" points="830.71,-637.8 839.31,-639.51 834.6,-636.9 838.5,-636 838.5,-636 838.5,-636 834.6,-636.9 837.69,-632.49 830.71,-637.8 830.71,-637.8"/>
-<ellipse fill="none" stroke="black" cx="827.59" cy="-638.52" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M823.82,-714.83C804.08,-714.35 794.35,-713 769,-713"/>
+<polygon fill="black" stroke="black" points="830.5,-714.91 838.46,-718.6 834.5,-714.95 838.5,-715 838.5,-715 838.5,-715 834.5,-714.95 838.54,-711.4 830.5,-714.91 830.5,-714.91"/>
+<ellipse fill="none" stroke="black" cx="827.3" cy="-714.87" rx="3.2" ry="3.2"/>
 </g>
 <!-- chroncontrols&#45;&gt;analysisunits -->
 <g id="edge11" class="edge">
 <title>chroncontrols:w&#45;&gt;analysisunits:e</title>
-<path fill="none" stroke="black" d="M615.3,-582.5C549.82,-597.77 641.2,-725.53 575,-782 554.76,-799.26 363.6,-808 337,-808"/>
+<path fill="none" stroke="black" d="M615.3,-582.5C549.81,-597.76 641.16,-725.49 575,-782 555.03,-799.06 366.27,-808 340,-808"/>
 <polygon fill="black" stroke="black" points="622.04,-581.81 630.37,-584.58 626.02,-581.41 630,-581 630,-581 630,-581 626.02,-581.41 629.63,-577.42 622.04,-581.81 622.04,-581.81"/>
 <ellipse fill="none" stroke="black" cx="618.86" cy="-582.14" rx="3.2" ry="3.2"/>
 </g>
@@ -499,7 +499,7 @@
 <!-- chroncontrols&#45;&gt;agetypes -->
 <g id="edge10" class="edge">
 <title>chroncontrols:w&#45;&gt;agetypes:e</title>
-<path fill="none" stroke="black" d="M615.6,-557.87C528.88,-542.76 656.74,-379.87 575,-308 541.71,-278.73 420.33,-294 376,-294"/>
+<path fill="none" stroke="black" d="M615.6,-557.87C528.89,-542.75 656.79,-379.83 575,-308 541.69,-278.75 420.33,-294 376,-294"/>
 <polygon fill="black" stroke="black" points="622.02,-558.37 629.72,-562.59 626.01,-558.69 630,-559 630,-559 630,-559 626.01,-558.69 630.28,-555.41 622.02,-558.37 622.02,-558.37"/>
 <ellipse fill="none" stroke="black" cx="618.83" cy="-558.12" rx="3.2" ry="3.2"/>
 </g>
@@ -537,32 +537,32 @@
 <g id="node13" class="node">
 <title>chroncontrolscal14c</title>
 <g id="a_node13"><a xlink:href="../../tables/chroncontrolscal14c.html" xlink:title="chroncontrolscal14c" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="834.5,-688 834.5,-746 986.5,-746 986.5,-688 834.5,-688"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="834.5,-724 834.5,-746 986.5,-746 986.5,-724 834.5,-724"/>
-<polygon fill="none" stroke="black" points="834.5,-724 834.5,-746 986.5,-746 986.5,-724 834.5,-724"/>
-<text text-anchor="start" x="839.5" y="-733.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">chroncontrolscal14c</text>
-<text text-anchor="start" x="951.5" y="-732.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="834.5,-706 834.5,-724 986.5,-724 986.5,-706 834.5,-706"/>
-<text text-anchor="start" x="837.5" y="-712.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="834.5,-688 834.5,-706 884.5,-706 884.5,-688 834.5,-688"/>
-<polygon fill="none" stroke="black" points="834.5,-688 834.5,-706 884.5,-706 884.5,-688 834.5,-688"/>
-<text text-anchor="start" x="837.5" y="-694.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
-<polygon fill="#ffffff" stroke="transparent" points="884.5,-688 884.5,-706 958.5,-706 958.5,-688 884.5,-688"/>
-<polygon fill="none" stroke="black" points="884.5,-688 884.5,-706 958.5,-706 958.5,-688 884.5,-688"/>
-<text text-anchor="start" x="901.5" y="-694.2" font-family="Helvetica,sans-Serif" font-size="11.00">6,591 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="958.5,-688 958.5,-706 986.5,-706 986.5,-688 958.5,-688"/>
-<polygon fill="none" stroke="black" points="958.5,-688 958.5,-706 986.5,-706 986.5,-688 958.5,-688"/>
-<text text-anchor="start" x="976.5" y="-694.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+<polygon fill="#ffffff" stroke="transparent" points="834.5,-609 834.5,-667 986.5,-667 986.5,-609 834.5,-609"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="834.5,-645 834.5,-667 986.5,-667 986.5,-645 834.5,-645"/>
+<polygon fill="none" stroke="black" points="834.5,-645 834.5,-667 986.5,-667 986.5,-645 834.5,-645"/>
+<text text-anchor="start" x="839.5" y="-654.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">chroncontrolscal14c</text>
+<text text-anchor="start" x="951.5" y="-653.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="834.5,-627 834.5,-645 986.5,-645 986.5,-627 834.5,-627"/>
+<text text-anchor="start" x="837.5" y="-633.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="834.5,-609 834.5,-627 884.5,-627 884.5,-609 834.5,-609"/>
+<polygon fill="none" stroke="black" points="834.5,-609 834.5,-627 884.5,-627 884.5,-609 834.5,-609"/>
+<text text-anchor="start" x="837.5" y="-615.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
+<polygon fill="#ffffff" stroke="transparent" points="884.5,-609 884.5,-627 958.5,-627 958.5,-609 884.5,-609"/>
+<polygon fill="none" stroke="black" points="884.5,-609 884.5,-627 958.5,-627 958.5,-609 884.5,-609"/>
+<text text-anchor="start" x="901.5" y="-615.2" font-family="Helvetica,sans-Serif" font-size="11.00">6,899 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="958.5,-609 958.5,-627 986.5,-627 986.5,-609 958.5,-609"/>
+<polygon fill="none" stroke="black" points="958.5,-609 958.5,-627 986.5,-627 986.5,-609 958.5,-609"/>
+<text text-anchor="start" x="976.5" y="-615.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
 </a>
 </g>
 </g>
 <!-- chroncontrolscal14c&#45;&gt;chroncontrols -->
 <g id="edge14" class="edge">
 <title>chroncontrolscal14c:w&#45;&gt;chroncontrols:e</title>
-<path fill="none" stroke="black" d="M822.83,-714.9C802.46,-714.49 793.76,-713 769,-713"/>
-<polygon fill="black" stroke="black" points="832.74,-710.99 832.66,-718.99 831.06,-718.98 831.14,-710.98 832.74,-710.99"/>
-<polyline fill="none" stroke="black" points="833.5,-715 829.5,-714.96 "/>
-<ellipse fill="none" stroke="black" cx="826.3" cy="-714.93" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M823.05,-637.75C792.75,-649.21 809.63,-713 769,-713"/>
+<polygon fill="black" stroke="black" points="832.05,-632.19 833.37,-640.08 831.79,-640.34 830.47,-632.45 832.05,-632.19"/>
+<polyline fill="none" stroke="black" points="833.5,-636 829.56,-636.66 "/>
+<ellipse fill="none" stroke="black" cx="826.4" cy="-637.19" rx="3.2" ry="3.2"/>
 </g>
 <!-- datasets -->
 <g id="node15" class="node">
@@ -580,7 +580,7 @@
 <text text-anchor="start" x="223" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
 <polygon fill="#ffffff" stroke="transparent" points="242,-423 242,-441 308,-441 308,-423 242,-423"/>
 <polygon fill="none" stroke="black" points="242,-423 242,-441 308,-441 308,-423 242,-423"/>
-<text text-anchor="start" x="245" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">48,328 rows</text>
+<text text-anchor="start" x="245" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">49,780 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="308,-423 308,-441 336,-441 336,-423 308,-423"/>
 <polygon fill="none" stroke="black" points="308,-423 308,-441 336,-441 336,-423 308,-423"/>
 <text text-anchor="start" x="311" y="-429.2" font-family="Helvetica,sans-Serif" font-size="11.00">17 &gt;</text>
@@ -644,7 +644,7 @@
 <text text-anchor="start" x="847.5" y="-774.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
 <polygon fill="#ffffff" stroke="transparent" points="889.5,-768 889.5,-786 952.5,-786 952.5,-768 889.5,-768"/>
 <polygon fill="none" stroke="black" points="889.5,-768 889.5,-786 952.5,-786 952.5,-768 889.5,-768"/>
-<text text-anchor="start" x="904.5" y="-774.2" font-family="Helvetica,sans-Serif" font-size="11.00">271 rows</text>
+<text text-anchor="start" x="904.5" y="-774.2" font-family="Helvetica,sans-Serif" font-size="11.00">276 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="952.5,-768 952.5,-786 977.5,-786 977.5,-768 952.5,-768"/>
 <polygon fill="none" stroke="black" points="952.5,-768 952.5,-786 977.5,-786 977.5,-768 952.5,-768"/>
 <text text-anchor="start" x="967.5" y="-774.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
@@ -654,7 +654,7 @@
 <!-- eventchronology&#45;&gt;analysisunits -->
 <g id="edge21" class="edge">
 <title>eventchronology:w&#45;&gt;analysisunits:e</title>
-<path fill="none" stroke="black" d="M829.42,-798.2C814.16,-806.43 812.83,-828.26 790,-836 633.24,-889.16 582.55,-835.95 418,-818 381.94,-814.07 373.27,-808 337,-808"/>
+<path fill="none" stroke="black" d="M829.42,-798.2C814.16,-806.43 812.83,-828.26 790,-836 633.22,-889.17 582.6,-834.72 418,-817 383.3,-813.26 374.9,-808 340,-808"/>
 <polygon fill="black" stroke="black" points="835.7,-796.77 844.3,-798.51 839.6,-795.89 843.5,-795 843.5,-795 843.5,-795 839.6,-795.89 842.7,-791.49 835.7,-796.77 835.7,-796.77"/>
 <ellipse fill="none" stroke="black" cx="832.58" cy="-797.48" rx="3.2" ry="3.2"/>
 </g>
@@ -669,84 +669,84 @@
 <g id="node18" class="node">
 <title>geochroncontrols</title>
 <g id="a_node18"><a xlink:href="../../tables/geochroncontrols.html" xlink:title="geochroncontrols" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="841.5,-516 841.5,-574 979.5,-574 979.5,-516 841.5,-516"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="841.5,-552 841.5,-574 979.5,-574 979.5,-552 841.5,-552"/>
-<polygon fill="none" stroke="black" points="841.5,-552 841.5,-574 979.5,-574 979.5,-552 841.5,-552"/>
-<text text-anchor="start" x="846.5" y="-561.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">geochroncontrols</text>
-<text text-anchor="start" x="944.5" y="-560.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="841.5,-534 841.5,-552 979.5,-552 979.5,-534 841.5,-534"/>
-<text text-anchor="start" x="844.5" y="-540.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="841.5,-516 841.5,-534 881.5,-534 881.5,-516 841.5,-516"/>
-<polygon fill="none" stroke="black" points="841.5,-516 841.5,-534 881.5,-534 881.5,-516 841.5,-516"/>
-<text text-anchor="start" x="844.5" y="-522.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
-<polygon fill="#ffffff" stroke="transparent" points="881.5,-516 881.5,-534 956.5,-534 956.5,-516 881.5,-516"/>
-<polygon fill="none" stroke="black" points="881.5,-516 881.5,-534 956.5,-534 956.5,-516 881.5,-516"/>
-<text text-anchor="start" x="893.5" y="-522.2" font-family="Helvetica,sans-Serif" font-size="11.00">42,293 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="956.5,-516 956.5,-534 979.5,-534 979.5,-516 956.5,-516"/>
-<polygon fill="none" stroke="black" points="956.5,-516 956.5,-534 979.5,-534 979.5,-516 956.5,-516"/>
-<text text-anchor="start" x="969.5" y="-522.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+<polygon fill="#ffffff" stroke="transparent" points="841.5,-523 841.5,-581 979.5,-581 979.5,-523 841.5,-523"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="841.5,-559 841.5,-581 979.5,-581 979.5,-559 841.5,-559"/>
+<polygon fill="none" stroke="black" points="841.5,-559 841.5,-581 979.5,-581 979.5,-559 841.5,-559"/>
+<text text-anchor="start" x="846.5" y="-568.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">geochroncontrols</text>
+<text text-anchor="start" x="944.5" y="-567.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="841.5,-541 841.5,-559 979.5,-559 979.5,-541 841.5,-541"/>
+<text text-anchor="start" x="844.5" y="-547.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="841.5,-523 841.5,-541 881.5,-541 881.5,-523 841.5,-523"/>
+<polygon fill="none" stroke="black" points="841.5,-523 841.5,-541 881.5,-541 881.5,-523 841.5,-523"/>
+<text text-anchor="start" x="844.5" y="-529.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
+<polygon fill="#ffffff" stroke="transparent" points="881.5,-523 881.5,-541 956.5,-541 956.5,-523 881.5,-523"/>
+<polygon fill="none" stroke="black" points="881.5,-523 881.5,-541 956.5,-541 956.5,-523 881.5,-523"/>
+<text text-anchor="start" x="893.5" y="-529.2" font-family="Helvetica,sans-Serif" font-size="11.00">43,605 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="956.5,-523 956.5,-541 979.5,-541 979.5,-523 956.5,-523"/>
+<polygon fill="none" stroke="black" points="956.5,-523 956.5,-541 979.5,-541 979.5,-523 956.5,-523"/>
+<text text-anchor="start" x="969.5" y="-529.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
 </a>
 </g>
 </g>
 <!-- geochroncontrols&#45;&gt;chroncontrols -->
 <g id="edge23" class="edge">
 <title>geochroncontrols:w&#45;&gt;chroncontrols:e</title>
-<path fill="none" stroke="black" d="M826.02,-545.27C770.36,-565.45 845.36,-713 769,-713"/>
-<polygon fill="black" stroke="black" points="832.6,-544.24 841.06,-546.56 836.55,-543.62 840.5,-543 840.5,-543 840.5,-543 836.55,-543.62 839.94,-539.44 832.6,-544.24 832.6,-544.24"/>
-<ellipse fill="none" stroke="black" cx="829.44" cy="-544.74" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M826.16,-552.3C772.77,-572.12 842.55,-713 769,-713"/>
+<polygon fill="black" stroke="black" points="832.6,-551.27 841.07,-553.55 836.55,-550.63 840.5,-550 840.5,-550 840.5,-550 836.55,-550.63 839.93,-546.45 832.6,-551.27 832.6,-551.27"/>
+<ellipse fill="none" stroke="black" cx="829.44" cy="-551.78" rx="3.2" ry="3.2"/>
 </g>
 <!-- geochronology -->
 <g id="node19" class="node">
 <title>geochronology</title>
 <g id="a_node19"><a xlink:href="../../tables/geochronology.html" xlink:title="geochronology" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="637,-214 637,-382 761,-382 761,-214 637,-214"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="637,-360 637,-382 761,-382 761,-360 637,-360"/>
-<polygon fill="none" stroke="black" points="637,-360 637,-382 761,-382 761,-360 637,-360"/>
-<text text-anchor="start" x="642" y="-369.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">geochronology</text>
-<text text-anchor="start" x="726" y="-368.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="637,-338 637,-360 761,-360 761,-338 637,-338"/>
-<image xlink:href="../../images/primaryKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-355"/>
-<text text-anchor="start" x="659" y="-346.2" font-family="Helvetica,sans-Serif" font-size="11.00">geochronid</text>
-<polygon fill="#ffffff" stroke="transparent" points="637,-316 637,-338 761,-338 761,-316 637,-316"/>
-<polygon fill="none" stroke="black" points="637,-316 637,-338 761,-338 761,-316 637,-316"/>
-<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-333"/>
-<text text-anchor="start" x="659" y="-324.2" font-family="Helvetica,sans-Serif" font-size="11.00">sampleid</text>
-<polygon fill="none" stroke="black" points="637,-294 637,-316 761,-316 761,-294 637,-294"/>
-<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-311"/>
-<text text-anchor="start" x="659" y="-302.2" font-family="Helvetica,sans-Serif" font-size="11.00">geochrontypeid</text>
-<polygon fill="none" stroke="black" points="637,-272 637,-294 761,-294 761,-272 637,-272"/>
-<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-289"/>
-<text text-anchor="start" x="659" y="-280.2" font-family="Helvetica,sans-Serif" font-size="11.00">agetypeid</text>
-<polygon fill="#ffffff" stroke="transparent" points="637,-250 637,-272 761,-272 761,-250 637,-250"/>
-<polygon fill="none" stroke="black" points="637,-250 637,-272 761,-272 761,-250 637,-250"/>
-<text text-anchor="start" x="659" y="-258.2" font-family="Helvetica,sans-Serif" font-size="11.00">age</text>
-<polygon fill="none" stroke="black" points="637,-232 637,-250 761,-250 761,-232 637,-232"/>
-<text text-anchor="start" x="640" y="-238.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="637,-214 637,-232 666,-232 666,-214 637,-214"/>
-<polygon fill="none" stroke="black" points="637,-214 637,-232 666,-232 666,-214 637,-214"/>
-<text text-anchor="start" x="640" y="-220.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
-<polygon fill="#ffffff" stroke="transparent" points="666,-214 666,-232 735,-232 735,-214 666,-214"/>
-<polygon fill="none" stroke="black" points="666,-214 666,-232 735,-232 735,-214 666,-214"/>
-<text text-anchor="start" x="672" y="-220.2" font-family="Helvetica,sans-Serif" font-size="11.00">39,608 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="735,-214 735,-232 761,-232 761,-214 735,-214"/>
-<polygon fill="none" stroke="black" points="735,-214 735,-232 761,-232 761,-214 735,-214"/>
-<text text-anchor="start" x="742" y="-220.2" font-family="Helvetica,sans-Serif" font-size="11.00">3 &gt;</text>
+<polygon fill="#ffffff" stroke="transparent" points="637,-213 637,-381 761,-381 761,-213 637,-213"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="637,-359 637,-381 761,-381 761,-359 637,-359"/>
+<polygon fill="none" stroke="black" points="637,-359 637,-381 761,-381 761,-359 637,-359"/>
+<text text-anchor="start" x="642" y="-368.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">geochronology</text>
+<text text-anchor="start" x="726" y="-367.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="637,-337 637,-359 761,-359 761,-337 637,-337"/>
+<image xlink:href="../../images/primaryKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-354"/>
+<text text-anchor="start" x="659" y="-345.2" font-family="Helvetica,sans-Serif" font-size="11.00">geochronid</text>
+<polygon fill="#ffffff" stroke="transparent" points="637,-315 637,-337 761,-337 761,-315 637,-315"/>
+<polygon fill="none" stroke="black" points="637,-315 637,-337 761,-337 761,-315 637,-315"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-332"/>
+<text text-anchor="start" x="659" y="-323.2" font-family="Helvetica,sans-Serif" font-size="11.00">sampleid</text>
+<polygon fill="none" stroke="black" points="637,-293 637,-315 761,-315 761,-293 637,-293"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-310"/>
+<text text-anchor="start" x="659" y="-301.2" font-family="Helvetica,sans-Serif" font-size="11.00">geochrontypeid</text>
+<polygon fill="none" stroke="black" points="637,-271 637,-293 761,-293 761,-271 637,-271"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="642" y="-288"/>
+<text text-anchor="start" x="659" y="-279.2" font-family="Helvetica,sans-Serif" font-size="11.00">agetypeid</text>
+<polygon fill="#ffffff" stroke="transparent" points="637,-249 637,-271 761,-271 761,-249 637,-249"/>
+<polygon fill="none" stroke="black" points="637,-249 637,-271 761,-271 761,-249 637,-249"/>
+<text text-anchor="start" x="659" y="-257.2" font-family="Helvetica,sans-Serif" font-size="11.00">age</text>
+<polygon fill="none" stroke="black" points="637,-231 637,-249 761,-249 761,-231 637,-231"/>
+<text text-anchor="start" x="640" y="-237.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="637,-213 637,-231 666,-231 666,-213 637,-213"/>
+<polygon fill="none" stroke="black" points="637,-213 637,-231 666,-231 666,-213 637,-213"/>
+<text text-anchor="start" x="640" y="-219.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
+<polygon fill="#ffffff" stroke="transparent" points="666,-213 666,-231 735,-231 735,-213 666,-213"/>
+<polygon fill="none" stroke="black" points="666,-213 666,-231 735,-231 735,-213 666,-213"/>
+<text text-anchor="start" x="672" y="-219.2" font-family="Helvetica,sans-Serif" font-size="11.00">41,130 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="735,-213 735,-231 761,-231 761,-213 735,-213"/>
+<polygon fill="none" stroke="black" points="735,-213 735,-231 761,-231 761,-213 735,-213"/>
+<text text-anchor="start" x="742" y="-219.2" font-family="Helvetica,sans-Serif" font-size="11.00">4 &gt;</text>
 </a>
 </g>
 </g>
 <!-- geochroncontrols&#45;&gt;geochronology -->
 <g id="edge24" class="edge">
 <title>geochroncontrols:w&#45;&gt;geochronology:e</title>
-<path fill="none" stroke="black" d="M826.13,-541.08C759.4,-520.93 849.56,-349 762,-349"/>
-<polygon fill="black" stroke="black" points="832.57,-541.94 840.02,-546.57 836.54,-542.47 840.5,-543 840.5,-543 840.5,-543 836.54,-542.47 840.98,-539.43 832.57,-541.94 832.57,-541.94"/>
-<ellipse fill="none" stroke="black" cx="829.4" cy="-541.52" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M826.08,-548.13C756.44,-527.77 852.86,-348 762,-348"/>
+<polygon fill="black" stroke="black" points="832.57,-548.97 840.04,-553.57 836.53,-549.49 840.5,-550 840.5,-550 840.5,-550 836.53,-549.49 840.96,-546.43 832.57,-548.97 832.57,-548.97"/>
+<ellipse fill="none" stroke="black" cx="829.39" cy="-548.56" rx="3.2" ry="3.2"/>
 </g>
 <!-- geochronology&#45;&gt;agetypes -->
 <g id="edge25" class="edge">
 <title>geochronology:w&#45;&gt;agetypes:e</title>
-<path fill="none" stroke="black" d="M621.75,-280.18C596.15,-267.98 610.13,-219.52 575,-202 512.56,-170.86 476.7,-164.27 418,-202 380.19,-226.3 420.95,-294 376,-294"/>
-<polygon fill="black" stroke="black" points="628.15,-281.45 635.3,-286.53 632.08,-282.22 636,-283 636,-283 636,-283 632.08,-282.22 636.7,-279.47 628.15,-281.45 628.15,-281.45"/>
-<ellipse fill="none" stroke="black" cx="625.01" cy="-280.83" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M621.84,-279.22C596.36,-267.16 609.91,-219.28 575,-202 512.47,-171.04 476.7,-164.27 418,-202 380.19,-226.3 420.95,-294 376,-294"/>
+<polygon fill="black" stroke="black" points="628.15,-280.46 635.31,-285.53 632.08,-281.23 636,-282 636,-282 636,-282 632.08,-281.23 636.69,-278.47 628.15,-280.46 628.15,-280.46"/>
+<ellipse fill="none" stroke="black" cx="625.01" cy="-279.84" rx="3.2" ry="3.2"/>
 </g>
 <!-- geochrontypes -->
 <g id="node20" class="node">
@@ -774,26 +774,26 @@
 <!-- geochronology&#45;&gt;geochrontypes -->
 <g id="edge26" class="edge">
 <title>geochronology:w&#45;&gt;geochrontypes:e</title>
-<path fill="none" stroke="black" d="M621.66,-302.16C593.51,-289.53 598.79,-239 559.5,-239"/>
-<polygon fill="black" stroke="black" points="628.15,-303.45 635.3,-308.53 632.08,-304.22 636,-305 636,-305 636,-305 632.08,-304.22 636.7,-301.47 628.15,-303.45 628.15,-303.45"/>
-<ellipse fill="none" stroke="black" cx="625.01" cy="-302.83" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M621.73,-301.21C593.67,-288.77 598.54,-239 559.5,-239"/>
+<polygon fill="black" stroke="black" points="628.15,-302.46 635.31,-307.53 632.07,-303.23 636,-304 636,-304 636,-304 632.07,-303.23 636.69,-300.47 628.15,-302.46 628.15,-302.46"/>
+<ellipse fill="none" stroke="black" cx="625.01" cy="-301.85" rx="3.2" ry="3.2"/>
 </g>
 <!-- geochronology&#45;&gt;samples -->
 <g id="edge27" class="edge">
 <title>geochronology:w&#45;&gt;samples:e</title>
-<path fill="none" stroke="black" d="M621.57,-329.57C578.44,-347.23 615.22,-450 555.5,-450"/>
-<polygon fill="black" stroke="black" points="628.12,-328.4 636.63,-330.54 632.06,-327.7 636,-327 636,-327 636,-327 632.06,-327.7 635.37,-323.46 628.12,-328.4 628.12,-328.4"/>
-<ellipse fill="none" stroke="black" cx="624.97" cy="-328.96" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M621.77,-328.48C578.02,-345.95 615.69,-450 555.5,-450"/>
+<polygon fill="black" stroke="black" points="628.12,-327.37 636.62,-329.55 632.06,-326.69 636,-326 636,-326 636,-326 632.06,-326.69 635.38,-322.45 628.12,-327.37 628.12,-327.37"/>
+<ellipse fill="none" stroke="black" cx="624.97" cy="-327.92" rx="3.2" ry="3.2"/>
 </g>
 <!-- samples&#45;&gt;analysisunits -->
-<g id="edge33" class="edge">
+<g id="edge34" class="edge">
 <title>samples:w&#45;&gt;analysisunits:e</title>
-<path fill="none" stroke="black" d="M424.57,-456.61C420.18,-464.69 421.95,-478.92 418,-492 389.94,-584.97 413.66,-615.21 385,-708 370.45,-755.1 386.3,-808 337,-808"/>
+<path fill="none" stroke="black" d="M424.57,-456.61C420.18,-464.69 421.95,-478.92 418,-492 389.94,-584.97 412.51,-614.86 385,-708 371.19,-754.74 388.74,-808 340,-808"/>
 <polygon fill="black" stroke="black" points="430.38,-453.64 439.14,-453.21 433.94,-451.82 437.5,-450 437.5,-450 437.5,-450 433.94,-451.82 435.86,-446.79 430.38,-453.64 430.38,-453.64"/>
 <ellipse fill="none" stroke="black" cx="427.53" cy="-455.09" rx="3.2" ry="3.2"/>
 </g>
 <!-- samples&#45;&gt;datasets -->
-<g id="edge34" class="edge">
+<g id="edge35" class="edge">
 <title>samples:w&#45;&gt;datasets:e</title>
 <path fill="none" stroke="black" d="M423.07,-450C389.76,-450 376.43,-450 337,-450"/>
 <polygon fill="black" stroke="black" points="429.5,-450 437.5,-453.6 433.5,-450 437.5,-450 437.5,-450 437.5,-450 433.5,-450 437.5,-446.4 429.5,-450 429.5,-450"/>
@@ -803,36 +803,67 @@
 <g id="node22" class="node">
 <title>geochronpublications</title>
 <g id="a_node22"><a xlink:href="../../tables/geochronpublications.html" xlink:title="geochronpublications" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="831,-322 831,-380 990,-380 990,-322 831,-322"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="831.5,-358 831.5,-380 990.5,-380 990.5,-358 831.5,-358"/>
-<polygon fill="none" stroke="black" points="831.5,-358 831.5,-380 990.5,-380 990.5,-358 831.5,-358"/>
-<text text-anchor="start" x="836.5" y="-367.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">geochronpublications</text>
-<text text-anchor="start" x="955.5" y="-366.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="831.5,-340 831.5,-358 990.5,-358 990.5,-340 831.5,-340"/>
-<text text-anchor="start" x="834.5" y="-346.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="831.5,-322 831.5,-340 882.5,-340 882.5,-322 831.5,-322"/>
-<polygon fill="none" stroke="black" points="831.5,-322 831.5,-340 882.5,-340 882.5,-322 831.5,-322"/>
-<text text-anchor="start" x="834.5" y="-328.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
-<polygon fill="#ffffff" stroke="transparent" points="882.5,-322 882.5,-340 962.5,-340 962.5,-322 882.5,-322"/>
-<polygon fill="none" stroke="black" points="882.5,-322 882.5,-340 962.5,-340 962.5,-322 882.5,-322"/>
-<text text-anchor="start" x="899.5" y="-328.2" font-family="Helvetica,sans-Serif" font-size="11.00">36,183 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="962.5,-322 962.5,-340 990.5,-340 990.5,-322 962.5,-322"/>
-<polygon fill="none" stroke="black" points="962.5,-322 962.5,-340 990.5,-340 990.5,-322 962.5,-322"/>
-<text text-anchor="start" x="980.5" y="-328.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+<polygon fill="#ffffff" stroke="transparent" points="831,-348 831,-406 990,-406 990,-348 831,-348"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="831.5,-384 831.5,-406 990.5,-406 990.5,-384 831.5,-384"/>
+<polygon fill="none" stroke="black" points="831.5,-384 831.5,-406 990.5,-406 990.5,-384 831.5,-384"/>
+<text text-anchor="start" x="836.5" y="-393.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">geochronpublications</text>
+<text text-anchor="start" x="955.5" y="-392.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="831.5,-366 831.5,-384 990.5,-384 990.5,-366 831.5,-366"/>
+<text text-anchor="start" x="834.5" y="-372.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="831.5,-348 831.5,-366 882.5,-366 882.5,-348 831.5,-348"/>
+<polygon fill="none" stroke="black" points="831.5,-348 831.5,-366 882.5,-366 882.5,-348 831.5,-348"/>
+<text text-anchor="start" x="834.5" y="-354.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
+<polygon fill="#ffffff" stroke="transparent" points="882.5,-348 882.5,-366 962.5,-366 962.5,-348 882.5,-348"/>
+<polygon fill="none" stroke="black" points="882.5,-348 882.5,-366 962.5,-366 962.5,-348 882.5,-348"/>
+<text text-anchor="start" x="899.5" y="-354.2" font-family="Helvetica,sans-Serif" font-size="11.00">37,711 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="962.5,-348 962.5,-366 990.5,-366 990.5,-348 962.5,-348"/>
+<polygon fill="none" stroke="black" points="962.5,-348 962.5,-366 990.5,-366 990.5,-348 962.5,-348"/>
+<text text-anchor="start" x="980.5" y="-354.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
 </a>
 </g>
 </g>
 <!-- geochronpublications&#45;&gt;geochronology -->
 <g id="edge28" class="edge">
 <title>geochronpublications:w&#45;&gt;geochronology:e</title>
-<path fill="none" stroke="black" d="M816.04,-349C796.58,-349 786.97,-349 762,-349"/>
-<polygon fill="black" stroke="black" points="822.5,-349 830.5,-352.6 826.5,-349 830.5,-349 830.5,-349 830.5,-349 826.5,-349 830.5,-345.4 822.5,-349 822.5,-349"/>
-<ellipse fill="none" stroke="black" cx="819.3" cy="-349" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M816.24,-372.97C795.91,-366.69 789.23,-348 762,-348"/>
+<polygon fill="black" stroke="black" points="822.58,-373.87 829.99,-378.56 826.54,-374.44 830.5,-375 830.5,-375 830.5,-375 826.54,-374.44 831.01,-371.44 822.58,-373.87 822.58,-373.87"/>
+<ellipse fill="none" stroke="black" cx="819.41" cy="-373.42" rx="3.2" ry="3.2"/>
+</g>
+<!-- radiocarbon -->
+<g id="node23" class="node">
+<title>radiocarbon</title>
+<g id="a_node23"><a xlink:href="../../tables/radiocarbon.html" xlink:title="radiocarbon" target="_top">
+<polygon fill="#ffffff" stroke="transparent" points="856.5,-269 856.5,-327 964.5,-327 964.5,-269 856.5,-269"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="856.5,-305 856.5,-327 964.5,-327 964.5,-305 856.5,-305"/>
+<polygon fill="none" stroke="black" points="856.5,-305 856.5,-327 964.5,-327 964.5,-305 856.5,-305"/>
+<text text-anchor="start" x="861.5" y="-314.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">radiocarbon</text>
+<text text-anchor="start" x="929.5" y="-313.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="856.5,-287 856.5,-305 964.5,-305 964.5,-287 856.5,-287"/>
+<text text-anchor="start" x="859.5" y="-293.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="856.5,-269 856.5,-287 881.5,-287 881.5,-269 856.5,-269"/>
+<polygon fill="none" stroke="black" points="856.5,-269 856.5,-287 881.5,-287 881.5,-269 856.5,-269"/>
+<text text-anchor="start" x="859.5" y="-275.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
+<polygon fill="#ffffff" stroke="transparent" points="881.5,-269 881.5,-287 949.5,-287 949.5,-269 881.5,-269"/>
+<polygon fill="none" stroke="black" points="881.5,-269 881.5,-287 949.5,-287 949.5,-269 881.5,-269"/>
+<text text-anchor="start" x="886.5" y="-275.2" font-family="Helvetica,sans-Serif" font-size="11.00">32,234 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="949.5,-269 949.5,-287 964.5,-287 964.5,-269 949.5,-269"/>
+<polygon fill="none" stroke="black" points="949.5,-269 949.5,-287 964.5,-287 964.5,-269 949.5,-269"/>
+<text text-anchor="start" x="954.5" y="-275.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+</a>
+</g>
+</g>
+<!-- radiocarbon&#45;&gt;geochronology -->
+<g id="edge29" class="edge">
+<title>radiocarbon:w&#45;&gt;geochronology:e</title>
+<path fill="none" stroke="black" d="M844.74,-296.99C807.88,-304.18 805.65,-348 762,-348"/>
+<polygon fill="black" stroke="black" points="854.34,-292.09 855.07,-300.06 853.48,-300.2 852.74,-292.24 854.34,-292.09"/>
+<polyline fill="none" stroke="black" points="855.5,-296 851.52,-296.37 "/>
+<ellipse fill="none" stroke="black" cx="848.33" cy="-296.66" rx="3.2" ry="3.2"/>
 </g>
 <!-- relativechronology -->
-<g id="node23" class="node">
+<g id="node24" class="node">
 <title>relativechronology</title>
-<g id="a_node23"><a xlink:href="../../tables/relativechronology.html" xlink:title="relativechronology" target="_top">
+<g id="a_node24"><a xlink:href="../../tables/relativechronology.html" xlink:title="relativechronology" target="_top">
 <polygon fill="#ffffff" stroke="transparent" points="839,-848 839,-906 982,-906 982,-848 839,-848"/>
 <polygon fill="#f5f5f5" stroke="transparent" points="839.5,-884 839.5,-906 982.5,-906 982.5,-884 839.5,-884"/>
 <polygon fill="none" stroke="black" points="839.5,-884 839.5,-906 982.5,-906 982.5,-884 839.5,-884"/>
@@ -845,7 +876,7 @@
 <text text-anchor="start" x="842.5" y="-854.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
 <polygon fill="#ffffff" stroke="transparent" points="885.5,-848 885.5,-866 957.5,-866 957.5,-848 885.5,-848"/>
 <polygon fill="none" stroke="black" points="885.5,-848 885.5,-866 957.5,-866 957.5,-848 885.5,-848"/>
-<text text-anchor="start" x="900.5" y="-854.2" font-family="Helvetica,sans-Serif" font-size="11.00">4,625 rows</text>
+<text text-anchor="start" x="900.5" y="-854.2" font-family="Helvetica,sans-Serif" font-size="11.00">4,630 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="957.5,-848 957.5,-866 982.5,-866 982.5,-848 957.5,-848"/>
 <polygon fill="none" stroke="black" points="957.5,-848 957.5,-866 982.5,-866 982.5,-848 957.5,-848"/>
 <text text-anchor="start" x="972.5" y="-854.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
@@ -853,55 +884,55 @@
 </g>
 </g>
 <!-- relativechronology&#45;&gt;analysisunits -->
-<g id="edge29" class="edge">
+<g id="edge30" class="edge">
 <title>relativechronology:w&#45;&gt;analysisunits:e</title>
-<path fill="none" stroke="black" d="M823.95,-875.02C648.26,-875.55 595.37,-885.05 418,-842 380.06,-832.79 376.04,-808 337,-808"/>
+<path fill="none" stroke="black" d="M823.95,-875.02C648.22,-875.54 595.23,-884.77 418,-841 381.46,-831.97 377.64,-808 340,-808"/>
 <polygon fill="black" stroke="black" points="830.5,-875.01 838.51,-878.6 834.5,-875.01 838.5,-875 838.5,-875 838.5,-875 834.5,-875.01 838.49,-871.4 830.5,-875.01 830.5,-875.01"/>
 <ellipse fill="none" stroke="black" cx="827.3" cy="-875.02" rx="3.2" ry="3.2"/>
 </g>
 <!-- relativechronology&#45;&gt;chroncontrols -->
-<g id="edge30" class="edge">
+<g id="edge31" class="edge">
 <title>relativechronology:w&#45;&gt;chroncontrols:e</title>
 <path fill="none" stroke="black" d="M823.98,-872.58C771.89,-852.43 841.68,-713 769,-713"/>
 <polygon fill="black" stroke="black" points="830.61,-873.69 837.91,-878.55 834.55,-874.34 838.5,-875 838.5,-875 838.5,-875 834.55,-874.34 839.09,-871.45 830.61,-873.69 830.61,-873.69"/>
 <ellipse fill="none" stroke="black" cx="827.45" cy="-873.16" rx="3.2" ry="3.2"/>
 </g>
 <!-- specimendates -->
-<g id="node24" class="node">
+<g id="node25" class="node">
 <title>specimendates</title>
-<g id="a_node24"><a xlink:href="../../tables/specimendates.html" xlink:title="specimendates" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="849,-410 849,-468 972,-468 972,-410 849,-410"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="849.5,-446 849.5,-468 972.5,-468 972.5,-446 849.5,-446"/>
-<polygon fill="none" stroke="black" points="849.5,-446 849.5,-468 972.5,-468 972.5,-446 849.5,-446"/>
-<text text-anchor="start" x="854.5" y="-455.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">specimendates</text>
-<text text-anchor="start" x="937.5" y="-454.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="849.5,-428 849.5,-446 972.5,-446 972.5,-428 849.5,-428"/>
-<text text-anchor="start" x="852.5" y="-434.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="849.5,-410 849.5,-428 880.5,-428 880.5,-410 849.5,-410"/>
-<polygon fill="none" stroke="black" points="849.5,-410 849.5,-428 880.5,-428 880.5,-410 849.5,-410"/>
-<text text-anchor="start" x="852.5" y="-416.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 6</text>
-<polygon fill="#ffffff" stroke="transparent" points="880.5,-410 880.5,-428 945.5,-428 945.5,-410 880.5,-410"/>
-<polygon fill="none" stroke="black" points="880.5,-410 880.5,-428 945.5,-428 945.5,-410 880.5,-410"/>
-<text text-anchor="start" x="888.5" y="-416.2" font-family="Helvetica,sans-Serif" font-size="11.00">2,662 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="945.5,-410 945.5,-428 972.5,-428 972.5,-410 945.5,-410"/>
-<polygon fill="none" stroke="black" points="945.5,-410 945.5,-428 972.5,-428 972.5,-410 945.5,-410"/>
-<text text-anchor="start" x="953.5" y="-416.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
+<g id="a_node25"><a xlink:href="../../tables/specimendates.html" xlink:title="specimendates" target="_top">
+<polygon fill="#ffffff" stroke="transparent" points="849,-430 849,-488 972,-488 972,-430 849,-430"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="849.5,-466 849.5,-488 972.5,-488 972.5,-466 849.5,-466"/>
+<polygon fill="none" stroke="black" points="849.5,-466 849.5,-488 972.5,-488 972.5,-466 849.5,-466"/>
+<text text-anchor="start" x="854.5" y="-475.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">specimendates</text>
+<text text-anchor="start" x="937.5" y="-474.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="849.5,-448 849.5,-466 972.5,-466 972.5,-448 849.5,-448"/>
+<text text-anchor="start" x="852.5" y="-454.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="849.5,-430 849.5,-448 880.5,-448 880.5,-430 849.5,-430"/>
+<polygon fill="none" stroke="black" points="849.5,-430 849.5,-448 880.5,-448 880.5,-430 849.5,-430"/>
+<text text-anchor="start" x="852.5" y="-436.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 6</text>
+<polygon fill="#ffffff" stroke="transparent" points="880.5,-430 880.5,-448 945.5,-448 945.5,-430 880.5,-430"/>
+<polygon fill="none" stroke="black" points="880.5,-430 880.5,-448 945.5,-448 945.5,-430 880.5,-430"/>
+<text text-anchor="start" x="888.5" y="-436.2" font-family="Helvetica,sans-Serif" font-size="11.00">2,662 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="945.5,-430 945.5,-448 972.5,-448 972.5,-430 945.5,-430"/>
+<polygon fill="none" stroke="black" points="945.5,-430 945.5,-448 972.5,-448 972.5,-430 945.5,-430"/>
+<text text-anchor="start" x="953.5" y="-436.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
 </a>
 </g>
 </g>
 <!-- specimendates&#45;&gt;geochronology -->
-<g id="edge35" class="edge">
+<g id="edge36" class="edge">
 <title>specimendates:w&#45;&gt;geochronology:e</title>
-<path fill="none" stroke="black" d="M834.04,-434.46C797.56,-420.03 811.27,-349 762,-349"/>
-<polygon fill="black" stroke="black" points="840.62,-435.62 847.88,-440.55 844.56,-436.31 848.5,-437 848.5,-437 848.5,-437 844.56,-436.31 849.12,-433.45 840.62,-435.62 840.62,-435.62"/>
-<ellipse fill="none" stroke="black" cx="837.47" cy="-435.06" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M834.09,-454.52C792.54,-438.29 818.29,-348 762,-348"/>
+<polygon fill="black" stroke="black" points="840.62,-455.64 847.89,-460.55 844.56,-456.32 848.5,-457 848.5,-457 848.5,-457 844.56,-456.32 849.11,-453.45 840.62,-455.64 840.62,-455.64"/>
+<ellipse fill="none" stroke="black" cx="837.46" cy="-455.1" rx="3.2" ry="3.2"/>
 </g>
 <!-- specimendates&#45;&gt;samples -->
-<g id="edge36" class="edge">
+<g id="edge37" class="edge">
 <title>specimendates:w&#45;&gt;samples:e</title>
-<path fill="none" stroke="black" d="M833.87,-439.74C817.44,-446.8 813.5,-465.51 790,-472 712.03,-493.54 687.3,-487.94 608,-472 583.2,-467.01 580.8,-450 555.5,-450"/>
-<polygon fill="black" stroke="black" points="840.64,-438.47 849.16,-440.54 844.57,-437.74 848.5,-437 848.5,-437 848.5,-437 844.57,-437.74 847.84,-433.46 840.64,-438.47 840.64,-438.47"/>
-<ellipse fill="none" stroke="black" cx="837.49" cy="-439.06" rx="3.2" ry="3.2"/>
+<path fill="none" stroke="black" d="M834.05,-458.28C818.62,-461.24 810.95,-468.53 790,-471 709.67,-480.48 687.43,-486.3 608,-471 583.32,-466.25 580.63,-450 555.5,-450"/>
+<polygon fill="black" stroke="black" points="840.53,-457.7 848.82,-460.59 844.52,-457.35 848.5,-457 848.5,-457 848.5,-457 844.52,-457.35 848.18,-453.41 840.53,-457.7 840.53,-457.7"/>
+<ellipse fill="none" stroke="black" cx="837.34" cy="-457.99" rx="3.2" ry="3.2"/>
 </g>
 </g>
 </svg>

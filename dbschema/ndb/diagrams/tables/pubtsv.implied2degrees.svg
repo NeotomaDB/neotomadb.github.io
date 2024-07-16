@@ -55,7 +55,7 @@
 <text text-anchor="start" x="192.5" y="-463.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 1</text>
 <polygon fill="#ffffff" stroke="transparent" points="214.5,-457 214.5,-475 282.5,-475 282.5,-457 214.5,-457"/>
 <polygon fill="none" stroke="black" points="214.5,-457 214.5,-475 282.5,-475 282.5,-457 214.5,-457"/>
-<text text-anchor="start" x="219.5" y="-463.2" font-family="Helvetica,sans-Serif" font-size="11.00">13,466 rows</text>
+<text text-anchor="start" x="219.5" y="-463.2" font-family="Helvetica,sans-Serif" font-size="11.00">13,725 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="282.5,-457 282.5,-475 312.5,-475 312.5,-457 282.5,-457"/>
 <polygon fill="none" stroke="black" points="282.5,-457 282.5,-475 312.5,-475 312.5,-457 282.5,-457"/>
 <text text-anchor="start" x="287.5" y="-463.2" font-family="Helvetica,sans-Serif" font-size="11.00">13 &gt;</text>
@@ -115,7 +115,7 @@
 <text text-anchor="start" x="398" y="-820.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
 <polygon fill="#ffffff" stroke="transparent" points="440,-814 440,-832 517,-832 517,-814 440,-814"/>
 <polygon fill="none" stroke="black" points="440,-814 440,-832 517,-832 517,-814 440,-814"/>
-<text text-anchor="start" x="454" y="-820.2" font-family="Helvetica,sans-Serif" font-size="11.00">58,986 rows</text>
+<text text-anchor="start" x="454" y="-820.2" font-family="Helvetica,sans-Serif" font-size="11.00">61,382 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="517,-814 517,-832 542,-832 542,-814 517,-814"/>
 <polygon fill="none" stroke="black" points="517,-814 517,-832 542,-832 542,-814 517,-814"/>
 <text text-anchor="start" x="532" y="-820.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
@@ -235,7 +235,7 @@
 <text text-anchor="start" x="413" y="-556.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 4</text>
 <polygon fill="#ffffff" stroke="transparent" points="432,-550 432,-568 498,-568 498,-550 432,-550"/>
 <polygon fill="none" stroke="black" points="432,-550 432,-568 498,-568 498,-550 432,-550"/>
-<text text-anchor="start" x="435" y="-556.2" font-family="Helvetica,sans-Serif" font-size="11.00">46,322 rows</text>
+<text text-anchor="start" x="435" y="-556.2" font-family="Helvetica,sans-Serif" font-size="11.00">47,314 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="498,-550 498,-568 526,-568 526,-550 498,-550"/>
 <polygon fill="none" stroke="black" points="498,-550 498,-568 526,-568 526,-550 498,-550"/>
 <text text-anchor="start" x="501" y="-556.2" font-family="Helvetica,sans-Serif" font-size="11.00">17 &gt;</text>
@@ -279,7 +279,7 @@
 <text text-anchor="start" x="392" y="-450.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
 <polygon fill="#ffffff" stroke="transparent" points="440,-444 440,-462 520,-462 520,-444 440,-444"/>
 <polygon fill="none" stroke="black" points="440,-444 440,-462 520,-462 520,-444 440,-444"/>
-<text text-anchor="start" x="457" y="-450.2" font-family="Helvetica,sans-Serif" font-size="11.00">36,183 rows</text>
+<text text-anchor="start" x="457" y="-450.2" font-family="Helvetica,sans-Serif" font-size="11.00">37,711 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="520,-444 520,-462 548,-462 548,-444 520,-444"/>
 <polygon fill="none" stroke="black" points="520,-444 520,-462 548,-462 548,-444 520,-444"/>
 <text text-anchor="start" x="538" y="-450.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
@@ -309,7 +309,7 @@
 <text text-anchor="start" x="399" y="-371.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 2</text>
 <polygon fill="#ffffff" stroke="transparent" points="439,-365 439,-383 516,-383 516,-365 439,-365"/>
 <polygon fill="none" stroke="black" points="439,-365 439,-383 516,-383 516,-365 439,-365"/>
-<text text-anchor="start" x="453" y="-371.2" font-family="Helvetica,sans-Serif" font-size="11.00">30,625 rows</text>
+<text text-anchor="start" x="453" y="-371.2" font-family="Helvetica,sans-Serif" font-size="11.00">31,426 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="516,-365 516,-383 540,-383 540,-365 516,-365"/>
 <polygon fill="none" stroke="black" points="516,-365 516,-383 540,-383 540,-365 516,-365"/>
 <text text-anchor="start" x="530" y="-371.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
@@ -339,7 +339,7 @@
 <text text-anchor="start" x="401" y="-292.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 1</text>
 <polygon fill="#ffffff" stroke="transparent" points="442,-286 442,-304 513,-304 513,-286 442,-286"/>
 <polygon fill="none" stroke="black" points="442,-286 442,-304 513,-304 513,-286 442,-286"/>
-<text text-anchor="start" x="456" y="-292.2" font-family="Helvetica,sans-Serif" font-size="11.00">1,466 rows</text>
+<text text-anchor="start" x="456" y="-292.2" font-family="Helvetica,sans-Serif" font-size="11.00">1,517 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="513,-286 513,-304 538,-304 538,-286 513,-286"/>
 <polygon fill="none" stroke="black" points="513,-286 513,-304 538,-304 538,-286 513,-286"/>
 <text text-anchor="start" x="528" y="-292.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
@@ -458,7 +458,7 @@
 <text text-anchor="start" x="627.5" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 5</text>
 <polygon fill="#ffffff" stroke="transparent" points="646.5,-512 646.5,-530 712.5,-530 712.5,-512 646.5,-512"/>
 <polygon fill="none" stroke="black" points="646.5,-512 646.5,-530 712.5,-530 712.5,-512 646.5,-512"/>
-<text text-anchor="start" x="649.5" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00">37,992 rows</text>
+<text text-anchor="start" x="649.5" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00">38,985 rows</text>
 <polygon fill="#ffffff" stroke="transparent" points="712.5,-512 712.5,-530 725.5,-530 725.5,-512 712.5,-512"/>
 <polygon fill="none" stroke="black" points="712.5,-512 712.5,-530 725.5,-530 725.5,-512 712.5,-512"/>
 <text text-anchor="start" x="715.5" y="-518.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>

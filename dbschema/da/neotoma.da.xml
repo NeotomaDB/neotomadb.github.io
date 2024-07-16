@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="neotoma" schema="da" type="PostgreSQL - 9.6.24">
+<database name="neotoma" schema="da" type="PostgreSQL - 15.5">
    <tables>
       <table name="contacts" numRows="0" remarks="" schema="da" type="VIEW" viewSql=" SELECT c.contactid,&#10;    c.aliasid,&#10;    c.contactname,&#10;    cs.contactstatus,&#10;    c.familyname,&#10;    c.leadinginitials,&#10;    c.givennames,&#10;    c.suffix,&#10;    c.title,&#10;    c.phone,&#10;    c.fax,&#10;    c.email,&#10;    c.url,&#10;    c.address,&#10;    c.notes&#10;   FROM (ndb.contacts c&#10;     JOIN ndb.contactstatuses cs ON ((c.contactstatusid = cs.contactstatusid)));">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="contactid" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
@@ -113,59 +113,4 @@
          <column autoUpdated="false" defaultValue="null" digits="17" id="3" name="ageyounger" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
       </table>
    </tables>
-   <routines>
-      <routine dataAccess="MODIFIES" deterministic="false" name="chronologybyid" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-
-  SELECT json_agg(json_build_object('AgeYoungest', ccr.agelimityounger,
-                                            'Age', ccr.age,
-                                    'ControlType', ccrt.chroncontroltype,
-                  'ChronControlID', ccr.chroncontrolid,
-                  'Depth', ccr.depth,
-                  'AgeOldest', ccr.agelimitolder,
-                  'Thickness', ccr.thickness)) AS controls,
-        chr.isdefault AS Default,
-        chr.chronologyname AS ChronologyName,
-        aty.agetype AS AgeType,
-        chr.agemodel AS AgeModel,
-        chr.ageboundolder AS AgeOlder,
-        chr.chronologyid AS ChronologyID,
-        chr.ageboundyounger AS AgeYounger,
-        json_agg(DISTINCT jsonb_build_object('DatasetType', dst.datasettype,
-                                     'DatasetID', ds.datasetid)) AS datasets,
-        chr.notes AS Notes,
-        chr.dateprepared AS DatePrepared
-  FROM ndb.chronologies AS chr
-  INNER JOIN ndb.agetypes AS aty ON chr.agetypeid = aty.agetypeid
-  LEFT JOIN ndb.chroncontrols AS ccr ON chr.chronologyid = ccr.chronologyid
-  LEFT JOIN ndb.chroncontroltypes AS ccrt ON ccr.chroncontroltypeid = ccrt.chroncontroltypeid
-  LEFT JOIN ndb.datasets AS ds ON  ds.collectionunitid = chr.collectionunitid
-  LEFT JOIN ndb.datasettypes AS dst ON dst.datasettypeid = ds.datasettypeid
-  WHERE chr.chronologyid = _chronid
-  GROUP BY chr.isdefault,
-        chr.chronologyname,
-        aty.agetype,
-        chr.ageboundolder,
-        chr.ageboundyounger,
-		    chr.agemodel,
-        chr.notes,
-	      chr.chronologyid,
-        chr.dateprepared
-]]></definition>
-      </routine>
-      <routine dataAccess="MODIFIES" deterministic="false" name="datasetbyid" returnType="SETOF record" securityType="INVOKER" type="FUNCTION">
-         <comment/>
-         <definition language="SQL"><![CDATA[
-    SELECT ndb.datasets.datasetid, ndb.datasettypes.datasettype
-    FROM ndb.chronologies INNER JOIN ndb.collectionunits ON ndb.chronologies.collectionunitid = ndb.collectionunits.collectionunitid INNER JOIN
-    ndb.datasets ON ndb.collectionunits.collectionunitid = ndb.datasets.collectionunitid INNER JOIN
-    ndb.datasettypes ON ndb.datasets.datasettypeid = ndb.datasettypes.datasettypeid INNER JOIN
-    ndb.sampleages ON ndb.chronologies.chronologyid = ndb.sampleages.chronologyid INNER JOIN
-    ndb.samples ON ndb.sampleages.sampleid = ndb.samples.sampleid AND ndb.datasets.datasetid = ndb.samples.datasetid
-    WHERE ndb.sampleages.chronologyid = _dataid
-    GROUP BY ndb.datasets.datasetid, ndb.datasettypes.datasettype;
-]]></definition>
-      </routine>
-   </routines>
 </database>
