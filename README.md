@@ -1,9 +1,13 @@
 # Neotoma Open Data Resources
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: start -->
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-orange.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![NSF-XXXXXXX](https://img.shields.io/badge/NSF-1948926-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1948926)
 
 This page serves as the source of [https://open.neotomadb.org](https://open.neotomadb.org), it powers the GitHub pages releases of the [Neotoma GitHub repositories](https://github.com/NeotomaDB) and provides additional support and resources for users of Neotoma.
+
+<!-- badges: end -->
 
 ## Contributors
 
